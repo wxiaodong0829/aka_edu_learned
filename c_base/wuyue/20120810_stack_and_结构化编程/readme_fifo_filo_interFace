@@ -1,0 +1,90 @@
+1, 栈：符合先入后出的规则。FIFO
+
+2, C 复习  --->   栈帧，内存布局，链接，静态关键字      是一套内容。
+
+3, gcc -Iinclude ; -I 参数指定头文件搜索路径
+
+
+4, 结构化编程：							封装 思想
+
+	一个程序员 他的 工程文件夹如下
+
+	|-- stack
+	|   |-- all
+	|   |-- include
+	|   |   `-- stack.h			//提供给用户，放在用户的 include/ 目录下
+	|   |-- main.c							//测试此模块的功能的文件
+	|   |-- main.o
+	|   |-- Makefile
+	|   |-- stack.c
+	|   `-- stack.so			//提供给用户,放在用户的库文件夹下
+
+5,	typedef 
+			定义要变化的数据类型,以使函数更通用,改动量更少
+
+6,  接口设计  的一个 基本思想：	
+								谁使用数据，谁提供其存储空间。
+
+	int rect_init(int x, int y, struct rect *p); //谁使用 p， 谁为它分配空间.
+
+	struct * rect_init(int x, int y); // 一定是函数内部malloc 了堆的空间,这样有风险，
+									//	因为用户如果是新手，很可能不释放堆中空间,造成了内存泄漏
+
+7, 用 栈 实现 树的深度优先遍历
+#include <stdio.h>
+#include "stack.h"
+
+int main(void)
+{
+    node_t tree[7] = {{'A', 1, 2}, {'B', 3,4},							A
+        {'C', 5, 6}, {'D', -1,-1}, {'E', -1,-1},				B				C			先左后右，先子女后兄弟
+        {'F', -1, -1}, {'G', -1, -1}};						D	    E        F     G   
+    node_t item;
+
+    push(tree[0]);
+    while(is_empty() == 0){
+        item = pop();
+        putchar(item.ch);
+        if(item.r != -1)
+            push(tree[item.r]);
+        if(item.l != -1)
+            push(tree[item.l]);
+    }    
+    putchar('\n');
+
+    return 0;
+}
+
+8, 树的深度优先遍历
+
+	厚书：P331
+
+9, 队列：    入队，先加tail
+					再存数据
+					tail指向队尾
+			出队：先加head
+					再取数据
+					head指向队头的前一个
+
+10, 队列 实现 广度优先遍历
+
+	int main(void)
+	{
+		node_t tree[7] = {{'A', 1, 2}, {'B', 3,4},							A					层优先
+			{'C', 5, 6}, {'D', -1,-1}, {'E', -1,-1},				B				C			先左后右，先兄弟后子女
+			{'F', -1, -1}, {'G', -1, -1}};						D	    E        F     G   
+		node_t item;
+
+		enqueue(tree[0]);
+		while(is_empty() == 0){
+			item = dequeue();
+			putchar(item.ch);
+			if(item.l != -1)
+				enqueue(tree[item.l]);
+			if(item.r != -1)
+				enqueue(tree[item.r]);
+		}
+		putchar('\n');
+
+		return 0;
+}

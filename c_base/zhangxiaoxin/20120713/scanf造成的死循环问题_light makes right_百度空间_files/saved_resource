@@ -1,0 +1,9 @@
+
+var bdPass=bdPass||{};
+bdPass.api=bdPass.api||{};
+bdPass.api.params=bdPass.api.params||{};
+bdPass.api.params.login_token='8af45c1bdcefcd7ebb2c57af1b70967a';
+	bdPass.api.params.login_tpl='sp';
+
+			document.write('<script type="text/javascript" charset="UTF-8" src="https://passport.baidu.com/js/v2ApiUsedTangramFunctions.js?v=20120711"></script>');
+		document.write('<script type="text/javascript" charset="UTF-8" src="https://passport.baidu.com/js/pass_api_login.js?v=20120711"></script>');

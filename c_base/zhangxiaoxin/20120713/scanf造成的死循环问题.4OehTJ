@@ -1,0 +1,258 @@
+
+<!-- saved from url=(0067)http://hi.baidu.com/xzp21st/blog/item/9846c50345287c733812bbe5.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"><title>scanf造成的死循环问题_light makes right_百度空间</title><link rel="alternate" type="application/rss+xml" title="订阅该空间的博客文章" href="http://hi.baidu.com/xzp21st/rss"><style type="text/css">.error{color:#F00;font-size:12px}.shareUser,.shareLastEditor{line-height:20px;color:#666;text-align:left}.shareLastEditor{margin:5px 0 8px}</style><script>
+	    var g_pageTimerStart=new Date().getTime();
+	</script><script src="./scanf造成的死循环问题_light makes right_百度空间_files/global.js"></script><link rel="stylesheet" type="text/css" href="./scanf造成的死循环问题_light makes right_百度空间_files/spaceAPI4Passport.css"><script src="./scanf造成的死循环问题_light makes right_百度空间_files/spaceAPI4Passport.js"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/saved_resource"></script><script type="text/javascript" charset="UTF-8" src="./scanf造成的死循环问题_light makes right_百度空间_files/v2ApiUsedTangramFunctions.js"></script><script type="text/javascript" charset="UTF-8" src="./scanf造成的死循环问题_light makes right_百度空间_files/pass_api_login.js"></script><script id="pass_api_login_shell" charset="utf-8" src="./scanf造成的死循环问题_light makes right_百度空间_files/pass_api_pop.js"></script><script src="./scanf造成的死循环问题_light makes right_百度空间_files/pass_api_pop_shell.js" charset="utf-8"></script><script src="./scanf造成的死循环问题_light makes right_百度空间_files/libs.js"></script><script src="./scanf造成的死循环问题_light makes right_百度空间_files/tangram-1.3.9.js"></script><script>
+var Session = {
+    isLogin: true,
+    isHost: 0,
+    loginStatus : 2,
+    userName: "xzp21st",   
+    userPortrait:'dad8787a7032317374f000',
+    spaceURL: "\/xzp21st",
+    spBasicURL:"http:\/\/hi.baidu.com\/xzp21st",
+    spBasicURLEnc:"http%3A%2F%2Fhi.baidu.com%2Fxzp21st",
+    visitorName:    "wxiaodong0829",
+    visitorPortrait:'6cd0777869616f646f6e67303832392e18',
+    isActive: '1',   /*{cmt 访问者是否激活空间}*/
+    visitorURL: "\/wxiaodong0829",        // 
+    pageURL: "http://hi.baidu.com\/xzp21st\/blog\/item\/9846c50345287c733812bbe5.html",    
+    refer: "http:\/\/www.baidu.com\/s?wd=scanf%E9%80%A0%E6%88%90%E7%9A%84%E6%AD%BB%E5%BE%AA%E7%8E%AF&rsv_spt=1&issp=1&rsv_bp=0&ie=utf-8&tn=baiduhome_pg&inputT=198105",
+    spToken: '3cbadda8f5fc5ef2bfb089aa2150f7cf', 
+    spFriendDomain: 'http://frd.baidu.com',
+    spSpaceDomain: 'http://hi.baidu.com',
+    spPortraitDomain: 'http://tx.bdimg.com',
+    spSpaceStaticDomain: 'http://hi.bdimg.com', /*{cmt TODO RD似乎还不有提供这个变量，记得补成呀！}*/
+    spImgDomain : 'http://img.baidu.com',
+    spStaticDomain : 'http://hi.bdimg.com',
+
+    isDrag: false  /*{cmt 是否在拖动页：是为了通用，只对模块内容有作用，这里也作为一个通用属性}*/
+    ,isProfile: false   /*{cmt 是否在拖动页：是为了通用，只对模块内容有作用，这里也作为一个通用属性}*/
+    ,isPortraitVerify:!true
+    };
+</script><link type="text/css" rel="stylesheet" href="./scanf造成的死循环问题_light makes right_百度空间_files/ucard.css"><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/ucard.js"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/check_baiduhi.js"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/msg_dataGetmsgCount" defer="defer"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/listen" defer="defer"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/listen(1)" defer="defer"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/listen(2)" defer="defer"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/listen(3)" defer="defer"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/listen(4)" defer="defer"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/listen(5)" defer="defer"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/listen(6)" defer="defer"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/listen(7)" defer="defer"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/get_thread"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/listen(8)" defer="defer"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/listen(9)" defer="defer"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/listen(10)" defer="defer"></script><script type="text/javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/listen(11)" defer="defer"></script><script type="text/javascript" src="http://m.hi.baidu.com/i/msg/listen?r=0.35707366303540766" defer="defer"></script></head><body><iframe frameborder="0" name="_BdPopupLayer_louk28-zgkib6fymic9-tvu575" style="position:absolute; z-index:65001; display:none;" scrolling="no" id="_BdPopupLayer_louk28-zgkib6fymic9-tvu575"></iframe><iframe frameborder="0" name="_BdPopupLayer_h319ya-jf41v8tqgylv-r9ychf" style="position:absolute; z-index:65001; display:none;" scrolling="no" id="_BdPopupLayer_h319ya-jf41v8tqgylv-r9ychf"></iframe><link href="./scanf造成的死循环问题_light makes right_百度空间_files/bdeditor.css" type="text/css" rel="Stylesheet"> <script>
+/*<![CDATA[*/
+if(top.location != self.location){
+	top.location = self.location;
+}
+var myref = encodeURIComponent("http://hi.baidu.com\/xzp21st\/blog\/item\/9846c50345287c733812bbe5.html");
+/*]]>*/
+</script><!--[if (lt IE 8.0)]><link rel=stylesheet type=text/css href="http://hi.bdimg.com/static/cblog/css/ui/mods.css?v=bfece3bd.css"><![endif]--><!--[if (!IE)|(gte IE 8.0)]><!--><link rel="stylesheet" type="text/css" href="./scanf造成的死循环问题_light makes right_百度空间_files/mods_datauri.css"><!--<![endif]--><link rel="stylesheet" type="text/css" href="./scanf造成的死循环问题_light makes right_百度空间_files/d8838019eac4b74543a9adb3.css"><!--[if (lt IE 8.0)]><link rel=stylesheet type=text/css href="http://hi.bdimg.com/static/cblog/css/space.css?v=678660e5.css"><![endif]--><!--[if (!IE)|(gte IE 8.0)]><!--><link rel="stylesheet" type="text/css" href="./scanf造成的死循环问题_light makes right_百度空间_files/space_datauri.css"><!--<![endif]--><div class="userbar"><center> <div id="nav"><a class="logo" href="http://hi.baidu.com/index.htm"><img src="./scanf造成的死循环问题_light makes right_百度空间_files/logo_93_30.gif" border="0" alt="百度空间"></a> <ul class="topmenu"><li><a href="http://hi.baidu.com/wxiaodong0829/ihome">个人中心</a></li><li class="vline"></li><li><a href="http://hi.baidu.com/wxiaodong0829/home">我的主页</a></li><li class="vline"></li><li><a href="http://hi.baidu.com/wxiaodong0829/ihome/frdme">好友</a></li><li class="vline"></li><li id="topMsgLi" class="mod-message-tip"><a class="" href="http://hi.baidu.com/xzp21st/blog/item/msg/index" id="topMsgTab">消息</a>				<a id="msgInbox" href="http://hi.baidu.com/xzp21st/blog/item/9846c50345287c733812bbe5.html#"><img src="./scanf造成的死循环问题_light makes right_百度空间_files/email_s.gif"></a><div style="display: none; z-index: 99999; position: fixed; left: 466px; top: 0px; " id="_53361342177435646_entity">				<div class="msglist" id="_53361342177435646_content">					<div id="topMsgMail" class="icon3"><nobr>站内消息 ：<span class="t_ccc">无新消息提醒</span></nobr></div>					<div id="topMsgAct" class="icon1"><nobr>互动请求 ：<span class="t_ccc">无新消息提醒</span></nobr></div>					<div id="topMsgSys" class="icon4"><nobr>系统通知 ：<span class="t_red">12</span>条新</nobr></div>					<div id="topMsgPlayBtn" class="sound" title="关闭新消息提示音">&nbsp;</div>					<div id="topMsgCloseBtn" class="close" title="关闭">&nbsp;</div>				</div>			<iframe id="ml_iframe_35001342177435648" style="position: absolute; z-index: 99998; opacity: 0; " width="230" height="85"></iframe></div></li></ul> <dl class="manage"> <dd id="tary_space_name" class="nolink">wxiaodong0829</dd><dt>|</dt><dd id="user_disguise_link"><a href="http://hi.baidu.com/wxiaodong0829/modify/spmodules/0">装扮</a></dd><dt id="user_disguise_l">|</dt><dd><a href="http://hi.baidu.com/wxiaodong0829/ihome/basicconfig">设置</a></dd><dt>| </dt><dd><a href="https://passport.baidu.com/?logout&bdstoken=3cbadda8f5fc5ef2bfb089aa2150f7cf&u=">退出</a></dd></dl> </div></center></div><script src="./scanf造成的死循环问题_light makes right_百度空间_files/base.js"></script><link rel="stylesheet" type="text/css" href="./scanf造成的死循环问题_light makes right_百度空间_files/base.css"><script>			
+		(function(){
+			function initMessage(){
+				Space.msgConfig={
+					staticDomain:'http://hi.bdimg.com'
+					,portraitDomain:'http://tx.bdimg.com'
+					,appsDomain:'http://apps.hi.baidu.com'
+					,domain:'http://hi.baidu.com'
+					,userPortrait:"6cd0777869616f646f6e67303832392e18"
+					,userName:"wxiaodong0829"
+					,spToken:"3cbadda8f5fc5ef2bfb089aa2150f7cf"
+					,spaceUrl:"\/wxiaodong0829"
+					,pageType:"blog"
+				};
+				if(Space.msgConfig.spaceUrl.indexOf("/")==0) {
+					Space.msgConfig.spaceUrl = Space.msgConfig.spaceUrl.substr(1);
+				}
+
+				var job = new Space.Libs.Jobs();
+				job.add("message_tip");
+				job.start();
+			}
+			
+			if(window.addEventListener){
+				window.addEventListener('load', initMessage, false );
+			}else if(window.attachEvent){
+				window.attachEvent('onload', initMessage);
+			}
+		})();
+	</script><script language="javascript" src="./scanf造成的死循环问题_light makes right_百度空间_files/dialog.js"></script><center><div id="main" align="left"><!--[if IE]><script>
+var objmain = document.getElementById("main");
+function updatesize(){ var bodyw = window.document.body.offsetWidth; if(bodyw <= 790) objmain.style.width="772px"; else if(bodyw >= 1016) objmain.style.width="996px"; else objmain.style.width="100%"; }
+updatesize(); window.onresize = updatesize;
+</script><![endif]--><div id="header"><div class="lc"><div class="rc"></div></div><div class="tit"><a href="http://hi.baidu.com/xzp21st" class="titlink" title="xzp21st的空间 http://hi.baidu.com/xzp21st">light makes right</a></div><div class="desc">想到和得到之间是做到  ：)声明：本空间文章如未标明出处则均为转载</div><div id="tabline">&nbsp;</div><div id="tab"><a href="http://hi.baidu.com/xzp21st/home">主页</a><a href="http://hi.baidu.com/xzp21st/blog" class="on">博客</a><a href="http://hi.baidu.com/xzp21st/album">相册</a><span>|</span><a href="http://hi.baidu.com/xzp21st/profile">个人档案</a><span>|</span><a href="http://hi.baidu.com/xzp21st/friends">好友</a><span>|</span><a href="http://tieba.baidu.com/i/sys/jump?un=xzp21st&fr=spacebar" onclick="BdUtil.ns_trackerLink(&#39;m_20110330_spacebar&#39;,&#39;&#39;)" target="_blank">i贴吧</a></div></div><div class="stage"><div class="stagepad"><div style="width:100%"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="modth"><tbody><tr><td class="modtl" width="7">&nbsp;</td><td class="modtc" nowrap=""><div class="modhead"><span class="modtit">查看文章</span></div></td><td class="modtc" nowrap="" align="right"></td><td class="modtr" width="7">&nbsp;</td></tr></tbody></table><div id="m_blog" class="modbox" style="overflow-x:hidden;"><div class="tit">scanf造成的死循环问题</div><div class="date">2008年03月21日 星期五 14:40</div><table style="table-layout:fixed;width:100%"><tbody><tr><td><div id="blog_text" class="cnt"><p class="g_w_100 g_t_wrap g_t_center g_t_bold g_t_24 g_c_pdin c07"> </p>
+<div class="g_blog_list"> </div>
+<div class="g_blog_list">以下转自<a href="http://hi.baidu.com/tangzs/blog/item/4cb1304e96f9a6cad0c86ac6.html">http://hi.baidu.com/tangzs/blog/item/4cb1304e96f9a6cad0c86ac6.html</a></div>
+<div class="g_blog_list">关键词：对scanf返回值的检查 / 及对输入缓冲的清空，scanf造成的死循环</div>
+<div class="g_blog_list"><br>
+很多人在使用scanf的时候都不会去检查它的返回值, 包括我在这之前也没有去注意它, 如果你方便去翻翻c语言的教科书, 估计也很难找到有检查scanf的例子或代码段, 至少我还没有见过, 当然, 书上的代码毕竟只是一个练习, 和真正用于产品级别的代码有很大的差别。</div>
+<div class="g_blog_list">一个偶然的机会, 让我注意到检查scanf返回值的重要性, 写下来和大家分享一下:)</div>
+<div class="g_blog_list">下面是一个最简单不过的scanf用法，但却有隐患：</div>
+<div class="g_blog_list">int n;</div>
+<div class="g_blog_list">scanf( "%d", &amp;n);</div>
+<div class="g_blog_list">...</div>
+<div class="g_blog_list">scanf要求取一个整数，但如果输入的是一个字母，或其它不是数字的字符时，情况会怎么样呢？ 结果是scanf不读取数据，不修改n的值直接返回了，这样，n就变成了一个未被初始化的变量，其值不可确定，因为其值不确定，所以就算你对n作是否合法的判断，也还是可能会有问题，</div>
+<div class="g_blog_list">你也许会说，用户应该会输入一个合法的值的，但是，有时scanf并不总是从键盘中读入数据，它可能从其它的设备中去读，例如管道，UNIX中允许这样的玩法。你也许还会说，情况没有那么糟啦，可以先初始化n为零，再去判断n是否合法嘛，例如下面这样：</div>
+<div class="g_blog_list">int n = 0;</div>
+<div class="g_blog_list">scanf( "%d", &amp;n);</div>
+<div class="g_blog_list">if (n != 0) <br>
+{</div>
+<div class="g_blog_list">&nbsp;&nbsp;&nbsp;  //OK，读到用户的值了</div>
+<div class="g_blog_list">}</div>
+<div class="g_blog_list">这样好像还是有麻烦啊，这个初始值你怎么定义才好？ 0吗？ 程序若是需要0的时候怎么办？</div>
+<div class="g_blog_list">让我们再看下面的代码，要求用户输入一个大于0的数为止:</div>
+<div class="g_blog_list">int n;</div>
+<div class="g_blog_list">for(;;) {</div>
+<div class="g_blog_list">&nbsp;&nbsp;&nbsp;  printf( "pls input:");</div>
+<div class="g_blog_list">&nbsp;&nbsp;&nbsp;  scanf( "%d", &amp;n);</div>
+<div class="g_blog_list">&nbsp;&nbsp;&nbsp;  if (n &gt; 0) {</div>
+<div class="g_blog_list">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  break;</div>
+<div class="g_blog_list">&nbsp;&nbsp;&nbsp;  }</div>
+<div class="g_blog_list">}</div>
+<div class="g_blog_list">上面的代码中，当用户输入的不是一个整数时，会死循环，而不是用户想要的：当用户输入非法值时一直让用户输入一个合法值为止。为什么会这样呢，因为当scanf检查到所输入的是不合法的值时，它并不会读取它，因此数据会留在缓冲区中，当下一次调用scanf时，会去读缓冲区中的数据，因此仍然会读到一个非法的值</div>
+<div class="g_blog_list">
+<p>----------------------------------------------------------------------------------------------<br>
+以下是比较好的解决方案：</p>
+</div>
+<div class="g_blog_list">
+<p>方案1：</p>
+</div>
+<div class="g_blog_list">1. 用类似 iReadRslt = scanf( "%8d", &amp;iMaxDataNum ); 的方法取得scanf的返回值</div>
+<div class="g_blog_list">并对其进行是否为0的判断，可以检查输入的合法性（比如要求输入整数，对方却输入字母，此时返回值为0）。</div>
+<div class="g_blog_list">2. 上面引文中提到的输入值不合法，同时不合法的输入值贮留输入缓冲区导致scanf不断读取非法值，程序死循环的问题，可以使用下面方法解决：</div>
+<div class="g_blog_list">while( ( 0 &gt;= iMaxDataNum ) || ( 0 &gt;= iReadRslt ) )<br>
+{<br>
+if( 0 &gt;= iReadRslt )<br>
+{<br>
+&nbsp;&nbsp;  while( '\n' != getchar() )<br>
+&nbsp;&nbsp;  {<br>
+&nbsp;&nbsp;&nbsp;  continue;<br>
+&nbsp;&nbsp;  }<br>
+}<br>
+<br>
+printf( "Invalid number, please input the correct one." );<br>
+printf( "\nHow many Tel No. can be saved!\n" );<br>
+iReadRslt = scanf( "%8d", &amp;iMaxDataNum );<br>
+<br>
+}</div>
+<div class="g_blog_list">其中while条件中的0 &gt;= iMaxDataNum 是在判断输入值的范围问题，不在我们讨论范围。</div>
+<div class="g_blog_list">后面的</div>
+<div class="g_blog_list">if( 0 &gt;= iReadRslt )<br>
+{<br>
+&nbsp;&nbsp;  while( '\n' != getchar() )<br>
+&nbsp;&nbsp;  {<br>
+&nbsp;&nbsp;&nbsp;  continue;<br>
+&nbsp;&nbsp;  }</div>
+<div class="g_blog_list">}<br>
+就是用来解决问题的。当用户输入非法值时，用一个while循环，将本次输入的非法值连同最后确定输入时敲的回车，都从输入缓冲中读出来。这样就避免了上次的非法输入值被不断读入，从而造成的多次循环</div>
+<div class="g_blog_list">
+<p>----------------------------------------------------------------------------------------------------------------------</p>
+<p><font color="#0000ff">方案2：<br>
+直接使用缓冲区清除函数fflush(stdin); //stdin代表标准输入；<br>
+以下是一个例子：</font></p>
+<p><br>
+<font color="#0000ff">/* 程序功能：解决scanf在非法输入后的死循环问题 */<br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;</font></p>
+<p><font color="#0000ff">void main()<br>
+{ <br>
+int func = -1;&nbsp;&nbsp;  //初始化为非法标志-1；</font></p>
+<p><font color="#0000ff">while(1)<br>
+{<br>
+&nbsp;&nbsp;  printf ( "-----------------");<br>
+&nbsp;&nbsp;  printf ( "\n*** 主 菜 单 ***\n" );<br>
+&nbsp;&nbsp;  printf ( " 0. 退出\n");<br>
+&nbsp;&nbsp;  printf ( " 1. show hello\n");<br>
+&nbsp;&nbsp;  printf ( " 2. 清楚屏幕\n");<br>
+&nbsp;&nbsp;  printf ( "-----------------\n"); <br>
+&nbsp;&nbsp;  printf("选择(0--2)："); </font></p>
+<p><font color="#0000ff">&nbsp;&nbsp;  scanf("%d",&amp;func); </font></p>
+<p><font color="#0000ff">&nbsp;&nbsp;  if(getchar()!='\n')func=-1; //避免类似“1qweqweqw”这样的输入，即只能输入0或1或2；</font></p>
+<p><font color="#0000ff">&nbsp;&nbsp;  fflush(stdin); //清空输入缓冲区；</font></p>
+<p><font color="#0000ff">&nbsp;&nbsp;  switch ( func )<br>
+&nbsp;&nbsp;  {<br>
+&nbsp;&nbsp;&nbsp;  case 0: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  exit(0); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  break;<br>
+&nbsp;&nbsp;&nbsp;  case 1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  printf ( "\nhello,world~~~\n\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  break;<br>
+&nbsp;&nbsp;&nbsp;  case 2:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  system("cls");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  break;<br>
+&nbsp;&nbsp;&nbsp;  default:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  printf("输入错误!\n"); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  break;<br>
+&nbsp;&nbsp;  } /* end switch */</font></p>
+<p><font color="#0000ff">&nbsp;&nbsp;  func = -1;<br>
+}<br>
+}</font></p>
+</div></div></td></tr></tbody></table><br><div class="opt" id="blogOpt"><a href="http://hi.baidu.com/xzp21st/blog/category/%D1%A7%CF%B0%D0%C4%B5%C3" title="查看该分类中所有文章">类别：学习心得</a><span class="x-blog-opt-sp">|</span><a href="http://hi.baidu.com/xzp21st/blog/item/9846c50345287c733812bbe5.html#" onclick="addToShare(); return false;" target="_blank"><img src="./scanf造成的死循环问题_light makes right_百度空间_files/share_btn.gif" border="0" align="absbottom"></a><span class="x-blog-opt-sp">|</span><a title="将此文章添加到百度搜藏" href="http://cang.baidu.com/do/add" onclick="return addToFavor();" target="_blank">添加到搜藏</a> <span class="x-blog-opt-sp">|</span><a title="将此文章分享到i贴吧" href="http://hi.baidu.com/xzp21st/blog/item/9846c50345287c733812bbe5.html#" onclick="addToiTieba(); return false;" target="_blank">分享到i贴吧</a><span class="x-blog-opt-sp">|</span>浏览(<span id="result">272</span>)<span class="x-blog-opt-sp">|</span><a href="http://hi.baidu.com/xzp21st/blog/item/9846c50345287c733812bbe5.html#send">评论</a>&nbsp;(<span id="blogCmtCount">1</span>)<script language="javascript">
+										/*<![CDATA[*/
+										var pre = [true,'【原】vc++6.0中轻松实现xp风格按钮', '【原】vc++6.0中轻松实现xp风格...','\/xzp21st/blog/item/54ce057a9efb85e92f73b34f.html'];
+										var post = [true,'生成一个SLEEP.EXE的延时命令的bat文件','生成一个SLEEP.EXE的延时命令的b...', '\/xzp21st/blog/item/9b823a2316f88a4a935807ec.html'];
+										if(pre[0] || post[0]){
+											document.write('<div style="height:5px;line-height:5px;">&nbsp;</div><div id="in_nav">');
+											if(pre[0]){
+												document.write('上一篇：<a href="' + pre[3] + '" title="' + pre[1] + '">' +  pre[2] + '</a>&nbsp;&nbsp;&nbsp;&nbsp;');
+											}
+											if(post[0]){
+												document.write('下一篇：<a href="' + post[3] + '" title="' + post[1] + '">' +  post[2] + '</a>');
+											}
+											document.write('</div>');
+										}
+										/*]]>*/
+									</script><div style="height:5px;line-height:5px;">&nbsp;</div><div id="in_nav">上一篇：<a href="http://hi.baidu.com/xzp21st/blog/item/54ce057a9efb85e92f73b34f.html" title="【原】vc++6.0中轻松实现xp风格按钮">【原】vc++6.0中轻松实现xp风格...</a>&nbsp;&nbsp;&nbsp;&nbsp;下一篇：<a href="http://hi.baidu.com/xzp21st/blog/item/9b823a2316f88a4a935807ec.html" title="生成一个SLEEP.EXE的延时命令的bat文件">生成一个SLEEP.EXE的延时命令的b...</a></div></div><div class="line">&nbsp;</div><style type="text/css">#in_related_doc a{text-decoration:none}</style><div id="in_related_tmp"></div><div id="in_reader"> <div class="tit">最近读者：</div><table width="100%"><tbody><tr><td align="center" valign="bottom" width="10%" class="user"><a href="http://hi.baidu.com/%E8%B7%AF%E9%81%87%E7%94%B5%E7%BA%BF%E6%9D%86" target="_blank" class="ucard" pid="6f5accd2bba8cfc9a70e"><img border="0" src="./scanf造成的死循环问题_light makes right_百度空间_files/6f5accd2bba8cfc9a70e.jpg"></a></td><td align="center" valign="bottom" width="10%" class="user"><a href="http://hi.baidu.com/%E6%AF%94%E4%B8%89%E6%9C%88%E9%87%87" target="_blank" class="ucard" pid="72dfb1c8c8fdd4c2b2c97409"><img border="0" src="./scanf造成的死循环问题_light makes right_百度空间_files/72dfb1c8c8fdd4c2b2c97409.jpg"></a></td><td align="center" valign="bottom" width="10%" class="user"><a href="http://hi.baidu.com/x395223451" target="_blank" class="ucard" pid="6d5b78333935323233343531911c"><img border="0" src="./scanf造成的死循环问题_light makes right_百度空间_files/6d5b78333935323233343531911c.jpg"></a></td><td align="center" valign="bottom" width="10%" class="user"><a href="http://hi.baidu.com/382262106" target="_blank" class="ucard" pid="e6ba333832323632313036c303"><img border="0" src="./scanf造成的死循环问题_light makes right_百度空间_files/e6ba333832323632313036c303.jpg"></a></td><td align="center" valign="bottom" width="10%" class="user"><a href="http://hi.baidu.com/lonelywalf" target="_blank" class="ucard" pid="c0026c6f6e656c7977616c669e02"><img border="0" src="./scanf造成的死循环问题_light makes right_百度空间_files/c0026c6f6e656c7977616c669e02.jpg"></a></td><td align="center" valign="bottom" width="10%" class="user"><a href="http://hi.baidu.com/%E5%8C%97%E6%9E%81%E6%B2%A1%E6%9C%89%E9%9B%AA" target="_blank" class="ucard" pid="2bbab1b1bcabc3bbd3d0d1a95d16"><img border="0" src="./scanf造成的死循环问题_light makes right_百度空间_files/2bbab1b1bcabc3bbd3d0d1a95d16.jpg"></a></td><td align="center" valign="bottom" width="10%" class="user"><a href="http://hi.baidu.com/sqlbbb" target="_blank" class="ucard" pid="57f173716c626262970d"><img border="0" src="./scanf造成的死循环问题_light makes right_百度空间_files/57f173716c626262970d.jpg"></a></td><td align="center" valign="bottom" width="10%" class="user"><a href="http://hi.baidu.com/eduardo_c" target="_blank" class="ucard" pid="8bbf6564756172646f5f637507"><img border="0" src="./scanf造成的死循环问题_light makes right_百度空间_files/8bbf6564756172646f5f637507.jpg"></a></td><td width="100%"></td></tr><tr><td align="center" valign="top" class="user"><a href="http://hi.baidu.com/%E8%B7%AF%E9%81%87%E7%94%B5%E7%BA%BF%E6%9D%86" target="_blank" class="ucard" pid="6f5accd2bba8cfc9a70e">桃花仙</a></td><td align="center" valign="top" class="user"><a href="http://hi.baidu.com/%E6%AF%94%E4%B8%89%E6%9C%88%E9%87%87" target="_blank" class="ucard" pid="72dfb1c8c8fdd4c2b2c97409">比三月采</a></td><td align="center" valign="top" class="user"><a href="http://hi.baidu.com/x395223451" target="_blank" class="ucard" pid="6d5b78333935323233343531911c">x395223451</a></td><td align="center" valign="top" class="user"><a href="http://hi.baidu.com/382262106" target="_blank" class="ucard" pid="e6ba333832323632313036c303">382262106</a></td><td align="center" valign="top" class="user"><a href="http://hi.baidu.com/lonelywalf" target="_blank" class="ucard" pid="c0026c6f6e656c7977616c669e02">lonelywalf</a></td><td align="center" valign="top" class="user"><a href="http://hi.baidu.com/%E5%8C%97%E6%9E%81%E6%B2%A1%E6%9C%89%E9%9B%AA" target="_blank" class="ucard" pid="2bbab1b1bcabc3bbd3d0d1a95d16">北极没有雪</a></td><td align="center" valign="top" class="user"><a href="http://hi.baidu.com/sqlbbb" target="_blank" class="ucard" pid="57f173716c626262970d">sqlbbb</a></td><td align="center" valign="top" class="user"><a href="http://hi.baidu.com/eduardo_c" target="_blank" class="ucard" pid="8bbf6564756172646f5f637507">eduardo_c</a></td><td></td></tr></tbody></table></div><div class="line">&nbsp;</div><div id="in_comment"> <a name="comment"></a> <div class="tit">网友评论：</div> <span id="userCommentList"><a name="94eef01fb7d93efbe0fe0b9a" rename="yishuiliunian" repid="5ea87969736875696c69756e69616eca07"></a><table width="100%" border="0" cellspacing="0" cellpadding="0" class="item" style="table-layout:fixed;word-wrap:break-word;overflow:hidden;"><tbody><tr><td valign="top" class="index" width="5%">1</td><td align="center" valign="top" width="10%"><div class="user" style="overflow:hidden;"><a href="http://hi.baidu.com/sys/checkuser/yishuiliunian/1" target="_blank" class="ucard" pid="5ea87969736875696c69756e69616eca07"><img border="0" src="./scanf造成的死循环问题_light makes right_百度空间_files/5ea87969736875696c69756e69616eca07.jpg"><br>yishuiliunian</a></div></td><td class="cnt" style="padding-left:20px;"><span class="date">2010-07-10 14:46 | <a href="http://hi.baidu.com/xzp21st/blog/item/9846c50345287c733812bbe5.html#" onclick="goCmtReply(&#39;5ea87969736875696c69756e69616eca07&#39;);return false;">回复</a></span><div class="desc" style="overflow:hidden;word-break:normal;" name="cmtcontent">(Haibor)<br>我又学到了点东西，谢谢！</div></td></tr></tbody></table><div class="line">&nbsp;</div></span> <div id="page"> &nbsp;</div></div><form action="http://hi.baidu.com/xzp21st/commit" id="blogCmtSubmitForm" name="blogCmtSubmitForm" method="post"> <input type="hidden" name="bdstoken" value="3cbadda8f5fc5ef2bfb089aa2150f7cf"> <input type="hidden" name="ct" value="8"> <input type="hidden" name="cm" value="2"> <input type="hidden" name="spBlogID" value="9846c50345287c733812bbe5"> <input type="hidden" name="spBlogCmtID" value=""> <input type="hidden" name="spRefURL" value=""></form><div id="in_send"><a name="send"></a><form name="form1" id="popFormSubmit" action="http://hi.baidu.com/xzp21st/commit" method="post" onsubmit="return checkcmtform()"><input type="hidden" name="bdstoken" value="3cbadda8f5fc5ef2bfb089aa2150f7cf"><input type="hidden" name="ct" value="8"><input type="hidden" name="cm" value="1"><input type="hidden" name="spBlogID" value="9846c50345287c733812bbe5"><input type="hidden" name="spRefURL" id="spRefURL" value="http://hi.baidu.com/xzp21st/blog/item/9846c50345287c733812bbe5.html"><script>
+										    document.getElementById("spRefURL").value = window.location.href;
+										</script><div class="tit">发表评论：</div><table width="620" border="0" cellspacing="5" cellpadding="0"><tbody><tr><td class="f14">姓　名：</td><td>wxiaodong0829<input name="spBlogCmtor" id="spBlogCmtor" style="display:none;" maxlength="50" value="wxiaodong0829"><div style="display:none" id="nmerror">*姓名最长为50字节</div><input type="hidden" name="spBlogCmtURL" id="spBlogCmtURL" style="width:360px" maxlength="128" onchange="checkeandu(&quot;spBlogCmtURL&quot;)" value="http://hi.baidu.com/wxiaodong0829"></td></tr><tr id="2_err" style="display:none"><td>&nbsp;</td><td><div class="error" id="2_err_con"></div></td></tr><tr><td valign="top" class="f14" id="reTitle">内　容：</td><td>         <div id="bdeditor_container_75i4l1-hio3prfh4ze0-pa5heu">            <table width="100%" height="155px" cellpadding="0" cellspacing="0" border="0">                <tbody><tr>                    <td id="editor_toolbar_75i4l1-hio3prfh4ze0-pa5heu" class="ToolbarContainer"><div class="ToolbarStrip"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td nowrap="nowrap"><div class="ToolbarItem" title="插入表情" id="ToolbarItem_gc2qhe-s3oq142fop0x-izmaxi" onclick="_Instance[&#39;gc2qhe-s3oq142fop0x-izmaxi&#39;].clickHandler(this)" onmouseup="_Instance[&#39;gc2qhe-s3oq142fop0x-izmaxi&#39;].mouseUpHandler(this)" onmousedown="_Instance[&#39;gc2qhe-s3oq142fop0x-izmaxi&#39;].mouseDownHandler(this)" onmouseout="_Instance[&#39;gc2qhe-s3oq142fop0x-izmaxi&#39;].mouseOutHandler(this)" onmouseover="_Instance[&#39;gc2qhe-s3oq142fop0x-izmaxi&#39;].mouseOverHandler(this)"><div class="img Smiley" alt="插入表情"><font style="font-size:12px">插入表情</font></div></div></td></tr></tbody></table></div></td>                </tr>                <tr>                    <td id="editor_area_75i4l1-hio3prfh4ze0-pa5heu" class="EditorContainer"><iframe width="100%" height="155px" frameborder="0" src="javascript:void(0)"></iframe></td>                </tr>            </tbody></table>        </div>    <textarea name="spBlogCmtText" id="spBlogCmtText" style="width: 520px; height: 155px; display: none; " tabindex="3" onfocus="hidErr(3);"></textarea></td></tr><tr id="3_err" style="display:none"><td>&nbsp;</td><td><div class="error" id="3_err_con"></div></td></tr><tr id="share_blog"> <td> </td><td valign="top"><input type="checkbox" id="shareBlog" autocomplete="off" style="vertical-align:text-bottom; margin-bottom:2px; margin-bottom:-2px\9;"><label for="shareBlog">同时将此文章分享给好友</label><input type="hidden" id="shareBlogEchoback" name="echoback"></td></tr><tr id="vercode"><td valign="top" class="f14">验证码：</td><td valign="top"><input type="hidden" name="spVcode" value=""><input onfocus="f_focus()" id="spVerifyKey" name="spVerifyKey" size="6" maxlength="4" autocomplete="off" tabindex="4"> 请点击后输入四位验证码，字母不区分大小写<br><div id="yanzheng" style="display:none"><img id="verifypic" width="120" height="40"><wbr><a onfocus="this.blur();" href="http://hi.baidu.com/xzp21st/blog/item/9846c50345287c733812bbe5.html#" onclick="return newverifypic();" title="看不清左边的字符">看不清?</a></div></td></tr><tr><td valign="top" class="f14">&nbsp;</td><td valign="top" class="f14"><input id="btn_ok" name="btn_ok" type="submit" autocomplete="off" value="发表评论" tabindex="5">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://hi.baidu.com/xzp21st/blog/item/9846c50345287c733812bbe5.html#" id="cancleReLink" onclick="canclereply(); return false;" style="display:none; font-size:12px;color:#666;">取消回复</a></td></tr></tbody></table></form></div><br></div><table width="100%" border="0" cellspacing="0" cellpadding="0" height="8"><tbody><tr><td class="modbl" width="7">&nbsp;</td><td class="modbc">&nbsp;</td><td class="modbr" width="7">&nbsp;</td></tr></tbody></table></div></div></div></div><div class="clearfix"></div><div style="text-align:center;margin:30px auto 15px;font-family:Arial,simsun;font-size:12px;"><div style="margin:0 auto 6px;"><a href="http://help.baidu.com/question?prod_en=space" target="_blank" style="color:#00C;">帮助中心</a><span>&nbsp;|&nbsp;</span><a href="http://tieba.baidu.com/f?kw=%B0%D9%B6%C8%BF%D5%BC%E4&fr=wwwt" target="_blank" style="color:#00C;">空间客服</a><span>&nbsp;|&nbsp;</span><a href="http://tousu.baidu.com/hi/" target="_blank" style="color:#00C;">投诉中心</a><span>&nbsp;|&nbsp;</span><a href="http://www.baidu.com/search/hi_contract.html" target="_blank" style="color:#00C;">空间协议</a></div><div style="color:#7A77C8;">&#169;2012&nbsp;Baidu</div></div></center><ul id="blogCmtContentList" style="display:none;"></ul><script>	var g_blogTitle = 'scanf造成的死循环问题';
+		var g_blogId = '9846c50345287c733812bbe5';
+		var g_isAllowCmt =  true ;
+		var g_isByShared =  false ;
+		var g_isAddRelate =  true ;
+		var g_latestReader = [
+									["http:\/\/hi.baidu.com\/路遇电线杆","6f5accd2bba8cfc9a70e","桃花仙"],
+									["http:\/\/hi.baidu.com\/比三月采","72dfb1c8c8fdd4c2b2c97409","比三月采"],
+									["http:\/\/hi.baidu.com\/x395223451","6d5b78333935323233343531911c","x395223451"],
+									["http:\/\/hi.baidu.com\/382262106","e6ba333832323632313036c303","382262106"],
+									["http:\/\/hi.baidu.com\/lonelywalf","c0026c6f6e656c7977616c669e02","lonelywalf"],
+									["http:\/\/hi.baidu.com\/北极没有雪","2bbab1b1bcabc3bbd3d0d1a95d16","北极没有雪"],
+									["http:\/\/hi.baidu.com\/sqlbbb","57f173716c626262970d","sqlbbb"],
+									["http:\/\/hi.baidu.com\/eduardo_c","8bbf6564756172646f5f637507","eduardo_c"],
+								{}
+			];
+	</script><iframe id="submitiframe" name="submitiframe" src="./scanf造成的死循环问题_light makes right_百度空间_files/blank.html" style="display:none;"></iframe><script src="./scanf造成的死循环问题_light makes right_百度空间_files/comment.js"></script><script src="./scanf造成的死循环问题_light makes right_百度空间_files/detailpage.js"></script><script>
+/*<![CDATA[*/
+/*{cmt
+    这个相当一个代理器  
+  在这里想实现一种这种加载效果：加载时注册（用一个 初始化数据.数组 记录要绑定的ID），文档ready后，按需加载js+css资源，js加载完，就初始化据执行
+
+  有个问题，有些结构是 动态 执行这个绑定的，可能会发生资源还没有加载的情况。可以考虑给初始化数据，加一个标志位，说明加载完未，如果未，则把数据push到 初始化数据中(因为是用 dom.onxxx 的方式，所以不怕多次对同一个ID执行的问题)
+
+
+  }*/
+var SP = SP || {};
+if(!SP.mycard){
+    SP.mycard = new (function(){
+        var me = this;
+        var _cancleAction = Session.isDrag;  /*{cmt 标记在特殊情况下，所有的注册都被abort 如拖动页面}*/
+        var _list = [];
+        var _sourceLoaded = false;    /*{cmt 这里用了一种资源加载结束后，回调的机制，这个标志资源是否加载结束}*/
+        me.bind = function (_id){
+            if(_cancleAction){  //abort
+                return;
+            }
+            if(!_sourceLoaded){
+                _list.push(_id);
+            } else {
+                baidu.space.mycard.bind(_id);
+            }
+        }
+        me.init = function (_config){
+            _cancleAction = !!_config.cancle;
+        }
+        me.onSourceLoaded = function (){
+            _sourceLoaded = true;
+            baidu.space.mycard.init({portrait: Session.visitorPortrait});
+            for(var i=0,len=_list.length; i<len; i++){
+                baidu.space.mycard.bind(_list[i]);
+            }
+        }
+    })();
+    baidu.dom.ready(function(){
+        BdAjax.loadCSS('http://hi.bdimg.com/static/cblog/css/ui/ucard/ucard.css?v=5a9303cc.css');
+        BdAjax.loadJS('http://hi.bdimg.com/static/cblog/js/ui/ucard/ucard.js?v=c3a7a352.js');
+    });
+}
+SP.mycard.bind('m_blog');  /*{cmt 只有文档加载完才真正绑定，这里只是append记录 }*/
+/*]]>*/
+</script><div style="height: 2px;left: 3px;overflow: hidden;position: absolute;top: -10000px;left:-10000px;width: 1px;background:#000" id="ps_swfContainer"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" id="ps_swf" width="1" height="1" align="middle"><param name="wmode" value="opaque"><param name="allowscriptaccess" value="always"><param name="movie" value="http://hi.bdimg.com/static/base/swf/soundTip.swf?v=ce8bd6a5.swf"><embed width="1" height="1" wmode="opaque" allowscriptaccess="always" allownetworking="all" align="middle" src="http://hi.bdimg.com/static/base/swf/soundTip.swf?v=ce8bd6a5.swf" name="ps_swf" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></object></div><div style="height: 1px;left: 1px;overflow: hidden;position: absolute;top: -10000px;left:-10000px;width: 1px;background:#000" id="sr_swfContainer"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" id="sr_swf" width="1" height="1" align="middle"><param name="wmode" value="opaque"><param name="allowscriptaccess" value="always"><param name="movie" value="http://hi.bdimg.com/static/base/swf/LongPolling.swf?v=c114dc3e.swf?swfran=93851342177435658"><embed width="1" height="1" wmode="opaque" allowscriptaccess="always" allownetworking="all" align="middle" src="http://hi.bdimg.com/static/base/swf/LongPolling.swf?v=c114dc3e.swf?swfran=93851342177435658" name="sr_swf" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></object></div></body></html>

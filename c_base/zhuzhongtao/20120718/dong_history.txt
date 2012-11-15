@@ -1,0 +1,1000 @@
+  727  cd
+  728  ll
+  729  cscope &
+  730  cscope
+  731  cd test_temp/
+  732  ls
+  733  cscope --help
+  734  ASD
+  735  VI
+  736  sl
+  737  sudo apt-get install sl
+  738  ls
+  739  al
+  740  sl
+  741  sl --help
+  742  sl
+  743  sl
+  744  sl --help
+  745  sl -h
+  746  sl --help
+  747  ifconfig
+  748  cowsay
+  749  sudo apt-get install cowsay
+  750  cowsay
+  751  cowthink
+  752  sudo apt-get install moo
+  753  moo
+  754  mon
+  755  sudo apt-get install mon
+  756  sudo apt-get moo
+  757  sudo  apt-build moo
+  758  apt-build moo
+  759  sudo apt-get install apt-build
+  760  sudo apt-get install fortune-zh
+  761  fortune
+  762  fortunr -zh
+  763  fortunr-zh
+  764  fortune-zh
+  765  sudo apt-build moo
+  766  sudo apt-get apt-build 
+  767  sudo apt-get install apt-buildd
+  768  sudo apt-get install apt-build
+  769  tar xjvf cscope-15.8.tar.bz2 
+  770  cd cscope-15.8/
+  771  ll
+  772  ./configure 
+  773  make
+  774  make install
+  775  make
+  776  Flex
+  777  flex
+  778  sudo apt-get install flex
+  779  make
+  780  sudo make
+  781  find fscanner.c
+  782  find . -name fscanner.c
+  783  make distclean
+  784  ./configure --with-flex
+  785  make
+  786  make distclean
+  787  ./configure CFLAGS='-Ae -DYYCHAR_ARRAY' CURSES_LIBS=-lHcurses --with-flex
+  788  ./configure CURSES_LIBS=-lHcurses --with-flex
+  789  make
+  790  cscope --help
+  791  cscope -V
+  792  cd
+  793  vi .vimrc
+  794  vi 
+  795  cd
+  796  vi 
+  797  vi .vim/doc/winmanager.txt 
+  798  cd test_temp/
+  799  ll
+  800  vi main6.c
+  801  vi main9.c
+  802  vi main7.c
+  803  vi main6.c
+  804  vi /home/dong/.vimrc
+  805  vi main6.c
+  806  vi /home/dong/.vimrc
+  807  vi main6.c
+  808  vi /home/dong/.vimrc
+  809  cscode -v
+  810  cscop -v
+  811  rm *
+  812  ll
+  813  cp ../test_temp  /home/dong/wd_文档/c初期/2012-07-13
+  814  cp -a ../test_temp  /home/dong/wd_文档/c初期/2012-07-13
+  815  cd
+  816  cd test
+  817  cd test_temp/
+  818  ll
+  819  rm mai*
+  820  ll
+  821  vi print.c
+  822  ll
+  823  gcc -g -Wall print.c -o print
+  824  vi print.c +10
+  825  gcc -g -Wall print.c -o print
+  826  vi print.c +22
+  827  gcc -g -Wall print.c -o print
+  828  vi print.c +22
+  829  gcc -g -Wall print.c -o print
+  830  ./print 
+  831  vi printf_advan.c
+  832  gcc -g -Wall printf_advan.c -o printf_advan
+  833  vi printf_advan.c +14
+  834  gcc -g -Wall printf_advan.c -o printf_advan
+  835  ./printf_advan 
+  836  vi scanf.c
+  837  vi scanf1.c
+  838  gcc -g -Wall scanf1.c -o scanf1
+  839  vi scanf1 +18
+  840  vi scanf1.C +18
+  841  vi scanf1.c +18
+  842  gcc -g -Wall scanf1.c -o scanf1
+  843  ./scanf1
+  844  vi scanf.c +18
+  845  gcc -g -Wall scanf.c -o scanf
+  846  vi scanf.c +10
+  847  gcc -g -Wall scanf.c -o scanf
+  848  ./scanf
+  849  vi gets.c
+  850  sl
+  851  sl --help
+  852  vi gets.c
+  853  sl
+  854  dadf
+  855  vi gets.c
+  856  gcc -g -Wall gets.c -o gets
+  857  vi gets.c +17
+  858  gcc -g -Wall gets.c -o gets
+  859  ./gets
+  860  vi y_m_d.c
+  861  gcc -g -Wall y_m_d.c -o y_m_d
+  862  ./y_m_d 
+  863  vi if.c
+  864  gcc -g -Wall if.c -o if
+  865  ./if
+  866  wc if.c
+  867  vi if_else.c
+  868  gcc -g -Wall if_else.c -o if_else.c 
+  869  gcc -g -Wall if_else.c -o if_else
+  870  vi if_else.c
+  871  gcc -g -Wall if_else.c -o if_else
+  872  ./if_else
+  873  vi max_3.c
+  874  gcc -g -Wall max_3.c -o max_3
+  875  ./max_3 
+  876  vi ~/.vimrc
+  877  vi max_3.c
+  878  vi scanf2.c
+  879  gcc -g -Wall scanf2.c -o scanf2
+  880  vi scanf2.c +10
+  881  gcc -g -Wall scanf2.c -o scanf2
+  882  ./scanf2
+  883  ll
+  884  vi switch-case.c
+  885  gcc -g -Wall  switch-case.c -o switch-case
+  886  vi switch-case.c +18
+  887  gcc -g -Wall  switch-case.c -o switch-case
+  888  ./switch-case 
+  889  vi switch_grade.c
+  890  gcc -g -Wall switch_grade.c -o switch_grade
+  891  vi switch_grade.c +18
+  892  gcc -g -Wall switch_grade.c -o switch_grade
+  893  ./switch_grade 
+  894  date
+  895  ./switch_grade 
+  896  gcc -g -Wall switch_grade.c -o switch_grade
+  897  ./switch_grade 
+  898  vi switch_grade.c +18
+  899  gcc -g -Wall switch_grade.c -o switch_grade
+  900  ./switch_grade 
+  901  vi switch_grade.c +18
+  902  gcc -g -Wall switch_grade.c -o switch_grade
+  903  ./switch_grade 
+  904  man scanf 3
+  905  man scanf 3 >man_scanf.txt
+  906  man scanf 3
+  907  exit
+  908  cd
+  909  ls
+  910  cd test_temp/
+  911  ll
+  912  cd ..
+  913  cd -
+  914  ll
+  915  vi add.c
+  916  gcc -g -Wall add.c -o add
+  917  ./add
+  918  vi A_to_a.c
+  919  gcc -g -Wall A_to_a.c -o A_to_a
+  920  vi A_to_a.c
+  921  gcc -g -Wall A_to_a.c -o A_to_a
+  922  vi A_to_a.c +27
+  923  gcc -g -Wall A_to_a.c -o A_to_a
+  924  ./A_to_a 
+  925  vi A_to_a.c +27
+  926  gcc -g -Wall A_to_a.c -o A_to_a
+  927  ./A_to_a 
+  928  man convert 3
+  929  vi ~/.vimrc
+  930  vi A_to_a.c +27
+  931  vi ~/.vimrc
+  932  vi A_to_a.c +27
+  933  vi ~/.vimrc
+  934  vi A_to_a.c +27
+  935  vi ~/.vimrc
+  936  vi A_to_a.c +27
+  937  vi ~/.vimrc
+  938  vi A_to_a.c +27
+  939  vi max.c
+  940  gcc -g -Wall max.c -o max
+  941  ./max
+  942  vi suare.c
+  943  gcc -g -Wall suare.c -o suare
+  944  vi suare.c +13
+  945  gcc -g -Wall suare.c -o suare
+  946  vi suare.c +17
+  947  gcc -g -Wall suare.c -o suare
+  948  ./suare
+  949  vi lingxing.c
+  950  ftp 192.168.204.129
+  951  vncriewer 192.168.204.129
+  952  ifconfig
+  953  unzip *
+  954  vi ~/.vimrc
+  955  ll
+  956  cd doc/
+  957  ll
+  958  vi doc.tr
+  959  ll
+  960  cp doc.tr doc1.tr
+  961  vi doc.tr
+  962  vi doc1.tr
+  963  cd ../heirloom-doctools/doc/
+  964  ll
+  965  cd quickstart/
+  966  ll
+  967  vi doc.tr
+  968  cd /home/dong/wd_文档/c初期/2012-07-14/doc/
+  969  cp ../heirloom-doctools/doc/quickstart/doc.tr doc_exmlp.tr
+  970  ll
+  971  vi Makefile 
+  972  make
+  973  vi Makefile 
+  974  ll
+  975  vi Makefile 
+  976  make
+  977  vi Makefile 
+  978  ll
+  979  make
+  980  make view
+  981  ll
+  982  vi doc1.tr
+  983  cp ../heirloom-doctools/doc/quickstart/doc.tr doc2.tr
+  984  ll
+  985  vi Makefile 
+  986  make
+  987  vi Makefile 
+  988  make
+  989  cd /usr/ucb/troff
+  990  mkdir /usr/ucb/troff
+  991  vi /usr/ucb/troff
+  992  ll
+  993  vi doc2.tr
+  994  LL
+  995  ll
+  996  cd ../heirloom-doctools/doc/
+  997  ll
+  998  cd quickstart/
+  999  ll
+ 1000  vi README 
+ 1001  ll
+ 1002  rm dong
+ 1003  ll
+ 1004  vi makefile 
+ 1005  ll
+ 1006  heirloom
+ 1007  heirloom-doctools
+ 1008  heirloom-doctool
+ 1009  ll
+ 1010  cd -
+ 1011  vi doc.tr
+ 1012  LL
+ 1013  ll
+ 1014  cd ../../
+ 1015  ll
+ 1016  cd doc/
+ 1017  ll
+ 1018  vi doc.tr
+ 1019  ll
+ 1020  vi doc.tr
+ 1021  ll
+ 1022  llll
+ 1023  ll
+ 1024  l
+ 1025  ll
+ 1026  cd ../heirloom-doctools/doc/quickstart/
+ 1027  ll
+ 1028  cd ..
+ 1029  ll
+ 1030  cd just/
+ 1031  ll
+ 1032  make
+ 1033  ll
+ 1034  cd ..
+ 1035  ll
+ 1036  cd troff/
+ 1037  ll
+ 1038  make
+ 1039  ll
+ 1040  cd ..
+ 1041  ll
+ 1042  cd fonts/
+ 1043  ll
+ 1044  make
+ 1045  cd ..
+ 1046  ll
+ 1047  cd quickstart/
+ 1048  ll
+ 1049  make
+ 1050  ll
+ 1051  cd ..
+ 1052  ll
+ 1053  cd ..
+ 1054  ll
+ 1055  vi README 
+ 1056  ll
+ 1057  cd ..
+ 1058  ll
+ 1059  cd doc/
+ 1060  ll
+ 1061  vi bit.c
+ 1062  cd ../heirloom-doctools/doc/
+ 1063  ll
+ 1064  cd quickstart/
+ 1065  ll
+ 1066  make
+ 1067  tar xzvf heirloom-heirloom-doctools.tar.gz 
+ 1068  ll
+ 1069  cd heirloom-doctools/
+ 1070  ll
+ 1071  cd -
+ 1072  ll
+ 1073  cd heirloom-doctools/
+ 1074  ll
+ 1075  make
+ 1076  sudo ln -s /bin/sh sh
+ 1077  ll -sh
+ 1078  la -l sh
+ 1079  ls -l sh
+ 1080  cd -
+ 1081  ll
+ 1082  make
+ 1083  sudo aptitude install flex
+ 1084  sudo aptitude install bison
+ 1085  make
+ 1086  g++
+ 1087  sudo aptitude install g++
+ 1088  make
+ 1089  sudo make install
+ 1090  cd /usr/ucb
+ 1091  ll
+ 1092  sudo ln -s /usr/bin/install install
+ 1093  ll
+ 1094  cd -
+ 1095  sudo make install
+ 1096  cd ..
+ 1097  mkdir doc
+ 1098  ll
+ 1099  cd doc
+ 1100  pwd
+ 1101  cp ../heirloom-doctools/doc/troff/makefile Makefile
+ 1102  ll
+ 1103  vi Makefile 
+ 1104  vi doc.tr
+ 1105  vi ../zhongtao_Teacher/.vimrc 
+ 1106  make
+ 1107  make view
+ 1108  ll
+ 1109  cd ..
+ 1110  ll
+ 1111  vi ~/.vimrc
+ 1112  LL
+ 1113  ll
+ 1114  vi dong.txt
+ 1115  vi t.txt 
+ 1116  vi ~/.vimrc
+ 1117  vi t.txt 
+ 1118  vncviewer 192.168.204.129
+ 1119  scp akaedu@192.168.204.129:/home/akaedu/zhongtao/heirloom-heirloom-doctools.tar.gz .
+ 1120  ll
+ 1121  vi bit.c 
+ 1122  ll
+ 1123  vi Makefile 
+ 1124  make
+ 1125  make view
+ 1126  make
+ 1127  ll
+ 1128  vi bit.c 
+ 1129  cc bit.c
+ 1130  vi bit.c +36
+ 1131  cc bit.c
+ 1132  vi bit.c +35
+ 1133  cc bit.c
+ 1134  vi bit.c +36
+ 1135  cc bit.c
+ 1136  vi bit.c +36
+ 1137  man rand 3
+ 1138  man 3 rand 
+ 1139  ll
+ 1140  vi bit.c +40
+ 1141  cc bit.c
+ 1142  vi bit.c +40
+ 1143  cc bit.c
+ 1144  vi /home/dong/zhongtao/0714/bit.c 
+ 1145  vi bit.c +40
+ 1146  vi /home/dong/zhongtao/0714/bit.c 
+ 1147  vi bit.c +40
+ 1148  cc bit.c
+ 1149  ./.a.out
+ 1150  ll
+ 1151  ./a.out
+ 1152  vi bit.c +40
+ 1153  cc bit.c
+ 1154  ./a.out
+ 1155  cc bit.c
+ 1156  ./a.out
+ 1157  vi bit.c 
+ 1158  cc bit.c
+ 1159  ll
+ 1160  ./a.out 
+ 1161  vi bit.c 
+ 1162  cc bit.c 
+ 1163  ./a.out 
+ 1164  vi bit.c 
+ 1165  cc bit.c
+ 1166  ./a.out 
+ 1167  vi bit.c 
+ 1168  ./a.out 
+ 1169  cd wc_
+ 1170  ll
+ 1171  cd ./wd_文档/
+ 1172  ll
+ 1173  cd c初期/
+ 1174  ll
+ 1175  cd 20120714
+ 1176  ll
+ 1177  cd heirloom-doctools/
+ 1178  ll
+ 1179  cd doc/
+ 1180  ll
+ 1181  cd quickstart/
+ 1182  ll
+ 1183  make
+ 1184  ifconfig
+ 1185  ls
+ 1186  cd AR81Family-Linux-v1.0.1.9/
+ 1187  ls
+ 1188  sudo make
+ 1189  sudo make install
+ 1190  sudo reboot
+ 1191  ifconfig
+ 1192  cc bit.c 
+ 1193  make
+ 1194  make view
+ 1195  cc bit.c 
+ 1196  make
+ 1197  ll
+ 1198  cd wd_文档/
+ 1199  ll
+ 1200  cd c初期/
+ 1201  ll
+ 1202  cd 20120714
+ 1203  ll
+ 1204  cd zhongtao_Teacher/
+ 1205  ll
+ 1206  cd zhongtao/
+ 1207  ll
+ 1208  cd 0714/
+ 1209  ll
+ 1210  cd ..
+ 1211  ll
+ 1212  cd ..
+ 1213  ll
+ 1214  cc bit.c 
+ 1215  ifconfig
+ 1216  vi .vimrc
+ 1217  ll
+ 1218  cd zhongtao/
+ 1219  ll
+ 1220  cd ..
+ 1221  cd 
+ 1222  cd
+ 1223  cd wd_文档/
+ 1224  ll
+ 1225  cd c初期/
+ 1226  mkdir 20120715
+ 1227  cd 20120714
+ 1228  ll
+ 1229  cd zhongtao_Teacher/
+ 1230  ll
+ 1231  cd zhongtao/
+ 1232  ll
+ 1233  cd 0714/
+ 1234  ll
+ 1235  vi bit.c
+ 1236  ll
+ 1237  vi bit.c
+ 1238  cc bit.c
+ 1239  vi bit.c 
+ 1240  ctags -R
+ 1241  vi bit.c 
+ 1242  cc bit.c 
+ 1243  ll
+ 1244  ./a.out 
+ 1245  cd ../../..
+ 1246  cd 20120715
+ 1247  ll
+ 1248  vi 1
+ 1249  cd wd_文档/c初期/20120715
+ 1250  vi copy.c
+ 1251  LL
+ 1252  ll
+ 1253  vi fc.c 
+ 1254  cc fc.c
+ 1255  objdump -d a.out |less
+ 1256  ls
+ 1257  vi 1
+ 1258  vi fc.c
+ 1259  vi ~/.vimrc
+ 1260  vi fc.c
+ 1261  history 
+ 1262  vi longest_line.c
+ 1263  \cc longest_line.c 
+ 1264  vi longest_line.c
+ 1265  cc longest_line.c 
+ 1266  vi longest_line.c
+ 1267  ll
+ 1268  vi reverse.c
+ 1269  ll
+ 1270  cc reverse.c
+ 1271  vi reverse.c
+ 1272  cc reverse.c
+ 1273  vi reverse.c
+ 1274  cc reverse.c 
+ 1275  vi reverse.c +29
+ 1276  cc reverse.c 
+ 1277  vi reverse.c +29
+ 1278  cc reverse.c 
+ 1279  vi reverse.c +29
+ 1280  cc reverse.c 
+ 1281  vi reverse.c +46
+ 1282  cc reverse.c 
+ 1283  vi reverse.c +47
+ 1284  cc reverse.c 
+ 1285  vi reverse.c +48
+ 1286  vi reverse1.c
+ 1287  vi p.c
+ 1288  cc p.c
+ 1289  vi p.c +11
+ 1290  cc p.c
+ 1291  ./a.out 
+ 1292  ls
+ 1293  ll
+ 1294  vi reverse1.c
+ 1295  cc reverse1.c 
+ 1296  vi reverse1.c +256
+ 1297  cc reverse1.c 
+ 1298  ./a.out
+ 1299  vi reverse1.c 
+ 1300  ./a.out
+ 1301  cc reverse1.c 
+ 1302  ./a.out
+ 1303  vi reverse1.c 
+ 1304  cc reverse1.c 
+ 1305  ./a.out
+ 1306  vi reverse1.c 
+ 1307  cc reverse1.c 
+ 1308  vi reverse1.c +20
+ 1309  cc reverse1.c 
+ 1310  vi reverse1.c +21
+ 1311  cc reverse1.c 
+ 1312  ./a.out 
+ 1313  vi reverse1.c +21
+ 1314  cc reverse1.c 
+ 1315  vi reverse1.c +51
+ 1316  cc reverse1.c 
+ 1317  ./a.out 
+ 1318  vi reverse1.c +51
+ 1319  cc reverse1.c 
+ 1320  ./a.out 
+ 1321  ./a.out < reverse1.c 
+ 1322  mv reverse1.c reverse_line.c
+ 1323  cp reverse_line.c reverse_doc.c
+ 1324  vi reverse_doc.c 
+ 1325  cc reverse_doc.c 
+ 1326  vi reverse_doc.c +43
+ 1327  cc reverse_doc.c 
+ 1328  ./a.out 
+ 1329  vi reverse_doc.c +43
+ 1330  cc reverse_doc.c 
+ 1331  ./a.out 
+ 1332  ./a.out < reverse1.c 
+ 1333  ./a.out < reverse_line.c 
+ 1334  vi reverse_line.c 
+ 1335  ./a.out < reverse_line.c 
+ 1336  vi reverse_doc.c +43
+ 1337  cc reverse_line.c 
+ 1338  ./a.out < reverse_line.c 
+ 1339  diff reverse_line.c reverse_doc.c 
+ 1340  ll
+ 1341  vi reverse_line.c 
+ 1342  ll
+ 1343  vi wc.c
+ 1344  l
+ 1345  cc wc.c 
+ 1346  vi wc.c +25
+ 1347  cc wc.c 
+ 1348  vi wc.c +25
+ 1349  cc wc.c 
+ 1350  vi wc.c +25
+ 1351  cc wc.c 
+ 1352  ./a.out 
+ 1353  ./a.out < reverse_line.c 
+ 1354  vi reverse_line.c 
+ 1355  ll
+ 1356  ./a.out < reverse_line.c 
+ 1357  ll
+ 1358  vi recursion.c
+ 1359  cc recursion.c 
+ 1360  ./a.out 
+ 1361  vi recursion.c
+ 1362  cc recursion.c 
+ 1363  ./a.out 
+ 1364  vi recursion.c
+ 1365  cc recursion.c 
+ 1366  ./a.out 
+ 1367  vi recursion.c
+ 1368  ddd ./a.out 
+ 1369  gcc -g -Wall recursion.c -o recursion
+ 1370  ddd recursion &
+ 1371  vi recursion.c
+ 1372  gcc -g -Wall recursion.c -o recursion
+ 1373  cd wd_文档/c初期/20120715
+ 1374  vi hello.c
+ 1375  ll
+ 1376  diff reverse_line.c reverse_doc.c 
+ 1377  diff reverse_line.c reverse_doc.c -e
+ 1378  ll
+ 1379  ./a.out < reverse_line.c 
+ 1380  ./a.out < reverse_doc.c 
+ 1381  cc reverse_doc.c
+ 1382  ./a.out < reverse_doc.c 
+ 1383  ./a.out 
+ 1384  vi reverse_doc.c
+ 1385  cc reverse_doc.c
+ 1386  ./a.out < reverse_doc.c 
+ 1387  ./a.out 
+ 1388  vi reverse_doc.c
+ 1389  mkdir 20120716
+ 1390  mkdir 20120717
+ 1391  ll
+ 1392  vi wc.c 
+ 1393  ll
+ 1394  cp reverse_line.c reverse_fast.c
+ 1395  vi reverse_fast.c 
+ 1396  gcc -g reverse_line.c 
+ 1397  gcc -g reverse_line.c -o reverse_line.c 
+ 1398  gcc -g reverse_fast.c -o reverse_fast
+ 1399  ll
+ 1400  rm reverse_line.c 
+ 1401  ll
+ 1402  ./reverse_fast 
+ 1403  vi reverse_fast.c 
+ 1404  gcc -g reverse_fast.c -o reverse_fast
+ 1405  ./reverse_fast 
+ 1406  vi ../20120714
+ 1407  cd ../20120714
+ 1408  ll
+ 1409  cd heirloom-doctools/
+ 1410  cd doc/quickstart/
+ 1411  make
+ 1412  vi 
+ 1413  ll
+ 1414  cp -a test_temp/ wd_文档/c初期/20120715/
+ 1415  cd test_temp/
+ 1416  ll
+ 1417  rm *
+ 1418  ll
+ 1419  vi rightrot.c
+ 1420  vi test_typeof.c
+ 1421  vi rightrot.c
+ 1422  gcc -g rightrot.c -o rightrot
+ 1423  vi rightrot.c +14
+ 1424  vi rightrot.c +16
+ 1425  gcc -g rightrot.c -o rightrot
+ 1426  vi rightrot.c +26
+ 1427  gcc -g rightrot.c -o rightrot
+ 1428  vi rightrot.c +26
+ 1429  gcc -g rightrot.c -o rightrot
+ 1430  vi rightrot.c +14
+ 1431  vi rightrot.c +17
+ 1432  gcc -g rightrot.c -o rightrot -std=c99
+ 1433  gcc -g rightrot.c -o rightrot -std=g99
+ 1434  gcc -g rightrot.c -o rightrot -std=gnu99
+ 1435  vi rightrot.c +24
+ 1436  gcc -g rightrot.c -o rightrot -std=gnu99
+ 1437  vi rightrot.c +24
+ 1438  gcc -g rightrot.c -o rightrot -std=gnu99
+ 1439  vi rightrot.c +24
+ 1440  gcc -g rightrot.c -o rightrot -std=gnu99
+ 1441  vi rightrot.c +24
+ 1442  gcc -g rightrot.c -o rightrot -std=gnu99
+ 1443  vi rightrot.c +24
+ 1444  cd /usr/share/doc/gcc4.4
+ 1445  cd /usr/share/doc/gcc-4.4
+ 1446  ls
+ 1447  vi changelog.gz 
+ 1448  cd -
+ 1449  ll
+ 1450  vi rightrot.c +24
+ 1451  gcc -g rightrot.c -o rightrot -std=gnu99
+ 1452  vi rightrot.c 
+ 1453  gcc -g rightrot.c -o rightrot -std=gnu99
+ 1454  vi rightrot.c 
+ 1455  gcc -g rightrot.c -o rightrot -std=gnu99
+ 1456  vi rightrot.c 
+ 1457  gcc -g rightrot.c -o rightrot -std=gnu99
+ 1458  ./rightrot 
+ 1459  vi rightrot.c 
+ 1460  gcc -g rightrot.c -o rightrot -std=gnu99
+ 1461  ./rightrot 
+ 1462  vi rightrot.c 
+ 1463  gcc -g rightrot.c -o rightrot -std=gnu99
+ 1464  ./rightrot 
+ 1465  vi squeeze.c
+ 1466  ll
+ 1467  vi temp 
+ 1468  vi squeeze.c
+ 1469  gcc -g squeeze.c -o squeeze
+ 1470  vi squeeze.c
+ 1471  gcc -g squeeze.c -o squeeze
+ 1472  vi squeeze.c
+ 1473  gcc -g squeeze.c -o squeeze
+ 1474  vi squeeze.c
+ 1475  gcc -g squeeze.c -o squeeze
+ 1476  ./squeeze 
+ 1477  vi squeeze.c
+ 1478  gcc -g squeeze.c -o squeeze
+ 1479  ./squeeze 
+ 1480  vi squeeze.c
+ 1481  vi any.c
+ 1482  ll
+ 1483  cp squeeze.c any.c
+ 1484  vi any.c 
+ 1485  gcc -g any.c -o any
+ 1486  ./any
+ 1487  vi any.c 
+ 1488  gcc -g any.c -o any
+ 1489  ./any 
+ 1490  vi any.c 
+ 1491  vi setbits.c
+ 1492  ll
+ 1493  cp ../wd_文档/c初期/20120716/bit.c bit.c
+ 1494  ll
+ 1495  vi bit.c 
+ 1496  cp bit.c setbits.c
+ 1497  ll
+ 1498  vi setbits.c 
+ 1499  gcc -g setbits.c -o setbits
+ 1500  ./setbits
+ 1501  vi setbits.c 
+ 1502  gcc -g setbits.c -o setbits
+ 1503  ./setbits
+ 1504  vi setbits.c 
+ 1505  gcc -g setbits.c -o setbits
+ 1506  ./setbits
+ 1507  vi setbits.c 
+ 1508  ddd setbits
+ 1509  vi 
+ 1510  gcc -g setbits.c -o setbits
+ 1511  ./setbits
+ 1512  vi setbits.c 
+ 1513  gcc -g setbits.c -o setbits
+ 1514  ./setbits
+ 1515  vi invert.c
+ 1516  vi setbits.c 
+ 1517  gcc -g setbits.c -o setbits
+ 1518  vi setbits.c +83
+ 1519  gcc -g setbits.c -o setbits
+ 1520  ./setbits
+ 1521  vi invert.c
+ 1522  ll
+ 1523  cp bit.c invert.c
+ 1524  vi invert.c 
+ 1525  gcc -g  invert.c -o invert
+ 1526  ./invert
+ 1527  vi invert.c 
+ 1528  gcc -g  invert.c -o invert
+ 1529  ./invert
+ 1530  vi invert.c 
+ 1531  gcc -g  invert.c -o invert
+ 1532  ./invert
+ 1533  vi invert.c 
+ 1534  gcc -g  invert.c -o invert
+ 1535  ./invert
+ 1536  vi invert.c 
+ 1537  gcc -g  invert.c -o invert
+ 1538  ./invert
+ 1539  ddd ./invert
+ 1540  cp bit.c rightrot_normal.c
+ 1541  cat rightrot.c >> rightrot_normal.c 
+ 1542  vi rightrot_normal.c 
+ 1543  gcc -g rightrot_normal.c -o rightrot_normal
+ 1544  gcc -g rightrot_normal.c -o rightrot_normal -std=gnu99
+ 1545  ./rightrot_normal
+ 1546  vi rightrot_normal.c 
+ 1547  gcc -g rightrot_normal.c -o rightrot_normal -std=gnu99
+ 1548  ./rightrot_normal
+ 1549  vi rightrot_normal.c 
+ 1550  ddd ./rightrot_normal
+ 1551  vi rightrot_normal.c 
+ 1552  gcc -g rightrot_normal.c -o rightrot_normal -std=gnu99
+ 1553  ./rightrot_normal
+ 1554  vi rightrot_normal.c 
+ 1555  find . -name list*.c -print
+ 1556  find . -name list*.c 
+ 1557  find . -name list.c
+ 1558  cd ..
+ 1559  cd ../..
+ 1560  ll
+ 1561  cd soure_insight_linux-2.6.32.2/
+ 1562  ll
+ 1563  cd ../linux-2.6.32.2/
+ 1564  ll
+ 1565  find . -name list.c
+ 1566  find . -name list.h
+ 1567  vi ./include/linux/list.h
+ 1568  cp bit.c ../../../20120716/
+ 1569  cd -
+ 1570  cd bit.c ../../../20120716/
+ 1571  cd  ../../../20120716/
+ 1572  ll
+ 1573  vi bit.c 
+ 1574  gcc -g bit.c -o bit
+ 1575  ./bit
+ 1576  cd /home/dong/test_temp/
+ 1577  ll
+ 1578  vi rightrot_normal.c 
+ 1579  cd wd_文档/c初期/
+ 1580  cd 20120716
+ 1581  ll
+ 1582  cd /home/dong/test_temp/
+ 1583  ll
+ 1584  vi rightrot_normal.c 
+ 1585  gcc -g  rightrot_normal.c -o rightrot_normal
+ 1586  gcc -g  rightrot_normal.c -o rightrot_normal -std=gnu99
+ 1587  vi rightrot_normal.c +86
+ 1588  gcc -g  rightrot_normal.c -o rightrot_normal -std=gnu99
+ 1589  ddd ./rightrot_normal
+ 1590  ll
+ 1591  gcc -g  rightrot_normal.c -o rightrot_normal -std=gnu99
+ 1592  ./rightrot_normal
+ 1593  vi rightrot_normal.c +86
+ 1594  ll
+ 1595  cd wd_文档/c初期/20120716/
+ 1596  ll
+ 1597  vi sizeof_str.c 
+ 1598  vi size.c
+ 1599  LL
+ 1600  ll
+ 1601  vi sizeof_str.c 
+ 1602  gcc -g sizeof_str.c -o sizeof_str
+ 1603  ./sizeof_str 
+ 1604  ll
+ 1605  vi vi_easy.txt
+ 1606  cd /home/dong/test_temp/
+ 1607  ll
+ 1608  vi achieve_strlen.c
+ 1609  gcc -g achieve_strlen.c -o achieve_strlen
+ 1610  vi achieve_strlen.c
+ 1611  gcc -g achieve_strlen.c -o achieve_strlen
+ 1612  ./achieve_strlen 
+ 1613  ll
+ 1614  man ansii
+ 1615  man ascii
+ 1616  vi itoa.c
+ 1617  gcc -g itoa.c -o itoa
+ 1618  vi itoa.c
+ 1619  gcc -g itoa.c -o itoa
+ 1620  vi itoa.c
+ 1621  gcc -g itoa.c -o itoa
+ 1622  ./itoa 
+ 1623  vi itoa.c
+ 1624  gcc -g itoa.c -o itoa
+ 1625  ./itoa 
+ 1626  vi itoa.c
+ 1627  gcc -g itoa.c -o itoa
+ 1628  ./itoa 
+ 1629  vi itoa.c
+ 1630  gcc -g itoa.c -o itoa
+ 1631  ./itoa 
+ 1632  vi itoa.c
+ 1633  gcc -g itoa.c -o itoa
+ 1634  ./itoa 
+ 1635  vi bit.c 
+ 1636  vi compat.c
+ 1637  cd /home/dong/test_temp/
+ 1638  ll
+ 1639  vi bsearch.c
+ 1640  ll
+ 1641  gcc -g itoa.c -o itoa
+ 1642  make
+ 1643  cd test_temp/
+ 1644  ll
+ 1645  mkdir 
+ 1646  find . -name binsearch.c
+ 1647  vi vi_easy.txt
+ 1648  ll
+ 1649  vi /home/dong/.bashrc
+ 1650  source /home/dong/.bashrc
+ 1651  ll
+ 1652  vi /home/dong/.bashrc
+ 1653  source /home/dong/.bashrc
+ 1654  ll
+ 1655  pwd
+ 1656  vi binsearch.c 
+ 1657  ll
+ 1658  pwd
+ 1659  mv binsearch.c binsearch_kai.c
+ 1660  vi binsearch.c
+ 1661  gcc -g -Wall binsearch.c -o binsearch
+ 1662  vi binsearch.c +15
+ 1663  gcc -g -Wall binsearch.c -o binsearch
+ 1664  vi binsearch.c +26
+ 1665  gcc -g -Wall binsearch.c -o binsearch
+ 1666  ./binsearch
+ 1667  vi binsearch.c +26
+ 1668  gcc -g -Wall binsearch.c -o binsearch
+ 1669  ./binsearch
+ 1670  vi binsearch.c +26
+ 1671  gcc -g -Wall binsearch.c -o binsearch
+ 1672  ./binsearch
+ 1673  vi binsearch.c +26
+ 1674  gcc -g -Wall binsearch.c -o binsearch
+ 1675  ./binsearch
+ 1676  vi binsearch.c +26
+ 1677  vi binsearch.c +50
+ 1678  gcc -g -Wall binsearch.c -o binsearch
+ 1679  ./binsearch
+ 1680  vi binsearch.c +50
+ 1681  gcc -g -Wall binsearch.c -o binsearch
+ 1682  ./binsearch
+ 1683  vi binsearch.c +50
+ 1684  ddd ./binsearch
+ 1685  vi binsearch.c +50
+ 1686  gcc -g -Wall binsearch.c -o binsearch
+ 1687  ddd ./binsearch
+ 1688  vi binsearch.c +50
+ 1689  gcc -g -Wall binsearch.c -o binsearch
+ 1690  vi binsearch.c +50
+ 1691  gcc -g -Wall binsearch.c -o binsearch
+ 1692  vi binsearch.c +11
+ 1693  gcc -g -Wall binsearch.c -o binsearch
+ 1694  vi binsearch.c +14
+ 1695  vi binsearch.c +14
+ 1696  ll
+ 1697  pwd
+ 1698  ll
+ 1699  vi shell.c 
+ 1700  pwd
+ 1701  vi binsearch.c 
+ 1702  ./binsearch
+ 1703  vi binsearch.c 
+ 1704  cc binsearch.c -g -o binsearch_search
+ 1705  ./binsearch_search 
+ 1706  vi binsearch.c 
+ 1707  vi shell.c 
+ 1708  ll
+ 1709  cd test_temp/
+ 1710  ll
+ 1711  cp ../test_temp/ ../wd_文档/c初期/20120717/
+ 1712  cp -a ../test_temp/ ../wd_文档/c初期/20120717/
+ 1713  cd  ../wd_文档/c初期/20120717/
+ 1714  ll
+ 1715  pwd
+ 1716  cd test_temp/
+ 1717  ll
+ 1718  cd ..
+ 1719  pwd
+ 1720  cd ..
+ 1721  pwd
+ 1722  mkdir 20120718
+ 1723  ll
+ 1724  cd 20120718
+ 1725  ll
+ 1726  history >> dong_history.txt

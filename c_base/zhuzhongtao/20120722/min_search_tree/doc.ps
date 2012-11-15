@@ -1,0 +1,2801 @@
+%!PS-Adobe-3.0
+%%Creator: Heirloom Documentation Tools - dpost 8.77 (gritter) 6/19/11
+%%CreationDate: Mon Jul 23 08:53:40 2012
+%%DocumentFonts: Times-Roman
+%%Pages: 17
+%%DocumentNeededResources: font Times-Roman
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset dpost 4.19 0
+%
+% Copyright 2005 Sun Microsystems, Inc.  All rights reserved.
+% Use is subject to license terms.
+%
+% CDDL HEADER START
+%
+% The contents of this file are subject to the terms of the
+% Common Development and Distribution License, Version 1.0 only
+% (the "License").  You may not use this file except in compliance
+% with the License.
+%
+% You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+% or http://www.opensolaris.org/os/licensing.
+% See the License for the specific language governing permissions
+% and limitations under the License.
+%
+% When distributing Covered Code, include this CDDL HEADER in each
+% file and include the License file at usr/src/OPENSOLARIS.LICENSE.
+% If applicable, add the following below this CDDL HEADER, with the
+% fields enclosed by brackets "[]" replaced with your own identifying
+% information: Portions Copyright [yyyy] [name of copyright owner]
+%
+% CDDL HEADER END
+%
+% from OpenSolaris "dpost.ps	1.7	05/06/08 SMI"
+%
+% Portions Copyright 2005 Gunnar Ritter, Freiburg i. Br, Germany
+%
+% Sccsid @(#)dpost.ps	4.19 (gritter) 2/7/10
+%
+
+/#copies 1 store
+/aspectratio 1 def
+/formsperpage 1 def
+/landscape false def
+/linewidth .3 def
+/magnification 1 def
+/margin 0 def
+/orientation 0 def
+/resolution 720 def
+/xoffset 0 def
+/yoffset 0 def
+
+/roundpage true def
+/useclippath true def
+/pagebbox [0 0 612 792] def
+
+/R  /Times-Roman def
+/I  /Times-Italic def
+/B  /Times-Bold def
+/BI /Times-BoldItalic def
+/H  /Helvetica def
+/HI /Helvetica-Oblique def
+/HB /Helvetica-Bold def
+/HX /Helvetica-BoldOblique def
+/CW /Courier def
+/CO /Courier def
+/CI /Courier-Oblique def
+/CB /Courier-Bold def
+/CX /Courier-BoldOblique def
+/PA /Palatino-Roman def
+/PI /Palatino-Italic def
+/PB /Palatino-Bold def
+/PX /Palatino-BoldItalic def
+/Hr /Helvetica-Narrow def
+/Hi /Helvetica-Narrow-Oblique def
+/Hb /Helvetica-Narrow-Bold def
+/Hx /Helvetica-Narrow-BoldOblique def
+/KR /Bookman-Light def
+/KI /Bookman-LightItalic def
+/KB /Bookman-Demi def
+/KX /Bookman-DemiItalic def
+/AR /AvantGarde-Book def
+/AI /AvantGarde-BookOblique def
+/AB /AvantGarde-Demi def
+/AX /AvantGarde-DemiOblique def
+/NR /NewCenturySchlbk-Roman def
+/NI /NewCenturySchlbk-Italic def
+/NB /NewCenturySchlbk-Bold def
+/NX /NewCenturySchlbk-BoldItalic def
+/ZD /ZapfDingbats def
+/ZI /ZapfChancery-MediumItalic def
+/VR /Varitimes#Roman def
+/VI /Varitimes#Italic def
+/VB /Varitimes#Bold def
+/VX /Varitimes#BoldItalic def
+/S  /S def
+/S1 /S1 def
+/GR /Symbol def
+
+/inch {72 mul} bind def
+/min {2 copy gt {exch} if pop} bind def
+
+/track 0 def
+/horscale 1.0 def
+
+/setup {
+	counttomark 2 idiv {def} repeat pop
+
+	landscape {/orientation 90 orientation add def} if
+	/scaling 72 resolution div def
+	linewidth setlinewidth
+	1 setlinecap
+
+	pagedimensions
+	xcenter ycenter translate
+	orientation neg rotate
+	width 2 div neg height 2 div translate
+	xoffset inch yoffset inch translate
+	margin 2 div dup neg translate
+	magnification dup aspectratio mul scale
+	scaling scaling scale
+
+	/Symbol /S Sdefs cf
+	/Times-Roman /S1 S1defs cf
+	0 0 moveto
+} def
+
+/pagedimensions {
+	useclippath userdict /gotpagebbox known not and {
+		/pagebbox [clippath pathbbox newpath] def
+		roundpage currentdict /roundpagebbox known and {roundpagebbox} if
+	} if
+	pagebbox aload pop
+	4 -1 roll exch 4 1 roll 4 copy
+	landscape {4 2 roll} if
+	sub /width exch def
+	sub /height exch def
+	add 2 div /xcenter exch def
+	add 2 div /ycenter exch def
+	userdict /gotpagebbox true put
+} def
+
+/pagesetup {
+	/page exch def
+	currentdict /pagedict known currentdict page known and {
+		page load pagedict exch get cvx exec
+	} if
+	/Dsetup where {pop Dsetup} if
+	_custompagesetup
+} def
+
+/decodingdefs [
+	{counttomark 2 idiv {y moveto track 0 3 -1 roll ashow} repeat}
+	{neg /y exch def counttomark 2 idiv {y moveto track 0 3 -1 roll ashow} repeat}
+	{neg dup /y exch def moveto {2 index dup length track mul exch stringwidth pop add sub exch div 0 32 track 0 6 -1 roll awidthshow} repeat}
+	{neg dup /y exch def moveto {spacewidth sub track sub 0.0 32 track 0 6 -1 roll awidthshow} repeat}
+	{/x exch def counttomark 2 idiv 1 add {x y moveto counttomark 1 gt {x exch sub /x exch def} if track 0 3 -1 roll ashow} repeat}
+	{/x exch def counttomark 2 idiv 1 add {x y moveto counttomark 1 gt {x exch sub /x exch def} if track 0 3 -1 roll ashow} repeat}
+	{counttomark 2 idiv {y moveto track 0 3 -1 roll ashow} repeat}
+	{neg setfunnytext}
+] def
+
+/setdecoding {/t decodingdefs 3 -1 roll get def} bind def
+
+/T {/track exch def} bind def
+
+/w {neg dup /y exch def moveto track 0 3 -1 roll ashow} bind def
+/v {y moveto track 0 3 -1 roll ashow} bind def
+/u {y neg t} bind def
+/m {neg dup /y exch def moveto} bind def
+/done {/lastpage where {pop lastpage} if} def
+
+/f {
+	dup /font exch def exch
+	dup /ptsize exch def scaling div dup /size exch def
+	horscale 1.0 ne {horscale mul [exch 0 0 size 0 0]} if SF
+	linewidth ptsize mul scaling 10 mul div setlinewidth
+	/spacewidth ( ) stringwidth pop def
+	/horscale 1.0 def
+} bind def
+/F {ptsize exch f} bind def
+/s {font f} bind def
+/h {/horscale exch def f} bind def
+
+/changefont {
+	/fontheight exch def
+	/fontslant exch def
+	currentfont [
+		1 0
+		fontheight ptsize div fontslant sin mul fontslant cos div
+		fontheight ptsize div
+		0 0
+	] makefont setfont
+} bind def
+
+/sf {f} bind def
+
+/cf {
+	dup length 2 idiv
+	/entries exch def
+	/chtab exch def
+	/newfont exch def
+
+	findfont dup length 1 add dict
+	/newdict exch def
+	{1 index /FID ne {newdict 3 1 roll put} {pop pop} ifelse} forall
+
+	newdict /Metrics entries dict put
+	newdict /Metrics get
+	begin
+		chtab aload pop
+		1 1 entries {pop def} for
+		newfont newdict definefont pop
+	end
+} bind def
+
+%
+% A few arrays used to adjust reference points and character widths in some
+% of the printer resident fonts. If square roots are too high try changing
+% the lines describing /radical and /radicalex to,
+%
+%	/radical	[0 -75 550 0]
+%	/radicalex	[-50 -75 500 0]
+%
+
+/Sdefs [
+	/underscore		[0 0 500 0]
+	/bracketlefttp		[208 500]
+	/bracketleftbt		[208 500]
+	/bracketrighttp		[-60 380]
+	/bracketrightbt		[-60 380]
+	/braceleftbt		[209 490]
+	/bracketrightex		[220 -125 500 0]
+	/radical		[0 0 550 0]
+	% NeWSprint's \(br is too low, compensate
+	statusdict /product get (NeWS Server) eq {
+		/radicalex		[-50 100 500 0]
+		/parenleftex		[-20 100 0 0]
+
+	} {
+		/radicalex		[-50 0 500.001 0]
+		/parenleftex		[-20 -170 0 0]
+	} ifelse
+	/integral		[100 -50 500 0]
+	/infinity		[10 -75 730 0]
+] def
+
+%
+% This adjusts the y left bearing of the underscore character in the
+% Symbol font to the position expected by troff, depending on the
+% font variant actually in use with the current document.
+%
+/_Sdefsadj {
+	gsave
+	/Symbol findfont 1000 scalefont setfont
+	0 0 moveto
+	(\137) false charpath flattenpath pathbbox pop pop exch pop
+	grestore
+	252 add neg
+	Sdefs 1 [0 5 -1 roll 500 0] put
+} def
+
+/S1defs [
+	/underscore		[0 80 500.001 0]
+	/endash			[7 90 650 0]
+] def
+
+% from Adobe's PostScript Language Reference Manual, 2nd ed. 1990, pp. 588-589
+/*SF {					% Complete selectfont emulation
+	exch findfont exch
+	dup type /arraytype eq {makefont}{scalefont} ifelse setfont
+} bind def
+/languagelevel where			% Determine language level
+	{pop languagelevel} {1} ifelse	% of implementation
+	2 lt {				% ifelse
+		/SF /*SF load def	% Level 1 interpreter present, so
+	} {				% else
+		/SF /selectfont load def% Level 2 interpreter present, so
+	}
+ifelse
+
+% from Adobe's pdfmark Reference Manual for Acrobat 7.0, 11/30/04, p. 10
+/pdfmark where				% Is pdfmark already available?
+	{pop}				% Yes: do nothing (use that definition)
+	{				% No: define pdfmark as follows:
+	/globaldict where		% globaldict is preferred because
+		{pop globaldict}	% globaldict is always visible; else,
+		{userdict}		% use userdict otherwise.
+	ifelse
+	/pdfmark /cleartomark load put
+	}				% Define pdfmark to remove all objects
+ifelse					% up to and including the mark object.
+%%EndResource
+%%BeginResource: procset dpost_draw 1.5 0
+% from OpenSolaris "lp:filter/postscript/postscript/draw.ps	1.1"
+%
+% CDDL HEADER START
+%
+% The contents of this file are subject to the terms of the
+% Common Development and Distribution License, Version 1.0 only
+% (the "License").  You may not use this file except in compliance
+% with the License.
+%
+% You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+% or http://www.opensolaris.org/os/licensing.
+% See the License for the specific language governing permissions
+% and limitations under the License.
+%
+% When distributing Covered Code, include this CDDL HEADER in each
+% file and include the License file at usr/src/OPENSOLARIS.LICENSE.
+% If applicable, add the following below this CDDL HEADER, with the
+% fields enclosed by brackets "[]" replaced with your own identifying
+% information: Portions Copyright [yyyy] [name of copyright owner]
+%
+% CDDL HEADER END
+%
+% Portions Copyright 2005 Gunnar Ritter, Freiburg i. Br, Germany
+%
+% Sccsid @(#)draw.ps	1.5 (gritter) 2/9/06
+%
+% Drawing procedures for dpost. Automatically pulled in, but only
+% when needed.
+%
+
+/Dsetup {
+	/inpath false def
+	/savematrix matrix currentmatrix def
+} bind def
+
+/Dl {
+	inpath
+		{
+			/Dlny exch def
+			/Dlnx exch def
+			currentpoint
+			neg round /Dlcy exch def
+			round /Dlcx exch def
+			Dlnx Dlcx ne Dlny Dlcy ne or {Dlnx Dlny neg moveto} if
+			neg lineto
+		}
+		{newpath neg moveto neg lineto stroke}
+	ifelse
+} bind def
+
+/De {
+	/y1 exch 2 div def
+	/x1 exch 2 div def
+	neg exch x1 add exch translate
+	x1 y1 scale
+	0 0 1 0 360
+	inpath
+		{1 0 moveto arc savematrix setmatrix}
+		{newpath arc savematrix setmatrix stroke}
+	ifelse
+} bind def
+
+/Da {
+	/dy2 exch def
+	/dx2 exch def
+	/dy1 exch def
+	/dx1 exch def
+	dy1 add neg exch dx1 add exch
+	dx1 dx1 mul dy1 dy1 mul add sqrt
+	dy1 dx1 neg atan
+	dy2 neg dx2 atan
+	inpath
+		{arc}
+		{newpath arc stroke}
+	ifelse
+} bind def
+
+/DA {
+	/dy2 exch def
+	/dx2 exch def
+	/dy1 exch def
+	/dx1 exch def
+	dy1 add neg exch dx1 add exch
+	dx1 dx1 mul dy1 dy1 mul add sqrt
+	dy1 dx1 neg atan
+	dy2 neg dx2 atan
+	inpath
+		{arcn}
+		{newpath arcn stroke}
+	ifelse
+} bind def
+
+/Ds {
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	/y0 exch def
+	/x0 exch def
+	x0 5 x1 mul add 6 div
+	y0 5 y1 mul add -6 div
+	x2 5 x1 mul add 6 div
+	y2 5 y1 mul add -6 div
+	x1 x2 add 2 div
+	y1 y2 add -2 div
+	inpath
+		{curveto}
+		{newpath x0 x1 add 2 div y0 y1 add -2 div moveto curveto stroke}
+	ifelse
+} bind def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+[ /CreationDate (D:20120723085340+08'00')
+  /Creator (Heirloom Documentation Tools - dpost 8.77 (gritter) 6/19/11)
+/DOCINFO pdfmark
+/_custompagesetup {
+} def
+/_marks {
+} def
+/Encoding-@11@0 [
+/.notdef /hyphen /cent /fi /fl /dagger /emdash /onequarter /threequarters
+/onehalf /endash /acute /grave /section /daggerdbl /backslash
+/quotedbl /ring /bullet /bar /quotedblleft /quotedblright /space
+/asciicircum /asciitilde /exclamdown /sterling /fraction /yen
+/florin /currency /quotesingle /space /exclam /quotedbl /numbersign
+/dollar /percent /ampersand /quoteright /parenleft /parenright
+/asterisk /plus /comma /hyphen /period /slash /zero /one /two
+/three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I
+/J /K /L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft
+/backslash /bracketright /circumflex /underscore /quoteleft /a
+/b /c /d /e /f /g /h /i /j /k /l /m /n /o /p /q /r /s /t /u /v
+/w /x /y /z /braceleft /bar /braceright /tilde /guillemotleft
+/guilsinglleft /guilsinglright /periodcentered /paragraph /quotesinglbase
+/quotedblbase /guillemotright /ellipsis /perthousand /questiondown
+/macron /breve /dotaccent /dieresis /cedilla /hungarumlaut /ogonek
+/caron /AE /ordfeminine /Lslash /Oslash /OE /ordmasculine /ae
+/dotlessi /lslash /oslash /oe /germandbls /Idieresis /eacute
+/Ydieresis /divide /Yacute /Acircumflex /aacute /Ucircumflex
+/yacute /ecircumflex /Udieresis /Uacute /Edieresis /copyright
+/aring /agrave /atilde /scaron /iacute /ucircumflex /acircumflex
+/ccedilla /Thorn /threesuperior /Ograve /Agrave /multiply /uacute
+/ydieresis /icircumflex /Ecircumflex /adieresis /edieresis /Iacute
+/plusminus /brokenbar /registered /Egrave /Zcaron /Eth /Ccedilla
+/Aacute /Adieresis /egrave /Oacute /oacute /idieresis /Ocircumflex
+/Ugrave /thorn /twosuperior /Odieresis /mu /igrave /trademark
+/Igrave /ocircumflex /ntilde /Eacute /Scaron /degree /ograve
+/ugrave /Ntilde /otilde /Atilde /Aring /Otilde /minus /Icircumflex
+/logicalnot /odieresis /udieresis /eth /zcaron /onesuperior /Euro
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+] def
+/Times-Roman findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding Encoding-@11@0 def
+  currentdict
+end
+/Times-Roman-@11 exch definefont pop
+/@11 /Times-Roman-@11 def
+/&11 {@11 F} bind def
+mark
+/resolution 72000 def
+setup
+3 setdecoding
+%%EndSetup
+%%Page: 1 1
+save
+mark
+1 pagesetup
+10 @11 f
+( 270 528)3330( 97 91)6660(0 323 180 437 367 491)3330 3 81990 84000 t
+( 208 640 489 752 421 412 300 452)3330(323 0)9990 2 75330 96000 t
+( 434 297 544 263 248 126 366)3330( 0)9990(180 208)3330 3 75330 108000 t
+( 180 168 402 387 353 456)3330( 0)9990(437 640 434)3330 3 75330 120000 t
+( 340 374 355 189 288)3330( 0)9990(367 489 297 180)3330 3 75330 132000 t
+( 424 416 489 623)3330( 0)9990(491 752 544 168 340)3330 3 75330 144000 t
+( 325 580)3330( 19)6660( 0)9990(97 421 263 402 374 424)3330 4 78660 156000 t
+( 307 561)3330( 0)9990( 19)6660(91 412 248 387 355 416)3330 4 78660 168000 t
+( 258)3330( 0)9990(270 300 126 353 189 489 325 307)3330 3 75330 180000 t
+( 0)9990(528 452 366 456 288 623 580 561 258)3330 2 75330 192000 t
+(id)82510 216800 w
+10 @11 f
+100800 204000 100800 225600 Dl
+122400 204000 100800 204000 Dl
+122400 225600 122400 204000 Dl
+100800 225600 122400 225600 Dl
+(1)109100 216800 w
+122400 204000 122400 225600 Dl
+144000 204000 122400 204000 Dl
+144000 225600 144000 204000 Dl
+122400 225600 144000 225600 Dl
+(0)130700 216800 w
+144000 204000 144000 225600 Dl
+165600 204000 144000 204000 Dl
+165600 225600 165600 204000 Dl
+144000 225600 165600 225600 Dl
+(0)152300 216800 w
+165600 204000 165600 225600 Dl
+187200 204000 165600 204000 Dl
+187200 225600 187200 204000 Dl
+165600 225600 187200 225600 Dl
+(0)173900 216800 w
+187200 204000 187200 225600 Dl
+208800 204000 187200 204000 Dl
+208800 225600 208800 204000 Dl
+187200 225600 208800 225600 Dl
+(0)195500 216800 w
+208800 204000 208800 225600 Dl
+230400 204000 208800 204000 Dl
+230400 225600 230400 204000 Dl
+208800 225600 230400 225600 Dl
+(0)217100 216800 w
+230400 204000 230400 225600 Dl
+252000 204000 230400 204000 Dl
+252000 225600 252000 204000 Dl
+230400 225600 252000 225600 Dl
+(0)238700 216800 w
+252000 204000 252000 225600 Dl
+273600 204000 252000 204000 Dl
+273600 225600 273600 204000 Dl
+252000 225600 273600 225600 Dl
+(0)260300 216800 w
+273600 204000 273600 225600 Dl
+295200 204000 273600 204000 Dl
+295200 225600 295200 204000 Dl
+273600 225600 295200 225600 Dl
+(0)281900 216800 w
+295200 204000 295200 225600 Dl
+316800 204000 295200 204000 Dl
+316800 225600 316800 204000 Dl
+295200 225600 316800 225600 Dl
+(0)303500 216800 w
+(mst)79175 262400 w
+100800 249600 100800 271200 Dl
+122400 249600 100800 249600 Dl
+122400 271200 122400 249600 Dl
+100800 271200 122400 271200 Dl
+(0)109100 262400 w
+122400 249600 122400 271200 Dl
+144000 249600 122400 249600 Dl
+144000 271200 144000 249600 Dl
+122400 271200 144000 271200 Dl
+(0)130700 262400 w
+144000 249600 144000 271200 Dl
+165600 249600 144000 249600 Dl
+165600 271200 165600 249600 Dl
+144000 271200 165600 271200 Dl
+(0)152300 262400 w
+165600 249600 165600 271200 Dl
+187200 249600 165600 249600 Dl
+187200 271200 187200 249600 Dl
+165600 271200 187200 271200 Dl
+(0)173900 262400 w
+187200 249600 187200 271200 Dl
+208800 249600 187200 249600 Dl
+208800 271200 208800 249600 Dl
+187200 271200 208800 271200 Dl
+(0)195500 262400 w
+208800 249600 208800 271200 Dl
+230400 249600 208800 249600 Dl
+230400 271200 230400 249600 Dl
+208800 271200 230400 271200 Dl
+(0)217100 262400 w
+230400 249600 230400 271200 Dl
+252000 249600 230400 249600 Dl
+252000 271200 252000 249600 Dl
+230400 271200 252000 271200 Dl
+(0)238700 262400 w
+252000 249600 252000 271200 Dl
+273600 249600 252000 249600 Dl
+273600 271200 273600 249600 Dl
+252000 271200 273600 271200 Dl
+(0)260300 262400 w
+273600 249600 273600 271200 Dl
+295200 249600 273600 249600 Dl
+295200 271200 295200 249600 Dl
+273600 271200 295200 271200 Dl
+(0)281900 262400 w
+295200 249600 295200 271200 Dl
+316800 249600 295200 249600 Dl
+316800 271200 316800 249600 Dl
+295200 271200 316800 271200 Dl
+(0)303500 262400 w
+(wt)81400 296000 w
+100800 283200 100800 304800 Dl
+122400 283200 100800 283200 Dl
+122400 304800 122400 283200 Dl
+100800 304800 122400 304800 Dl
+(1400)101600 296000 w
+122400 283200 122400 304800 Dl
+144000 283200 122400 283200 Dl
+144000 304800 144000 283200 Dl
+122400 304800 144000 304800 Dl
+(1400)123200 296000 w
+144000 283200 144000 304800 Dl
+165600 283200 144000 283200 Dl
+165600 304800 165600 283200 Dl
+144000 304800 165600 304800 Dl
+(1400)144800 296000 w
+165600 283200 165600 304800 Dl
+187200 283200 165600 283200 Dl
+187200 304800 187200 283200 Dl
+165600 304800 187200 304800 Dl
+(1400)166400 296000 w
+187200 283200 187200 304800 Dl
+208800 283200 187200 283200 Dl
+208800 304800 208800 283200 Dl
+187200 304800 208800 304800 Dl
+(1400)188000 296000 w
+208800 283200 208800 304800 Dl
+230400 283200 208800 283200 Dl
+230400 304800 230400 283200 Dl
+208800 304800 230400 304800 Dl
+(1400)209600 296000 w
+230400 283200 230400 304800 Dl
+252000 283200 230400 283200 Dl
+252000 304800 252000 283200 Dl
+230400 304800 252000 304800 Dl
+(1400)231200 296000 w
+252000 283200 252000 304800 Dl
+273600 283200 252000 283200 Dl
+273600 304800 273600 283200 Dl
+252000 304800 273600 304800 Dl
+(1400)252800 296000 w
+273600 283200 273600 304800 Dl
+295200 283200 273600 283200 Dl
+295200 304800 295200 283200 Dl
+273600 304800 295200 304800 Dl
+(1400)274400 296000 w
+295200 283200 295200 304800 Dl
+316800 283200 295200 283200 Dl
+316800 304800 316800 283200 Dl
+295200 304800 316800 304800 Dl
+(1400)296000 296000 w
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 316800 w
+(min = 10, w = 0, v = 0)3330 1 72000 340800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 364800 w
+(min = 10, w = 1, v = 0)3330 1 72000 388800 t
+( = 0)3330( v)13320( = 323,)3330( adj[v][w])13320( = 1400,)3330( wt[w])16650
+(w = 1,)3330 7 72000 424800 t
+( <\001\001 v)3330( mst[w])26640(w = 1, wt[w] = 323.000000, mst[w]=v= 0)3330 3 72000 460800 t
+( = 323)3330( wt[w])6660( = 1400,)3330( wt[min])9990(min = 10, w = 1,)3330 5 72000 496800 t
+( <\001\001 w)3330( min)85790( = 1,)3330( w)6660(min =)3330 5 72000 532800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 556800 w
+(min = 1, w = 2, v = 0)3330 1 72000 580800 t
+( = 0)3330( v)13320( = 180,)3330( adj[v][w])13320( = 1400,)3330( wt[w])16650
+(w = 2,)3330 7 72000 616800 t
+( <\001\001 v)3330( mst[w])26640(w = 2, wt[w] = 180.000000, mst[w]=v= 0)3330 3 72000 652800 t
+( = 180)3330( wt[w])6660( = 323,)3330( wt[min])9990(min = 1, w = 2,)3330 5 72000 688800 t
+( <\001\001 w)3330( min)85790( = 2,)3330( w)6660(min =)3330 5 72000 724800 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 1 1
+%%Page: 2 2
+save
+mark
+2 pagesetup
+10 @11 f
+(\001)278840 48000 w
+(2)285500 v
+(\001)293830 v
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 84000 w
+(min = 2, w = 3, v = 0)3330 1 72000 108000 t
+( = 0)3330( v)13320( = 437,)3330( adj[v][w])13320( = 1400,)3330( wt[w])16650
+(w = 3,)3330 7 72000 144000 t
+( <\001\001 v)3330( mst[w])26640(w = 3, wt[w] = 437.000000, mst[w]=v= 0)3330 3 72000 180000 t
+( = 437)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 3,)3330 5 72000 216000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 240000 w
+(min = 2, w = 4, v = 0)3330 1 72000 264000 t
+( = 0)3330( v)13320( = 367,)3330( adj[v][w])13320( = 1400,)3330( wt[w])16650
+(w = 4,)3330 7 72000 300000 t
+( <\001\001 v)3330( mst[w])26640(w = 4, wt[w] = 367.000000, mst[w]=v= 0)3330 3 72000 336000 t
+( = 367)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 4,)3330 5 72000 372000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 396000 w
+(min = 2, w = 5, v = 0)3330 1 72000 420000 t
+( = 0)3330( v)13320( = 491,)3330( adj[v][w])13320( = 1400,)3330( wt[w])16650
+(w = 5,)3330 7 72000 456000 t
+( <\001\001 v)3330( mst[w])26640(w = 5, wt[w] = 491.000000, mst[w]=v= 0)3330 3 72000 492000 t
+( = 491)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 5,)3330 5 72000 528000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 552000 w
+(min = 2, w = 6, v = 0)3330 1 72000 576000 t
+( = 0)3330( v)13320( = 97,)3330( adj[v][w])13320( = 1400,)3330( wt[w])16650
+(w = 6,)3330 7 72000 612000 t
+( <\001\001 v)3330( mst[w])26640(w = 6, wt[w] = 97.000000, mst[w]=v= 0)3330 3 72000 648000 t
+( = 97)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 6,)3330 5 72000 684000 t
+( <\001\001 w)3330( min)85790( = 6,)3330( w)6660(min =)3330 5 72000 720000 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 2 2
+%%Page: 3 3
+save
+mark
+3 pagesetup
+10 @11 f
+(\001)278840 48000 w
+(3)285500 v
+(\001)293830 v
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 84000 w
+(min = 6, w = 7, v = 0)3330 1 72000 108000 t
+( = 0)3330( v)13320( = 91,)3330( adj[v][w])13320( = 1400,)3330( wt[w])16650
+(w = 7,)3330 7 72000 144000 t
+( <\001\001 v)3330( mst[w])26640(w = 7, wt[w] = 91.000000, mst[w]=v= 0)3330 3 72000 180000 t
+( = 91)3330( wt[w])6660( = 97,)3330( wt[min])9990(min = 6, w = 7,)3330 5 72000 216000 t
+( <\001\001 w)3330( min)85790( = 7,)3330( w)6660(min =)3330 5 72000 252000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 276000 w
+(min = 7, w = 8, v = 0)3330 1 72000 300000 t
+( = 0)3330( v)13320( = 270,)3330( adj[v][w])13320( = 1400,)3330( wt[w])16650
+(w = 8,)3330 7 72000 336000 t
+( <\001\001 v)3330( mst[w])26640(w = 8, wt[w] = 270.000000, mst[w]=v= 0)3330 3 72000 372000 t
+( = 270)3330( wt[w])6660( = 91,)3330( wt[min])9990(min = 7, w = 8,)3330 5 72000 408000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 432000 w
+(min = 7, w = 9, v = 0)3330 1 72000 456000 t
+( = 0)3330( v)13320( = 528,)3330( adj[v][w])13320( = 1400,)3330( wt[w])16650
+(w = 9,)3330 7 72000 492000 t
+( <\001\001 v)3330( mst[w])26640(w = 9, wt[w] = 528.000000, mst[w]=v= 0)3330 3 72000 528000 t
+( = 528)3330( wt[w])6660( = 91,)3330( wt[min])9990(min = 7, w = 9,)3330 5 72000 564000 t
+(id)82510 612800 w
+100800 600000 100800 621600 Dl
+122400 600000 100800 600000 Dl
+122400 621600 122400 600000 Dl
+100800 621600 122400 621600 Dl
+(1)109100 612800 w
+122400 600000 122400 621600 Dl
+144000 600000 122400 600000 Dl
+144000 621600 144000 600000 Dl
+122400 621600 144000 621600 Dl
+(0)130700 612800 w
+144000 600000 144000 621600 Dl
+165600 600000 144000 600000 Dl
+165600 621600 165600 600000 Dl
+144000 621600 165600 621600 Dl
+(0)152300 612800 w
+165600 600000 165600 621600 Dl
+187200 600000 165600 600000 Dl
+187200 621600 187200 600000 Dl
+165600 621600 187200 621600 Dl
+(0)173900 612800 w
+187200 600000 187200 621600 Dl
+208800 600000 187200 600000 Dl
+208800 621600 208800 600000 Dl
+187200 621600 208800 621600 Dl
+(0)195500 612800 w
+208800 600000 208800 621600 Dl
+230400 600000 208800 600000 Dl
+230400 621600 230400 600000 Dl
+208800 621600 230400 621600 Dl
+(0)217100 612800 w
+230400 600000 230400 621600 Dl
+252000 600000 230400 600000 Dl
+252000 621600 252000 600000 Dl
+230400 621600 252000 621600 Dl
+(0)238700 612800 w
+252000 600000 252000 621600 Dl
+273600 600000 252000 600000 Dl
+273600 621600 273600 600000 Dl
+252000 621600 273600 621600 Dl
+(1)260300 612800 w
+273600 600000 273600 621600 Dl
+295200 600000 273600 600000 Dl
+295200 621600 295200 600000 Dl
+273600 621600 295200 621600 Dl
+(0)281900 612800 w
+295200 600000 295200 621600 Dl
+316800 600000 295200 600000 Dl
+316800 621600 316800 600000 Dl
+295200 621600 316800 621600 Dl
+(0)303500 612800 w
+(mst)79175 658400 w
+100800 645600 100800 667200 Dl
+122400 645600 100800 645600 Dl
+122400 667200 122400 645600 Dl
+100800 667200 122400 667200 Dl
+(0)109100 658400 w
+122400 645600 122400 667200 Dl
+144000 645600 122400 645600 Dl
+144000 667200 144000 645600 Dl
+122400 667200 144000 667200 Dl
+(0)130700 658400 w
+144000 645600 144000 667200 Dl
+165600 645600 144000 645600 Dl
+165600 667200 165600 645600 Dl
+144000 667200 165600 667200 Dl
+(0)152300 658400 w
+165600 645600 165600 667200 Dl
+187200 645600 165600 645600 Dl
+187200 667200 187200 645600 Dl
+165600 667200 187200 667200 Dl
+(0)173900 658400 w
+187200 645600 187200 667200 Dl
+208800 645600 187200 645600 Dl
+208800 667200 208800 645600 Dl
+187200 667200 208800 667200 Dl
+(0)195500 658400 w
+208800 645600 208800 667200 Dl
+230400 645600 208800 645600 Dl
+230400 667200 230400 645600 Dl
+208800 667200 230400 667200 Dl
+(0)217100 658400 w
+230400 645600 230400 667200 Dl
+252000 645600 230400 645600 Dl
+252000 667200 252000 645600 Dl
+230400 667200 252000 667200 Dl
+(0)238700 658400 w
+252000 645600 252000 667200 Dl
+273600 645600 252000 645600 Dl
+273600 667200 273600 645600 Dl
+252000 667200 273600 667200 Dl
+(0)260300 658400 w
+273600 645600 273600 667200 Dl
+295200 645600 273600 645600 Dl
+295200 667200 295200 645600 Dl
+273600 667200 295200 667200 Dl
+(0)281900 658400 w
+295200 645600 295200 667200 Dl
+316800 645600 295200 645600 Dl
+316800 667200 316800 645600 Dl
+295200 667200 316800 667200 Dl
+(0)303500 658400 w
+(wt)81400 692000 w
+100800 679200 100800 700800 Dl
+122400 679200 100800 679200 Dl
+122400 700800 122400 679200 Dl
+100800 700800 122400 700800 Dl
+(1400)101600 692000 w
+122400 679200 122400 700800 Dl
+144000 679200 122400 679200 Dl
+144000 700800 144000 679200 Dl
+122400 700800 144000 700800 Dl
+(323)125700 692000 w
+144000 679200 144000 700800 Dl
+165600 679200 144000 679200 Dl
+165600 700800 165600 679200 Dl
+144000 700800 165600 700800 Dl
+(180)147300 692000 w
+165600 679200 165600 700800 Dl
+187200 679200 165600 679200 Dl
+187200 700800 187200 679200 Dl
+165600 700800 187200 700800 Dl
+(437)168900 692000 w
+187200 679200 187200 700800 Dl
+208800 679200 187200 679200 Dl
+208800 700800 208800 679200 Dl
+187200 700800 208800 700800 Dl
+(367)190500 692000 w
+208800 679200 208800 700800 Dl
+230400 679200 208800 679200 Dl
+230400 700800 230400 679200 Dl
+208800 700800 230400 700800 Dl
+(491)212100 692000 w
+230400 679200 230400 700800 Dl
+252000 679200 230400 679200 Dl
+252000 700800 252000 679200 Dl
+230400 700800 252000 700800 Dl
+(97)236200 692000 w
+252000 679200 252000 700800 Dl
+273600 679200 252000 679200 Dl
+273600 700800 273600 679200 Dl
+252000 700800 273600 700800 Dl
+(91)257800 692000 w
+273600 679200 273600 700800 Dl
+295200 679200 273600 679200 Dl
+295200 700800 295200 679200 Dl
+273600 700800 295200 700800 Dl
+(270)276900 692000 w
+295200 679200 295200 700800 Dl
+316800 679200 295200 679200 Dl
+316800 700800 316800 679200 Dl
+295200 700800 316800 700800 Dl
+(528)298500 692000 w
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 712800 w
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 3 3
+%%Page: 4 4
+save
+mark
+4 pagesetup
+10 @11 f
+(\001)278840 48000 w
+(4)285500 v
+(\001)293830 v
+(min = 10, w = 0, v = 7)3330 1 72000 84000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 108000 w
+(min = 10, w = 1, v = 7)3330 1 72000 132000 t
+( = 7)3330( v)13320( = 412,)3330( adj[v][w])13320( = 323,)3330( wt[w])16650
+(w = 1,)3330 7 72000 168000 t
+( = 323)3330( wt[w])6660( = 1400,)3330( wt[min])9990(min = 10, w = 1,)3330 5 72000 204000 t
+( <\001\001 w)3330( min)85790( = 1,)3330( w)6660(min =)3330 5 72000 240000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 264000 w
+(min = 1, w = 2, v = 7)3330 1 72000 288000 t
+( = 7)3330( v)13320( = 248,)3330( adj[v][w])13320( = 180,)3330( wt[w])16650
+(w = 2,)3330 7 72000 324000 t
+( = 180)3330( wt[w])6660( = 323,)3330( wt[min])9990(min = 1, w = 2,)3330 5 72000 360000 t
+( <\001\001 w)3330( min)85790( = 2,)3330( w)6660(min =)3330 5 72000 396000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 420000 w
+(min = 2, w = 3, v = 7)3330 1 72000 444000 t
+( = 7)3330( v)13320( = 387,)3330( adj[v][w])13320( = 437,)3330( wt[w])16650
+(w = 3,)3330 7 72000 480000 t
+( <\001\001 v)3330( mst[w])26640(w = 3, wt[w] = 387.000000, mst[w]=v= 7)3330 3 72000 516000 t
+( = 387)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 3,)3330 5 72000 552000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 576000 w
+(min = 2, w = 4, v = 7)3330 1 72000 600000 t
+( = 7)3330( v)13320( = 355,)3330( adj[v][w])13320( = 367,)3330( wt[w])16650
+(w = 4,)3330 7 72000 636000 t
+( <\001\001 v)3330( mst[w])26640(w = 4, wt[w] = 355.000000, mst[w]=v= 7)3330 3 72000 672000 t
+( = 355)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 4,)3330 5 72000 708000 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 4 4
+%%Page: 5 5
+save
+mark
+5 pagesetup
+10 @11 f
+(\001)278840 48000 w
+(5)285500 v
+(\001)293830 v
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 84000 w
+(min = 2, w = 5, v = 7)3330 1 72000 108000 t
+( = 7)3330( v)13320( = 416,)3330( adj[v][w])13320( = 491,)3330( wt[w])16650
+(w = 5,)3330 7 72000 144000 t
+( <\001\001 v)3330( mst[w])26640(w = 5, wt[w] = 416.000000, mst[w]=v= 7)3330 3 72000 180000 t
+( = 416)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 5,)3330 5 72000 216000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 240000 w
+(min = 2, w = 6, v = 7)3330 1 72000 264000 t
+( = 7)3330( v)13320( = 19,)3330( adj[v][w])13320( = 97,)3330( wt[w])16650
+(w = 6,)3330 7 72000 300000 t
+( <\001\001 v)3330( mst[w])26640(w = 6, wt[w] = 19.000000, mst[w]=v= 7)3330 3 72000 336000 t
+( = 19)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 6,)3330 5 72000 372000 t
+( <\001\001 w)3330( min)85790( = 6,)3330( w)6660(min =)3330 5 72000 408000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 432000 w
+(min = 6, w = 7, v = 7)3330 1 72000 456000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 480000 w
+(min = 6, w = 8, v = 7)3330 1 72000 504000 t
+( = 7)3330( v)13320( = 307,)3330( adj[v][w])13320( = 270,)3330( wt[w])16650
+(w = 8,)3330 7 72000 540000 t
+( = 270)3330( wt[w])6660( = 19,)3330( wt[min])9990(min = 6, w = 8,)3330 5 72000 576000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 600000 w
+(min = 6, w = 9, v = 7)3330 1 72000 624000 t
+( = 7)3330( v)13320( = 561,)3330( adj[v][w])13320( = 528,)3330( wt[w])16650
+(w = 9,)3330 7 72000 660000 t
+( = 528)3330( wt[w])6660( = 19,)3330( wt[min])9990(min = 6, w = 9,)3330 5 72000 696000 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 5 5
+%%Page: 6 6
+save
+mark
+6 pagesetup
+10 @11 f
+(\001)278840 48000 w
+(6)285500 v
+(\001)293830 v
+(id)82510 96800 w
+100800 84000 100800 105600 Dl
+122400 84000 100800 84000 Dl
+122400 105600 122400 84000 Dl
+100800 105600 122400 105600 Dl
+(1)109100 96800 w
+122400 84000 122400 105600 Dl
+144000 84000 122400 84000 Dl
+144000 105600 144000 84000 Dl
+122400 105600 144000 105600 Dl
+(0)130700 96800 w
+144000 84000 144000 105600 Dl
+165600 84000 144000 84000 Dl
+165600 105600 165600 84000 Dl
+144000 105600 165600 105600 Dl
+(0)152300 96800 w
+165600 84000 165600 105600 Dl
+187200 84000 165600 84000 Dl
+187200 105600 187200 84000 Dl
+165600 105600 187200 105600 Dl
+(0)173900 96800 w
+187200 84000 187200 105600 Dl
+208800 84000 187200 84000 Dl
+208800 105600 208800 84000 Dl
+187200 105600 208800 105600 Dl
+(0)195500 96800 w
+208800 84000 208800 105600 Dl
+230400 84000 208800 84000 Dl
+230400 105600 230400 84000 Dl
+208800 105600 230400 105600 Dl
+(0)217100 96800 w
+230400 84000 230400 105600 Dl
+252000 84000 230400 84000 Dl
+252000 105600 252000 84000 Dl
+230400 105600 252000 105600 Dl
+(1)238700 96800 w
+252000 84000 252000 105600 Dl
+273600 84000 252000 84000 Dl
+273600 105600 273600 84000 Dl
+252000 105600 273600 105600 Dl
+(1)260300 96800 w
+273600 84000 273600 105600 Dl
+295200 84000 273600 84000 Dl
+295200 105600 295200 84000 Dl
+273600 105600 295200 105600 Dl
+(0)281900 96800 w
+295200 84000 295200 105600 Dl
+316800 84000 295200 84000 Dl
+316800 105600 316800 84000 Dl
+295200 105600 316800 105600 Dl
+(0)303500 96800 w
+(mst)79175 142400 w
+100800 129600 100800 151200 Dl
+122400 129600 100800 129600 Dl
+122400 151200 122400 129600 Dl
+100800 151200 122400 151200 Dl
+(0)109100 142400 w
+122400 129600 122400 151200 Dl
+144000 129600 122400 129600 Dl
+144000 151200 144000 129600 Dl
+122400 151200 144000 151200 Dl
+(0)130700 142400 w
+144000 129600 144000 151200 Dl
+165600 129600 144000 129600 Dl
+165600 151200 165600 129600 Dl
+144000 151200 165600 151200 Dl
+(0)152300 142400 w
+165600 129600 165600 151200 Dl
+187200 129600 165600 129600 Dl
+187200 151200 187200 129600 Dl
+165600 151200 187200 151200 Dl
+(7)173900 142400 w
+187200 129600 187200 151200 Dl
+208800 129600 187200 129600 Dl
+208800 151200 208800 129600 Dl
+187200 151200 208800 151200 Dl
+(7)195500 142400 w
+208800 129600 208800 151200 Dl
+230400 129600 208800 129600 Dl
+230400 151200 230400 129600 Dl
+208800 151200 230400 151200 Dl
+(7)217100 142400 w
+230400 129600 230400 151200 Dl
+252000 129600 230400 129600 Dl
+252000 151200 252000 129600 Dl
+230400 151200 252000 151200 Dl
+(7)238700 142400 w
+252000 129600 252000 151200 Dl
+273600 129600 252000 129600 Dl
+273600 151200 273600 129600 Dl
+252000 151200 273600 151200 Dl
+(0)260300 142400 w
+273600 129600 273600 151200 Dl
+295200 129600 273600 129600 Dl
+295200 151200 295200 129600 Dl
+273600 151200 295200 151200 Dl
+(0)281900 142400 w
+295200 129600 295200 151200 Dl
+316800 129600 295200 129600 Dl
+316800 151200 316800 129600 Dl
+295200 151200 316800 151200 Dl
+(0)303500 142400 w
+(wt)81400 176000 w
+100800 163200 100800 184800 Dl
+122400 163200 100800 163200 Dl
+122400 184800 122400 163200 Dl
+100800 184800 122400 184800 Dl
+(1400)101600 176000 w
+122400 163200 122400 184800 Dl
+144000 163200 122400 163200 Dl
+144000 184800 144000 163200 Dl
+122400 184800 144000 184800 Dl
+(323)125700 176000 w
+144000 163200 144000 184800 Dl
+165600 163200 144000 163200 Dl
+165600 184800 165600 163200 Dl
+144000 184800 165600 184800 Dl
+(180)147300 176000 w
+165600 163200 165600 184800 Dl
+187200 163200 165600 163200 Dl
+187200 184800 187200 163200 Dl
+165600 184800 187200 184800 Dl
+(387)168900 176000 w
+187200 163200 187200 184800 Dl
+208800 163200 187200 163200 Dl
+208800 184800 208800 163200 Dl
+187200 184800 208800 184800 Dl
+(355)190500 176000 w
+208800 163200 208800 184800 Dl
+230400 163200 208800 163200 Dl
+230400 184800 230400 163200 Dl
+208800 184800 230400 184800 Dl
+(416)212100 176000 w
+230400 163200 230400 184800 Dl
+252000 163200 230400 163200 Dl
+252000 184800 252000 163200 Dl
+230400 184800 252000 184800 Dl
+(19)236200 176000 w
+252000 163200 252000 184800 Dl
+273600 163200 252000 163200 Dl
+273600 184800 273600 163200 Dl
+252000 184800 273600 184800 Dl
+(91)257800 176000 w
+273600 163200 273600 184800 Dl
+295200 163200 273600 163200 Dl
+295200 184800 295200 163200 Dl
+273600 184800 295200 184800 Dl
+(270)276900 176000 w
+295200 163200 295200 184800 Dl
+316800 163200 295200 163200 Dl
+316800 184800 316800 163200 Dl
+295200 184800 316800 184800 Dl
+(528)298500 176000 w
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 196800 w
+(min = 10, w = 0, v = 6)3330 1 72000 220800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 244800 w
+(min = 10, w = 1, v = 6)3330 1 72000 268800 t
+( = 6)3330( v)13320( = 421,)3330( adj[v][w])13320( = 323,)3330( wt[w])16650
+(w = 1,)3330 7 72000 304800 t
+( = 323)3330( wt[w])6660( = 1400,)3330( wt[min])9990(min = 10, w = 1,)3330 5 72000 340800 t
+( <\001\001 w)3330( min)85790( = 1,)3330( w)6660(min =)3330 5 72000 376800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 400800 w
+(min = 1, w = 2, v = 6)3330 1 72000 424800 t
+( = 6)3330( v)13320( = 263,)3330( adj[v][w])13320( = 180,)3330( wt[w])16650
+(w = 2,)3330 7 72000 460800 t
+( = 180)3330( wt[w])6660( = 323,)3330( wt[min])9990(min = 1, w = 2,)3330 5 72000 496800 t
+( <\001\001 w)3330( min)85790( = 2,)3330( w)6660(min =)3330 5 72000 532800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 556800 w
+(min = 2, w = 3, v = 6)3330 1 72000 580800 t
+( = 6)3330( v)13320( = 402,)3330( adj[v][w])13320( = 387,)3330( wt[w])16650
+(w = 3,)3330 7 72000 616800 t
+( = 387)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 3,)3330 5 72000 652800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 676800 w
+(min = 2, w = 4, v = 6)3330 1 72000 700800 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 6 6
+%%Page: 7 7
+save
+mark
+7 pagesetup
+10 @11 f
+(\001)278840 48000 w
+(7)285500 v
+(\001)293830 v
+( = 6)3330( v)13320( = 374,)3330( adj[v][w])13320( = 355,)3330( wt[w])16650
+(w = 4,)3330 7 72000 84000 t
+( = 355)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 4,)3330 5 72000 120000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 144000 w
+(min = 2, w = 5, v = 6)3330 1 72000 168000 t
+( = 6)3330( v)13320( = 424,)3330( adj[v][w])13320( = 416,)3330( wt[w])16650
+(w = 5,)3330 7 72000 204000 t
+( = 416)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 5,)3330 5 72000 240000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 264000 w
+(min = 2, w = 6, v = 6)3330 1 72000 288000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 312000 w
+(min = 2, w = 7, v = 6)3330 1 72000 336000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 360000 w
+(min = 2, w = 8, v = 6)3330 1 72000 384000 t
+( = 6)3330( v)13320( = 325,)3330( adj[v][w])13320( = 270,)3330( wt[w])16650
+(w = 8,)3330 7 72000 420000 t
+( = 270)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 8,)3330 5 72000 456000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 480000 w
+(min = 2, w = 9, v = 6)3330 1 72000 504000 t
+( = 6)3330( v)13320( = 580,)3330( adj[v][w])13320( = 528,)3330( wt[w])16650
+(w = 9,)3330 7 72000 540000 t
+( = 528)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 2, w = 9,)3330 5 72000 576000 t
+(id)82510 624800 w
+100800 612000 100800 633600 Dl
+122400 612000 100800 612000 Dl
+122400 633600 122400 612000 Dl
+100800 633600 122400 633600 Dl
+(1)109100 624800 w
+122400 612000 122400 633600 Dl
+144000 612000 122400 612000 Dl
+144000 633600 144000 612000 Dl
+122400 633600 144000 633600 Dl
+(0)130700 624800 w
+144000 612000 144000 633600 Dl
+165600 612000 144000 612000 Dl
+165600 633600 165600 612000 Dl
+144000 633600 165600 633600 Dl
+(1)152300 624800 w
+165600 612000 165600 633600 Dl
+187200 612000 165600 612000 Dl
+187200 633600 187200 612000 Dl
+165600 633600 187200 633600 Dl
+(0)173900 624800 w
+187200 612000 187200 633600 Dl
+208800 612000 187200 612000 Dl
+208800 633600 208800 612000 Dl
+187200 633600 208800 633600 Dl
+(0)195500 624800 w
+208800 612000 208800 633600 Dl
+230400 612000 208800 612000 Dl
+230400 633600 230400 612000 Dl
+208800 633600 230400 633600 Dl
+(0)217100 624800 w
+230400 612000 230400 633600 Dl
+252000 612000 230400 612000 Dl
+252000 633600 252000 612000 Dl
+230400 633600 252000 633600 Dl
+(1)238700 624800 w
+252000 612000 252000 633600 Dl
+273600 612000 252000 612000 Dl
+273600 633600 273600 612000 Dl
+252000 633600 273600 633600 Dl
+(1)260300 624800 w
+273600 612000 273600 633600 Dl
+295200 612000 273600 612000 Dl
+295200 633600 295200 612000 Dl
+273600 633600 295200 633600 Dl
+(0)281900 624800 w
+295200 612000 295200 633600 Dl
+316800 612000 295200 612000 Dl
+316800 633600 316800 612000 Dl
+295200 633600 316800 633600 Dl
+(0)303500 624800 w
+(mst)79175 670400 w
+100800 657600 100800 679200 Dl
+122400 657600 100800 657600 Dl
+122400 679200 122400 657600 Dl
+100800 679200 122400 679200 Dl
+(0)109100 670400 w
+122400 657600 122400 679200 Dl
+144000 657600 122400 657600 Dl
+144000 679200 144000 657600 Dl
+122400 679200 144000 679200 Dl
+(0)130700 670400 w
+144000 657600 144000 679200 Dl
+165600 657600 144000 657600 Dl
+165600 679200 165600 657600 Dl
+144000 679200 165600 679200 Dl
+(0)152300 670400 w
+165600 657600 165600 679200 Dl
+187200 657600 165600 657600 Dl
+187200 679200 187200 657600 Dl
+165600 679200 187200 679200 Dl
+(7)173900 670400 w
+187200 657600 187200 679200 Dl
+208800 657600 187200 657600 Dl
+208800 679200 208800 657600 Dl
+187200 679200 208800 679200 Dl
+(7)195500 670400 w
+208800 657600 208800 679200 Dl
+230400 657600 208800 657600 Dl
+230400 679200 230400 657600 Dl
+208800 679200 230400 679200 Dl
+(7)217100 670400 w
+230400 657600 230400 679200 Dl
+252000 657600 230400 657600 Dl
+252000 679200 252000 657600 Dl
+230400 679200 252000 679200 Dl
+(7)238700 670400 w
+252000 657600 252000 679200 Dl
+273600 657600 252000 657600 Dl
+273600 679200 273600 657600 Dl
+252000 679200 273600 679200 Dl
+(0)260300 670400 w
+273600 657600 273600 679200 Dl
+295200 657600 273600 657600 Dl
+295200 679200 295200 657600 Dl
+273600 679200 295200 679200 Dl
+(0)281900 670400 w
+295200 657600 295200 679200 Dl
+316800 657600 295200 657600 Dl
+316800 679200 316800 657600 Dl
+295200 679200 316800 679200 Dl
+(0)303500 670400 w
+(wt)81400 704000 w
+100800 691200 100800 712800 Dl
+122400 691200 100800 691200 Dl
+122400 712800 122400 691200 Dl
+100800 712800 122400 712800 Dl
+(1400)101600 704000 w
+122400 691200 122400 712800 Dl
+144000 691200 122400 691200 Dl
+144000 712800 144000 691200 Dl
+122400 712800 144000 712800 Dl
+(323)125700 704000 w
+144000 691200 144000 712800 Dl
+165600 691200 144000 691200 Dl
+165600 712800 165600 691200 Dl
+144000 712800 165600 712800 Dl
+(180)147300 704000 w
+165600 691200 165600 712800 Dl
+187200 691200 165600 691200 Dl
+187200 712800 187200 691200 Dl
+165600 712800 187200 712800 Dl
+(387)168900 704000 w
+187200 691200 187200 712800 Dl
+208800 691200 187200 691200 Dl
+208800 712800 208800 691200 Dl
+187200 712800 208800 712800 Dl
+(355)190500 704000 w
+208800 691200 208800 712800 Dl
+230400 691200 208800 691200 Dl
+230400 712800 230400 691200 Dl
+208800 712800 230400 712800 Dl
+(416)212100 704000 w
+230400 691200 230400 712800 Dl
+252000 691200 230400 691200 Dl
+252000 712800 252000 691200 Dl
+230400 712800 252000 712800 Dl
+(19)236200 704000 w
+252000 691200 252000 712800 Dl
+273600 691200 252000 691200 Dl
+273600 712800 273600 691200 Dl
+252000 712800 273600 712800 Dl
+(91)257800 704000 w
+273600 691200 273600 712800 Dl
+295200 691200 273600 691200 Dl
+295200 712800 295200 691200 Dl
+273600 712800 295200 712800 Dl
+(270)276900 704000 w
+295200 691200 295200 712800 Dl
+316800 691200 295200 691200 Dl
+316800 712800 316800 691200 Dl
+295200 712800 316800 712800 Dl
+(528)298500 704000 w
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 724800 w
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 7 7
+%%Page: 8 8
+save
+mark
+8 pagesetup
+10 @11 f
+(\001)278840 48000 w
+(8)285500 v
+(\001)293830 v
+(min = 10, w = 0, v = 2)3330 1 72000 84000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 108000 w
+(min = 10, w = 1, v = 2)3330 1 72000 132000 t
+( = 2)3330( v)13320( = 208,)3330( adj[v][w])13320( = 323,)3330( wt[w])16650
+(w = 1,)3330 7 72000 168000 t
+( <\001\001 v)3330( mst[w])26640(w = 1, wt[w] = 208.000000, mst[w]=v= 2)3330 3 72000 204000 t
+( = 208)3330( wt[w])6660( = 1400,)3330( wt[min])9990(min = 10, w = 1,)3330 5 72000 240000 t
+( <\001\001 w)3330( min)85790( = 1,)3330( w)6660(min =)3330 5 72000 276000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 300000 w
+(min = 1, w = 2, v = 2)3330 1 72000 324000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 348000 w
+(min = 1, w = 3, v = 2)3330 1 72000 372000 t
+( = 2)3330( v)13320( = 434,)3330( adj[v][w])13320( = 387,)3330( wt[w])16650
+(w = 3,)3330 7 72000 408000 t
+( = 387)3330( wt[w])6660( = 208,)3330( wt[min])9990(min = 1, w = 3,)3330 5 72000 444000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 468000 w
+(min = 1, w = 4, v = 2)3330 1 72000 492000 t
+( = 2)3330( v)13320( = 297,)3330( adj[v][w])13320( = 355,)3330( wt[w])16650
+(w = 4,)3330 7 72000 528000 t
+( <\001\001 v)3330( mst[w])26640(w = 4, wt[w] = 297.000000, mst[w]=v= 2)3330 3 72000 564000 t
+( = 297)3330( wt[w])6660( = 208,)3330( wt[min])9990(min = 1, w = 4,)3330 5 72000 600000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 624000 w
+(min = 1, w = 5, v = 2)3330 1 72000 648000 t
+( = 2)3330( v)13320( = 544,)3330( adj[v][w])13320( = 416,)3330( wt[w])16650
+(w = 5,)3330 7 72000 684000 t
+( = 416)3330( wt[w])6660( = 208,)3330( wt[min])9990(min = 1, w = 5,)3330 5 72000 720000 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 8 8
+%%Page: 9 9
+save
+mark
+9 pagesetup
+10 @11 f
+(\001)278840 48000 w
+(9)285500 v
+(\001)293830 v
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 84000 w
+(min = 1, w = 6, v = 2)3330 1 72000 108000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 132000 w
+(min = 1, w = 7, v = 2)3330 1 72000 156000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 180000 w
+(min = 1, w = 8, v = 2)3330 1 72000 204000 t
+( = 2)3330( v)13320( = 126,)3330( adj[v][w])13320( = 270,)3330( wt[w])16650
+(w = 8,)3330 7 72000 240000 t
+( <\001\001 v)3330( mst[w])26640(w = 8, wt[w] = 126.000000, mst[w]=v= 2)3330 3 72000 276000 t
+( = 126)3330( wt[w])6660( = 208,)3330( wt[min])9990(min = 1, w = 8,)3330 5 72000 312000 t
+( <\001\001 w)3330( min)85790( = 8,)3330( w)6660(min =)3330 5 72000 348000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 372000 w
+(min = 8, w = 9, v = 2)3330 1 72000 396000 t
+( = 2)3330( v)13320( = 366,)3330( adj[v][w])13320( = 528,)3330( wt[w])16650
+(w = 9,)3330 7 72000 432000 t
+( <\001\001 v)3330( mst[w])26640(w = 9, wt[w] = 366.000000, mst[w]=v= 2)3330 3 72000 468000 t
+( = 366)3330( wt[w])6660( = 126,)3330( wt[min])9990(min = 8, w = 9,)3330 5 72000 504000 t
+(id)82510 552800 w
+100800 540000 100800 561600 Dl
+122400 540000 100800 540000 Dl
+122400 561600 122400 540000 Dl
+100800 561600 122400 561600 Dl
+(1)109100 552800 w
+122400 540000 122400 561600 Dl
+144000 540000 122400 540000 Dl
+144000 561600 144000 540000 Dl
+122400 561600 144000 561600 Dl
+(0)130700 552800 w
+144000 540000 144000 561600 Dl
+165600 540000 144000 540000 Dl
+165600 561600 165600 540000 Dl
+144000 561600 165600 561600 Dl
+(1)152300 552800 w
+165600 540000 165600 561600 Dl
+187200 540000 165600 540000 Dl
+187200 561600 187200 540000 Dl
+165600 561600 187200 561600 Dl
+(0)173900 552800 w
+187200 540000 187200 561600 Dl
+208800 540000 187200 540000 Dl
+208800 561600 208800 540000 Dl
+187200 561600 208800 561600 Dl
+(0)195500 552800 w
+208800 540000 208800 561600 Dl
+230400 540000 208800 540000 Dl
+230400 561600 230400 540000 Dl
+208800 561600 230400 561600 Dl
+(0)217100 552800 w
+230400 540000 230400 561600 Dl
+252000 540000 230400 540000 Dl
+252000 561600 252000 540000 Dl
+230400 561600 252000 561600 Dl
+(1)238700 552800 w
+252000 540000 252000 561600 Dl
+273600 540000 252000 540000 Dl
+273600 561600 273600 540000 Dl
+252000 561600 273600 561600 Dl
+(1)260300 552800 w
+273600 540000 273600 561600 Dl
+295200 540000 273600 540000 Dl
+295200 561600 295200 540000 Dl
+273600 561600 295200 561600 Dl
+(1)281900 552800 w
+295200 540000 295200 561600 Dl
+316800 540000 295200 540000 Dl
+316800 561600 316800 540000 Dl
+295200 561600 316800 561600 Dl
+(0)303500 552800 w
+(mst)79175 598400 w
+100800 585600 100800 607200 Dl
+122400 585600 100800 585600 Dl
+122400 607200 122400 585600 Dl
+100800 607200 122400 607200 Dl
+(0)109100 598400 w
+122400 585600 122400 607200 Dl
+144000 585600 122400 585600 Dl
+144000 607200 144000 585600 Dl
+122400 607200 144000 607200 Dl
+(2)130700 598400 w
+144000 585600 144000 607200 Dl
+165600 585600 144000 585600 Dl
+165600 607200 165600 585600 Dl
+144000 607200 165600 607200 Dl
+(0)152300 598400 w
+165600 585600 165600 607200 Dl
+187200 585600 165600 585600 Dl
+187200 607200 187200 585600 Dl
+165600 607200 187200 607200 Dl
+(7)173900 598400 w
+187200 585600 187200 607200 Dl
+208800 585600 187200 585600 Dl
+208800 607200 208800 585600 Dl
+187200 607200 208800 607200 Dl
+(2)195500 598400 w
+208800 585600 208800 607200 Dl
+230400 585600 208800 585600 Dl
+230400 607200 230400 585600 Dl
+208800 607200 230400 607200 Dl
+(7)217100 598400 w
+230400 585600 230400 607200 Dl
+252000 585600 230400 585600 Dl
+252000 607200 252000 585600 Dl
+230400 607200 252000 607200 Dl
+(7)238700 598400 w
+252000 585600 252000 607200 Dl
+273600 585600 252000 585600 Dl
+273600 607200 273600 585600 Dl
+252000 607200 273600 607200 Dl
+(0)260300 598400 w
+273600 585600 273600 607200 Dl
+295200 585600 273600 585600 Dl
+295200 607200 295200 585600 Dl
+273600 607200 295200 607200 Dl
+(2)281900 598400 w
+295200 585600 295200 607200 Dl
+316800 585600 295200 585600 Dl
+316800 607200 316800 585600 Dl
+295200 607200 316800 607200 Dl
+(2)303500 598400 w
+(wt)81400 632000 w
+100800 619200 100800 640800 Dl
+122400 619200 100800 619200 Dl
+122400 640800 122400 619200 Dl
+100800 640800 122400 640800 Dl
+(1400)101600 632000 w
+122400 619200 122400 640800 Dl
+144000 619200 122400 619200 Dl
+144000 640800 144000 619200 Dl
+122400 640800 144000 640800 Dl
+(208)125700 632000 w
+144000 619200 144000 640800 Dl
+165600 619200 144000 619200 Dl
+165600 640800 165600 619200 Dl
+144000 640800 165600 640800 Dl
+(180)147300 632000 w
+165600 619200 165600 640800 Dl
+187200 619200 165600 619200 Dl
+187200 640800 187200 619200 Dl
+165600 640800 187200 640800 Dl
+(387)168900 632000 w
+187200 619200 187200 640800 Dl
+208800 619200 187200 619200 Dl
+208800 640800 208800 619200 Dl
+187200 640800 208800 640800 Dl
+(297)190500 632000 w
+208800 619200 208800 640800 Dl
+230400 619200 208800 619200 Dl
+230400 640800 230400 619200 Dl
+208800 640800 230400 640800 Dl
+(416)212100 632000 w
+230400 619200 230400 640800 Dl
+252000 619200 230400 619200 Dl
+252000 640800 252000 619200 Dl
+230400 640800 252000 640800 Dl
+(19)236200 632000 w
+252000 619200 252000 640800 Dl
+273600 619200 252000 619200 Dl
+273600 640800 273600 619200 Dl
+252000 640800 273600 640800 Dl
+(91)257800 632000 w
+273600 619200 273600 640800 Dl
+295200 619200 273600 619200 Dl
+295200 640800 295200 619200 Dl
+273600 640800 295200 640800 Dl
+(126)276900 632000 w
+295200 619200 295200 640800 Dl
+316800 619200 295200 619200 Dl
+316800 640800 316800 619200 Dl
+295200 640800 316800 640800 Dl
+(366)298500 632000 w
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 652800 w
+(min = 10, w = 0, v = 8)3330 1 72000 676800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 700800 w
+(min = 10, w = 1, v = 8)3330 1 72000 724800 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 9 9
+%%Page: 10 10
+save
+mark
+10 pagesetup
+10 @11 f
+(\001)276340 48000 w
+(10)283000 v
+(\001)296330 v
+( = 8)3330( v)13320( = 300,)3330( adj[v][w])13320( = 208,)3330( wt[w])16650
+(w = 1,)3330 7 72000 84000 t
+( = 208)3330( wt[w])6660( = 1400,)3330( wt[min])9990(min = 10, w = 1,)3330 5 72000 120000 t
+( <\001\001 w)3330( min)85790( = 1,)3330( w)6660(min =)3330 5 72000 156000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 180000 w
+(min = 1, w = 2, v = 8)3330 1 72000 204000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 228000 w
+(min = 1, w = 3, v = 8)3330 1 72000 252000 t
+( = 8)3330( v)13320( = 353,)3330( adj[v][w])13320( = 387,)3330( wt[w])16650
+(w = 3,)3330 7 72000 288000 t
+( <\001\001 v)3330( mst[w])26640(w = 3, wt[w] = 353.000000, mst[w]=v= 8)3330 3 72000 324000 t
+( = 353)3330( wt[w])6660( = 208,)3330( wt[min])9990(min = 1, w = 3,)3330 5 72000 360000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 384000 w
+(min = 1, w = 4, v = 8)3330 1 72000 408000 t
+( = 8)3330( v)13320( = 189,)3330( adj[v][w])13320( = 297,)3330( wt[w])16650
+(w = 4,)3330 7 72000 444000 t
+( <\001\001 v)3330( mst[w])26640(w = 4, wt[w] = 189.000000, mst[w]=v= 8)3330 3 72000 480000 t
+( = 189)3330( wt[w])6660( = 208,)3330( wt[min])9990(min = 1, w = 4,)3330 5 72000 516000 t
+( <\001\001 w)3330( min)85790( = 4,)3330( w)6660(min =)3330 5 72000 552000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 576000 w
+(min = 4, w = 5, v = 8)3330 1 72000 600000 t
+( = 8)3330( v)13320( = 489,)3330( adj[v][w])13320( = 416,)3330( wt[w])16650
+(w = 5,)3330 7 72000 636000 t
+( = 416)3330( wt[w])6660( = 189,)3330( wt[min])9990(min = 4, w = 5,)3330 5 72000 672000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 696000 w
+(min = 4, w = 6, v = 8)3330 1 72000 720000 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 10 10
+%%Page: 11 11
+save
+mark
+11 pagesetup
+10 @11 f
+(\001)276340 48000 w
+(11)283000 v
+(\001)296330 v
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 84000 w
+(min = 4, w = 7, v = 8)3330 1 72000 108000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 132000 w
+(min = 4, w = 8, v = 8)3330 1 72000 156000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 180000 w
+(min = 4, w = 9, v = 8)3330 1 72000 204000 t
+( = 8)3330( v)13320( = 258,)3330( adj[v][w])13320( = 366,)3330( wt[w])16650
+(w = 9,)3330 7 72000 240000 t
+( <\001\001 v)3330( mst[w])26640(w = 9, wt[w] = 258.000000, mst[w]=v= 8)3330 3 72000 276000 t
+( = 258)3330( wt[w])6660( = 189,)3330( wt[min])9990(min = 4, w = 9,)3330 5 72000 312000 t
+(id)82510 360800 w
+100800 348000 100800 369600 Dl
+122400 348000 100800 348000 Dl
+122400 369600 122400 348000 Dl
+100800 369600 122400 369600 Dl
+(1)109100 360800 w
+122400 348000 122400 369600 Dl
+144000 348000 122400 348000 Dl
+144000 369600 144000 348000 Dl
+122400 369600 144000 369600 Dl
+(0)130700 360800 w
+144000 348000 144000 369600 Dl
+165600 348000 144000 348000 Dl
+165600 369600 165600 348000 Dl
+144000 369600 165600 369600 Dl
+(1)152300 360800 w
+165600 348000 165600 369600 Dl
+187200 348000 165600 348000 Dl
+187200 369600 187200 348000 Dl
+165600 369600 187200 369600 Dl
+(0)173900 360800 w
+187200 348000 187200 369600 Dl
+208800 348000 187200 348000 Dl
+208800 369600 208800 348000 Dl
+187200 369600 208800 369600 Dl
+(1)195500 360800 w
+208800 348000 208800 369600 Dl
+230400 348000 208800 348000 Dl
+230400 369600 230400 348000 Dl
+208800 369600 230400 369600 Dl
+(0)217100 360800 w
+230400 348000 230400 369600 Dl
+252000 348000 230400 348000 Dl
+252000 369600 252000 348000 Dl
+230400 369600 252000 369600 Dl
+(1)238700 360800 w
+252000 348000 252000 369600 Dl
+273600 348000 252000 348000 Dl
+273600 369600 273600 348000 Dl
+252000 369600 273600 369600 Dl
+(1)260300 360800 w
+273600 348000 273600 369600 Dl
+295200 348000 273600 348000 Dl
+295200 369600 295200 348000 Dl
+273600 369600 295200 369600 Dl
+(1)281900 360800 w
+295200 348000 295200 369600 Dl
+316800 348000 295200 348000 Dl
+316800 369600 316800 348000 Dl
+295200 369600 316800 369600 Dl
+(0)303500 360800 w
+(mst)79175 406400 w
+100800 393600 100800 415200 Dl
+122400 393600 100800 393600 Dl
+122400 415200 122400 393600 Dl
+100800 415200 122400 415200 Dl
+(0)109100 406400 w
+122400 393600 122400 415200 Dl
+144000 393600 122400 393600 Dl
+144000 415200 144000 393600 Dl
+122400 415200 144000 415200 Dl
+(2)130700 406400 w
+144000 393600 144000 415200 Dl
+165600 393600 144000 393600 Dl
+165600 415200 165600 393600 Dl
+144000 415200 165600 415200 Dl
+(0)152300 406400 w
+165600 393600 165600 415200 Dl
+187200 393600 165600 393600 Dl
+187200 415200 187200 393600 Dl
+165600 415200 187200 415200 Dl
+(8)173900 406400 w
+187200 393600 187200 415200 Dl
+208800 393600 187200 393600 Dl
+208800 415200 208800 393600 Dl
+187200 415200 208800 415200 Dl
+(8)195500 406400 w
+208800 393600 208800 415200 Dl
+230400 393600 208800 393600 Dl
+230400 415200 230400 393600 Dl
+208800 415200 230400 415200 Dl
+(7)217100 406400 w
+230400 393600 230400 415200 Dl
+252000 393600 230400 393600 Dl
+252000 415200 252000 393600 Dl
+230400 415200 252000 415200 Dl
+(7)238700 406400 w
+252000 393600 252000 415200 Dl
+273600 393600 252000 393600 Dl
+273600 415200 273600 393600 Dl
+252000 415200 273600 415200 Dl
+(0)260300 406400 w
+273600 393600 273600 415200 Dl
+295200 393600 273600 393600 Dl
+295200 415200 295200 393600 Dl
+273600 415200 295200 415200 Dl
+(2)281900 406400 w
+295200 393600 295200 415200 Dl
+316800 393600 295200 393600 Dl
+316800 415200 316800 393600 Dl
+295200 415200 316800 415200 Dl
+(8)303500 406400 w
+(wt)81400 440000 w
+100800 427200 100800 448800 Dl
+122400 427200 100800 427200 Dl
+122400 448800 122400 427200 Dl
+100800 448800 122400 448800 Dl
+(1400)101600 440000 w
+122400 427200 122400 448800 Dl
+144000 427200 122400 427200 Dl
+144000 448800 144000 427200 Dl
+122400 448800 144000 448800 Dl
+(208)125700 440000 w
+144000 427200 144000 448800 Dl
+165600 427200 144000 427200 Dl
+165600 448800 165600 427200 Dl
+144000 448800 165600 448800 Dl
+(180)147300 440000 w
+165600 427200 165600 448800 Dl
+187200 427200 165600 427200 Dl
+187200 448800 187200 427200 Dl
+165600 448800 187200 448800 Dl
+(353)168900 440000 w
+187200 427200 187200 448800 Dl
+208800 427200 187200 427200 Dl
+208800 448800 208800 427200 Dl
+187200 448800 208800 448800 Dl
+(189)190500 440000 w
+208800 427200 208800 448800 Dl
+230400 427200 208800 427200 Dl
+230400 448800 230400 427200 Dl
+208800 448800 230400 448800 Dl
+(416)212100 440000 w
+230400 427200 230400 448800 Dl
+252000 427200 230400 427200 Dl
+252000 448800 252000 427200 Dl
+230400 448800 252000 448800 Dl
+(19)236200 440000 w
+252000 427200 252000 448800 Dl
+273600 427200 252000 427200 Dl
+273600 448800 273600 427200 Dl
+252000 448800 273600 448800 Dl
+(91)257800 440000 w
+273600 427200 273600 448800 Dl
+295200 427200 273600 427200 Dl
+295200 448800 295200 427200 Dl
+273600 448800 295200 448800 Dl
+(126)276900 440000 w
+295200 427200 295200 448800 Dl
+316800 427200 295200 427200 Dl
+316800 448800 316800 427200 Dl
+295200 448800 316800 448800 Dl
+(258)298500 440000 w
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 460800 w
+(min = 10, w = 0, v = 4)3330 1 72000 484800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 508800 w
+(min = 10, w = 1, v = 4)3330 1 72000 532800 t
+( = 4)3330( v)13320( = 489,)3330( adj[v][w])13320( = 208,)3330( wt[w])16650
+(w = 1,)3330 7 72000 568800 t
+( = 208)3330( wt[w])6660( = 1400,)3330( wt[min])9990(min = 10, w = 1,)3330 5 72000 604800 t
+( <\001\001 w)3330( min)85790( = 1,)3330( w)6660(min =)3330 5 72000 640800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 664800 w
+(min = 1, w = 2, v = 4)3330 1 72000 688800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 712800 w
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 11 11
+%%Page: 12 12
+save
+mark
+12 pagesetup
+10 @11 f
+(\001)276340 48000 w
+(12)283000 v
+(\001)296330 v
+(min = 1, w = 3, v = 4)3330 1 72000 84000 t
+( = 4)3330( v)13320( = 180,)3330( adj[v][w])13320( = 353,)3330( wt[w])16650
+(w = 3,)3330 7 72000 120000 t
+( <\001\001 v)3330( mst[w])26640(w = 3, wt[w] = 180.000000, mst[w]=v= 4)3330 3 72000 156000 t
+( = 180)3330( wt[w])6660( = 208,)3330( wt[min])9990(min = 1, w = 3,)3330 5 72000 192000 t
+( <\001\001 w)3330( min)85790( = 3,)3330( w)6660(min =)3330 5 72000 228000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 252000 w
+(min = 3, w = 4, v = 4)3330 1 72000 276000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 300000 w
+(min = 3, w = 5, v = 4)3330 1 72000 324000 t
+( = 4)3330( v)13320( = 340,)3330( adj[v][w])13320( = 416,)3330( wt[w])16650
+(w = 5,)3330 7 72000 360000 t
+( <\001\001 v)3330( mst[w])26640(w = 5, wt[w] = 340.000000, mst[w]=v= 4)3330 3 72000 396000 t
+( = 340)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 3, w = 5,)3330 5 72000 432000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 456000 w
+(min = 3, w = 6, v = 4)3330 1 72000 480000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 504000 w
+(min = 3, w = 7, v = 4)3330 1 72000 528000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 552000 w
+(min = 3, w = 8, v = 4)3330 1 72000 576000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 600000 w
+(min = 3, w = 9, v = 4)3330 1 72000 624000 t
+( = 4)3330( v)13320( = 288,)3330( adj[v][w])13320( = 258,)3330( wt[w])16650
+(w = 9,)3330 7 72000 660000 t
+( = 258)3330( wt[w])6660( = 180,)3330( wt[min])9990(min = 3, w = 9,)3330 5 72000 696000 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 12 12
+%%Page: 13 13
+save
+mark
+13 pagesetup
+10 @11 f
+(\001)276340 48000 w
+(13)283000 v
+(\001)296330 v
+(id)82510 96800 w
+100800 84000 100800 105600 Dl
+122400 84000 100800 84000 Dl
+122400 105600 122400 84000 Dl
+100800 105600 122400 105600 Dl
+(1)109100 96800 w
+122400 84000 122400 105600 Dl
+144000 84000 122400 84000 Dl
+144000 105600 144000 84000 Dl
+122400 105600 144000 105600 Dl
+(0)130700 96800 w
+144000 84000 144000 105600 Dl
+165600 84000 144000 84000 Dl
+165600 105600 165600 84000 Dl
+144000 105600 165600 105600 Dl
+(1)152300 96800 w
+165600 84000 165600 105600 Dl
+187200 84000 165600 84000 Dl
+187200 105600 187200 84000 Dl
+165600 105600 187200 105600 Dl
+(1)173900 96800 w
+187200 84000 187200 105600 Dl
+208800 84000 187200 84000 Dl
+208800 105600 208800 84000 Dl
+187200 105600 208800 105600 Dl
+(1)195500 96800 w
+208800 84000 208800 105600 Dl
+230400 84000 208800 84000 Dl
+230400 105600 230400 84000 Dl
+208800 105600 230400 105600 Dl
+(0)217100 96800 w
+230400 84000 230400 105600 Dl
+252000 84000 230400 84000 Dl
+252000 105600 252000 84000 Dl
+230400 105600 252000 105600 Dl
+(1)238700 96800 w
+252000 84000 252000 105600 Dl
+273600 84000 252000 84000 Dl
+273600 105600 273600 84000 Dl
+252000 105600 273600 105600 Dl
+(1)260300 96800 w
+273600 84000 273600 105600 Dl
+295200 84000 273600 84000 Dl
+295200 105600 295200 84000 Dl
+273600 105600 295200 105600 Dl
+(1)281900 96800 w
+295200 84000 295200 105600 Dl
+316800 84000 295200 84000 Dl
+316800 105600 316800 84000 Dl
+295200 105600 316800 105600 Dl
+(0)303500 96800 w
+(mst)79175 142400 w
+100800 129600 100800 151200 Dl
+122400 129600 100800 129600 Dl
+122400 151200 122400 129600 Dl
+100800 151200 122400 151200 Dl
+(0)109100 142400 w
+122400 129600 122400 151200 Dl
+144000 129600 122400 129600 Dl
+144000 151200 144000 129600 Dl
+122400 151200 144000 151200 Dl
+(2)130700 142400 w
+144000 129600 144000 151200 Dl
+165600 129600 144000 129600 Dl
+165600 151200 165600 129600 Dl
+144000 151200 165600 151200 Dl
+(0)152300 142400 w
+165600 129600 165600 151200 Dl
+187200 129600 165600 129600 Dl
+187200 151200 187200 129600 Dl
+165600 151200 187200 151200 Dl
+(4)173900 142400 w
+187200 129600 187200 151200 Dl
+208800 129600 187200 129600 Dl
+208800 151200 208800 129600 Dl
+187200 151200 208800 151200 Dl
+(8)195500 142400 w
+208800 129600 208800 151200 Dl
+230400 129600 208800 129600 Dl
+230400 151200 230400 129600 Dl
+208800 151200 230400 151200 Dl
+(4)217100 142400 w
+230400 129600 230400 151200 Dl
+252000 129600 230400 129600 Dl
+252000 151200 252000 129600 Dl
+230400 151200 252000 151200 Dl
+(7)238700 142400 w
+252000 129600 252000 151200 Dl
+273600 129600 252000 129600 Dl
+273600 151200 273600 129600 Dl
+252000 151200 273600 151200 Dl
+(0)260300 142400 w
+273600 129600 273600 151200 Dl
+295200 129600 273600 129600 Dl
+295200 151200 295200 129600 Dl
+273600 151200 295200 151200 Dl
+(2)281900 142400 w
+295200 129600 295200 151200 Dl
+316800 129600 295200 129600 Dl
+316800 151200 316800 129600 Dl
+295200 151200 316800 151200 Dl
+(8)303500 142400 w
+(wt)81400 176000 w
+100800 163200 100800 184800 Dl
+122400 163200 100800 163200 Dl
+122400 184800 122400 163200 Dl
+100800 184800 122400 184800 Dl
+(1400)101600 176000 w
+122400 163200 122400 184800 Dl
+144000 163200 122400 163200 Dl
+144000 184800 144000 163200 Dl
+122400 184800 144000 184800 Dl
+(208)125700 176000 w
+144000 163200 144000 184800 Dl
+165600 163200 144000 163200 Dl
+165600 184800 165600 163200 Dl
+144000 184800 165600 184800 Dl
+(180)147300 176000 w
+165600 163200 165600 184800 Dl
+187200 163200 165600 163200 Dl
+187200 184800 187200 163200 Dl
+165600 184800 187200 184800 Dl
+(180)168900 176000 w
+187200 163200 187200 184800 Dl
+208800 163200 187200 163200 Dl
+208800 184800 208800 163200 Dl
+187200 184800 208800 184800 Dl
+(189)190500 176000 w
+208800 163200 208800 184800 Dl
+230400 163200 208800 163200 Dl
+230400 184800 230400 163200 Dl
+208800 184800 230400 184800 Dl
+(340)212100 176000 w
+230400 163200 230400 184800 Dl
+252000 163200 230400 163200 Dl
+252000 184800 252000 163200 Dl
+230400 184800 252000 184800 Dl
+(19)236200 176000 w
+252000 163200 252000 184800 Dl
+273600 163200 252000 163200 Dl
+273600 184800 273600 163200 Dl
+252000 184800 273600 184800 Dl
+(91)257800 176000 w
+273600 163200 273600 184800 Dl
+295200 163200 273600 163200 Dl
+295200 184800 295200 163200 Dl
+273600 184800 295200 184800 Dl
+(126)276900 176000 w
+295200 163200 295200 184800 Dl
+316800 163200 295200 163200 Dl
+316800 184800 316800 163200 Dl
+295200 184800 316800 184800 Dl
+(258)298500 176000 w
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 196800 w
+(min = 10, w = 0, v = 3)3330 1 72000 220800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 244800 w
+(min = 10, w = 1, v = 3)3330 1 72000 268800 t
+( = 3)3330( v)13320( = 640,)3330( adj[v][w])13320( = 208,)3330( wt[w])16650
+(w = 1,)3330 7 72000 304800 t
+( = 208)3330( wt[w])6660( = 1400,)3330( wt[min])9990(min = 10, w = 1,)3330 5 72000 340800 t
+( <\001\001 w)3330( min)85790( = 1,)3330( w)6660(min =)3330 5 72000 376800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 400800 w
+(min = 1, w = 2, v = 3)3330 1 72000 424800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 448800 w
+(min = 1, w = 3, v = 3)3330 1 72000 472800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 496800 w
+(min = 1, w = 4, v = 3)3330 1 72000 520800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 544800 w
+(min = 1, w = 5, v = 3)3330 1 72000 568800 t
+( = 3)3330( v)13320( = 168,)3330( adj[v][w])13320( = 340,)3330( wt[w])16650
+(w = 5,)3330 7 72000 604800 t
+( <\001\001 v)3330( mst[w])26640(w = 5, wt[w] = 168.000000, mst[w]=v= 3)3330 3 72000 640800 t
+( = 168)3330( wt[w])6660( = 208,)3330( wt[min])9990(min = 1, w = 5,)3330 5 72000 676800 t
+( <\001\001 w)3330( min)85790( = 5,)3330( w)6660(min =)3330 5 72000 712800 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 13 13
+%%Page: 14 14
+save
+mark
+14 pagesetup
+10 @11 f
+(\001)276340 48000 w
+(14)283000 v
+(\001)296330 v
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 84000 w
+(min = 5, w = 6, v = 3)3330 1 72000 108000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 132000 w
+(min = 5, w = 7, v = 3)3330 1 72000 156000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 180000 w
+(min = 5, w = 8, v = 3)3330 1 72000 204000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 228000 w
+(min = 5, w = 9, v = 3)3330 1 72000 252000 t
+( = 3)3330( v)13320( = 456,)3330( adj[v][w])13320( = 258,)3330( wt[w])16650
+(w = 9,)3330 7 72000 288000 t
+( = 258)3330( wt[w])6660( = 168,)3330( wt[min])9990(min = 5, w = 9,)3330 5 72000 324000 t
+(id)82510 372800 w
+100800 360000 100800 381600 Dl
+122400 360000 100800 360000 Dl
+122400 381600 122400 360000 Dl
+100800 381600 122400 381600 Dl
+(1)109100 372800 w
+122400 360000 122400 381600 Dl
+144000 360000 122400 360000 Dl
+144000 381600 144000 360000 Dl
+122400 381600 144000 381600 Dl
+(0)130700 372800 w
+144000 360000 144000 381600 Dl
+165600 360000 144000 360000 Dl
+165600 381600 165600 360000 Dl
+144000 381600 165600 381600 Dl
+(1)152300 372800 w
+165600 360000 165600 381600 Dl
+187200 360000 165600 360000 Dl
+187200 381600 187200 360000 Dl
+165600 381600 187200 381600 Dl
+(1)173900 372800 w
+187200 360000 187200 381600 Dl
+208800 360000 187200 360000 Dl
+208800 381600 208800 360000 Dl
+187200 381600 208800 381600 Dl
+(1)195500 372800 w
+208800 360000 208800 381600 Dl
+230400 360000 208800 360000 Dl
+230400 381600 230400 360000 Dl
+208800 381600 230400 381600 Dl
+(1)217100 372800 w
+230400 360000 230400 381600 Dl
+252000 360000 230400 360000 Dl
+252000 381600 252000 360000 Dl
+230400 381600 252000 381600 Dl
+(1)238700 372800 w
+252000 360000 252000 381600 Dl
+273600 360000 252000 360000 Dl
+273600 381600 273600 360000 Dl
+252000 381600 273600 381600 Dl
+(1)260300 372800 w
+273600 360000 273600 381600 Dl
+295200 360000 273600 360000 Dl
+295200 381600 295200 360000 Dl
+273600 381600 295200 381600 Dl
+(1)281900 372800 w
+295200 360000 295200 381600 Dl
+316800 360000 295200 360000 Dl
+316800 381600 316800 360000 Dl
+295200 381600 316800 381600 Dl
+(0)303500 372800 w
+(mst)79175 418400 w
+100800 405600 100800 427200 Dl
+122400 405600 100800 405600 Dl
+122400 427200 122400 405600 Dl
+100800 427200 122400 427200 Dl
+(0)109100 418400 w
+122400 405600 122400 427200 Dl
+144000 405600 122400 405600 Dl
+144000 427200 144000 405600 Dl
+122400 427200 144000 427200 Dl
+(2)130700 418400 w
+144000 405600 144000 427200 Dl
+165600 405600 144000 405600 Dl
+165600 427200 165600 405600 Dl
+144000 427200 165600 427200 Dl
+(0)152300 418400 w
+165600 405600 165600 427200 Dl
+187200 405600 165600 405600 Dl
+187200 427200 187200 405600 Dl
+165600 427200 187200 427200 Dl
+(4)173900 418400 w
+187200 405600 187200 427200 Dl
+208800 405600 187200 405600 Dl
+208800 427200 208800 405600 Dl
+187200 427200 208800 427200 Dl
+(8)195500 418400 w
+208800 405600 208800 427200 Dl
+230400 405600 208800 405600 Dl
+230400 427200 230400 405600 Dl
+208800 427200 230400 427200 Dl
+(3)217100 418400 w
+230400 405600 230400 427200 Dl
+252000 405600 230400 405600 Dl
+252000 427200 252000 405600 Dl
+230400 427200 252000 427200 Dl
+(7)238700 418400 w
+252000 405600 252000 427200 Dl
+273600 405600 252000 405600 Dl
+273600 427200 273600 405600 Dl
+252000 427200 273600 427200 Dl
+(0)260300 418400 w
+273600 405600 273600 427200 Dl
+295200 405600 273600 405600 Dl
+295200 427200 295200 405600 Dl
+273600 427200 295200 427200 Dl
+(2)281900 418400 w
+295200 405600 295200 427200 Dl
+316800 405600 295200 405600 Dl
+316800 427200 316800 405600 Dl
+295200 427200 316800 427200 Dl
+(8)303500 418400 w
+(wt)81400 452000 w
+100800 439200 100800 460800 Dl
+122400 439200 100800 439200 Dl
+122400 460800 122400 439200 Dl
+100800 460800 122400 460800 Dl
+(1400)101600 452000 w
+122400 439200 122400 460800 Dl
+144000 439200 122400 439200 Dl
+144000 460800 144000 439200 Dl
+122400 460800 144000 460800 Dl
+(208)125700 452000 w
+144000 439200 144000 460800 Dl
+165600 439200 144000 439200 Dl
+165600 460800 165600 439200 Dl
+144000 460800 165600 460800 Dl
+(180)147300 452000 w
+165600 439200 165600 460800 Dl
+187200 439200 165600 439200 Dl
+187200 460800 187200 439200 Dl
+165600 460800 187200 460800 Dl
+(180)168900 452000 w
+187200 439200 187200 460800 Dl
+208800 439200 187200 439200 Dl
+208800 460800 208800 439200 Dl
+187200 460800 208800 460800 Dl
+(189)190500 452000 w
+208800 439200 208800 460800 Dl
+230400 439200 208800 439200 Dl
+230400 460800 230400 439200 Dl
+208800 460800 230400 460800 Dl
+(168)212100 452000 w
+230400 439200 230400 460800 Dl
+252000 439200 230400 439200 Dl
+252000 460800 252000 439200 Dl
+230400 460800 252000 460800 Dl
+(19)236200 452000 w
+252000 439200 252000 460800 Dl
+273600 439200 252000 439200 Dl
+273600 460800 273600 439200 Dl
+252000 460800 273600 460800 Dl
+(91)257800 452000 w
+273600 439200 273600 460800 Dl
+295200 439200 273600 439200 Dl
+295200 460800 295200 439200 Dl
+273600 460800 295200 460800 Dl
+(126)276900 452000 w
+295200 439200 295200 460800 Dl
+316800 439200 295200 439200 Dl
+316800 460800 316800 439200 Dl
+295200 460800 316800 460800 Dl
+(258)298500 452000 w
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 472800 w
+(min = 10, w = 0, v = 5)3330 1 72000 496800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 520800 w
+(min = 10, w = 1, v = 5)3330 1 72000 544800 t
+( = 5)3330( v)13320( = 752,)3330( adj[v][w])13320( = 208,)3330( wt[w])16650
+(w = 1,)3330 7 72000 580800 t
+( = 208)3330( wt[w])6660( = 1400,)3330( wt[min])9990(min = 10, w = 1,)3330 5 72000 616800 t
+( <\001\001 w)3330( min)85790( = 1,)3330( w)6660(min =)3330 5 72000 652800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 676800 w
+(min = 1, w = 2, v = 5)3330 1 72000 700800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 724800 w
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 14 14
+%%Page: 15 15
+save
+mark
+15 pagesetup
+10 @11 f
+(\001)276340 48000 w
+(15)283000 v
+(\001)296330 v
+(min = 1, w = 3, v = 5)3330 1 72000 84000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 108000 w
+(min = 1, w = 4, v = 5)3330 1 72000 132000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 156000 w
+(min = 1, w = 5, v = 5)3330 1 72000 180000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 204000 w
+(min = 1, w = 6, v = 5)3330 1 72000 228000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 252000 w
+(min = 1, w = 7, v = 5)3330 1 72000 276000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 300000 w
+(min = 1, w = 8, v = 5)3330 1 72000 324000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 348000 w
+(min = 1, w = 9, v = 5)3330 1 72000 372000 t
+( = 5)3330( v)13320( = 623,)3330( adj[v][w])13320( = 258,)3330( wt[w])16650
+(w = 9,)3330 7 72000 408000 t
+( = 258)3330( wt[w])6660( = 208,)3330( wt[min])9990(min = 1, w = 9,)3330 5 72000 444000 t
+(id)82510 492800 w
+100800 480000 100800 501600 Dl
+122400 480000 100800 480000 Dl
+122400 501600 122400 480000 Dl
+100800 501600 122400 501600 Dl
+(1)109100 492800 w
+122400 480000 122400 501600 Dl
+144000 480000 122400 480000 Dl
+144000 501600 144000 480000 Dl
+122400 501600 144000 501600 Dl
+(1)130700 492800 w
+144000 480000 144000 501600 Dl
+165600 480000 144000 480000 Dl
+165600 501600 165600 480000 Dl
+144000 501600 165600 501600 Dl
+(1)152300 492800 w
+165600 480000 165600 501600 Dl
+187200 480000 165600 480000 Dl
+187200 501600 187200 480000 Dl
+165600 501600 187200 501600 Dl
+(1)173900 492800 w
+187200 480000 187200 501600 Dl
+208800 480000 187200 480000 Dl
+208800 501600 208800 480000 Dl
+187200 501600 208800 501600 Dl
+(1)195500 492800 w
+208800 480000 208800 501600 Dl
+230400 480000 208800 480000 Dl
+230400 501600 230400 480000 Dl
+208800 501600 230400 501600 Dl
+(1)217100 492800 w
+230400 480000 230400 501600 Dl
+252000 480000 230400 480000 Dl
+252000 501600 252000 480000 Dl
+230400 501600 252000 501600 Dl
+(1)238700 492800 w
+252000 480000 252000 501600 Dl
+273600 480000 252000 480000 Dl
+273600 501600 273600 480000 Dl
+252000 501600 273600 501600 Dl
+(1)260300 492800 w
+273600 480000 273600 501600 Dl
+295200 480000 273600 480000 Dl
+295200 501600 295200 480000 Dl
+273600 501600 295200 501600 Dl
+(1)281900 492800 w
+295200 480000 295200 501600 Dl
+316800 480000 295200 480000 Dl
+316800 501600 316800 480000 Dl
+295200 501600 316800 501600 Dl
+(0)303500 492800 w
+(mst)79175 538400 w
+100800 525600 100800 547200 Dl
+122400 525600 100800 525600 Dl
+122400 547200 122400 525600 Dl
+100800 547200 122400 547200 Dl
+(0)109100 538400 w
+122400 525600 122400 547200 Dl
+144000 525600 122400 525600 Dl
+144000 547200 144000 525600 Dl
+122400 547200 144000 547200 Dl
+(2)130700 538400 w
+144000 525600 144000 547200 Dl
+165600 525600 144000 525600 Dl
+165600 547200 165600 525600 Dl
+144000 547200 165600 547200 Dl
+(0)152300 538400 w
+165600 525600 165600 547200 Dl
+187200 525600 165600 525600 Dl
+187200 547200 187200 525600 Dl
+165600 547200 187200 547200 Dl
+(4)173900 538400 w
+187200 525600 187200 547200 Dl
+208800 525600 187200 525600 Dl
+208800 547200 208800 525600 Dl
+187200 547200 208800 547200 Dl
+(8)195500 538400 w
+208800 525600 208800 547200 Dl
+230400 525600 208800 525600 Dl
+230400 547200 230400 525600 Dl
+208800 547200 230400 547200 Dl
+(3)217100 538400 w
+230400 525600 230400 547200 Dl
+252000 525600 230400 525600 Dl
+252000 547200 252000 525600 Dl
+230400 547200 252000 547200 Dl
+(7)238700 538400 w
+252000 525600 252000 547200 Dl
+273600 525600 252000 525600 Dl
+273600 547200 273600 525600 Dl
+252000 547200 273600 547200 Dl
+(0)260300 538400 w
+273600 525600 273600 547200 Dl
+295200 525600 273600 525600 Dl
+295200 547200 295200 525600 Dl
+273600 547200 295200 547200 Dl
+(2)281900 538400 w
+295200 525600 295200 547200 Dl
+316800 525600 295200 525600 Dl
+316800 547200 316800 525600 Dl
+295200 547200 316800 547200 Dl
+(8)303500 538400 w
+(wt)81400 572000 w
+100800 559200 100800 580800 Dl
+122400 559200 100800 559200 Dl
+122400 580800 122400 559200 Dl
+100800 580800 122400 580800 Dl
+(1400)101600 572000 w
+122400 559200 122400 580800 Dl
+144000 559200 122400 559200 Dl
+144000 580800 144000 559200 Dl
+122400 580800 144000 580800 Dl
+(208)125700 572000 w
+144000 559200 144000 580800 Dl
+165600 559200 144000 559200 Dl
+165600 580800 165600 559200 Dl
+144000 580800 165600 580800 Dl
+(180)147300 572000 w
+165600 559200 165600 580800 Dl
+187200 559200 165600 559200 Dl
+187200 580800 187200 559200 Dl
+165600 580800 187200 580800 Dl
+(180)168900 572000 w
+187200 559200 187200 580800 Dl
+208800 559200 187200 559200 Dl
+208800 580800 208800 559200 Dl
+187200 580800 208800 580800 Dl
+(189)190500 572000 w
+208800 559200 208800 580800 Dl
+230400 559200 208800 559200 Dl
+230400 580800 230400 559200 Dl
+208800 580800 230400 580800 Dl
+(168)212100 572000 w
+230400 559200 230400 580800 Dl
+252000 559200 230400 559200 Dl
+252000 580800 252000 559200 Dl
+230400 580800 252000 580800 Dl
+(19)236200 572000 w
+252000 559200 252000 580800 Dl
+273600 559200 252000 559200 Dl
+273600 580800 273600 559200 Dl
+252000 580800 273600 580800 Dl
+(91)257800 572000 w
+273600 559200 273600 580800 Dl
+295200 559200 273600 559200 Dl
+295200 580800 295200 559200 Dl
+273600 580800 295200 580800 Dl
+(126)276900 572000 w
+295200 559200 295200 580800 Dl
+316800 559200 295200 559200 Dl
+316800 580800 316800 559200 Dl
+295200 580800 316800 580800 Dl
+(258)298500 572000 w
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 592800 w
+(min = 10, w = 0, v = 1)3330 1 72000 616800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 640800 w
+(min = 10, w = 1, v = 1)3330 1 72000 664800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 688800 w
+(min = 10, w = 2, v = 1)3330 1 72000 712800 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 15 15
+%%Page: 16 16
+save
+mark
+16 pagesetup
+10 @11 f
+(\001)276340 48000 w
+(16)283000 v
+(\001)296330 v
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 84000 w
+(min = 10, w = 3, v = 1)3330 1 72000 108000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 132000 w
+(min = 10, w = 4, v = 1)3330 1 72000 156000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 180000 w
+(min = 10, w = 5, v = 1)3330 1 72000 204000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 228000 w
+(min = 10, w = 6, v = 1)3330 1 72000 252000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 276000 w
+(min = 10, w = 7, v = 1)3330 1 72000 300000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 324000 w
+(min = 10, w = 8, v = 1)3330 1 72000 348000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 372000 w
+(min = 10, w = 9, v = 1)3330 1 72000 396000 t
+( = 1)3330( v)13320( = 452,)3330( adj[v][w])13320( = 258,)3330( wt[w])16650
+(w = 9,)3330 7 72000 432000 t
+( = 258)3330( wt[w])6660( = 1400,)3330( wt[min])9990(min = 10, w = 9,)3330 5 72000 468000 t
+( <\001\001 w)3330( min)85790( = 9,)3330( w)6660(min =)3330 5 72000 504000 t
+(id)82510 552800 w
+100800 540000 100800 561600 Dl
+122400 540000 100800 540000 Dl
+122400 561600 122400 540000 Dl
+100800 561600 122400 561600 Dl
+(1)109100 552800 w
+122400 540000 122400 561600 Dl
+144000 540000 122400 540000 Dl
+144000 561600 144000 540000 Dl
+122400 561600 144000 561600 Dl
+(1)130700 552800 w
+144000 540000 144000 561600 Dl
+165600 540000 144000 540000 Dl
+165600 561600 165600 540000 Dl
+144000 561600 165600 561600 Dl
+(1)152300 552800 w
+165600 540000 165600 561600 Dl
+187200 540000 165600 540000 Dl
+187200 561600 187200 540000 Dl
+165600 561600 187200 561600 Dl
+(1)173900 552800 w
+187200 540000 187200 561600 Dl
+208800 540000 187200 540000 Dl
+208800 561600 208800 540000 Dl
+187200 561600 208800 561600 Dl
+(1)195500 552800 w
+208800 540000 208800 561600 Dl
+230400 540000 208800 540000 Dl
+230400 561600 230400 540000 Dl
+208800 561600 230400 561600 Dl
+(1)217100 552800 w
+230400 540000 230400 561600 Dl
+252000 540000 230400 540000 Dl
+252000 561600 252000 540000 Dl
+230400 561600 252000 561600 Dl
+(1)238700 552800 w
+252000 540000 252000 561600 Dl
+273600 540000 252000 540000 Dl
+273600 561600 273600 540000 Dl
+252000 561600 273600 561600 Dl
+(1)260300 552800 w
+273600 540000 273600 561600 Dl
+295200 540000 273600 540000 Dl
+295200 561600 295200 540000 Dl
+273600 561600 295200 561600 Dl
+(1)281900 552800 w
+295200 540000 295200 561600 Dl
+316800 540000 295200 540000 Dl
+316800 561600 316800 540000 Dl
+295200 561600 316800 561600 Dl
+(1)303500 552800 w
+(mst)79175 598400 w
+100800 585600 100800 607200 Dl
+122400 585600 100800 585600 Dl
+122400 607200 122400 585600 Dl
+100800 607200 122400 607200 Dl
+(0)109100 598400 w
+122400 585600 122400 607200 Dl
+144000 585600 122400 585600 Dl
+144000 607200 144000 585600 Dl
+122400 607200 144000 607200 Dl
+(2)130700 598400 w
+144000 585600 144000 607200 Dl
+165600 585600 144000 585600 Dl
+165600 607200 165600 585600 Dl
+144000 607200 165600 607200 Dl
+(0)152300 598400 w
+165600 585600 165600 607200 Dl
+187200 585600 165600 585600 Dl
+187200 607200 187200 585600 Dl
+165600 607200 187200 607200 Dl
+(4)173900 598400 w
+187200 585600 187200 607200 Dl
+208800 585600 187200 585600 Dl
+208800 607200 208800 585600 Dl
+187200 607200 208800 607200 Dl
+(8)195500 598400 w
+208800 585600 208800 607200 Dl
+230400 585600 208800 585600 Dl
+230400 607200 230400 585600 Dl
+208800 607200 230400 607200 Dl
+(3)217100 598400 w
+230400 585600 230400 607200 Dl
+252000 585600 230400 585600 Dl
+252000 607200 252000 585600 Dl
+230400 607200 252000 607200 Dl
+(7)238700 598400 w
+252000 585600 252000 607200 Dl
+273600 585600 252000 585600 Dl
+273600 607200 273600 585600 Dl
+252000 607200 273600 607200 Dl
+(0)260300 598400 w
+273600 585600 273600 607200 Dl
+295200 585600 273600 585600 Dl
+295200 607200 295200 585600 Dl
+273600 607200 295200 607200 Dl
+(2)281900 598400 w
+295200 585600 295200 607200 Dl
+316800 585600 295200 585600 Dl
+316800 607200 316800 585600 Dl
+295200 607200 316800 607200 Dl
+(8)303500 598400 w
+(wt)81400 632000 w
+100800 619200 100800 640800 Dl
+122400 619200 100800 619200 Dl
+122400 640800 122400 619200 Dl
+100800 640800 122400 640800 Dl
+(1400)101600 632000 w
+122400 619200 122400 640800 Dl
+144000 619200 122400 619200 Dl
+144000 640800 144000 619200 Dl
+122400 640800 144000 640800 Dl
+(208)125700 632000 w
+144000 619200 144000 640800 Dl
+165600 619200 144000 619200 Dl
+165600 640800 165600 619200 Dl
+144000 640800 165600 640800 Dl
+(180)147300 632000 w
+165600 619200 165600 640800 Dl
+187200 619200 165600 619200 Dl
+187200 640800 187200 619200 Dl
+165600 640800 187200 640800 Dl
+(180)168900 632000 w
+187200 619200 187200 640800 Dl
+208800 619200 187200 619200 Dl
+208800 640800 208800 619200 Dl
+187200 640800 208800 640800 Dl
+(189)190500 632000 w
+208800 619200 208800 640800 Dl
+230400 619200 208800 619200 Dl
+230400 640800 230400 619200 Dl
+208800 640800 230400 640800 Dl
+(168)212100 632000 w
+230400 619200 230400 640800 Dl
+252000 619200 230400 619200 Dl
+252000 640800 252000 619200 Dl
+230400 640800 252000 640800 Dl
+(19)236200 632000 w
+252000 619200 252000 640800 Dl
+273600 619200 252000 619200 Dl
+273600 640800 273600 619200 Dl
+252000 640800 273600 640800 Dl
+(91)257800 632000 w
+273600 619200 273600 640800 Dl
+295200 619200 273600 619200 Dl
+295200 640800 295200 619200 Dl
+273600 640800 295200 640800 Dl
+(126)276900 632000 w
+295200 619200 295200 640800 Dl
+316800 619200 295200 619200 Dl
+316800 640800 316800 619200 Dl
+295200 640800 316800 640800 Dl
+(258)298500 632000 w
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 652800 w
+(min = 10, w = 0, v = 9)3330 1 72000 676800 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 700800 w
+(min = 10, w = 1, v = 9)3330 1 72000 724800 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 16 16
+%%Page: 17 17
+save
+mark
+17 pagesetup
+10 @11 f
+(\001)276340 48000 w
+(17)283000 v
+(\001)296330 v
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 84000 w
+(min = 10, w = 2, v = 9)3330 1 72000 108000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 132000 w
+(min = 10, w = 3, v = 9)3330 1 72000 156000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 180000 w
+(min = 10, w = 4, v = 9)3330 1 72000 204000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 228000 w
+(min = 10, w = 5, v = 9)3330 1 72000 252000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 276000 w
+(min = 10, w = 6, v = 9)3330 1 72000 300000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 324000 w
+(min = 10, w = 7, v = 9)3330 1 72000 348000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 372000 w
+(min = 10, w = 8, v = 9)3330 1 72000 396000 t
+(\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\
+\001\001\001\001\001\001\001\001\001\001\001\001\001\001)72000 420000 w
+(min = 10, w = 9, v = 9)3330 1 72000 444000 t
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 17 17
+%%Trailer
+done
+%%EOF

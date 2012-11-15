@@ -1,0 +1,29 @@
+
+main.o:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+00000000 <main>:
+int add(int, int);
+
+int global = 1000;
+
+int main(void)
+{
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 e4 f0             	and    $0xfffffff0,%esp
+   6:	83 ec 20             	sub    $0x20,%esp
+    int c;
+    c = add(100, 200);
+   9:	c7 44 24 04 c8 00 00 	movl   $0xc8,0x4(%esp)
+  10:	00 
+  11:	c7 04 24 64 00 00 00 	movl   $0x64,(%esp)
+  18:	e8 fc ff ff ff       	call   19 <main+0x19>
+  1d:	89 44 24 1c          	mov    %eax,0x1c(%esp)
+    return 0;
+  21:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+  26:	c9                   	leave  
+  27:	c3                   	ret    

@@ -1,0 +1,27 @@
+TD {
+	FONT-SIZE: 12px
+}
+A {
+	COLOR: #000099; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #000099; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.linkwhite {
+	COLOR: white; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+.linkwhite:hover {
+	COLOR: white; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.linkred {
+	COLOR: red; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+.linkred:hover {
+	COLOR: red; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.link1 {
+	COLOR: #6e6d6d; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+.link1:hover {
+	COLOR: #6e6d6d; FONT-SIZE: 12px; TEXT-DECORATION: none
+}

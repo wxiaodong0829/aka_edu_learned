@@ -1,0 +1,46 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CC	Makefile	/^CC = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -g -DDEBUG #-L~\/wd_文档\/lib_dong $/;"	m
+LEN	read_from_in_to_link.c	15;"	d	file:
+NODE	head_link.c	/^node_t * NODE(int val, node_t *next)$/;"	f
+NODE	read_from_in_to_link.c	/^node_t * NODE(char c, int val, char *s, node_t *next)$/;"	f
+_DOUBLE_HEAD_LINK_H_	double_head_link.h	10;"	d
+_HEAD_LINK_H	head_link.h	9;"	d
+c	read_from_in_to_link.c	/^	char c;$/;"	m	struct:node	file:
+init_head	read_from_in_to_link.c	/^void init_head(node_t **link_head)$/;"	f
+link_destroy	head_link.c	/^void link_destroy(node_t **head)$/;"	f
+link_destroy	read_from_in_to_link.c	/^void link_destroy(node_t **head)$/;"	f
+link_head_init	head_link.c	/^void link_head_init(node_t **head)$/;"	f
+link_insert_b	head_link.c	/^node_t *link_insert_b(node_t *head, int val)$/;"	f
+link_insert_b	read_from_in_to_link.c	/^node_t *link_insert_b(char *s, node_t *head)$/;"	f
+link_insert_e	head_link.c	/^node_t *link_insert_e(node_t *head, int val)$/;"	f
+link_node_free	head_link.c	/^void link_node_free(node_t *p)$/;"	f
+link_print	head_link.c	/^void link_print(node_t *head)$/;"	f
+link_print	read_from_in_to_link.c	/^void link_print(node_t *head)$/;"	f
+link_remove	head_link.c	/^node_t *link_remove(node_t *head, int key)$/;"	f
+link_search	head_link.c	/^node_t *link_search(node_t *head, int key)$/;"	f
+main	head_link.c	/^int main(void)$/;"	f
+main	read_from_in_to_link.c	/^int main(void)$/;"	f
+myfclose	read_from_in_to_link.c	/^void myfclose(FILE *fp)$/;"	f
+next	double_head_link.h	/^	struct node *next;$/;"	m	struct:node	typeref:struct:node::node
+next	head_link.h	/^	struct node *next;$/;"	m	struct:node	typeref:struct:node::node
+next	read_from_in_to_link.c	/^	struct node *next;$/;"	m	struct:node	typeref:struct:node::node	file:
+node	double_head_link.h	/^typedef struct node {$/;"	s
+node	head_link.h	/^typedef struct node {$/;"	s
+node	read_from_in_to_link.c	/^typedef struct node {$/;"	s	file:
+node_t	double_head_link.h	/^}node_t;$/;"	t	typeref:struct:node
+node_t	head_link.h	/^}node_t;$/;"	t	typeref:struct:node
+node_t	read_from_in_to_link.c	/^}node_t;$/;"	t	typeref:struct:node	file:
+obj	Makefile	/^obj = $(patsubst %.c, %, $(src))$/;"	m
+pre	double_head_link.h	/^	struct node *pre;$/;"	m	struct:node	typeref:struct:node::node
+read_from_in	read_from_in_to_link.c	/^node_t *read_from_in(FILE *fp, node_t *head)$/;"	f
+s	read_from_in_to_link.c	/^	char s[LEN];$/;"	m	struct:node	file:
+src	Makefile	/^src = $(wildcard *.c)$/;"	m
+val	double_head_link.h	/^	int val;$/;"	m	struct:node
+val	head_link.h	/^	int val;$/;"	m	struct:node
+val	read_from_in_to_link.c	/^	int val;$/;"	m	struct:node	file:

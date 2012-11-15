@@ -2,12 +2,12 @@
 *.o
 
 # Libraries
-*.lib
-*.a
+#*.lib
+#*.a
 
 # Shared objects (inc. Windows DLLs)
 *.dll
-*.so
+#*.so
 *.so.*
 *.dylib
 
@@ -15,3 +15,6 @@
 *.exe
 *.out
 *.app
+
+c_base/zhangxiaoxin/vim_set/.vim/
+

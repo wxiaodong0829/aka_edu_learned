@@ -1,0 +1,34 @@
+1,   ./vi_easy
+2,	栈帧 
+		int fun (int x, int y)
+		{
+			int i,j,k;
+			int a[10];
+			get();
+
+		}
+	push y
+	push x
+	push re call
+	
+	external int k; 这样 k 就不在栈帧中了
+
+						|     return add get()        	|
+						|     a[10]\0        		|
+						|     .        			|
+						|     .        			|
+						|     .        			|
+						|    a[1]         		|
+						|    a[0]         		|
+						|    k         			|
+						|    j         			|
+					________|____i__________________________|_______
+						|    return add         	|
+						|    x         			|
+						|    y         			|
+						|_______________________________|
+
+3，回车换行  回车 -》打印头回到开头    换行 -》卷纸换行
+    回车换行：linux 0d    windows 0d0a
+
+4,	KISS     UNIX 思想  keep it simple, stupid!

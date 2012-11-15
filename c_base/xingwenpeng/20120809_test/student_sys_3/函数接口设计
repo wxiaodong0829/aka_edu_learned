@@ -1,0 +1,14 @@
+
+1, 用函数指针 作为 参数 传入 函数  ， 这样更通用， 更抽象
+
+	struct node
+	{
+		int id;
+		char name[8];
+		struct node *nbext;	
+	};
+
+	node_t *serach(node_t *head, void *ptr, handler_t handler)
+	{
+
+	}

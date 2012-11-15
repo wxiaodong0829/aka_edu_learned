@@ -1,0 +1,13 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+get_elem_count	main.c	/^int get_elem_count(char *filename)$/;"	f
+main	main.c	/^int main(int argc, char *argv[])$/;"	f
+search	main.c	/^dict_elem_t *search(dict_elem_t *head_p, int w_count)$/;"	f
+shell_sort	main.c	/^static void shell_sort(dict_elem_t *head_p, int l, int r)$/;"	f	file:
+wd_read_elem_from_txt	main.c	/^dict_elem_t * wd_read_elem_from_txt(char *filename, dict_elem_t *head_p, int w_count)$/;"	f
+wd_read_key	main.c	/^static char * wd_read_key(FILE *fp, dict_elem_t *word_p)$/;"	f	file:
+wd_read_trans	main.c	/^static char * wd_read_trans(FILE *fp, dict_elem_t *word_p)$/;"	f	file:

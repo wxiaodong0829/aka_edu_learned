@@ -1,0 +1,640 @@
+http://www.cnblogs.com/ma6174/archive/2011/12/10/2283393.html
+
+##############################################################
+#
+#
+#                         dong
+#
+#
+#
+#        set cursorline		" 突出显示当前行
+#                         
+#
+#
+#
+#
+#
+#
+#
+###############################################################
+
+
+欢迎来到我的博客_ma6174
+人生苦短，我用python！
+强大的vim配置，让编程更随意
+
+花了很长时间整理的，感觉用起来很方便，共享一下。
+
+我的vim配置主要有以下优点：
+
+1.按F5可以直接编译并执行C、C++、java代码以及执行shell脚本，按“F8”可进行C、C++代码的调试
+
+2.自动插入文件头 ，新建C、C++源文件时自动插入表头：包括文件名、作者、联系方式、建立时间等，读者可根据需求自行更改
+
+3.映射“Ctrl + A”为全选并复制快捷键，方便复制代码
+
+4.按“F2”可以直接消除代码中的空行
+
+5.“F3”可列出当前目录文件，打开树状文件目录
+
+6. 支持鼠标选择、方向键移动
+
+7. 代码高亮，自动缩进，显示行号，显示状态行
+
+8.按“Ctrl + P”可自动补全
+
+9.[]、{}、()、""、' '等都自动补全
+
+10.其他功能读者可以研究以下文件
+
+ vim本来就是很强大，很方便的编辑器，加上我的代码后肯定会如虎添翼，或许读者使用其他编程语言，可以根据自己的需要进行修改，配置文件里面已经加上注释。
+
+读者感兴趣的话直接复制下面的代码到文本文件，然后把文件改名为“ .vimrc” (不要忘记前面的“.”)，然后把文件放到用户文件夹的根目录下面即可。重新打开vim即可看到效果。
+复制代码
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 显示相关  
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示  
+"winpos 5 5          " 设定窗口位置  
+"set lines=40 columns=155    " 设定窗口大小  
+"set nu              " 显示行号  
+set go=             " 不要图形按钮  
+"color asmanian2     " 设置背景主题  
+set guifont=Courier_New:h10:cANSI   " 设置字体  
+"syntax on           " 语法高亮  
+autocmd InsertLeave * se nocul  " 用浅色高亮当前行  
+autocmd InsertEnter * se cul    " 用浅色高亮当前行  
+"set ruler           " 显示标尺  
+set showcmd         " 输入的命令显示出来，看的清楚些  
+"set cmdheight=1     " 命令行（在状态行下）的高度，设置为1  
+"set whichwrap+=<,>,h,l   " 允许backspace和光标键跨越行边界(不建议)  
+"set scrolloff=3     " 光标移动到buffer的顶部和底部时保持3行距离  
+set novisualbell    " 不要闪烁(不明白)  
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容  
+set laststatus=1    " 启动显示状态行(1),总是显示状态行(2)  
+set foldenable      " 允许折叠  
+set foldmethod=manual   " 手动折叠  
+"set background=dark "背景使用黑色 
+set nocompatible  "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
+" 显示中文帮助
+if version >= 603
+    set helplang=cn
+    set encoding=utf-8
+endif
+" 设置配色方案
+"colorscheme murphy
+"字体 
+"if (has("gui_running")) 
+"   set guifont=Bitstream\ Vera\ Sans\ Mono\ 10 
+"endif 
+
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936
+set fileencoding=utf-8
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""新文件标题""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"新建.c,.h,.sh,.java文件，自动插入文件头 
+autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()" 
+""定义函数SetTitle，自动插入文件头 
+func SetTitle() 
+    "如果文件类型为.sh文件 
+    if &filetype == 'sh' 
+        call setline(1,"\#########################################################################") 
+        call append(line("."), "\# File Name: ".expand("%")) 
+        call append(line(".")+1, "\# Author: ma6174") 
+        call append(line(".")+2, "\# mail: ma6174@163.com") 
+        call append(line(".")+3, "\# Created Time: ".strftime("%c")) 
+        call append(line(".")+4, "\#########################################################################") 
+        call append(line(".")+5, "\#!/bin/bash") 
+        call append(line(".")+6, "") 
+    else 
+        call setline(1, "/*************************************************************************") 
+        call append(line("."), "    > File Name: ".expand("%")) 
+        call append(line(".")+1, "    > Author: ma6174") 
+        call append(line(".")+2, "    > Mail: ma6174@163.com ") 
+        call append(line(".")+3, "    > Created Time: ".strftime("%c")) 
+        call append(line(".")+4, " ************************************************************************/") 
+        call append(line(".")+5, "")
+    endif
+    if &filetype == 'cpp'
+        call append(line(".")+6, "#include<iostream>")
+        call append(line(".")+7, "using namespace std;")
+        call append(line(".")+8, "")
+    endif
+    if &filetype == 'c'
+        call append(line(".")+6, "#include<stdio.h>")
+        call append(line(".")+7, "")
+    endif
+    "新建文件后，自动定位到文件末尾
+    autocmd BufNewFile * normal G
+endfunc 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"键盘命令
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nmap <leader>w :w!<cr>
+nmap <leader>f :find<cr>
+
+" 映射全选+复制 ctrl+a
+map <C-A> ggVGY
+map! <C-A> <Esc>ggVGY
+map <F12> gg=G
+" 选中状态下 Ctrl+c 复制
+vmap <C-c> "+y
+"去空行  
+nnoremap <F2> :g/^\s*$/d<CR> 
+"比较文件  
+nnoremap <C-F2> :vert diffsplit 
+"新建标签  
+map <M-F2> :tabnew<CR>  
+"列出当前目录文件  
+map <F3> :tabnew .<CR>  
+"打开树状文件目录  
+map <C-F3> \be  
+"C，C++ 按F5编译运行
+map <F5> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+    exec "w"
+    if &filetype == 'c'
+        exec "!g++ % -o %<"
+        exec "! ./%<"
+    elseif &filetype == 'cpp'
+        exec "!g++ % -o %<"
+        exec "! ./%<"
+    elseif &filetype == 'java' 
+        exec "!javac %" 
+        exec "!java %<"
+    elseif &filetype == 'sh'
+        :!./%
+    endif
+endfunc
+"C,C++的调试
+map <F8> :call Rungdb()<CR>
+func! Rungdb()
+    exec "w"
+    exec "!g++ % -g -o %<"
+    exec "!gdb ./%<"
+endfunc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""实用设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 设置当文件被改动时自动载入
+set autoread
+" quickfix模式
+autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
+"代码补全 
+set completeopt=preview,menu 
+"允许插件  
+filetype plugin on
+"共享剪贴板  
+set clipboard+=unnamed 
+"从不备份  
+set nobackup
+"make 运行
+:set makeprg=g++\ -Wall\ \ %
+"自动保存
+set autowrite
+set ruler                   " 打开状态栏标尺
+set cursorline              " 突出显示当前行
+set magic                   " 设置魔术
+set guioptions-=T           " 隐藏工具栏
+set guioptions-=m           " 隐藏菜单栏
+"set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
+" 设置在状态行显示的信息
+set foldcolumn=0
+set foldmethod=indent 
+set foldlevel=3 
+set foldenable              " 开始折叠
+" 不要使用vi的键盘模式，而是vim自己的
+set nocompatible
+" 语法高亮
+set syntax=on
+" 去掉输入错误的提示声音
+set noeb
+" 在处理未保存或只读文件的时候，弹出确认
+set confirm
+" 自动缩进
+set autoindent
+set cindent
+" Tab键的宽度
+set tabstop=4
+" 统一缩进为4
+set softtabstop=4
+set shiftwidth=4
+" 不要用空格代替制表符
+set noexpandtab
+" 在行和段开始处使用制表符
+set smarttab
+" 显示行号
+set number
+" 历史记录数
+set history=1000
+"禁止生成临时文件
+set nobackup
+set noswapfile
+"搜索忽略大小写
+set ignorecase
+"搜索逐字符高亮
+set hlsearch
+set incsearch
+"行内替换
+set gdefault
+"编码设置
+set enc=utf-8
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
+"语言设置
+set langmenu=zh_CN.UTF-8
+set helplang=cn
+" 我的状态行显示的内容（包括文件类型和解码）
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+"set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
+" 总是显示状态行
+set laststatus=2
+" 命令行（在状态行下）的高度，默认为1，这里是2
+set cmdheight=2
+" 侦测文件类型
+filetype on
+" 载入文件类型插件
+filetype plugin on
+" 为特定文件类型载入相关缩进文件
+filetype indent on
+" 保存全局变量
+set viminfo+=!
+" 带有如下符号的单词不要被换行分割
+set iskeyword+=_,$,@,%,#,-
+" 字符间插入的像素行数目
+set linespace=0
+" 增强模式中的命令行自动完成操作
+set wildmenu
+" 使回格键（backspace）正常处理indent, eol, start等
+set backspace=2
+" 允许backspace和光标键跨越行边界
+set whichwrap+=<,>,h,l
+" 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
+set mouse=a
+set selection=exclusive
+set selectmode=mouse,key
+" 通过使用: commands命令，告诉我们文件的哪一行被改变过
+set report=0
+" 在被分割的窗口间显示空白，便于阅读
+set fillchars=vert:\ ,stl:\ ,stlnc:\
+" 高亮显示匹配的括号
+set showmatch
+" 匹配括号高亮的时间（单位是十分之一秒）
+set matchtime=1
+" 光标移动到buffer的顶部和底部时保持3行距离
+set scrolloff=3
+" 为C程序提供自动缩进
+set smartindent
+" 高亮显示普通txt文件（需要txt.vim脚本）
+au BufRead,BufNewFile *  setfiletype txt
+"自动补全
+:inoremap ( ()<ESC>i
+:inoremap ) <c-r>=ClosePair(')')<CR>
+:inoremap { {<CR>}<ESC>O
+:inoremap } <c-r>=ClosePair('}')<CR>
+:inoremap [ []<ESC>i
+:inoremap ] <c-r>=ClosePair(']')<CR>
+:inoremap " ""<ESC>i
+:inoremap ' ''<ESC>i
+:inoremap ii <Esc>
+function! ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endfunction
+filetype plugin indent on 
+"打开文件类型检测, 加了这句才可以用智能补全
+set completeopt=longest,menu
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CTags的设定  
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let Tlist_Sort_Type = "name"    " 按照名称排序  
+let Tlist_Use_Right_Window = 1  " 在右侧显示窗口  
+let Tlist_Compart_Format = 1    " 压缩方式  
+let Tlist_Exist_OnlyWindow = 1  " 如果只有一个buffer，kill窗口也kill掉buffer  
+let Tlist_File_Fold_Auto_Close = 0  " 不要关闭其他文件的tags  
+let Tlist_Enable_Fold_Column = 0    " 不要显示折叠树  
+autocmd FileType java set tags+=D:\tools\java\tags  
+"autocmd FileType h,cpp,cc,c set tags+=D:\tools\cpp\tags  
+"let Tlist_Show_One_File=1            "不同时显示多个文件的tag，只显示当前文件的
+"设置tags  
+set tags=tags  
+"set autochdir 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"其他东东
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"默认打开Taglist 
+let Tlist_Auto_Open=1 
+"""""""""""""""""""""""""""""" 
+" Tag list (ctags) 
+"""""""""""""""""""""""""""""""" 
+let Tlist_Ctags_Cmd = '/usr/bin/ctags' 
+let Tlist_Show_One_File = 1 "不同时显示多个文件的tag，只显示当前文件的 
+let Tlist_Exit_OnlyWindow = 1 "如果taglist窗口是最后一个窗口，则退出vim 
+let Tlist_Use_Right_Window = 1 "在右侧窗口中显示taglist窗口
+" minibufexpl插件的一般设置
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+
+let g:miniBufExplModSelTarget = 1   
+复制代码
+
+  
+
+博主ma6174对本博客文章（除转载的）享有版权，未经许可不得用于商业用途。转载请注明出处http://www.cnblogs.com/ma6174/
+
+对文章有啥看法或建议，可以评论或发电子邮件到ma6174@163.com
+29
+
+ 
+分类: Linux, windows
+绿色通道： 好文要顶 关注我 收藏该文与我联系
+ma6174
+关注 - 21
+粉丝 - 29
++加关注
+6
+0
+(请您对文章做出评价)
+« 博主前一篇：强大的万能删除代码，你也可以制作强力删除软件了
+» 博主后一篇：第一个汇编程序
+
+posted on 2011-12-10 16:31 ma6174 阅读(5335) 评论(13) 编辑 收藏
+评论
+#1楼 2011-12-10 19:19 pandaren  
+
+我发现注释/* */ 比较烦人 有简单方法么
+支持(0)反对(0)
+  
+
+#2楼[楼主] 2011-12-10 19:23 ma6174  
+
+引用pandaren：我发现注释/* */ 比较烦人 有简单方法么
+
+有，我以前写过一个软件，叫“注释过滤”，可以把所有的/* */以及//注释全部过滤，如果需要的话可以到我的网盘下载http://ma6174.ys168.com/
+支持(0)反对(0)
+  
+
+#3楼 2011-12-10 21:22 pandaren  
+
+@ma6174
+感谢分享
+支持(0)反对(0)
+  
+
+#4楼 2011-12-10 21:29 YTYT2002YTYT  
+
+恩，vim相当不错啊，可定制性很强
+支持(0)反对(0)
+  
+
+#5楼 2011-12-10 22:47 赌神  
+
+看了一遍没发现比Notepad++有什么亮点！
+
+Notepad++同样开源同样免费，而且无须复杂的设置，当然也可以写插件扩展自己的需要...
+支持(0)反对(0)
+  
+
+#6楼[楼主] 2011-12-10 22:51 ma6174  
+
+@赌神
+对，nopepad++确实不错，但在linux下不能用啊！
+支持(0)反对(0)
+  
+
+#7楼 2011-12-10 23:26 Lenic  
+
+又见强大的VIM
+支持(0)反对(0)
+  
+
+#8楼 2011-12-10 23:32 不戒大师  
+
+好吧 我承认 我一直用的WinXXX系列 我OUT了
+支持(0)反对(0)
+  
+
+#9楼[楼主] 2011-12-11 00:14 ma6174  
+
+@不戒大师
+其实学学linux和vi的思想还是挺好的
+支持(0)反对(0)
+  
+
+#10楼 2011-12-11 01:52 nonocast  
+
+vim王道，关键是通吃，在iphone shell上都可以用
+支持(0)反对(0)
+  
+
+#11楼 2011-12-11 11:51 mfsjack  
+
+mark 一下，现在用vim配置是别人弄的，自己还没亲手去写过。哪天来参考，自己弄个。
+支持(0)反对(0)
+  
+
+#12楼 2011-12-12 09:37 千羽天明  
+
+vim 王道
+支持(0)反对(0)
+  
+
+#13楼 2011-12-12 10:25 jemmy Liu  
+
+好文 看到vim我就有种冲动~~~
+支持(0)反对(0)
+  
+
+刷新评论刷新页面返回顶部
+注册用户登录后才能发表评论，请 登录 或 注册，访问网站首页。
+程序员问答社区，解决您的技术难题
+博客园首页博问新闻闪存程序员招聘知识库
+最新IT新闻:
+· 如果是终结呢？
+· 一名用户研究从业者的若干思考
+· Hadoop并非完美：8个代替 HDFS 的绝佳方案
+· 一年便沧海桑田：曾获400万投资的名片应用Hashable将关闭
+· 微软闷声发大财：70%Android终端需交专利费
+» 更多新闻...
+最新知识库文章:
+· 产品经理（尤其是创业的）需要懂技术吗？懂到什么程度？
+· 关于项目管理的一点体会
+· 编程技术面试的五大要点
+· 是什么成就了卓越的程序员？
+· 由后端来类比前端设计的思考
+» 更多知识库文章...
+
+China-Pub 低价书精选
+China-Pub 计算机绝版图书按需印刷服务
+
+Powered by:
+博客园
+Copyright © ma6174
+导航
+
+    博客园
+    首页
+    新随笔
+    联系
+    订阅订阅
+    管理
+
+统计
+
+    随笔 - 96
+    文章 - 1
+    评论 - 206
+    引用 - 0
+
+公告
+
+我的网盘：
+
+http://ma6174.ys168.com/
+
+我的gtalk：ma617495@gmail.com 
+
+我的QQ：674108687
+
+我的邮箱：ma6174@163.com
+
+QQ交流群163501063
+
+QQ交流---ma6174
+
+填写您的邮件地址，订阅我们的精彩内容：  
+您是第
+hit analyzer
+
+
+位访客
+
+我的所有文章  
+
+精彩抓图相册
+昵称：ma6174
+园龄：7个月
+粉丝：29
+关注：21
++加关注
+搜索
+ 
+常用链接
+
+    我的随笔
+    我的评论
+    我的参与
+    最新评论
+    我的标签
+
+最新随笔
+
+    1. linux简单方法实现让普通用户执行管理员命令
+    2. （转）SSH免密码登录
+    3. （转）解决ssh登录慢的问题（一定要在远端主机上修改啊）
+    4. ssh批量登录并执行命令（python实现）
+    5. python利用elaphe制作二维条形码
+    6. Linux常用压缩解压命令
+    7. 强大的zsh配置文件
+    8. 删除目录下相同文件 -> 逐级优化（python实现）
+    9. linux数字文件属性的含义（转）
+    10. 批量重命名文件——python实现
+
+随笔分类(188)
+
+    ACM(11)
+    C，C++(34)
+    java(3)
+    Linux(21)
+    matlab(3)
+    python(8)
+    windows(14)
+    编译原理(2)
+    各种技术(22)
+    汇编语言(1)
+    批处理(6)
+    软件技巧(10)
+    软件开发(19)
+    扫盲(4)
+    数据结构和算法(15)
+    数据库(1)
+    算法设计与分析(2)
+    随想(10)
+    网络(2)
+
+随笔档案(96)
+
+    2012年5月 (10)
+    2012年4月 (4)
+    2012年3月 (14)
+    2012年2月 (19)
+    2012年1月 (13)
+    2011年12月 (36)
+
+文章档案(1)
+
+    2012年3月 (1)
+
+链接
+
+    github
+    我的在线版本控制系统
+    我的网盘
+
+积分与排名
+
+    积分 - 22555
+    排名 - 4860
+
+最新评论
+
+    1. Re:删除目录下相同文件 -&amp;gt; 逐级优化（python实现）
+    @永远的阿哲
+    呵呵，如果仅仅是处理图片的话可以考虑计算机图形学，但是处理各种文件的话就要换个思路了。图形学里面也需要算法的。
+    --ma6174
+    2. Re:删除目录下相同文件 -&amp;gt; 逐级优化（python实现）
+    纯算法了,我还以为是计算机图形学呢
+    --永远的阿哲
+    3. Re:linux简单方法实现让普通用户执行管理员命令
+    @猫行天下
+    谢谢大神！我研究一下！
+    --ma6174
+    4. Re:linux简单方法实现让普通用户执行管理员命令
+    @ma6174你认为的乱码或许在代码中清清明明的显示出来了呢？据我所知，elf文件和pe一样，是有分段的概念的，其中文本会被单独存储，再不济，反汇编一下就知道了。另外，python的编译我不太清楚，但是C#、java这种东西即使编译为IL/字节码后，也可以用工具轻易还原。个人是不推荐使用这种方法的，虽然很有可行性，而且若是更换了密码只需要重新部署到一台服务器上就可以了~~个人还是建议看看，如果不是...
+    --猫行天下
+    5. Re:linux简单方法实现让普通用户执行管理员命令
+    @猫行天下
+    这样啊，谢谢指导！
+    python源码可以编译的，编译以后就成乱码了。
+    --ma6174
+
+阅读排行榜
+
+    1. 强大的vim配置，让编程更随意(5335)
+    2. 博客园人必备工具：消除行号软件(5014)
+    3. 又开源了，网上阅卷系统自动识别功能代码(2687)
+    4. C、C++代码格式优化软件---献给编程爱好者(1996)
+    5. ssh批量登录并执行命令（python实现）(1592)
+
+评论排行榜
+
+    1. 博客园人必备工具：消除行号软件(112)
+    2. C、C++代码格式优化软件---献给编程爱好者(30)
+    3. 删除目录下相同文件 -> 逐级优化（python实现）(14)
+    4. 强大的vim配置，让编程更随意(13)
+    5. 又开源了，网上阅卷系统自动识别功能代码(12)
+
+    undefined
+
+Loading Data...
+Powered By Clicki.cn
+

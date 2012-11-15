@@ -1,0 +1,9 @@
+# auto generated file, don't edit
+init.o: init.c link.h
+main.o: main.c link.h
+print_input.o: print_input.c link.h
+quit.o: quit.c link.h
+read_from_file.o: read_from_file.c link.h
+remove.o: remove.c link.h
+search.o: search.c link.h
+sort.o: sort.c link.h

@@ -1,0 +1,14 @@
+# auto generated file, don't edit
+binary_default.o: binary_default.c include/binary_default.h \
+ include/word_default.h include/debug.h include/dict.h
+binary_user.o: binary_user.c include/binary_user.h include/word_default.h \
+ include/debug.h include/dict.h include/binary_default.h
+dict.o: dict.c include/dict.h include/debug.h
+main.o: main.c include/dict.h include/debug.h include/word_default.h \
+ include/dict.h include/word_user.h include/word_default.h \
+ include/binary_default.h include/binary_user.h include/binary_default.h \
+ include/debug.h
+word_default.o: word_default.c include/word_default.h include/debug.h \
+ include/dict.h
+word_user.o: word_user.c include/word_user.h include/word_default.h \
+ include/debug.h include/dict.h

@@ -1,0 +1,34 @@
+    1  ls
+    2  ifconfig
+    3  ls
+    4  cd ~
+    5  ls
+    6  cd AR81Family-linux-v1.0.1.14/
+    7  ls
+    8  cd AR81Family-linux-v1.0.1.14/
+    9  ls
+   10  sudo make
+   11  ls
+   12  sudo make
+   13  sudo make install
+   14  sudo nodprobe atl1e
+   15  sudo modprobe atl1e
+   16  sudo apt-get install vim
+   17  vi
+   18  exit
+   19  vi a.c
+   20  rm a.c 
+   21  ls
+   22  ls -a
+   23  cd /etc/
+   24  ls
+   25  cd vim/
+   26  ls
+   27  sudo vi vimrc
+   28  ls
+   29  cd 
+   30  ls
+   31  vi a.c
+   32  ls
+   33  pwd
+   34  history > dong.txt

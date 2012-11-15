@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+WORD_DEFAULT_H_	main.c	12;"	d	file:
+bd_fread	main.c	/^static dict_elem_t *bd_fread(FILE *fbp, dict_elem_t *b_head_p, int w_count)$/;"	f	file:
+bd_fwrite	main.c	/^static void *bd_fwrite(dict_elem_t *b_head_p, int w_count, char *binary_file_name)$/;"	f	file:
+binsearch	main.c	/^static dict_elem_t *binsearch(dict_elem_t *head_p, int w_count, char *key_word)$/;"	f	file:
+dict_elem	main.c	/^typedef struct dict_elem {$/;"	s	file:
+dict_elem_t	main.c	/^} dict_elem_t;$/;"	t	typeref:struct:dict_elem	file:
+distory	main.c	/^static void distory(dict_elem_t *head_p, int w_count)$/;"	f	file:
+get_elem_count	main.c	/^int get_elem_count(char *filename)$/;"	f
+key	main.c	/^	char *key;$/;"	m	struct:dict_elem	file:
+main	main.c	/^int main(int argc, char *argv[])$/;"	f
+n_trans	main.c	/^	int n_trans;$/;"	m	struct:dict_elem	file:
+print_data	main.c	/^void print_data(dict_elem_t *head_p, int w_count)$/;"	f
+print_one_elem	main.c	/^static void print_one_elem(dict_elem_t *word_p)$/;"	f	file:
+read_to_mem_from_txt	main.c	/^dict_elem_t *read_to_mem_from_txt(char *filename, dict_elem_t *head_p, int w_count)$/;"	f
+search	main.c	/^dict_elem_t *search(dict_elem_t *head_p, int w_count)$/;"	f
+shell_sort	main.c	/^static void shell_sort(dict_elem_t *head_p, int l, int r)$/;"	f	file:
+trans	main.c	/^	char **trans;$/;"	m	struct:dict_elem	file:
+wd	main.c	/^void wd()$/;"	f
+wd_read_key	main.c	/^static char * wd_read_key(FILE *fp, dict_elem_t *word_p)$/;"	f	file:
+wd_read_trans	main.c	/^static char * wd_read_trans(FILE *fp, dict_elem_t *word_p)$/;"	f	file:
+wd_remove_first	main.c	/^static void wd_remove_first(char *buf, int len)$/;"	f	file:

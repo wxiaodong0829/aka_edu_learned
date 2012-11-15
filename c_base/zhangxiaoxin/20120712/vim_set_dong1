@@ -1,0 +1,16 @@
+1,  自动换行
+配置vi的配置文件 :   $vi /etc/vim/vimrc  中添加 set number
+   自动换行： vi /etc/vim/vimrc  命令模式下查找 /indent n 找到 if has("autocmd"),去掉前面的“,连续三行到 endif
+
+2， 快速代码定位 变量 宏定义 函数定义等功能
+vi ctags 代码查找，快速定位：
+	使用方法：1，在工程目录的最顶端 $ctags -R   生成 tags
+		2,用 vi 打开文件后,在模行模式输入 :set tags=/.../tags 
+					此tags 即1生成的tags
+		3,把光标定位到某一函数名上, 按下 Ctar + ], vim就可以自动切		换到该函数定义处!
+ 		     要返回只需要按下Ctrl + t .
+	     更多用法, 在vim命令模式输入 :help usr_29 查看即可. 
+
+3，
+
+

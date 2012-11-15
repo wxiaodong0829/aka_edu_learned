@@ -1,0 +1,9 @@
+start
+disassemble gdb 下反汇编
+x /5i $pc       gdb下指定条数的反汇编
+si              stepi 缩写 单步跟汇编
+s i             s,单步进入c
+i r             registers
+i r eax         看一个
+set args abcdefg  给函数传参数
+bt              当前函数的调用关系 bacdstrace

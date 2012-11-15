@@ -1,0 +1,55 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BINARY_DEFAULT_H_	include/binary_default.h	9;"	d
+BINARY_USER_H	include/binary_user.h	10;"	d
+CC	Makefile	/^CC = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -g -Iinclude$/;"	m
+DEBUG_H_	include/debug.h	9;"	d
+DICT_H_	include/dict.h	10;"	d
+DIRNAME	Makefile	/^DIRNAME = $(notdir $(PWD))$/;"	m
+LEN	include/binary_user.h	21;"	d
+OBJ	Makefile	/^OBJ = $(SRC:%.c=%.o)$/;"	m
+PRINT	include/debug.h	12;"	d
+PRINT	include/debug.h	16;"	d
+PRINT	include/debug.h	20;"	d
+PRINT_P	include/debug.h	13;"	d
+PRINT_P	include/debug.h	17;"	d
+PRINT_P	include/debug.h	21;"	d
+PRINT_S	include/debug.h	14;"	d
+PRINT_S	include/debug.h	18;"	d
+PRINT_S	include/debug.h	22;"	d
+PRJ	Makefile	/^PRJ = $(DIRNAME)$/;"	m
+PWD	Makefile	/^PWD = $(shell pwd)$/;"	m
+SRC	Makefile	/^SRC = $(wildcard *.c)$/;"	m
+TARGET	Makefile	/^TARGET = $(PRJ)$/;"	m
+WORD_DEFAULT_H_	include/word_default.h	11;"	d
+WORD_USER_H_	include/word_user.h	9;"	d
+add_new_key	word_user.c	/^static void add_new_key(char *filename_user)$/;"	f	file:
+add_new_key_bin	binary_user.c	/^static void add_new_key_bin(char *filename_user)$/;"	f	file:
+bd	binary_default.c	/^void bd()$/;"	f
+bd_fread	binary_default.c	/^dict_elem_t *bd_fread(FILE *fbp, dict_elem_t *b_head_p, int w_count)$/;"	f
+bd_fwrite	binary_default.c	/^void *bd_fwrite(dict_elem_t *b_head_p, int w_count, char *binary_file_name)$/;"	f
+binsearch	dict.c	/^static dict_elem_t *binsearch(dict_elem_t *head_p, int w_count, char *key_word)$/;"	f	file:
+bu	binary_user.c	/^void bu(char *filename_user)$/;"	f
+dict_elem	include/dict.h	/^typedef struct dict_elem {$/;"	s
+dict_elem_t	include/dict.h	/^} dict_elem_t;$/;"	t	typeref:struct:dict_elem
+distory	dict.c	/^void distory(dict_elem_t *head_p, int w_count)$/;"	f
+get_elem_count	dict.c	/^int get_elem_count(char *filename)$/;"	f
+key	include/dict.h	/^	char *key;$/;"	m	struct:dict_elem
+main	main.c	/^int main(int argc, char *argv[])$/;"	f
+n_trans	include/dict.h	/^	int n_trans;$/;"	m	struct:dict_elem
+print_data	dict.c	/^void print_data(dict_elem_t *head_p, int w_count)$/;"	f
+print_one_elem	dict.c	/^void print_one_elem(dict_elem_t *word_p)$/;"	f
+read_to_mem_from_txt	word_default.c	/^dict_elem_t *read_to_mem_from_txt(char *filename, dict_elem_t *head_p, int w_count)$/;"	f
+search	dict.c	/^dict_elem_t *search(dict_elem_t *head_p, int w_count)$/;"	f
+shell_sort	dict.c	/^void shell_sort(dict_elem_t *head_p, int l, int r)$/;"	f
+trans	include/dict.h	/^	char **trans;$/;"	m	struct:dict_elem
+wd	word_default.c	/^void wd()$/;"	f
+wd_read_key	word_default.c	/^static char * wd_read_key(FILE *fp, dict_elem_t *word_p)$/;"	f	file:
+wd_read_trans	word_default.c	/^static char * wd_read_trans(FILE *fp, dict_elem_t *word_p)$/;"	f	file:
+wd_remove_first	word_default.c	/^static void wd_remove_first(char *buf, int len)$/;"	f	file:
+wu	word_user.c	/^void wu(char *filename_user)$/;"	f

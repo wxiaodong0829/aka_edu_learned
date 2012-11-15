@@ -1,0 +1,63 @@
+/*************************************************************************
+    > File Name: remove.c
+    > Author: wxiaodong
+    > Mail  : wxiaodong0829@163.com 
+    > 自由  谐作   创造   沟通
+    > Created Time: 2012年08月08日 星期三 16时10分09秒
+ ************************************************************************/
+
+#include "link.h"
+#include <string.h>
+
+node_t *link_remove_id(node_t *head, void *ptr)
+{
+	node_t *p, *q;
+	if (head == NULL)
+		return NULL;
+
+	for (q = head, p = head->next; p; q = q->next, p = p->next) {
+		if (p->id == *(int *)ptr) {
+			q->next = p->next;
+			p->next = NULL;
+			return p;
+		}
+	}
+	return NULL;
+}
+node_t *link_remove_name(node_t *head, void *ptr)
+{
+	node_t *p, *q;
+	if (head == NULL)
+		return NULL;
+
+	for (q = head, p = head->next; p; q = q->next, p = p->next) {
+		if (strcmp(p->name, *(char **)ptr) == 0) {
+			q->next = p->next;
+			p->next = NULL;
+			return p;
+		}
+	}
+	return NULL;
+}
+#define id_opera  p->id == *(int *)ptr
+#define name_opera  strcmp(p->name, *(char **)ptr
+#define chgrade_opera  p->chgrade == *(float *)ptr
+#define mathgrade_opera  p->mathgrade == *(float *)ptr
+#define average_opera  p->average == *(float *)ptr
+#define link_remove_float(member) \
+node_t *link_remove_##member(node_t *head, void *ptr)\
+{\
+	node_t *p, *q;\
+	if (head == NULL)\
+		return NULL;\
+\
+	for (q = head, p = head->next; p; q = q->next, p = p->next) {\
+		if (member##_opera) {\
+			q->next = p->next;\
+			p->next = NULL;\
+			return p;\
+		}\
+	}\
+	return NULL;\
+}
+

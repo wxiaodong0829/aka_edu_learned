@@ -1,0 +1,746 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0052)http://blog.sina.com.cn/s/blog_69182df901012s44.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>C语言中的移位操作_马路边的小男孩_新浪博客</title>
+<meta name="keywords" content="C语言中的移位操作_马路边的小男孩_新浪博客,马路边的小男孩,杂谈">
+<meta name="description" content="C语言中的移位操作_马路边的小男孩_新浪博客,马路边的小男孩,">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<!--–[if lte IE 6]-->
+<script type="text/javascript">
+try{
+document.execCommand("BackgroundImageCache", false, true);
+}catch(e){}
+</script>
+<!--[endif]–-->
+<script type="text/javascript">
+window.staticTime=new Date().getTime();
+
+var locInterval = setInterval(function(){
+var tc = document.getElementById('trayContainer');
+if(tc) {
+var isLogin = false;var sup = document.cookie.match(/sup=([^;]+);/gi);if(sup != null){ sup = decodeURIComponent(sup[0]);var uid = sup.match(/uid=([^&]+)/gi); isLogin = (uid != null); } if (isLogin){ tc.innerHTML = '<div class="topbar_loading"><img src="http://simg.sinajs.cn/blog7style/images/common/loading.gif" />加载中…</div>'; } else { tc.innerHTML = '<div class="topbar_menu"><span class="link"><a href="http://blog.sina.com.cn" target="_blank">博客首页</a></span><span class="line_s"></span></div><div class="topbar_login"><a href="#" class="login" id="linkTrayLogin" onclick="return false;">登录</a><a href="http://login.sina.com.cn/signup/signupmail.php?entry=blog&r=&srcuid=&src=blogicp" class="register" target="_blank" id="linkReg">注册</a></div><div class="topbar_ad" id="divPopularize"></div><div id="phprender" ></div>';}
+clearInterval(locInterval);
+locInterval = null;
+}
+},50);
+
+</script>
+<link rel="pingback" href="http://upload.move.blog.sina.com.cn/blog_rebuild/blog/xmlrpc.php">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://upload.move.blog.sina.com.cn/blog_rebuild/blog/xmlrpc.php?rsd">
+<link href="http://blog.sina.com.cn/blog_rebuild/blog/wlwmanifest.xml" type="application/wlwmanifest+xml" rel="wlwmanifest">
+<link rel="alternate" type="application/rss+xml" href="http://blog.sina.com.cn/rss/1763192313.xml" title="RSS">
+<link href="./C语言中的移位操作_马路边的小男孩_新浪博客_files/article.css" type="text/css" rel="stylesheet"><style id="tplstyle" type="text/css">@charset "utf-8";@import url("http://simg.sinajs.cn/blog7newtpl/css/3/3_9/t.css");
+</style>
+<style id="positionstyle" type="text/css">
+</style>
+<style id="bgtyle" type="text/css">
+</style>
+<style id="headtyle" type="text/css">
+</style>
+<style id="navtyle" type="text/css">
+</style>
+</head>
+<body>
+<!--$sinatopbar-->
+<div style="z-index:512;" class="sinatopbar">
+			<div class="topbar_main">
+				<a id="login_bar_logo_link_350" href="http://blog.sina.com.cn/" target="_blank"><img class="topbar_logo" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/topbar_logo.gif" width="100" alt="新浪博客"></a>
+
+				<div id="trayContainer" style="float:left"><div class="topbar_menu"><span class="link"><a href="http://blog.sina.com.cn/" target="_blank">博客首页</a></span><span class="line_s"></span></div><div class="topbar_login"><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" class="login" id="linkTrayLogin" onclick="return false;">登录</a><a href="http://login.sina.com.cn/signup/signupmail.php?entry=blog&srcuid=1763192313&src=blogicp" class="register" target="_blank" id="linkReg">注册</a></div><div class="topbar_ad" id="divPopularize"><a onclick="v7sendLog(&#39;69_01_11&#39;);return true;" style="color:red" href="http://qing.weibo.com/op/2012london.html" target="_blank">9条小贴士助你成为英伦专家</a></div><div id="phprender"></div></div>
+				<div class="topbar_floatR">
+					<span class="tb_wrtBlog">
+						<a target="_blank" href="http://control.blog.sina.com.cn/admin/article/article_add.php"><img class="SG_icon SG_icon15" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" title="博文" align="absmiddle">	发博文</a>
+
+						<span id="arrowAddArticle" class="wrtblog_arrow"></span>
+					</span>
+					<div class="topbar_search">
+						<form action="http://search.sina.com.cn/?c=blog" target="_blank" method="get" id="loginBarSearchForm">
+							<div class="topbar_input">
+								<input id="loginBarSearchInput" name="q" class="topbar_txt" type="text" value="">
+							</div>
+							<div id="searchSelect" class="topbar_list">
+								<div id="loginBarSearchMenuLabel" class="anainp">博文</div>
+
+								<div class="arrow"></div>
+							</div>
+							<input type="submit" class="topbar_searchBtn" value="搜索">
+							<input type="hidden" id="ie" value="utf-8" name="ie">
+							<input type="hidden" id="loginBarSearchT" value="article" name="range">
+							<input type="hidden" id="loginBarSearchTS" value="" name="ts">
+							<input type="hidden" id="loginBarSearchS" value="" name="s">
+							<input type="hidden" id="loginBarSearchType" value="all" name="by">
+							<input type="hidden" id="loginBarSearchSType" value="title" name="stype">
+
+							<input type="hidden" id="e" value="utf-8" name="e">
+						<input type="hidden" name="c" id="loginBarSearchC" value="blog"></form>
+					</div>
+					
+				</div>
+			</div>
+			<div style="position:absolute;left:0;top:0;" id="trayFlashConnetion"><embed pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" src="http://sjs.sinajs.cn/blog7swf/scache.swf" width="1" height="1" style="undefined" id="scache" name="scache" bgcolor="#00ff00" quality="high" wmode="transparent" allowscriptaccess="always"></div>
+		</div>
+		
+<!--$end sinatopbar-->
+
+
+<div class="sinabloga" id="sinabloga">
+	<div id="sinablogb" class="sinablogb">
+
+	       
+ <div id="sinablogHead" class="sinabloghead">
+     <div style="display: none;" id="headflash" class="headflash"></div>
+	   <div id="headarea" class="headarea">
+      <div id="blogTitle" class="blogtoparea">
+      <h1 id="blogname" class="blogtitle"><a href="http://blog.sina.com.cn/u/1763192313"><span id="blognamespan">马路边的小男孩儿的博客</span></a></h1>
+      <div id="bloglink" class="bloglink"><a href="http://blog.sina.com.cn/u/1763192313">http://blog.sina.com.cn/u/1763192313</a>  <a onclick="return false;" class="CP_a_fuc" href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" id="SubscribeNewRss">[<cite>订阅</cite>]</a><a class="CP_a_fuc" href="javascript:void(scope.pa_add.add('1763192313'));">[<cite>手机订阅</cite>]</a></div>
+      </div>
+      <div class="blognav" id="blognav">
+      			  <div id="blognavBg" class="blognavBg"></div> <div class="blognavInfo"> 
+		<span><a href="http://blog.sina.com.cn/u/1763192313">首页</a></span>
+      <span><a class="on" href="http://blog.sina.com.cn/s/articlelist_1763192313_0_1.html">博文目录</a></span>
+      <span><a href="http://photo.blog.sina.com.cn/u/1763192313">图片</a></span>
+      <span class="last"><a href="http://blog.sina.com.cn/s/profile_1763192313.html">关于我</a></span></div>
+      </div>
+      		      		 	
+      
+             <div class="autoskin" id="auto_skin">
+       </div>
+
+<div class="adsarea">
+     <a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#"><div id="template_clone_pic" class="pic"></div></a>
+     <div id="template_clone_link" class="link wdc_HInf"></div>
+     <div id="template_clone_other" class="other"></div>        
+</div>
+    </div>
+    	    	    </div>    
+    <!--主题内容开始 -->
+    <div class="sinablogbody" id="sinablogbody" ismouseover="0">
+		
+	<!--第一列start-->
+    <div id="column_1" class="SG_colW21 SG_colFirst"><div class="SG_conn" id="module_901">
+    <div class="SG_connHead">
+            <span class="title" comp_title="个人资料">个人资料</span>
+            <span class="edit">
+                        </span>
+    </div>
+    <div class="SG_connBody">
+        <div class="info">
+            		        
+			<div class="info_img" id="comp_901_head"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/180" real_src="http://portrait2.sinaimg.cn/1763192313/blog/180" id="comp_901_head_image" width="180" height="180" alt="马路边的小男孩" title="马路边的小男孩"></div>
+			
+       	    <div class="info_txt">
+		      <div class="info_nm">
+		        <img id="comp_901_online_icon" style="display:none;" class="SG_icon SG_icon1" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" align="absmiddle">
+		        <span class="SG_txtb"><strong id="ownernick">马路边的小男孩</strong></span>
+		        
+                <div class="clearit"></div>
+              </div>
+		      <div class="info_btn1">
+			  <!--user['qing_url'] -->
+		        <a target="_blank" href="http://qing.weibo.com/1763192313" onclick="v7sendLog &amp;&amp; v7sendLog(&#39;79_01_01&#39;,scope.$pageid,&#39;qingLink&#39;);" class="SG_aBtn SG_aBtn_ico"><cite><img class="SG_icon SG_icon205" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" align="absmiddle">Qing</cite></a>
+		        <a target="_blank" href="http://weibo.com/u/1763192313?source=blog" class="SG_aBtn SG_aBtn_ico"><cite><img class="SG_icon SG_icon51" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" align="absmiddle">微博</cite></a>
+		        <div class="clearit"></div>
+		      </div>
+	<div class="SG_j_linedot"></div>		<div class="info_locate" id="info_locate_id">
+<div class="SG_j_linedot"></div>
+<div class="info_btn2">
+	<p>
+	<a href="javascript:void(0)" class="SG_aBtn " id="comp901_btn_invite"><cite>加好友</cite></a>
+	<a href="javascript:void(0)" class="SG_aBtn" id="comp901_btn_sendpaper"><cite>发纸条</cite></a>
+	</p>
+	<p>
+	<a href="http://blog.sina.com.cn/s/profile_1763192313.html#write" class="SG_aBtn" id="comp901_btn_msninfo"><cite>写留言</cite></a>
+	<a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" onclick="return false;" class="SG_aBtn" id="comp901_btn_follow"><cite>加关注</cite></a>
+	</p>
+	<div class="clearit"></div>
+</div>
+<div class="SG_j_linedot"></div>
+</div>
+			      <div class="info_list">	  
+			   					<ul class="info_list1">
+					<li><span class="SG_txtc">博客等级：</span><span id="comp_901_grade"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/4.gif"></span></li>
+					<li><span class="SG_txtc">博客积分：</span><span id="comp_901_score"><strong>93</strong></span></li>
+					</ul>
+					<ul class="info_list2">
+					<li><span class="SG_txtc">博客访问：</span><span id="comp_901_pv"><strong>216</strong></span></li>
+					<li><span class="SG_txtc">关注人气：</span><span id="comp_901_attention"><strong>1</strong></span></li>
+					</ul>
+		</div>
+<div class="clearit"></div>
+	</div>
+	<div class="clearit"></div>
+</div>
+            </div>       
+            <div class="SG_connFoot"></div>
+</div>
+<!--Qingtuijian--><div id="module_903" class="SG_conn">
+    <div class="SG_connHead">
+    <span comp_title="相关博文" class="title">相关博文</span>
+    <span class="edit"> </span>
+    </div>
+    <div class="SG_connBody">
+    	<div class="atcTitList relaList"><ul>
+				            <li class="SG_j_linedot1">
+		                <p class="atcTitCell_tit SG_dot"><a onclick="v7sendLog(&#39;69_01_09&#39;);" href="http://qing.weibo.com/tag/%E4%BA%BA%E4%BD%93%E8%89%BA%E6%9C%AF?blogid=10bc86d033001mib" target="_blank" title="人体，不只是情色，更是艺术">人体，不只是情色，更是艺术</a></p>
+		                <p class="atcTitCell_nm"><a class="SG_linkb" onclick="v7sendLog(&#39;69_01_09&#39;);" href="http://qing.weibo.com/tag/%E4%BA%BA%E4%BD%93%E8%89%BA%E6%9C%AF?blogid=10bc86d033001mib" target="_blank">新浪Qing</a></p>
+		            </li> 
+				            <li class="SG_j_linedot1">
+		                <p class="atcTitCell_tit SG_dot"><a onclick="v7sendLog(&#39;69_01_08&#39;);" href="http://union.9173.com/pub?p=1&u=1007-1" target="_blank" title="吕布、赵云、张飞谁才是单挑王？">吕布、赵云、张飞谁才是单挑王？</a></p>
+		                <p class="atcTitCell_nm"><a class="SG_linkb" onclick="v7sendLog(&#39;69_01_08&#39;);" href="http://union.9173.com/pub?p=1&u=1007-1" target="_blank">三国</a></p>
+		            </li> 
+		        			<li class="SG_j_linedot1">
+					<p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_515663930102dznl.html" target="_blank" title="唐国强前妻上吊自杀真相">唐国强前妻上吊自杀真相</a></p>
+					<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1364616083" target="_blank">何中原</a></p>
+			</li>
+					<li class="SG_j_linedot1">
+					<p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_50dd0f370102e9g8.html" target="_blank" title="洞房夜娇妻痛哭思念前男友">洞房夜娇妻痛哭思念前男友</a></p>
+					<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1356664631" target="_blank">雨中竹</a></p>
+			</li>
+					<li class="SG_j_linedot1">
+					<p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_615fb6320102dzb0.html" target="_blank" title="她在日本拒绝AV追求“星”梦">她在日本拒绝AV追求“星”梦</a></p>
+					<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1633662514" target="_blank">日本新華僑報總編蔣豐</a></p>
+			</li>
+					<li class="SG_j_linedot1">
+					<p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_5042c5310102e3sj.html" target="_blank" title="揭秘伦敦奥运村内部（图）">揭秘伦敦奥运村内部（图）</a></p>
+					<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1346553137" target="_blank">思考者</a></p>
+			</li>
+					<li class="SG_j_linedot1">
+					<p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_5e8ee6360102eadp.html" target="_blank" title="老婆整天有事没事就与闺蜜比胸">老婆整天有事没事就与闺蜜比胸</a></p>
+					<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1586423350" target="_blank">黎文东</a></p>
+			</li>
+					<li class="SG_j_linedot1">
+					<p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_492904350102dxem.html" target="_blank" title="实拍空姐真实生活（多图）">实拍空姐真实生活（多图）</a></p>
+					<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1227424821" target="_blank">张学伟</a></p>
+			</li>
+					<li class="SG_j_linedot1">
+					<p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_5226ab3301016ek6.html" target="_blank" title="最让男人欲罢不能的六种女人">最让男人欲罢不能的六种女人</a></p>
+					<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1378265907" target="_blank">健康达人</a></p>
+			</li>
+					<li class="SG_j_linedot1">
+					<p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_48d6380a0102e23z.html" target="_blank" title="小心点儿吃：12种“有毒”水">小心点儿吃：12种“有毒”水</a></p>
+					<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1221998602" target="_blank">谈歌</a></p>
+			</li>
+					<li class="SG_j_linedot1">
+					<p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_5d3bfd340102e1xh.html" target="_blank" title="欧式吊灯与中式吊灯的区别">欧式吊灯与中式吊灯的区别</a></p>
+					<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1564212532" target="_blank">华创新天建筑设计</a></p>
+			</li>
+			</ul>
+		<div class="atcTit_more"><span class="SG_more"><a href="http://search.sina.com.cn/?c=blog&q=%D4%D3%CC%B8%2C%D0%DD%CF%D0&by=tag" target="_blank">更多&gt;&gt;</a></span></div></div>
+    </div>
+    <div class="SG_connFoot"></div>
+  </div><div class="SG_conn" style="display: block; " id="entity_8796756689"><div class="SG_connHead"><span class="title">商讯</span><a style="display:inline-block; width:40px; height:18px; margin:6px 0px 0px 128px;background:url(http://simg.sinajs.cn/blog7style/images/special/asiangames/btn_tips.jpg);" onclick="return false;" href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" id="btnCls_8796756689"></a><span class="edit"> </span></div><div class="SG_connBody" id="content_8796756689" style="padding:5px 5px 5px;overflow:hidden;"><object id="playerobj" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="200" height="200" type="application/x-shockwave-flash"><param name="movie" value="http://d3.sina.com.cn/201206/29/436811_200200v2.swf"><param name="wmode" value="transparent"><param name="quality" value="high"><param name="allowscriptaccess" value="always"><param name="scale" value="exactfit"><embed name="playerobj" width="200" height="200" src="http://d3.sina.com.cn/201206/29/436811_200200v2.swf" quality="high" allowscriptaccess="always" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" scale="exactfit"></object></div><div class="SG_connFoot"></div></div><!--BeijingQingtuijian--><div class="SG_conn" id="module_911">
+<div class="SG_connHead">
+<span class="title">精彩图文</span>
+</div>
+<div class="SG_connBody">
+<div class="atcTitLists relaList">
+<div class="wondPicSlide">
+<div style="opacity: 1; " id="qingRecWindow" class="pic"><a href="http://qing.weibo.com/tag/%E8%AE%BE%E8%AE%A1" target="_blank" onclick="v7sendLog(&#39;q2b_bj_3_big&#39;);return true;"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/8662d294jw1dum6c2r8u5j.jpg"><span>创意的最高境界</span></a></div><ul id="qingRecPic" class="SG_j_linedot1">
+<li noo="0" class=""><a target="_blank" href="http://qing.weibo.com/tag/%E7%BE%8E%E9%A3%9F" onclick="v7sendLog(&#39;q2b_bj_2&#39;);return true;" bigcode="q2b_bj_2_big"><img bigsrc="http://s12.sinaimg.cn/mw205/10bc86424c45c3c5ffc4b&amp;960" height="50" width="50" alt="看到它们我就失眠了" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/10bc86424c45c3c5ffc4b&960"></a></li><li noo="1" class="current "><a target="_blank" href="http://qing.weibo.com/tag/%E8%AE%BE%E8%AE%A1" onclick="v7sendLog(&#39;q2b_bj_3&#39;);return true;" bigcode="q2b_bj_3_big"><img bigsrc="http://ww4.sinaimg.cn/mw205/8662d294jw1dum6c2r8u5j.jpg" height="50" width="50" alt="创意的最高境界" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/8662d294jw1dum6c2r8u5j(1).jpg"></a></li><li class="mgr" noo="2"><a target="_blank" href="http://qing.weibo.com/tag/%E4%B8%80%E5%91%A8%E5%B9%B4" onclick="v7sendLog(&#39;q2b_bj_4&#39;);return true;" bigcode="q2b_bj_4_big"><img bigsrc="http://www.sinaimg.cn/blog/qing/image/activity/xiaoqian/yizhounian/174134_14.jpg" height="50" width="50" alt="Qing一周年玩的就是拼！" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/174134_14.jpg"></a></li></ul>
+</div>
+<div class="atcTit_more"><span class="SG_more"><a href="http://qing.weibo.com/fancy.html" onclick="v7sendLog(&#39;q2b_bj_more&#39;);return true;" target="_blank">查看更多</a>&gt;&gt;</span></div>
+</div>
+</div>
+<div class="SG_connFoot"></div>
+</div>
+<!--endBeijingQing-->       <div class="SG_conn" id="module_904"><div class="SG_connHead">
+                <span class="title" comp_title="推荐博文">推荐博文</span>
+                                <span class="edit"></span>
+            </div>
+            <div class="SG_connBody">
+            	<div class="atcTitList relaList"><script language="javascript">document.domain = "sina.com.cn";</script><ul><li class="SG_j_linedot1"><p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_86a2dafb01010405.html?tj=1" target="_blank" title="国外赌场的火辣妖艳陪赌女郎(图）">国外赌场的火辣妖艳陪赌女郎(图</a></p>
+		<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/2258819835" target="_blank">风尚传媒</a></p>
+		</li><li class="SG_j_linedot1"><p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_49b486130102e0a9.html?tj=1" target="_blank" title="肇事司机阻止救人应定性为故意杀人">肇事司机阻止救人应定性为故意</a></p>
+		<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1236567571" target="_blank">丁丁</a></p>
+		</li><li class="SG_j_linedot1"><p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_596be6650102e01x.html?tj=1" target="_blank" title="A股进入战略性建仓区域">A股进入战略性建仓区域</a></p>
+		<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1500243557" target="_blank">不是神话</a></p>
+		</li><li class="SG_j_linedot1"><p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_827911ef01014z3y.html?tj=1" target="_blank" title="揭秘太空里如何性爱？（图）">揭秘太空里如何性爱？（图）</a></p>
+		<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/2188972527" target="_blank">雅虎时尚</a></p>
+		</li><li class="SG_j_linedot1"><p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_a51fd90e010160ps.html?tj=1" target="_blank" title="揭秘女人脱光后的7大性委屈">揭秘女人脱光后的7大性委屈</a></p>
+		<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/2770327822" target="_blank">新潮视觉</a></p>
+		</li><li class="SG_j_linedot1"><p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_8702e60101014c8y.html?tj=1" target="_blank" title="女房东只穿内裤邀请我车里欢爱">女房东只穿内裤邀请我车里欢爱</a></p>
+		<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/2265114113" target="_blank">口述情感</a></p>
+		</li><li class="SG_j_linedot1"><p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_903af8c801012bw3.html?tj=1" target="_blank" title="回家撞见老婆和丑男沙发上呻吟">回家撞见老婆和丑男沙发上呻吟</a></p>
+		<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/2419783880" target="_blank">暮云</a></p>
+		</li><li class="SG_j_linedot1"><p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_5054769e0102e1ad.html?tj=1" target="_blank" title="第八百四十篇•屌丝">第八百四十篇•屌丝</a></p>
+		<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1347712670" target="_blank">马未都</a></p>
+		</li><li class="SG_j_linedot1"><p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_4d08765e0102e1r1.html?tj=1" target="_blank" title="撞人女用裸躺阻碍救援害死女孩为哪般">撞人女用裸躺阻碍救援害死女孩</a></p>
+		<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1292400222" target="_blank">木子李</a></p>
+		</li><li class="SG_j_linedot1"><p class="atcTitCell_tit SG_dot"><a href="http://blog.sina.com.cn/s/blog_48b0011f0102e4b9.html?tj=1" target="_blank" title="大学生为何后悔上大学">大学生为何后悔上大学</a></p>
+		<p class="atcTitCell_nm"><a class="SG_linkb" href="http://blog.sina.com.cn/u/1219494175" target="_blank">信力建</a></p>
+		</li></ul><div id="atcPicList"><!--[346,152,100] published at 2012-07-16 18:48:52 from #236 by system-->
+ <script language="javascript">document.domain="sina.com.cn";</script>
+
+<div class="relaPic SG_j_linedot1"> 
+	<ul>
+			<li>
+		<p><a href="http://blog.sina.com.cn/s/blog_537965ae0102dzhp.html?tj=1" target="_blank"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/U3370P346T8D229642F4336DT20120716162048_width_80.jpg" width="80" height="58" alt="女生随身包里的小秘密" border="0"></a></p>
+		<p><a href="http://blog.sina.com.cn/s/blog_537965ae0102dzhp.html?tj=1" target="_blank">女生随身包里的小秘密</a></p>
+	</li>
+	<li>
+		<p><a href="http://blog.sina.com.cn/s/blog_450a32940102e9t8.html?tj=1" target="_blank"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/U3370P346T8D229640F4336DT20120716160914_width_80.jpg" width="80" height="58" alt="跨越渤海湾的铁路通道" border="0"></a></p>
+		<p><a href="http://blog.sina.com.cn/s/blog_450a32940102e9t8.html?tj=1" target="_blank">跨越渤海湾的铁路通道</a></p>
+	</li>
+	<li>
+		<p><a href="http://blog.sina.com.cn/s/blog_5e7a7b1c0102e24y.html?tj=1" target="_blank"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/U3370P346T8D229624F4336DT20120716152523_width_80.jpg" width="80" height="58" alt="实拍：精彩奥运梦想盛典" border="0"></a></p>
+		<p><a href="http://blog.sina.com.cn/s/blog_5e7a7b1c0102e24y.html?tj=1" target="_blank">实拍：精彩奥运梦想盛典</a></p>
+	</li>
+	<li>
+		<p><a href="http://blog.sina.com.cn/s/blog_4a61aca60102dzrx.html?tj=1" target="_blank"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/U3370P346T8D229620F4336DT20120716151740_width_80.jpg" width="80" height="58" alt="与撒尿小童齐名的雕塑" border="0"></a></p>
+		<p><a href="http://blog.sina.com.cn/s/blog_4a61aca60102dzrx.html?tj=1" target="_blank">与撒尿小童齐名的雕塑</a></p>
+	</li>
+
+	</ul>
+	<div class="clearfix"></div>
+</div>
+</div><div class="atcTit_more"><span class="SG_more"><a href="http://blog.sina.com.cn/lm/114/117/day.html" target="_blank">查看更多</a>&gt;&gt;</span></div></div>            </div>
+            <div class="SG_connFoot"></div>
+                  </div>        <div class="SG_conn" id="module_47"><div class="SG_connHead">
+                <span class="title" comp_title="谁看过这篇博文">谁看过这篇博文</span>
+                                <span class="edit"></span>
+            </div>
+            <div class="SG_connBody"><div class="SG_nodata">暂无访客</div></div>
+            <div class="SG_connFoot"></div>
+                  </div></div>
+	<!--第一列end-->
+	
+	<!--第二列start-->
+	<div id="column_2" class="SG_colW73">	
+<div id="module_920" class="SG_conn">
+	<div class="SG_connHead">
+	    <span comp_title="正文" class="title">正文</span>
+	    <span class="edit"><span id="articleFontManage" class="fontSize">字体大小：<a href="javascript:;" onclick="changeFontSize(2);return false;">大</a> <strong>中</strong> <a href="javascript:;" onclick="changeFontSize(0);return false;">小</a></span></span>
+	</div>
+    <div class="SG_connBody" id="module_920_SG_connBody">
+<!--博文正文 begin -->
+	<div id="articlebody" class="artical" favmd5="{&quot;69182df901012s44&quot;:&quot;27d7f166b925d23a0ab49d938903c2e6&quot;}">
+		<div class="articalTitle"> 
+					
+			<h2 id="t_69182df901012s44" class="titName SG_txta">C语言中的移位操作</h2>
+			
+					<span class="img2">
+				<img width="15" height="15" align="absmiddle" title="此博文包含图片" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" class="SG_icon SG_icon18">	
+			</span>
+					<span class="time SG_txtc">(2012-02-21 10:27:04)</span><div class="turnBoxzz"><a href="javascript:;" class="SG_aBtn SG_aBtn_ico SG_turn" action-type="reblog" action-data="{srcBlog:1, blogId:&#39;69182df901012s44&#39;}"><cite><img class="SG_icon SG_icon111" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" align="absmiddle">转载<em class="arrow">▼</em></cite></a></div>		</div>
+		<div class="articalTag" id="sina_keyword_ad_area">
+			<table>
+				<tbody><tr>
+					<td class="blog_tag">
+					<script>
+					var $tag='杂谈';
+					var $tag_code='cb0d166240680676d8b40dc2893b5321';
+					var $r_quote_bligid='69182df901012s44';
+					var $worldcup='0';
+					var $worldcupball='0';
+					</script>
+											<span class="SG_txtb">标签：</span>
+																				<h3><a href="http://search.sina.com.cn/?c=blog&q=%D4%D3%CC%B8&by=tag" target="_blank">杂谈</a></h3>
+																</td>
+					<td class="blog_class">
+											<span class="SG_txtb">分类：</span>
+						<a target="_blank" href="http://blog.sina.com.cn/s/articlelist_1763192313_1_1.html">科研与学习</a>
+										</td>
+				</tr>
+			</tbody></table>
+		</div>
+						<!-- 正文开始 -->
+		<div id="sina_keyword_ad_area2" class="articalContent  ">
+			<div>
+<p>先看如下一段左移右移的代码及其结果：</p>
+<div>
+<img style="DispLAY: none" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" real_src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" name="code_img_closed_2bfa2355-bd89-451b-a25b-706cfd21412f" alt="C语言中的移位操作" title="C语言中的移位操作"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/ExpandedBlockStart.gif" real_src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" name="code_img_opened_2bfa2355-bd89-451b-a25b-706cfd21412f" alt="C语言中的移位操作" title="C语言中的移位操作"><span>代码</span>
+<div>
+<div>
+<span style="CoLor: #000000">#include</span>
+<span style="CoLor: #800000">"</span><span style="CoLor: #800000">stdio.h</span><span style="CoLor: #800000">"</span><span style="CoLor: #000000"><br>
+<br></span><span style="CoLor: #0000ff">char</span> <span style="CoLor: #000000">leftshift(</span><span style="CoLor: #0000ff">char</span> <span style="CoLor: #000000">i,</span>
+<span style="CoLor: #0000ff">int</span> <span style="CoLor: #000000">n)<br>
+{<br></span> <span style="CoLor: #0000ff">if</span><span style="CoLor: #000000">(n</span> <span style="CoLor: #000000">&lt;</span> <span style="CoLor: #800080">0</span><span style="CoLor: #000000">)<br></span> <span style="CoLor: #0000ff">return</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">;<br></span> <span style="CoLor: #0000ff">return</span> <span style="CoLor: #000000">i</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #000000">n;<br>
+
+}<br>
+<br></span><span style="CoLor: #0000ff">char</span> <span style="CoLor: #000000">rightshift(</span><span style="CoLor: #0000ff">char</span> <span style="CoLor: #000000">i,</span>
+<span style="CoLor: #0000ff">int</span> <span style="CoLor: #000000">n)<br>
+{<br></span> <span style="CoLor: #0000ff">if</span><span style="CoLor: #000000">(n</span> <span style="CoLor: #000000">&lt;</span> <span style="CoLor: #800080">0</span><span style="CoLor: #000000">)<br></span> <span style="CoLor: #0000ff">return</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">;<br></span> <span style="CoLor: #0000ff">return</span> <span style="CoLor: #000000">i</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #000000">n;<br>
+
+}<br>
+<br></span><span style="CoLor: #0000ff">int</span> <span style="CoLor: #000000">main()<br>
+{<br></span> <span style="CoLor: #008000">//</span><span style="CoLor: #008000">leftshift</span><span style="CoLor: #008000"><br></span> <span style="CoLor: #0000ff">char</span> <span style="CoLor: #000000">a1</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #800080">127</span><span style="CoLor: #000000">;<br></span> <span style="CoLor: #0000ff">char</span> <span style="CoLor: #000000">a2</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">;<br>
+<br></span> <span style="CoLor: #0000ff">for</span><span style="CoLor: #000000">(</span><span style="CoLor: #0000ff">int</span>
+<span style="CoLor: #000000">i</span> <span style="CoLor: #000000">=</span> <span style="CoLor: #800080">1</span><span style="CoLor: #000000">; i</span>
+<span style="CoLor: #000000">&lt;=</span> <span style="CoLor: #800080">8</span><span style="CoLor: #000000">;
+i</span><span style="CoLor: #000000">++</span><span style="CoLor: #000000">)<br>
+printf(</span><span style="CoLor: #800000">"</span><span style="CoLor: #800000">%d&lt;&lt;%d =
+%d;\n</span><span style="CoLor: #800000">"</span><span style="CoLor: #000000">, a1, i, leftshift(a1,i));<br>
+<br></span> <span style="CoLor: #0000ff">for</span><span style="CoLor: #000000">(i</span> <span style="CoLor: #000000">=</span>
+<span style="CoLor: #800080">1</span><span style="CoLor: #000000">;
+i</span> <span style="CoLor: #000000">&lt;=</span>
+<span style="CoLor: #800080">8</span><span style="CoLor: #000000">;
+i</span><span style="CoLor: #000000">++</span><span style="CoLor: #000000">)<br>
+printf(</span><span style="CoLor: #800000">"</span><span style="CoLor: #800000">%d&lt;&lt;%d =
+%d;\n</span><span style="CoLor: #800000">"</span><span style="CoLor: #000000">, a2, i, leftshift(a2,i));<br>
+<br></span> <span style="CoLor: #008000">//</span><span style="CoLor: #008000">rightshift</span><span style="CoLor: #008000"><br></span> <span style="CoLor: #000000">a1</span> <span style="CoLor: #000000">=</span>
+<span style="CoLor: #800080">127</span><span style="CoLor: #000000">;<br>
+a2</span> <span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">128</span><span style="CoLor: #000000">;<br>
+<br></span> <span style="CoLor: #0000ff">for</span><span style="CoLor: #000000">(i</span> <span style="CoLor: #000000">=</span>
+<span style="CoLor: #800080">1</span><span style="CoLor: #000000">;
+i</span> <span style="CoLor: #000000">&lt;=</span>
+<span style="CoLor: #800080">8</span><span style="CoLor: #000000">;
+i</span><span style="CoLor: #000000">++</span><span style="CoLor: #000000">)<br>
+printf(</span><span style="CoLor: #800000">"</span><span style="CoLor: #800000">%d&gt;&gt;%d =
+%d;\n</span><span style="CoLor: #800000">"</span><span style="CoLor: #000000">, a1, i, rightshift(a1,i));<br>
+<br></span> <span style="CoLor: #0000ff">for</span><span style="CoLor: #000000">(i</span> <span style="CoLor: #000000">=</span>
+<span style="CoLor: #800080">1</span><span style="CoLor: #000000">;
+i</span> <span style="CoLor: #000000">&lt;=</span>
+<span style="CoLor: #800080">8</span><span style="CoLor: #000000">;
+i</span><span style="CoLor: #000000">++</span><span style="CoLor: #000000">)<br>
+printf(</span><span style="CoLor: #800000">"</span><span style="CoLor: #800000">%d&gt;&gt;%d =
+%d;\n</span><span style="CoLor: #800000">"</span><span style="CoLor: #000000">, a2, i, rightshift(a2,i));<br>
+<br></span> <span style="CoLor: #0000ff">return</span>
+<span style="CoLor: #800080">0</span><span style="CoLor: #000000">;<br>
+}</span></div>
+</div>
+<div><span><a><font color="#1A8BC8">复制代码</font></a></span></div>
+</div>
+<p>结果为：</p>
+<div>
+<img style="DispLAY: none" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" real_src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" name="code_img_closed_10345cd1-7f16-4423-bcce-20270b0a9590" alt="C语言中的移位操作" title="C语言中的移位操作"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/ExpandedBlockStart.gif" real_src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" name="code_img_opened_10345cd1-7f16-4423-bcce-20270b0a9590" alt="C语言中的移位操作" title="C语言中的移位操作">结果
+<div>
+<div>
+<span style="CoLor: #800080">127</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">1</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">2</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">2</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">4</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">3</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">8</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">4</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">16</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">5</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">32</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">6</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">64</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">7</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">128</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">8</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #800080">0</span><span style="CoLor: #000000">;<br>
+<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">1</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">2</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">2</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">4</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">3</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">8</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">4</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">16</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">5</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">32</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">6</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">64</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">7</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">128</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">&lt;&lt;</span><span style="CoLor: #800080">8</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #800080">0</span><span style="CoLor: #000000">;<br>
+<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">1</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #800080">63</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">2</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #800080">31</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">3</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #800080">15</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">4</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #800080">7</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">5</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #800080">3</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">6</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #800080">1</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">7</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #800080">0</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #800080">127</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">8</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #800080">0</span><span style="CoLor: #000000">;<br>
+<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">128</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">1</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">64</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">128</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">2</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">32</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">128</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">3</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">16</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">128</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">4</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">8</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">128</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">5</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">4</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">128</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">6</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">2</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">128</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">7</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">;<br></span><span style="CoLor: #000000">-</span><span style="CoLor: #800080">128</span><span style="CoLor: #000000">&gt;&gt;</span><span style="CoLor: #800080">8</span>
+<span style="CoLor: #000000">=</span> <span style="CoLor: #000000">-</span><span style="CoLor: #800080">1</span><span style="CoLor: #000000">;</span></div>
+</div>
+<div><span><a><font color="#1A8BC8">复制代码</font></a></span></div>
+</div>
+<div><strong>左移操作（&lt;&lt;）</strong></div>
+<div>规则：</div>
+<div><strong>右边空出的位用0填补</strong></div>
+<div>高位左移溢出则舍弃该高位。</div>
+<div><strong>计算机中常用补码表示数据：</strong></div>
+<div>数据 127，补码和原码一样：0111 1111。</div>
+<div>
+<div>左移一位： 1111 1110 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 0010 &nbsp;<wbr>对应十进制：-2</div>
+<div>左移二位： 1111 1100 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 0100 &nbsp;<wbr>对应十进制：-4</div>
+<div>左移三位： 1111 1000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 1000 &nbsp;<wbr>对应十进制：-8</div>
+<div>左移四位： 1111 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1001 0000 &nbsp;<wbr>对应十进制：-16</div>
+<div>左移五位： 1110 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1010 0000 &nbsp;<wbr>对应十进制：-32</div>
+<div>左移六位： 1100 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1100 0000 &nbsp;<wbr>对应十进制：-64</div>
+<div>左移七位： 1000 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 0000 &nbsp;<wbr>对应十进制：-128</div>
+<div>左移八位： 0000 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：0000 0000 &nbsp;<wbr>对应十进制：0</div>
+</div>
+<div>注：</div>
+<div>原码到补码的计算方式：取反+1，</div>
+<div>补码到原码的计算方式：-1再取反。</div>
+<div>数据-1，它的原码为1000 0001,补码为1111 1111</div>
+<div>
+<div>左移一位： 1111 1110 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 0010 &nbsp;<wbr>对应十进制：-2</div>
+<div>左移二位： 1111 1100 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 0100 &nbsp;<wbr>对应十进制：-4</div>
+<div>左移三位： 1111 1000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 1000 &nbsp;<wbr>对应十进制：-8</div>
+<div>左移四位： 1111 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1001 0000 &nbsp;<wbr>对应十进制：-16</div>
+<div>左移五位： 1110 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1010 0000 &nbsp;<wbr>对应十进制：-32</div>
+<div>左移六位： 1100 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1100 0000 &nbsp;<wbr>对应十进制：-64</div>
+<div>左移七位： 1000 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 0000 &nbsp;<wbr>对应十进制：-128</div>
+<div>左移八位： 0000 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：0000 0000 &nbsp;<wbr>对应十进制：0</div>
+</div>
+<div>
+<strong>可以看出127和-1的结果完全一样。移位操作与正负数无关，它只是忠实的将所有位进行移动，补0，舍弃操作。</strong></div>
+<div><strong>右移操作（&gt;&gt;）</strong></div>
+<div>规则：</div>
+<p>
+<strong>左边空出的位用0或者1填补。正数用0填补，负数用1填补</strong>。注：不同的环境填补方式可能不同；</p>
+<p>低位右移溢出则舍弃该位。</p>
+<p>1、127的补码：0111 1111</p>
+<p>右移一位： 0011 1111 &nbsp;<wbr> -&gt; 原码同补码一样
+&nbsp;<wbr>对应十进制：63</p>
+<p>右移二位： 0001 1111 &nbsp;<wbr> -&gt; 原码同补码一样
+&nbsp;<wbr>对应十进制：31</p>
+<p>右移三位： 0000 1111 &nbsp;<wbr> -&gt; 原码同补码一样
+&nbsp;<wbr>对应十进制：15</p>
+<p>右移四位： 0000 0111 &nbsp;<wbr> -&gt; 原码同补码一样
+&nbsp;<wbr>对应十进制：7</p>
+<p>右移五位： 0000 0011 &nbsp;<wbr> -&gt; 原码同补码一样
+&nbsp;<wbr>对应十进制：3</p>
+<p>右移六位： 0000 0001 &nbsp;<wbr> -&gt; 原码同补码一样
+&nbsp;<wbr>对应十进制：1</p>
+<p>右移七位： 0000 0000 &nbsp;<wbr> -&gt; 原码同补码一样
+&nbsp;<wbr>对应十进制：0</p>
+<p>右移八位： 0000 0000 &nbsp;<wbr> -&gt; 原码同补码一样
+&nbsp;<wbr>对应十进制：0</p>
+<p>2、-128的补码：1000 0000</p>
+<p>右移一位： 1100 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1100 0000 &nbsp;<wbr>对应十进制：-64</p>
+<p>右移二位： 1110 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1010 0000 &nbsp;<wbr>对应十进制：-32</p>
+<p>右移三位： 1111 0000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1001 0000 &nbsp;<wbr>对应十进制：-16</p>
+<p>右移四位： 1111 1000 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 1000 &nbsp;<wbr>对应十进制：-8</p>
+<p>右移五位： 1111 1100 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 0100 &nbsp;<wbr>对应十进制：-4</p>
+<p>右移六位： 1111 1110 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 0010 &nbsp;<wbr>对应十进制：-2</p>
+<p>右移七位： 1111 1111 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 0001 &nbsp;<wbr>对应十进制：-1</p>
+<p>右移八位： 1111 1111 &nbsp;<wbr> -&gt;
+这个补码对应的原码为：1000 0001 &nbsp;<wbr>对应十进制：-1</p>
+<div><strong>常见应用</strong></div>
+<div>左移相当于*2，只是要注意边界问题。如char a = 65；
+a&lt;&lt;1
+按照*2来算为130;但有符号char的取值范围-128~127，已经越界，多超出了3个数值，所以从-128算起的第三个数值-126才是a&lt;&lt;1的正确结果。</div>
+<div>而右移相当于除以2，只是要注意移位比较多的时候结果会趋近去一个非常小的数，如上面结果中的-1，0。</div>
+<div><strong>其它的四种位运算：</strong></div>
+<div>
+<div>与运算（&amp;）</div>
+<div>1、与0相与可清零</div>
+<div>2、与1相与可保留原值</div>
+<div>或运算（|）</div>
+<div>1、与0相或可保留原值</div>
+<div>2、与1相与可齐设1</div>
+<div>异或运算（^）</div>
+<div>1、与0异或保留原值</div>
+<div>2、与1异或比特值反转</div>
+<div>3、可通过某种算法，使用异或实现交换两个值</div>
+<div>异或运算是有结合律的</div>
+<div>取反（~）</div>
+</div>
+</div>							
+		</div>
+						<!-- 正文结束 -->
+		<div class="shareUp">
+        	<div class="share SG_txtb">分享 <a href="javascript:void((function(s,d,e,r,l,p,t,z,c,w){var%20f='http://v.t.sina.com.cn/share/share.php?',u=z||d.location,p=['url=',e(u),'&title=',e(t||d.title),'&source=',e(r),'&sourceUrl=',e(l),'&content=',c||'gb2312','&pic=',e(p||''),'&ralateUid=',w].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'新浪-博客','http://blog.sina.com.cn','','分享马路边的小男孩的博文：C语言中的移位操作 推荐给@头条博客','http://blog.sina.com.cn/s/blog_69182df901012s44.html','utf-8','1231759973'));" id="sharewb"><img class="SG_icon SG_icon110" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="18" height="18" title="" align="absmiddle"></a> <a href="http://profile.live.com/badge/?url=http%3A%2F%2Fblog.sina.com.cn%2Fs%2Fblog_69182df901012s44.html&title=C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E7%A7%BB%E4%BD%8D%E6%93%8D%E4%BD%9C&screenshot=http%3A%2F%2Fportrait2.sinaimg.cn%2F1763192313%2Fblog%2F180&description=%E5%85%88%E7%9C%8B%E5%A6%82%E4%B8%8B%E4%B8%80%E6%AE%B5%E5%B7%A6%E7%A7%BB%E5%8F%B3%E7%A7%BB%E7%9A%84%E4%BB%A3%E7%A0%81%E5%8F%8A%E5%85%B6%E7%BB%93%E6%9E%9C%EF%BC%9A%E4%BB%A3%E7%A0%81%23include%22stdio.h%22char%20leftshift(char%20i%2Cint%20n)%7B%20if(n%20%3C%200)%20return%20-1%3B%20return%20i%3C%3Cn%3B%7D" id="sharemsn" target="_blank"><img class="SG_icon SG_icon136" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="18" height="18" title="" align="absmiddle"></a> <a href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(kaixin=window.open('http://www.kaixin001.com/~repaste/repaste.php?&rurl='+escape(d.location.href)+'&rtitle='+escape('C语言中的移位操作_马路边的小男孩_新浪博客')+'&rcontent='+escape('C语言中的移位操作_马路边的小男孩_新浪博客'),'kaixin'));kaixin.focus();" id="sharekx"><img class="SG_icon SG_icon117" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="18" height="18" title="" align="absmiddle"></a> <a href="javascript:u='http://share.xiaonei.com/share/buttonshare.do?link='+location.href+'&title='+encodeURIComponent(document.title);window.open(u,'xiaonei','toolbar=0,resizable=1,scrollbars=yes,status=1,width=626,height=436');void(0)" id="sharexn"><img class="SG_icon SG_icon113" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="18" height="18" title="" align="absmiddle"></a> <a href="http://www.douban.com/recommend/?url=http://blog.sina.com.cn/s/blog_69182df901012s44.html&title=C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E7%A7%BB%E4%BD%8D%E6%93%8D%E4%BD%9C_%E9%A9%AC%E8%B7%AF%E8%BE%B9%E7%9A%84%E5%B0%8F%E7%94%B7%E5%AD%A9_%E6%96%B0%E6%B5%AA%E5%8D%9A%E5%AE%A2;window.open(u,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330');void(0)" id="sharedb" target="_blank"><img class="SG_icon SG_icon116" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="18" height="18" title="" align="absmiddle"></a> <a href="javascript:void(0)" onclick="v7sendLog(&#39;68_01_01&#39;);window.open(&#39;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&#39;+encodeURIComponent(location.href)+&#39;&amp;title=&#39;+encodeURIComponent(document.title)+&#39;&amp;summary=&#39;+encodeURIComponent(&#39; 先看如下一段左移右移的代码及其结果：  代码   #include &quot;stdio.h&quot; char leftshift(char i, int n) { if(n  这个补码对应的原码为：1000 1000  对应十进制：-8 左移四位： 1111 0000 &#39;)); return false;" target="_blank" title="分享到QQ空间"><img style="margin-bottom:-3px;margin-right:3px;" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/qz_logo.png" alt="分享到QQ空间"></a><a href="javascript:;" id="shareqing" style="color: rgb(0, 99, 177); "><img class="SG_icon SG_icon205" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="18" height="18" title="分享到新浪Qing" align="absmiddle">分享到新浪Qing</a><a href="http://qing.weibo.com/2264489285/86f95d4533001j3u.html" target="_blank" style="color: rgb(0, 99, 177); ">（奖）</a></div>
+            <div class="up">
+	        	<div title="顶起来让更多人看到" id="dbox_69182df901012s44" class="upBox" style="cursor: pointer; ">
+	            	<p ti_title="C语言中的移位操作" id="dbox2_69182df901012s44" class="count" mnum="0">0</p>
+	                <p class="link"><img width="15" height="15" align="absmiddle" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" class="SG_icon SG_icon34">顶</p>
+	            </div>
+	        </div>
+            <div class="clearit"></div>
+		</div>
+		<div class="articalInfo">
+			<!-- 分享到微博 {$t_blog} -->
+			<div class="IL">
+				阅读<span id="r_69182df901012s44" class="SG_txtb">(11)</span><em class="SG_txtb">┊</em> 
+				<a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#comment">评论</a> <span id="c_69182df901012s44" class="SG_txtb">(0)</span><em class="SG_txtb">┊</em>				<a href="javascript:;" onclick="$articleManage(&#39;69182df901012s44&#39;,5);return false;">收藏</a><span id="f_69182df901012s44" class="SG_txtb">(0)</span>
+				<em class="SG_txtb">┊</em><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" id="quote_set_sign" onclick="return false ;">转载</a><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" id="z_69182df901012s44" onclick="return false ;" class="zznum">(0)</a>				<span id="fn_C语言中的移位操作" class="SG_txtb"></span><em class="SG_txtb">┊</em>
+				<a onclick="return false;" href="javascript:;"><cite id="d1_digg_69182df901012s44">顶</cite></a><a id="d1_digg_down_69182df901012s44" href="javascript:;"><b>▼</b></a>
+									<em class="SG_txtb">┊</em><a href="http://blog.sina.com.cn/main_v5/ria/print.html?blog_id=blog_69182df901012s44" target="_blank">打印</a><em class="SG_txtb">┊</em><a id="q_69182df901012s44" onclick="report(&#39;69182df901012s44&#39;);return false;" href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#">举报</a>
+											</div>
+			<div class="IR">
+				<table>
+					<tbody><tr>
+											<th class="SG_txtb" scope="row">已投稿到：</th>
+						<td>
+							<div class="IR_list">
+								<span><img class="SG_icon SG_icon36" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" title="排行榜" align="absmiddle"> <a href="http://blog.sina.com.cn/lm/114/117/day.html" class="SG_linkb" target="_blank">排行榜</a></span><span><img class="SG_icon SG_icon13" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" title="圈子" align="absmiddle"> <a href="http://q.sina.com.cn/blog_groups.php?fid=69182df901012s44" class="SG_linkb" target="_blank">圈子</a></span>							</div>
+						</td>
+										</tr>
+									</tbody></table>
+			</div>
+		</div>
+		<div class="clearit"></div>
+		<div class="blogzz_zzlist borderc" id="blog_quote" style="display:none"><h3><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" onclick="return false" title="关闭" id="ql_close69182df901012s44" class="blogzz_closepic SG_floatR"></a>转载列表：</h3>                <ul class="ul_zzlist" id="ql_content69182df901012s44">                </ul>				<ul style="display:none"><li id="ql_tip69182df901012s44"></li></ul>                <div class="SG_clearB"></div>                <div class="blogzz_btn">					<a id="btnArticleQuote69182df901012s44" href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" onclick="scope.article_quote &amp;&amp; scope.article_quote.check(&#39;69182df901012s44&#39;);return false;" class="SG_aBtn SG_aBtn_ico SG_turn" style=""><cite><img class="SG_icon SG_icon111" id="quoteList_quote69182df901012s44" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" align="absmiddle">转载</cite></a>					<p id="quoteDescription69182df901012s44" class="SG_turntxt" style="display: none; ">转载是分享博文的一种常用方式...</p>				</div>				<div id="ql_page69182df901012s44" class="blogzz_paged"></div>				<div class="clearit"></div></div>
+		<div class="articalfrontback SG_j_linedot1 clearfix" id="new_nextprev_69182df901012s44">
+							<div><span class="SG_txtb">前一篇：</span><a href="http://blog.sina.com.cn/s/blog_69182df901011c1t.html">相濡以沫不如相忘江湖</a></div>
+								</div>
+		<div class="clearit"></div>
+					
+				<div class="allComm">
+			<div class="allCommTit">
+				<div class="SG_floatL">
+				    <strong>评论</strong>
+				    <span id="commAd_1" style="display: inline-block; "><span style="margin-left:15px; width:220px; display:inline-block;"><a target="_blank" href="http://blog.sina.com.cn/lm/8/2009/0325/105340.html">重要提示：警惕虚假中奖信息</a></span><span style="margin:0 60px 0 20px; display:inline-block;">|</span><span style="display:inline-block;width:220px;white-space:nowrap;">[商讯]<a href="http://sina.allyes.com/main/adfclick?db=sina&bid=418850,480487,485758&cid=0,0,0&sid=484616&advid=1293&camid=76131&show=ignore&url=http://www.redbull.com.cn/product/drink-all-the-time/" target="_blank">欧洲杯,有红牛更从容!</a></span></span>
+				</div>
+				<div class="SG_floatR"><a class="CP_a_fuc" href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#post">[<cite>发评论</cite>]</a></div>
+			</div>
+			<ul id="article_comment_list" class="SG_cmp_revert"><span name="#comment1" id="#comment1"><li><div class="noCommdate"><span class="SG_txtb">当第一个评论者吧！ <img class="SG_icon SG_icon134" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="18" height="18" title="" align="absmiddle"> <a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#post">抢沙发&gt;&gt;</a></span></div></li><div><input id="v1x" type="hidden" value="4eb3f4a3a9826080acf6ad27c1dbed64"><input id="v2x" type="hidden" value=""></div></span></ul>
+			<div class="clearit"></div>
+			<div class="myCommPages SG_j_linedot1" style="display: none; ">
+				<div class="SG_page" id="commentPaging" style="display:none;">
+					<ul class="SG_pages">
+					</ul>
+				</div>
+				<div class="clearit"></div>
+			</div>
+			<a name="post"></a>
+			<div class="writeComm">
+				<div class="allCommTit">
+					<div class="SG_floatL">
+					    <strong>发评论</strong>
+					    <span id="commAd_2" style="display: inline-block; "><span style="display:inline-block;width:220px;white-space:nowrap;">[商讯]<a href="http://sina.allyes.com/main/adfclick?db=sina&bid=277830,334360,339653&cid=0,0,0&sid=334533&advid=7567&camid=52451&show=ignore&url=http://all.vic.sina.com.cn/2011citicgongyi/index.php" target="_blank">爱心签名换梦想，天天派奖</a></span><span style="margin:0 60px 0 20px; display:inline-block;">|</span><span style="display:inline-block;width:220px;white-space:nowrap;">[商讯]<a href="http://sina.allyes.com/main/adfclick?db=sina&bid=204720,299859,305135&cid=0,0,0&sid=298939&advid=358&camid=37389&show=ignore&url=http://blog.sina.com.cn/s/blog_705463570100phtd.html?tj=1" target="_blank">提高博客人气新方法</a></span></span>
+					    <span></span>
+					</div>
+					<div class="SG_floatR"></div>
+				</div>
+				<div class="wrCommTit">
+					<div class="SG_floatL" id="commentNick" style="display:none;"></div>
+				</div>
+				<div class="formTextarea">
+					<div style="float:left;" id="commonComment">
+					<iframe id="postCommentIframe" frameborder="0" style="border:1px solid #C7C7C7;
+		height:158px;width:448px;maring-top:1px;background-color:white;" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/C语言中的移位操作_马路边的小男孩_新浪博客.html"></iframe>
+					<textarea id="commentArea" tabindex="1" style="display:none;"></textarea>
+					</div>
+					<div id="mobileComment" style="float:left;display:none;">
+						<textarea id="mbCommentTa" style="width:438px;height:150px;border:1px solid #C7C7C7;line-height:18px;padding:5px;"></textarea>
+					</div>
+					<div class="faceblk" id="faceWrap">
+						<div id="smilesSortShow" class="faceline1">
+						<div class="facestyle" id="recomm_1342435784531"><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" key="302"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/302-25.gif" alt="小新小浪" title="小新小浪"></a><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" key="308"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/308-25.gif" alt="炮炮兵" title="炮炮兵"></a><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" key="315"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/315-25.gif" alt="张富贵" title="张富贵"></a><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" key="316"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/316-25.gif" alt="旺狗" title="旺狗"></a><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" key="331"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/331-25.gif" alt="悠嘻猴" title="悠嘻猴"></a><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" key="351"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/351-25.gif" alt="酷巴熊" title="酷巴熊"></a></div><span class="SG_more"><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#">更多&gt;&gt;</a></span><div class="clearit"></div></div>
+						<ul id="smilesRecommended" class="faceline01"><li><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/E___0321EN00SIGT.gif" alt="就不买你" title="就不买你" height="50" width="50"></a></li><li><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/E___0320EN00SIGT.gif" alt="股市" title="股市" height="50" width="50"></a></li><li><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/E___0319EN00SIGT.gif" alt="发霉" title="发霉" height="50" width="50"></a></li><li><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/E___0318EN00SIGT.gif" alt="陈水边" title="陈水边" height="50" width="50"></a></li><li><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/E___0317EN00SIGT.gif" alt="裁员" title="裁员" height="50" width="50"></a></li><li><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/E___0316EN00SIGT.gif" alt="音乐" title="音乐" height="50" width="50"></a></li><li><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/E___0315EN00SIGT.gif" alt="贴你" title="贴你" height="50" width="50"></a></li><li><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/E___0314EN00SIGT.gif" alt="抢车位" title="抢车位" height="50" width="50"></a></li></ul>
+					</div>
+					<div class="clearit"></div>
+				</div>
+				<div class="formLogin">
+					<div class="SG_floatL"> 
+					<p id="commentlogin" style="display: block; "><span>登录名：</span><input type="text" style="width: 115px;" id="login_name" tabindex="2">   <span>密码：</span><input type="password" style="width: 115px;" id="login_pass" tabindex="3">   <a href="http://login.sina.com.cn/getpass.html" target="_blank">找回密码</a>   <a href="http://login.sina.com.cn/signup/signup.php?entry=blog&src=blogicp&srcuid=1763192313" target="_blank">注册</a>	<input type="checkbox" id="login_remember"><label for="login_remember" style="display:inline-block;" title="建议在网吧/公用电脑上取消该选项">记住登录状态</label></p><p id="commentloginM" style="display:none;"><span>昵&nbsp;&nbsp;&nbsp;称：</span><input type="text" style="width: 115px;" id="comment_anonyous" value="新浪网友" tabindex="2" disabled=""></p><p id="quote_comment_p"><input type="checkbox" id="bb"> <label for="bb"><img height="18" align="absmiddle" width="18" title="" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" class="SG_icon SG_icon110">分享到微博 <img height="15" align="absmiddle" width="15" title="新" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" class="SG_icon SG_icon11"></label>&nbsp;&nbsp;&nbsp;<input type="checkbox" id="cbCommentQuote"><label for="cbCommentQuote">评论并转载此博文</label><img class="SG_icon SG_icon11" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" title="新" align="absmiddle"></p><p><span>验证码：</span><input type="text" style="width: 46px;" id="login_check" tabindex="4" onclick="return false;">  <a class="SG_linka" id="check_show">请点击后输入验证码</a><img id="comment_check_img" align="absmiddle" style="display: none; ">  <span>		<a style="margin-left:3px;" id="comment_get_vcode" href="javascript:;" onclick="Lib.AudioCheck.callAudioCheck();return false;">收听验证码</a>		<img id="play_img" name="play_img" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/blank.gif" align="absmiddle" style="margin-right:2px;" height="15">		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="0" height="0" id="mp3_player" align="middle">		<param name="allowScriptAccess" value="always">		<param name="movie" value="http://sjs.sinajs.cn/blog7swf/mp3.swf">		<param name="quality" value="high">		<param name="bgcolor" value="#ffffff">		<param name="FlashVars" value="mp3URL=http://icp.cws.api.sina.com.cn/login/login_audio.php?1342435784939">		<embed src="http://sjs.sinajs.cn/blog7swf/mp3.swf" flashvars="mp3URL=http://icp.cws.api.sina.com.cn/login/login_audio.php?1342435784939" quality="high" bgcolor="#ffffff" width="0" height="0" name="mp3_player" swliveconnect="true" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">		</object>	</span></p>
+					</div>
+
+					<span style="display: none; color: rgb(153, 153, 153); margin-left: 10px;" id="login_remember_caution"></span>
+
+											<div class="SG_floatR" id="anonymity_cont"><input type="checkbox" id="anonymity"><label for="anonymity">匿名评论</label></div>
+									</div>
+				<div class="formBtn">
+					<a href="javascript:;" onclick="return false;" class="SG_aBtn" tabindex="5"><cite id="postcommentid">发评论</cite></a>
+					<p class="SG_txtc">以上网友发言只代表其个人观点，不代表新浪网的观点或立场。</p>
+				</div>
+			</div>
+		</div>
+				<div class="clearit"></div>
+		
+				<div class="articalfrontback articalfrontback2 clearfix">
+						  <div class="SG_floatL"><span class="SG_txtb">&lt;&nbsp;前一篇</span><a href="http://blog.sina.com.cn/s/blog_69182df901011c1t.html">相濡以沫不如相忘江湖</a></div>
+								</div>
+		<div class="clearit"></div>
+				
+	</div>
+	<!--博文正文 end -->
+		<script type="text/javascript">
+			var voteid="";
+		</script>
+
+            </div>       
+            <div class="SG_connFoot"></div>
+          </div>
+</div>
+	<!--第二列start-->
+	
+	<!--第三列start-->
+	<div id="column_3" class="SG_colWnone"><div style="width:0px;height:0.1px;margin:0px;">&nbsp;&nbsp;</div></div>
+	<!--第三列end-->
+
+	
+    </div>
+   <!--主题内容结束 -->
+  
+
+	<div id="diggerFla" style="position:absolute;left:0px;top:0px;width:0px"><embed pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" src="http://sjs.sinajs.cn/blog7swf/digger.swf" width="1" height="1" style="undefined" id="digger" name="digger" bgcolor="#00ff00" quality="high" wmode="transparent" allowscriptaccess="always"></div>
+    <div class="sinablogfooter" id="sinablogfooter" style="position:relative;">
+      
+      <p class="SG_linka"><a href="http://control.blog.sina.com.cn/admin/advice/advice_list.php" target="_blank">新浪BLOG意见反馈留言板</a>　<a href="javascript:;" onclick="window.open (&#39;http://control.blog.sina.com.cn/admin/advice/impeach.php?url=http%3A//blog.sina.com.cn/s/blog_4cf7b4ec0100eudp.html%3Ftj%3D1&#39;, &#39;&#39;,&#39;height=495, width=510, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no&#39;);">不良信息反馈</a>　电话：4006900000 提示音后按1键（按当地市话标准计费）　欢迎批评指正</p>
+   
+      <p class="SG_linka"><a href="http://corp.sina.com.cn/chn/" target="_blank">新浪简介</a> | <a href="http://corp.sina.com.cn/eng/" target="_blank">About Sina</a> | <a href="http://emarketing.sina.com.cn/" target="_blank">广告服务</a> | <a href="http://www.sina.com.cn/contactus.html" target="_blank">联系我们</a> | <a href="http://corp.sina.com.cn/chn/sina_job.html" target="_blank">招聘信息</a> | <a href="http://www.sina.com.cn/intro/lawfirm.shtml" target="_blank">网站律师</a> | <a href="http://english.sina.com/" target="_blank">SINA English</a> | <a href="http://members.sina.com.cn/apply/" target="_blank">会员注册</a> | <a href="http://help.sina.com.cn/" target="_blank">产品答疑</a> </p>
+      <p class="copyright SG_linka"> Copyright © 1996 - 2012 SINA Corporation,  All Rights Reserved</p>
+      <p class="SG_linka"> 新浪公司 <a href="http://www.sina.com.cn/intro/copyright.shtml" target="_blank">版权所有</a></p>
+	  <a href="http://www.bj.cyberpolice.cn/index.jsp" target="_blank" class="gab_link"></a>
+    </div>
+  </div>
+</div>
+<div id="swfbox"><embed pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" src="http://sjs.sinajs.cn/blog7swf/voteCookie.swf" width="1" height="1" style="undefined" id="swfId" name="swfId" bgcolor="#00ff00" quality="high" allowscriptaccess="always" flashvars="readyFun=readyFun&amp;realfull=1&amp;moz=1&quot;/"></div>
+<script id="PVCOUNTER_FORIE" type="text/javascript"></script>
+
+<script type="text/javascript">
+var scope = {
+	$setDomain : true,
+	$uid : "1763192313",
+	$PRODUCT_NAME : "blog7",		//blog7photo,blog7icp
+	$pageid : "article",
+	$key :  "1374402dfde3855e396203ef48b8e8a0",
+	$uhost : "",
+	$private: {"pageset":0,"tj":0,"adver":0,"sms":0,"ad":0,"blogsize":0,"cms":0,"hidecms":0,"top":0,"invitationset":0,"p4p":0,"spamcms":0,"init7":0,"quote":0,"foot":0,"headpic":1},
+	$is_photo_vip:0,
+		 $nClass:0,
+		 $articleid:"69182df901012s44",
+		 $sort_id:117,
+		 $isCommentAllow:0,
+		 $album_pic:"",
+		 $pn_x_rank:4,
+		 $x_quote_c:"",
+		 $flag2008:"",
+		 	component_lists:{"2":{"size":730,"list":[920]},"1":{"size":210,"list":[901,910,903,911,904,47]}},
+	formatInfo:1,
+	UserPic:[{"pid":null,"repeat":null,"align-h":null,"align-v":null,"apply":null},{"pid":null,"repeat":null,"align-h":null,"align-v":null,"apply":null},{"pid":null,"repeat":null,"align-h":null,"align-v":null,"apply":null}],
+	UserBabyPic:{"photoX":null,"photoY":null,"photoURL":null,"angle":null,"zoom":null,"maskX":null,"maskY":null,"maskURL":null,"frameURL":null},
+	UserColor:"",
+	backgroundcolor:"",
+	tpl:"3_9",
+	reclist:0	};
+var	$encrypt_code = "d93bd454c5622eda8edcd8cf07d1f877";
+</script>
+
+<script type="text/javascript" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/boot.js"></script>
+<script type="text/javascript">__load_js();</script>
+<script type="text/javascript">__render_page();</script>
+
+
+
+
+<iframe style="border: none; z-index: 512; opacity: 0; position: absolute; width: 0px; height: 0px; display: none; left: 873px; top: 26px; "></iframe><div id="_4291342435784309_panel" class="wrtBlog_sub" style="z-index: 512; position: absolute; display: none; left: 873px; top: 26px; "><div class="wrtBlog_sub2"><p><img class="SG_icon SG_icon88" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" title="长微博" align="absmiddle"><a target="_blank" href="http://control.blog.sina.com.cn/admin/article/changWeiBo.php">长微博</a></p><div class="SG_j_linedot"></div><p><img class="SG_icon SG_icon87" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" title="微语录" align="absmiddle"><a target="_blank" href="http://t.blog.sina.com.cn/weiyulu/weiyulu.php">微语录</a></p><div class="SG_j_linedot"></div><p><img class="SG_icon SG_icon85" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" title="九宫格" align="absmiddle"><a target="_blank" href="http://control.blog.sina.com.cn/admin/article/daily.php">九宫格</a></p><div class="SG_j_linedot"></div><p><img class="SG_icon SG_icon18" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" title="发照片" align="absmiddle"><a target="_blank" href="http://photo.blog.sina.com.cn/upload/upload.php">发照片</a></p><div class="SG_j_linedot"></div><p><img class="SG_icon SG_icon16" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" width="15" height="15" title="发视频" align="absmiddle"><a target="_blank" href="http://vupload.you.video.sina.com.cn/u.php?m=1">发视频</a></p></div></div><iframe style="border: none; z-index: 512; opacity: 0; position: absolute; width: 0px; height: 0px; display: none; left: 1047px; top: 24px; "></iframe><div id="_6841342435784317_panel" style="z-index: 512; position: absolute; display: none; left: 1047px; top: 24px; " class="tb_layerBox"><ul><li id="_6841342435784317_blog"><a href="javascript:;">博文</a></li><li id="_6841342435784317_bauthor"><a href="javascript:;">博主</a></li><li id="_6841342435784317_song"><a href="javascript:;">音乐</a></li><li id="_6841342435784317_video"><a href="javascript:;">视频</a></li><li id="_6841342435784317_vauthor"><a href="javascript:;">播主 </a></li></ul></div><div class="tb_layer_Y tb_layer_w3" style="z-index: 511; position: absolute; display: none; width: 160px; "><div class="tb_layer_arrow"></div><div class="tb_layer_Y_main tip_ps" style="width: auto; "><a style="margin-top: 5px;" title="关闭" class="tb_friend_inputDel" href="javascript:void(0)"></a>						<div style="text-align:left;color:#999999">最近顶了的博主：</div>						<div style="white-space: nowrap; "><div style="text-align:center;"><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/loading.gif">加载中…</div></div></div></div><div class="turnList" style="display: none; position: absolute; z-index: 20; " id="reblog_1342435784385"><ul><li><a action-type="click_reblog" action-data="{action:&#39;toQing&#39;}" href="javascript:void(0);" title="转载到Qing博客"><img width="15" height="15" align="absmiddle" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" class="SG_icon SG_icon205">Qing</a></li><li><a action-type="click_reblog" action-data="{action:&#39;toBlog&#39;}" href="javascript:void(0);" title="转载到博客"><img width="18" height="18" align="absmiddle" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" class="SG_icon SG_icon141">博客</a></li><li><a action-type="click_reblog" action-data="{action:&#39;toBlog&#39;}" href="javascript:void(0);" title="转载原文"><img width="18" height="18" align="absmiddle" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" class="SG_icon SG_icon141">转载原文</a></li></ul></div><div id="sharePhoto" style="display:none;width:120px;position:absolute;"><div class="picAward" style="margin-bottom:3px;"><a href="http://qing.weibo.com/2264489285/86f95d4533001j3u.html" target="_blank"><img width="18" height="18" align="absmiddle" title="" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/sg_trans.gif" class="SG_icon SG_icon140"></a></div><div class="picShareQing"><div class="share SG_txtb"><span>分享到新浪Qing</span></div></div><div class="picShareFlt"><div class="share SG_txtb" style="margin-top:5px;"><span>分享到新浪微博</span></div></div></div><iframe style="border: none; z-index: 512; opacity: 0; position: absolute; width: 0px; height: 0px; "></iframe><div id="_3731342435784455_panel" style="z-index: 512; width: 200px; position: absolute; display: none; " class="tb_layer_Y tb_layer_w5"><div class="tb_layer_Y_main tip_layer_main"><div class="tip_ps" style="width:auto;float:right"><a id="closeBindEmail" title="关闭提示" class="tb_friend_inputDel" href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" onclick="return false"></a></div><div style="padding:6px">为了您的账号安全，请<a id="linkBindEmail" href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" target="_blank">绑定邮箱</a></div></div><div class="tb_layer_arrow tip_arrow"></div></div><div id="selectionShare" style="position: absolute; cursor: pointer; left: 697px; top: 2517px; display: none; "><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/share.gif" title="将选中内容分享到新浪微博"></div><script type="text/javascript" charset="gb2312" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/blognew2011.js"></script><script type="text/javascript" charset="gb2312" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/blognew2011.js"></script><script type="text/javascript" charset="gb2312" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/blognew2011.js"></script><script type="text/javascript" charset="gb2312" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/blognew2011.js"></script><div id="ramdomVisitDiv" style="position: absolute; width: 140px; z-index: 101; top: 30px; right: 0px; "><embed pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" src="http://sjs.sinajs.cn/blog7swf/lookView1.swf" width="140" height="87" style="undefined" id="map" name="map" bgcolor="#000" quality="high" scale="noscale" allowscriptaccess="always" wmode="transparent" flashvars="target=_self&amp;URL=&amp;realfull=1&amp;moz=1&quot;/"></div><a id="openwin" href="http://qing.weibo.com/tag/%E7%BE%8E%E5%A5%B3" target="_blank" style="position: absolute; top: 30px; right: 0px; width: 140px; height: 87px; z-index: 102; background-color: rgb(255, 255, 255); opacity: 0; display: none; "></a><div class="ad_layer" id="_4851342435787949_entity" style="position: fixed; padding-top: 0px; left: -1000px; top: 0px; z-index: 102; display: none; "><p class="close_x" style="margin-left:105px;"><a href="http://blog.sina.com.cn/s/blog_69182df901012s44.html#" id="_4851342435787949_closeBtn" title="关闭" onclick="return false;"><img height="18" align="absmiddle" width="40" title="关闭" src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/closenew.jpg" class="adclose"></a></p><p class="right_arr adtop"></p><div class="center adlist" id="_4851342435787949_content" style="position: relative; "><img src="./C语言中的移位操作_马路边的小男孩_新浪博客_files/441360_ponds140x150.jpg" style="width:140px; height:150px;"><a href="http://sina.allyes.com/main/adfclick?db=sina&bid=388958,449490,454789&cid=0,0,0&sid=452965&advid=7610&camid=71146&show=ignore&url=http://ad-apac.doubleclick.net/click;h=v2|3F7F|0|0|%2a|q;259513580;0-0;0;83682629;31-1|1;49155564|49150972|1;;%3fhttp://www.amazon.cn/gp/feature.html?ie=UTF8&docId=137848&tag=unileverbs-23&utm_source=Sina&utm_medium=CPD&utm_term=v1&utm_content=PFA04&utm_campaign=UL_Ponds_FC_Angie_Phase_II" target="_blank" style="opacity: 0; height: 150px; width: 140px; background-color: rgb(255, 0, 0); display: block; z-index: 1020; position: absolute; left: 0px; top: 0px; background-position: initial initial; background-repeat: initial initial; "></a></div></div><div style="overflow: hidden; height: 255px; position: absolute; "></div><div id="_2301342435790078_panel" style="left: 1091px; top: 462px; z-index: 100; position: fixed; display: none; "><div id="_2301342435790078_content"><div id="blogVideoAd" width="260" height="190"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9" width="260" height="190" type="application/x-shockwave-flash">
+	<param name="movie" value="http://d4.sina.com.cn/201205/03/416913_260X190.swf">
+	<param name="quality" value="High">
+	<param name="bgcolor" value="#FFFFFF">
+	<param name="allowscriptaccess" value="always">
+	<param name="wmode" value="transparent">
+	<embed width="260" height="190" src="http://d4.sina.com.cn/201205/03/416913_260X190.swf" quality="High" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" bgcolor="#FFFFFF" allowscriptaccess="always" wmode="transparent">
+</object></div></div></div></body></html>

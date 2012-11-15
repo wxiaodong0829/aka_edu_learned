@@ -1,0 +1,15 @@
+
+app:     file format elf32-i386
+
+
+Disassembly of section .data:
+
+0804a010 <__data_start>:
+ 804a010:	00 00                	add    %al,(%eax)
+	...
+
+0804a014 <__dso_handle>:
+ 804a014:	00 00 00 00                                         ....
+
+0804a018 <n.1702>:
+ 804a018:	78 56 34 12                                         xV4.

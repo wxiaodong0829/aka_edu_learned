@@ -1,0 +1,408 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="utf-8">
+<head>
+<title>给Ubuntu右键快捷菜单添加终端栏目_Linux教程_Linux公社-Linux系统门户网站</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<meta name="description" content="第一种方法：给Ubuntu安装一个包，即可在右键里面添加一个&amp;ldquo;打开终端&amp;rdquo;的菜单。sudo apt-get install nautilus-open-terminal第二种方法：进入主目录的.gnome2/nautilus-scripts目录。新建一个文件，文件名任意（这个文件名会显示在右键菜单里，最好是通俗易懂的，比如&amp;ldquo;打开终端&amp;rdquo;或&amp;ldquo;open-terminal&amp;rdquo;），文件内容如下。"/>
+<meta name="keywords" content="给Ubuntu右键快捷菜单添加终端栏目,Linux,Linux教程,Linux系统,Linux安装,Ubuntu,Fedora,RedHat,SUSE,CentOS,红旗Linux"/>
+<meta name="generator" content="Linux公社"/>
+<meta name="generator" content="Linux"/>
+<link rel="stylesheet" href="../../style/systems/style.css" type="text/css"/>
+<script type="text/javascript" src="../../inc/head.js"></script>
+<script type="text/javascript">
+var imgMaxWidth=600;
+var urlPrefix="../../";
+</script>
+<script type="text/javascript" src="../../inc/show.js"></script>
+</head>
+<body>
+<div class="twidth">
+<div id="sitehead">
+<div class="l"></div>
+<div class="r"></div>
+<div class="m">
+	<table width="100%">
+	<tr align="center"><td width="160">
+	<a href="http://www.linuxidc.com/"><IMG style="FILTER: chroma(color=#FFFFFF)" src="../../pic/logo.jpg" border=0></a>
+	</td><td>
+	<div align="center"><script src="../../linuxfile/linux.js" type="text/javascript" language="javaScript"></script></div>
+	</td><td width="100" style="line-height:120%">
+	<a href="#" onclick="javascript:window.external.addFavorite('http://www.linuxidc.com/','Linux公社 - Linux系统门户网站')">加入收藏</a><br/>
+	<a href="../../sitemap.aspx">网站地图</a><br/>
+	<a href="../../search.aspx">网站搜索</a><br/>
+	
+		<script type="text/javascript" src="../../inc/language.js"></script>
+	
+	</td>
+	</tr></table>
+</div>
+</div>
+<div id="navbar">
+<div class="l"></div>
+<div class="r"></div>
+<div class="m">
+	<script type="text/javascript" src="../../inc/popmenu.js" charset="utf-8"></script><a href="../../index.htm" class="first">首页</a><a href="../../it/index.htm">Linux新闻</a><a href="../../Linuxit/index.htm" class="thisclass">Linux教程</a><a href="../../MySql/index.htm">数据库技术</a><a href="../../RedLinux/index.htm">Linux编程</a><a href="../../Apache/index.htm">服务器应用</a><a href="../../Unix/index.htm">Linux安全</a><a href="../../download/index.htm">Linux下载</a><a href="../../Linuxrz/index.htm">Linux认证</a><a href="../../theme/index.htm">Linux主题</a><a href="../../Linuxwallpaper/index.htm">Linux壁纸</a><a href="../../linuxsoft/index.htm">Linux软件</a><a href="../../digi/index.htm">数码</a><a href="../../mobile/index.htm">手机</a><a href="../../diannao/index.htm">电脑</a>
+
+</div>
+</div>
+
+<div id="navsub">
+<div class="l"></div>
+<div class="r"></div>
+<div class="m">
+	<a href="../../index.htm">首页</a> → <a href="../../Linuxit/index.htm">Linux教程</a>
+</div>
+</div>
+<div class="linus"><script type="text/javascript" language="javaScript" src="/linuxfile/linux1.js"></script></div>
+<div class="linus"><script type="text/javascript" language="javaScript" src="/linuxfile/linuxa.js"></script></div>
+<table id="middle" width="100%" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+<tr><td valign="top">
+
+	<div class="mframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">阅读内容</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm" id="bodyTd">
+		<div id="printBody" style="word-break:break-all;">
+		<br/><div align="center"><h1 class="aTitle">给Ubuntu右键快捷菜单添加终端栏目</h1></div>
+		
+		<table width="97%" align="center">
+			<tr>
+			<td width="120">[日期：2008-09-18]</td>
+			<td align="center">来源：Linux社区&nbsp; 作者：Linux编辑</td>
+			</tr>
+		</table>
+<div class="linua"><script type="text/javascript" language="javaScript" src="/linuxfile/linux2.js"></script></div>
+<div class="linub"><script type="text/javascript" language="javaScript" src="/linuxfile/linux19.js"></script></div>
+		<div id="content"><P>第一种方法：</P>
+<P>给<a href="http://www.linuxidc.com/topicnews.aspx?tid=2" title="Ubuntu">Ubuntu</a>安装一个包，即可在右键里面添加一个“打开终端”的菜单。</P>
+<P>sudo apt-get install nautilus-open-terminal</P>
+<P>第二种方法：<BR>进入主目录的.gnome2/nautilus-scripts目录。新建一个文件，文件名任意（这个文件名会显示在右键菜单里，最好是通俗易懂的，比如“打开终端”或“open-terminal”），文件内容如下。<!--IWMS_AD_BEGIN--><table border="0" width="97%" align="center"><tbody><tr><td colspan="3"><div align="center"><script src="../../system/system60.js" type="text/javascript" language="javaScript"></script></div></td></tr></tbody></table><!--IWMS_AD_END--></P>
+<P>#!/bin/bash</P>
+<P>#</P>
+<P># This script opens a gnome-terminal in the directory you select.</P>
+<P>#</P>
+<P># Distributed under the terms of GNU GPL version 2 or later</P>
+<P>#</P>
+<P># Install in ~/.gnome2/nautilus-scripts or ~/Nautilus/scripts</P>
+<P># You need to be running Nautilus 1.0.3+ to use scripts.</P>
+<P># When a directory is selected, go there. Otherwise go to current</P>
+<P># directory. If more than one directory is selected, show error.</P>
+<P>if [ -n "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" ]; then</P>
+<P>set $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS</P>
+<P>if [ $# -eq 1 ]; then</P>
+<P>destination="$1"</P>
+<P># Go to file's directory if it's a file</P>
+<P>if [ ! -d "$destination" ]; then</P>
+<P>destination="`dirname "$destination"`"</P>
+<P>fi</P>
+<P>else</P>
+<P>zenity --error --title="Error - Open terminal here" \</P>
+<P>--text="You can only select one directory."</P>
+<P>exit 1</P>
+<P>fi</P>
+<P>else</P>
+<P>destination="`echo "$NAUTILUS_SCRIPT_CURRENT_URI" | sed 's/^file:\/\///'`"</P>
+<P>fi</P>
+<P># It's only possible to go to local directories</P>
+<P>if [ -n "`echo "$destination" | grep '^[a-zA-Z0-9]\+:'`" ]; then</P>
+<P>zenity --error --title="Error - Open terminal here" \</P>
+<P>--text="Only local directories can be used."</P>
+<P>exit 1</P>
+<P>fi</P>
+<P>cd "$destination"</P>
+<P>exec x-terminal-emulator </P>
+<P><BR>添加完后，把此文件加上可执行的权限。</P>
+<P>chmod +x 文件</P></div>
+		
+		<div class="pager" style="text-align:center"><span class="p_current">1</span><a href="../../Linux/2008-09/15859p2.htm">2</a><a href="../../Linux/2008-09/15859p2.htm">下一页</a>&nbsp; <input type="text" id="goPage" value="2"/><a href="javascript:pager.Jump();">GO</a><script type="text/javascript" src="../../inc/pager.js"></script><script type="text/javascript">var pager=new iwmsPager(1,2,true);</script></div>
+		
+		</div><br/>
+<div align="center"><script type="text/javascript" language="javaScript" src="/fengxiang/fx.js"></script></div><br/>
+		<div align="center">
+<div class="linuc"><script type="text/javascript" language="javaScript" src="/linuxfile/linux3.js"></script><script type="text/javascript" language="javaScript" src="/linuxfile/linux8.js"></script></div></div>		
+<br/>
+		<div style="padding-left:20px;clear:both">
+			上一篇：<a href="../../Linux/2008-09/15858.htm">CentOS 4.7下载地址与截图</a><br/>
+			下一篇：<a href="../../Linux/2008-09/15860.htm">Anjuta在Ubuntu中的安装</a><br/>
+		</div>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+	
+	<div class="mframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">相关资讯</span> &nbsp; &nbsp; &nbsp;
+		<a href="../../search.aspx?Where=Nkey&amp;Keyword=Ubuntu%e6%95%99%e7%a8%8b" target="_blank">Ubuntu教程</a>&nbsp; 
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<table width='100%'><tr><td width='50%' valign='top'><ul class='nl'><li><a href="../../Linux/2008-08/15047.htm"  target="_blank"  title="Ubuntu 8.04没有正确关机引起挂ntfs分区盘出错解决">Ubuntu 8.04没有正确关机引起挂ntfs分区盘</a>&nbsp; <span class="gray">(08/19/2008 06:43:08)</span></li>
+<li><a href="../../Linux/2008-08/15038.htm"  target="_blank"  title="如何在Ubuntu 8.04中使用fast-cgi搭建Apache2+PHP5环境">如何在Ubuntu 8.04中使用fast-cgi搭建Apach</a>&nbsp; <span class="gray">(08/19/2008 05:53:41)</span></li>
+<li><a href="../../Linux/2008-08/15025.htm"  target="_blank"  title="Ubuntu server汉化desktop不启动桌面framebuffer">Ubuntu server汉化desktop不启动桌面frameb</a>&nbsp; <span class="gray">(08/18/2008 07:15:22)</span></li>
+</ul></td><td width='50%' valign='top'><ul class='nl'><li><a href="../../Linux/2008-08/15046.htm"  target="_blank" >Ubuntu下Wine安装office2003及关联word文档</a>&nbsp; <span class="gray">(08/19/2008 06:40:16)</span></li>
+<li><a href="../../Linux/2008-08/15037.htm"  target="_blank" >Ubuntu下使用vpn连接远程服务器</a>&nbsp; <span class="gray">(08/19/2008 05:52:16)</span></li>
+<li><a href="../../Linux/2008-08/15021.htm"  target="_blank" >Before Compiling Linux Kernel 2.6.26</a>&nbsp; <span class="gray">(08/18/2008 06:58:29)</span></li>
+</ul></td></tr></table>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+
+	<div class="lframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+
+		<span class="tt">相关图片</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<div class="imgList"><ul><li style="width:25%"><a href="../../Linux/2012-07/64704.htm"  target="_blank"  title="安装好 Ubuntu 12.04 后没有声音"><img src="../../upload/2012_07/12070820223503t.jpg" alt="安装好 Ubuntu 12.04 后没有声音" width="120" height="90"/>安装好 Ubuntu 12.04 </a></li><li style="width:25%"><a href="../../Linux/2012-07/64702.htm"  target="_blank" ><img src="../../upload/2012_07/12070820152017t.jpg" alt="Ubuntu 格式化硬盘" width="120" height="90"/>Ubuntu 格式化硬盘</a></li><li style="width:25%"><a href="../../Linux/2012-07/64701.htm"  target="_blank"  title="Ubuntu 12.04 gcin icon 显示设定"><img src="../../upload/2012_07/12070820114798t.jpg" alt="Ubuntu 12.04 gcin icon 显示设定" width="120" height="90"/>Ubuntu 12.04 gcin ic</a></li><li style="width:25%"><a href="../../Linux/2012-07/64687.htm"  target="_blank" ><img src="../../upload/2012_07/120708190616131t.jpg" alt="Emacs 入门指引" width="120" height="90"/>Emacs 入门指引</a></li><li style="width:25%"><a href="../../Linux/2012-07/64683.htm"  target="_blank"  title="将Ubuntu等Linux系统安装到移动硬盘"><img src="../../upload/2012_07/120708121841051t.jpg" alt="将Ubuntu等Linux系统安装到移动硬盘" width="120" height="90"/>将Ubuntu等Linux系统</a></li><li style="width:25%"><a href="../../Linux/2012-07/64640.htm"  target="_blank"  title="安装Windows字体后openSUSE字体显示错误的问题解决"><img src="../../upload/2012_07/temp_12070716519241t.jpg" alt="安装Windows字体后openSUSE字体显示错误的问题解决" width="120" height="90"/>安装Windows字体后ope</a></li><li style="width:25%"><a href="../../Linux/2012-07/64639.htm"  target="_blank"  title="关于openSUSE的ADSL即pppoe拨号上网【修正】"><img src="../../upload/2012_07/temp_12070716442792t.jpg" alt="关于openSUSE的ADSL即pppoe拨号上网【修正】" width="120" height="90"/>关于openSUSE的ADSL即</a></li><li style="width:25%"><a href="../../Linux/2012-07/64638.htm"  target="_blank"  title="openSUSE 12.1中文语言设置问题"><img src="../../upload/2012_07/12070716358186t.jpg" alt="openSUSE 12.1中文语言设置问题" width="120" height="90"/>openSUSE 12.1中文语</a></li></ul></div>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+
+	<div class="mframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">本文评论</span>
+		 &nbsp; &nbsp; &nbsp;
+		 <a href="../../remark.aspx?id=15859" target="_blank" style="cursor:hand">全部评论</a>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+	
+	<div class="mframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">发表评论</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<form id="remarkForm" action="../../remark.aspx?id=15859" method="post" onsubmit="return checkRemark();" style="padding:5px">
+			<script type="text/javascript" language="javascript">
+			function checkRemark()
+			{
+			var form=document.getElementById("remarkForm");
+			var remarkSize = 1000;
+			if (form.body.value=="")
+			{	alert("请填写评论内容");
+				form.body.focus();
+				return false;
+			}
+			if (form.username.value=="")
+			{	alert("请填写姓名");
+				form.username.focus();
+				return false;
+			}
+			if (form.body.value.length>remarkSize)
+			{	form.body.value = form.body.value.substr(0,remarkSize);
+				showLen(form.body);
+				form.body.focus();
+				alert("评论内容不可以超过"+remarkSize+"字,已帮你删除多余部分");
+				return false;
+			}
+			if (form.username.value.length>10)
+			{	alert("姓名不可以超过10个字");
+				form.username.focus();
+				return false;
+			}
+			form.submit.disabled=true;
+			form.vcode.value = VCode("给Ubuntu右键快捷菜单添加终端栏目");
+			return true;
+			}
+			function showLen(obj)
+			{
+				document.getElementById("bodyLen").value=obj.value.length;
+			}
+			</script>
+			<input type="radio" name="face" value="1" checked="checked"/><img src="../../pic/face1.gif" 
+			alt=""/><input type="radio" name="face" value="2"/><img src="../../pic/face2.gif" 
+			alt=""/><input type="radio" name="face" value="3"/><img src="../../pic/face3.gif" 
+			alt=""/><input type="radio" name="face" value="4"/><img src="../../pic/face4.gif" 
+			alt=""/><input type="radio" name="face" value="5"/><img src="../../pic/face5.gif" 
+			alt=""/><input type="radio" name="face" value="6"/><img src="../../pic/face6.gif" 
+			alt=""/><input type="radio" name="face" value="7"/><img src="../../pic/face7.gif" 
+			alt=""/><input type="radio" name="face" value="8"/><img src="../../pic/face8.gif" 
+			alt=""/><input type="radio" name="face" value="9"/><img src="../../pic/face9.gif"
+ 			alt=""/><input type="radio" name="face" value="10"/><img src="../../pic/face10.gif"
+ 			alt=""/><input type="radio" name="face" value="11"/><img src="../../pic/face11.gif"
+ 			alt=""/><input type="radio" name="face" value="12"/><img src="../../pic/face12.gif"
+ 			alt=""/><input type="radio" name="face" value="13"/><img src="../../pic/face13.gif"
+ 			alt=""/><input type="radio" name="face" value="14"/><img src="../../pic/face14.gif"
+ 			alt=""/>
+<br/>请您注意：<br/>遵守国家有关法律、法规，尊重网上道德，承担一切因您的行为而直接或间接引起的法律责任。<br/>LinuxIDC.com拥有管理笔名和留言的一切权利。<br/>
+<script type="text/javascript" language="javaScript" src="/linuxfile/linux11.js"></script><br/>
+			<div style="padding-top:5px">
+			点评：
+			<textarea name="body" cols="78" rows="12" onkeydown="showLen(this)" onkeyup="showLen(this)"></textarea> 字数<input type="text" id="bodyLen" size="3" readonly="readonly" style="border-width:0;background:transparent;"/>
+			</div>
+			<div style="padding-top:5px">
+			姓名：
+			<input type="text" id="i_username" name="username" value="" maxlength="15" size="10"/>
+			<input type="submit" name="submit" id="i_submit" value=" 发 表 "/>
+			</div>
+			<script type="text/javascript">
+			var remarkmember = false;
+			var allowremark = true;
+			if (remarkmember){
+				document.getElementById("i_username").readonly=true;
+				document.write("(限会员登录后发表评论)");
+			}
+			if (!allowremark){
+				document.getElementById("i_submit").disabled=true;
+			}
+			</script>
+			<script type="text/javascript" src="../../inc/clientDate.js"></script>
+			<input type="hidden" name="vcode" value=""/>
+		</form>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+	<iframe src="../../frm_hit.aspx?id=15859&disp=1" style="visibility:hidden;height:0;width:0"></iframe>
+</td><td valign="top" class="linuz">
+<div class="linuzs"><script type="text/javascript" language="javaScript" src="/linuxfile/jquery.js"></script></div>
+<div class="linuzs"><script type="text/javascript" language="javaScript" src="/linuxfile/linuxgif.js"></script></div>
+	<div class="lframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">最新资讯</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<ul class="nl">
+<li><a href="../../Linux/2012-07/64717.htm" target="_blank">Ubuntu教程：apt软件包管理</a></li>
+<li><a href="../../Linux/2012-07/64716.htm" target="_blank">Linux 大内核锁原理</a></li>
+<li><a href="../../Linux/2012-07/64715.htm" target="_blank">mini2440 LED驱动程序</a></li>
+<li><a href="../../Linux/2012-07/64714.htm" target="_blank">Fastupload 0.2.3 发布</a></li>
+<li><a href="../../Linux/2012-07/64713.htm" target="_blank">Apache Tomcat 7.0.29 发布</a></li>
+<li><a href="../../Linux/2012-07/64712.htm" target="_blank">Linux Kernel 3.5 RC6 发布</a></li>
+<li><a href="../../Linux/2012-07/64711.htm" target="_blank">Ubuntu 使用 Psensor 监控硬件温度</a></li>
+<li><a href="../../Linux/2012-07/64710.htm" target="_blank" title="Unity Launcher Toggle 指示器轻松隐藏/显示 Unity launcher">Unity Launcher Toggle 指示器轻松隐藏/显示 Unity </a></li>
+<li><a href="../../Linux/2012-07/64709.htm" target="_blank">Ubuntu登录主题：DarkCold MDM 1.0</a></li>
+<li><a href="../../Linux/2012-07/64708.htm" target="_blank">Ubuntu登录主题：Mint Pro (MDM)</a></li>
+<li><a href="../../Linux/2012-07/64707.htm" target="_blank">Linux壁纸：清凉开源汽水</a></li>
+<li><a href="../../Linux/2012-07/64706.htm" target="_blank">红旗Linux入门学习手册 PPT</a></li>
+<li><a href="../../Linux/2012-07/64705.htm" target="_blank">Linux嵌入式开发基础 PPT</a></li>
+<li><a href="../../Linux/2012-07/64704.htm" target="_blank">安装好 Ubuntu 12.04 后没有声音</a></li>
+<li><a href="../../Linux/2012-07/64703.htm" target="_blank">ifconfig: command not found</a></li>
+<li><a href="../../Linux/2012-07/64702.htm" target="_blank">Ubuntu 格式化硬盘</a></li>
+<li><a href="../../Linux/2012-07/64701.htm" target="_blank">Ubuntu 12.04 gcin icon 显示设定</a></li>
+<li><a href="../../Linux/2012-07/64700.htm" target="_blank" title="找回Unity消失的 gcin 状态通知区图示 on Ubuntu 11.04+">找回Unity消失的 gcin 状态通知区图示 on Ubuntu 11</a></li>
+<li><a href="../../Linux/2012-07/64699.htm" target="_blank">Ubuntu Unity 移除</a></li>
+<li><a href="../../Linux/2012-07/64698.htm" target="_blank">Ubuntu 12.04 GDM 重新设定</a></li>
+</ul>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+<div class="linuzb"><script type="text/javascript" language="javaScript" src="/linuxfile/linux16.js"></script><br><script type="text/javascript" language="javaScript" src="/linuxfile/linux18.js"></script></div>
+	<div class="lframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">本周热门</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<ul class="nl">
+<li><a href="../../Linux/2011-10/46327.htm" target="_blank">Windows XP硬盘安装Ubuntu 11.10双系统全程图解</a></li>
+<li><a href="../../Linux/2010-04/25829.htm" target="_blank">在VMware虚拟机上安装Ubuntu 10.04</a></li>
+<li><a href="../../Linux/2010-10/29179.htm" target="_blank">WIN7下硬盘安装Ubuntu 10.10双系统教程[图文]</a></li>
+<li><a href="../../Linux/2009-12/23257.htm" target="_blank">将Google Android安装到普通PC中[多图]</a></li>
+<li><a href="../../Linux/2011-12/48609.htm" target="_blank">虚拟机下安装BackTrack5 (BT5)教程及BT5汉化</a></li>
+<li><a href="../../Linux/2010-08/28083.htm" target="_blank" class="highlight">Ubuntu 10.04 下 Wine 完美安装 QQ2010 正式版</a></li>
+<li><a href="../../Linux/2010-10/29207.htm" target="_blank">官方推荐U盘安装Ubuntu 10.10 方法</a></li>
+<li><a href="../../Linux/2011-07/38433.htm" target="_blank">Ubuntu 11.04 最新版 Linux 3D 桌面完全教程</a></li>
+<li><a href="../../Linux/2011-01/31729.htm" target="_blank">U盘安装Ubuntu Linux图解详细教程</a></li>
+<li><a href="../../Linux/2010-08/27895.htm" target="_blank" class="highlight">Ubuntu 10.04下一键安装Mac OS X主题桌面</a></li>
+<li><a href="../../Linux/2007-03/2475.htm" target="_blank">Linux基本命令大全</a></li>
+<li><a href="../../Linux/2007-09/7634.htm" target="_blank">RedHat Linux9 安装图文教程(完整版)</a></li>
+<li><a href="../../Linux/2011-06/37414.htm" target="_blank">Ubuntu 11.04在Win7下无损硬盘安装双系统图文教程</a></li>
+<li><a href="../../Linux/2010-09/28435.htm" target="_blank" class="highlight">Ubuntu中用VirtualBox虚拟机安装Windows XP完整图解</a></li>
+<li><a href="../../Linux/2011-03/33295.htm" target="_blank" class="highlight">最漂亮的Linux发行版：openSUSE 11.4官方图赏</a></li>
+<li><a href="../../Linux/2010-05/25875.htm" target="_blank" title="Windows 7下硬盘安装Ubuntu 10.04简明教程（非Wubi安装）">Windows 7下硬盘安装Ubuntu 10.04简明教程（非Wubi</a></li>
+<li><a href="../../Linux/2011-05/35323.htm" target="_blank">UNetbootin制作U盘启动安装 Ubuntu11.04</a></li>
+<li><a href="../../Linux/2012-05/59564.htm" target="_blank" class="highlight">Ubuntu 12.04安装QQ2012</a></li>
+<li><a href="../../Linux/2010-04/25573.htm" target="_blank">Virtualbox虚拟机安装Ubuntu图文教程</a></li>
+<li><a href="../../Linux/2010-12/30643.htm" target="_blank" class="highlight">超简单在Ubuntu Linux 32位和64位系统中安装迅雷</a></li>
+<li><a href="../../Linux/2012-04/59433.htm" target="_blank">Windows XP硬盘安装Ubuntu 12.04双系统图文详解</a></li>
+<li><a href="../../Linux/2011-09/42312.htm" target="_blank" title="Windows 7下硬盘安装 Red Hat Enterprise Linux 6.0 ES">Windows 7下硬盘安装 Red Hat Enterprise Linux 6.0</a></li>
+<li><a href="../../Linux/2012-05/59663.htm" target="_blank">Ubuntu 12.04和Windows 7双系统安装图解</a></li>
+<li><a href="../../Linux/2010-10/29472.htm" target="_blank">Windows XP硬盘安装Ubuntu 10.10双系统图解</a></li>
+<li><a href="../../Linux/2011-11/47242.htm" target="_blank">超越Ubuntu！Fedora 16正式版华丽体验</a></li>
+</ul>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+</td></tr>
+</table>
+
+<div id="footer"><br /><P  align="center">
+<a href="http://www.linuxidc.com/aboutus.htm">Linux公社简介</a> - <a href="http://www.linuxidc.com/adsense.htm">广告服务</a> - <a href="http://www.linuxidc.com/sitemap.aspx">网站地图</a> - <a href="http://www.linuxidc.com/help.htm">帮助信息</a> - <a href="http://www.linuxidc.com/contactus.htm">联系我们</a><br />本站（LinuxIDC）所刊载文章不代表同意其说法或描述，仅为提供更多信息，也不构成任何建议。<br /><script type="text/javascript" language="javaScript" src="/linuxfile/qq.js"></script><br />
+<script type="text/javascript" language="javaScript" src="/linuxfile/foot.js"></script><br />Copyright &copy; 2006-2011　<a href="http://www.linuxidc.com/">Linux公社</a>　All rights reserved 浙ICP备06018118号</P>
+	
+
+	<div class="menuskin" id="popmenu" onmouseover="clearhidemenu();highlightmenu(event,'on')" onmouseout="highlightmenu(event,'off');dynamichide(event)" style="Z-index:100"></div>
+	<script type="text/javascript" src="../../inc/menu.js" charset="utf-8"></script>
+	<script type="text/javascript">
+	jsdone=true;
+	</script>
+
+
+</div>
+</div>
+<script type="text/javascript" language="javaScript" src="/linuxren/linuxren1.js"></script>
+<script type="text/javascript" language="javaScript" src="/linuxren/linuxren2.js"></script>
+<script type="text/javascript" language="javaScript" src="/linuxren/linuxren3.js"></script>
+</body>
+</html>

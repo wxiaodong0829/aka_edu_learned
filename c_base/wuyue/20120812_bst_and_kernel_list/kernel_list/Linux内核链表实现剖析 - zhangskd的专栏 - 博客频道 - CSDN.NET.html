@@ -1,0 +1,731 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0053)http://blog.csdn.net/zhangskd/article/details/7008257 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET</title>
+
+<meta name="description" content="Linux内核链表Linux内核使用环形双向链表，无所谓头结点和尾节点。内核链表详细信息见 include/ linux / list.h 。 1. 定义和初始化内核链表struct list_head {      struct  list_head *prev, *next ;} ;list_head不包含数据，一般内嵌于其它数据结构中。定义list_hea">
+<script type="text/javascript" async="" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/ga.js"></script><script src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/jquery.js" type="text/javascript"></script>
+<script src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/plugins.js" type="text/javascript"></script>
+<script src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/common.js" type="text/javascript"></script>
+<link rel="Stylesheet" type="text/css" href="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/style.css">
+<link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://blog.csdn.net/zhangskd/rss/list">
+<link rel="shortcut icon" href="http://blog.csdn.net/favicon.ico">
+<link type="text/css" rel="stylesheet" href="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/default.css">
+</head>
+<body>
+<script src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/pub_topnav_2011.js" type="text/javascript"></script><link rel="stylesheet" type="text/css" href="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/navtop_2012.css">
+<div class="nav_top_2011">
+<p><span style="color:red;">您还未登录！</span>|<a href="http://passport.csdn.net/account/login">登录</a>|<a href="http://passport.csdn.net/account/register">注册</a>|<a href="http://passport.csdn.net/help/faq">帮助</a></p><ul>
+<li><a href="http://www.csdn.net/" target="_blank">CSDN首页</a></li>
+<li><a href="http://news.csdn.net/" target="_blank">资讯</a></li>
+<li><a href="http://bbs.csdn.net/" target="_blank">论坛</a></li>
+<li><a href="http://blog.csdn.net/" target="_blank">博客</a></li>
+<li><a href="http://download.csdn.net/" target="_blank">下载</a></li>
+<li><a href="http://so.csdn.net/" target="_blank">搜索</a></li>
+<li class="more"><h2 id="topnav_btnmore" onclick="showNavMore(this)"><a href="javascript:void(0);">更多</a></h2>
+<div id="topnav_hidlist">
+<iframe name="nav_frm" src="about:blank" width="92" height="262" scrolling="no" frameborder="no"></iframe>
+</div>
+</li>
+</ul>
+</div>
+
+
+<div id="container">
+<div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h1><a href="http://blog.csdn.net/zhangskd">zhangskd的专栏</a></h1>
+            <h2>鱼跃此时海，花开彼岸天</h2>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg"></div>
+    <div class="navigator">
+        <ul>
+            <li id="btnContents"><a href="http://blog.csdn.net/zhangskd?viewmode=contents"><span><img src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/ico_list.gif">目录视图</span></a></li>
+            <li id="btnView"><a href="http://blog.csdn.net/zhangskd?viewmode=list"><span><img src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/ico_summary.gif">摘要视图</span></a></li>
+            <li id="btnRss"><a href="http://blog.csdn.net/zhangskd/rss/list"><span><img src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/ico_rss.gif">订阅</span></a></li>
+</ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "zhangskd";
+    var blog_address = "http://blog.csdn.net/zhangskd";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";
+</script>
+        
+<div id="body">
+<div id="main">
+<div class="main">
+<div class="notice"> 
+
+<a href="http://blog.csdn.net/csdnproduct/article/details/7780238" target="_blank">
+<font color="red">[公告]CSDN论坛重写，将于9月正式上线</font></a>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/7845927" target="_blank">
+<font color="red">SDCC软件开发者大会：编程马拉松团队火热招募中</font></a>
+
+<br>
+
+<a href="http://cloud.csdn.net/a/20120620/2806805.html" target="_blank">
+<font color="red">用开源IaaS构建自己的云——OpenStack征稿启事</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/7826827" target="_blank">
+<font color="blue">5折限时抢购移动开发者大会门票！ </font></a>
+
+
+</div><script type="text/javascript" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/ad.js"></script>
+
+<div id="article_details" class="details">
+    <div class="article_title">
+    <span class="ico ico_type_Original"></span>
+    <h3>
+        <span class="link_title"><a href="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET.html">
+        Linux内核链表实现剖析
+        </a></span>
+    </h3>
+</div>
+
+        
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="http://blog.csdn.net/zhangskd/article/category/902074">Linux Kernel</a> 
+        </span>
+    <span class="link_postdate">2011-11-24 15:17</span>
+    <span class="link_view" title="阅读次数">121人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="http://blog.csdn.net/zhangskd/article/details/7008257#comments">评论</a>(0)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:collectArticle(&#39;Linux内核链表实现剖析&#39;,&#39;7008257&#39;);return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="http://blog.csdn.net/zhangskd/article/details/7008257#report" onclick="javascript:report(7008257,2);return false;" title="举报">举报</a></span>
+    
+</div>
+
+    
+<div id="article_content" class="article_content">
+
+&nbsp;
+<p><span style="font-size:24px">Linux内核链表</span></p>
+<p>Linux内核使用环形双向链表，无所谓头结点和尾节点。</p>
+<p>内核链表详细信息见 include/ linux / list.h 。</p>
+<p>&nbsp;</p>
+<p>1. 定义和初始化内核链表</p>
+<p>struct list_head {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct&nbsp; list_head *prev, *next ;</p>
+<p>} ;</p>
+<p>list_head不包含数据，一般内嵌于其它数据结构中。</p>
+<p><strong>定义list_head </strong></p>
+<p>struct my_struct {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct list_head list ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned long dog ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void *cat ;</p>
+<p>} ;</p>
+<p><strong>静态初始化链表</strong></p>
+<p>struct my_struct *p ;</p>
+<p>p = kmalloc( sizeof(struct my_struct) , GFP_KERNEL) ;</p>
+<p>if ( !p )</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return -ENOMEM ;</p>
+<p>p-&gt;dog = 0 ;</p>
+<p>p-&gt;cat = NULL ;</p>
+<p><strong>p-&gt;list = <span style="color:#ff0000">LIST_HEAD_INIT</span></strong>( p-&gt;list ) ; // #define LIST_HEAD_INIT(name) { &amp;(name), &amp;(name) }</p>
+<p>或者</p>
+<p>struct my_struct mine = {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .list = <strong><span style="color:#ff0000">LIST_HEAD_INIT</span></strong>( mine-&gt;list ) ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.dog = 0 ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .cat = NULL ;</p>
+<p>} ;</p>
+<p>或者</p>
+<p>static LIST_HEAD( list ) ; //定义加初始化</p>
+<p>#define <span style="color:#ff0000"><strong>LIST_HEAD</strong></span>(name) \<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;struct list_head name = LIST_HEAD_INIT(name)</p>
+<p>&nbsp;</p>
+<p><strong>动态初始化链表</strong></p>
+<p>struct my_struct *p ;</p>
+<p>..................</p>
+<p><span style="color:#ff0000"><strong>INIT_LIST_HEAD</strong></span>( &amp;p-&gt;list ) ;</p>
+<p>//函数说明</p>
+<p>static inline void INIT_LIST_HEAD(struct list_head *list)<br>
+{<br>
+&nbsp;list-&gt;next = list;<br>
+&nbsp;list-&gt;prev = list;<br>
+}</p>
+<p>&nbsp;</p>
+<p>2. 操作链表</p>
+<p><strong>2.1判断链表</strong></p>
+<p>/**</p>
+<p>&nbsp;*list_empty - test whether a list is empty </p>
+<p>&nbsp;<a href="mailto:*@head">*@head</a> : the list to test</p>
+<p>&nbsp;*/</p>
+<p>static inline int <strong><span style="color:#ff6666">list_empty</span></strong>( const struct list_head * head )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return head-&gt;next == head ;</p>
+<p>}</p>
+<p>/**</p>
+<p>&nbsp;* list_is_last - test whether @list is the last entry in list @head</p>
+<p>&nbsp;* @list : the entry to test</p>
+<p>&nbsp;* @head : the head of the list </p>
+<p>&nbsp;*/</p>
+<p>static inline int <span style="color:#ff6666"><strong>list_is_last</strong></span>( const struct list_head *list ,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const struct list_head *head )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return list-&gt;next == head ;</p>
+<p>}</p>
+<p><strong>2.2插入</strong></p>
+<p>/**</p>
+<p>&nbsp;*Insert a new entry between two known consecutive entries.</p>
+<p>&nbsp;*This is only for internal list manipulation where we know</p>
+<p>&nbsp;*the prev/next entries already!</p>
+<p>&nbsp;*/</p>
+<p>static inline void __list_add( struct list_head *new , </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct list_head *prev ,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct list_head *next )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; next-&gt;prev = new ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new-&gt;next = next ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new-&gt;prev = prev ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev-&gt;next = new ;</p>
+<p>}</p>
+<p>/**</p>
+<p>&nbsp;*list_add - add a new entry</p>
+<p>&nbsp;<a href="mailto:*@new">*@new</a> : new entry to be added</p>
+<p>&nbsp;<a href="mailto:*@head">*@head</a> : list head to add it after</p>
+<p>&nbsp;*</p>
+<p>&nbsp;*Insert a new entry after the specified head .</p>
+<p>&nbsp;*This is good for implementing stacks .</p>
+<p>&nbsp;*/</p>
+<p>static inline void <strong><span style="color:#ff6666">list_add</span></strong>( struct list_head * new ,struct list_head *new )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __list_add( new , head , head-&gt;next ) ;</p>
+<p>}</p>
+<p>/**</p>
+<p>&nbsp;* list_add_tail - add a new entry</p>
+<p>&nbsp;* @new : new entry to be added</p>
+<p>&nbsp;* @head : list head to add it before</p>
+<p>&nbsp;*</p>
+<p>&nbsp;* Insert a new entry before the specified head .</p>
+<p>&nbsp;* This is useful for implementing queues .</p>
+<p>&nbsp;*/</p>
+<p>static inline void<strong> <span style="color:#ff6666">list_add_tail</span></strong> ( struct list_head *new , struct list_head *head )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __list_add( new , head-&gt;prev , head ) ;</p>
+<p>}</p>
+<p>对链表的插入有两种：在表头插入和在表尾插入。</p>
+<p>例：</p>
+<p>struct my_struct new_my_struct ;</p>
+<p>/* 初始化new_my_struct */</p>
+<p>LIST_HEAD(list) ; </p>
+<p>list_add ( &amp;new_my_struct . list , &amp;list ) ;</p>
+<p>&nbsp;</p>
+<p><strong>2.3 删除</strong></p>
+<p>/**</p>
+<p>&nbsp;* Delete a list entry by making the prev / next entries</p>
+<p>&nbsp;* point to each other.</p>
+<p>&nbsp;*</p>
+<p>&nbsp;* This is only for internal list manipulation where we know</p>
+<p>&nbsp;* the prev/next entries already!</p>
+<p>&nbsp;*/</p>
+<p>static inline void __list_del( struct list_head * prev , struct list_head * next )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; next-&gt;prev = prev ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev-&gt;next = next ;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>/**</p>
+<p>&nbsp;* list_del - deletes entry from list.</p>
+<p>&nbsp;* @entry : the element to delete from the list.</p>
+<p>&nbsp;* Note : list_empty() on entry does not return true after this , the entry is</p>
+<p>&nbsp;* in an undefined state.</p>
+<p>&nbsp;*/</p>
+<p>static inline void <span style="color:#ff6666"><strong>list_del</strong></span>( struct list_head *entry )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __list_del( entry-&gt;prev , entry-&gt;next ) ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; entry-&gt;next = LIST_POISON1 ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; entry-&gt;prev = LIST_POISON2 ;</p>
+<p>}</p>
+<p>例：</p>
+<p>list_del ( &amp;new_my_struct . list ) ;</p>
+<p>&nbsp;</p>
+<p><strong>2.4 替换</strong></p>
+<p>/**</p>
+<p>&nbsp;* list_replace - replace old entry by new one </p>
+<p>&nbsp;* @old : the element to be replaced</p>
+<p>&nbsp;* @new : the new element to insert</p>
+<p>&nbsp;*</p>
+<p>&nbsp;* If @old was empty , it will be overwritten. <span style="color:#9999ff"><strong>？不会oops？</strong></span></p>
+<p><strong><span style="color:#330033">&nbsp;*/</span></strong></p>
+<p><span style="color:#330033">static inline void <strong><span style="color:#ff6666">list_replace</span></strong>( struct list_head *old ,</span></p>
+<p><span style="color:#330033">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct list_head *new)</span></p>
+<p><span style="color:#330033">{</span></p>
+<p><span style="color:#330033">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new-&gt;next = old-&gt;next ;</span></p>
+<p><span style="color:#330033">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new-&gt;next-&gt;prev = new ;</span></p>
+<p><span style="color:#330033">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new-&gt;prev = old-&gt;prev ;</span></p>
+<p><span style="color:#330033">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new-&gt;prev-&gt;next = new ;</span></p>
+<p><span style="color:#330033">}</span></p>
+<p>static inline void <span style="color:#ff6666"><strong>list_replace_init </strong>
+</span>( struct list_head *old ,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct list_head *new )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list_replace( old , new ) ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INIT_LIST_HEAD( old ) ;</p>
+<p>}</p>
+<p>/**</p>
+<p>&nbsp;* list_del_init - deletes entry from list and reinitialize it .</p>
+<p>&nbsp;* @entry : the element to delete from the list .</p>
+<p>&nbsp;*/</p>
+<p>static inline void <span style="color:#ff6666"><strong>list_del_init </strong>
+</span>( struct list_head *entry )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __list_del( entry-&gt;prev , entry-&gt;next ) ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INIT_LIST_HEAD( entry ) ;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p><strong>2.5 搬移</strong></p>
+<p>/**</p>
+<p>&nbsp;* list_move - delete from the list and add as another's head</p>
+<p>&nbsp;* @list : the entry to move</p>
+<p>&nbsp;* @head : the head that will precede our entry</p>
+<p>&nbsp;*/</p>
+<p>static inline void <strong><span style="color:#ff6666">list_move </span></strong>( struct list_head *list , struct list_head *head )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __list_del( list-&gt;prev , list-&gt;next ) ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list_add( list , head ) ;</p>
+<p>}</p>
+<p>/**</p>
+<p>&nbsp;* list_move_tail - delete from one list and add as another's tail</p>
+<p>&nbsp;* @list : the entry to move</p>
+<p>&nbsp;* @head : the head that will follow our entry </p>
+<p>&nbsp;*/</p>
+<p>static inline void <strong><span style="color:#ff6666">list_move_tail</span></strong>(struct list_head *list ,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct list_head *head )&nbsp;<span style="color:#9999ff; background-color:#ffffff"></span></p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __list_del(list-&gt;prev , list-&gt;next ) ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list_add_tail( list , head ) ;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p><strong>2.6合并</strong></p>
+<p><span style="color:#9999ff">把第一个链表合并到第二个链表。注意，第一个链表首节点被放弃。</span></p>
+<p>/**</p>
+<p>&nbsp;* list_splice - join two lists , this is designed for stacks</p>
+<p>&nbsp;* @list : the new list to add.</p>
+<p>&nbsp;* @head : the place to add the first list.</p>
+<p>&nbsp;*/</p>
+<p>static inline void <span style="color:#ff6666"><strong>list_splice</strong></span>( const struct list_head *list ,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct list_head *head )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( !list_empty( list ) )</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __list_splice( list , head , head-&gt;next ) ;</p>
+<p>}</p>
+<p>static inline void __list_splice( const struct list_head *list ,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct list_head *prev ,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct list_head *next )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct list_head *first = list-&gt;next ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct list_head *last = list-&gt;prev ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; first-&gt;prev = prev ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev-&gt;next = first ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; last-&gt;next = next ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; next-&gt;prev = last ;</p>
+<p>}</p>
+<p>/**</p>
+<p>&nbsp;* list_splice_tail - join two lists , each list being a queue </p>
+<p>&nbsp;* @list : the new list to add.</p>
+<p>&nbsp;* @head : the place to add it in the first list .</p>
+<p>&nbsp;*/</p>
+<p>static inline void <span style="color:#ff6666"><strong>list_splice_tail</strong></span>( struct list_head *list ,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct list_head *head )</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( ! list_empty( list ) )</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __list_splice( list , head -&gt;prev , head ) ;</p>
+<p>}</p>
+<p><span style="font-size:24px">3. 遍历</span></p>
+<p>/**</p>
+<p>&nbsp;* list_entry - get the struct for this entry</p>
+<p>&nbsp;* @ptr : the &amp;struct list_head pointer</p>
+<p>&nbsp;* @type : the type of the struct this is embedded in.</p>
+<p>&nbsp;* @member : the name of the list_struct within the struct</p>
+<p>&nbsp;*/</p>
+<p>#define <span style="color:#ff6666"><strong>list_entry</strong></span>( ptr , type , member ) \</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; container_of( ptr , type , member )</p>
+<p>例：</p>
+<p>// mine为初始化了得my_struct结构体</p>
+<p>struct my_struct *p = list_entry( &amp;mine . list , my_struct , list ) ;</p>
+<p>&nbsp;</p>
+<p>#define container_of ( ptr , type , member ) ( {&nbsp;&nbsp; \</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const typeof( ( ( type *)0)-&gt;member) *__mptr = (ptr) ;&nbsp; \</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (type *) ( ( char *) __mptr - offsetof (type , member) ) ;</p>
+<p>&nbsp;</p>
+<p>#define offsetof( TYPE , MEMBER) ( ( size_t) &amp; ( (TYPE *) 0)-&gt;MEMBER) </p>
+<p>这里使用的是一个利用编译器技术的小技巧，即先求得结构成员在与结构中的偏移量，然后根据成员变量的地址反过来得出属主结构变量的地址。</p>
+<p>container_of()和offsetof()并不仅用于链表操作，这里最有趣的地方是((type *)0)-&gt;member，它将0地址强制"转换"为type结构的指针，再访问到type结构中的member成员。在container_of宏中，它用来给typeof()提供参数（typeof()是gcc的扩展，和sizeof()类似），以获得member成员的数据类型；在offsetof()中，这个member成员的地址实际上就是type数据结构中member成员相对于结构变量的偏移量。<br>
+</p>
+<p>&nbsp;</p>
+<p>/**</p>
+<p>&nbsp;* list_for_each - iterate over a list </p>
+<p>&nbsp;* @pos : the &amp;struct list_head to use as a loop cursor.</p>
+<p>&nbsp;<a href="mailto:*@head">* @head</a>&nbsp;: the&nbsp; head for your list.</p>
+<p>&nbsp;*/</p>
+<p>#define <strong><span style="color:#ff6666">list_for_each</span></strong>( pos , head ) \</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( pos = (head)-&gt;next ; prefetch(pos-&gt;next ) , pos != head ; \</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pos = pos-&gt;next )</p>
+<p>它实际上是一个for循环，利用传入的pos作为循环变量，从表头head开始，逐项向后（next方向）移动pos，直至又回到head（prefetch()可以不考虑，用于预取以提高遍历速度）。</p>
+<p>例：</p>
+<p>//遍历my_struct链表，从mine开始</p>
+<p>struct list_head *p ;</p>
+<p>list_for_each( p , &amp;mine . list ) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct my_struct *ptr = list_entry ( p , my_struct , list ) ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printk(KERN_ALERT" the number of dog : %ld " , ptr-&gt;dog ) ;</p>
+<p>}</p>
+<p>大多数情况下，遍历链表的时候都需要获得链表节点数据项，也就是说list_for_each()和list_entry()总是同时使用。</p>
+<p>/**</p>
+<p>&nbsp;* list_for_each_entry - iterate over list of given type</p>
+<p>&nbsp;* @pos : the type * to use as a loop cursor.</p>
+<p>&nbsp;* @head : the head for your list.</p>
+<p>&nbsp;* @member : the name of the list_struct within the struct.</p>
+<p>&nbsp;*/</p>
+<p>#define<span style="color:#ff6666"><strong> list_for_each_entry</strong> </span>
+( pos , head , member )</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for ( pos = list_entry ( (head)-&gt;next , typeof(*pos) , member ) ; \</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp;pos-&gt;member != (head) ; \</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pos = list_entry (pos-&gt;member.next , typeof(*pos) , member ))</p>
+<p>&nbsp;</p>
+<p>list_for_each_entry相当于list_for_each和list_entry的结合，可以更加方便的使用。</p>
+<p>&nbsp;</p>
+<p><a name="N101D5"><span class="smalltitle"><strong>4. 安全性考虑</strong></span></a></p>
+<p>在并发执行的环境下，链表操作通常都应该考虑同步安全性问题，为了方便，Linux将这一操作留给应用自己处理。Linux链表自己考虑的安全性主要有两个方面：</p>
+<p><strong>a) list_empty()判断</strong> </p>
+<p>基本的list_empty()仅以头指针的next是否指向自己来判断链表是否为空，Linux链表另行提供了一个list_empty_careful()宏，它同时判断头指针的next和prev，仅当两者都指向自己时才返回真。这主要是为了应付另一个cpu正在处理同一个链表而造成next、prev不一致的情况。但代码注释也承认，这一安全保障能力有限：除非其他cpu的链表操作只有list_del_init()，否则仍然不能保证安全，也就是说，还是需要加锁保护。</p>
+<p><strong>b) 遍历时节点删除</strong> </p>
+<p>前面介绍了用于链表遍历的几个宏，它们都是通过移动pos指针来达到遍历的目的。但如果遍历的操作中包含删除pos指针所指向的节点，pos指针的移动就会被中断，因为list_del(pos)将把pos的next、prev置成LIST_POSITION2和LIST_POSITION1的特殊值。</p>
+<p>当然，调用者完全可以自己缓存next指针使遍历操作能够连贯起来，但为了编程的一致性，Linux链表仍然提供了两个对应于基本遍历操作的"_safe"接口：list_for_each_safe(pos, n, head)、list_for_each_entry_safe(pos, n, head, member)，它们要求调用者另外提供一个与pos同类型的指针n，在for循环中暂存pos下一个节点的地址，避免因pos节点被释放而造成的断链。</p>
+<p>&nbsp;</p>
+<p><span style="font-size:24px">扩展</span></p>
+<p>1. <a name="N101F9"><span class="smalltitle"><strong>hlist</strong></span></a></p>
+<p><br>
+<a name="N10201"><strong>&nbsp;list和hlist</strong></a><br>
+<img height="303" alt="图6 list和hlist" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/image006.gif" width="421" border="0"><br>
+</p>
+<p>精益求精的Linux链表设计者（因为list.h没有署名，所以很可能就是Linus Torvalds）认为双头（next、prev）的双链表对于HASH表来说"过于浪费"，因而另行设计了一套用于HASH表应用的hlist数据结构--单指针表头双循环链表，从上图可以看出，hlist的表头仅有一个指向首节点的指针，而没有指向尾节点的指针，这样在可能是海量的HASH表中存储的表头就能减少一半的空间消耗。</p>
+<p>因为表头和节点的数据结构不同，插入操作如果发生在表头和首节点之间，以往的方法就行不通了：表头的first指针必须修改指向新插入的节点，却不能使用类似list_add()这样统一的描述。为此，hlist节点的prev不再是指向前一个节点的指针，而是指向前一个节点（可能是表头）中的next（对于表头则是first）指针（struct list_head **pprev），从而在表头插入的操作可以通过一致的"*(node-&gt;pprev)"访问和修改前驱节点的next（或first）指针。</p>
+<p>&nbsp;</p>
+<p><a name="N10218"><span class="smalltitle"><strong>2. read-copy update</strong></span></a></p>
+<p>在Linux链表功能接口中还有一系列以"_rcu"结尾的宏，与以上介绍的很多函数一一对应。RCU（Read-Copy Update）是2.5/2.6内核中引入的新技术，它通过延迟写操作来提高同步性能。</p>
+<p>我们知道，系统中数据读取操作远多于写操作，而rwlock机制在smp环境下随着处理机增多性能会迅速下降。针对这一应用背景，IBM Linux技术中心的Paul E. McKenney提出了"读拷贝更新"的技术，并将其应用于Linux内核中。RCU技术的核心是写操作分为写-更新两步，允许读操作在任何时候无阻访问，当系统有写操作时，更新动作一直延迟到对该数据的所有读操作完成为止。</p>
+<p>参考：<a href="http://www.ibm.com/developerworks/cn/linux/kernel/l-chain/">http://www.ibm.com/developerworks/cn/linux/kernel/l-chain/</a>&nbsp;很详细的一个帖子</p>
+
+</div>
+<div class="share_buttons" id="sharePanel"><span>分享到：</span> <a name="sina" class="share_sina" title="分享到新浪微博"></a><a name="qq" class="share_qq" title="分享到腾讯微博"></a></div>
+<!--192.168.1.236-->
+<div class="article_next_prev">
+    <li class="prev_article"><span>上一篇：</span><a href="http://blog.csdn.net/zhangskd/article/details/6977014">路由器和交换机</a></li>
+    <li class="next_article"><span>下一篇：</span><a href="http://blog.csdn.net/zhangskd/article/details/7043071">TCP拥塞控制算法内核实现剖析（一）</a></li>
+</div>
+
+
+    
+</div>
+<div id="ad_cen"><iframe id="ad_frm_0" frameborder="0" scrolling="no" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; overflow-x: hidden; overflow-y: hidden; width: 732px; height: 94px; " src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/ad(1).html"></iframe></div>
+<script type="text/javascript">
+    new Ad(4, 'ad_cen');
+</script>
+<div id="comment_title" class="panel_head">查看评论<a name="comments"></a></div>
+<div id="comment_list"><br>&nbsp;&nbsp;暂无评论<br><br><div class="clear"></div></div>
+<div id="comment_bar"></div>
+<div id="comment_form"><div class="guest_link">您还没有登录,请<a href="http://passport.csdn.net/account/login?from=http%3A%2F%2Fblog.csdn.net%2Fzhangskd%2Farticle%2Fdetails%2F7008257">[登录]</a>或<a href="http://passport.csdn.net/account/register?from=http%3A%2F%2Fblog.csdn.net%2Fzhangskd%2Farticle%2Fdetails%2F7008257">[注册]</a></div></div>
+<div class="announce">* 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+<script type="text/javascript">
+    var fileName = '7008257';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/comment.js"></script>
+<div id="ad_bot"><iframe id="ad_frm_1" frameborder="0" scrolling="no" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; overflow-x: hidden; overflow-y: hidden; width: 732px; height: 170px; " src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/ad(2).html"></iframe></div>
+<script type="text/javascript">
+    new Ad(5, 'ad_bot');
+</script>
+<div id="report_dialog"></div>
+
+
+<div class="clear"></div>
+</div>
+</div>
+
+<div id="side">
+<div class="side">
+<div id="panel_Profile" class="panel">
+    <ul class="panel_head"><span>个人资料</span></ul>
+    <ul class="panel_body profile">
+        <div id="blog_userface">
+            <a href="http://my.csdn.net/zhangskd" target="_blank">
+            <img src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/1_zhangskd.jpg" title="访问我的空间" style="max-width:90%">
+            </a>
+            <br>
+            <span><a href="http://my.csdn.net/zhangskd" target="_blank">zhangskd</a></span>
+        </div>
+<div class="interact">
+<!--<a href="#" class="attented" title="已关注"></a>-->
+<a href="http://blog.csdn.net/zhangskd/article/details/7008257#" class="attent" id="span_add_follow" title="[加关注]"></a>
+<a href="http://my.csdn.net/my/letter/send/zhangskd" class="letter" title="[发私信]"></a>
+</div>
+        <div id="blog_medal">
+        <div id="bms_box"><a href="http://medal.blog.csdn.net/allmedal.aspx" target="_blank"><img src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/holdon_s.gif" onmouseover="m_over_m(this,0)" onmouseout="m_out_m()" alt=""></a></div></div>
+        <ul id="blog_rank">
+            <li>访问：<span>16061次</span></li>
+            <li>积分：<span>777分</span></li>
+            <li>排名：<span>第10347名</span></li>
+        </ul>
+        <ul id="blog_statistics">
+            <li>原创：<span>50篇</span></li>
+            <li>转载：<span>14篇</span></li>
+            <li>译文：<span>0篇</span></li>
+            <li>评论：<span>7条</span></li>
+        </ul>
+    </ul>
+</div>
+<script type="text/javascript">
+    var _blogger = 'zhangskd';
+</script>
+<script type="text/javascript">
+$(document).ready(function () {
+    var un = getUN().toLowerCase();
+    if (un == _blogger.toLowerCase()) {
+        $('.interact').hide();
+    } else if(un) {
+        var url = "http://my.csdn.net/index.php/follow/check_is_followed/" + encodeURIComponent(un) + "/" + encodeURIComponent(_blogger) + "?jsonpcallback=?";
+        $.getJSON(url, {}, function (data) {
+            if (data.succ == 1 && data.info == 1) {
+                $('#span_add_follow').attr('class', 'attented');
+            } else {
+                $('#span_add_follow').click(guanzhu);
+            }
+        }, 'json');
+    }
+});
+function guanzhu() {
+    var url = "http://my.csdn.net/index.php/follow/do_follow?jsonpcallback=?";
+    $.getJSON(url, { "username": _blogger }, function (data) {
+        if (data.succ == 1) {
+            alert('关注成功！');
+            $('#span_add_follow').attr('class', 'attented').click(function () { return false; });
+        } else {
+            alert(data.msg);
+        }
+    });
+    return false;
+}
+function getUN() {
+    var m = document.cookie.match(new RegExp("(^| )UserName=([^;]*)(;|$)"));
+    if (m) return m[2];
+    else return '';
+}
+</script>
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字"></span>
+        <input id="btnSubmit" type="submit" value="搜索" title="search in blog">
+        <input type="hidden" name="q" id="inputQ">
+        <input type="hidden" name="t" value="blog">
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div><div id="panel_Category" class="panel">
+    <ul class="panel_head"><span>文章分类</span></ul>
+    <ul class="panel_body">
+        <li>
+        <a href="http://blog.csdn.net/zhangskd/article/category/805073">C/C++</a><span>(1)</span>
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/zhangskd/article/category/805069">数据结构和算法</a><span>(4)</span>
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/zhangskd/article/category/805077">综合</a><span>(7)</span>
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/zhangskd/article/category/872588">Linux命令</a><span>(4)</span>
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/zhangskd/article/category/872691">Linux编程</a><span>(1)</span>
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/zhangskd/article/category/873810">Linux TCP/IP</a><span>(20)</span>
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/zhangskd/article/category/902074">Linux Kernel</a><span>(29)</span>
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/zhangskd/article/category/903757">socket函数</a><span>(2)</span>
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/zhangskd/article/category/1073984">服务器</a><span>(3)</span>
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/zhangskd/article/category/1188925">Subversion版本控制</a><span>(3)</span>
+        </li>
+    </ul>
+</div><div id="panel_Archive" class="panel">
+    <ul class="panel_head"><span>文章存档</span></ul>
+    <ul class="panel_body">
+        <div id="archive_list"><li><a href="http://blog.csdn.net/zhangskd/article/month/2012/07">2012年07月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/zhangskd/article/month/2012/06">2012年06月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/zhangskd/article/month/2012/05">2012年05月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/zhangskd/article/month/2012/04">2012年04月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/zhangskd/article/month/2012/03">2012年03月</a><span>(4)</span></li><span class="hidelist" style="display:none;"><li><a href="http://blog.csdn.net/zhangskd/article/month/2012/02">2012年02月</a><span>(8)</span></li><li><a href="http://blog.csdn.net/zhangskd/article/month/2012/01">2012年01月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/zhangskd/article/month/2011/12">2011年12月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/zhangskd/article/month/2011/11">2011年11月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/zhangskd/article/month/2011/10">2011年10月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/zhangskd/article/month/2011/09">2011年09月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/zhangskd/article/month/2011/08">2011年08月</a><span>(8)</span></li><li><a href="http://blog.csdn.net/zhangskd/article/month/2011/04">2011年04月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/zhangskd/article/month/2011/03">2011年03月</a><span>(4)</span></li></span><div id="archive_list_button" class="list_closed">展开</div></div>
+    </ul>
+</div>
+<div id="hotarticls" class="panel">
+    <ul class="panel_head"><span>阅读排行</span></ul>
+    <ul class="panel_body itemlist">
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/6904587" title="sk_buff 剖析">sk_buff 剖析</a><span>(866)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/6715751" title="TCP拥塞控制算法 优缺点 适用环境 性能分析">TCP拥塞控制算法 优缺点 适用环境 性能分析</a><span>(838)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7087721" title="TCP拥塞控制算法内核实现剖析（四）">TCP拥塞控制算法内核实现剖析（四）</a><span>(669)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7043071" title="TCP拥塞控制算法内核实现剖析（一）">TCP拥塞控制算法内核实现剖析（一）</a><span>(668)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7066920" title="TCP拥塞控制算法内核实现剖析（二）">TCP拥塞控制算法内核实现剖析（二）</a><span>(616)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7195795" title="TCP Timestamp选项">TCP Timestamp选项</a><span>(615)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7174682" title="TCP快速重传与快速恢复原理分析">TCP快速重传与快速恢复原理分析</a><span>(612)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7084782" title="TCP拥塞控制算法内核实现剖析（三）">TCP拥塞控制算法内核实现剖析（三）</a><span>(572)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/6739189" title="千兆TCP拥塞控制算法分析">千兆TCP拥塞控制算法分析</a><span>(416)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/6864315" title="inet_pton">inet_pton</a><span>(401)</span>
+        </li>
+    </ul>
+</div>
+<div id="hotarticls2" class="panel">
+    <ul class="panel_head"><span>评论排行</span></ul>
+    <ul class="panel_body itemlist">
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7087721" title="TCP拥塞控制算法内核实现剖析（四）">TCP拥塞控制算法内核实现剖析（四）</a><span>(3)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/6715751" title="TCP拥塞控制算法 优缺点 适用环境 性能分析">TCP拥塞控制算法 优缺点 适用环境 性能分析</a><span>(2)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7174682" title="TCP快速重传与快速恢复原理分析">TCP快速重传与快速恢复原理分析</a><span>(1)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7195795" title="TCP Timestamp选项">TCP Timestamp选项</a><span>(1)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7242530" title="正向代理与反向代理的区别">正向代理与反向代理的区别</a><span>(0)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7242923" title="负载均衡服务器简介">负载均衡服务器简介</a><span>(0)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7245437" title="Duplicate SACK原理">Duplicate SACK原理</a><span>(0)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7236727" title="Forward Acknowledgement原理">Forward Acknowledgement原理</a><span>(0)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7196707" title="TCP中RTT的测量和RTO的计算">TCP中RTT的测量和RTO的计算</a><span>(0)</span>
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/zhangskd/article/details/7241616" title="Squid简介">Squid简介</a><span>(0)</span>
+        </li>
+    </ul>
+</div>
+<div id="homepageArticles" class="panel">
+    <ul class="panel_head"><span>推荐文章</span></ul>
+    <ul class="panel_body" id="ad_commend">
+    <iframe id="ad_frm_2" frameborder="0" scrolling="no" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; overflow-x: hidden; overflow-y: hidden; width: 182px; height: 236px; " src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/ad.html"></iframe></ul>
+</div>
+<script type="text/javascript" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/ad.js"></script>
+<script type="text/javascript">
+    new Ad(12, 'ad_commend');
+</script><div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+    <a href="http://blog.csdn.net/zhangskd/article/details/7174682#comments">TCP快速重传与快速恢复原理分析</a>
+    <p style="margin:0px;">Wentasy:
+不错的文章哈，收藏了。
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/zhangskd/article/details/7195795#comments">TCP Timestamp选项</a>
+    <p style="margin:0px;">mcqwf:
+写的不错
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/zhangskd/article/details/6715751#comments">TCP拥塞控制算法 优缺点 适用环境 性能分析</a>
+    <p style="margin:0px;">zhangskd:
+@kuzuozhou:tcp拥塞控制算法有很多种，目的都在于处理网络拥塞，只是各自针对的情况有所不同...
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/zhangskd/article/details/6715751#comments">TCP拥塞控制算法 优缺点 适用环境 性能分析</a>
+    <p style="margin:0px;">kuzuozhou:
+楼主，您好！关于westwood，“存在的问题是不能很好的区分传输过程中的拥塞丢包和无线丢包，导致拥...
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/zhangskd/article/details/7087721#comments">TCP拥塞控制算法内核实现剖析（四）</a>
+    <p style="margin:0px;">zhangskd:
+@peimichael:B为减小因子，是0.3，不是0.7@_@
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/zhangskd/article/details/7087721#comments">TCP拥塞控制算法内核实现剖析（四）</a>
+    <p style="margin:0px;">peimichael:
+自己想明白了，论文中的β和代码中的β不一样，β1=1-β2，换算以后就一样了
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/zhangskd/article/details/7087721#comments">TCP拥塞控制算法内核实现剖析（四）</a>
+    <p style="margin:0px;">peimichael:
+看完此文，受益匪浅！还有一个问题请教，在论文中分析的Reno算法的窗口增长系数为3B/(2-B)，但...
+    </p>
+    </li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+</div>
+<script type="text/javascript" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/shCore-src.js"></script>
+<script type="text/javascript" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/ZeroClipboard.js"></script>
+<script type="text/javascript" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/article_code.js"></script>
+
+<script type="text/javascript" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/show.js"></script>
+<script type="text/javascript" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/showblogmedal.ashx"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script><img src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/pv.aspx" border="0" width="0" height="0">
+
+<script type="text/javascript" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/publib_footer.js"></script><link rel="stylesheet" type="text/css" href="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/pub_footer_2012.css"><div class="pub_footerall"><dl><dt></dt> <dd><a href="http://www.csdn.net/company/about.html" target="_blank">公司简介</a>|<a href="http://www.csdn.net/company/recruit.html" target="_blank">招贤纳士</a>|<a href="http://www.csdn.net/company/marketing.html" target="_blank">广告服务</a>|<a href="http://www.csdn.net/company/account.html" target="_blank">银行汇款帐号</a>|<a href="http://www.csdn.net/company/contact.html" target="_blank">联系方式</a>|<a href="http://www.csdn.net/company/statement.html" target="_blank">版权声明</a>|<a href="http://www.csdn.net/company/layer.html" target="_blank">法律顾问</a>|<a href="mailto:webmaster@csdn.net">问题报告</a></dd><dd>京&nbsp;ICP&nbsp;证&nbsp;070598&nbsp;号</dd><dd>北京创新乐知信息技术有限公司 版权所有</dd><dd><img src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/ico_email.gif" alt="" title=""> 联系邮箱：webmaster@csdn.net</dd><dd>Copyright © 1999-2012, CSDN.NET, All Rights Reserved&nbsp;<a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><img src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/gongshang_logos.gif" alt="GongshangLogo" title=""></a></dd></dl></div>
+
+<script type="text/javascript" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/counter.js"></script><script type="text/javascript" charset="UTF-8" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/msg.popup.js"></script>
+
+<script type="text/javascript" src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/ad-ibm6.js"></script>
+
+
+</div>
+
+<iframe style="width: 1px; height: 1px; position: absolute; visibility: hidden; " src="./Linux内核链表实现剖析 - zhangskd的专栏 - 博客频道 - CSDN.NET_files/cloud-bbs-homepage_760-90-0726.html"></iframe></body></html>

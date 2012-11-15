@@ -1,0 +1,2 @@
+
+$ scp akaedu@192.168.204.129:/home/akaedu/zhongtao/heirloom-heirloom-doctools.tar.gz .

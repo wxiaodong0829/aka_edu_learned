@@ -1,0 +1,48 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CC	Makefile	/^CC = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -g #-DDEBUG$/;"	m
+DIRNAME	Makefile	/^DIRNAME = $(notdir $(PWD))$/;"	m
+LEN	link.h	19;"	d
+NODE	init.c	/^node_t * NODE(int id, char *name, float chgrade, float mathgrade, float average, node_t *next)$/;"	f
+OBJ	Makefile	/^OBJ = $(SRC:%.c=%.o)$/;"	m
+PRJ	Makefile	/^PRJ = $(DIRNAME)$/;"	m
+PWD	Makefile	/^PWD = $(shell pwd)$/;"	m
+SRC	Makefile	/^SRC = $(wildcard *.c)$/;"	m
+TARGET	Makefile	/^TARGET = $(PRJ)$/;"	m
+_LINK__H	link.h	10;"	d
+average	link.h	/^	float average;$/;"	m	struct:node
+average_opera	remove.c	15;"	d	file:
+average_opera	search.c	15;"	d	file:
+chgrade	link.h	/^	float chgrade;$/;"	m	struct:node
+chgrade_opera	remove.c	13;"	d	file:
+chgrade_opera	search.c	13;"	d	file:
+id	link.h	/^	int id;$/;"	m	struct:node
+id_opera	remove.c	11;"	d	file:
+id_opera	search.c	11;"	d	file:
+init_head	init.c	/^void init_head(node_t **link_head)$/;"	f
+link_destroy	quit.c	/^void link_destroy(node_t **head)$/;"	f
+link_fclose	quit.c	/^void link_fclose(FILE *fp)$/;"	f
+link_insert_b	read_from_file.c	/^node_t *link_insert_b(char *s, node_t *head)$/;"	f
+link_print	print_input.c	/^void link_print(node_t *head)$/;"	f
+link_read_file	read_from_file.c	/^FILE *link_read_file(const char * filename, node_t **head)$/;"	f
+link_remove	link.h	75;"	d
+link_remove_memb	remove.c	26;"	d	file:
+link_search	link.h	124;"	d
+link_search_memb	search.c	23;"	d	file:
+main	main.c	/^int main(int argc, char *argv[])$/;"	f
+mathgrade	link.h	/^	float mathgrade;$/;"	m	struct:node
+mathgrade_opera	remove.c	14;"	d	file:
+mathgrade_opera	search.c	14;"	d	file:
+name	link.h	/^	char name[LEN];$/;"	m	struct:node
+name_opera	remove.c	12;"	d	file:
+name_opera	search.c	12;"	d	file:
+next	link.h	/^	struct node *next;$/;"	m	struct:node	typeref:struct:node::node
+node	link.h	/^typedef struct node {$/;"	s
+node_t	link.h	/^}node_t;$/;"	t	typeref:struct:node
+offsetof	link.h	17;"	d
+read_from_in	read_from_file.c	/^node_t *read_from_in(FILE *fp, node_t *head)$/;"	f

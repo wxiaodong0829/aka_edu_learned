@@ -1,0 +1,20 @@
+all		:  main
+
+main	:	main.o add.o sub.o
+	gcc  main.o add.o sub.o -o main
+
+main.o	: main.c add_sub.h
+	gcc -c main.c -g -Wall
+
+#main.c	: add_sub.h
+#	touch main.c
+
+add.o	: add.c
+	gcc -c add.c -g -Wall
+
+sub.o	: sub.c
+	gcc -c sub.c -g -Wall
+
+clean	:
+	rm *.o 
+	rm main

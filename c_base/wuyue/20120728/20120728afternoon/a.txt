@@ -1,0 +1,1000 @@
+   53  ll
+   54  mkdir 0714
+   55  cd 0714
+   56  ll
+   57  vi bit.c
+   58  vi ~/.bashrc
+   59  vi bit.c
+   60  vi ~/.bashrc
+   61  pwd
+   62  ll
+   63  vi ~/.vimrc
+   64  vi bit.c
+   65  vi ~/.vimrc
+   66  vi bit.c
+   67  cc bit.c 
+   68  ./a.out 
+   69  vi bit.c
+   70  cc bit.c 
+   71  ./a.out 
+   72  vi bit.c
+   73  cc bit.c 
+   74  vi bit.c 
+   75  cc bit.c 
+   76  ./a.out 
+   77  vi bit.c 
+   78  cc bit.c
+   79  ./a.out 
+   80  vi bit.c
+   81  cc bit.c 
+   82  ./a.out 
+   83  vi bit.c
+   84  cc bit.c 
+   85  ./a.out 
+   86  vi bit.c
+   87  cc bit.c 
+   88  ./a.out 
+   89  vi bit.c
+   90  cc bit.c 
+   91  ./a.out 
+   92  vi bit.c
+   93  cc bit.c 
+   94  ./a.out 
+   95  vi bit.c 
+   96  cc bit.c 
+   97  ./a.out 
+   98  vi bit.c
+   99  cc bit.c 
+  100  ./a.out 
+  101  vi bit.c 
+  102  vi bit.c
+  103  cc bit.c 
+  104  vi bit.c
+  105  cc bit.c 
+  106  ./a.out 
+  107  vi bit.c 
+  108  cc bit.c 
+  109  ./a.out 
+  110  vi bit.c 
+  111  cc bit.c 
+  112  ./a.out 
+  113  vi bit.c 
+  114  cc bit.c
+  115  ./a.out 
+  116  vi bit.c 
+  117  cc bit.c 
+  118  ./a.out 
+  119  vi bit.c 
+  120  gcc -v
+  121  vi bit.c
+  122  cc bit.c
+  123  ./a.out 
+  124  vi bit.c 
+  125  ifconfig
+  126  vi bit.c
+  127  cc bit.c 
+  128  ./a.out 
+  129  vi bit.c 
+  130  cc bit.c 
+  131  ./a.out 
+  132  vi bit.c 
+  133  cc bit.c 
+  134  ./a.out 
+  135  vi bit.c 
+  136  cc bit.c
+  137  ./a.out 
+  138  vi bit.c
+  139  cc bit.c 
+  140  ./a.out 
+  141  vi bit.c 
+  142  cc bit.c 
+  143  ./a.out 
+  144  vi bit.c 
+  145  vi bit.c
+  146  cc bit.c
+  147  ./a.out 
+  148  vi bit.c
+  149  cc bit.c 
+  150  vi bit.c 
+  151  cc bit.c 
+  152  ./a.out 
+  153  vi bit.c 
+  154  cc bit.c 
+  155  ./a.out 
+  156  vi bit.c 
+  157  cc bit.c 
+  158  ./a.out 
+  159  vi bit.c
+  160  cc bit.c 
+  161  ./a.out 
+  162  vi bit.c 
+  163  cc bit.c 
+  164  ./a.out 
+  165  vi bit.c
+  166  cc bit.c 
+  167  ./a.out 
+  168  vi bit.c
+  169  cc bit.c 
+  170  ./a.out 
+  171  vi bit.c 
+  172  cc bit.c
+  173  ./a.out 
+  174  vi bit.c 
+  175  cc bit.c 
+  176  ./a.out 
+  177  vi bit.c 
+  178  cc bit.c 
+  179  ./a.out 
+  180  vi bit.c 
+  181  vi primes.c
+  182  cc primes.c 
+  183  ./a.out 
+  184  vi primes.c 
+  185  cc primes.c 
+  186  ./a.out 
+  187  vi primes.c 
+  188  cc primes.c 
+  189  ./a.out 
+  190  vi bit.c 
+  191  vi primes.c 
+  192  cc primes.c 
+  193  ./a.out 
+  194  vi primes.c 
+  195  cc primes.c 
+  196  ./a.out 
+  197  prime 100
+  198  sudo apt-get install prime
+  199  prime 100
+  200  man prime
+  201  prime
+  202  prime 100
+  203  man 7 prime
+  204  .a.
+  205  pwd
+  206  ./a.out 
+  207  vi primes.c 
+  208  cc primes.c 
+  209  ./a.out 
+  210  vi bit.c 
+  211  vi primes.c 
+  212  cc primes.c 
+  213  ./a.out 
+  214  vi primes.c 
+  215  cd 
+  216  d
+  217  cd
+  218  source .bashrc
+  219  ls
+  220  ll
+  221  pwd
+  222  mv heirloom-heirloom-doctools.tar.gz zhongtao/
+  223  cd zhongtao/
+  224  ll
+  225  tar zxvf heirloom-heirloom-doctools.tar.gz 
+  226  cd heirloom-doctools/
+  227  ll
+  228  vi makefile 
+  229  make
+  230  ll /usr/bin/sh
+  231  sudo ll /usr/bin/sh
+  232  sudo ls -l /usr/bin/sh
+  233  make
+  234  ll /sbin
+  235  cd /sbin
+  236  ls sh
+  237  sudo /usr/bin/sh sh
+  238  sudo ln -s /usr/bin/sh sh
+  239  cd
+  240  cd zhongtao/heirloom-doctools/
+  241  make
+  242  /sbin/sh
+  243  cd /sbin
+  244  sh
+  245  which sh
+  246  cd /sbin
+  247  sudo ln -s /bin/sh sh
+  248  ls -l
+  249  ls -l sh
+  250  cd
+  251  cd zhongtao/heirloom-doctools/
+  252  make
+  253  vi makefile 
+  254  ll
+  255  vi mk.config 
+  256  vi heirloom-doctools.spec 
+  257  which flex
+  258  which bison
+  259  sudo aptitude install flex
+  260  sudo aptitude install bison
+  261  pwd
+  262  make
+  263  c++
+  264  g++
+  265  aptitude g++
+  266  sudo aptitude install g++
+  267  pwd
+  268  make
+  269  sudo make install
+  270  cd /usr
+  271  ls
+  272  cd ucb
+  273  ls
+  274  ll
+  275  ln -s /usr/bin/install install
+  276  sudo ln -s /usr/bin/install install
+  277  ll
+  278  pwd
+  279  cd 
+  280  cd zhongtao/heirloom-doctools/
+  281  sudo make install
+  282  pwd
+  283  cd ..
+  284  ll
+  285  cd 0714
+  286  pwd
+  287  ll
+  288  rm t.txt
+  289  ll
+  290  mkdir doc
+  291  ll
+  292  cd doc
+  293  evince
+  294  cp ../../heirloom-doctools/doc/troff/makefile Makefile
+  295  ll
+  296  vi Makefile 
+  297  vi doc.tr
+  298  make
+  299  vi Makefile 
+  300  make
+  301  ll
+  302  evince doc.ps
+  303  vi Makefile 
+  304  make
+  305  touch doc.tr
+  306  make
+  307  evince doc.ps
+  308  vi Makefile 
+  309  make view
+  310  vi doc.tr
+  311  make
+  312  vi ~/.vimrc
+  313  vi doc.tr
+  314  vi Makefile 
+  315  echo "hello, world"
+  316  echo "hello, world" | tr 'a-z' 'A-Z'
+  317  echo "hello, world" | tr 'a-z' 'n-za-m'
+  318  pwd
+  319  vi doc.tr
+  320  pwd
+  321  cd .
+  322  cd ..
+  323  ll
+  324  cd ..
+  325  pwd
+  326  ll
+  327  ifconfig
+  328  pwd
+  329  ll
+  330  vi cmd.txt
+  331  ll
+  332  cd /sbin
+  333  cd /usr/ucb
+  334  pwd
+  335  ll
+  336  pwd
+  337  cd
+  338  cd zhongtao/
+  339  cd 0714
+  340  vi t.txt
+  341  pwd
+  342  cd doc
+  343  pwd
+  344  vi Makefile 
+  345  vi doc.tr
+  346  vi Makefile 
+  347  ll
+  348  pwd
+  349  cd ..
+  350  ll
+  351  vi bit.c
+  352  cc bit.c 
+  353  ./a.out 
+  354  vi bit.c 
+  355  ./a.out 
+  356  vi bit.c 
+  357  cc bit.c
+  358  ./a.out 
+  359  vi bit.c
+  360  cc bit.c 
+  361  ./a.out 
+  362  vi bit.c 
+  363  cc bit.c
+  364  ./a.out 
+  365  vi bit.c
+  366  cc bit.c 
+  367  ./a.out 
+  368  vi bit.c
+  369  cc bit.c
+  370  ./a.out > doc.tr
+  371  vi doc.tr
+  372  ./a.out > doc.tr
+  373  vi doc.tr
+  374  vi Makefile
+  375  make
+  376  ll
+  377  make view
+  378  make
+  379  vi bit.c
+  380  cc bit.c 
+  381  make
+  382  vi bit.c
+  383  cc bit.c
+  384  make
+  385  ls
+  386  cd zhongtao
+  387  pwd
+  388  ls
+  389  cd 0714
+  390  ls
+  391  vi bit.c
+  392  cd ~
+  393  ls
+  394  mkdir mawenchao
+  395  ls
+  396  long name
+  397  vi 1.c
+  398  ls
+  399  rm -r mawenchao
+  400  ls
+  401  ifconfig
+  402  ls
+  403  tar czvf add.tar.gz 1.c examples.desktop 
+  404  ls
+  405  tar xzvf add.tar.gz 
+  406  ls
+  407  history 
+  408  ls
+  409  cd 
+  410  mkir zxx
+  411  mkdir zxx
+  412  ls
+  413  rm zxx/ -R
+  414  LS
+  415  ls
+  416  cd zhongtao/
+  417  ls
+  418  cd 0714/
+  419  ls
+  420  cd doc/
+  421  ls
+  422  vi Makefile 
+  423  ls
+  424  vi doc.tr 
+  425  make view 
+  426  evince doc.ps 
+  427  ls
+  428  vi .vimrc 
+  429  sudo shutdown now
+  430  ll
+  431  cd zhongtao/
+  432  pwd
+  433  ll
+  434  rm cmd.txt
+  435  ll
+  436  mkdir 0715
+  437  cd 0715
+  438  pwd
+  439  vi hello.c
+  440  rm hello.c
+  441  vi hello.c
+  442  firefox
+  443  pwd
+  444  vi fc.c
+  445  cc fc.c
+  446  ./a.out 
+  447  vi fx.c
+  448  vi fc.c
+  449  ifconfig
+  450  vi fc.c
+  451  vi copy.c
+  452  cc copy.c 
+  453  ./a.out 
+  454  ./a.out < copy.c
+  455  ./a.out < copy.c > bak.c
+  456  ll
+  457  rm bak.c
+  458  ll
+  459  wc copy.c
+  460  echo "hello, world" | wc
+  461  vi swap.c
+  462  vi ll.c
+  463  cc ll.c
+  464  vi ll.c
+  465  cc ll.c
+  466  ./a.out < ll.c
+  467  vi factorial.c
+  468  cc factorial.c 
+  469  vi factorial.c 
+  470  cc factorial.c 
+  471  ./a.out 
+  472  vi max.c
+  473  cc max.c 
+  474  ./a.out 
+  475  vi max.c 
+  476  l
+  477  objdump -d a.out | less
+  478  cd /home/akaedu
+  479  ls
+  480  cd zhongtao
+  481  ls
+  482  sudo su
+  483  cd zhongtao/
+  484  ll
+  485  cd 0715
+  486  ll
+  487  vi power.c
+  488  cc power.c 
+  489  ./a.out 
+  490  vi power.c 
+  491  cc power.c 
+  492  ./a.out 
+  493  vi power.c 
+  494  cc power.c 
+  495  ./a.out 
+  496  vi power.c 
+  497  cc power.c 
+  498  ./a.out 
+  499  vi power.c 
+  500  cc power.c 
+  501  ./a.out 
+  502  vi power.c 
+  503  cc power.c 
+  504  ./a.out 
+  505  vi power.c 
+  506  cc power.c 
+  507  ./a.out 
+  508  vi power.c 
+  509  cc power.c 
+  510  ./a.out 
+  511  vi power.c 
+  512  cc power.c 
+  513  ./a.out 
+  514  vi power.c 
+  515  cd zhongtao/
+  516  ll
+  517  cd 0715
+  518  ll
+  519  vi reverse.c
+  520  vi p.c
+  521  cc p.c
+  522  ./a.out 
+  523  vi p.c
+  524  cc p.c
+  525  ./a.out 
+  526  vi p.c
+  527  cc p.c
+  528  ./a.out 
+  529  vi p.c
+  530  cc p
+  531  cc p.c
+  532  ./a.out 
+  533  vi p.c
+  534  cc p.c
+  535  ./a.out 
+  536  vi power.c 
+  537  cc power.c 
+  538  ./a.out 
+  539  rm p.c
+  540  vi power.c
+  541  cc power.c 
+  542  ./a.out 
+  543  vi power.c 
+  544  cc power.c 
+  545  ./a.out 
+  546  vi power.c 
+  547  cc power.c 
+  548  ./a.out 
+  549  vi power.c 
+  550  cc power.c 
+  551  ./a.out 
+  552  ll
+  553  vi reverse.c 
+  554  cc reverse.c 
+  555  ./a.out 
+  556  vi reverse.c 
+  557  ./a.out 
+  558  cc reverse.c 
+  559  ./a.out 
+  560  vi reverse.c 
+  561  vi t.c
+  562  cc t.c
+  563  ./a.out 
+  564  vi t.c
+  565  cc t.c
+  566  ./a.out 
+  567  vi t.c
+  568  sudo init 0
+  569  ls
+  570  mkdir 0715
+  571  cd 0715/
+  572  ls
+  573  vi 1.c
+  574  gcc 1.c 
+  575  vi 1.c +13
+  576  vi 1.c 
+  577  gcc 1.c 
+  578  ./a.out 
+  579  vi 1.c 
+  580  gcc 1.c 
+  581  ./a.out 
+  582  vi 1.c 
+  583  gcc 1.c 
+  584  ./a.out 
+  585  vi 1.c 
+  586  cp 1.c 2.c
+  587  vi 2.c 
+  588  gcc 2.c 
+  589  vi 2.c +17
+  590  gcc 2.c 
+  591  vi 2.c +23
+  592  gcc 2.c 
+  593  ./a.out 
+  594  vi 2.c 
+  595  gcc 2.c 
+  596  ./a.out 
+  597  vi 2.c 
+  598  gcc 2.c 
+  599  ./a.out 
+  600  vi 2.c 
+  601  gcc 2.c 
+  602  ./a.out 
+  603  vi 2.c 
+  604  gcc 2.c 
+  605  ./a.out 
+  606  vi 2.c 
+  607  gcc 2.c 
+  608  vi 2.c 
+  609  gcc 2.c 
+  610  ./a.out 
+  611  vi 2.c 
+  612  gcc 2.c 
+  613  vi 2.c +11
+  614  gcc 2.c 
+  615  vi 2.c 
+  616  vi 1.c 
+  617  vi 2.c 
+  618  gcc 2.c 
+  619  ./a.out 
+  620  sudo shutdown now
+  621  cd zhongtao/
+  622  ll
+  623  mkdir 0716
+  624  cd 0716
+  625  ll
+  626  echo "hello, world"
+  627  echo "hello, world" | tr -d 'l'
+  628  pwd
+  629  ll
+  630  man strpbrk
+  631  vi any.c
+  632  cc any.c 
+  633  vi any.c
+  634  cc any.c 
+  635  vi any.c
+  636  cc any.c
+  637  vi any.c
+  638  cc any.c 
+  639  vi any.c 
+  640  cc any.c 
+  641  ./a.out 
+  642  vi any.c 
+  643  cc any.c 
+  644  ./a.out 
+  645  vi any.c 
+  646  ll
+  647  cd 0715/
+  648  ll
+  649  cd
+  650  cd zhongtao/
+  651  ll
+  652  cd 0717
+  653  ll
+  654  vi itoa.c 
+  655  ipconfig
+  656  ipconfige
+  657  ipconfiger
+  658  ifconfig
+  659  pwd
+  660  cd zhongtao/
+  661  date
+  662  mdkir 0717
+  663  mkdir 0717
+  664  cd 0717
+  665  vi bsearch.c
+  666  cc bsearch.c 
+  667  ./a.out 
+  668  ./a.out | less
+  669  factor 2
+  670  factor 2012
+  671  ./a.out | factor | less
+  672  vi bsearch.c 
+  673  cc bsearch.c 
+  674  ./a.out | factor | less
+  675  vi bsearch.c 
+  676  cc bsearch.c 
+  677  ./a.out 
+  678  vi bsearch.c 
+  679  cc bsearch.c 
+  680  ./a.out 
+  681  vi bsearch.c 
+  682  cc bsearch.c 
+  683  ./a.out 
+  684  vi bsearch.c 
+  685  vi shell.c
+  686  cc shell.c 
+  687  ./a.out 
+  688  ll
+  689  vi shell.c 
+  690  ./a.out 
+  691  vi shell.c 
+  692  cc shell.c 
+  693  ./a.out 
+  694  vi shell.c 
+  695  cc shell.c 
+  696  ./a.out 
+  697  vi shell.c 
+  698  cc shell.c 
+  699  ./a.out 
+  700  vi shell.c 
+  701  vi itoa.c
+  702  cc itoa.c
+  703  vi itoa.c 
+  704  cc itoa.c 
+  705  ./a.out 
+  706  vi itoa.c
+  707  cc itoa.c 
+  708  .a.
+  709  ./a.out 
+  710  vi itoa.c 
+  711  cc itoa.c 
+  712  ./a.out 
+  713  man ascii
+  714  vi itoa.c 
+  715  cc itoa.c 
+  716  ./a.out 
+  717  man ascii
+  718  s
+  719  ls
+  720  cd ..
+  721  ls
+  722  cd 0717
+  723  ls
+  724  sudo init 0
+  725  cd zhongtao/
+  726  cd 0717
+  727  ll
+  728  vi itoa.c 
+  729  cc itoa.c 
+  730  vi itoa.c 
+  731  cc itoa.c 
+  732  vi itoa.c 
+  733  ./a.out 
+  734  vi itoa.c 
+  735  bc -l
+  736  vi itoa.c 
+  737  cc itoa.c 
+  738  ./a.out 
+  739  vi itoa.c 
+  740  ll
+  741  sudo cp vsftpd.conf /etc/
+  742  ll
+  743  sudo /etc/init.d/vsftpd restart
+  744  vsftpd
+  745  sudo apt-get install vsftpd
+  746  sudo /etc/init.d/vsftpd restart
+  747  cd zhongtao/
+  748  ll
+  749  mkdir 0719
+  750  cd 0719
+  751  vi love.txt
+  752  grep ould lov.txt
+  753  grep ould love.txt
+  754  vi love.txt 
+  755  vi mygrep.c
+  756  grep old love.txt 
+  757  grep ould love.txt 
+  758  echo #?
+  759  echo ?#
+  760  echo ##
+  761  echo $(?#)
+  762  echo #*
+  763  echo *#
+  764  echo #?
+  765  man bash
+  766  echo $#
+  767  grep ould love.txt
+  768  echo $#
+  769  vi mygrep.c 
+  770  cc mygrep.c 
+  771  vi mygrep.c 
+  772  cc mygrep.c 
+  773  vi mygrep.c 
+  774  cc mygrep.c 
+  775  vi mygrep.c 
+  776  cc mygrep.c 
+  777  ./a.out < love.txt 
+  778  grep ould love.txt
+  779  vi mygrep.c 
+  780  ll
+  781  vi main.c 
+  782  vi getline.c 
+  783  vi strindex.c 
+  784  cc main.c getline.c strindex.c
+  785  ./a.out < love.txt
+  786  vi Makefile
+  787  make
+  788  touch main.c
+  789  make
+  790  ifconfig
+  791  vi makefile
+  792  ls
+  793  vi Makefile
+  794  vi rpn.c
+  795  cc rpn.c 
+  796  ./a.out 
+  797  vi printd.c
+  798  cc printd.c 
+  799  ./a.out 
+  800  vi printd.c 
+  801  cc printd.c 
+  802  ./a.out 
+  803  vi printd.c 
+  804  vi qsort.c
+  805  cc qsort.c 
+  806  ./a.out 
+  807  vi qsort.c 
+  808  cc qsort.c 
+  809  ./a.out 
+  810  vi qsort.c 
+  811  psc
+  812  pwd
+  813  mkdir rpn
+  814  cd rpn
+  815  pwd
+  816  vi Makefile
+  817  ll
+  818  vi calc.h
+  819  ll
+  820  vi main.c
+  821  vi calc.h
+  822  vi main.c 
+  823  ll
+  824  vi stack.c
+  825  ll
+  826  vi getop.c
+  827  ll
+  828  cat Makefile 
+  829  vi getch.c
+  830  ll
+  831  vi Makefile 
+  832  make
+  833  vi getop.c
+  834  make
+  835  vi getop.c
+  836  vi calc.h
+  837  make
+  838  vi calc.h
+  839  vi getch.c
+  840  make
+  841  make clean
+  842  make
+  843  ./rpn
+  844  vi getop.c 
+  845  make
+  846  ./rpn
+  847  cd ..
+  848  vi macro.c
+  849  cc ma
+  850  cc macro.c 
+  851  ./a.out 
+  852  vi macro.c 
+  853  cc macro.c 
+  854  ./a.out 
+  855  vi macro.c 
+  856  cc macro.c 
+  857  ./a.out 
+  858  vi macro.c 
+  859  vi reverse.c
+  860  cc reverse.c 
+  861  vi reverse.c 
+  862  cc reverse.c 
+  863  vi reverse.c 
+  864  cc reverse.c 
+  865  ./a.out 
+  866  vi reverse.c 
+  867  pwd
+  868  vi love.txt 
+  869  vi strrindex.c
+  870  cc strrindex.c 
+  871  ./a.out 
+  872  vi strrindex.c 
+  873  cc strrindex.c 
+  874  ./a.out 
+  875  vi strrindex.c 
+  876  cc strrindex.c 
+  877  ./a.out 
+  878  vi strrindex.c 
+  879  sudo init 0
+  880  ifconfig
+  881  pwd
+  882  cd zhongtao/
+  883  ll
+  884  date
+  885  mkdir 0720
+  886  cd 0720
+  887  ll
+  888  pw
+  889  pwd
+  890  vi input.txt
+  891  cat input.txt 
+  892  cat input.txt | sort
+  893  cat
+  894  cat input.txt 
+  895  ll
+  896  cd ..
+  897  ll
+  898  cd 0714
+  899  ll
+  900  vi doc.tr
+  901  cd doc/
+  902  ll
+  903  cd
+  904  pwd
+  905  ll
+  906  cd zhongtao/
+  907  ll
+  908  cd 0720
+  909  cp -r ../0714/doc .
+  910  ll
+  911  cd doc/
+  912  ll
+  913  vi Makefile 
+  914  vi doc.tr
+  915  vi string.c
+  916  cc string.c 
+  917  vi string.c 
+  918  cc string.c 
+  919  ./a.out 
+  920  vi string.c 
+  921  cc string.c 
+  922  ./a.out 
+  923  vi doc.tr
+  924  make view
+  925  vi doc.tr
+  926  ll
+  927  pwd
+  928  cd ..
+  929  vi mysort.c
+  930  cc mysort.c 
+  931  ll
+  932  cat input.txt 
+  933  ./a.out < input.txt 
+  934  vi mysort.c 
+  935  cc mysort.c 
+  936  ./a.out < input.txt 
+  937  vi mysort.c 
+  938  cc mysort.c 
+  939  ./a.out < input.txt 
+  940  cat input.txt 
+  941  vi mysort.c 
+  942  cc mysort.c 
+  943  ./a.out < input.txt 
+  944  vi mysort.c 
+  945  cc mysort.c 
+  946  vi mysort.c 
+  947  cc mysort.c 
+  948  ./a.out < input.txt 
+  949  vi mysort.c 
+  950  vi error.c
+  951  cc error.c 
+  952  vi error.c 
+  953  cc error.c 
+  954  vi error.c 
+  955  cc error.c 
+  956  vi error.c 
+  957  vi two.c
+  958  cc two.c 
+  959  vi two.c 
+  960  pwd
+  961  cd zhongtao/
+  962  cd 0720
+  963  ll
+  964  pwd
+  965  vi argc.c
+  966  vi args.c
+  967  pwd
+  968  ll
+  969  mv argc.c args.c
+  970  vi args.c
+  971  cc args.c
+  972  vi args.c 
+  973  cc args.c
+  974  ./a.out one two three 1 2 3
+  975  vi args.c
+  976  cc args.c
+  977  ./a.out one two three 1 2 3
+  978  vi args.c
+  979  cc argc.c
+  980  cc args.c
+  981  ./a.out one two three 1 2 3
+  982  vi args.c
+  983  cc args.c
+  984  ./a.out one two three 1 2 3
+  985  vi args.c
+  986  cc args.c
+  987  ./a.out one two three 1 2 3
+  988  echo hello, world
+  989  echo hello, world echo
+  990  vi args.c
+  991  cc args.c
+  992  vi cc args.c 
+  993  vi args.c
+  994  cc args.c
+  995  ./a.out 
+  996  ./a.out one
+  997  ls
+  998  man ls
+  999  ls -lH
+ 1000  ls -
+ 1001  ls -lH
+ 1002  ll
+ 1003  ls -lh
+ 1004  ls -l -h
+ 1005  cd ../0719
+ 1006  cat love.txt
+ 1007  grep love love.txt
+ 1008  grep -n love love.txt
+ 1009  grep -nx love love.txt
+ 1010  man grep
+ 1011  cd ../0720
+ 1012  ll
+ 1013  vi rpn.c
+ 1014  cc rpn.c
+ 1015  ./a.out 2 3 4 + *
+ 1016  ./a.out 2 3 4 + '*'
+ 1017  ./a.out 2 3 4 + "+"
+ 1018  ./a.out 2 3 4 + "*"
+ 1019  vi pn.c
+ 1020  cc pn.c
+ 1021  ./a.out 
+ 1022  vi pn.c
+ 1023  cc pn.c
+ 1024  ./a.out 
+ 1025  vi pn.c
+ 1026  cc pn.c
+ 1027  ./a.out 
+ 1028  vi pn.c
+ 1029  cc pn.c
+ 1030  vi pn.c
+ 1031  cc pn.c
+ 1032  ./a.out 
+ 1033  vi pn.c
+ 1034  cc pn.c
+ 1035  ./a.out 
+ 1036  vi pn.c
+ 1037  cc pn.c
+ 1038  ./a.out 
+ 1039  vi pn.c
+ 1040  cc pn.c
+ 1041  ./a.out 
+ 1042  vi pn.c
+ 1043  cc pn.c
+ 1044  ./a.out 
+ 1045  vi pn.c
+ 1046  vi doc.tr
+ 1047  pwd
+ 1048  ll
+ 1049  cd doc
+ 1050  ll
+ 1051  vi doc.tr
+ 1052  history > ~/a.txt

@@ -1,0 +1,160 @@
+1,  printf() 原型声明
+
+	extern int printf(__const char * __restrict __format, ...);
+	int printf(const char *fmt, ...);
+	//int printf(char *fmt, ...);
+
+2, 续行符 和 字符串连接
+
+#define STR	"hello, "\
+						"precompile\n"
+
+3, 循序渐进地讲述了   一种巧妙的宏定义方式
+
+#define ISDIGIT(a)  ((a) >= '0' && (a) <='9' ? 1 : 0 )
+//#define DIGIT_TO_CHAR(n) ((n) + '0')
+//#define DIGIT_TO_CHAR(n) ((n) <= 9 ? (n) + '0' : (n) - 10 + 'A')
+#define DIGIT_TO_CHAR(n)	("0123456789ABCDEF"[(n)])    //无跳转语句
+
+结论：做事情，不要把问题复杂化。专一做一件事。把要求搞明白，一个小函数，宏定义不要太复杂 , 复杂的东西, 单独写出来，组成一个模块
+
+
+下午：
+4,     #    将  表达式  转换为   字符串   gcc -D DEBUG=1 加调试参数 不用去修改源代码，常见在 内核编译时加参数   -D 表define
+
+//#define DEBUG
+#ifdef DEBUG
+#define PRINT(n) printf(#n " = %d\n", n);//调试时预编译时printf("n" " =%d\n"); 
+#else
+#define PRINT(n)     
+#endif
+
+
+5, ##   生成函数模板
+#define G_M(type)     \
+    type type##MM(type a, type b)    \
+    {   \
+        return a > b? a: b; \
+    }
+
+G_M(int)
+G_M(float)
+
+    printf("line %d: M = %f\n", __LINE__, floatMM(2.3, 3.9));
+    printf("line %d: M = %f\n", __LINE__, floatMM(2.3, 3.9));
+
+6,gcc -I /.../*.h 让其包含此处的头文件
+
+7,
+#define PI		3.14149      以 # 开头的会多次循环在文件中查找 PI 
+#define TWO_PI  (2*PI)
+
+8,  宏定义中 do {}while(0)   问题, 为避免 if();else 问题   
+
+// statement 语句（一条，或复合语句）
+// 下面的方式是为解决
+//	if (echo_flat)
+//		ECHO(s);
+//	else 
+//		gets(s);
+//
+//
+#define ECHO(s) {gets(s); puts(s);}
+// 
+//	if (echo_flat)
+//		{gets(s); puts(s)} ;          // 此处多了一个 分号 ";" else 将被报错
+//	else							 // 解决办法：do{}while(0)  此处特意留了分号的位置。
+//		gets(s);
+//
+#define ECHO(s) do {\
+					gets(s);\
+					puts(s);\
+				} while (0)\
+
+
+9,      c 中定义的 已经声明的宏  
+
+
+	/*************************************************************************
+		> File Name: pre_c_macro.c
+		> Author: wxiaodong
+		> Mail  : wxiaodong0829@163.com 
+		> 自由  谐作   创造   沟通
+		> Created Time: 2012年07月30日 星期一 15时53分23秒
+	 ************************************************************************/
+
+	#include <stdio.h>
+
+	#define DEBUG
+	#ifdef DEBUG
+		#define PRINT_STR(s) printf("<%s> [%d] %s() "#s" = %s\n", __FILE__, __LINE__, __func__, s);
+		#define PRINT_INT(n) printf("<%s> [%d] %s() "#n" = %d\n", __FILE__, __LINE__, __func__, n);
+	#else
+		#define PRINT(s)
+	#endif
+
+
+	//#define PRINT_STR(n) printf(#n " : %s\n", n);
+	//#define PRINT_INT(n) printf(#n " : %d\n", n);
+
+	void func_test(void)
+	{
+		char a[] = "wxiaodong0829@163.com";
+		int b = 100;
+		PRINT_STR("wxiaodong0829");
+		PRINT_STR(a);
+
+		PRINT_INT(10);
+		PRINT_INT(b);
+
+	}
+	int main(void)
+	{
+	//	PRINT_INT(__LINE__);
+	//	PRINT_INT(__STDC__);
+	//	PRINT_STR(__FILE__);
+	//	PRINT_STR(__TIME__);
+	//	PRINT_STR(__DATE__);
+		char a[] = "wxiaodong0829@163.com";
+		int b = 100;
+		PRINT_STR("wxiaodong0829");
+		PRINT_STR(a);
+
+		PRINT_INT(10);
+		PRINT_INT(b);
+
+
+		func_test();
+		return 0;
+	}
+
+
+
+
+10,  #if DEBUG  > 2  #if #else #elif #endif #error error可在预编译阶段加鲁棒性 
+				==
+				<
+     #if !DEBUG
+
+
+#if CPU == X86
+	int cpu = 300;
+#elif CPU == ARM
+	int cpu = 200;
+#else
+#error "failed"
+#endif
+
+
+11,  grep  -rns  "while(0)" /usr/src
+
+12,  为宏提供默认定义  
+
+#ifndef _FILENAME_H
+#define _FINENAME_H
+...
+...
+...
+#endif
+
+13, #if 0      #endif      取代 /* */

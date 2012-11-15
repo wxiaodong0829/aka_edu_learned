@@ -1,0 +1,372 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="utf-8">
+<head>
+<title>Ubuntu 10.04下实现动态桌面壁纸_Linux壁纸_Linux公社-Linux系统门户网站</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<meta name="description" content="不知大家在使用Ubuntu时有没有注意到，Ubuntu下是可以实现多张壁纸动态切换的，好像Win7下也有类似的功能（曾经使用 win7一段时间）。我也是最近才注意到这点，下面是在Ubuntu 10.04下实验的，之前版本的应该也可以。 实现原理是使用一个xml文件 来记录可供切换选择的壁纸。下面展示的是Ubuntu 10.04中自带的一个样例。 首先说明一下，Ubuntu默认的壁纸存放在/usr/share /backgrounds/目录下的，www.linuxidc.com在该目录中还有一个cosmos（意思是&amp;ldquo;宇宙&amp;rdquo;）目录，cosmos里面的xml文件就是实现动态桌面壁纸切换功 能的了。 "/>
+<meta name="keywords" content="Ubuntu 10.04下实现动态桌面壁纸,Linux壁纸,Linux系统壁纸,Linux桌面壁纸,Ubuntu壁纸,Fedora壁纸,Linux高清壁纸"/>
+<meta name="generator" content="Linux公社"/>
+<meta name="generator" content="Linux"/>
+<link rel="stylesheet" href="../../style/systems/style.css" type="text/css"/>
+<script type="text/javascript" src="../../inc/head.js"></script>
+<script type="text/javascript">
+var imgMaxWidth=600;
+var urlPrefix="../../";
+</script>
+<script type="text/javascript" src="../../inc/show.js"></script>
+</head>
+<body>
+<div class="twidth">
+<div id="sitehead">
+<div class="l"></div>
+<div class="r"></div>
+<div class="m">
+	<table width="100%">
+	<tr align="center"><td width="160">
+	<a href="http://www.linuxidc.com/"><IMG style="FILTER: chroma(color=#FFFFFF)" src="../../pic/logo.jpg" border=0></a>
+	</td><td>
+	<div align="center"><script src="../../linuxfile/linux.js" type="text/javascript" language="javaScript"></script></div>
+	</td><td width="100" style="line-height:120%">
+	<a href="#" onclick="javascript:window.external.addFavorite('http://www.linuxidc.com/','Linux公社 - Linux系统门户网站')">加入收藏</a><br/>
+	<a href="../../sitemap.aspx">网站地图</a><br/>
+	<a href="../../search.aspx">网站搜索</a><br/>
+	
+		<script type="text/javascript" src="../../inc/language.js"></script>
+	
+	</td>
+	</tr></table>
+</div>
+</div>
+<div id="navbar">
+<div class="l"></div>
+<div class="r"></div>
+<div class="m">
+	<script type="text/javascript" src="../../inc/popmenu.js" charset="utf-8"></script><a href="../../index.htm" class="first">首页</a><a href="../../it/index.htm">Linux新闻</a><a href="../../Linuxit/index.htm">Linux教程</a><a href="../../MySql/index.htm">数据库技术</a><a href="../../RedLinux/index.htm">Linux编程</a><a href="../../Apache/index.htm">服务器应用</a><a href="../../Unix/index.htm">Linux安全</a><a href="../../download/index.htm">Linux下载</a><a href="../../Linuxrz/index.htm">Linux认证</a><a href="../../theme/index.htm">Linux主题</a><a href="../../Linuxwallpaper/index.htm" class="thisclass">Linux壁纸</a><a href="../../linuxsoft/index.htm">Linux软件</a><a href="../../digi/index.htm">数码</a><a href="../../mobile/index.htm">手机</a><a href="../../diannao/index.htm">电脑</a>
+
+</div>
+</div>
+
+<div id="navsub">
+<div class="l"></div>
+<div class="r"></div>
+<div class="m">
+	<a href="../../index.htm">首页</a> → <a href="../../Linuxwallpaper/index.htm">Linux壁纸</a>
+</div>
+</div>
+<div class="linus"><script type="text/javascript" language="javaScript" src="/linuxfile/linux1.js"></script></div>
+<div class="linus"><script type="text/javascript" language="javaScript" src="/linuxfile/linuxa.js"></script></div>
+<table id="middle" width="100%" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+<tr><td valign="top">
+
+	<div class="mframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">阅读内容</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm" id="bodyTd">
+		<div id="printBody" style="word-break:break-all;">
+		<br/><div align="center"><h1 class="aTitle">Ubuntu 10.04下实现动态桌面壁纸</h1></div>
+		
+		<table width="97%" align="center">
+			<tr>
+			<td width="120">[日期：2010-06-29]</td>
+			<td align="center">来源：Ubuntu社区&nbsp; 作者：bristlegbfly</td>
+			</tr>
+		</table>
+<div class="linua"><script type="text/javascript" language="javaScript" src="/linuxfile/linux2.js"></script></div>
+<div class="linub"><script type="text/javascript" language="javaScript" src="/linuxfile/linux19.js"></script></div>
+		<div id="content"><P><SPAN class=Apple-style-span style="LINE-HEIGHT: 16px">不知大家在使用<a href="http://www.linuxidc.com/topicnews.aspx?tid=2" title="Ubuntu">Ubuntu</a>时有没有注意到，Ubuntu下是可以实现多张壁纸动态切换的，好像Win7下也有类似的功能（曾经使用 win7一段时间）。我也是最近才注意到这点，下面是在Ubuntu 10.04下实验的，之前版本的应该也可以。&nbsp;<BR>实现原理是使用一个xml文件 来记录可供切换选择的壁纸。下面展示的是<a href="http://www.linuxidc.com/topicnews.aspx?tid=2" title="Ubuntu">Ubuntu</a> 10.04中自带的一个样例。&nbsp;</SPAN><!--IWMS_AD_BEGIN--><table border="0" width="97%" align="center"><tbody><tr><td colspan="3"><div align="center"><script src="../../system/system60.js" type="text/javascript" language="javaScript"></script></div></td></tr></tbody></table><!--IWMS_AD_END--></P>
+<P><SPAN class=Apple-style-span style="LINE-HEIGHT: 16px">首先说明一下，<a href="http://www.linuxidc.com/topicnews.aspx?tid=2" title="Ubuntu">Ubuntu</a>默认的壁纸存放在/usr/share /backgrounds/目录下的，www.linuxidc.com在该目录中还有一个cosmos（意思是“宇宙”）目录，cosmos里面的xml文件就是实现动态桌面壁纸切换功 能的了。&nbsp;<BR><BR>jarson@jarson-laptop:/usr/share/backgrounds/cosmos$ ls&nbsp;<BR><FONT color=#dc143c>background-1.xml</FONT>&nbsp;&nbsp; &nbsp; &nbsp;cloud.jpg &nbsp;earth-horizon.jpg &nbsp; helix-nebula.jpg &nbsp;sombrero.jpg&nbsp;<BR>blue-marble-west.jpg &nbsp;comet.jpg &nbsp;galaxy-ngc3370.jpg &nbsp;jupiter.jpg &nbsp; &nbsp; &nbsp; whirlpool.jpg&nbsp;<BR>jarson@jarson-laptop:/usr/share/backgrounds/cosmos$ cat background-1.xml &nbsp;<BR>&lt;background&gt;&nbsp;<BR>&lt;starttime&gt; &nbsp;&nbsp;<FONT color=#dc143c>starttime标签设置动画（幻灯片）开始的时间，可根据自己制作的时间设定，这个应该不影响实际要实现的功能</FONT>&nbsp;<BR>&lt;year&gt;2009&lt;/year&gt;&nbsp;<BR>&lt;month&gt;08&lt;/month&gt;&nbsp;<BR>&lt;day&gt;04&lt;/day&gt;&nbsp;<BR>&lt;hour&gt;00&lt;/hour&gt;&nbsp;<BR>&lt;minute&gt;00&lt;/minute&gt;&nbsp;<BR>&lt;second&gt;00&lt;/second&gt;&nbsp;<BR>&lt;/starttime&gt;&nbsp;<BR>&lt;!-- This animation will start at midnight. --&gt; &nbsp; &nbsp;<FONT color=#dc143c>"animation" 动画的意思</FONT>&nbsp;<BR>&lt;static&gt; &nbsp;<FONT color=#dc143c>"static"静态的意思</FONT>&nbsp;<BR>&lt;duration&gt;1800.0&lt;/duration&gt; &nbsp;<FONT color=#dc143c>duration 标签设置持续的时间，以秒为单位。</FONT>&nbsp;<BR>&lt;file&gt;/usr/share/backgrounds/cosmos/cloud.jpg&lt;/file&gt; &nbsp;<FONT color=#dc143c>file标签指定壁纸存放的路径</FONT>&nbsp;<BR>&lt;/static&gt;&nbsp;<BR>&lt;transition&gt;&nbsp;<FONT color=#dc143c>"transition"切换的意思</FONT>&nbsp;<BR>&lt;duration&gt;5.0&lt;/duration&gt;&nbsp;<BR><FONT color=#dc143c>&lt;from&gt;/usr/share/backgrounds/cosmos/cloud.jpg&lt;/from&gt; from ... to从壁纸A切换到壁纸B。</FONT>&nbsp;<BR>&lt;to&gt;/usr/share/backgrounds/cosmos/comet.jpg&lt;/to&gt;&nbsp;<BR>&lt;/transition&gt;&nbsp;<BR>&lt;static&gt;&nbsp;<BR>&lt;duration&gt;1800.0&lt;/duration&gt;&nbsp;<BR>&lt;file&gt;/usr/share/backgrounds/cosmos/comet.jpg&lt;/file&gt;&nbsp;<BR>&lt;/static&gt;&nbsp;<BR>&lt;transition&gt;&nbsp;<BR>&lt;duration&gt;5.0&lt;/duration&gt;&nbsp;<BR>&lt;from&gt;/usr/share/backgrounds/cosmos/comet.jpg&lt;/from&gt;&nbsp;<BR>&lt;to&gt;/usr/share/backgrounds/cosmos/earth-horizon.jpg&lt;/to&gt;&nbsp;<BR>&lt;/transition&gt;&nbsp;<BR>&lt;static&gt;&nbsp;<BR>&lt;duration&gt;1800.0&lt;/duration&gt;&nbsp;<BR>&lt;file&gt;/usr/share/backgrounds/cosmos/earth-horizon.jpg&lt;/file&gt;&nbsp;<BR>&lt;/static&gt;&nbsp;<BR>&lt;transition&gt;&nbsp;<BR>&lt;duration&gt;5.0&lt;/duration&gt;&nbsp;<BR>&lt;from&gt;/usr/share/backgrounds/cosmos/earth-horizon.jpg&lt;/from&gt;&nbsp;<BR>&lt;to&gt;/usr/share/backgrounds/cosmos/blue-marble-west.jpg&lt;/to&gt;&nbsp;<BR>&lt;/transition&gt;&nbsp;<BR>&lt;static&gt;&nbsp;<BR>&lt;duration&gt;1800.0&lt;/duration&gt;&nbsp;<BR>&lt;file&gt;/usr/share/backgrounds/cosmos/blue-marble-west.jpg&lt;/file&gt;&nbsp;<BR>&lt;/static&gt;&nbsp;<BR>&lt;transition&gt;&nbsp;<BR>&lt;duration&gt;5.0&lt;/duration&gt;&nbsp;<BR>&lt;from&gt;/usr/share/backgrounds/cosmos/blue-marble-west.jpg&lt;/from&gt;&nbsp;<BR>&lt;to&gt;/usr/share/backgrounds/cosmos/galaxy-ngc3370.jpg&lt;/to&gt;&nbsp;<BR>&lt;/transition&gt;&nbsp;<BR>&lt;static&gt;&nbsp;<BR>&lt;duration&gt;1800.0&lt;/duration&gt;&nbsp;<BR>&lt;file&gt;/usr/share/backgrounds/cosmos/galaxy-ngc3370.jpg&lt;/file&gt;&nbsp;<BR>&lt;/static&gt;&nbsp;<BR>&lt;transition&gt;&nbsp;<BR>&lt;duration&gt;5.0&lt;/duration&gt;&nbsp;<BR>&lt;from&gt;/usr/share/backgrounds/cosmos/galaxy-ngc3370.jpg&lt;/from&gt;&nbsp;<BR>&lt;to&gt;/usr/share/backgrounds/cosmos/helix-nebula.jpg&lt;/to&gt;&nbsp;<BR>&lt;/transition&gt;&nbsp;<BR>&lt;static&gt;&nbsp;<BR>&lt;duration&gt;1800.0&lt;/duration&gt;&nbsp;<BR>&lt;file&gt;/usr/share/backgrounds/cosmos/helix-nebula.jpg&lt;/file&gt;&nbsp;<BR>&lt;/static&gt;&nbsp;<BR>&lt;transition&gt;&nbsp;<BR>&lt;duration&gt;5.0&lt;/duration&gt;&nbsp;<BR>&lt;from&gt;/usr/share/backgrounds/cosmos/helix-nebula.jpg&lt;/from&gt;&nbsp;<BR>&lt;to&gt;/usr/share/backgrounds/cosmos/jupiter.jpg&lt;/to&gt;&nbsp;<BR>&lt;/transition&gt;&nbsp;<BR>&lt;static&gt;&nbsp;<BR>&lt;duration&gt;1800.0&lt;/duration&gt;&nbsp;<BR>&lt;file&gt;/usr/share/backgrounds/cosmos/jupiter.jpg&lt;/file&gt;&nbsp;<BR>&lt;/static&gt;&nbsp;<BR>&lt;transition&gt;&nbsp;<BR>&lt;duration&gt;5.0&lt;/duration&gt;&nbsp;<BR>&lt;from&gt;/usr/share/backgrounds/cosmos/jupiter.jpg&lt;/from&gt;&nbsp;<BR>&lt;to&gt;/usr/share/backgrounds/cosmos/sombrero.jpg&lt;/to&gt;&nbsp;<BR>&lt;/transition&gt;&nbsp;<BR>&lt;static&gt;&nbsp;<BR>&lt;duration&gt;1800.0&lt;/duration&gt;&nbsp;<BR>&lt;file&gt;/usr/share/backgrounds/cosmos/sombrero.jpg&lt;/file&gt;&nbsp;<BR>&lt;/static&gt;&nbsp;<BR>&lt;transition&gt;&nbsp;<BR>&lt;duration&gt;5.0&lt;/duration&gt;&nbsp;<BR>&lt;from&gt;/usr/share/backgrounds/cosmos/sombrero.jpg&lt;/from&gt;&nbsp;<BR>&lt;to&gt;/usr/share/backgrounds/cosmos/whirlpool.jpg&lt;/to&gt;&nbsp;<BR>&lt;/transition&gt;&nbsp;<BR>&lt;static&gt;&nbsp;<BR>&lt;duration&gt;1800.0&lt;/duration&gt;&nbsp;<BR>&lt;file&gt;/usr/share/backgrounds/cosmos/whirlpool.jpg&lt;/file&gt;&nbsp;<BR>&lt;/static&gt;&nbsp;<BR>&lt;transition&gt;&nbsp;<BR>&lt;duration&gt;5.0&lt;/duration&gt;&nbsp;<BR>&lt;from&gt;/usr/share/backgrounds/cosmos/whirlpool.jpg&lt;/from&gt;&nbsp;<BR><FONT color=#dc143c>&lt;to&gt;/usr/share/backgrounds/cosmos/cloud.jpg&lt;/to&gt;</FONT>&nbsp;<BR>&lt;/transition&gt;&nbsp;<BR>&lt;/background&gt;&nbsp;</SPAN></P>
+<P><SPAN class=Apple-style-span style="LINE-HEIGHT: 16px">注意from ... to要构成一个循环。&nbsp;</SPAN></P>
+<P><SPAN class=Apple-style-span style="LINE-HEIGHT: 16px">设置动态桌面壁纸有两个好的功能：1、满足自己设置多张壁纸的需要；2、时间提醒，例如我这里设置半小时切换一次，这样每次桌面变换时，我就会知道半个小时 又过去了。。。&nbsp;<BR><BR>设置好后的应用方法：右键桌面-&gt;更改桌面背景-&gt;添加，在弹出对话框的右下方那里选择“全部文件”（默 认是“图像”），然后找到你定义好的动态桌面壁纸的xml文件，双击添加就可以了。&nbsp;</SPAN></P></div>
+		
+		
+		
+		</div><br/>
+<div align="center"><script type="text/javascript" language="javaScript" src="/fengxiang/fx.js"></script></div><br/>
+		<div align="center">
+<div class="linuc"><script type="text/javascript" language="javaScript" src="/linuxfile/linux3.js"></script><script type="text/javascript" language="javaScript" src="/linuxfile/linux8.js"></script></div></div>		
+<br/>
+		<div style="padding-left:20px;clear:both">
+			上一篇：<a href="../../Linux/2010-04/25489.htm">Ubuntu 10.04 LTS最新官方精美壁纸赏</a><br/>
+			下一篇：<a href="../../Linux/2010-08/27809.htm">Fedora 14 默认桌面背景壁纸？</a><br/>
+		</div>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+	
+	<div class="mframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">相关资讯</span> &nbsp; &nbsp; &nbsp;
+		<a href="../../search.aspx?Where=Nkey&amp;Keyword=Ubuntu%e7%9f%a5%e8%af%86" target="_blank">Ubuntu知识</a>&nbsp; <a href="../../search.aspx?Where=Nkey&amp;Keyword=Ubuntu+10.04" target="_blank">Ubuntu 10.04</a>&nbsp; 
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<table width='100%'><tr><td width='50%' valign='top'><ul class='nl'><li><a href="../../Linux/2008-02/11123.htm"  target="_blank" >Ubuntu 下安装 Google 的Picasa</a>&nbsp; <span class="gray">(02/11/2008 22:38:20)</span></li>
+<li><a href="../../Linux/2008-02/11098.htm"  target="_blank" >Ubuntu官方很重视中国市场(图)</a>&nbsp; <span class="gray">(02/09/2008 18:33:19)</span></li>
+<li><a href="../../Linux/2008-01/10598.htm"  target="_blank" >Ubuntu 7.10 系统文件夹相关知识</a>&nbsp; <span class="gray">(01/14/2008 07:05:23)</span></li>
+</ul></td><td width='50%' valign='top'><ul class='nl'><li><a href="../../Linux/2008-02/11122.htm"  target="_blank" >Ubuntu 下安装可爱的 screenlets  小程序</a>&nbsp; <span class="gray">(02/11/2008 22:34:50)</span></li>
+<li><a href="../../Linux/2008-02/11089.htm"  target="_blank" >Linux并不就是Ubuntu</a>&nbsp; <span class="gray">(02/09/2008 13:10:43)</span></li>
+<li><a href="../../Linux/2007-12/10185.htm"  target="_blank" >Ubuntu的发音究竟是怎样的？</a>&nbsp; <span class="gray">(12/29/2007 16:39:54)</span></li>
+</ul></td></tr></table>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+
+	<div class="lframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+
+		<span class="tt">相关图片</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<div class="imgList"><ul><li style="width:25%"><a href="../../Linux/2012-07/64789.htm"  target="_blank"  title="Ubuntu壁纸：雨滴的美感"><img src="../../upload/2012_07/12070919412750t.jpg" alt="Ubuntu壁纸：雨滴的美感" width="120" height="90"/>Ubuntu壁纸：雨滴的美</a></li><li style="width:25%"><a href="../../Linux/2012-07/64763.htm"  target="_blank"  title="Linux宽屏壁纸：燃烧的黑色头骨"><img src="../../upload/2012_07/12070911251444t.jpg" alt="Linux宽屏壁纸：燃烧的黑色头骨" width="120" height="90"/>Linux宽屏壁纸：燃烧</a></li><li style="width:25%"><a href="../../Linux/2012-07/64707.htm"  target="_blank"  title="Linux壁纸：清凉开源汽水"><img src="../../upload/2012_07/12070821015406t.jpg" alt="Linux壁纸：清凉开源汽水" width="120" height="90"/>Linux壁纸：清凉开源</a></li><li style="width:25%"><a href="../../Linux/2012-07/64624.htm"  target="_blank" ><img src="../../upload/2012_07/12070711342318t.jpg" alt="Ubuntu Logo桌面壁纸" width="120" height="90"/>Ubuntu Logo桌面壁纸</a></li><li style="width:25%"><a href="../../Linux/2012-07/64544.htm"  target="_blank"  title="Linux Deepin主题相关壁纸"><img src="../../upload/2012_07/12070613164379t.jpg" alt="Linux Deepin主题相关壁纸" width="120" height="90"/>Linux Deepin主题相关</a></li><li style="width:25%"><a href="../../Linux/2012-07/64385.htm"  target="_blank"  title="Ubuntu壁纸：听歌的邻家女孩"><img src="../../upload/2012_07/12070415467905t.jpg" alt="Ubuntu壁纸：听歌的邻家女孩" width="120" height="90"/>Ubuntu壁纸：听歌的邻</a></li><li style="width:25%"><a href="../../Linux/2012-07/64163.htm"  target="_blank"  title="黄金般尊贵Ubuntu LOGO壁纸"><img src="../../upload/2012_07/12070120063527t.jpg" alt="黄金般尊贵Ubuntu LOGO壁纸" width="120" height="90"/>黄金般尊贵Ubuntu LOG</a></li><li style="width:25%"><a href="../../Linux/2012-06/63892.htm"  target="_blank"  title="Linux壁纸：Ubuntu Studio Wallpaper"><img src="../../upload/2012_06/12062805184873t.jpg" alt="Linux壁纸：Ubuntu Studio Wallpaper" width="120" height="90"/>Linux壁纸：Ubuntu St</a></li></ul></div>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+
+	<div class="mframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">本文评论</span>
+		 &nbsp; &nbsp; &nbsp;
+		 <a href="../../remark.aspx?id=26926" target="_blank" style="cursor:hand">全部评论</a>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+	
+	<div class="mframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">发表评论</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<form id="remarkForm" action="../../remark.aspx?id=26926" method="post" onsubmit="return checkRemark();" style="padding:5px">
+			<script type="text/javascript" language="javascript">
+			function checkRemark()
+			{
+			var form=document.getElementById("remarkForm");
+			var remarkSize = 1000;
+			if (form.body.value=="")
+			{	alert("请填写评论内容");
+				form.body.focus();
+				return false;
+			}
+			if (form.username.value=="")
+			{	alert("请填写姓名");
+				form.username.focus();
+				return false;
+			}
+			if (form.body.value.length>remarkSize)
+			{	form.body.value = form.body.value.substr(0,remarkSize);
+				showLen(form.body);
+				form.body.focus();
+				alert("评论内容不可以超过"+remarkSize+"字,已帮你删除多余部分");
+				return false;
+			}
+			if (form.username.value.length>10)
+			{	alert("姓名不可以超过10个字");
+				form.username.focus();
+				return false;
+			}
+			form.submit.disabled=true;
+			form.vcode.value = VCode("Ubuntu 10.04下实现动态桌面壁纸");
+			return true;
+			}
+			function showLen(obj)
+			{
+				document.getElementById("bodyLen").value=obj.value.length;
+			}
+			</script>
+			<input type="radio" name="face" value="1" checked="checked"/><img src="../../pic/face1.gif" 
+			alt=""/><input type="radio" name="face" value="2"/><img src="../../pic/face2.gif" 
+			alt=""/><input type="radio" name="face" value="3"/><img src="../../pic/face3.gif" 
+			alt=""/><input type="radio" name="face" value="4"/><img src="../../pic/face4.gif" 
+			alt=""/><input type="radio" name="face" value="5"/><img src="../../pic/face5.gif" 
+			alt=""/><input type="radio" name="face" value="6"/><img src="../../pic/face6.gif" 
+			alt=""/><input type="radio" name="face" value="7"/><img src="../../pic/face7.gif" 
+			alt=""/><input type="radio" name="face" value="8"/><img src="../../pic/face8.gif" 
+			alt=""/><input type="radio" name="face" value="9"/><img src="../../pic/face9.gif"
+ 			alt=""/><input type="radio" name="face" value="10"/><img src="../../pic/face10.gif"
+ 			alt=""/><input type="radio" name="face" value="11"/><img src="../../pic/face11.gif"
+ 			alt=""/><input type="radio" name="face" value="12"/><img src="../../pic/face12.gif"
+ 			alt=""/><input type="radio" name="face" value="13"/><img src="../../pic/face13.gif"
+ 			alt=""/><input type="radio" name="face" value="14"/><img src="../../pic/face14.gif"
+ 			alt=""/>
+<br/>请您注意：<br/>遵守国家有关法律、法规，尊重网上道德，承担一切因您的行为而直接或间接引起的法律责任。<br/>LinuxIDC.com拥有管理笔名和留言的一切权利。<br/>
+<script type="text/javascript" language="javaScript" src="/linuxfile/linux11.js"></script><br/>
+			<div style="padding-top:5px">
+			点评：
+			<textarea name="body" cols="78" rows="12" onkeydown="showLen(this)" onkeyup="showLen(this)"></textarea> 字数<input type="text" id="bodyLen" size="3" readonly="readonly" style="border-width:0;background:transparent;"/>
+			</div>
+			<div style="padding-top:5px">
+			姓名：
+			<input type="text" id="i_username" name="username" value="" maxlength="15" size="10"/>
+			<input type="submit" name="submit" id="i_submit" value=" 发 表 "/>
+			</div>
+			<script type="text/javascript">
+			var remarkmember = false;
+			var allowremark = true;
+			if (remarkmember){
+				document.getElementById("i_username").readonly=true;
+				document.write("(限会员登录后发表评论)");
+			}
+			if (!allowremark){
+				document.getElementById("i_submit").disabled=true;
+			}
+			</script>
+			<script type="text/javascript" src="../../inc/clientDate.js"></script>
+			<input type="hidden" name="vcode" value=""/>
+		</form>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+	<iframe src="../../frm_hit.aspx?id=26926&disp=1" style="visibility:hidden;height:0;width:0"></iframe>
+</td><td valign="top" class="linuz">
+<div class="linuzs"><script type="text/javascript" language="javaScript" src="/linuxfile/jquery.js"></script></div>
+<div class="linuzs"><script type="text/javascript" language="javaScript" src="/linuxfile/linuxgif.js"></script></div>
+	<div class="lframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">最新资讯</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<ul class="nl">
+<li><a href="../../Linux/2012-07/64839.htm" target="_blank">MetaModel 3.0 发布，数据库元模型</a></li>
+<li><a href="../../Linux/2012-07/64838.htm" target="_blank">wxWidgets 2.9.4 发布</a></li>
+<li><a href="../../Linux/2012-07/64837.htm" target="_blank">GIS服务器 GeoServer</a></li>
+<li><a href="../../Linux/2012-07/64836.htm" target="_blank">数据库元模型 MetaModel</a></li>
+<li><a href="../../Linux/2012-07/64835.htm" target="_blank">跨平台 GUI 框架 wxWidgets</a></li>
+<li><a href="../../Linux/2012-07/64834.htm" target="_blank">Apache DirectMemory 0.1 发布，多层缓存系统</a></li>
+<li><a href="../../Linux/2012-07/64833.htm" target="_blank">多层的缓存系统 Apache DirectMemory</a></li>
+<li><a href="../../Linux/2012-07/64832.htm" target="_blank">搜索引擎 Nutch</a></li>
+<li><a href="../../Linux/2012-07/64831.htm" target="_blank">Apache Nutch v2.0 发布，Java 搜索引擎</a></li>
+<li><a href="../../Linux/2012-07/64830.htm" target="_blank">Android 4.1 源码最快在今天发布</a></li>
+<li><a href="../../Linux/2012-07/64829.htm" target="_blank">Windows Phone 7.8 功能比较</a></li>
+<li><a href="../../Linux/2012-07/64828.htm" target="_blank">GitHub 获得 Andreessen Horowitz 一亿美金投资</a></li>
+<li><a href="../../Linux/2012-07/64827.htm" target="_blank">Windows 8 操作系统将于今年 10 月正式发布</a></li>
+<li><a href="../../Linux/2012-07/64826.htm" target="_blank">Github 发布 Android 客户端</a></li>
+<li><a href="../../Linux/2012-07/64825.htm" target="_blank">Node.js 0.8.2 发布（稳定版）</a></li>
+<li><a href="../../Linux/2012-07/64824.htm" target="_blank">Accumulo 1.4.1/1.3.6 发布，K/V 存储系统</a></li>
+<li><a href="../../Linux/2012-07/64823.htm" target="_blank">Poison Ivy 'C&amp;C'服务器缓冲区溢出漏洞</a></li>
+<li><a href="../../Linux/2012-07/64822.htm" target="_blank">Apache Sling拒绝服务漏洞</a></li>
+<li><a href="../../Linux/2012-07/64821.htm" target="_blank">Pidgin 'mxit_show_message()'函数栈缓冲区溢出漏洞</a></li>
+<li><a href="../../Linux/2012-07/64820.htm" target="_blank">Asterisk不完整改变会话事务拒绝服务漏洞</a></li>
+</ul>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+<div class="linuzb"><script type="text/javascript" language="javaScript" src="/linuxfile/linux16.js"></script><br><script type="text/javascript" language="javaScript" src="/linuxfile/linux18.js"></script></div>
+	<div class="lframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">本周热门</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<ul class="nl">
+<li><a href="../../Linux/2009-05/20187.htm" target="_blank">Ubuntu 9.04美女桌面壁纸</a></li>
+<li><a href="../../Linux/2007-10/8647.htm" target="_blank">精美绝伦!苹果Leopard 宽屏高清壁纸</a></li>
+<li><a href="../../Linux/2009-09/21752.htm" target="_blank" class="highlight">Ubuntu美女桌面壁纸分享连载【三】</a></li>
+<li><a href="../../Linux/2007-12/9968.htm" target="_blank" class="highlight">Ubuntu美女桌面壁纸(一)</a></li>
+<li><a href="../../Linux/2009-08/21471.htm" target="_blank">Ubuntu美女桌面壁纸分享连载【一】</a></li>
+<li><a href="../../Linux/2011-03/33752.htm" target="_blank">Ubuntu 11.04系统自带桌面壁纸</a></li>
+<li><a href="../../Linux/2011-07/38907.htm" target="_blank">Linux环境使用小泽玛莉亚精美宽屏壁纸</a></li>
+<li><a href="../../Linux/2011-10/45267.htm" target="_blank">Ubuntu 11.10新增14张精美壁纸</a></li>
+<li><a href="../../Linux/2011-11/48047.htm" target="_blank">Linux Mint精致壁纸</a></li>
+<li><a href="../../Linux/2007-11/8962.htm" target="_blank" title="Ubuntu妹妹照片壁纸欣赏 Ubuntu Girl Photo and Wallpapar">Ubuntu妹妹照片壁纸欣赏 Ubuntu Girl Photo and Wal</a></li>
+<li><a href="../../Linux/2012-03/57468.htm" target="_blank">Ubuntu Linux高清晰精美壁纸（续十）</a></li>
+<li><a href="../../Linux/2009-09/21577.htm" target="_blank" class="highlight">Ubuntu美女桌面壁纸分享连载【二】</a></li>
+<li><a href="../../Linux/2012-05/60845.htm" target="_blank">Ubuntu 12.04高清桌面壁纸</a></li>
+<li><a href="../../Linux/2011-05/35320.htm" target="_blank">分享超级适合Ubuntu桌面壁纸</a></li>
+<li><a href="../../Linux/2008-03/11831.htm" target="_blank">Linux桌面壁纸集锦</a></li>
+<li><a href="../../Linux/2012-06/63004.htm" target="_blank">来自OS X Mountain Lion的15张漂亮壁纸</a></li>
+<li><a href="../../Linux/2011-12/49786.htm" target="_blank">Ubuntu美女壁纸（续二）</a></li>
+<li><a href="../../Linux/2012-01/52581.htm" target="_blank">绝对养眼Ubuntu美女壁纸</a></li>
+<li><a href="../../Linux/2011-11/47370.htm" target="_blank">Ubuntu Linux壁纸：养眼美女</a></li>
+<li><a href="../../Linux/2011-12/49850.htm" target="_blank">Ubuntu美女壁纸（续三）</a></li>
+<li><a href="../../Linux/2012-04/59266.htm" target="_blank">Ubuntu 12.04高清精美壁纸14张</a></li>
+<li><a href="../../Linux/2011-12/50594.htm" target="_blank">苹果Mac OS X Lion 系统高清官方壁纸</a></li>
+<li><a href="../../Linux/2012-04/59081.htm" target="_blank">Ubuntu Linux高清晰精美壁纸（续十二）</a></li>
+<li><a href="../../Linux/2011-08/41565.htm" target="_blank">Fedora 16壁纸下载</a></li>
+<li><a href="../../Linux/2011-11/47978.htm" target="_blank">Linux壁纸 清水出美女</a></li>
+</ul>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+</td></tr>
+</table>
+
+<div id="footer"><br /><P  align="center">
+<a href="http://www.linuxidc.com/aboutus.htm">Linux公社简介</a> - <a href="http://www.linuxidc.com/adsense.htm">广告服务</a> - <a href="http://www.linuxidc.com/sitemap.aspx">网站地图</a> - <a href="http://www.linuxidc.com/help.htm">帮助信息</a> - <a href="http://www.linuxidc.com/contactus.htm">联系我们</a><br />本站（LinuxIDC）所刊载文章不代表同意其说法或描述，仅为提供更多信息，也不构成任何建议。<br /><script type="text/javascript" language="javaScript" src="/linuxfile/qq.js"></script><br />
+<script type="text/javascript" language="javaScript" src="/linuxfile/foot.js"></script><br />Copyright &copy; 2006-2011　<a href="http://www.linuxidc.com/">Linux公社</a>　All rights reserved 浙ICP备06018118号</P>
+	
+
+	<div class="menuskin" id="popmenu" onmouseover="clearhidemenu();highlightmenu(event,'on')" onmouseout="highlightmenu(event,'off');dynamichide(event)" style="Z-index:100"></div>
+	<script type="text/javascript" src="../../inc/menu.js" charset="utf-8"></script>
+	<script type="text/javascript">
+	jsdone=true;
+	</script>
+
+
+</div>
+</div>
+<script type="text/javascript" language="javaScript" src="/linuxren/linuxren1.js"></script>
+<script type="text/javascript" language="javaScript" src="/linuxren/linuxren2.js"></script>
+<script type="text/javascript" language="javaScript" src="/linuxren/linuxren3.js"></script>
+</body>
+</html>

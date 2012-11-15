@@ -1,0 +1,1 @@
+var SpaceAPI4Passport=SpaceAPI4Passport||{};if(!SpaceAPI4Passport.loaded){var url="http://hi.bdimg.com";var link='<link rel="stylesheet" type="text/css" href="'+url+'/static/base/css/spaceAPI4Passport.css?v=7a1b7a24.css?v=2" />';var script='<script src="'+url+'/static/base/js/spaceAPI4Passport.js?v=d4af42e2.js?v=2"><\/script>';document.write(link);document.write(script)};

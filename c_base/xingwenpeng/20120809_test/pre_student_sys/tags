@@ -1,0 +1,40 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CC	Makefile	/^CC = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -g #-DDEBUG$/;"	m
+DIRNAME	Makefile	/^DIRNAME = $(notdir $(PWD))$/;"	m
+LEN	link.h	14;"	d
+NODE	init.c	/^node_t * NODE(char c, int val, char *s, node_t *next)$/;"	f
+OBJ	Makefile	/^OBJ = $(SRC:%.c=%.o)$/;"	m
+PRJ	Makefile	/^PRJ = $(DIRNAME)$/;"	m
+PWD	Makefile	/^PWD = $(shell pwd)$/;"	m
+SRC	Makefile	/^SRC = $(wildcard *.c)$/;"	m
+TARGET	Makefile	/^TARGET = $(PRJ)$/;"	m
+_LINK_H	link.h	10;"	d
+c	link.h	/^	char c;$/;"	m	struct:node
+init_head	init.c	/^void init_head(node_t **link_head)$/;"	f
+link_destroy	quit.c	/^void link_destroy(node_t **head)$/;"	f
+link_fclose	quit.c	/^void link_fclose(FILE *fp)$/;"	f
+link_insert_b	read_from_file.c	/^node_t *link_insert_b(char *s, node_t *head)$/;"	f
+link_print	search.c	/^void link_print(node_t *head)$/;"	f
+link_read_file	read_from_file.c	/^node_t *link_read_file(const char * filename, node_t *head)$/;"	f
+link_remove	link.h	77;"	d
+link_remove_char	remove.c	/^node_t *link_remove_char(node_t *head, void *ptr)$/;"	f
+link_remove_charchar	remove.c	/^node_t *link_remove_charchar(node_t *head, void *ptr)$/;"	f
+link_remove_int	remove.c	/^node_t *link_remove_int(node_t *head, void *ptr)$/;"	f
+link_search	link.h	52;"	d
+link_search_char	search.c	/^node_t *link_search_char(node_t *head, void *key)$/;"	f
+link_search_charchar	search.c	/^node_t *link_search_charchar(node_t *head, void * key)$/;"	f
+link_search_int	search.c	/^node_t *link_search_int(node_t *head, void *key)$/;"	f
+main	main.c	/^int main(void)$/;"	f
+next	link.h	/^	struct node *next;$/;"	m	struct:node	typeref:struct:node::node
+node	link.h	/^typedef struct node {$/;"	s
+node_t	link.h	/^}node_t;$/;"	t	typeref:struct:node
+offsetof	link.h	12;"	d
+read_from_in	read_from_file.c	/^node_t *read_from_in(FILE *fp, node_t *head)$/;"	f
+s	link.h	/^	char s[LEN];$/;"	m	struct:node
+val	link.h	/^	int val;$/;"	m	struct:node

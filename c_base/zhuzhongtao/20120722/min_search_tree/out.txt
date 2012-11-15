@@ -1,0 +1,804 @@
+.PS
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "adj" invis
+boxwid=.2
+boxht=.3
+arcrad=.1
+box "0"
+box "528"
+box "385"
+box "514"
+box "555"
+box "116"
+box "150"
+box "398"
+box "479"
+box "179"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box "528"
+box "0"
+box "240"
+box "760"
+box "427"
+box "411"
+box "535"
+box "723"
+box "130"
+box "680"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box "385"
+box "240"
+box "0"
+box "775"
+box "564"
+box "285"
+box "457"
+box "699"
+box "298"
+box "561"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box "514"
+box "760"
+box "775"
+box "0"
+box "431"
+box "532"
+box "366"
+box "132"
+box "638"
+box "420"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box "555"
+box "427"
+box "564"
+box "431"
+box "0"
+box "480"
+box "446"
+box "464"
+box "299"
+box "603"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box "116"
+box "411"
+box "285"
+box "532"
+box "480"
+box "0"
+box "178"
+box "434"
+box "366"
+box "280"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box "150"
+box "535"
+box "457"
+box "366"
+box "446"
+box "178"
+box "0"
+box "258"
+box "452"
+box "163"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box "398"
+box "723"
+box "699"
+box "132"
+box "464"
+box "434"
+box "258"
+box "0"
+box "612"
+box "289"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box "479"
+box "130"
+box "298"
+box "638"
+box "299"
+box "366"
+box "452"
+box "612"
+box "0"
+box "609"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box "179"
+box "680"
+box "561"
+box "420"
+box "603"
+box "280"
+box "163"
+box "289"
+box "609"
+box "0"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "id" invis
+box "1"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "mst" invis
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "wt" invis
+box "1400"
+box "1400"
+box "1400"
+box "1400"
+box "1400"
+box "1400"
+box "1400"
+box "1400"
+box "1400"
+box "1400"
+
+min = 10, w = 0, v = 0
+
+min = 10, w = 1, v = 0
+w = 1, wt[w] = 1400.000000
+w = 1, wt[w] = 1400.000000, v = 0
+
+min = 1, w = 2, v = 0
+w = 2, wt[w] = 1400.000000
+w = 2, wt[w] = 1400.000000, v = 0
+
+min = 2, w = 3, v = 0
+w = 3, wt[w] = 1400.000000
+w = 3, wt[w] = 1400.000000, v = 0
+
+min = 2, w = 4, v = 0
+w = 4, wt[w] = 1400.000000
+w = 4, wt[w] = 1400.000000, v = 0
+
+min = 2, w = 5, v = 0
+w = 5, wt[w] = 1400.000000
+w = 5, wt[w] = 1400.000000, v = 0
+
+min = 5, w = 6, v = 0
+w = 6, wt[w] = 1400.000000
+w = 6, wt[w] = 1400.000000, v = 0
+
+min = 5, w = 7, v = 0
+w = 7, wt[w] = 1400.000000
+w = 7, wt[w] = 1400.000000, v = 0
+
+min = 5, w = 8, v = 0
+w = 8, wt[w] = 1400.000000
+w = 8, wt[w] = 1400.000000, v = 0
+
+min = 5, w = 9, v = 0
+w = 9, wt[w] = 1400.000000
+w = 9, wt[w] = 1400.000000, v = 0
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "id" invis
+box "1"
+box "0"
+box "0"
+box "0"
+box "0"
+box "1"
+box "0"
+box "0"
+box "0"
+box "0"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "mst" invis
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+box "0"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "wt" invis
+box "1400"
+box "528"
+box "385"
+box "514"
+box "555"
+box "116"
+box "150"
+box "398"
+box "479"
+box "179"
+
+min = 10, w = 0, v = 5
+
+min = 10, w = 1, v = 5
+w = 1, wt[w] = 528.000000
+w = 1, wt[w] = 528.000000, v = 5
+
+min = 1, w = 2, v = 5
+w = 2, wt[w] = 385.000000
+w = 2, wt[w] = 385.000000, v = 5
+
+min = 2, w = 3, v = 5
+
+min = 2, w = 4, v = 5
+w = 4, wt[w] = 555.000000
+w = 4, wt[w] = 555.000000, v = 5
+
+min = 2, w = 5, v = 5
+
+min = 2, w = 6, v = 5
+
+min = 6, w = 7, v = 5
+
+min = 6, w = 8, v = 5
+w = 8, wt[w] = 479.000000
+w = 8, wt[w] = 479.000000, v = 5
+
+min = 6, w = 9, v = 5
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "id" invis
+box "1"
+box "0"
+box "0"
+box "0"
+box "0"
+box "1"
+box "1"
+box "0"
+box "0"
+box "0"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "mst" invis
+box "0"
+box "5"
+box "5"
+box "0"
+box "5"
+box "0"
+box "0"
+box "0"
+box "5"
+box "0"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "wt" invis
+box "1400"
+box "411"
+box "285"
+box "514"
+box "480"
+box "116"
+box "150"
+box "398"
+box "366"
+box "179"
+
+min = 10, w = 0, v = 6
+
+min = 10, w = 1, v = 6
+
+min = 1, w = 2, v = 6
+
+min = 2, w = 3, v = 6
+w = 3, wt[w] = 514.000000
+w = 3, wt[w] = 514.000000, v = 6
+
+min = 2, w = 4, v = 6
+w = 4, wt[w] = 480.000000
+w = 4, wt[w] = 480.000000, v = 6
+
+min = 2, w = 5, v = 6
+
+min = 2, w = 6, v = 6
+
+min = 2, w = 7, v = 6
+w = 7, wt[w] = 398.000000
+w = 7, wt[w] = 398.000000, v = 6
+
+min = 7, w = 8, v = 6
+
+min = 7, w = 9, v = 6
+w = 9, wt[w] = 179.000000
+w = 9, wt[w] = 179.000000, v = 6
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "id" invis
+box "1"
+box "0"
+box "0"
+box "0"
+box "0"
+box "1"
+box "1"
+box "0"
+box "0"
+box "1"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "mst" invis
+box "0"
+box "5"
+box "5"
+box "6"
+box "6"
+box "0"
+box "0"
+box "6"
+box "5"
+box "6"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "wt" invis
+box "1400"
+box "411"
+box "285"
+box "366"
+box "446"
+box "116"
+box "150"
+box "258"
+box "366"
+box "163"
+
+min = 10, w = 0, v = 9
+
+min = 10, w = 1, v = 9
+
+min = 1, w = 2, v = 9
+
+min = 2, w = 3, v = 9
+
+min = 2, w = 4, v = 9
+
+min = 2, w = 5, v = 9
+
+min = 2, w = 6, v = 9
+
+min = 2, w = 7, v = 9
+
+min = 7, w = 8, v = 9
+
+min = 7, w = 9, v = 9
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "id" invis
+box "1"
+box "0"
+box "0"
+box "0"
+box "0"
+box "1"
+box "1"
+box "1"
+box "0"
+box "1"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "mst" invis
+box "0"
+box "5"
+box "5"
+box "6"
+box "6"
+box "0"
+box "0"
+box "6"
+box "5"
+box "6"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "wt" invis
+box "1400"
+box "411"
+box "285"
+box "366"
+box "446"
+box "116"
+box "150"
+box "258"
+box "366"
+box "163"
+
+min = 10, w = 0, v = 7
+
+min = 10, w = 1, v = 7
+
+min = 1, w = 2, v = 7
+
+min = 2, w = 3, v = 7
+w = 3, wt[w] = 366.000000
+w = 3, wt[w] = 366.000000, v = 7
+
+min = 3, w = 4, v = 7
+
+min = 3, w = 5, v = 7
+
+min = 3, w = 6, v = 7
+
+min = 3, w = 7, v = 7
+
+min = 3, w = 8, v = 7
+
+min = 3, w = 9, v = 7
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "id" invis
+box "1"
+box "0"
+box "0"
+box "1"
+box "0"
+box "1"
+box "1"
+box "1"
+box "0"
+box "1"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "mst" invis
+box "0"
+box "5"
+box "5"
+box "7"
+box "6"
+box "0"
+box "0"
+box "6"
+box "5"
+box "6"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "wt" invis
+box "1400"
+box "411"
+box "285"
+box "132"
+box "446"
+box "116"
+box "150"
+box "258"
+box "366"
+box "163"
+
+min = 10, w = 0, v = 3
+
+min = 10, w = 1, v = 3
+
+min = 1, w = 2, v = 3
+
+min = 2, w = 3, v = 3
+
+min = 2, w = 4, v = 3
+w = 4, wt[w] = 446.000000
+w = 4, wt[w] = 446.000000, v = 3
+
+min = 2, w = 5, v = 3
+
+min = 2, w = 6, v = 3
+
+min = 2, w = 7, v = 3
+
+min = 2, w = 8, v = 3
+
+min = 2, w = 9, v = 3
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "id" invis
+box "1"
+box "0"
+box "1"
+box "1"
+box "0"
+box "1"
+box "1"
+box "1"
+box "0"
+box "1"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "mst" invis
+box "0"
+box "5"
+box "5"
+box "7"
+box "3"
+box "0"
+box "0"
+box "6"
+box "5"
+box "6"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "wt" invis
+box "1400"
+box "411"
+box "285"
+box "132"
+box "431"
+box "116"
+box "150"
+box "258"
+box "366"
+box "163"
+
+min = 10, w = 0, v = 2
+
+min = 10, w = 1, v = 2
+w = 1, wt[w] = 411.000000
+w = 1, wt[w] = 411.000000, v = 2
+
+min = 1, w = 2, v = 2
+
+min = 1, w = 3, v = 2
+
+min = 1, w = 4, v = 2
+
+min = 1, w = 5, v = 2
+
+min = 1, w = 6, v = 2
+
+min = 1, w = 7, v = 2
+
+min = 1, w = 8, v = 2
+w = 8, wt[w] = 366.000000
+w = 8, wt[w] = 366.000000, v = 2
+
+min = 1, w = 9, v = 2
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "id" invis
+box "1"
+box "1"
+box "1"
+box "1"
+box "0"
+box "1"
+box "1"
+box "1"
+box "0"
+box "1"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "mst" invis
+box "0"
+box "2"
+box "5"
+box "7"
+box "3"
+box "0"
+box "0"
+box "6"
+box "2"
+box "6"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "wt" invis
+box "1400"
+box "240"
+box "285"
+box "132"
+box "431"
+box "116"
+box "150"
+box "258"
+box "298"
+box "163"
+
+min = 10, w = 0, v = 1
+
+min = 10, w = 1, v = 1
+
+min = 10, w = 2, v = 1
+
+min = 10, w = 3, v = 1
+
+min = 10, w = 4, v = 1
+w = 4, wt[w] = 431.000000
+w = 4, wt[w] = 431.000000, v = 1
+
+min = 4, w = 5, v = 1
+
+min = 4, w = 6, v = 1
+
+min = 4, w = 7, v = 1
+
+min = 4, w = 8, v = 1
+w = 8, wt[w] = 298.000000
+w = 8, wt[w] = 298.000000, v = 1
+
+min = 8, w = 9, v = 1
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "id" invis
+box "1"
+box "1"
+box "1"
+box "1"
+box "0"
+box "1"
+box "1"
+box "1"
+box "1"
+box "1"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "mst" invis
+box "0"
+box "2"
+box "5"
+box "7"
+box "1"
+box "0"
+box "0"
+box "6"
+box "1"
+box "6"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "wt" invis
+box "1400"
+box "240"
+box "285"
+box "132"
+box "427"
+box "116"
+box "150"
+box "258"
+box "130"
+box "163"
+
+min = 10, w = 0, v = 8
+
+min = 10, w = 1, v = 8
+
+min = 10, w = 2, v = 8
+
+min = 10, w = 3, v = 8
+
+min = 10, w = 4, v = 8
+w = 4, wt[w] = 427.000000
+w = 4, wt[w] = 427.000000, v = 8
+
+min = 4, w = 5, v = 8
+
+min = 4, w = 6, v = 8
+
+min = 4, w = 7, v = 8
+
+min = 4, w = 8, v = 8
+
+min = 4, w = 9, v = 8
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "id" invis
+box "1"
+box "1"
+box "1"
+box "1"
+box "1"
+box "1"
+box "1"
+box "1"
+box "1"
+box "1"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "mst" invis
+box "0"
+box "2"
+box "5"
+box "7"
+box "8"
+box "0"
+box "0"
+box "6"
+box "1"
+box "6"
+boxwid=.2
+boxht=.3
+arcrad=.1
+box wid .5 "wt" invis
+box "1400"
+box "240"
+box "285"
+box "132"
+box "299"
+box "116"
+box "150"
+box "258"
+box "130"
+box "163"
+
+min = 10, w = 0, v = 4
+
+min = 10, w = 1, v = 4
+
+min = 10, w = 2, v = 4
+
+min = 10, w = 3, v = 4
+
+min = 10, w = 4, v = 4
+
+min = 10, w = 5, v = 4
+
+min = 10, w = 6, v = 4
+
+min = 10, w = 7, v = 4
+
+min = 10, w = 8, v = 4
+
+min = 10, w = 9, v = 4
+.PE

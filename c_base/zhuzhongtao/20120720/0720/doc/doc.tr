@@ -1,0 +1,90 @@
+.PS
+boxwid=.2
+boxht=.3
+arcrad=.1
+S: box wid .5 "1000" invis
+A0: box "n"
+box "o"
+box "w"
+box "\e0"
+A1: box "i"
+box "s"
+box "\e0"
+A2: box "t"
+box "h"
+box "e"
+box "\e0"
+A3: box "t"
+box "i"
+box "m"
+box "e"
+box "\e0"
+A4: box "f"
+box "o"
+box "r"
+box "\e0"
+A5: box "a"
+box "l"
+box "l"
+box "\e0"
+down
+boxwid=.5
+boxht=.3
+P0: box "1000" with .n at S.s +(-.5, -.5)
+P1: box "1004"
+P2: box "1007"
+P3: box "1011"
+P4: box "1016"
+P5: box "1020"
+line from P0.e to (A0, P0)-(arcrad, 0); arc right; line to A0.s ->
+line from P1.e to (A1, P1)-(arcrad, 0); arc right; line to A1.s ->
+line from P2.e to (A2, P2)-(arcrad, 0); arc right; line to A2.s ->
+line from P3.e to (A3, P3)-(arcrad, 0); arc right; line to A3.s ->
+line from P4.e to (A4, P4)-(arcrad, 0); arc right; line to A4.s ->
+line from P5.e to (A5, P5)-(arcrad, 0); arc right; line to A5.s ->
+.PE
+
+.PS
+boxwid=.2
+boxht=.3
+S: box wid .5 "1000" invis
+A0: box "n"
+box "o"
+box "w"
+box "\e0"
+A1: box "i"
+box "s"
+box "\e0"
+A2: box "t"
+box "h"
+box "e"
+box "\e0"
+A3: box "t"
+box "i"
+box "m"
+box "e"
+box "\e0"
+A4: box "f"
+box "o"
+box "r"
+box "\e0"
+A5: box "a"
+box "l"
+box "l"
+box "\e0"
+down
+boxwid=.5
+boxht=.3
+P0: box "1020" with .n at S.s +(-.5, -.5)
+P1: box "1016"
+P2: box "1004"
+P3: box "1000"
+P4: box "1007"
+P5: box "1011"
+line from P0.e to (A5, P0)-(arcrad, 0); arc right; line to A5.s ->
+line from P1.e to (A4, P1)-(arcrad, 0); arc right; line to A4.s ->
+line from P2.e to (A1, P2)-(arcrad, 0); arc right; line to A1.s ->
+line from P3.e to (A0, P3)-(arcrad, 0); arc right; line to A0.s ->
+line from P4.e to (A2, P4)-(arcrad, 0); arc right; line to A2.s ->
+line from P5.e to (A3, P5)-(arcrad, 0); arc right; line to A3.s ->
+.PE

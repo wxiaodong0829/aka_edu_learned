@@ -1,0 +1,1491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0061)http://www.cnblogs.com/witcxc/archive/2011/12/28/2304704.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Vim 配置详解 - witcxc - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./Vim 配置详解 - witcxc - 博客园_files/common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./Vim 配置详解 - witcxc - 博客园_files/style.css">
+<link type="text/css" rel="stylesheet" href="./Vim 配置详解 - witcxc - 博客园_files/common2.css">
+<link type="text/css" rel="stylesheet" href="./Vim 配置详解 - witcxc - 博客园_files/shStyle.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/witcxc/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/witcxc/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/witcxc/wlwmanifest.xml">
+<script type="text/javascript" async="" src="./Vim 配置详解 - witcxc - 博客园_files/ga.js"></script><script async="" type="text/javascript" src="./Vim 配置详解 - witcxc - 博客园_files/gpt.js"></script><script src="./Vim 配置详解 - witcxc - 博客园_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">
+var currentBlogApp = 'witcxc';
+</script>
+<script src="./Vim 配置详解 - witcxc - 博客园_files/common.js" type="text/javascript"></script> 
+<script src="./Vim 配置详解 - witcxc - 博客园_files/json2.js" type="text/javascript"></script>
+<script type="text/javascript" src="./Vim 配置详解 - witcxc - 博客园_files/syntaxHighlighter.js"></script>
+<script async="" type="text/javascript" src="./Vim 配置详解 - witcxc - 博客园_files/google_ads_gpt.js"></script><script type="text/javascript" src="./Vim 配置详解 - witcxc - 博客园_files/osd.js"></script></head>
+<body>
+<a name="top"></a>
+
+<div id="wrapper">
+<div id="header">
+
+<div id="top">
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/witcxc/">witcxc</a></h1>
+<div id="subtitle">永不停转的时钟</div>
+</div>
+<div id="sub">
+<div class="BlogStats">随笔 - 6, 文章 - 9, 评论 - 2, 引用 - 0</div>
+</div>
+
+
+
+</div>
+<div id="main_container">
+<div id="main_content">
+<div id="content">
+	
+	
+	<div class="post">
+		<h2>
+			<a id="cb_post_title_url" href="./Vim 配置详解 - witcxc - 博客园_files/Vim 配置详解 - witcxc - 博客园.html">Vim 配置详解</a>
+		</h2>
+		<div class="postbody">
+		<div id="cnblogs_post_body"><p><span style="color: #dc143c;">首先安装完整版本的VIM</span><span>&nbsp;</span><br>如果是在Linux下，可以安装VIM-Enhance使其扩展为完整版本的VIM，如果在Windows下，直接安装它的Binary就行了。</p>
+<p>当然自己编译安装可能更好些。</p>
+<p><span>安装成功以后就是第二步设置vim&nbsp;</span><br><span style="color: #dc143c;">vim通过一个叫vimrc的文件来进行设置</span><span>&nbsp;</span><br><span>默认安装的vim-tiny的设置文件可以在/usr/share/vim中找到，果然极其简洁&nbsp;</span><br><span>这里我们需要重新定制一个&nbsp;</span><br><br><span>插播一段 vimrc的存放位置：&nbsp;</span><br><span>系统 vimrc 文件: "$VIM/vimrc"&nbsp;</span><br><span>用户 vimrc 文件: "$HOME/.vimrc"&nbsp;</span><br><span>用户 exrc 文件: "$HOME/.exrc"&nbsp;</span><br><span>系统 gvimrc 文件: "$VIM/gvimrc"&nbsp;</span><br><span>用户 gvimrc 文件: "$HOME/.gvimrc"&nbsp;</span><br><span>系统菜单文件: "$VIMRUNTIME/menu.vim"&nbsp;</span><br><span>$VIM 预设值: "/usr/share/vim"&nbsp;</span><br><br><br><span>下面是网上比较流行的一个版本，可以直接拿来用&nbsp;</span><br><span style="color: #dc143c;">在用戶主目录下建一个文件.vimrc(这是一个隐藏文件)，把下面的内容拷贝到这个文件中</span><span>&nbsp;</span><br><span>再用vim打开程序，就能看到语法高亮以及其他诸多功能&nbsp;</span><br><span>当然完全可以再在上面进行删改，添加代码折叠啊或是增加一些windows的文件保存快捷方式什么的&nbsp;</span><br><span>不想麻烦的，下面的直接拿来用就OK了&nbsp;</span><br><br><span>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""&nbsp;</span><br><span>" 一般设定&nbsp;</span><br><span>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""&nbsp;</span><br><span>" 设定默认解码&nbsp;</span><br><span>set fenc=utf-8&nbsp;</span><br><span>set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936&nbsp;</span><br><br><span>" 不要使用vi的键盘模式，而是vim自己的&nbsp;</span><br><span>set nocompatible&nbsp;</span><br><br><span>" history文件中需要记录的行数&nbsp;</span><br><span>set history=100&nbsp;</span><br><br><span>" 在处理未保存或只读文件的时候，弹出确认&nbsp;</span><br><span>set confirm&nbsp;</span><br><br><span>" 与windows共享剪贴板&nbsp;</span><br><span>set clipboard+=unnamed&nbsp;</span><br><br><span>" 侦测文件类型&nbsp;</span><br><span>filetype on&nbsp;</span><br><br><span>" 载入文件类型插件&nbsp;</span><br><span>filetype plugin on&nbsp;</span><br><br><span>" 为特定文件类型载入相关缩进文件&nbsp;</span><br><span>filetype indent on&nbsp;</span><br><br><span>" 保存全局变量&nbsp;</span><br><span>set viminfo+=!&nbsp;</span><br><br><span>" 带有如下符号的单词不要被换行分割&nbsp;</span><br><span>set iskeyword+=_,$,@,%,#,-&nbsp;</span><br><br><span>" 语法高亮&nbsp;</span><br><span>syntax on&nbsp;</span><br><br><span>" 高亮字符，让其不受100列限制&nbsp;</span><br><span>:highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white&nbsp;</span><br><span>:match OverLength '\%101v.*'&nbsp;</span><br><br><span>" 状态行颜色&nbsp;</span><br><span>highlight StatusLine guifg=SlateBlue guibg=Yellow&nbsp;</span><br><span>highlight StatusLineNC guifg=Gray guibg=White&nbsp;</span><br><br><span>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""&nbsp;</span><br><span>" 文件设置&nbsp;</span><br><span>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""&nbsp;</span><br><span>" 不要备份文件（根据自己需要取舍）&nbsp;</span><br><span>set nobackup&nbsp;</span><br><br><span>" 不要生成swap文件，当buffer被丢弃的时候隐藏它&nbsp;</span><br><span>setlocal noswapfile&nbsp;</span><br><span>set bufhidden=hide&nbsp;</span><br><br><span>" 字符间插入的像素行数目&nbsp;</span><br><span>set linespace=0&nbsp;</span><br><br><span>" 增强模式中的命令行自动完成操作&nbsp;</span><br><span>set wildmenu&nbsp;</span><br><br><span>" 在状态行上显示光标所在位置的行号和列号&nbsp;</span><br><span>set ruler&nbsp;</span><br><span>set rulerformat=%20(%2*%&lt;%f%=\ %m%r\ %3l\ %c\ %p%%%)&nbsp;</span><br><br><span>" 命令行（在状态行下）的高度，默认为1，这里是2&nbsp;</span><br><span>set cmdheight=2&nbsp;</span><br><br><span>" 使回格键（backspace）正常处理indent, eol, start等&nbsp;</span><br><span>set backspace=2&nbsp;</span><br><br><span>" 允许backspace和光标键跨越行边界&nbsp;</span><br><span>set whichwrap+=&lt;,&gt;,h,l&nbsp;</span><br><br><span>" 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）&nbsp;</span><br><span>set mouse=a&nbsp;</span><br><span>set selection=exclusive&nbsp;</span><br><span>set selectmode=mouse,key&nbsp;</span><br><br><span>" 启动的时候不显示那个援助索马里儿童的提示&nbsp;</span><br><span>set shortmess=atI&nbsp;</span><br><br><span>" 通过使用: commands命令，告诉我们文件的哪一行被改变过&nbsp;</span><br><span>set report=0&nbsp;</span><br><br><span>" 不让vim发出讨厌的滴滴声&nbsp;</span><br><span>set noerrorbells&nbsp;</span><br><br><span>" 在被分割的窗口间显示空白，便于阅读&nbsp;</span><br><span>set fillchars=vert:\ ,stl:\ ,stlnc:\&nbsp;</span><br><br><span>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""&nbsp;</span><br><span>" 搜索和匹配&nbsp;</span><br><span>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""&nbsp;</span><br><span>" 高亮显示匹配的括号&nbsp;</span><br><span>set showmatch&nbsp;</span><br><br><span>" 匹配括号高亮的时间（单位是十分之一秒）&nbsp;</span><br><span>set matchtime=5&nbsp;</span><br><br><span>" 在搜索的时候忽略大小写&nbsp;</span><br><span>set ignorecase&nbsp;</span><br><br><span>" 不要高亮被搜索的句子（phrases）&nbsp;</span><br><span>set nohlsearch&nbsp;</span><br><br><span>" 在搜索时，输入的词句的逐字符高亮（类似firefox的搜索）&nbsp;</span><br><span>set incsearch&nbsp;</span><br><br><span>" 输入:set list命令是应该显示些啥？&nbsp;</span><br><span>set listchars=tab:\|\ ,trail:.,extends:&gt;,precedes:&lt;,eol:$&nbsp;</span><br><br><span>" 光标移动到buffer的顶部和底部时保持3行距离&nbsp;</span><br><span>set scrolloff=3&nbsp;</span><br><br><span>" 不要闪烁&nbsp;</span><br><span>set novisualbell&nbsp;</span><br><br><span>" 我的状态行显示的内容（包括文件类型和解码）&nbsp;</span><br><span>set statusline=%F%m%r%h%w\[POS=%l,%v][%p%%]\%{strftime(\"%d/%m/%y\ -\ %H:%M\")}&nbsp;</span><br><br><span>" 总是显示状态行&nbsp;</span><br><span>set laststatus=2&nbsp;</span><br><br><span>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""&nbsp;</span><br><span>" 文本格式和排版&nbsp;</span><br><span>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""&nbsp;</span><br><span>" 自动格式化&nbsp;</span><br><span>set formatoptions=tcrqn&nbsp;</span><br><br><span>" 继承前一行的缩进方式，特别适用于多行注释&nbsp;</span><br><span>set autoindent&nbsp;</span><br><br><span>" 为C程序提供自动缩进&nbsp;</span><br><span>set smartindent&nbsp;</span><br><br><span>" 使用C样式的缩进&nbsp;</span><br><span>set cindent&nbsp;</span><br><br><span>" 制表符为4&nbsp;</span><br><span>set tabstop=4&nbsp;</span><br><br><span>" 统一缩进为4&nbsp;</span><br><span>set softtabstop=4&nbsp;</span><br><span>set shiftwidth=4&nbsp;</span><br><br><span>" 不要用空格代替制表符&nbsp;</span><br><span>set noexpandtab&nbsp;</span><br><br><span>" 不要换行&nbsp;</span><br><span>set nowrap&nbsp;</span><br><br><span>" 在行和段开始处使用制表符&nbsp;</span><br><span>set smarttab&nbsp;</span><br><br><span>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""&nbsp;</span><br><span>" CTags的设定&nbsp;</span><br><span>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""&nbsp;</span><br><span>" 按照名称排序&nbsp;</span><br><span>let Tlist_Sort_Type = "name"&nbsp;</span><br><br><span>" 在右侧显示窗口&nbsp;</span><br><span>let Tlist_Use_Right_Window = 1&nbsp;</span><br><br><span>" 压缩方式&nbsp;</span><br><span>let Tlist_Compart_Format = 1&nbsp;</span><br><br><span>" 如果只有一个buffer，kill窗口也kill掉buffer&nbsp;</span><br><span>let Tlist_Exist_OnlyWindow = 1&nbsp;</span><br><br><span>" 不要关闭其他文件的tags&nbsp;</span><br><span>let Tlist_File_Fold_Auto_Close = 0&nbsp;</span><br><br><span>" 不要显示折叠树&nbsp;</span><br><span>let Tlist_Enable_Fold_Column = 0&nbsp;</span><br><br><span>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""&nbsp;</span><br><span>" Autocommands&nbsp;</span><br><span>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""&nbsp;</span><br><span>" 只在下列文件类型被侦测到的时候显示行号，普通文本文件不显示&nbsp;</span><br><br><span>if has("autocmd")&nbsp;</span><br><span>autocmd FileType xml,html,c,cs,java,perl,shell,bash,cpp,python,vim,php,ruby set number&nbsp;</span><br><span>autocmd FileType xml,html vmap &lt;C-o&gt; &lt;ESC&gt;'&lt;i&lt;!--&lt;ESC&gt;o&lt;ESC&gt;'&gt;o--&gt;&nbsp;</span><br><span>autocmd FileType java,c,cpp,cs vmap &lt;C-o&gt; &lt;ESC&gt;'&lt;o&nbsp;</span><br><span>autocmd FileType html,text,php,vim,c,java,xml,bash,shell,perl,python setlocal textwidth=100&nbsp;</span><br><span>autocmd Filetype html,xml,xsl source $VIMRUNTIME/plugin/closetag.vim&nbsp;</span><br><span>autocmd BufReadPost *&nbsp;</span><br><span>\ if line("'\"") &gt; 0 &amp;&amp; line("'\"") &lt;= line("$") |&nbsp;</span><br><span>\ exe " normal g`\"" |&nbsp;</span><br><span>\ endif&nbsp;</span><br><span>endif "has("autocmd")&nbsp;</span><br><br><span>" F5编译和运行C程序，F6编译和运行C++程序&nbsp;</span><br><span>" 请注意，下述代码在windows下使用会报错&nbsp;</span><br><span>" 需要去掉./这两个字符&nbsp;</span><br><br><span>" C的编译和运行&nbsp;</span><br><span>map &lt;F5&gt; :call CompileRunGcc()&lt;CR&gt;&nbsp;</span><br><span>func! CompileRunGcc()&nbsp;</span><br><span>exec "w"&nbsp;</span><br><span>exec "!gcc % -o %&lt;"&nbsp;</span><br><span>exec "! ./%&lt;"&nbsp;</span><br><span>endfunc&nbsp;</span><br><br><span>" C++的编译和运行&nbsp;</span><br><span>map &lt;F6&gt; :call CompileRunGpp()&lt;CR&gt;&nbsp;</span><br><span>func! CompileRunGpp()&nbsp;</span><br><span>exec "w"&nbsp;</span><br><span>exec "!g++ % -o %&lt;"&nbsp;</span><br><span>exec "! ./%&lt;"&nbsp;</span><br><span>endfunc&nbsp;</span><br><br><span>" 能够漂亮地显示.NFO文件&nbsp;</span><br><span>set encoding=utf-8&nbsp;</span><br><span>function! SetFileEncodings(encodings)&nbsp;</span><br><span>let b:myfileencodingsbak=&amp;fileencodings&nbsp;</span><br><span>let &amp;fileencodings=a:encodings&nbsp;</span><br><span>endfunction&nbsp;</span><br><span>function! RestoreFileEncodings()&nbsp;</span><br><span>let &amp;fileencodings=b:myfileencodingsbak&nbsp;</span><br><span>unlet b:myfileencodingsbak&nbsp;</span><br><span>endfunction&nbsp;</span><br><br><span>au BufReadPre *.nfo call SetFileEncodings('cp437')|set ambiwidth=single au BufReadPost *.nfo call RestoreFileEncodings()&nbsp;</span><br><br><span>" 高亮显示普通txt文件（需要txt.vim脚本）&nbsp;</span><br><span>au BufRead,BufNewFile * setfiletype txt&nbsp;</span><br><br><span>" 用空格键来开关折叠&nbsp;</span><br><span>set foldenable&nbsp;</span><br><span>set foldmethod=manual&nbsp;</span><br><span>nnoremap &lt;space&gt; @=((foldclosed(line('.')) &lt; 0) ? 'zc':'zo')&lt;CR&gt;&nbsp;</span><br><br><span>" minibufexpl插件的一般设置&nbsp;</span><br><span>let g:miniBufExplMapWindowNavVim = 1&nbsp;</span><br><span>let g:miniBufExplMapWindowNavArrows = 1&nbsp;</span><br><span>let g:miniBufExplMapCTabSwitchBufs = 1&nbsp;</span><br><span>let g:miniBufExplModSelTarget = 1</span></p>
+<p><span><br></span></p>
+<p><span>附：<a title="手把手教你把Vim改装成一个IDE编程环境(图文)" href="http://blog.csdn.net/wooin/article/details/1858917">手把手教你把Vim改装成一个IDE编程环境(图文)</a></span></p>
+<p><span><a href="http://blog.csdn.net/wooin/article/details/1858917">http://blog.csdn.net/wooin/article/details/1858917</a></span></p>
+<table border="0">
+<tbody>
+<tr>
+<td width="80">By:</td>
+<td>吴垠</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2007-09-07</td>
+</tr>
+<tr>
+<td>Version:</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>Email:</td>
+<td>lazy.fox.wu#gmail.com</td>
+</tr>
+<tr>
+<td>Homepage:</td>
+<td>http://blog.csdn.net/wooin</td>
+</tr>
+<tr>
+<td valign="top">Copyright:</td>
+<td>该文章版权由吴垠和他可爱的老婆小包子所有。可在非商业目的下任意传播和复制。对于商业目的下对本文的任何行为需经作者同意。<br>联系方式：lazy.fox.wu#gmail.com</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<table border="0">
+<tbody>
+<tr>
+<td>1</td>
+<td>写在前面</td>
+</tr>
+<tr>
+<td valign="top" width="30">&nbsp;</td>
+<td>Linux下编程一直被诟病的一点是: 没有一个好用的IDE, 但是听说Linux牛人, 黑客之类的也都不用IDE. 但是对我等从Windows平台转移过来的Coder来说, 一个好用的IDE是何等的重要啊, 估计很多人就是卡在这个门槛上了, "工欲善其事, 必先利其器"嘛, 我想如果有一个很好用的IDE, 那些Linux牛人也会欢迎的. 这都是劳动人民的美好愿望罢了, 我今天教大家把gvim改装成一个简易IDE, 说它"简易"是界面上看起来"简易", 但功能绝对不比一个好的IDE差, 该有的功能都有, 不该有的功能也有, 你就自己没事偷着乐吧, 下面我开始介绍今天的工作了.<br><br>本文会教你:<br>1.&nbsp;&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#2">中文帮助手册的安装</a><br>2.&nbsp;&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#3">vim编程常用命令</a><br>3.&nbsp;&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#4">语法高亮</a><br>4.&nbsp;&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#5">在程序中跳来跳去: Ctags 的使用</a><br>5.&nbsp;&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#6">教你高效地浏览源码 -- 插件: TagList</a><br>6.&nbsp;&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#7">文件浏览器和窗口管理器 -- 插件: WinManager</a><br>7.&nbsp;&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#8">Cscope 的使用</a><br>8.&nbsp;&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#9">QuickFix 窗口</a><br>9.&nbsp;&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#10">快速浏览和操作Buffer -- 插件: MiniBufExplorer</a><br>10.&nbsp;&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#11">c/h文件间相互切换 -- 插件: A</a><br>11.&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#12">在工程中查找 -- 插件: Grep</a><br>12.&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#13">高亮的书签 -- 插件: VisualMark</a><br>13.&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#14">自动补全</a><br>14.&nbsp;<a href="file:///C:/Documents%20and%20Settings/Administrator/%E6%A1%8C%E9%9D%A2/programming_with_gvim_05.tar/programming_with_gvim_05/programming_with_gvim.html#15">加速你的补全 -- 插件: SuperTab</a><br><br>本文不会教你:<br>1.&nbsp; 如何使用vim. 本文不会从零开始教你如何使用vim, 如果你是第一次接触vim,&nbsp;<br>&nbsp;&nbsp; 建议你先看看其他的vim入门的教程, 或者在shell下输入命令: vimtutor,&nbsp;<br>&nbsp;&nbsp; 这是一个简单的入门教程.<br>2.&nbsp; 编程技巧.<br>3.&nbsp; vim脚本的编写.<br><br>我的工作环境是: Fedora Core 5<br>gvim是自己编译的7.0, 如果你还没有安装gvim, 请看我的这篇文章<a href="http://blog.csdn.net/wooin/archive/2006/12/30/1468797.aspx"><span>&lt;在Redhat Linux 9中编译和配置gvim 7.0&gt;</span></a><br>由于本人一直从事C语言工作, 所以下面这些例子都是在C语言程序中演示的, 其他语言的没有试过, 如果有朋友在别的语言下有问题, 可以跟我讨论一些, 我会尽量帮助你们的.<br><br>本文用的示范源码是vim7.1的源码, 可以在www.vim.org下载到源码包:vim-7.1.tar.bz2, 你也可以不用下载, 就用你自己程序的源码, 关系不大的. 我把源码解压在我的home目录下: ~/vim71<br><br>下面对文中的一些名字定义一下:<br>1. 文中用到的一些用&lt;&gt;括起来的符号比如&lt;C-T&gt;, &lt;C-S-A&gt;, 之类的, 你可以用下面的命令看看解释:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:help keycodes&nbsp;</td>
+</tr>
+</tbody>
+</table>
+2. 文中说的一些路径, 比如:<br>&nbsp; ~/.vim/plugin<br>&nbsp; ~/.vim/doc<br>&nbsp; ~/.vim/syntax<br>&nbsp; 如果你没有, 就自己创建.<br>3. 文中说到的.vimrc文件都是指 ~/.vimrc<br><br>先给大家看张图片, 我是vim的界面, 解解馋先^_^<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_01.png" alt=""><br>(--- 图1 ---)<br>对照上图的图标, 我在本文中将教会你以下这些功能:
+<table border="1" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>1</td>
+<td>简洁明了的Buffer浏览和操作</td>
+</tr>
+<tr>
+<td>2</td>
+<td>文件浏览器</td>
+</tr>
+<tr>
+<td>3</td>
+<td>tag浏览器</td>
+</tr>
+<tr>
+<td>4</td>
+<td>高亮的书签</td>
+</tr>
+<tr>
+<td>5</td>
+<td>更丰富的语法高亮</td>
+</tr>
+<tr>
+<td>6</td>
+<td>成员变量的下拉, 自动补全</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>2<a name="2"></a></td>
+<td>中文帮助手册的安装</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>vim自带的帮助手册是英文的, 对平时编程的人来说没有多大阅读困难, 何况还有"星级译王"呢, 可偏偏有一帮人将其翻译成了中文, 可偏偏我又挡不住诱惑将它安装了, 唉.......又痛失一个学习英文的好机会, 下不为例.<br>大家看看我的中文帮助界面吧:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_02.png" alt=""><br>(--- 图2 ---)<br>安装方法: &nbsp;&nbsp;<br>在下面的网站下载中文帮助的文件包:<br>http://vimcdoc.sf.net&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; (English)<br>http://vcd.gro.clinux.org&nbsp;&nbsp;&nbsp; (中文)<br><br>下载的文件包应该是类似这样的: vimcdoc-1.5.0.tar.gz<br>解压后其中有个doc文件夹, 将其中的内容全部复制到~/.vim/doc, 或者vim安装目录下的doc目录中, 此时vim中的help信息已经是中文的了.<br>注意:<br>a. 如果无法显示中文, 在~/.vimrc中增加下面这句试试:<br>&nbsp;&nbsp; set helplang=cn<br>b. 帮助文件的文本是utf-8编码的, 如果想用vim直接查看, 需要在~/.vimrc中设置:<br>&nbsp;&nbsp; set encoding=utf-8</td>
+</tr>
+<tr>
+<td>3<a name="3"></a></td>
+<td>vim编程常用命令</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>建议先看看帮助手册中的下面章节, 其中有关tags文件的部分你可以先跳过, 在后面的章节中会讲到, 到时候你在回来看看, 就觉得很简单了:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:help usr_29<br>:help usr_30</td>
+</tr>
+</tbody>
+</table>
+下面是我常用的一些命令, 放在这里供我备忘:<br>
+<table border="1" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>%</td>
+<td>跳转到配对的括号去</td>
+</tr>
+<tr>
+<td>[[</td>
+<td>跳转到代码块的开头去(但要求代码块中'{'必须单独占一行)</td>
+</tr>
+<tr>
+<td>gD</td>
+<td>跳转到局部变量的定义处</td>
+</tr>
+<tr>
+<td>''</td>
+<td>跳转到光标上次停靠的地方, 是两个', 而不是一个"</td>
+</tr>
+<tr>
+<td>mx</td>
+<td>设置书签,x只能是a-z的26个字母</td>
+</tr>
+<tr>
+<td>`x</td>
+<td>跳转到书签处("`"是1左边的键)</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>增加缩进,"x&gt;"表示增加以下x行的缩进</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>减少缩进,"x&lt;"表示减少以下x行的缩进</td>
+</tr>
+</tbody>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>4<a name="4"></a></td>
+<td>语法高亮</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>写程序没有语法高亮将是一件多么痛苦的事情啊, 幸亏vim的作者是个程序员(如果不是, 那可NB大了), 提供了语法高亮功能, 在上面的图片中大家也可以看到那些注释, 关键字, 字符串等, 都用不同颜色显示出来了, 要做到这样, 首先要在你的 ~/.vimrc 文件中增加下面几句话:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>syntax enable<br>syntax on</td>
+</tr>
+</tbody>
+</table>
+再重新启动vim, 并打开一个c程序文件, 是不是觉得眼前突然色彩缤纷了起来...<br>如果你不喜欢这个配色方案你可以在"编辑-&gt;配色方案"(gvim)中选择一个你满意的配色方案, 然后在~/.vimrc文件中增加下面这句:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>colorscheme desert</td>
+</tr>
+</tbody>
+</table>
+desert是我喜欢的配色方案, 你可以改成你的. 如果菜单中的配色方案你还不满意(你也太花了吧), 没关系, 在 vim.org 上跟你一样的人很多, 他们做了各种各样的颜色主题, 你可以下载下来一个一个的试, 多地可以看到你眼花. 如果这样你还不满意(你还真是XXXX), 没关系, vim的作者早想到会有你这种人了, 你可以创建你自己的颜色主题, 把下面的这篇文档好好学习一些一下吧:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:help syntax.txt</td>
+</tr>
+</tbody>
+</table>
+<br>更炫的语法高亮:<br>你可能会发现很多东西没有高亮起来, 比如运算符号, 各种括号, 函数名, 自定义类型等, 但是看上面的图片, 我的运算符号和函数名都加亮了^_^, 想知道为什么吗? 哇哈哈哈哈.... 让我来教你吧 ...<br><br>主要的思路是新建一个语法文件, 在文件中定义你要高亮的东东, 想高亮什么就高亮什么, 用vim就是这么自信. 所谓的语法文件就是vim用来高亮各种源文件的一个脚本, vim靠这个脚本的描述来使文件中的不同文本显示不同的颜色, 比如C语言的语法文件放在类似于这样的一个路径中:<br>/usr/share/vim/vim64/syntax/c.vim<br>其他语言的语法文件也可以在这个路径中找到, 你的也许不在这个路径中, 不管它, 在你自己的HOME下新建一个语法文件, 新建一个空文件:<br>~/.vim/syntax/c.vim<br>在其中加入<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>
+<pre><span style="color: #18ca12;">"========================================================</span><br><span style="color: #18ca12;">" Highlight All Function</span><br><span style="color: #18ca12;">"========================================================</span><br><span style="color: #f0e68c;"><strong>syn</strong></span>&nbsp;<span style="color: #ffa0a0;"><strong>match</strong></span>&nbsp;<span>cFunction</span>&nbsp;<span style="color: #ffa500;">"/&lt;</span><span style="color: #ffa500;">[a-zA-Z_][a-zA-Z_0-9]</span><span style="color: #ffa500;">*/&gt;</span><span style="color: #ffa500;">[^()]</span><span style="color: #ffa500;">*)("</span><span>me=e-2</span><br><span style="color: #f0e68c;"><strong>syn</strong></span>&nbsp;<span style="color: #ffa0a0;"><strong>match</strong></span>&nbsp;<span>cFunction</span>&nbsp;<span style="color: #ffa500;">"/&lt;</span><span style="color: #ffa500;">[a-zA-Z_][a-zA-Z_0-9]</span><span style="color: #ffa500;">*/&gt;/s*("</span><span>me=e-1</span><br><span style="color: #f0e68c;"><strong>hi</strong></span>&nbsp;<span>cFunction</span>&nbsp;<span style="color: #ffa0a0;"><strong>gui</strong></span><span>=</span><span style="color: #cd5c5c;">NONE</span>&nbsp;<span style="color: #ffa0a0;"><strong>guifg</strong></span><span>=</span><span style="color: #ffa0a0;">#B5A1FF<br><br></span><span style="color: #18ca12;">"========================================================</span><br><span style="color: #18ca12;">" Highlight All Math Operator</span><br><span style="color: #18ca12;">"========================================================</span><br><span style="color: #18ca12;">" C math operators</span><br><span style="color: #f0e68c;"><strong>syn</strong></span>&nbsp;<span style="color: #ffa0a0;"><strong>match</strong></span>&nbsp;<span>cMathOperator</span>&nbsp;<span style="color: #ffdead;">display</span>&nbsp;<span style="color: #ffa500;">"</span><span style="color: #ffa500;">[-+/*/%=]</span><span style="color: #ffa500;">"</span><br><span style="color: #18ca12;">" C pointer operators</span><br><span style="color: #f0e68c;"><strong>syn</strong></span>&nbsp;<span style="color: #ffa0a0;"><strong>match</strong></span>&nbsp;<span>cPointerOperator</span>&nbsp;<span style="color: #ffdead;">display</span>&nbsp;<span style="color: #ffa500;">"-&gt;</span><span style="color: #ffdead;">/|</span><span style="color: #ffa500;">/."</span><br><span style="color: #18ca12;">" C logical operators - boolean results</span><br><span style="color: #f0e68c;"><strong>syn</strong></span>&nbsp;<span style="color: #ffa0a0;"><strong>match</strong></span>&nbsp;<span>cLogicalOperator</span>&nbsp;<span style="color: #ffdead;">display</span>&nbsp;<span style="color: #ffa500;">"</span><span style="color: #ffa500;">[!&lt;&gt;]</span><span style="color: #ffa500;">=/="</span><br><span style="color: #f0e68c;"><strong>syn</strong></span>&nbsp;<span style="color: #ffa0a0;"><strong>match</strong></span>&nbsp;<span>cLogicalOperator</span>&nbsp;<span style="color: #ffdead;">display</span>&nbsp;<span style="color: #ffa500;">"=="</span><br><span style="color: #18ca12;">" C bit operators</span><br><span style="color: #f0e68c;"><strong>syn</strong></span>&nbsp;<span style="color: #ffa0a0;"><strong>match</strong></span>&nbsp;<span>cBinaryOperator</span>&nbsp;<span style="color: #ffdead;">display</span><span style="color: #ffa500;">"</span><span style="color: #ffdead;">/(</span><span style="color: #ffa500;">&amp;</span><span style="color: #ffdead;">/|</span><span style="color: #ffa500;">|</span><span style="color: #ffdead;">/|</span><span style="color: #ffa500;">/^</span><span style="color: #ffdead;">/|</span><span style="color: #ffa500;">&lt;&lt;</span><span style="color: #ffdead;">/|</span><span style="color: #ffa500;">&gt;&gt;</span><span style="color: #ffdead;">/)</span><span style="color: #ffa500;">=/="</span><br><span style="color: #f0e68c;"><strong>syn</strong></span>&nbsp;<span style="color: #ffa0a0;"><strong>match</strong></span>&nbsp;<span>cBinaryOperator</span>&nbsp;<span style="color: #ffdead;">display</span>&nbsp;<span style="color: #ffa500;">"/~"</span><br><span style="color: #f0e68c;"><strong>syn</strong></span>&nbsp;<span style="color: #ffa0a0;"><strong>match</strong></span>&nbsp;<span>cBinaryOperatorError</span>&nbsp;<span style="color: #ffdead;">display</span>&nbsp;<span style="color: #ffa500;">"/~="</span><br><span style="color: #18ca12;">" More C logical operators - highlight in preference to binary</span><br><span style="color: #f0e68c;"><strong>syn</strong></span>&nbsp;<span style="color: #ffa0a0;"><strong>match</strong></span>&nbsp;<span>cLogicalOperator</span>&nbsp;<span style="color: #ffdead;">display</span>&nbsp;<span style="color: #ffa500;">"&amp;&amp;</span><span style="color: #ffdead;">/|</span><span style="color: #ffa500;">||"</span><br><span style="color: #f0e68c;"><strong>syn</strong></span>&nbsp;<span style="color: #ffa0a0;"><strong>match</strong></span>&nbsp;<span>cLogicalOperatorError</span>&nbsp;<span style="color: #ffdead;">display</span>&nbsp;<span style="color: #ffa500;">"</span><span style="color: #ffdead;">/(</span><span style="color: #ffa500;">&amp;&amp;</span><span style="color: #ffdead;">/|</span><span style="color: #ffa500;">||</span><span style="color: #ffdead;">/)</span><span style="color: #ffa500;">="</span><br><span style="color: #ffff00;"><br></span><span style="color: #18ca12;">" Math Operator</span><br><span style="color: #f0e68c;"><strong>hi</strong></span>&nbsp;<span>cMathOperator</span>&nbsp;<span style="color: #ffa0a0;"><strong>guifg</strong></span><span>=</span><span style="color: #ffa0a0;">#3EFFE2</span><br><span style="color: #f0e68c;"><strong>hi</strong></span>&nbsp;<span>cPointerOperator</span>&nbsp;<span style="color: #ffa0a0;"><strong>guifg</strong></span><span>=</span><span style="color: #ffa0a0;">#3EFFE2</span><br><span style="color: #f0e68c;"><strong>hi</strong></span>&nbsp;<span>cLogicalOperator</span>&nbsp;<span style="color: #ffa0a0;"><strong>guifg</strong></span><span>=</span><span style="color: #ffa0a0;">#3EFFE2</span><br><span style="color: #f0e68c;"><strong>hi</strong></span>&nbsp;<span>cBinaryOperator</span>&nbsp;<span style="color: #ffa0a0;"><strong>guifg</strong></span><span>=</span><span style="color: #ffa0a0;">#3EFFE2</span><br><span style="color: #f0e68c;"><strong>hi</strong></span>&nbsp;<span>cBinaryOperatorError</span>&nbsp;<span style="color: #ffa0a0;"><strong>guifg</strong></span><span>=</span><span style="color: #ffa0a0;">#3EFFE2</span><br><span style="color: #f0e68c;"><strong>hi</strong></span>&nbsp;<span>cLogicalOperator</span>&nbsp;<span style="color: #ffa0a0;"><strong>guifg</strong></span><span>=</span><span style="color: #ffa0a0;">#3EFFE2</span><br><span style="color: #f0e68c;"><strong>hi</strong></span>&nbsp;<span>cLogicalOperatorError</span>&nbsp;<span style="color: #ffa0a0;"><strong>guifg</strong></span><span>=</span><span style="color: #ffa0a0;">#3EFFE2</span></pre>
+</td>
+</tr>
+</tbody>
+</table>
+<br>再打开你的C文件看看, 是不是又明亮了许多. 还有一个压箱底的要告诉你, 如果你自己增加了一个类型或者结构之类的, 怎么让它也象"int", "void"这样高亮起来呢? 再在上面的文件~/.vim/syntax/c.vim中添加下面的东东:
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>
+<pre><span style="color: #18ca12;">"========================================================</span><br><span style="color: #18ca12;">" My Own DataType</span><br><span style="color: #18ca12;">"========================================================</span><br><span style="color: #f0e68c;"><strong>syn</strong></span>&nbsp;<span style="color: #ffa0a0;"><strong>keyword</strong></span><span>&nbsp;cType My_Type_1 My_Type_2 My_Type_3</span></pre>
+</td>
+</tr>
+</tbody>
+</table>
+这样你自己的类型My_Type_1, My_Type_2, My_Type_3就也可以向"int"一样高亮起来了, 这样的缺点是每增加一个类型, 就要手动在这里添加一下, 如果有人知道更简单的方法请一定一定要告诉我, 用下面的地址:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>Email</td>
+<td>: lazy.fox.wu#gmail.com</td>
+</tr>
+<tr>
+<td>Homepage</td>
+<td>: http://blog.csdn.net/wooin</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>5<a name="5"></a></td>
+<td>在程序中跳来跳去: Ctags 的使用</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>哇, 这下可厉害了, Tag文件(标签文件)可是程序员的看家宝呀, 你可以不用它, 但你不能不知道它, 因为Linux内核源码都提供了"make tags"这个选项. 下面我们就来介绍Tag文件.<br><br>tags文件是由ctags程序产生的一个索引文件, ctags程序其是叫"Exuberant Ctags", 是Unix上面ctags程序的替代品, 并且比它功能强大, 是大多数Linux发行版上默认的ctags程序. 那么tags文件是做什么用的呢? 如果你在读程序时看了一个函数调用, 或者一个变量, 或者一个宏等等, 你想知道它们的定义在哪儿, 怎么办呢? 用grep? 那会搜出很多不相干的地方. 现在流行用是的&lt;C-]&gt;, 谁用谁知道呀, 当光标在某个函数或变量上时, 按下"Ctrl+]", 光标会自动跳转到其定义处, 够厉害吧, 你不用再羡慕Visual Studio的程序员了, 开始羡慕我吧~_~.<br><br>你现在先别急着去按&lt;C-]&gt;, 你按没用的, 要不要我干什么呀, 你现在要做的是查查你电脑里有没有ctags这个程序, 如果有, 是什么版本的, 如果是Ctags 5.5.4, 就象我一样, 你最好去装一个Ctags 5.6, 这个在后面的自动补全章节中会用到. 在这个网站: http://ctags.sourceforge.net, 下载一个类似 ctags-5.6.tar.gz 的文件下来(现在好像5.7版的也出来了, 不过我还没用过):<br><br>用下面的命令解压安装:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>$ tar -xzvf ctags-5.6.tar.gz<br>$ cd ctags-5.6<br>$ make<br># make install&nbsp;&nbsp;&nbsp;<span>// 需要root权限</span></td>
+</tr>
+</tbody>
+</table>
+<br>然后去你的源码目录, 如果你的源码是多层的目录, 就去最上层的目录, 在该目录下运行命令: ctags -R<br>我现在以 vim71 的源码目录做演示<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>$ cd /home/wooin/vim71<br>$ ctags -R</td>
+</tr>
+</tbody>
+</table>
+此时在/home/wooin/vim71目录下会生成一个 tags 文件, 现在用vim打开 /home/wooin/vim71/src/main.c<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>$ vim /home/wooin/vim71/src/main.c</td>
+</tr>
+</tbody>
+</table>
+再在vim中运行命令:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:set tags=/home/wooin/vim71/tags</td>
+</tr>
+</tbody>
+</table>
+该命令将tags文件加入到vim中来, 你也可以将这句话放到~/.vimrc中去, 如果你经常在这个工程编程的话.<br>下面要开始真刀实枪的开干了, 如下图, 将光标放在setmouse()函数上<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_04.png" alt=""><br>(--- 图3 ---)<br><br>此时按下&lt;C-]&gt;, 光标会自动跳到setmouse()函数的定义处, 见下图:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_05.png" alt=""><br>(--- 图4 ---)<br><br>如果此时你还想再跳回刚才的位置, 你还可以按&lt;C-T&gt;, 这样又跳回到setmouse()函数被调用的地方了, 变量, 结构, 宏, 等等, 都可以的, 赶快试试吧.....<br><br>此时在回头学习一下第3节中说的vim手册吧<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:help usr_29</td>
+</tr>
+</tbody>
+</table>
+<br>不过还有一个小瑕疵, 你修改程序后, 比如增加了函数定义, 删除了变量定义, tags文件不能自动rebuild, 你必须手动再运行一下命令:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>$ ctags -R</td>
+</tr>
+</tbody>
+</table>
+使tags文件更新一下, 不过让人感到欣慰的是vim不用重新启动, 正在编写的程序也不用退出, 马上就可以又正确使用&lt;C-]&gt;和&lt;C-T&gt;了. 如果有人知道更简单的方法请一定一定要告诉我, 用下面的地址:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>Email</td>
+<td>: lazy.fox.wu#gmail.com</td>
+</tr>
+<tr>
+<td>Homepage</td>
+<td>: http://blog.csdn.net/wooin</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>6.<a name="6"></a></td>
+<td>教你高效地浏览源码 -- 插件: TagList</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>下载地址</td>
+<td>http://www.vim.org/scripts/script.php?script_id=273</td>
+</tr>
+<tr>
+<td>版本</td>
+<td>4.4</td>
+</tr>
+<tr>
+<td>安装</td>
+<td>在 ~/.vim 目录下解压taglist_xx.zip</td>
+</tr>
+<tr>
+<td>手册</td>
+<td>:help taglist.txt</td>
+</tr>
+</tbody>
+</table>
+<br>在Windows平台上用过Source Insight看程序的人肯定很熟悉代码窗口左边那个Symbol窗口, 那里面列出了当前文件中的所有宏, 全局变量, 函数名等, 在查看代码时用这个窗口总揽全局, 切换位置相当方便, 今天告诉你一个vim的插件: Taglist, 可以同样实现这个功能.<br><br>上一节已经告诉你ctags的用法了, ctags的基本原理是将程序程序中的一些关键字(比如:函数名, 变量名等)的名字, 位置等信息通过一个窗口告诉你, 如果你已经安装好taglist, 则可以用下面的命令看看taglist自带的帮助文件:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:help taglist.txt</td>
+</tr>
+</tbody>
+</table>
+下面是我翻译的其中的第一段"Overview", 供大家现了解一下taglist, 翻译的不好, 请指教:<br>"Tab List"是一个用来浏览源代码的Vim插件, 这个插件可以让你高效地浏览各种不同语言编写的的源代码, "Tag List"有以下一些特点:<br>&nbsp;&nbsp;&nbsp; * 在Vim的一个垂直或水平的分割窗口中显示一个文件中定义的tags(函数, 类, 结构,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量, 等)<br>&nbsp;&nbsp;&nbsp; * 在GUI Vim中, 可以选择把tags显示在下拉菜单和弹出菜单中<br>&nbsp;&nbsp;&nbsp; * 当你在多个源文件/缓冲区间切换时, taglist窗口会自动进行相应地更新.&nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp; 当你打开新文件时, 新文件中定义的tags会被添加到已经存在的文件列表中,&nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp; 并且所有文件中定义的tags会以文件名来分组显示<br>&nbsp;&nbsp;&nbsp; * 当你在taglist窗口中选中一个tag名时, 源文件中的光标会自动跳转到该tag的定<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义处<br>&nbsp;&nbsp;&nbsp; * 自动高亮当前的tag名<br>&nbsp;&nbsp;&nbsp; * 按类型分组各tag, 并且将各组显示在一个可折叠的树形结构中<br>&nbsp;&nbsp;&nbsp; * 可以显示tag的原始类型和作用域<br>&nbsp;&nbsp;&nbsp; * 在taglist窗口可选择显示tag的原始类型替代tag名<br>&nbsp;&nbsp;&nbsp; * tag列表可以按照tag名, 或者时间进行排序<br>&nbsp;&nbsp;&nbsp; * 支持以下语言的源文件: Assembly, ASP, Awk, Beta, C,<br>&nbsp;&nbsp;&nbsp; &nbsp; C++, C#, Cobol, Eiffel, Erlang, Fortran, HTML, Java, Javascript, Lisp,<br>&nbsp;&nbsp;&nbsp; &nbsp; Lua, Make, Pascal, Perl, PHP, Python, Rexx, Ruby, Scheme, Shell, Slang,<br>&nbsp;&nbsp;&nbsp; &nbsp; SML, Sql, TCL, Verilog, Vim and Yacc.<br>&nbsp;&nbsp;&nbsp; * 可以很简单的扩展支持新的语言. 对新语言支持的修改也很简单.<br>&nbsp;&nbsp;&nbsp; * 提供了一些函数, 可以用来在Vim的状态栏或者在窗口的标题栏显示当前的tag名<br>&nbsp;&nbsp;&nbsp; * taglist中的文件和tags的列表可以在被保存和在vim会话间加载<br>&nbsp;&nbsp;&nbsp; * 提供了一些用来取得tag名和原始类型的命令<br>&nbsp;&nbsp;&nbsp; * 在控制台vim和GUI vim中都可以使用<br>&nbsp;&nbsp;&nbsp; * 可以和winmanager插件一起使用. winmanager插件可以让你同时使用文件浏览器,&nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp; 缓冲区浏览器和taglist插件, 就像一个IDE一样.<br>&nbsp;&nbsp;&nbsp; * 可以在Unix和MS-Windows系统中使用<br><br>首先请先在你的~/.vimrc文件中添加下面两句:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>let Tlist_Show_One_File=1<br>let Tlist_Exit_OnlyWindow=1</td>
+</tr>
+</tbody>
+</table>
+此时用vim打开一个c源文件试试:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>$ vim ~/vim/src/main.c</td>
+</tr>
+</tbody>
+</table>
+进入vim后用下面的命令打开taglist窗口, 如图5:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:Tlist</td>
+</tr>
+</tbody>
+</table>
+<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_i.png" alt=""><br>(--- 图5 ---)<br>左边的窗口就是前面介绍的TagList窗口, 其中列出了main.c文件中的tag, 并且按照"typedef", "variable", "function"等进行了分类. 将光标移到VimMain上, 如图中左边红色的方框, 按下回车后, 源程序会自动跳转到VimMain的定义处, 如图中右边的红色方框. 这就是TagList最基本也是最常用的操作. 再教你一个常用的操作, 你在浏览TagList窗口时, 如果还不想让源码跳转, 但是想看看tag在源码中完整的表达, 可以将光标移到你想要看的tag上, 如图中上边黄色的方框, 然后按下空格键, 在下面的命令栏中, 如图下边黄色的方框, 会显示该tag在源码中完整的写法, 而不会跳转到源码处.<br><br>TagList插件我就介绍到这里, 其实它还有很多用法和设置, 我没法一一地教你了, 好在TagList有一份详细的帮助手册, 用下面的命令打开手册, 好好学习一下吧:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:help taglist.txt</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>7.<a name="7"></a></td>
+<td>文件浏览器和窗口管理器 -- 插件: WinManager</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>下载地址</td>
+<td>http://www.vim.org/scripts/script.php?script_id=95</td>
+</tr>
+<tr>
+<td>版本</td>
+<td>2.x</td>
+</tr>
+<tr>
+<td>安装</td>
+<td>在 ~/.vim 目录下解压winmanager.zip</td>
+</tr>
+<tr>
+<td>手册</td>
+<td>:help winmanager</td>
+</tr>
+</tbody>
+</table>
+<span><span><br>在图1中大家可以看到在图标2标识的地方是一个文件浏览器, 里面列出了当前目录中的文件, 可以通过这个浏览器来浏览工程中的源文件, 是不是越来越像常见的IDE了, 当光标停在某个文件或文件夹的时候, 按下回车, 可以打开该文件或文件夹.<br>这个东东是怎么调出来的呢? 其实这个也是由插件实现的, 这个插件是netrw.vim, 只不过你不用下载和安装, 这个插件已经是标准的vim插件, 已经随vim一起安装进你的系统里了, 现在先简单演示一下, 进入"~/vim71"文件夹后运行vim, 然后在vim中运行命令:<br></span></span>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td><span><span>:e ~/vim71</span></span></td>
+</tr>
+</tbody>
+</table>
+<span><span>你将在vim看到如下图所示的界面:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_j.png" alt=""><br></span></span>(--- 图6 ---)<br><span><span>在该界面上你可以用下面的一些命令来进行常用的目录和文件操作:<br></span></span>
+<table border="1" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td><span><span>&lt;F1&gt;</span></span></td>
+<td><span><span>显示帮助</span></span></td>
+</tr>
+<tr>
+<td><span><span>&lt;cr&gt;</span></span></td>
+<td><span><span>如果光标下是目录, 则进入该目录; 如果光标下文件, 则打开该文件</span></span></td>
+</tr>
+<tr>
+<td>-</td>
+<td><span><span>返回上级目录</span></span></td>
+</tr>
+<tr>
+<td>c</td>
+<td><span><span>切换vim 当前工作目录正在浏览的目录</span></span></td>
+</tr>
+<tr>
+<td>d</td>
+<td><span><span>创建目录</span></span></td>
+</tr>
+<tr>
+<td>D</td>
+<td><span><span>删除目录或文件</span></span></td>
+</tr>
+<tr>
+<td>i</td>
+<td><span><span>切换显示方式</span></span></td>
+</tr>
+<tr>
+<td>R</td>
+<td><span><span>文件或目录重命名</span></span></td>
+</tr>
+<tr>
+<td>s</td>
+<td><span><span>选择排序方式</span></span></td>
+</tr>
+<tr>
+<td>x</td>
+<td><span><span>定制浏览方式, 使用你指定的程序打开该文件<br></span></span></td>
+</tr>
+</tbody>
+</table>
+<span><span><br>我这里不是教你怎么用netrw.vim插件, 而是要教你通过WinManager插件来将TagList窗口和netrw窗口整合起来, 就像图1中的图标2和3组成的那个效果<br>现在在你的~/.vimrc中增加下面两句<br></span></span>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td><span><span>let g:winManagerWindowLayout='FileExplorer|TagList'<br>nmap wm :WMToggle&lt;cr&gt;</span></span></td>
+</tr>
+</tbody>
+</table>
+<span><span>然后重启vim, 打开~/vim71/src/main.c, 在normal状态下输入"wm", 你将看到图7的样子:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_k.png" alt=""><br></span></span>(--- 图7 ---)<br><span><span>其中左上边是netrw窗口, 左下边是TagList窗口, 当再次输入"wm"命令时这两个窗口又关闭了.<br><br>WinManager的功能主要就是我介绍的这些, 但是它还有其他一些高级功能, 还可以支持其他几个插件, 如果你觉得我介绍的还不够你用, 建议你把它的帮助手册好好研究一下, 用下面的命令可以调出帮助手册:<br></span></span>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td><span><span>:help winmanager</span></span></td>
+</tr>
+</tbody>
+</table>
+<span><span><br></span></span></td>
+</tr>
+<tr>
+<td>8.<a name="8"></a></td>
+<td>Cscope 的使用</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>这下更厉害了, 用Cscope自己的话说 - "你可以把它当做是超过频的ctags", 其功能和强大程度可见一斑吧, 关于它的介绍我就不详细说了, 如果你安装好了前文介绍的中文帮助手册, 用下面的命令看看介绍吧:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:help if_cscop.txt</td>
+</tr>
+</tbody>
+</table>
+我在这里简单摘抄一点, 供还在犹豫的朋友看看:<br>Cscope 是一个交互式的屏幕下使用的工具，用来帮助你:<br>* 无须在厚厚的程序清单中翻来翻去就可以认识一个 C 程序的工作原理。<br>* 无须熟悉整个程序就可以知道清楚程序 bug 所要修改的代码位置。<br>* 检查提议的改动 (如添加一个枚举值) 可能会产生的效果。<br>* 验证所有的源文件都已经作了需要的修改；例如给某一个现存的函数添加一个参数。<br>* 在所有相关的源文件中对一个全局变量改名。<br>* 在所有相关的位置将一个常数改为一个预处理符号。<br><br>它被设计用来回答以下的问题:<br>* 什么地方用到了这个符号？<br>* 这是在什么地方定义的？<br>* 这个变量在哪里被赋值？<br>* 这个全局符号的定义在哪里？<br>* 这个函数在源文件中的哪个地方？<br>* 哪些函数调用了这个函数？<br>* 这个函数调用了哪些函数？<br>* 信息 "out of space" 从哪来？<br>* 这个源文件在整个目录结构中处于什么位置？<br>* 哪些文件包含这个头文件？<br><br>安装Cscope:<br>如果你的系统中有cscope命令, 则可以跳过这一小段, 如果没有, 就先跟着我一起安装一个吧.<br>在Cscope的主页: http://cscope.sourceforge.net 下载一个源码包, 解压后编译安装:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td># ./configure<br># make<br># make install<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 需要root权限</span></td>
+</tr>
+</tbody>
+</table>
+<br>先在~/vimrc中增加一句:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:set cscopequickfix=s-,c-,d-,i-,t-,e-</td>
+</tr>
+</tbody>
+</table>
+这个是设定是否使用 quickfix 窗口来显示 cscope 结果, 用法在后面会说到。<br><br>跟Ctags一样, 要使用其功能必须先为你的代码生成一个cscope的数据库, 在项目的根目录运行下面的命令:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>$ cd /home/wooin/vim71/<br>$ cscope -Rbq<br><span># 此后会生成三个文件</span><br>$ ll cscope.*<br>-rw-rw-r-- 1 wooin wooin 1.1M 2007-09-30 10:56 cscope.in.out<br>-rw-rw-r-- 1 wooin wooin 6.7M 2007-09-30 10:56 cscope.out<br>-rw-rw-r-- 1 wooin wooin 5.1M 2007-09-30 10:56 cscope.po.out<br><span># 打开文件, 开始Coding</span><br>$ cd src<br>$ vi main.c</td>
+</tr>
+</tbody>
+</table>
+进入vim后第一件事是要把刚才生成的cscope文件导入到vim中来, 用下面的命令:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:cs add /home/wooin/vim71/cscope.out /home/wooin/vim71</td>
+</tr>
+</tbody>
+</table>
+上面这条命令很重要, 必须写全, 不能只写前半句:<br>:cs add /home/wooin/vim71/cscope.out<br>因为源码是多级目录的, 如果这样写, cscope是无法在子目录中的源码中工作的, 当然, 如果你的源码都在同一级目录中就无所谓了. 如果你要经常用cscope的话, 可以把上面那句加到~/.vimrc中去.<br><br>下面我们来操练一下, 查找函数vim_strsave()的定义, 用命令:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:cs find g vim_strsave</td>
+</tr>
+</tbody>
+</table>
+如下图:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_f.png" alt=""><br>(--- 图8 ---)<br>按下回车后会自动跳转到vim_strsave()的定义处. 此时你肯定会说Ctags也可以做到这个呀, 那么下面说的这个Ctags就无法做到了, 我想查找vim_strsave()到底在那些地方被调用过了, 用命令:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:cs find c vim_strsave</td>
+</tr>
+</tbody>
+</table>
+按下回车后vim会自动跳转到第一个符合要求的地方, 并且在命令栏显示有多少符合要求的结果, 如图:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_g.png" alt=""><br>(--- 图9 ---)<br>如果自动跳转的位置你不满意, 想看其他的结果, 可以用下面的命令打开QuickFix窗口:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:cw</td>
+</tr>
+</tbody>
+</table>
+如图:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_h.png" alt=""><br>(--- 图10 ---)<br>这时你就可以慢慢挑选了^_^<br><br>cscope的主要功能是通过同的子命令"find"来实现的<br>"cscope find"的用法:<br>cs find c|d|e|f|g|i|s|t name<br>
+<table border="1" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>0 或 s</td>
+<td>查找本 C 符号(可以跳过注释)</td>
+</tr>
+<tr>
+<td>1 或 g</td>
+<td>查找本定义</td>
+</tr>
+<tr>
+<td>2 或 d</td>
+<td>查找本函数调用的函数</td>
+</tr>
+<tr>
+<td>3 或 c</td>
+<td>查找调用本函数的函数</td>
+</tr>
+<tr>
+<td>4 或 t</td>
+<td>查找本字符串</td>
+</tr>
+<tr>
+<td>6 或 e</td>
+<td>查找本 egrep 模式</td>
+</tr>
+<tr>
+<td>7 或 f</td>
+<td>查找本文件</td>
+</tr>
+<tr>
+<td>8 或 i</td>
+<td>查找包含本文件的文件</td>
+</tr>
+</tbody>
+</table>
+<br>如果每次查找都要输入一长串命令的话还真是件讨人厌的事情, Cscope的帮助手册中推荐了一些快捷键的用法, 下面是其中一组, 也是我用的, 将下面的内容添加到~/.vimrc中, 并重启vim:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>nmap &lt;C-_&gt;s :cs find s &lt;C-R&gt;=expand("&lt;cword&gt;")&lt;CR&gt;&lt;CR&gt;<br>nmap &lt;C-_&gt;g :cs find g &lt;C-R&gt;=expand("&lt;cword&gt;")&lt;CR&gt;&lt;CR&gt;<br>nmap &lt;C-_&gt;c :cs find c &lt;C-R&gt;=expand("&lt;cword&gt;")&lt;CR&gt;&lt;CR&gt;<br>nmap &lt;C-_&gt;t :cs find t &lt;C-R&gt;=expand("&lt;cword&gt;")&lt;CR&gt;&lt;CR&gt;<br>nmap &lt;C-_&gt;e :cs find e &lt;C-R&gt;=expand("&lt;cword&gt;")&lt;CR&gt;&lt;CR&gt;<br>nmap &lt;C-_&gt;f :cs find f &lt;C-R&gt;=expand("&lt;cfile&gt;")&lt;CR&gt;&lt;CR&gt;<br>nmap &lt;C-_&gt;i :cs find i ^&lt;C-R&gt;=expand("&lt;cfile&gt;")&lt;CR&gt;$&lt;CR&gt;<br>nmap &lt;C-_&gt;d :cs find d &lt;C-R&gt;=expand("&lt;cword&gt;")&lt;CR&gt;&lt;CR&gt;</td>
+</tr>
+</tbody>
+</table>
+当光标停在某个你要查找的词上时, 按下&lt;C-_&gt;g, 就是查找该对象的定义, 其他的同理.<br>按这种组合键有一点技巧,按了&lt;C-_&gt;后要马上按下一个键,否则屏幕一闪就回到nomal状态了<br>&lt;C-_&gt;g的按法是先按"Ctrl+Shift+-", 然后很快再按"g"<br><br>很奇怪, 其中的这句:<br>nmap &lt;C-_&gt;i :cs find i ^&lt;C-R&gt;=expand("&lt;cfile&gt;")&lt;CR&gt;$&lt;CR&gt;<br>在我的vim中无法工作, 但是我改成:<br>nmap &lt;C-_&gt;i :cs find i &lt;C-R&gt;=expand("&lt;cfile&gt;")&lt;CR&gt;&lt;CR&gt;<br>就可以正常工作了, 不知道是什么原因? 有哪位朋友知道请告诉我.<br><br>cscope的其他功能你可以通过帮助手册自己慢慢学习<br><br><span>reset : 重新初始化所有连接。</span><br><span>用法&nbsp; : cs reset</span><br><br></td>
+</tr>
+<tr>
+<td>9.<a name="9"></a></td>
+<td>QuickFix 窗口</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>在上一节的图10中大家可以看到在窗口下面有一个显示查询结果的窗口, 这个窗口中列出了查询命令的查询结果, 用户可以从这个窗口中选择每个结果进行查看, 这个窗口叫"QuickFix"窗口, 以前也是一个vim的插件来的, 只不过现在成了vim的标准插件, 不用你在去安装了, QuickFix窗口的主要作用就是上面看到的那个功能: 输出一些供选择的结果, 可以被很多命令调用, 更详细的介绍和使用方法请用下面的命令打开QuickFix的手册来学习吧:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:help quickfix</td>
+</tr>
+</tbody>
+</table>
+这里我一个常用的例子来再介绍一种QuickFix窗口的使用方法. 这个例子是要模仿平时我们编程时, 当编译出错时, QuickFix会把出错的信息列出来, 供我们一条条地查看和修改. 首先还是用vim打开~/vim71/src/main.c, 事先最好先编译过vim71, 否则一会儿编译的时候有点慢, 或者你也可以自己写一个小的有错误的程序来跟着我做下面的步骤, 见下图:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_l.png" alt=""><br>(--- 图11 ---)<br>我们修改一下main.c, 人为地造成几处错误, 在第1019行增加了一个baobao_wu的没有任何定义的字符串, 删除了第1020行最后的一个括号")", 然后用下面的命令进行编译:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:make</td>
+</tr>
+</tbody>
+</table>
+显然编译会报很多错误, 当编译结束并退出到源码界面时, 刚才编译器报的错误都已经看不到了, 但是我们可以用QuickFix窗口再将错误信息找出来, 用下面的命令调出QuickFix窗口:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:cw</td>
+</tr>
+</tbody>
+</table>
+此时你就可以看如下图所示的QuickFix窗口了:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_m.png" alt=""><br>(--- 图12 ---)<br>在下面的QuickFix窗口中我们可以找到每一个编译错误, 同样你可以用鼠标点击每一条记录, 代码会马上自动跳转到错误处, 你还可以用下面的命令来跳转:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:cn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>// 切换到下一个结果</span><br>:cp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>// 切换到上一个结果</span></td>
+</tr>
+</tbody>
+</table>
+如果你经常使用这两个命令, 你还可以给他们设定快捷键, 比如在~/.vimrc中增加:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>nmap &lt;F6&gt; :cn&lt;cr&gt;<br>nmap &lt;F7&gt; :cp&lt;cr&gt;</td>
+</tr>
+</tbody>
+</table>
+<br>其还有其他的命令/插件也会用到QuickFix窗口, 但是用法基本上的都是类似的, 本文后面还会用到QuickFix窗口, 接着往下看吧.</td>
+</tr>
+<tr>
+<td>10.<a name="10"></a></td>
+<td>快速浏览和操作Buffer -- 插件: MiniBufExplorer</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>下载地址</td>
+<td>http://www.vim.org/scripts/script.php?script_id=159</td>
+</tr>
+<tr>
+<td>版本</td>
+<td>6.3.2</td>
+</tr>
+<tr>
+<td>安装</td>
+<td><span><span>将下载的 minibufexpl.vim文件丢到 ~/.vim/plugin 文件夹中即可</span></span></td>
+</tr>
+<tr>
+<td>手册</td>
+<td><span><span>在minibufexpl.vim 文件的头部<br></span></span></td>
+</tr>
+</tbody>
+</table>
+<span><span><br></span></span>在编程的时候不可能永远只编辑一个文件, 你肯定会打开很多源文件进行编辑, 如果每个文件都打开一个vim进行编辑的话那操作起来将是多麻烦啊, 所以vim有buffer(缓冲区)的概念, 可以看vim的帮助:<br>:help buffer<br>vim自带的buffer管理工具只有:ls, :bnext, :bdelete 等的命令, 既不好用, 又不直观. 现在隆重向你推荐一款vim插件(plugin): MiniBufExplorer<br><span><br><span>使用方法:<br>重新启动vim, 当你只编辑一个buffer的时候</span></span>MiniBufExplorer派不上用场, 当你打开第二个buffer的时候, MiniBufExplorer窗口就自动弹出来了, 见下图:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_03.png" alt=""><br>(--- 图13 ---)<br>上面那个狭长的窗口就是MiniBufExplorer窗口, 其中列出了当前所有已经打开的buffer, 当你把光标置于这个窗口时, 有下面几个快捷键可以用:<br>
+<table border="1" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>&lt;Tab&gt;</td>
+<td>向前循环切换到每个buffer名上</td>
+</tr>
+<tr>
+<td>&lt;S-Tab&gt;</td>
+<td>向后循环切换到每个buffer名上</td>
+</tr>
+<tr>
+<td>&lt;Enter&gt;</td>
+<td>在打开光标所在的buffer</td>
+</tr>
+<tr>
+<td>d</td>
+<td>删除光标所在的buffer</td>
+</tr>
+</tbody>
+</table>
+<br>以下的两个功能需要在~/.vimrc中增加:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>let g:miniBufExplMapCTabSwitchBufs = 1</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table border="1" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>&lt;C-Tab&gt;</td>
+<td>向前循环切换到每个buffer上,并在但前窗口打开</td>
+</tr>
+<tr>
+<td>&lt;C-S-Tab&gt;</td>
+<td>向后循环切换到每个buffer上,并在但前窗口打开</td>
+</tr>
+</tbody>
+</table>
+<br>如果在~/.vimrc中设置了下面这句:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>let g:miniBufExplMapWindowNavVim = 1</td>
+</tr>
+</tbody>
+</table>
+则可以用&lt;C-h,j,k,l&gt;切换到上下左右的窗口中去,就像:<br>C-w,h j k l&nbsp;&nbsp;&nbsp; 向"左,下,上,右"切换窗口.<br>在~/.vimrc中设置:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>let g:miniBufExplMapWindowNavArrows = 1</td>
+</tr>
+</tbody>
+</table>
+是用&lt;C-箭头键&gt;切换到上下左右窗口中去</td>
+</tr>
+<tr>
+<td valign="top">11.<a name="11"></a></td>
+<td>c/h文件间相互切换 -- 插件: A</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>下载地址</td>
+<td>http://www.vim.org/scripts/script.php?script_id=31</td>
+</tr>
+<tr>
+<td>版本</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>安装</td>
+<td>将a.vim 放到 ~/.vim/plugin 文件夹中</td>
+</tr>
+<tr>
+<td>手册</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<br>下面介绍它的用法:<br>作为一个C程序员, 日常Coding时在源文件与头文件间进行切换是再平常不过的事了, 直接用vim打开其源/头文件其实也不是什么麻烦事, 但是只用一个按键就切换过来了, 这是多么贴心的功能啊....<br>安装好a.vim后有下面的几个命令可以用了:<br>
+<table border="1" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:A</td>
+<td>在新Buffer中切换到c/h文件</td>
+</tr>
+<tr>
+<td>:AS</td>
+<td>横向分割窗口并打开c/h文件</td>
+</tr>
+<tr>
+<td>:AV</td>
+<td>纵向分割窗口并打开c/h文件</td>
+</tr>
+<tr>
+<td>:AT</td>
+<td>新建一个标签页并打开c/h文件</td>
+</tr>
+</tbody>
+</table>
+其他还有一些命令, 你可以在它的网页上看看, 我都没用过, 其实也都是大同小异, 找到自己最顺手的就行了.<br><br>我在~/.vimrc中增加了一句:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>nnoremap &lt;silent&gt; &lt;F12&gt; :A&lt;CR&gt;</td>
+</tr>
+</tbody>
+</table>
+意思是按F12时在一个新的buffer中打开c/h文件, 这样在写程序的时候就可以不假思索地在c/h文件间进行切换, 减少了按键的次数, 思路也就更流畅了, 阿弥陀佛....</td>
+</tr>
+<tr>
+<td valign="top">12.<a name="12"></a></td>
+<td>在工程中查找 -- 插件: Grep</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>下载地址</td>
+<td>http://www.vim.org/scripts/script.php?script_id=311</td>
+</tr>
+<tr>
+<td><span><span>版本</span></span></td>
+<td><span><span>1.8</span></span></td>
+</tr>
+<tr>
+<td>安装</td>
+<td>把grep.vim 文件丢到 ~/.vim/plugin 文件夹就好了</td>
+</tr>
+<tr>
+<td>手册</td>
+<td>在grep.vim 文件头部</td>
+</tr>
+</tbody>
+</table>
+<span><br></span>下面介绍它的用法:<br>vim有自己的查找功能, 但是跟shell中的grep比起来还是有些差距的, 有时Coding正火急火燎的时候, 真想按下F3, 对光标所在的词来个全工程范围的grep, 不用敲那些繁琐的命令, 现在福音来了, 跟我同样懒的人不在少数, 在grep.vim脚本的前部可以找到一些说明文档:<br>
+<table border="1" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:Grep</td>
+<td>按照指定的规则在指定的文件中查找</td>
+</tr>
+<tr>
+<td>:Rgrep</td>
+<td>同上, 但是是递归的grep</td>
+</tr>
+<tr>
+<td>:GrepBuffer</td>
+<td>在所有打开的缓冲区中查找</td>
+</tr>
+<tr>
+<td>:Bgrep</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>:GrepArgs</td>
+<td>在vim的argument filenames (:args)中查找</td>
+</tr>
+<tr>
+<td>:Fgrep</td>
+<td>运行fgrep</td>
+</tr>
+<tr>
+<td>:Rfgrep</td>
+<td>运行递归的fgrep</td>
+</tr>
+<tr>
+<td>:Egrep</td>
+<td>运行egrep</td>
+</tr>
+<tr>
+<td>:Regrep</td>
+<td>运行递归的egrep</td>
+</tr>
+<tr>
+<td>:Agrep</td>
+<td>运行agrep</td>
+</tr>
+<tr>
+<td>:Ragrep</td>
+<td>运行递归的agrep</td>
+</tr>
+</tbody>
+</table>
+<br>上面的命令是类似这样调用的:<br>
+<table border="1" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:Grep&nbsp;&nbsp; [&lt;grep_options&gt;] [&lt;search_pattern&gt; [&lt;file_name(s)&gt;]]</td>
+</tr>
+<tr>
+<td>:Rgrep&nbsp; [&lt;grep_options&gt;] [&lt;search_pattern&gt; [&lt;file_name(s)&gt;]]</td>
+</tr>
+<tr>
+<td>:Fgrep&nbsp; [&lt;grep_options&gt;] [&lt;search_pattern&gt; [&lt;file_name(s)&gt;]]</td>
+</tr>
+<tr>
+<td>:Rfgrep [&lt;grep_options&gt;] [&lt;search_pattern&gt; [&lt;file_name(s)&gt;]]</td>
+</tr>
+<tr>
+<td>:Egrep&nbsp; [&lt;grep_options&gt;] [&lt;search_pattern&gt; [&lt;file_name(s)&gt;]]</td>
+</tr>
+<tr>
+<td>:Regrep [&lt;grep_options&gt;] [&lt;search_pattern&gt; [&lt;file_name(s)&gt;]]</td>
+</tr>
+<tr>
+<td>:Agrep&nbsp; [&lt;grep_options&gt;] [&lt;search_pattern&gt; [&lt;file_name(s)&gt;]]</td>
+</tr>
+<tr>
+<td>:Ragrep [&lt;grep_options&gt;] [&lt;search_pattern&gt; [&lt;file_name(s)&gt;]]</td>
+</tr>
+<tr>
+<td>:GrepBuffer [&lt;grep_options&gt;] [&lt;search_pattern&gt;]</td>
+</tr>
+<tr>
+<td>:Bgrep [&lt;grep_options&gt;] [&lt;search_pattern&gt;]</td>
+</tr>
+<tr>
+<td>:GrepArgs [&lt;grep_options&gt;] [&lt;search_pattern&gt;]</td>
+</tr>
+</tbody>
+</table>
+<br>但是我从来都不用敲上面那些命令的^_^, 因为我在~/.vimrc中增加了下面这句:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>nnoremap &lt;silent&gt; &lt;F3&gt; :Grep&lt;CR&gt;</td>
+</tr>
+</tbody>
+</table>
+比如你想在/home/wooin/vim71/src/main.c中查找"FEAT_QUICKFIX", 则将光标移到"FEAT_QUICKFIX"上, 然后按下F3键, 如下图:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_a.png" alt=""><br>(--- 图14 ---)<br>在最下面的命令行会显示:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>Search for pattern: FEAT_QUICKFIX</td>
+</tr>
+</tbody>
+</table>
+此时你还可以编辑该行, grep支持正则表达式, 你想全词匹配的话可以改成:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>Search for pattern: /&lt;FEAT_QUICKFIX/&gt;</td>
+</tr>
+</tbody>
+</table>
+然后按下回车:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_b.png" alt=""><br>(--- 图15 ---)<br>在最下面的命令行会显示:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>Search in files: *</td>
+</tr>
+</tbody>
+</table>
+是问你搜索范围, 默认是该目录下的所有文件, 此时你还可以编辑该行, 比如你只想搜索源码文件:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>Search in files: *.c *.h</td>
+</tr>
+</tbody>
+</table>
+然后在按下回车, 会在弹出的QuickFix窗口中列出所有符合条件的搜索结果, 你可以在其中查找你想要的结果, 如下图:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_c.png" alt=""><br>(--- 图16 ---)<br><br>其实还有一些其他功能和设置, 但是我都没有用过, 这些功能再加上正则表达式, 已经够我用了, 其他的你可以在网页上看看它的文档, 如果有什么惊人发现记得跟我互通有无, 共同进步哦....</td>
+</tr>
+<tr>
+<td>13.<a name="13"></a></td>
+<td>高亮的书签 -- 插件: VisualMark</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>下载地址</td>
+<td>http://www.vim.org/scripts/script.php?script_id=1026</td>
+</tr>
+<tr>
+<td>版本</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>安装</td>
+<td>把visualmark.vim 文件丢到 ~/.vim/plugin 文件夹就好了</td>
+</tr>
+<tr>
+<td>手册</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<span><br></span>下面介绍它的用法:<br>vim也和其他编辑器一样有"书签"概念, 在vim中叫"Mark", 可以用下面的命令查看相关说明:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:help Mark</td>
+</tr>
+</tbody>
+</table>
+该"书签"有个很很大的缺点: 不可见.<br>我下面要介绍的Visual Mark插件跟vim中的"Mark"没有什么关系, 并不是使其可见, 而是自己本身就是"可见的书签", 接着往下看就明白了, 用作者的话说就是"类似UltraEdit中的书签".<br>另外, 网上也有使vim中的Mark可见的插件, 但是我试了一下, 好像没Visual Mark好用, 我就不介绍了.<br><br>按照上面的方法安装好Visual Mark后, 你什么也不用设置, 如果是gvim, 直接在代码上按下Ctrl+F2, 如果是vim, 用"mm", 怎么样, 发现光标所在的行变高亮了吧, 见下图:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_d.png" alt=""><br>(--- 图17 ---)<br>如果你设置了多个书签, 你可以用F2键正向在期间切换, 用Shift+F2反向在期间切换.<br>好了, 我Visual Mark介绍完了, 够简单吧^_^.<br><br>如果你嫌书签的颜色不好看, 你还可以自己定义, 不过是修改这个插件脚本的的源码, 在目录~/.vim/plugin/中找到并打开visualmark.vim, 找到下面这段代码:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>if &amp;bg == "dark"&nbsp;&nbsp;<span>// 根据你的背景色风格来设置不同的书签颜色</span><br>&nbsp;highlight SignColor ctermfg=white ctermbg=blue guifg=wheat&nbsp;<span>guibg</span>=peru<br>else&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>// 主要就是修改guibg的值来设置书签的颜色</span><br>&nbsp;highlight SignColor ctermbg=white ctermfg=blue&nbsp;<span>guibg</span>=grey guifg=RoyalBlue3<br>endif</td>
+</tr>
+</tbody>
+</table>
+<br>我还有几个不满意的地方:<br>1 这个书签不能自动保存, 关闭vim就没了.&nbsp;<br>2 切换书签时不能在不同文件间切换, 只能在同一个文件中切换<br><br>如果哪位朋友能解决这两个问题, 请一定要告诉寡人啊....还是用下面的地址:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>Email</td>
+<td>: lazy.fox.wu#gmail.com</td>
+</tr>
+<tr>
+<td>Homepage</td>
+<td>: http://blog.csdn.net/wooin</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>14.<a name="14"></a></td>
+<td>自动补全</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>用过Microsoft Visual Studio的朋友一定知道代码补全功能, 输入一个对象名后再输入"."或者"-&gt;", 则其成员名都可以列出来, 使Coding流畅了许多, 实现很多懒人的梦想, 现在我要告诉你, 这不再是Microsoft Visual Studio的专利了, vim也可以做到! 下面由我来教你, 该功能要tags文件的支持, 并且是ctags 5.6版本, 可以看看前文介绍tags文件的章节.<br><br>我这里要介绍的功能叫"new-omni-completion(全能补全)", 你可以用下面的命令看看介绍:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:help new-omni-completion</td>
+</tr>
+</tbody>
+</table>
+<br>你还需要在~/.vimrc文件中增加下面两句:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>filetype plugin indent on</td>
+</tr>
+</tbody>
+</table>
+打开文件类型检测, 加了这句才可以用智能补全<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>set completeopt=longest,menu</td>
+</tr>
+</tbody>
+</table>
+关掉智能补全时的预览窗口<br><br>请确定你的Ctags 5.6已经安装好, 并且生成的tags文件已经可以用了, 那么我们就要抄家伙开搞了.<br>用vim打开源文件<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>$ vi /home/wooin/vim71/src/main.c</td>
+</tr>
+</tbody>
+</table>
+设置tags文件<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>:set tags=/home/wooin/vim71/tags</td>
+</tr>
+</tbody>
+</table>
+随便找一个有成员变量的对象, 比如"parmp", 进入Insert模式, 将光标放在"-&gt;"后面,&nbsp;<br>然后按下"Ctrl+X Ctrl+O", 此时会弹出一个下列菜单, 显示所有匹配的标签, 如下图:<br><img src="./Vim 配置详解 - witcxc - 博客园_files/programming_with_gvim_e.png" alt=""><br>(--- 图18 ---)<br>此时有一些快捷键可以用:<br>
+<table border="1" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>Ctrl+P</td>
+<td>向前切换成员</td>
+</tr>
+<tr>
+<td>Ctrl+N</td>
+<td>向后切换成员</td>
+</tr>
+<tr>
+<td>Ctrl+E</td>
+<td>表示退出下拉窗口, 并退回到原来录入的文字</td>
+</tr>
+<tr>
+<td>Ctrl+Y</td>
+<td>表示退出下拉窗口, 并接受当前选项</td>
+</tr>
+</tbody>
+</table>
+<br>如果你增加了一些成员变量, 全能补全还不能马上将新成员补全, 需要你重新生成一下tags文件, 但是你不用重启vim, 只是重新生成一下tags文件就行了, 这时全能补全已经可以自动补全了, 还真够"全能"吧.<br><br>vim中的其他补全方式还有:<br>
+<table border="1" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>Ctrl+X Ctrl+L</td>
+<td>整行补全</td>
+</tr>
+<tr>
+<td>Ctrl+X Ctrl+N</td>
+<td>根据当前文件里关键字补全</td>
+</tr>
+<tr>
+<td>Ctrl+X Ctrl+K</td>
+<td>根据字典补全</td>
+</tr>
+<tr>
+<td>Ctrl+X Ctrl+T</td>
+<td>根据同义词字典补全</td>
+</tr>
+<tr>
+<td>Ctrl+X Ctrl+I</td>
+<td>根据头文件内关键字补全</td>
+</tr>
+<tr>
+<td>Ctrl+X Ctrl+]</td>
+<td>根据标签补全</td>
+</tr>
+<tr>
+<td>Ctrl+X Ctrl+F</td>
+<td>补全文件名</td>
+</tr>
+<tr>
+<td>Ctrl+X Ctrl+D</td>
+<td>补全宏定义</td>
+</tr>
+<tr>
+<td>Ctrl+X Ctrl+V</td>
+<td>补全vim命令</td>
+</tr>
+<tr>
+<td>Ctrl+X Ctrl+U</td>
+<td>用户自定义补全方式</td>
+</tr>
+<tr>
+<td>Ctrl+X Ctrl+S</td>
+<td>拼写建议</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>15.<a name="15"></a></td>
+<td>加速你的补全 -- 插件: SuperTab</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>下载地址</td>
+<td>http://www.vim.org/scripts/script.php?script_id=1643</td>
+</tr>
+<tr>
+<td><span><span>版本</span></span></td>
+<td><span><span>0.43</span></span></td>
+</tr>
+<tr>
+<td>安装</td>
+<td>把supertab.vim 文件丢到 ~/.vim/plugin 文件夹就好了</td>
+</tr>
+<tr>
+<td>手册</td>
+<td>supertab.vim 文件头部, 和命令 ":SuperTabHelp"</td>
+</tr>
+</tbody>
+</table>
+<span><br></span>在上面一节中你应该学会了自动补全代码的功能, 按下"Ctrl+X Ctrl+O"就搞定了, 如果你够懒的话肯定会说"这么麻烦啊, 居然要按四个键", 不必为此自责, 因为Gergely Kontra 和 Eric Van Dewoestine也跟你差不多, 只不过人家开发了supertab.vim这个插件, 可以永远懒下去了, 下面我来教你偷懒吧.<br><br>在你的~/.vimrc文件中加上这两句:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>let g:SuperTabRetainCompletionType=2<br>let g:SuperTabDefaultCompletionType="&lt;C-X&gt;&lt;C-O&gt;"</td>
+</tr>
+</tbody>
+</table>
+以后当你准备按"Ctrl+X Ctrl+O"的时候直接按&lt;Tab&gt;就好了, 够爽吧 ....<br><br>我稍微再介绍一下上面那两句配置信息:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>let g:SuperTabDefaultCompletionType="&lt;C-X&gt;&lt;C-O&gt;"<br><span>" 设置按下&lt;Tab&gt;后默认的补全方式, 默认是&lt;C-P&gt;,&nbsp;<br>" 现在改为&lt;C-X&gt;&lt;C-O&gt;. 关于&lt;C-P&gt;的补全方式,&nbsp;</span><br><span>" 还有其他的补全方式, 你可以看看下面的一些帮助:</span><br><span>" :help ins-completion</span><br><span>" :help compl-omni</span></td>
+</tr>
+</tbody>
+</table>
+<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>let g:SuperTabRetainCompletionType=2<br><span>" 0 - 不记录上次的补全方式</span><br><span>" 1 - 记住上次的补全方式,直到用其他的补全命令改变它</span><br><span>" 2 - 记住上次的补全方式,直到按ESC退出插入模式为止</span></td>
+</tr>
+</tbody>
+</table>
+<br>问题:<br>但是现在我的&lt;Tab&gt;键不好用了, 我以前爱用&lt;Tab&gt;进行缩进, 如果前面有字符按下&lt;Tab&gt;键后就会进行补全, 而不是我想要的缩进功能, 不知道有没有快捷键可以暂时关闭和激活SuperTab键的功能. 如果哪位朋友知道, 请一定记得告诉我啊....还是用下面的地址:<br>
+<table border="0" cellspacing="2" cellpadding="2">
+<tbody>
+<tr>
+<td>Email</td>
+<td>: lazy.fox.wu#gmail.com</td>
+</tr>
+<tr>
+<td>Homepage</td>
+<td>: http://blog.csdn.net/wooin</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top">@</td>
+<td>Help poor children in Uganda!</td>
+</tr>
+<tr>
+<td valign="top">&nbsp;</td>
+<td>"帮助可怜的乌干达儿童"<br>vim的作者开发了这么个强大, 好用的编辑器, 并且是完全开源, 完全免费的, 不知道比尔盖子会不会觉得这个人真是不可理喻. 作者对用户用户的唯一期望就是帮助乌干达的儿童, 可以用命令:hlep kcc查看详细的内容,&nbsp;<br><br>1、捐助一个读小学的孩子：每月 17 欧元 (或更多)。<br>2、捐助一个读中学的孩子：每月 25 欧元 (或更多)。<br>3、捐助诊所：每月或每季度，数额不限。<br>4、一次性捐赠。<br><br>有条件的就资助一下, 没条件的就像我一样帮助宣传一下吧, 这也算是开源精神.....</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><span><br></span></p></div><div id="MySignature"></div>
+<script type="text/javascript">
+var isLogined = false;
+var cb_blogId = 101658;
+var cb_entryId = 2304704;
+var cb_blogApp = currentBlogApp;
+var cb_blogUserGuid = "452fbd1a-c6ec-e011-8ee0-842b2b196315";
+var cb_entryCreatedDate = '2011/12/28 13:54:00';
+var enableGoogleAd = true;
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+</script>
+<div id="blog_post_info_block">
+<div id="blog_post_info"><div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="green_channel">
+绿色通道：
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(cb_entryId,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://space.cnblogs.com/msg/send/witcxc" target="_blank">与我联系</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./Vim 配置详解 - witcxc - 博客园_files/icon_weibo_24.png" alt=""></a>
+</div>
+<div id="digg_block">
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/witcxc/" target="_blank"><img src="./Vim 配置详解 - witcxc - 博客园_files/u337468.jpg" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/witcxc/">witcxc</a><br>
+<a href="http://home.cnblogs.com/u/witcxc/followees">关注 - 0</a><br>
+<a href="http://home.cnblogs.com/u/witcxc/followers">粉丝 - 1</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+<a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+	<div class="diggit" onclick="votePost(cb_entryId,&#39;Digg&#39;)"> 
+		<span class="diggnum" id="digg_count">0</span>
+	</div>
+	<div class="buryit" onclick="votePost(cb_entryId,&#39;Bury&#39;)"> 
+		<span class="burynum" id="bury_count">0</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/witcxc/archive/2011/12/28/2304870.html" class="p_n_p_prefix">» </a> 博主后一篇：<a href="http://www.cnblogs.com/witcxc/archive/2011/12/28/2304870.html" title="发布于2011-12-28 15:30">Emacs在Windows下的安装需注意的几点</a><br></div>
+</div>
+<script type="text/javascript">
+    initBottomGoogleAd();
+</script>
+<script type="text/javascript">
+    $(function () {       
+        fixPostBodyFormat();
+        loadBottomGoogleAd();
+        loadBlogSignature();
+        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+        showEditorOpt();
+        loadNewsAndKb();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+        loadAdUnderGoogle();
+    });
+</script>
+		</div>
+		<p class="postfoot">
+			posted on <span id="post-date">2011-12-28 13:54</span> <a href="http://www.cnblogs.com/witcxc/">witcxc</a> 阅读(2254) 评论(<span id="post-comment-count">0</span>)  <a href="http://www.cnblogs.com/witcxc/admin/EditPosts.aspx?postid=2304704" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/witcxc/archive/2011/12/28/2304704.html#" onclick="AddToWz(2304704);return false;">收藏</a>
+		</p>
+	</div>
+	<img src="./Vim 配置详解 - witcxc - 博客园_files/2304704.html" width="1" height="1" alt="">
+	
+	<div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.loadComments();</script>
+<div id="comment_form" class="commentform">
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="http://www.cnblogs.com/witcxc/archive/2011/12/28/2304704.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/witcxc/archive/2011/12/28/2304704.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+
+<script type="text/javascript">
+    if (typeof commentManager === 'undefined') {
+        commentManager = new blogCommentManager();
+    }
+    commentManager.loadCommentForm();   
+</script>
+
+<div class="ad_text_commentbox"><a href="http://q.cnblogs.com/" target="_blank">程序员问答社区，解决您的技术难题</a></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="程序员的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a><div id="site_editor_opt"></div></div>
+<script type="text/javascript">
+enableGoogleAd = true;
+if ($("#cnblogs_post_body").text().length < 1000) {
+    enableGoogleAd = false;
+}
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+<div id="div-gpt-ad-1320933818841-0" style="width:300px; height:250px;">
+<script type="text/javascript">
+    if (enableGoogleAd) {
+        try {
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1320933818841-0'); });
+        } catch (e) { }
+    } else {
+        $('#google_ad_c1').hide();
+    }
+</script>
+<iframe id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_0" name="google_ads_iframe_/1090369/cnblogs_blogpost_C1_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-image: initial; "></iframe><iframe id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_0__hidden__" name="google_ads_iframe_/1090369/cnblogs_blogpost_C1_0__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-image: initial; visibility: hidden; display: none; "></iframe></div>
+</div>
+<div id="blog-news-kb"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/149545/" target="_blank">诺基亚在华合并两个销售大区 确认将裁员</a><br> ·  <a href="http://news.cnblogs.com/n/149544/" target="_blank">英国公布第9批UFO绝密档案称目击银装无脸人</a><br> ·  <a href="http://news.cnblogs.com/n/149543/" target="_blank">移动医疗开走，是什么挡在路上？</a><br> ·  <a href="http://news.cnblogs.com/n/149542/" target="_blank">Bing Gordon 和 Don Mattrick 畅谈游戏行业的未来</a><br> ·  <a href="http://news.cnblogs.com/n/149541/" target="_blank">与20年前的自己对话</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/149449/" target="_blank">产品经理（尤其是创业的）需要懂技术吗？懂到什么程度？</a><br> ·  <a href="http://kb.cnblogs.com/page/120505/" target="_blank">关于项目管理的一点体会</a><br> ·  <a href="http://kb.cnblogs.com/page/117493/" target="_blank">编程技术面试的五大要点</a><br> ·  <a href="http://kb.cnblogs.com/page/131354/" target="_blank">是什么成就了卓越的程序员？</a><br> ·  <a href="http://kb.cnblogs.com/page/148774/" target="_blank">由后端来类比前端设计的思考</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="google_ad_c2" class="c_ad_block">
+<div id="div-gpt-ad-1320933818841-1" style="width:468px; height:60px;">
+<script type="text/javascript">
+    if (enableGoogleAd) {
+        try {
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1320933818841-1'); });
+        } catch (e) { }
+    } else {
+        $('#google_ad_c2').hide();
+    }
+</script>
+<iframe id="google_ads_iframe_/1090369/cnblogs_blogpost_C2_0" name="google_ads_iframe_/1090369/cnblogs_blogpost_C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-image: initial; "></iframe></div>
+</div>
+<div id="ad_under_google" class="c_ad_block" style=""><a href="http://www.china-pub.com/static07/1206/12znq_dyb_20120618/12znq_dyb_20120618.asp" target="_blank" rel="nofollow"><img src="./Vim 配置详解 - witcxc - 博客园_files/china-pub-0620.jpg" alt="" style="border:0px;"></a><br><a href="http://www.china-pub.com/sale/usedbook.aspx" target="_blank" rel="nofollow">China-Pub 低价书精选</a><br><a href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" target="_blank" rel="nofollow">China-Pub 计算机绝版图书按需印刷服务</a></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+</div>
+
+
+
+
+
+</div>
+</div>
+<div id="leftmenu">
+
+
+<h3>导航</h3>
+<ul>
+<li>
+<a id="MyLinks1_HomeLink" href="http://www.cnblogs.com/">博客园</a></li>
+<li>
+<a id="MyLinks1_MyHomeLink" class="two_words" href="http://www.cnblogs.com/witcxc/">首页</a></li>
+<li>
+<a id="MyLinks1_NewPostLink" rel="nofollow" href="http://www.cnblogs.com/witcxc/admin/EditPosts.aspx?opt=1">新随笔</a></li>
+<li>
+<a id="MyLinks1_ContactLink" accesskey="9" class="two_words" rel="nofollow" href="http://space.cnblogs.com/msg/send/witcxc">联系</a></li>
+<li>
+<a id="MyLinks1_Syndication" class="two_words" href="http://www.cnblogs.com/witcxc/rss">订阅</a>
+<a id="MyLinks1_XMLLink" href="http://www.cnblogs.com/witcxc/rss"><img src="./Vim 配置详解 - witcxc - 博客园_files/xml.gif" alt="订阅"></a>
+</li>
+<li>
+<a id="MyLinks1_Admin" class="two_words" rel="nofollow" href="http://www.cnblogs.com/witcxc/admin/EditPosts.aspx">管理</a></li>
+</ul>
+
+<div id="blog-calendar-block" style=""><div id="blog-calendar"><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2011/11/01&#39;);return false;">&lt;</a></td><td align="center">2011年12月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2012/01/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td align="center">1</td><td align="center">2</td><td class="CalWeekendDay" align="center">3</td></tr><tr><td class="CalWeekendDay" align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center">8</td><td align="center">9</td><td class="CalWeekendDay" align="center">10</td></tr><tr><td class="CalWeekendDay" align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center">16</td><td class="CalWeekendDay" align="center">17</td></tr><tr><td class="CalWeekendDay" align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td class="CalWeekendDay" align="center">24</td></tr><tr><td class="CalWeekendDay" align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center"><a href="http://www.cnblogs.com/witcxc/archive/2011/12/28.html"><u>28</u></a></td><td align="center">29</td><td align="center">30</td><td class="CalWeekendDay" align="center">31</td></tr><tr><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td></tr>
+</tbody></table></div>
+</div>
+<meta name="vs_showGrid" content="False">
+
+<h3>公告</h3>
+<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/witcxc/">witcxc</a><br>园龄：<a href="http://home.cnblogs.com/u/witcxc/" title="入园时间：2011-10-02">9个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/witcxc/followers/">1</a><br>关注：<a href="http://home.cnblogs.com/u/witcxc/followees/">0</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="cnblogs.UserManager.FollowBlogger(&#39;452fbd1a-c6ec-e011-8ee0-842b2b196315&#39;)">+加关注</a></div></div></div>
+
+<div id="blog-sidecolumn">
+
+<div class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+
+
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+
+		<li><a id="ctl01_rptMainLinks_lnkLinkItem_0" href="http://www.cnblogs.com/witcxc/MyPosts.html">我的随笔</a></li>
+	
+		<li><a id="ctl01_rptMainLinks_lnkLinkItem_1" href="http://www.cnblogs.com/witcxc/MyComments.html">我的评论</a></li>
+	
+		<li><a id="ctl01_rptMainLinks_lnkLinkItem_2" title="我发表过评论的随笔" href="http://www.cnblogs.com/witcxc/OtherPosts.html">我的参与</a></li>
+	
+		<li><a id="ctl01_rptMainLinks_lnkLinkItem_3" href="http://www.cnblogs.com/witcxc/RecentComments.html">最新评论</a></li>
+	
+		<li><a id="ctl01_rptMainLinks_lnkLinkItem_4" href="http://www.cnblogs.com/witcxc/tag/">我的标签</a></li>
+	
+</ul>
+<div id="itemListLin_con" style="display:none;">
+
+</div>
+<h3 class="catListTitle">我的标签</h3>
+<div id="MyTag">
+<ul>
+<li><a href="http://www.cnblogs.com/witcxc/tag/Algorithm/">Algorithm</a>(1)</li><li><a href="http://www.cnblogs.com/witcxc/tag/Emacs/">Emacs</a>(1)</li><li><a href="http://www.cnblogs.com/witcxc/tag/linux/">linux</a>(1)</li><li><a href="http://www.cnblogs.com/witcxc/tag/Matlab/">Matlab</a>(1)</li><li><a href="http://www.cnblogs.com/witcxc/tag/MFC/">MFC</a>(1)</li><li><a href="http://www.cnblogs.com/witcxc/tag/vim/">vim</a>(1)</li><li><a href="http://www.cnblogs.com/witcxc/tag/%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/">共享内存</a>(1)</li>
+</ul>
+</div>
+		<h3>随笔档案</h3>
+		
+				<ul>
+			
+				<li><a id="ctl03_CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/witcxc/archive/2012/05.html">2012年5月 (1)</a></li>
+			
+				<li><a id="ctl03_CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/witcxc/archive/2012/04.html">2012年4月 (1)</a></li>
+			
+				<li><a id="ctl03_CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/witcxc/archive/2012/02.html">2012年2月 (1)</a></li>
+			
+				<li><a id="ctl03_CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/witcxc/archive/2011/12.html">2011年12月 (3)</a></li>
+			
+				</ul>
+			
+	
+		<h3>文章分类</h3>
+		
+				<ul>
+			
+				<li><a id="ctl03_CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/witcxc/category/334782.html">Algorithm(1)</a></li>
+			
+				<li><a id="ctl03_CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/witcxc/category/335457.html">Linux(3)</a></li>
+			
+				</ul>
+			
+	
+		<h3>相册</h3>
+		
+				<ul>
+			
+				<li><a id="ctl03_CatList_LinkList_2_Link_0" rel="nofollow" href="http://www.cnblogs.com/witcxc/gallery/335461.html">blog</a></li>
+			
+				</ul>
+			
+	
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"><ul>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/witcxc/archive/2012/03/24/2415578.html#2391573">1. Re:7zip 学习笔记</a></li>
+    <li class="recent_comment_body"><a href="http://www.cnblogs.com/witcxc/archive/2011/12/28/2304704.html#2391569" title="查看所回复的评论">@</a>无悔爱白修<br>在VC编译器的目录里</li>
+    <li class="recent_comment_author">--witcxc</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/witcxc/archive/2012/03/24/2415578.html#2391569">2. Re:7zip 学习笔记</a></li>
+    <li class="recent_comment_body">选择了VS2010开发环境，为什么还要用命令行去执行编译啊！<br>请教下怎么用命令行去执行nmake命令，我输入后提示无此命令呢。</li>
+    <li class="recent_comment_author">--无悔爱白修</li>
+</ul>
+</div>
+</div>
+
+<h3 class="catListTitle">阅读排行榜</h3>
+<div class="RecentComment" id="TopViewPosts"> 
+	<div id="TopViewPostsBlock"><ul><li><a href="./Vim 配置详解 - witcxc - 博客园_files/Vim 配置详解 - witcxc - 博客园.html">1. Vim 配置详解(2254)</a></li><li><a href="http://www.cnblogs.com/witcxc/archive/2011/12/28/2304870.html">2. Emacs在Windows下的安装需注意的几点(726)</a></li><li><a href="http://www.cnblogs.com/witcxc/archive/2012/04/15/2450583.html">3. C++子类的构造函数(265)</a></li><li><a href="http://www.cnblogs.com/witcxc/archive/2011/12/28/2304918.html">4. VIM乱码问题(122)</a></li><li><a href="http://www.cnblogs.com/witcxc/archive/2012/05/05/2484736.html">5. Ubuntu-12.04 Gedit中文乱码解决办法(118)</a></li></ul></div>
+</div>
+
+<h3 class="catListTitle">评论排行榜</h3>
+<div class="RecentComment" id="TopCommentsPosts">
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/witcxc/archive/2012/05/05/2484736.html">1. Ubuntu-12.04 Gedit中文乱码解决办法(0)</a></li><li><a href="http://www.cnblogs.com/witcxc/archive/2012/04/15/2450583.html">2. C++子类的构造函数(0)</a></li><li><a href="http://www.cnblogs.com/witcxc/archive/2012/02/09/2344449.html">3. fedora 16安装moc(0)</a></li><li><a href="http://www.cnblogs.com/witcxc/archive/2011/12/28/2304918.html">4. VIM乱码问题(0)</a></li><li><a href="http://www.cnblogs.com/witcxc/archive/2011/12/28/2304870.html">5. Emacs在Windows下的安装需注意的几点(0)</a></li></ul></div>
+</div>
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"></div>
+</div></div>
+
+</div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+
+<p id="footer">
+	Powered by: 
+	<br>
+	
+	<a id="Footer1_Hyperlink3" name="Hyperlink1" href="http://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br>
+	Copyright © witcxc
+</p>
+</div>
+</div>
+
+<script type="text/javascript" src="./Vim 配置详解 - witcxc - 博客园_files/google-analytics.js"></script>
+
+
+</body></html>

@@ -1,0 +1,15 @@
+Hello dong!
+
+
+.PS
+define connect {
+	pi = atan2(0, -1); n = $1; s = 2*pi/n; r = $2;
+	for i = 0 to n-1 do {
+		for j = i+1 to n do {
+			line from r*cos(s*i), r*sin(s*i) \
+				to r*cos(s*j), r*sin(s*j)
+		}
+	}
+}
+connect(29, 2)
+.PE

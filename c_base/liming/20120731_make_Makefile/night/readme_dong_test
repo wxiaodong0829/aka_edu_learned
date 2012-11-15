@@ -1,0 +1,47 @@
+int main(void)
+{
+ 80483e4:	55                   	push   %ebp
+ 80483e5:	89 e5                	mov    %esp,%ebp
+ 80483e7:	83 e4 f0             	and    $0xfffffff0,%esp
+ 80483ea:	83 ec 20             	sub    $0x20,%esp
+	char a[][3] = {"abc","de"};
+ 80483ed:	66 c7 44 24 16 61 62 	movw   $0x6261,0x16(%esp)                 系统将控制权交给程序员  ，不判断是否有\0
+ 80483f4:	c6 44 24 18 63       	movb   $0x63,0x18(%esp)
+ 80483f9:	66 c7 44 24 19 64 65 	movw   $0x6564,0x19(%esp)				
+ 8048400:	c6 44 24 1b 00       	movb   $0x0,0x1b(%esp)
+	char **p = a;
+ 8048405:	8d 44 24 16          	lea    0x16(%esp),%eax
+ 8048409:	89 44 24 1c          	mov    %eax,0x1c(%esp)
+//	p1 = &a[0];
+	PRINT_POI(a);
+ 804840d:	b8 30 85 04 08       	mov    $0x8048530,%eax
+ 8048412:	8d 54 24 16          	lea    0x16(%esp),%edx
+ 8048416:	89 54 24 04          	mov    %edx,0x4(%esp)
+ 804841a:	89 04 24             	mov    %eax,(%esp)
+ 804841d:	e8 fa fe ff ff       	call   804831c <printf@plt>
+	PRINT_POI(p);
+ 8048422:	b8 38 85 04 08       	mov    $0x8048538,%eax
+ 8048427:	8b 54 24 1c          	mov    0x1c(%esp),%edx
+ 804842b:	89 54 24 04          	mov    %edx,0x4(%esp)
+ 804842f:	89 04 24             	mov    %eax,(%esp)
+ 8048432:	e8 e5 fe ff ff       	call   804831c <printf@plt>
+	PRINT_POI(&a[0]);
+ 8048437:	b8 40 85 04 08       	mov    $0x8048540,%eax
+ 804843c:	8d 54 24 16          	lea    0x16(%esp),%edx
+ 8048440:	89 54 24 04          	mov    %edx,0x4(%esp)
+ 8048444:	89 04 24             	mov    %eax,(%esp)
+ 8048447:	e8 d0 fe ff ff       	call   804831c <printf@plt>
+	PRINT_CHARAR(a[0]);
+ 804844c:	8d 54 24 16          	lea    0x16(%esp),%edx
+ 8048450:	b8 4c 85 04 08       	mov    $0x804854c,%eax
+ 8048455:	89 54 24 04          	mov    %edx,0x4(%esp)
+ 8048459:	89 04 24             	mov    %eax,(%esp)
+ 804845c:	e8 bb fe ff ff       	call   804831c <printf@plt>
+
+
+	return 0;
+ 8048461:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 8048466:	c9                   	leave  
+ 8048467:	c3                   	ret    
+

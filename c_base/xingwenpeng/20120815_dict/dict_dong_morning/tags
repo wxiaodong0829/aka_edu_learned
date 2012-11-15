@@ -1,0 +1,60 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BINARY_DEFAULT_H_	binary_default.h	9;"	d
+CC	Makefile	/^CC = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -g$/;"	m
+DEBUG_H_	debug.h	9;"	d
+DICTIONARY_H_	dictionary.h	2;"	d
+DIRNAME	Makefile	/^DIRNAME = $(notdir $(PWD))$/;"	m
+FILENAME	word_default.h	18;"	d
+N	shell_test.c	4;"	d	file:
+OBJ	Makefile	/^OBJ = $(SRC:%.c=%.o)$/;"	m
+PRINT	debug.h	12;"	d
+PRINT	debug.h	16;"	d
+PRINT	debug.h	20;"	d
+PRINT_P	debug.h	13;"	d
+PRINT_P	debug.h	17;"	d
+PRINT_P	debug.h	21;"	d
+PRINT_S	debug.h	14;"	d
+PRINT_S	debug.h	18;"	d
+PRINT_S	debug.h	22;"	d
+PRJ	Makefile	/^PRJ = $(DIRNAME)$/;"	m
+PWD	Makefile	/^PWD = $(shell pwd)$/;"	m
+SRC	Makefile	/^SRC = $(wildcard *.c)$/;"	m
+TARGET	Makefile	/^TARGET = $(PRJ)$/;"	m
+WORD_DEFAULT_H_	word_default.h	9;"	d
+a	shell_test.c	/^int a[N];$/;"	v
+dict_bin	binary_default.h	/^typedef struct dict_bin {$/;"	s
+dict_bin_t	binary_default.h	/^}dict_bin_t;$/;"	t	typeref:struct:dict_bin
+dict_elem	word_default.h	/^typedef struct dict_elem {$/;"	s
+dict_elem_t	word_default.h	/^} dict_elem_t;$/;"	t	typeref:struct:dict_elem
+init	shell_test.c	/^void init(int l, int r)$/;"	f
+insertion	shell_test.c	/^void insertion(int l, int r)$/;"	f
+key	binary_default.h	/^	char *key;$/;"	m	struct:dict_bin
+key	word_default.h	/^	char *key;$/;"	m	struct:dict_elem
+key_len	binary_default.h	/^	int key_len;$/;"	m	struct:dict_bin
+main	dictionary.c	/^int main(int argc, char *argv[])$/;"	f
+main	shell_test.c	/^int main()$/;"	f
+n_trans	word_default.h	/^	int n_trans;$/;"	m	struct:dict_elem
+shell	shell_test.c	/^void shell(int l, int r)$/;"	f
+show	shell_test.c	/^void show(int l, int r)$/;"	f
+sort	shell_test.c	40;"	d	file:
+trans	binary_default.h	/^	char **trans;$/;"	m	struct:dict_bin
+trans	word_default.h	/^	char **trans;$/;"	m	struct:dict_elem
+trans_num	binary_default.h	/^	int trans_num;$/;"	m	struct:dict_bin
+wd_binsearch	word_default.c	/^static dict_elem_t *wd_binsearch(dict_elem_t *head_p, int w_count, char *key_word)$/;"	f	file:
+wd_distory	word_default.c	/^static void wd_distory(dict_elem_t *head_p, int w_count)$/;"	f	file:
+wd_get_elem_count	word_default.c	/^static int wd_get_elem_count(char *filename)$/;"	f	file:
+wd_print_data	word_default.c	/^static void wd_print_data(dict_elem_t *head_p, int w_count)$/;"	f	file:
+wd_print_one_elem	word_default.c	/^static void wd_print_one_elem(dict_elem_t *word_p)$/;"	f	file:
+wd_read_elem_from_txt	word_default.c	/^static dict_elem_t * wd_read_elem_from_txt(char *filename, dict_elem_t *head_p, int w_count)$/;"	f	file:
+wd_read_key	word_default.c	/^static char * wd_read_key(FILE *fp, dict_elem_t *word_p)$/;"	f	file:
+wd_read_trans	word_default.c	/^static char * wd_read_trans(FILE *fp, dict_elem_t *word_p)$/;"	f	file:
+wd_remove_first	word_default.c	/^static void wd_remove_first(char *buf, int len)$/;"	f	file:
+wd_search	word_default.c	/^static dict_elem_t *wd_search(dict_elem_t *head_p, int w_count)$/;"	f	file:
+wd_shell_sort	word_default.c	/^static void wd_shell_sort(dict_elem_t *head_p, int l, int r)$/;"	f	file:
+wd_word_default	word_default.c	/^void * wd_word_default(char *filename)$/;"	f

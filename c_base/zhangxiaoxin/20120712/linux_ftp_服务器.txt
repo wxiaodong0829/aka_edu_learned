@@ -1,0 +1,104 @@
+开启FTP
+1.service vsftpd start
+关闭防火墙
+2.service iptables stop
+3.
+etc/vsftpd.user_list
+etc/vsftpd.ftpusers
+#root
+4.chkconfig
+chkconfig --list|grep vsftpd
+cd init.d
+inittab
+redhat中vsftp开机自启动 有三种方法可以实现redhat中vsftpd服务开机自启动.
+1:在终端输入:ntsysv，这里是开机自动启动的服务选项，选中vsftpd即可.
+2:用vi打开etc/rc.local.在里面加入/usr/local/bin/vsftpd &即可.
+3:chkconfig vsftpd on （意思是所有的启动级别都会自动启动vsftpd服务）
+chkconfig用来检查服务是否启动
+推荐使用chkconfig --level<这里参数是启动级别> vsftpd on
+
+比如：chkconfig --level 5 vsftpd on ，在当启动图形界面的level时会自动启动vsftpd服务。
+
+ 
+在安装Linux时会可以选择是否安装FTP，选择安装的FTP后，使用下面的命令启动FTP服务
+
+“service vsftpd start”，然后可以使用其它电脑连接本机。
+
+如果不能连接首先要确保本机网络畅通，如果没问题，则使用如下命令把防火墙给关闭掉。
+
+“service iptables stop”
+
+默认的账户权限很低，我们可以自己添加账户。下面教大家如何把root账户添加进来：
+
+进入etc目录，编辑vim vsftpd.user_list把root注释掉
+
+                    编辑vim vsftpd.ftpusers把root注释掉
+
+然后在重启FTP服务，使用root即可。
+
+每次使用FTP都必须把服务启动，
+
+我们可以设置开机自启动
+
+方法1：在/etc/rc.local 文件下加入如下信息 /usr/local/bin/vsftpd & 
+
+方法2：使用如下命令“chkconfig vsftpd on”
+
+在使用Linux系统时，如要利用一些终端服务。
+
+都需要开启Linux中的相应服务器。
+
+其中可以利用chkconfig --list 或 chkconfig --list | more命令查看服务是否起动。
+
+如查看ftp服务：可用chkconfig --list | grep vsftpd
+
+如果其状态是关闭的，就要用chkconfig vsftpd on 来使Linux系统启动时就开启vsftpd服务。
+
+例如： [root@localhost /]# chkconfig vsftpd off
+
+
+          [root@localhost /]# chkconfig --list | grep vsftpd
+
+
+          vsftpd          0:关闭 1:关闭 2:关闭 3:关闭 4:关闭 5:关闭 6:关闭
+
+
+          [root@localhost /]# chkconfig vsftpd on
+
+
+          [root@localhost /]# chkconfig --list | grep vsftpd
+
+
+          vsftpd          0:关闭 1:关闭 2:启用 3:启用 4:启用 5:启用 6:关闭
+
+
+          [root@localhost /]#
+
+
+如果是要手动开启服务就用service vsftpd start
+
+
+如 ：[root@localhost /]# service vsftpd stop
+
+
+        关闭 vsftpd：                                              [失败]
+
+
+        [root@localhost /]# service vsftpd start
+
+
+        为 vsftpd 启动 vsftpd：                                    [确定]
+
+
+        [root@localhost /]# service vsftpd restart
+
+
+        关闭 vsftpd：                                              [确定]
+
+
+         为 vsftpd 启动 vsftpd：                                    [确定]
+
+
+        [root@localhost /]#
+
+

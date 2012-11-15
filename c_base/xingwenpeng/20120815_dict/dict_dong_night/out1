@@ -1,0 +1,60 @@
+<word_default.c> [43] wd_get_elem_count() ret = 5
+<word_default.c> [295] wd_word_default() w_count = 5
+5
+<word_default.c> [303] wd_word_default() head_p = 0x8e2a008
+<word_default.c> [304] wd_word_default() &head_p = 0xbf911ad8
+<word_default.c> [305] wd_word_default() w_count * sizeof(*head_p) = 60
+<word_default.c> [88] wd_read_key() word_p->key = 0x8e2a1b0
+<word_default.c> [89] wd_read_key() word_p->key = aaa
+<word_default.c> [114] wd_read_trans() n_trans = 1
+<word_default.c> [122] wd_read_trans() word_p->trans[i] = 0x8e2a1d0
+<word_default.c> [123] wd_read_trans() word_p->trans[i] = Trans:n. 困惑;迷乱
+<word_default.c> [88] wd_read_key() word_p->key = 0x8e2a1f0
+<word_default.c> [89] wd_read_key() word_p->key = eee
+<word_default.c> [114] wd_read_trans() n_trans = 2
+<word_default.c> [122] wd_read_trans() word_p->trans[i] = 0x8e2a210
+<word_default.c> [123] wd_read_trans() word_p->trans[i] = Trans:vt. 施魔法于;迷惑;
+<word_default.c> [122] wd_read_trans() word_p->trans[i] = 0x8e2a238
+<word_default.c> [123] wd_read_trans() word_p->trans[i] = 使着迷
+<word_default.c> [88] wd_read_key() word_p->key = 0x8e2a248
+<word_default.c> [89] wd_read_key() word_p->key = bbb
+<word_default.c> [114] wd_read_trans() n_trans = 1
+<word_default.c> [122] wd_read_trans() word_p->trans[i] = 0x8e2a268
+<word_default.c> [123] wd_read_trans() word_p->trans[i] = Trans:a. 迷人的;使人着迷的
+<word_default.c> [88] wd_read_key() word_p->key = 0x8e2a290
+<word_default.c> [89] wd_read_key() word_p->key = ddd
+<word_default.c> [114] wd_read_trans() n_trans = 1
+<word_default.c> [122] wd_read_trans() word_p->trans[i] = 0x8e2a2b0
+<word_default.c> [123] wd_read_trans() word_p->trans[i] = Trans:ad. 迷人地
+<word_default.c> [88] wd_read_key() word_p->key = 0x8e2a2c8
+<word_default.c> [89] wd_read_key() word_p->key = ccc
+<word_default.c> [114] wd_read_trans() n_trans = 4
+<word_default.c> [122] wd_read_trans() word_p->trans[i] = 0x8e2a2f0
+<word_default.c> [123] wd_read_trans() word_p->trans[i] = Trans:vt. 泄露;暴露
+<word_default.c> [122] wd_read_trans() word_p->trans[i] = 0x8e2a310
+<word_default.c> [123] wd_read_trans() word_p->trans[i] = 阿
+<word_default.c> [122] wd_read_trans() word_p->trans[i] = 0x8e2a320
+<word_default.c> [123] wd_read_trans() word_p->trans[i] = 啊啊
+<word_default.c> [122] wd_read_trans() word_p->trans[i] = 0x8e2a330
+<word_default.c> [123] wd_read_trans() word_p->trans[i] = 啊啊啊
+#aaa
+Trans:n. 困惑;迷乱 
+#eee
+Trans:vt. 施魔法于;迷惑; 使着迷 
+#bbb
+Trans:a. 迷人的;使人着迷的 
+#ddd
+Trans:ad. 迷人地 
+#ccc
+Trans:vt. 泄露;暴露 阿 啊啊 啊啊啊 
+#aaa
+Trans:n. 困惑;迷乱 
+#eee
+Trans:vt. 施魔法于;迷惑; 使着迷 
+#bbb
+Trans:a. 迷人的;使人着迷的 
+#ddd
+Trans:ad. 迷人地 
+#ccc
+Trans:vt. 泄露;暴露 阿 啊啊 啊啊啊 
+Welcome enjoy this dictionary soft

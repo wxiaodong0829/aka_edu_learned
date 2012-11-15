@@ -1,0 +1,135 @@
+1, 接口设计：
+	整型数组：传首地址，紧跟一个数组元素个数.
+	void insertation_sort(int a[], int n);//		正确的
+	void insertation_sort(int a[])//				错误的
+	{
+		int n;
+		n = sizeof (a) / sizeof(int);//是不能求出数组的长度的，因为此时的a是一个指针，只占四字节。
+	}
+
+2, 时间复杂度总结：
+					O(n方)		--->    冒泡， 插入
+					O(nlgn)		--->	快速排序，归并排序
+					shell 排序的时间复杂度与数据本身有关. 数据基本有序时，很快。
+					快速排序：   数据无序时，相对其它排序快， 数据基本有序时，慢
+
+
+		空间复杂度： O(1) (不依赖数据的长度变化)      ---> 冒泡， 插入， 快排，shell
+					O(n)							  --->  归并 （因为要暂存数据）
+					
+	同一环境下的对比情况：
+							shell < 快排 < 归并 < 插入 < 冒泡
+
+
+3,  链表： 插入， 删除更易                  只能  线性查找
+	数组： 查找更易                         可 线性，折半查找     
+
+	折半查找： 要求，数据有序，最坏的情况，有一半不用查找
+
+	时间复杂度:		线性查找 O(n) 
+					折半查找 O(lgn)
+
+	空间复杂度：二者均为 O(1)
+
+4,  如何	在程序中	组织数据
+
+		1, 优先选择：	数据库
+
+		2, 次之：		二叉搜索树
+
+		3, 实在不行了： 根据需求选		 数组，或 链表
+						
+						选数组： 以查找为主. （如：词典）
+						选链表： 以修改为主。（如：内核调度队列）
+
+5, 广度优先遍历二叉树   如：  通用的  搜索 中 的 爬虫 程序，要求内容的广泛性，所以用这个.
+
+6, 打印 输出：
+
+			打印   字符， 字符串， 应使用更加高效的库函数  
+				putchar()   puts()
+
+			打印   整数    , 用  printf()  更方便些，不用自己写   atoi 函数转换为字符串 打印输出
+				printf()
+
+7, 递归的真谛：
+				1，拆分：
+						把责任下推，推到不能再推为止。
+				2，回溯：
+						到不能再向下推时，开始回溯，开始做实质性的工作
+		写递归步骤：
+				1，先写回溯条件，即 结束 向下推责任的条件，即不能再推的条件
+				
+				2，向下分责
+
+				3，做实质性 的事情
+
+8, 归并排序设计：
+
+	#include <stdio.h>
+	#include <stdlib.h>
+
+	#define LEN 8
+	int a[LEN] = {5,2,4,7,1,3,2,6};
+
+	void merge(int start, int end, int mid)
+	{
+		int left_len, right_len;
+		int *left, *right;
+		int i, j, k;
+
+		left_len = mid - start + 1;
+		right_len = end - mid;
+
+		left = (int *)malloc(sizeof(int) * left_len);
+		right = (int *)malloc(sizeof(int) * right_len);
+
+		for(i = 0; i < left_len; i++)	//	将待排数据复制到此函数空间
+			left[i] = a[start + i];
+		for(j = 0; j < right_len; j++)
+			right[j] = a[mid + 1 + j];
+
+		i = 0, j = 0, k = start;
+		while(i < left_len && j < right_len){	//god it 重新安排顺序
+			if(left[i] < right[j]){
+				a[k] = left[i];
+				k++, i++;
+			}else{
+				a[k] = right[j];
+				k++, j++;
+			}
+		}
+		while(j < right_len)
+			a[k++] = right[j++];
+		while(i < left_len)
+			a[k++] = left[i++];
+
+		free(left);
+		free(right);
+	}
+
+	void sort(int start, int end)
+	{
+		int mid;
+
+		if(start < end){
+			mid = (start + end) / 2;
+			sort(start, mid);
+			sort(mid + 1, end);
+			merge(start, end, mid);
+		}
+	}
+
+	int main(void)
+	{
+		int i;
+
+		sort(0, LEN - 1);
+		for(i = 0; i < LEN; i++)
+			printf("%d ", a[i]);
+		printf("\n");
+
+		return 0;
+	}
+
+

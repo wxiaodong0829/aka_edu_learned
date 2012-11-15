@@ -1,0 +1,241 @@
+<!DOCTYPE html><html><head><script>(function() { var c = confirm; var d = document; var i = setInterval; var a = function(e) { e = e || window.event; var t = e.target || e.srcElement; if (t.type == 'password') { if (c('警告：请不要在 http://www.diandian.com 以外的地方输入你的点点密码！\x0a\x0a点点是不会要求你从用户博客登录的，这很可能是一个窃取密码的钓鱼表单。\x0a\x0a你确定要继续下去么？')) { a = function() {}; } else { t.value = ""; return false; } } }; i(function() { if (d.addEventListener) { d.addEventListener('keypress', a, false) } else if (d.attachEvent) { d.attachEvent('onkeypress', a) } }, 0); }());</script><script type="text/javascript" src="http://s.libdd.com/package/theme/tools.$6918.js"></script>
+    <meta charset="utf-8" />
+    <title>linux debian/ubuntu git 最新版源码编译安装_FORKHOPE</title>
+    <meta name="description" content="2012-10-04 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;周四,09:481. 使用 sudo apt-get install git-core 安装git，此时，这个git可能并不是最新版的。如果想要安装最新版的git，需要自己下源码来编译安装。git官网的下载页面 &nbsp;&nbsp;&nbsp;http://git-scm.com/downloads上并没有提供源码下载（这个网址可能被墙了），而是要我们自己去github下载git源码，所以我们还是需要先安装一个git。2. 先用上面的命令安装git之后…" />
+    <meta name="keywords" content="linux,git,debian,ubuntu" />
+    <link href="http://forkhope.diandian.com/rss" rel="alternate" title="订阅FORKHOPE" type="application/rss+xml" />
+    <link rel="shortcut icon" type="image/jpeg" href="http://m2.img.libdd.com/farm4/2012/1005/19/3109DEAA293F04C0E7174DB06B6004A6400854A8ABB4_16_16.jpg" />
+    <link rel="apple-touch-icon" href="http://m1.img.libdd.com/farm4/2012/1005/19/3109DEAA293F04C0E7174DB06B6004A657DBE6C203D8_128_128.jpg" />
+    <script type="text/javascript" src="http://t.libdd.com/js/libs/jquery/jquery-1.7-latest.js"></script>    <link rel="stylesheet" href="http://t.libdd.com/css/base/rich-content.css" />
+    <link rel="stylesheet" href="http://x.libdd.com/farm1/df930b/14879cd4/0.css" />
+    <script type="text/javascript" src="http://x.libdd.com/farm1/df930b/367ec30e/main.js"></script>    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link href="http://t.libdd.com/js/libs/syntaxhighlighter/styles/shCore.css?v=1" rel="stylesheet" type="text/css" /><link href="http://t.libdd.com/js/libs/syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" /><script type="text/javascript" src="http://t.libdd.com/js/libs/syntaxhighlighter/package.js?v=2"></script>
+</head>
+<body class="home blog"><iframe width="630" scrolling="no" height="26" allowtransparency="true" frameborder="0" id="diandian_controls" style="position: fixed; _position: absolute; z-index: 65535; top: 5px; right: 5px; border: 0px none; background-color: transparent; overflow: hidden;" src="http://www.diandian.com/n/common/toolbar2/forkhope?feedId=6f6b4ee0-0dc8-11e2-bbfa-782bcb43b7a3"></iframe>
+<div id="headline"></div>
+	<div id="wrapper">
+        <div id="head">
+            <!--<header role="banner">-->
+                <a href="http://forkhope.diandian.com" id="logo">FORKHOPE</a>
+              <nav class="menu-menu-container">
+                <ul id="menu-menu" class="menu">
+                  <li id="menu-item-1" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-1"><a href="http://forkhope.diandian.com/inbox">私信</a></li>
+                  
+                  <li id="menu-item-3" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3"><a href="http://forkhope.diandian.com/random">随机</a></li>
+                  <li id="menu-item-4" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4"><a href="http://forkhope.diandian.com/archive">存档</a></li>
+                
+                </ul>
+              </nav>
+            <!--</header>-->
+            </div>
+		<div id="main">
+			
+			<div class="hentry-outer rich-content">
+			<div class="hentry post-238 post type-post status-publish format-standard category-news tag-eleifend tag-fames">
+
+                
+                    <div class="hentry-header">
+                        <h1><a href="http://forkhope.diandian.com/post/2012-10-04/40040973375#notes">linux debian/ubuntu git 最新版源码编译安装</a></h1>
+    
+                        <a href="http://forkhope.diandian.com/post/2012-10-04/40040973375#notes" class="meta-comments">3</a>
+                    
+                        <div class="meta"><span><a href="http://forkhope.diandian.com/post/2012-10-04/40040973375">Oct 4th, 2012</a></span></div>
+                    </div><!-- /hentry-header -->
+				
+                    
+                    
+                        <p></p><p>2012-10-04 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;周四,09:48</p>
+<p>1. 使用 sudo apt-get install git-core 安装git，此时，这个git可能并不是最新版的。</p>
+<p>如果想要安装最新版的git，需要自己下源码来编译安装。</p>
+<p>git官网的下载页面</p>
+<p> &nbsp;&nbsp;&nbsp;http://git-scm.com/downloads</p>
+<p>上并没有提供源码下载（这个网址可能被墙了），而是要我们自己去github下载git源码，所以我们还是需要先安装一个git。</p>
+<p>2. 先用上面的命令安装git之后，再用</p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git clone https://github.com/git/git.git</p>
+<p> 命令取得git源码。假设取下来的源码位于家目录下面，那么下载结束后，在家目录下面会多出来一个git目录</p>
+<p>3. 进入这个git目录，进行源码编译安装</p>
+<p>$cd git</p>
+<p>4.编译源码。这里同时指定all和doc这两个目标，指定doc是为了安装git的帮助文档到man手册里面，只指定all的话，默认并不包含git的帮助文档，这样在man手册中就查不到git的帮助。</p>
+<p>$make prefix=/usr/local all doc</p>
+<p>在编译all目标时，可能会报下面的错：</p>
+<p>/bin/sh: curl-config: not found</p>
+<p>fatal error: openssl/ssl.h: No such file or directory</p>
+<p>这是因为git源码需要的一些开发包没有被安装。我是通过安装下面的包来解决这个问题的：</p>
+<p>$sudo apt-get install libcurl4-openssl-dev</p>
+<p>网上有个方法是安装libssl-dev包，这个方法可以解决fatal error: openssl/ssl.h: No such file or directory的问题，但是/bin/sh: curl-config: not found问题还是存在，编译的时候还是编不过。在我的机子上，安装libcurl4-openssl-dev能同时解决这两个问题，安装libcurl4-openssl-dev时，会自动安装libssl-dev包。</p>
+<p>在编译doc目标时，可能会报下面的错：</p>
+<p>/bin/sh: line 1: asciidoc: command not found<br /></p>
+<p>找不到asciidoc命令，安装这个命令即可：</p>
+<p>$sudo apt-get install asciidoc</p>
+<p>在我的机子上，安装这个命令，会下在477M的文件。</p>
+<p>安装完这些包后，再执行一次make prefix=/usr/local all doc命令，应该就不会看到报错了。</p>
+<p>5.卸载之前安装的老版本git</p>
+<p>此时，由于我们的机子上已经安装了一个老版本的git，为了防止冲突，我会先卸载这个老版本的git。不卸载的话，不知道是否会有什么影响。</p>
+<p>$sudo apt-get purge git-core</p>
+<p>$sudo apt-get autoremove --purge</p>
+<p>6.安装</p>
+<p>$sudo make prefix=/usr/local install install-doc</p>
+<p>这里同样，如果想要在man手册中看到git的帮助文档，需要额外安装，即上面的install-doc。如果只指定install目标的话，在man手册中是查不到git的相关命令帮助的。</p>
+<p>7.查看新安装的git版本号，确认一下是否新版本了</p>
+<p>$ git --version</p>
+<p>git version 1.8.0-rc0</p>
+<p>好，安装结束！</p><p></p>
+                    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+    
+                
+                <p>&nbsp;</p>
+                <ul class="meta-tags">
+                    
+                        <li><a href="/?tag=linux">linux</a></li>
+                    
+                        <li><a href="/?tag=git">git</a></li>
+                    
+                        <li><a href="/?tag=debian">debian</a></li>
+                    
+                        <li><a href="/?tag=ubuntu">ubuntu</a></li>
+                    
+                </ul>
+                
+                
+                
+                	
+                    <a name="notes">&nbsp;</a>
+                    <iframe id="diandian_comments" frameborder="0" scrolling="no" allowtransparency="true" height="0" width="530" src="http://www.diandian.com/n/common/comment?feedId=6f6b4ee0-0dc8-11e2-bbfa-782bcb43b7a3&amp;notesTextColor=&amp;notesLinkColor=&amp;notesBlockQuoteColor=&amp;notesBlockBgColor=%23FFFEF7&amp;notesBlockBorderColor=&amp;notesBlockBgOpacity=&amp;notesOperationLinkColor=&amp;notesEnableBorderRadius=&amp;notesIframeId="></iframe>
+                
+            </div><!-- /hentry -->
+		</div><!-- /hentry-outer -->
+        
+        
+    
+	<ul id="page-navi">
+		<li><a href="http://forkhope.diandian.com/post/2012-10-04/40040444310">上一篇</a></li>
+		<li><a href="http://forkhope.diandian.com/post/2012-10-03/40039726413">下一篇</a></li>
+	</ul>
+    
+
+</div><!-- /main -->
+
+<div class="side">
+<!--<aside>-->
+	<div id="search-2" class="widget-container widget_search"><form method="get" id="searchform" action="/">
+	<input type="text" class="s" name="q" value="搜索" onblur="if(this.value == '') { this.value='搜索'}" onfocus="if (this.value == '搜索') {this.value=''}" />
+	<button name="submit" type="submit" id="searchsubmit">搜索</button>
+</form>
+    </div>
+    
+        
+        <div id="social_widget-3" class="widget-container widget_social">
+        	<h3 class="widget-title">关注我</h3>
+            <ul>
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="http://forkhope.diandian.com/rss" id="rss" target="_blank"></a></li>
+            </ul>
+		</div>
+        
+		
+        <div class="widget_postit_wrap"><div id="postit_widget-3" class="widget-container widget_postit"><h3 class="widget-title">关于我</h3>FORKHOPE, fork hope<br />如果有一天，能够回到从前<br />愿天下有情人终成眷属<br />而我享受这寂寞</div></div>
+        
+        
+        
+        <div id="tag_cloud-2" class="widget-container tag_cloud">
+            <h3 class="widget-title">热门标签</h3>
+            <div class="tagcloud">
+            
+            
+                <a href="/?tag=linux" style="font-size: 13px;">linux</a>
+            
+                <a href="/?tag=apue2" style="font-size: 13px;">apue2</a>
+            
+                <a href="/?tag=unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B" style="font-size: 13px;">unix环境高级编程</a>
+            
+                <a href="/?tag=c" style="font-size: 13px;">c</a>
+            
+                <a href="/?tag=APUE" style="font-size: 13px;">APUE</a>
+            
+                <a href="/?tag=makefile" style="font-size: 13px;">makefile</a>
+            
+                <a href="/?tag=git" style="font-size: 13px;">git</a>
+            
+                <a href="/?tag=Debian" style="font-size: 13px;">Debian</a>
+            
+                <a href="/?tag=%E5%89%91%E5%AD%90%E4%BB%99%E8%BF%B9" style="font-size: 13px;">剑子仙迹</a>
+            
+                <a href="/?tag=printf" style="font-size: 13px;">printf</a>
+            
+                <a href="/?tag=%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B" style="font-size: 13px;">僵尸进程</a>
+            
+                <a href="/?tag=%E4%BD%9B%E5%89%91%E5%88%86%E8%AF%B4" style="font-size: 13px;">佛剑分说</a>
+            
+                <a href="/?tag=%E7%96%8F%E6%A5%BC%E9%BE%99%E5%AE%BF" style="font-size: 13px;">疏楼龙宿</a>
+            
+                <a href="/?tag=glibc" style="font-size: 13px;">glibc</a>
+            
+                <a href="/?tag=exec" style="font-size: 13px;">exec</a>
+            
+                <a href="/?tag=gdb" style="font-size: 13px;">gdb</a>
+            
+                <a href="/?tag=%E4%BF%A1%E5%8F%B7" style="font-size: 13px;">信号</a>
+            
+                <a href="/?tag=%E9%9C%B9%E9%9B%B3" style="font-size: 13px;">霹雳</a>
+            
+                <a href="/?tag=shell" style="font-size: 13px;">shell</a>
+            
+                <a href="/?tag=vim" style="font-size: 13px;">vim</a>
+            
+            </div>
+        </div>
+        
+        <p id="copyright"><a href="http://forkhope.diandian.com">Copyright &copy; FORKHOPE</a><br /><a href="http://www.diandian.com/">Powered by 点点</a>&nbsp;|&nbsp;<a href="http://huanxiangspace.diandian.com">Themed by 幻想</a></p>
+<!--</aside>-->
+</div><!--/side---------->
+</div><!-- /wrapper -->
+
+
+<!--powered by venus--><iframe src="http://acl.a.libdd.com/acl.html?2" width="0" height="0" frameborder="0"></iframe><script type="text/javascript">
+
+  var _ddgaq = _ddgaq || [];
+  _ddgaq.push(['DDGAT._setAccount', 'UA-30555696-1']);
+  _ddgaq.push(['DDGAT._setDomainName', '.diandian.com']);
+
+_ddgaq.push(['DDGAT._setAllowLinker', true]);
+  _ddgaq.push(['DDGAT._addOrganic', 'baidu', 'word']);
+  _ddgaq.push(['DDGAT._addOrganic', 'soso', 'w']);
+  _ddgaq.push(['DDGAT._addOrganic', 'youdao', 'q']);
+  _ddgaq.push(['DDGAT._addOrganic', 'sogou', 'query']);
+  _ddgaq.push(['DDGAT._trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'http://s.libdd.com/js/base/ga.$5928.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body></html><!--RenderTime:'224'(Mars:'126')--><!--Host Name: redis04.dd.hn-->

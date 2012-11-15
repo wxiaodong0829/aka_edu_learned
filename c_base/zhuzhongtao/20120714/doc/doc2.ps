@@ -1,0 +1,792 @@
+%!PS-Adobe-3.0
+%%Creator: Heirloom Documentation Tools - dpost 8.77 (gritter) 6/19/11
+%%CreationDate: Sat Jul 14 15:37:19 2012
+%%DocumentFonts: Times-Roman Times-Italic ZapfDingbats Times-Bold
+%%Pages: 2
+%%DocumentMedia: x595y842 595 842 0 () ()
+%%DocumentNeededResources: font Times-Roman
+%%+ font Times-Italic
+%%+ font ZapfDingbats
+%%+ font Times-Bold
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset dpost 4.19 0
+%
+% Copyright 2005 Sun Microsystems, Inc.  All rights reserved.
+% Use is subject to license terms.
+%
+% CDDL HEADER START
+%
+% The contents of this file are subject to the terms of the
+% Common Development and Distribution License, Version 1.0 only
+% (the "License").  You may not use this file except in compliance
+% with the License.
+%
+% You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+% or http://www.opensolaris.org/os/licensing.
+% See the License for the specific language governing permissions
+% and limitations under the License.
+%
+% When distributing Covered Code, include this CDDL HEADER in each
+% file and include the License file at usr/src/OPENSOLARIS.LICENSE.
+% If applicable, add the following below this CDDL HEADER, with the
+% fields enclosed by brackets "[]" replaced with your own identifying
+% information: Portions Copyright [yyyy] [name of copyright owner]
+%
+% CDDL HEADER END
+%
+% from OpenSolaris "dpost.ps	1.7	05/06/08 SMI"
+%
+% Portions Copyright 2005 Gunnar Ritter, Freiburg i. Br, Germany
+%
+% Sccsid @(#)dpost.ps	4.19 (gritter) 2/7/10
+%
+
+/#copies 1 store
+/aspectratio 1 def
+/formsperpage 1 def
+/landscape false def
+/linewidth .3 def
+/magnification 1 def
+/margin 0 def
+/orientation 0 def
+/resolution 720 def
+/xoffset 0 def
+/yoffset 0 def
+
+/roundpage true def
+/useclippath true def
+/pagebbox [0 0 612 792] def
+
+/R  /Times-Roman def
+/I  /Times-Italic def
+/B  /Times-Bold def
+/BI /Times-BoldItalic def
+/H  /Helvetica def
+/HI /Helvetica-Oblique def
+/HB /Helvetica-Bold def
+/HX /Helvetica-BoldOblique def
+/CW /Courier def
+/CO /Courier def
+/CI /Courier-Oblique def
+/CB /Courier-Bold def
+/CX /Courier-BoldOblique def
+/PA /Palatino-Roman def
+/PI /Palatino-Italic def
+/PB /Palatino-Bold def
+/PX /Palatino-BoldItalic def
+/Hr /Helvetica-Narrow def
+/Hi /Helvetica-Narrow-Oblique def
+/Hb /Helvetica-Narrow-Bold def
+/Hx /Helvetica-Narrow-BoldOblique def
+/KR /Bookman-Light def
+/KI /Bookman-LightItalic def
+/KB /Bookman-Demi def
+/KX /Bookman-DemiItalic def
+/AR /AvantGarde-Book def
+/AI /AvantGarde-BookOblique def
+/AB /AvantGarde-Demi def
+/AX /AvantGarde-DemiOblique def
+/NR /NewCenturySchlbk-Roman def
+/NI /NewCenturySchlbk-Italic def
+/NB /NewCenturySchlbk-Bold def
+/NX /NewCenturySchlbk-BoldItalic def
+/ZD /ZapfDingbats def
+/ZI /ZapfChancery-MediumItalic def
+/VR /Varitimes#Roman def
+/VI /Varitimes#Italic def
+/VB /Varitimes#Bold def
+/VX /Varitimes#BoldItalic def
+/S  /S def
+/S1 /S1 def
+/GR /Symbol def
+
+/inch {72 mul} bind def
+/min {2 copy gt {exch} if pop} bind def
+
+/track 0 def
+/horscale 1.0 def
+
+/setup {
+	counttomark 2 idiv {def} repeat pop
+
+	landscape {/orientation 90 orientation add def} if
+	/scaling 72 resolution div def
+	linewidth setlinewidth
+	1 setlinecap
+
+	pagedimensions
+	xcenter ycenter translate
+	orientation neg rotate
+	width 2 div neg height 2 div translate
+	xoffset inch yoffset inch translate
+	margin 2 div dup neg translate
+	magnification dup aspectratio mul scale
+	scaling scaling scale
+
+	/Symbol /S Sdefs cf
+	/Times-Roman /S1 S1defs cf
+	0 0 moveto
+} def
+
+/pagedimensions {
+	useclippath userdict /gotpagebbox known not and {
+		/pagebbox [clippath pathbbox newpath] def
+		roundpage currentdict /roundpagebbox known and {roundpagebbox} if
+	} if
+	pagebbox aload pop
+	4 -1 roll exch 4 1 roll 4 copy
+	landscape {4 2 roll} if
+	sub /width exch def
+	sub /height exch def
+	add 2 div /xcenter exch def
+	add 2 div /ycenter exch def
+	userdict /gotpagebbox true put
+} def
+
+/pagesetup {
+	/page exch def
+	currentdict /pagedict known currentdict page known and {
+		page load pagedict exch get cvx exec
+	} if
+	/Dsetup where {pop Dsetup} if
+	_custompagesetup
+} def
+
+/decodingdefs [
+	{counttomark 2 idiv {y moveto track 0 3 -1 roll ashow} repeat}
+	{neg /y exch def counttomark 2 idiv {y moveto track 0 3 -1 roll ashow} repeat}
+	{neg dup /y exch def moveto {2 index dup length track mul exch stringwidth pop add sub exch div 0 32 track 0 6 -1 roll awidthshow} repeat}
+	{neg dup /y exch def moveto {spacewidth sub track sub 0.0 32 track 0 6 -1 roll awidthshow} repeat}
+	{/x exch def counttomark 2 idiv 1 add {x y moveto counttomark 1 gt {x exch sub /x exch def} if track 0 3 -1 roll ashow} repeat}
+	{/x exch def counttomark 2 idiv 1 add {x y moveto counttomark 1 gt {x exch sub /x exch def} if track 0 3 -1 roll ashow} repeat}
+	{counttomark 2 idiv {y moveto track 0 3 -1 roll ashow} repeat}
+	{neg setfunnytext}
+] def
+
+/setdecoding {/t decodingdefs 3 -1 roll get def} bind def
+
+/T {/track exch def} bind def
+
+/w {neg dup /y exch def moveto track 0 3 -1 roll ashow} bind def
+/v {y moveto track 0 3 -1 roll ashow} bind def
+/u {y neg t} bind def
+/m {neg dup /y exch def moveto} bind def
+/done {/lastpage where {pop lastpage} if} def
+
+/f {
+	dup /font exch def exch
+	dup /ptsize exch def scaling div dup /size exch def
+	horscale 1.0 ne {horscale mul [exch 0 0 size 0 0]} if SF
+	linewidth ptsize mul scaling 10 mul div setlinewidth
+	/spacewidth ( ) stringwidth pop def
+	/horscale 1.0 def
+} bind def
+/F {ptsize exch f} bind def
+/s {font f} bind def
+/h {/horscale exch def f} bind def
+
+/changefont {
+	/fontheight exch def
+	/fontslant exch def
+	currentfont [
+		1 0
+		fontheight ptsize div fontslant sin mul fontslant cos div
+		fontheight ptsize div
+		0 0
+	] makefont setfont
+} bind def
+
+/sf {f} bind def
+
+/cf {
+	dup length 2 idiv
+	/entries exch def
+	/chtab exch def
+	/newfont exch def
+
+	findfont dup length 1 add dict
+	/newdict exch def
+	{1 index /FID ne {newdict 3 1 roll put} {pop pop} ifelse} forall
+
+	newdict /Metrics entries dict put
+	newdict /Metrics get
+	begin
+		chtab aload pop
+		1 1 entries {pop def} for
+		newfont newdict definefont pop
+	end
+} bind def
+
+%
+% A few arrays used to adjust reference points and character widths in some
+% of the printer resident fonts. If square roots are too high try changing
+% the lines describing /radical and /radicalex to,
+%
+%	/radical	[0 -75 550 0]
+%	/radicalex	[-50 -75 500 0]
+%
+
+/Sdefs [
+	/underscore		[0 0 500 0]
+	/bracketlefttp		[208 500]
+	/bracketleftbt		[208 500]
+	/bracketrighttp		[-60 380]
+	/bracketrightbt		[-60 380]
+	/braceleftbt		[209 490]
+	/bracketrightex		[220 -125 500 0]
+	/radical		[0 0 550 0]
+	% NeWSprint's \(br is too low, compensate
+	statusdict /product get (NeWS Server) eq {
+		/radicalex		[-50 100 500 0]
+		/parenleftex		[-20 100 0 0]
+
+	} {
+		/radicalex		[-50 0 500.001 0]
+		/parenleftex		[-20 -170 0 0]
+	} ifelse
+	/integral		[100 -50 500 0]
+	/infinity		[10 -75 730 0]
+] def
+
+%
+% This adjusts the y left bearing of the underscore character in the
+% Symbol font to the position expected by troff, depending on the
+% font variant actually in use with the current document.
+%
+/_Sdefsadj {
+	gsave
+	/Symbol findfont 1000 scalefont setfont
+	0 0 moveto
+	(\137) false charpath flattenpath pathbbox pop pop exch pop
+	grestore
+	252 add neg
+	Sdefs 1 [0 5 -1 roll 500 0] put
+} def
+
+/S1defs [
+	/underscore		[0 80 500.001 0]
+	/endash			[7 90 650 0]
+] def
+
+% from Adobe's PostScript Language Reference Manual, 2nd ed. 1990, pp. 588-589
+/*SF {					% Complete selectfont emulation
+	exch findfont exch
+	dup type /arraytype eq {makefont}{scalefont} ifelse setfont
+} bind def
+/languagelevel where			% Determine language level
+	{pop languagelevel} {1} ifelse	% of implementation
+	2 lt {				% ifelse
+		/SF /*SF load def	% Level 1 interpreter present, so
+	} {				% else
+		/SF /selectfont load def% Level 2 interpreter present, so
+	}
+ifelse
+
+% from Adobe's pdfmark Reference Manual for Acrobat 7.0, 11/30/04, p. 10
+/pdfmark where				% Is pdfmark already available?
+	{pop}				% Yes: do nothing (use that definition)
+	{				% No: define pdfmark as follows:
+	/globaldict where		% globaldict is preferred because
+		{pop globaldict}	% globaldict is always visible; else,
+		{userdict}		% use userdict otherwise.
+	ifelse
+	/pdfmark /cleartomark load put
+	}				% Define pdfmark to remove all objects
+ifelse					% up to and including the mark object.
+%%EndResource
+%%EndProlog
+%%BeginSetup
+[ /CreationDate (D:20120714153719+08'00')
+  /Creator (Heirloom Documentation Tools - dpost 8.77 (gritter) 6/19/11)
+  /Author (Gunnar Ritter)
+  /Title (Heirloom Documentation Tools: Quickstart Guide)
+  /Keywords (Heirloom Documentation Tools, troff)
+/DOCINFO pdfmark
+/_custompagesetup {
+} def
+/_marks {
+} def
+/Encoding-@11@0 [
+/.notdef /hyphen /cent /fi /fl /dagger /emdash /onequarter /threequarters
+/onehalf /endash /acute /grave /section /daggerdbl /backslash
+/quotedbl /ring /bullet /bar /quotedblleft /quotedblright /space
+/asciicircum /asciitilde /exclamdown /sterling /fraction /yen
+/florin /currency /quotesingle /space /exclam /quotedbl /numbersign
+/dollar /percent /ampersand /quoteright /parenleft /parenright
+/asterisk /plus /comma /hyphen /period /slash /zero /one /two
+/three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I
+/J /K /L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft
+/backslash /bracketright /circumflex /underscore /quoteleft /a
+/b /c /d /e /f /g /h /i /j /k /l /m /n /o /p /q /r /s /t /u /v
+/w /x /y /z /braceleft /bar /braceright /tilde /guillemotleft
+/guilsinglleft /guilsinglright /periodcentered /paragraph /quotesinglbase
+/quotedblbase /guillemotright /ellipsis /perthousand /questiondown
+/macron /breve /dotaccent /dieresis /cedilla /hungarumlaut /ogonek
+/caron /AE /ordfeminine /Lslash /Oslash /OE /ordmasculine /ae
+/dotlessi /lslash /oslash /oe /germandbls /Idieresis /eacute
+/Ydieresis /divide /Yacute /Acircumflex /aacute /Ucircumflex
+/yacute /ecircumflex /Udieresis /Uacute /Edieresis /copyright
+/aring /agrave /atilde /scaron /iacute /ucircumflex /acircumflex
+/ccedilla /Thorn /threesuperior /Ograve /Agrave /multiply /uacute
+/ydieresis /icircumflex /Ecircumflex /adieresis /edieresis /Iacute
+/plusminus /brokenbar /registered /Egrave /Zcaron /Eth /Ccedilla
+/Aacute /Adieresis /egrave /Oacute /oacute /idieresis /Ocircumflex
+/Ugrave /thorn /twosuperior /Odieresis /mu /igrave /trademark
+/Igrave /ocircumflex /ntilde /Eacute /Scaron /degree /ograve
+/ugrave /Ntilde /otilde /Atilde /Aring /Otilde /minus /Icircumflex
+/logicalnot /odieresis /udieresis /eth /zcaron /onesuperior /Euro
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+] def
+/Times-Roman findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding Encoding-@11@0 def
+  currentdict
+end
+/Times-Roman-@11 exch definefont pop
+/@11 /Times-Roman-@11 def
+/&11 {@11 F} bind def
+/Encoding-@12@0 [
+/.notdef /hyphen /cent /fi /fl /dagger /emdash /onequarter /threequarters
+/onehalf /endash /acute /grave /section /daggerdbl /backslash
+/quotedbl /ring /bullet /bar /quotedblleft /quotedblright /space
+/asciicircum /asciitilde /exclamdown /sterling /fraction /yen
+/florin /currency /quotesingle /space /exclam /quotedbl /numbersign
+/dollar /percent /ampersand /quoteright /parenleft /parenright
+/asterisk /plus /comma /hyphen /period /slash /zero /one /two
+/three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I
+/J /K /L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft
+/backslash /bracketright /circumflex /underscore /quoteleft /a
+/b /c /d /e /f /g /h /i /j /k /l /m /n /o /p /q /r /s /t /u /v
+/w /x /y /z /braceleft /bar /braceright /tilde /guillemotleft
+/guilsinglleft /guilsinglright /periodcentered /paragraph /quotesinglbase
+/quotedblbase /guillemotright /ellipsis /perthousand /questiondown
+/macron /breve /dotaccent /dieresis /cedilla /hungarumlaut /ogonek
+/caron /AE /ordfeminine /Lslash /Oslash /OE /ordmasculine /ae
+/dotlessi /lslash /oslash /oe /germandbls /Idieresis /eacute
+/Ydieresis /divide /Yacute /Acircumflex /aacute /Ucircumflex
+/yacute /ecircumflex /Udieresis /Uacute /Edieresis /copyright
+/aring /agrave /atilde /scaron /iacute /ucircumflex /acircumflex
+/ccedilla /Thorn /threesuperior /Ograve /Agrave /multiply /uacute
+/ydieresis /icircumflex /Ecircumflex /adieresis /edieresis /Iacute
+/plusminus /brokenbar /registered /Egrave /Zcaron /Eth /Ccedilla
+/Aacute /Adieresis /egrave /Oacute /oacute /idieresis /Ocircumflex
+/Ugrave /thorn /twosuperior /Odieresis /mu /igrave /trademark
+/Igrave /ocircumflex /ntilde /Eacute /Scaron /degree /ograve
+/ugrave /Ntilde /otilde /Atilde /Aring /Otilde /minus /Icircumflex
+/logicalnot /odieresis /udieresis /eth /zcaron /onesuperior /Euro
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+] def
+/Times-Italic findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding Encoding-@12@0 def
+  currentdict
+end
+/Times-Italic-@12 exch definefont pop
+/@12 /Times-Italic-@12 def
+/&12 {@12 F} bind def
+/Encoding-@23@0 [
+/.notdef /space /a1 /a2 /a202 /a3 /a4 /a5 /a119 /a118 /a117 /a11
+/a12 /a13 /a14 /a15 /a16 /a105 /a17 /a18 /a19 /a20 /a21 /a22
+/a23 /a24 /a25 /a26 /a27 /a28 /a6 /a7 /space /a8 /a9 /a10 /a29
+/a30 /a31 /a32 /a33 /a34 /a35 /a36 /a37 /a38 /a39 /a40 /a41 /a42
+/a43 /a44 /a45 /a46 /a47 /a48 /a49 /a50 /a51 /a52 /a53 /a54 /a55
+/a56 /a57 /a58 /a59 /a60 /a61 /a62 /a63 /a64 /a65 /a66 /a67 /a68
+/a69 /a70 /a71 /a72 /a73 /a74 /a203 /a75 /a204 /a76 /a77 /a78
+/a79 /a81 /a82 /a83 /a84 /a97 /a98 /a99 /a100 /a89 /a90 /a93
+/a94 /a91 /a92 /a205 /a85 /a206 /a86 /a87 /a88 /a95 /a96 /a101
+/a102 /a103 /a104 /a106 /a107 /a108 /a112 /a111 /a110 /a109 /a120
+/a121 /a122 /a123 /a124 /a125 /a126 /a127 /a128 /a129 /a130 /a131
+/a132 /a133 /a134 /a135 /a136 /a137 /a138 /a139 /a140 /a141 /a142
+/a143 /a144 /a145 /a146 /a147 /a148 /a149 /a150 /a151 /a152 /a153
+/a154 /a155 /a156 /a157 /a158 /a159 /a160 /a161 /a163 /a164 /a196
+/a165 /a192 /a166 /a167 /a168 /a169 /a170 /a171 /a172 /a173 /a162
+/a174 /a175 /a176 /a177 /a178 /a179 /a193 /a180 /a199 /a181 /a200
+/a182 /a201 /a183 /a184 /a197 /a185 /a194 /a198 /a186 /a195 /a187
+/a188 /a189 /a190 /a191 /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef ] def
+/ZapfDingbats findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding Encoding-@23@0 def
+  currentdict
+end
+/ZapfDingbats-@23 exch definefont pop
+/@23 /ZapfDingbats-@23 def
+/&23 {@23 F} bind def
+/Encoding-@13@0 [
+/.notdef /hyphen /cent /fi /fl /dagger /emdash /onequarter /threequarters
+/onehalf /endash /acute /grave /section /daggerdbl /backslash
+/quotedbl /ring /bullet /bar /quotedblleft /quotedblright /space
+/asciicircum /asciitilde /exclamdown /sterling /fraction /yen
+/florin /currency /quotesingle /space /exclam /quotedbl /numbersign
+/dollar /percent /ampersand /quoteright /parenleft /parenright
+/asterisk /plus /comma /hyphen /period /slash /zero /one /two
+/three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I
+/J /K /L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft
+/backslash /bracketright /circumflex /underscore /quoteleft /a
+/b /c /d /e /f /g /h /i /j /k /l /m /n /o /p /q /r /s /t /u /v
+/w /x /y /z /braceleft /bar /braceright /tilde /guillemotleft
+/guilsinglleft /guilsinglright /periodcentered /paragraph /quotesinglbase
+/quotedblbase /guillemotright /ellipsis /perthousand /questiondown
+/macron /breve /dotaccent /dieresis /cedilla /hungarumlaut /ogonek
+/caron /AE /ordfeminine /Lslash /Oslash /OE /ordmasculine /ae
+/dotlessi /lslash /oslash /oe /germandbls /Idieresis /eacute
+/Ydieresis /divide /Yacute /Acircumflex /aacute /Ucircumflex
+/yacute /ecircumflex /Udieresis /Uacute /Edieresis /copyright
+/aring /agrave /atilde /scaron /iacute /ucircumflex /acircumflex
+/ccedilla /Thorn /threesuperior /Ograve /Agrave /multiply /uacute
+/ydieresis /icircumflex /Ecircumflex /adieresis /edieresis /Iacute
+/plusminus /brokenbar /registered /Egrave /Zcaron /Eth /Ccedilla
+/Aacute /Adieresis /egrave /Oacute /oacute /idieresis /Ocircumflex
+/Ugrave /thorn /twosuperior /Odieresis /mu /igrave /trademark
+/Igrave /ocircumflex /ntilde /Eacute /Scaron /degree /ograve
+/ugrave /Ntilde /otilde /Atilde /Aring /Otilde /minus /Icircumflex
+/logicalnot /odieresis /udieresis /eth /zcaron /onesuperior /Euro
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+] def
+/Times-Bold findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding Encoding-@13@0 def
+  currentdict
+end
+/Times-Bold-@13 exch definefont pop
+/@13 /Times-Bold-@13 def
+/&13 {@13 F} bind def
+/pagebbox [0 0 595 842] def
+userdict /gotpagebbox true put
+/setpagedevice where {pop 1 dict dup /PageSize [595 842] put setpagedevice} if
+mark
+/resolution 72000 def
+setup
+3 setdecoding
+%%EndSetup
+%%Page: 1 1
+save
+mark
+1 pagesetup
+ [ {Catalog} << /ViewerPreferences << /DisplayDocTitle true >> >> /PUT pdfmark
+20 @11 f
+( T)6300(Heirloom Documentation)6660 2 108294 76188 t
+(ools)331854 v
+(: Quickstart Guide)6660 1 366514 u
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 1 1
+%%Page: 2 2
+save
+mark
+2 pagesetup
+10 @11 f
+(\001)278840 51000 w
+(2)285500 v
+(\001)293830 v
+12 s
+(Gunnar)72000 87000 w
+(Ritter)111984 v
+(11/5/06)517217 v
+(So you w)4708 1 72000 102000 t
+(ant to e)4708 1 120632 u
+(xplore Heirloom)4708 1 159196 u
+&12
+(tr)245268 v
+(of)252732 v
+(f)261852 v
+&11
+(and kno)4708 1 269896 u
+(w)309632 v
+&12
+(tr)323005 v
+(of)330469 v
+(f)339589 v
+&11
+(to some e)4709 1 347634 u
+(xtent since you ha)4709 1 396868 u
+(v)488743 v
+(e used)4709 1 494563 u
+&12
+(gr)531305 v
+(of)541433 v
+(f)550553 v
+&11
+(or traditional)3996 1 72000 117000 t
+&12
+(tr)139320 v
+(of)146784 v
+(f)155904 v
+&11
+(before)163236 v
+(? Getting started is easy then)3996 1 194676 u
+(:)338760 v
+&23
+(\017)72000 147000 w
+&11
+(Heirloom)86928 v
+&12
+(tr)138597 v
+(of)146061 v
+(f)155181 v
+&11
+(supports names with more than tw)5673 1 164190 u
+(o characters for requests)5674 1 342423 u
+(, strings)5674 1 467637 u
+(, number)5674 1 508555 u
+(re)86928 162000 w
+(gisters)96072 v
+(, and fonts lik)5219 1 127644 u
+(e)200181 v
+&12
+(gr)210728 v
+(of)220856 v
+(f)229976 v
+&11
+(does)238531 v
+(. Ho)5219 1 260767 u
+(we)283350 v
+(v)297042 v
+(er)302862 v
+( a compatibility mode by def)5218(, it operates in)5219 2 311946 u
+(ault)535889 v
+(and needs to be e)4955 1 86928 177000 t
+(xplicitly told to acti)4955 1 177212 u
+(v)277121 v
+(ate e)4956 1 282821 u
+(xtensions)306917 v
+( unless you are processing le)4956(. Thus)4740 2 352493 u
+(g)531473 v
+(ac)537413 v
+(y)547889 v
+(documents)86928 192000 w
+(, the)3996 1 139164 u
+(\003rst line in a Heirloom)3996 1 164820 u
+&12
+(tr)282132 v
+(of)289596 v
+(f)298716 v
+&11
+(document should read)3996 1 306048 u
+&13
+(.do xflag 3)3996 1 98928 222000 t
+&23
+(\017)72000 252000 w
+&12
+(tr)86928 v
+(of)94392 v
+(f)103512 v
+&11
+( processing in order to produce)6429
+(produces an intermediate language that needs further)6428 2 113276 u
+(PostScript output)3996 1 86928 267000 t
+(. W)3636 1 171180 u
+(ith preprocessors and)3996 1 188664 u
+&12
+(\012mm)296628 v
+&11
+(macros)323952 v
+(, a typical command line is)3996 1 358848 u
+&13
+(pic input)3996 1 98928 297000 t
+(.tr)145848 v
+(\023 tbl)3996 1 162168 u
+(\023 eqn)3996 1 186804 u
+(\023 tr)3996 1 216108 u
+(off)231852 v
+(\012mm)249840 v
+(\023 dpost > output)3996 1 279828 u
+(.ps)363552 v
+&11
+(It is most con)4040 1 86928 327000 t
+(v)154572 v
+(enient to ha)4040 1 160392 u
+(v)218224 v
+(e the)4040 1 224044 u
+&12
+(mak)252116 v
+(e)271988 v
+&11
+(utility let this e)4040 1 281356 u
+(x)356644 v
+(ecute for you)4040 1 362464 u
+( directory)4041(. See the source)4040 2 428096 u
+(for this quickstart guide \(\024doc/quickstart\025 in the distrib)3996 1 86928 342000 t
+(ution\) for an e)3996 1 357300 u
+(xample)428424 v
+(.)463992 v
+&23
+(\017)72000 372000 w
+&11
+(Y)85848 v
+(ou can adapt)5118 1 93192 u
+&12
+(tr)163194 v
+(of)170658 v
+(f)179778 v
+&11
+(to local language con)5118 1 188232 u
+(v)296418 v
+( the paper size)5119(entions by setting)5118 2 302238 u
+(, the h)5119 1 466719 u
+(yphenation)500561 v
+(language)86928 387000 w
+(, and the input locale)5089 1 130488 u
+(. F)5089 1 239404 u
+(or e)5088 1 253985 u
+(xample)274217 v
+(, a document in German that is using UTF\0018 as)5088 1 309785 u
+(input character encoding w)3996 1 86928 402000 t
+(ould usually con\003gure these as)3996 1 220092 u
+&13
+(.mediasize a4)3996 1 98928 432000 t
+(.h)98928 447000 w
+(ylang de_DE)3996 1 108420 u
+(.lc_ctype de_DE)3996 1 98928 462000 t
+(.utf8)182820 v
+&23
+(\017)72000 492000 w
+&11
+(F)86928 v
+(onts are)5356 1 93420 u
+(\024plug\001and\001play\025)138788 v
+(:)217556 v
+&12
+(tr)226249 v
+(of)233713 v
+(f)242833 v
+&11
+( T)5141(can directly access PostScript)5357 2 251526 u
+(ype)412418 v
+(1)433742 v
+(, T)5141 1 439982 u
+(rueT)455035 v
+(ype)476731 v
+(, and Open\001)5357 1 494299 u
+(T)86928 507000 w
+(ype fonts without an)3996 1 93300 u
+(y need for con)3996 1 194436 u
+(v)265920 v
+(ersion)271740 v
+( font of this document is mounted by)3996(. The)3780 2 301308 u
+&13
+(.fp 1 R MyriadPr)3996 1 98928 537000 t
+(o\001Regular otf)3996 1 190356 u
+&11
+(The document)3996 1 86928 567000 t
+&12
+(F)160908 v
+( T)3780(ont Handling in)3996 2 166980 u
+(r)254772 v
+(of)258900 v
+(f W)3516 1 268020 u
+(ith P)3996 1 284208 u
+(ostScript De)3996 1 307248 u
+(vices)367728 v
+&11
+(e)395712 v
+(xplains additional features)3996 1 400860 u
+(.)529740 v
+&23
+(\017)72000 597000 w
+&11
+(Further e)4571 1 86928 u
+(xtensions you might lik)4571 1 131975 u
+(e to e)4571 1 249584 u
+( paragraph\001based justi\003cation)4572(xplore are)4571 2 278538 u
+(,)473777 v
+(\024microtypogra\001)481349 v
+(ph)86928 612000 w
+(y\025)98868 v
+(, hanging punctuation)4729 1 110436 u
+( links)4728(, PDF bookmarks and)4729 2 218462 u
+(,)356621 v
+(\004oating\001point re)4728 1 364349 u
+(gisters)443561 v
+(, and local v)4728 1 475133 u
+(ari\001)538673 v
+(ables per macro instance)4718 1 86928 627000 t
+( are documented in)4718(. These)4502 2 210618 u
+&12
+(J)348292 v
+( T)4502(usti\003cation in Heirloom)4718 2 353200 u
+(r)481822 v
+(of)485950 v
+(f)495070 v
+&11
+( the)4719(and in)4718 2 503124 u
+&12
+(Nr)86928 642000 w
+(of)99060 v
+(f/T)108180 v
+(r)120864 v
+(of)124992 v
+(f User')3996 1 134112 u
+(s Manual)3996 1 168288 u
+(.)214524 v
+&23
+(\017)72000 672000 w
+&11
+(Heirloom)86928 v
+&12
+(tr)136920 v
+(of)144384 v
+(f)153504 v
+&11
+(pro)160836 v
+(vides a)3996 1 176652 u
+&12
+(gr)215304 v
+(of)225432 v
+(f)234552 v
+&11
+(compatibility mode and macro set)3996 1 241884 u
+( command line lik)3996(. A)3336 2 409428 u
+(e)514296 v
+&13
+(gtbl input)3996 1 98928 702000 t
+(.tr)150516 v
+(\023 tr)3996 1 166836 u
+(off)182580 v
+(\012mg /usr/shar)3996 1 200568 u
+(e/gr)272352 v
+(off/curr)292128 v
+(ent/tmac/s)331896 v
+(.tmac)384792 v
+(\012)417108 v
+(\023 dpost > output)3996 1 427104 u
+(.ps)510828 v
+&11
+(lets you process)3996 1 86928 732000 t
+&12
+(gr)169572 v
+(of)179700 v
+(f)188820 v
+&11
+(macro sets and preprocessor output)3996 1 196152 u
+(.)369672 v
+_marks
+cleartomark
+showpage
+restore
+%%EndPage: 2 2
+%%Trailer
+done
+%%EOF

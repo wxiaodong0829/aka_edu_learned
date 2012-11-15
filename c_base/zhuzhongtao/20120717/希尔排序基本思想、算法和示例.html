@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0076)http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.2.2.1.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"><title>希尔排序基本思想、算法和示例</title>
+
+<meta content="text/css" http-equiv="content-style-type"><link href="./希尔排序基本思想、算法和示例_files/style.css" rel="stylesheet" type="text/css">
+
+<meta content="Microsoft FrontPage 4.0" name="GENERATOR">
+<style>#sxmydown {
+	LEFT: 0px; POSITION: relative; TOP: 0px
+}
+#sxmydown1 {
+	HEIGHT: 240px; LEFT: -60px; POSITION: absolute; TOP: 0px; VISIBILITY: hidden; WIDTH: 100px
+}
+</style>
+
+
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<script language="JavaScript">
+
+
+
+ float_init	= 1;
+
+		function DHTML_Init(Object) { 
+
+ 	 if (navigator.userAgent.match(/Mozilla\/5\../) && float_init) { 
+
+ 	 SetObjectOffsetTop(Object, undefined);
+
+ 	} }
+
+  	function All (ID) { 
+
+		if (document.all)	{  return document.all[ID];   } 
+
+		else if (document.documentElement){
+
+     return document.getElementById (ID); } 
+
+ 	else if (document.layers)	{ return document.layers[ID]; }}
+
+		function GetWindowOffsetTop() {
+
+ 	if (window.innerHeight)	{ return window.pageYOffset; }
+
+		 else if (document.body)	{ return document.body.scrollTop; }} 
+
+		function GetWindowHeight() { 
+
+		if (window.innerHeight)	{ return window.innerHeight; } 
+
+      else if (document.body)	{ return document.body.clientHeight; }} 
+
+  	function GetObjectHeight(Object) {
+
+		DHTML_Init(Object);
+
+ 	if (document.all || document.documentElement)	{
+
+		Clip = Object.style.clip; 
+
+     if (! Clip) { return Object.offsetHeight; }
+
+     else	{ return GetClipElement (Clip, 'Bottom'); }} 
+
+     else if (document.layers)	{ return Object.clip.height; }} 
+
+ 	function GetClipElement (Clip, Element) {
+
+		Clip = Clip.substr(Clip.indexOf('(') + 1); 
+
+     Clip = Clip.substr(0, Clip.length - 1);
+
+		Clippers = Clip.split (" "); 
+
+     for (i = 0; i < Clippers.length; i++) { 
+
+     if (Clippers[i] != 'auto') 
+
+      { Clippers[i] = Clippers[i].replace (/D/g, ""); }} 
+
+     ClipTop = Number(Clippers[0]); 
+
+     ClipRight = Number(Clippers[1]); 
+
+     ClipBottom = Number(Clippers[2]);
+
+     ClipLeft = Number(Clippers[3]); 
+
+     if (Element == 'Top')		{ return ClipTop; } 
+
+      else if (Element == 'Right')	{ return ClipRight; } 
+
+     else if (Element == 'Bottom')	{ return ClipBottom; } 
+
+     else if (Element == 'Left')	{ return ClipLeft; } 
+
+      else				{ return undefined; }} 
+
+     function GetObjectOffsetTop(Object) { 
+
+     DHTML_Init(Object); 
+
+     if (Object.offsetTop)	{ return Object.offsetTop; } 
+
+      else if (document.layers)	{ return Object.top; }} 
+
+     function SetObjectOffsetTop(Object, Offset) { 
+
+     if (Object.style)	{ Object.style.top = Offset; } 
+
+      else if (Object.top)	{ Object.top = Offset; }} 
+
+     CenterMenu = 1;	 
+
+     MenuBorder = 100; 
+
+     TimeCheck  = 250;	 
+
+     TimeUpdate = 15; 
+
+     DivUpdate  = 15;	 
+
+     Minimum    = 50;	 
+
+     AddHeight  = -4; 
+
+     function ScrollMenu() {
+     persistMenu.style.left=document.body.scrollLeft+document.body.clientWidth-80; 
+
+     Menu		= All('persistMenu'); 
+
+     WinTop	= GetWindowOffsetTop(); 
+
+     WinHeight	= GetWindowHeight() + AddHeight;
+
+     MenuTop	= GetObjectOffsetTop(Menu); 
+
+     MenuHeight = GetObjectHeight (Menu); 
+
+     MenuNew	= (CenterMenu) ? Math.round (WinTop + (WinHeight - MenuHeight) / 1) : WinTop + MenuBorder; 
+
+     if (MenuNew < Minimum) 
+
+     { MenuNew = Minimum; }
+
+     if (MenuTop != MenuNew) { 
+
+     if ( (MenuTop + MenuHeight) < WinTop || MenuTop > (WinTop + WinHeight) ) { 
+
+     SetObjectOffsetTop (Menu, (MenuTop < MenuNew) ? (WinTop - MenuHeight) : (WinTop + WinHeight)); 
+
+     } else { 
+
+     Add = (MenuTop < MenuNew) ? 1 : -1; 
+
+     SetObjectOffsetTop (Menu, MenuTop + Math.round((MenuNew - MenuTop) / DivUpdate) + Add); 
+
+     } 
+
+     } 
+
+         window.setTimeout('ScrollMenu()', (GetObjectOffsetTop(Menu) == MenuNew) ? TimeCheck : TimeUpdate); 
+
+     } 
+
+
+
+</script><script id="clientEventHandlersVBS" language="vbscript">
+<!--
+
+Sub IMG1_onclick
+
+End Sub
+
+-->
+</script></head>
+
+
+
+
+<body bgcolor="white" topmargin="0" marginheight="0" marginwidth="0" onload="ScrollMenu()">
+<div id="persistMenu" style="HEIGHT: 60px; LEFT: 130px; POSITION: absolute; TOP: 87px; WIDTH: 64px; Z-INDEX: 100"> 
+
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+    <tbody> 
+
+    <tr> 
+
+      <td><a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.2.2.1.htm#up">
+      <img src="./希尔排序基本思想、算法和示例_files/up.gif" border="0" alt="回到顶部" id="IMG1" width="50" height="30"></a></td>
+
+    </tr>
+
+    </tbody> 
+
+  </table>
+
+</div>
+
+<center><!-- head -->
+<!-- end of head --><!-- navbar --><!-- navbar -->
+<table border="0" cellpadding="2" cellspacing="0" width="762">
+  <tbody><tr>
+    <td align="middle" width="157"><img border="0" src="./希尔排序基本思想、算法和示例_files/logo1.jpg" width="145" height="57"></td>
+    <td align="middle" width="451"><img border="0" src="./希尔排序基本思想、算法和示例_files/esearch.gif" width="468" height="60"></td> 
+    <td align="right" width="136"> 
+      <table bgcolor="#6e6d6d" border="0" cellpadding="0" cellspacing="0" width="123"> 
+        <tbody> 
+        <tr> 
+          <td align="middle"> 
+            <table border="0" cellpadding="0" cellspacing="1" height="55" width="100%"><tbody> 
+              <tr> 
+                <td align="middle" height="15"> 
+                  <p align="center"><font style="color: #ffffff; font-family: arial; font-size: 12px">网站工具</font></p>
+                </td></tr>
+              <tr bgcolor="white">
+                <td align="center" height="20" width="123">
+                <a href="http://student.zjzk.cn/course_ware/data_structure/web/yjyl/denglu.asp" name="up">管 理</a></td>
+              </tr>
+              <tr bgcolor="white">
+                <td align="center" height="20" width="123"><a href="http://www.macromedia.com/shockwave/download/triggerpages_mmcom/flash5.html" target="_blank">flash插件下载</a></td> 
+              </tr></tbody></table></td></tr></tbody></table></td>
+  </tr>
+</tbody></table>
+<table border="0" cellpadding="2" cellspacing="0" width="760">
+  <tbody>
+  <tr>
+    <td width="156"></td>
+    <td></td>
+    <td></td></tr></tbody></table>
+<table bgcolor="black" border="0" cellpadding="0" cellspacing="0" width="760">
+  <tbody>
+  <tr>
+    <td bgcolor="#0080C0">
+      <table border="0" cellpadding="4" cellspacing="1" width="100%" bgcolor="#0080C0">
+        <tbody>
+        <tr bgcolor="#e1e31e">
+          <td align="middle" bgcolor="black" width="148"><font color="white">
+          <script language="JavaScript">
+function greeting(){ 
+Today = new Date() 
+hours = Today.getHours() 
+document.write("<FONT SIZE=2 color=#ff0000>") 
+if (hours<2) 
+document.write("零晨了，早点休息吧 ！") 
+else if (hours<9) 
+document.write("早上好，认真学习啊！") 
+else if (hours<12) 
+document.write("上午好，不要忘了午饭！") 
+else if (hours<13) 
+document.write("中午好，休息一下了！") 
+else if (hours<18) 
+document.write("下午好，生命在于学习！") 
+else if (hours<24) 
+document.write("晚上好，好好珍惜！") 
+else 
+document.write("夜深了,注意身体！") 
+document.writeln("</font>"); 
+}
+greeting() 
+          </script><font size="2" color="#ff0000">上午好，不要忘了午饭！</font>
+
+            </font></td>
+          <td width="597">
+            <table border="0" cellpadding="0" cellspacing="0" width="587">
+              <tbody><tr>
+                <td align="center" width="48"><a href="http://student.zjzk.cn/course_ware/data_structure/web/main.htm">首页</a></td>
+                <td align="center" width="49"><a href="http://student.zjzk.cn/course_ware/data_structure/web/gailun/gailun1.1.1.htm">概论</a></td>
+                <td align="center" width="49"><a href="http://student.zjzk.cn/course_ware/data_structure/web/xianxingbiao/xianxingbiao2.1.1.htm">线性表</a></td>
+                <td align="center" width="70"><a href="http://student.zjzk.cn/course_ware/data_structure/web/zhanhuoduilie/zhanhuoduilie3.1.1.htm">栈和队列</a></td>
+                <td align="center" width="33"><a href="http://student.zjzk.cn/course_ware/data_structure/web/chuan/chuan4.1.1.htm">串</a></td>
+                <td align="center" width="69"><a href="http://student.zjzk.cn/course_ware/data_structure/web/duoweishuzu/duoweishuzu5.1.htm">多维数组</a></td>
+                <td align="center" width="37"><a href="http://student.zjzk.cn/course_ware/data_structure/web/guangyibiao/guangyibiao.htm">广义表</a></td>
+                <td align="center" width="43"><a href="http://student.zjzk.cn/course_ware/data_structure/web/shu/shu6.1.1.1.htm">树</a></td>
+                <td align="center" width="42"><a href="http://student.zjzk.cn/course_ware/data_structure/web/tu/tu7.1.1.htm">图</a></td>
+                <td align="center" width="53">排序</td>
+                <td align="center" width="50"><a href="http://student.zjzk.cn/course_ware/data_structure/web/chazhao/chazhao9.1.1.htm">查找</a></td>
+                <td align="center" width="44"><a href="http://student.zjzk.cn/course_ware/data_structure/web/wenjian/wenjian10.1.1.1.htm">文件</a></td>
+              </tr>
+            </tbody></table>
+          </td></tr></tbody></table></td></tr></tbody></table>
+<table border="0" cellpadding="2" cellspacing="0" width="760">
+  <tbody>
+  <tr bgcolor="#fdffe3">
+    <td align="right"></td></tr></tbody></table><!-- end of navbar--><!-- end of navbar-->     
+</center>     
+<table border="0" cellpadding="0" cellspacing="0" width="760">     
+  <tbody>     
+  <tr>     
+    <td align="middle" valign="top" width="444"><!-- end of search --><!-- market --><!-- market -->     
+      <!-- end of market --><!-- end of market --></td>       
+  </tr></tbody></table>                        
+<table border="0" width="760" bgcolor="#EBEBEB" align="center">
+  <tbody><tr>
+    <td width="17%" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody><tr>
+          <td height="280" valign="top"><br>
+            <div class="parent" id="KB1Parent">              <img alt="网警工作室" border="0" src="./希尔排序基本思想、算法和示例_files/workplan.gif" width="30" height="16">排序基本概念</div>
+            
+            <div class="child" id="KB1Child"><a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.1.1.1.htm">
+              <img border="0" src="./希尔排序基本思想、算法和示例_files/blank.gif" width="50" height="16">基本概念</a></div>
+            
+            <div class="parent" id="KB2Parent">              <img alt="网警工作室" border="0" src="./希尔排序基本思想、算法和示例_files/workplan.gif" width="30" height="16">插入排序</div>
+            
+            <div class="child" id="KB2Child"><a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.2.1.1.htm">
+              <img border="0" src="./希尔排序基本思想、算法和示例_files/blank.gif" width="50" height="16">直接插入排序</a><br>
+              <img border="0" src="./希尔排序基本思想、算法和示例_files/blank.gif" width="50" height="16">希尔排序</div>
+            
+            <div class="parent" id="KB3Parent">              <img alt="网警工作室" border="0" src="./希尔排序基本思想、算法和示例_files/workplan.gif" width="30" height="16">交换排序</div>
+            <div class="child" id="KB3Child"><a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.3.1.1.htm">
+              <img border="0" src="./希尔排序基本思想、算法和示例_files/blank.gif" width="50" height="16">冒泡排序</a><br>
+              
+              <a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.3.2.1.htm">
+              <img border="0" src="./希尔排序基本思想、算法和示例_files/blank.gif" width="50" height="16">快速排序</a> </div>
+
+            <div class="parent" id="KB4Parent">              <img alt="网警工作室" border="0" src="./希尔排序基本思想、算法和示例_files/workplan.gif" width="30" height="16">选择排序</div>
+            
+            <div class="child" id="KB4Child"><a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.4.1.htm">
+              <img border="0" src="./希尔排序基本思想、算法和示例_files/blank.gif" width="50" height="16">直接选择排序</a><br><a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.4.2.1.htm">
+              <img border="0" src="./希尔排序基本思想、算法和示例_files/blank.gif" width="50" height="16">堆排序</a>            
+ </div>
+ <div class="parent" id="KB5Parent">   <img alt="网警工作室" border="0" src="./希尔排序基本思想、算法和示例_files/workplan.gif" width="30" height="16">归并排序</div>
+            
+            <div class="child" id="KB5Child"><a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.5.1.1.htm">
+              <img border="0" src="./希尔排序基本思想、算法和示例_files/blank.gif" width="50" height="16">归并排序</a>      
+ </div>
+<div class="parent" id="KB6Parent">  <img alt="网警工作室" border="0" src="./希尔排序基本思想、算法和示例_files/workplan.gif" width="30" height="16">分配排序</div>
+            
+            <div class="child" id="KB6Child"><a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.6.1.1.htm">
+              <img border="0" src="./希尔排序基本思想、算法和示例_files/blank.gif" width="50" height="16">箱排序</a><br><a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.6.2.htm">
+              <img border="0" src="./希尔排序基本思想、算法和示例_files/blank.gif" width="50" height="16">基数排序</a>            
+ </div>
+ 
+ <div class="parent" id="KB7Parent">   <img alt="网警工作室" border="0" src="./希尔排序基本思想、算法和示例_files/workplan.gif" width="30" height="16">各种内部排序方法</div>
+            
+            <div class="child" id="KB7Child"><a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.7.1.1.htm">
+              <img border="0" src="./希尔排序基本思想、算法和示例_files/blank.gif" width="50" height="16">各种内部排序方法的比较和选择</a>      
+ </div>
+
+
+</td>
+        </tr></tbody></table>
+                    </td>
+    <td width="53%" valign="top" style="border-left: 1 dotted #008000">
+      <div align="center">
+        <table border="0" width="95%">
+        <tbody><tr>
+          <td width="100%">
+            <center>    
+                <p style="line-height: 150%" align="left"> <br>
+                  &nbsp;&nbsp;&nbsp; 　希尔排序(Shell Sort)是插入排序的一种。因D．L．Shell于1959年提出而得名。<br> 
+                  <font color="#008000" size="4"> <br> 
+                  </font> <font size="4"> <b> 希尔排序基本思想<br> 
+                  </b></font><br> 
+                  &nbsp; 基本思想：<br> 
+                　&nbsp;&nbsp;&nbsp; 先取一个小于n的整数d<sub>1</sub>作为第一个增量，把文件的全部记录分成d<sub>1</sub>个组。所有距离为d<sub>l</sub>的倍数的记录放在同一个组中。先在各组内进行直接插人排序；然后，取第二个增量d<sub>2</sub>&lt;d<sub>1</sub>重复上述的分组和排序，直至所取的增量d<sub>t</sub>=1(d<sub>t</sub>&lt;d<sub>t-l</sub>&lt;…&lt;d<sub>2</sub>&lt;d<sub>1</sub>)，即所有记录放在同一组中进行直接插入排序为止。<br> 
+                  &nbsp;&nbsp;&nbsp; 　该方法实质上是一种分组插入方法。<br>
+                  <font color="#008000" size="4"> <br>
+                  </font> <font size="4"> <b> 给定实例的shell排序的排序过程<br>
+                  </b></font><br>
+                  &nbsp;&nbsp;&nbsp; 　假设待排序文件有10个记录，其关键字分别是：<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 49，38，65，97，76，13，27，49，55，04。<br> 
+                  &nbsp;&nbsp;&nbsp; 　增量序列的取值依次为：<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5，3，1<br> 
+                  &nbsp;&nbsp;&nbsp; 　排序过程如【<a href="http://student.zjzk.cn/course_ware/data_structure/web/flashhtml/shell.htm" target="ok" onclick="MM_openBrWindow(&#39;../flashhtml/shell.htm&#39;,&#39;ok&#39;,&#39;width=550,height=400&#39;)">动画模拟演示</a>】。<br>
+                  <br>
+                  <b> <font size="4">Shell排序的算法实现<br>
+                  </font><br>
+                  1． 不设监视哨的算法描述</b><br>
+                  &nbsp; void ShellPass(SeqList R，int d)<br> 
+                  &nbsp;&nbsp; {//希尔排序中的一趟排序，d为当前增量<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp; for(i=d+1;i&lt;=n；i++) //将R[d+1．．n]分别插入各组当前的有序区<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(R[i].key&lt;R[i-d].key){<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R[0]=R[i];j=i-d；  
+                  //R[0]只是暂存单元，不是哨兵<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do {//查找R[i]的插入位置<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                  R[j+d]；=R[j]； //后移记录<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                  j=j-d； //查找前一记录<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }while(j&gt;0&amp;&amp;R[0].key&lt;R[j].key)；<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R[j+d]=R[0]；  
+                  //插入R[i]到正确的位置上<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } //endif<br> 
+                  &nbsp;&nbsp; } //ShellPass<br> 
+                  <br> 
+                  &nbsp; void&nbsp; ShellSort(SeqList R)<br> 
+                  &nbsp;&nbsp; {<br> 
+                  &nbsp;&nbsp;&nbsp; int increment=n； //增量初值，不妨设n&gt;0<br> 
+                  &nbsp;&nbsp;&nbsp; do {<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; increment=increment/3+1；  
+                  //求下一增量<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ShellPass(R，increment)；  
+                  //一趟增量为increment的Shell插入排序<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }while(increment&gt;1)<br> 
+                  &nbsp;&nbsp;&nbsp; } //ShellSort<br> 
+                  <font color="#FF0000">&nbsp; 注意：</font><br> 
+                　&nbsp;&nbsp;&nbsp; 当增量d=1时，ShellPass和InsertSort基本一致，只是由于没有哨兵而在内循环中增加了一个循环判定条件"j&gt;0"，以防下标越界。<br> 
+                  <br> 
+                  <b> 2．设监视哨的shell排序算法</b><br> 
+                  &nbsp;&nbsp;&nbsp; 　具体算法【参考书目[12] 】<br> 
+                  <br> 
+                  <b> <font size="4">算法分析<br> 
+                  </font><br> 
+                  1．增量序列的选择</b><br> 
+                  &nbsp;&nbsp;&nbsp; 　Shell排序的执行时间依赖于增量序列。<br>
+                  &nbsp;&nbsp;&nbsp; 　好的增量序列的共同特征：<br>
+                　　① 最后一个增量必须为1；<br> 
+                　　② 应该尽量避免序列中的值(尤其是相邻的值)互为倍数的情况。<br> 
+                  &nbsp;&nbsp;&nbsp; 　有人通过大量的实验，给出了目前较好的结果：当n较大时，比较和移动的次数约在n<sup>l.25</sup>到1.6n<sup>1.25</sup>之间。<br>
+                  <br>
+                  <b> 2．Shell排序的时间性能优于直接插入排序</b><br>
+                  &nbsp;&nbsp;&nbsp; 　希尔排序的时间性能优于直接插入排序的原因：<br>
+                　　①当文件初态基本有序时直接插入排序所需的比较和移动次数均较少。<br>
+                　　②当n值较小时，n和n<sup>2</sup>的差别也较小，即直接插入排序的最好时间复杂度O(n)和最坏时间复杂度0(n<sup>2</sup>)差别不大。<br>
+                　　③在希尔排序开始时增量较大，分组较多，每组的记录数目少，故各组内直接插入较快，后来增量d<sub>i</sub>逐渐缩小，分组数逐渐减少，而各组的记录数目逐渐增多，但由于已经按d<sub>i-1</sub>作为距离排过序，使文件较接近于有序状态，所以新的一趟排序过程也较快。<br>
+                  &nbsp;&nbsp;&nbsp; 　因此，希尔排序在效率上较直接插人排序有较大的改</p></center></td></tr></tbody></table></div></td></tr></tbody></table></body></html>

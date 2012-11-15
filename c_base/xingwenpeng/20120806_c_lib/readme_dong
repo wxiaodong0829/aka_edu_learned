@@ -1,0 +1,63 @@
+1, myfgets
+
+	/* myfgets 
+	 * out: char *s, 将要保存到的数组指针
+	 *
+	 * in : int size, 将要获取的最大字符数
+	 *		FILE *fp, 从那里获得字符
+	 * 
+	 * describtion:
+	 *		fgets() 结束条件：1，遇到\n时，并且达不到size限制时，将缓冲区中
+	 *							的内容包括\n一起读到s中,再在最后加一个'\0'
+	 *						 2, 达到size限制，最多读取 size-1 个字符，无论是否时\n, 然后在最后的第 size 的地方加'\0'
+	 *
+	 * 
+	 */ 
+	char * myfgets(char *s, int size, FILE *fp)
+	{
+		int len;
+		if ((s = fgets(s, size, fp)) == NULL) {
+			return NULL;
+		}
+		len = strlen(s);
+		if (s[len - 1] == '\n') {
+			s[len - 1] = '\0';
+		}
+		return s;
+	}
+2, fflush()      只清空输出缓冲区， 不能清空输入缓冲区
+
+3, scanf()    只读 ' ', '\n'之前的字符，他们还在缓冲区中。
+
+4, 每个文件指针对应一个独自的缓冲区
+
+	printf  fputs  ...
+		
+		buffer
+					
+					wrier
+
+
+					内核
+
+
+					硬件
+
+5, fseek 用于扩充空间
+
+	fseek(fp, 10000000, SEEK_SET);
+	可拓展文件的大小。需在最后写一个字符，至少.
+
+6, fopen 出错信息：系统会自动设置 error.h 中的error 全局变量
+							
+					error  ==  1, 打开文件不存在或目录不存在
+								2, 打开权限不够
+								3,
+								4
+
+				[ + d  显示宏定义
+
+		perror("aaaaaaa");
+		
+		$./a.out
+		aaaaaaa: no such file of dectory

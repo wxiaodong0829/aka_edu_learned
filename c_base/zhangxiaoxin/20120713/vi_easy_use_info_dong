@@ -1,0 +1,69 @@
+0, 自定义快捷键
+	
+	qq %   ww &                 ii Esc
+          aa *   ss *           jj \
+
+
+1,代码对齐
+	命令模式下  gg=G
+2， 快速代码定位 变量 宏定义 函数定义等功能
+vi ctags 代码查找，快速定位：
+	使用方法：1，在工程目录的最顶端 $ctags -R   生成 tags
+		2,用 vi 打开文件后,在模行模式输入 :set tags=/.../tags 
+					此tags 即1生成的tags
+		3,把光标定位到某一函数名上, 按下 Ctar + ], vim就可以自动切		换到该函数定义处!
+ 		     要返回只需要按下Ctrl + t .
+	     更多用法, 在vim命令模式输入 :help usr_29 查看即可. 
+
+3，折叠
+    zo – 打开光标下的折叠
+    zO – 循环打开光标下的折叠，也就是说，如果存在多级折叠，每一级都会被打开
+    zc – 关闭光标下的折叠
+    zC – 循环关闭光标下的折叠 
+
+4，文件浏览  netrw.vim   $vim main7.c   在命令模式下:e  .../main7.c
+
+
+5，winManager
+
+使用：   $vi main7.c 
+       wm  (在命令模式下输入wm，window manager)
+
+
+6,cscope 的使用
+
+跟Ctags一样, 要使用其功能必须先为你的代码生成一个cscope的数据库, 在项目的根目录运行下面的命令:
+$ cd /home/wooin/vim71/
+$ cscope -Rbq
+# 此后会生成三个文件
+$ ll cscope.*
+-rw-rw-r-- 1 wooin wooin 1.1M 2007-09-30 10:56 cscope.in.out
+-rw-rw-r-- 1 wooin wooin 6.7M 2007-09-30 10:56 cscope.out
+-rw-rw-r-- 1 wooin wooin 5.1M 2007-09-30 10:56 cscope.po.out
+# 打开文件, 开始Coding
+$ cd src
+$ vi main.c
+进入vim后第一件事是要把刚才生成的cscope文件导入到vim中来, 用下面的命令:
+:cs add /home/wooin/vim71/cscope.out /home/wooin/vim71
+上面这条命令很重要, 必须写全, 不能只写前半句:
+:cs add /home/wooin/vim71/cscope.out
+因为源码是多级目录的, 如果这样写, cscope是无法在子目录中的源码中工作的, 当然, 如果你的源码都在同一级目录中就无所谓了. 如果你要经常用cscope的话, 可以把上面那句加到~/.vimrc中去.
+
+下面我们来操练一下, 查找函数vim_strsave()的定义, 用命令:
+:cs find g vim_strsave
+
+按下回车后会自动跳转到vim_strsave()的定义处. 此时你肯定会说Ctags也可以做到这个呀, 那么下面说的这个Ctags就无法做到了, 我想查找vim_strsave()到底在那些地方被调用过了, 用命令:
+:cs find c vim_strsave
+按下回车后vim会自动跳转到第一个符合要求的地方, 并且在命令栏显示有多少符合要求的结果,
+如果自动跳转的位置你不满意, 想看其他的结果, 可以用下面的命令打开QuickFix窗口:
+:cw
+
+reset : 重新初始化所有连接。
+用法  : cs reset
+
+
+
+7， Quickix 窗口
+:cw    显示出缓冲区中的内容
+
+

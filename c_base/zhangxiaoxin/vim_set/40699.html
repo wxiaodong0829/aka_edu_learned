@@ -1,0 +1,966 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='zh-CN' xml:lang='zh-CN' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="zh-CN"/>
+  <meta name="robots" content="index, follow" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+  <title>IDE---vim---vim 设置备份 -  左瞧瞧右瞧瞧 - 开源中国社区</title>
+      <meta name="Description" content="IDE---vim---vim 设置备份：&quot;F1~F12快捷键映射 &quot;&quot;{{{ map &lt;F2&gt; :BufExplorer&lt;CR&gt; nnoremap &lt;silent&gt; &lt;F3&gt; :Grep&lt;CR&gt; map &lt;F4&gt; :Tli..."/>
+    <link rel="stylesheet/less" href="http://my.oschina.net/zhangdapeng89/styles.less?ver=20120913" type="text/css" media="screen" />
+  <link rel="stylesheet" href="/js/2012/poshytip/tip-yellowsimple/tip-yellowsimple.css" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="/js/2011/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+  <script type="text/javascript" src="/js/2012/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="/js/2012/jquery.form.js"></script>
+  <script type="text/javascript" src="/js/2011/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+  <script type="text/javascript" src="/js/2012/poshytip/jquery.poshytip.min.js"></script>
+  <script type="text/javascript" src="/js/2011/oschina.js"></script>
+  <script type="text/javascript" src="/js/2012/less-1.3.0.min.js"></script>
+  <script type="text/javascript" src="/js/scrolltopcontrol.js"></script>
+  <link rel="alternate" type="application/rss+xml" title="张大鹏最新博客" href="http://my.oschina.net/zhangdapeng89/rss" />
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://my.oschina.net/action/xmlrpc/rsd?space=216139" />
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://my.oschina.net/action/xmlrpc/wlwmanifest?space=216139" /> 
+  <style type="text/css">
+    body,table,input,textarea,select {font-family:Verdana,sans-serif,宋体;}	
+  </style>
+  <script type="text/javascript">
+  	scrolltotop.offset(100,165);
+	scrolltotop.init();
+  </script>
+</head>
+<body>
+<div id="OSC_Screen">
+	<div id='OSC_Banner'>
+		<div id="OSC_Logo">
+        	<a href="http://www.oschina.net/" title="开源中国社区首页">开源中国社区</a>
+        </div>
+        <div id='OSC_Slogon'>开源软件发现、使用和交流平台</div>
+        <div id="OSC_Channels">
+        	<ul>
+        	<li><a href="http://www.oschina.net/project" class='software'>软件</a></li>
+        	<li><a href="http://www.oschina.net/question" class='question'>讨论</a></li>
+        	<li><a href="http://www.oschina.net/code/list" class='code'>代码</a></li>
+        	<li><a href="http://www.oschina.net/news" class='news'>资讯</a></li>
+        	<li><a href="http://www.oschina.net/blog" class='space'>博客</a></li>
+        	<li><a href="http://www.oschina.net/android" class='space'>Android</a></li>
+        	<li><a href="http://www.oschina.net/job" class='space'>招聘</a></li>
+        	</ul>
+        </div>
+        <div class='clear'></div>
+	</div>
+	<div id="OSC_Topbar">
+		<div id="VisitorInfo">
+		当前访客身份：
+				xiongtian [ <a href="http://my.oschina.net/u/615345">我的空间</a> | <a href="/action/user/logout?session=7a0fde6666788672330&goto_page=http%3A%2F%2Fmy.oschina.net%2Fzhangdapeng89">退出</a> ]
+				<span id="OSC_Notification">			
+						<a href="http://my.oschina.net/u/615345/admin/inbox" class="msgbox" title="进入我的留言箱">你有<em>0</em>新留言</a>			
+								</span>
+		</div>
+		<div id="SearchBar">
+    		<form action="http://www.oschina.net/search">
+				<input type='hidden' name='user' value='216139'/>
+																<span class="ipt f_l">
+    			<input type='text' id='txt_q' name='q' class='SERACH' value='在 22834 款开源软件中搜索' onblur="(this.value=='')?this.value='在 22834 款开源软件中搜索':this.value" onfocus="if(this.value=='在 22834 款开源软件中搜索'){this.value='';};this.select();"/>
+				</span>
+				                <div class="search-by selectbox">
+    				<span class="hide">
+    				<select name='scope'>					
+                        <option value='project' selected>软件</option>
+                        <option value='code'>代码</option>
+                        <option value='bbs'>讨论区</option>
+                        <option value='news'>新闻</option>
+                        <option value='blog'>博客</option>
+    				</select>
+    				</span>
+                  <div class="search_on" id="search-item"><span class="text">软件</span></div>
+                  <ul class="search_list">
+                     <li class="search-item"><a href="#1">软件</a></li>
+                     <li><a href="#2">代码</a></li>
+                     <li><a href="#3">讨论区</a></li>
+                     <li><a href="#4">新闻</a></li>
+                     <li><a href="#5">博客</a></li>
+                  </ul>
+                </div>
+				<input type='submit' value='搜索' class='bnt f_r'/>			
+    		</form>
+		</div>
+		<div class='clear'></div>
+	</div>
+	<div id="OSC_Content">    
+
+
+    		
+
+<div id='SpaceLeft'>
+<div class='Owner'>
+	    <a href="http://my.oschina.net/zhangdapeng89" class='Img'><img src="http://static.oschina.net/uploads/user/108/216139_100.jpg" align="absmiddle" alt="张大鹏" title="张大鹏" class="LargePortrait"/></a>
+    <span class='U'>
+        <a href="http://my.oschina.net/zhangdapeng89" class='Name' title='男'>张大鹏</a>
+		<span class='opts'>
+			<img src="/img/2012/men.png" align='absmiddle' title='男'/>
+        			<script type='text/javascript'>
+var nologin = "<a href='javascript:_follow_nologin()' title='成为TA的粉丝'>关注此人</a>"
+var follow0 = "<a href='javascript:_follow_user(216139,true)' title='成为TA的粉丝'>关注此人</a>";
+var follow1 = "已关注 | <a href='javascript:_follow_user(216139,false)' title='取消关注后，此人的更新信息将不会出现在你的首页'>取消</a>";
+var follow2 = "互相关注 | <a href='javascript:_follow_user(216139,false)' title='取消关注后，此人的更新信息将不会出现在你的首页'>取消</a>";
+var follow4 = "<a href='javascript:_follow_user(216139,true)' title='成为TA的粉丝'>+关注此人</a>";
+
+document.write("<span id='_follow_216139_action_'>");
+			document.write(follow0);
+	document.write("</span>");
+
+function _follow_nologin(){
+	if(confirm('必须登录后才能关注，是否现在登录？')){
+		location.href="http://www.oschina.net/home/login?goto_page="+location.href;
+	}
+}
+
+function _follow_user(uid, follow){
+	var action = follow?"/action/user/follow":"/action/user/unfollow";
+	ajax_post(action,"id="+uid,function(result){
+		var act = $('#_follow_216139_action_');
+		if(result == '0')
+			_follow_nologin();
+		else if(result == '1')
+			act.html(follow0);
+		else if(result == '2')
+			act.html(follow1);
+		else if(result == '3')
+			act.html(follow2);
+		else if(result == '4')
+			act.html(follow4);
+	});
+}
+</script>				</span>
+    </span>
+    <div class='clear'></div>
+    <div class='stat'>
+    	<a href="http://my.oschina.net/zhangdapeng89/fellow">关注(9)</a>
+    	<a href="http://my.oschina.net/zhangdapeng89/fans">粉丝(30)</a>
+    	<a href="http://www.oschina.net/question/3307_20931" title="查看OSCHINA积分规则">积分(44)</a>
+    </div>
+</div><style>
+#MyResume textarea {width:170px;height:60px;font-size:9pt;}
+</style>
+<div class='Resume' id='MyResume'>
+完善每一个细节</div>
+
+<div class='Opts clearfix'>
+	<a href="javascript:sendmsg(216139, 0)" class='a1 sendmsg'><i>.</i><span>发送留言</span></a>
+	<a href="http://www.oschina.net/question/ask?user=216139" class='a2 ask'><i>.</i><span>请教问题</span></a>
+</div><div class="Mod" id="BlogCatalogs">
+  <strong> 博客分类</strong>
+  <ul>
+	    	<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=207589">linux-c/cpp</a><span>(4)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=140799">Regex</a><span>(2)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=138410">心情随笔</a><span>(9)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=127763">工作日志</a><span>(35)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=132739">JavaScript分类</a><span>(31)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=127764">日常记录</a><span>(14)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=132740">Linux-redhat分类</a><span>(1)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=132741">Linux-centos分类</a><span>(25)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=132742">Linux-ubuntu分类</a><span>(56)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=132743">数据库-MySql分类</a><span>(10)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=132744">数据库-Oracle分类</a><span>(0)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=132745">数据库-MS Sql分类</a><span>(0)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=152283">数据库-mongodb</a><span>(1)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=132746">网页-DIV+CSS分类</a><span>(1)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=127765">转贴的文章</a><span>(2)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=132747">PHP分类</a><span>(70)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=132748">JAVA分类</a><span>(36)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=132749">Python分类</a><span>(46)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=143323">IDE分类</a><span>(24)</span></li>
+		<li><a href="http://my.oschina.net/zhangdapeng89/blog?catalog=143495">服务器</a><span>(30)</span></li>
+	  </ul>
+</div><div class="Mod" id="HotBlogs">
+  <strong>阅读排行</strong>
+  <ol>
+			<li><a href="http://my.oschina.net/zhangdapeng89/blog/57518">1. 在 Ubuntu 12.04 安装 Sun Java</a></li>
+				<li><a href="http://my.oschina.net/zhangdapeng89/blog/40886">2. IDE---Gvim之ubuntu下配置php的ide开发工具</a></li>
+				<li><a href="http://my.oschina.net/zhangdapeng89/blog/41020">3. IDE---ubuntu下Gvim常用插件大全</a></li>
+				<li><a href="http://my.oschina.net/zhangdapeng89/blog/42623">4. 正则表达式匹配电话号码</a></li>
+				<li><a href="http://my.oschina.net/zhangdapeng89/blog/54407">5. python---解决“Unable to find vcvarsall.bat”错误</a></li>
+				<li><a href="http://my.oschina.net/zhangdapeng89/blog/51983">6. php生成批量插入数据sql语句</a></li>
+				<li><a href="http://my.oschina.net/zhangdapeng89/blog/52793">7. windows下nodejs开发环境的安装与配置</a></li>
+				<li><a href="http://my.oschina.net/zhangdapeng89/blog/38061">8. 新浪微博分享按钮的制作</a></li>
+		  </ol>
+</div>
+<div class="Mod" id="BlogReplies">
+  <strong> 最新评论</strong>  
+      <ul>
+		<li>
+		<a href="http://my.oschina.net/zhangdapeng89">@张大鹏</a>：引用来自“蝶舞”的评论 引用来自“张大鹏”的评...
+		<a href="/action/tweet/go?obj=269540079&type=18&user=216139">查看&raquo;</a>
+	</li>
+		<li>
+		<a href="http://my.oschina.net/3066">@蝶舞</a>：引用来自“张大鹏”的评论 引用来自“蝶舞”的评...
+		<a href="/action/tweet/go?obj=269538621&type=18&user=116547">查看&raquo;</a>
+	</li>
+		<li>
+		<a href="http://my.oschina.net/zhangdapeng89">@张大鹏</a>：引用来自“蝶舞”的评论 伸手党在此谢过我估计会...
+		<a href="/action/tweet/go?obj=269535500&type=18&user=216139">查看&raquo;</a>
+	</li>
+		<li>
+		<a href="http://my.oschina.net/3066">@蝶舞</a>：伸手党在此谢过
+		<a href="/action/tweet/go?obj=269525137&type=18&user=116547">查看&raquo;</a>
+	</li>
+		<li>
+		<a href="http://my.oschina.net/zhangdapeng89">@张大鹏</a>：引用来自“金雪霖”的评论 亲，不能用prefix......
+		<a href="/action/tweet/go?obj=269516753&type=18&user=216139">查看&raquo;</a>
+	</li>
+		<li>
+		<a href="http://my.oschina.net/u/222422">@金雪霖</a>：亲，不能用prefix....
+		<a href="/action/tweet/go?obj=269488741&type=18&user=222422">查看&raquo;</a>
+	</li>
+		<li>
+		<a href="http://my.oschina.net/ruby65">@ruby65</a>：不错，比较详细。
+		<a href="/action/tweet/go?obj=269259230&type=18&user=659262">查看&raquo;</a>
+	</li>
+		<li>
+		<a href="http://my.oschina.net/zhangdapeng89">@张大鹏</a>：可以有啊 如果你的不可以 就用yum吧
+		<a href="/action/tweet/go?obj=269075676&type=18&user=216139">查看&raquo;</a>
+	</li>
+		<li>
+		<a href="http://my.oschina.net/scriptboy">@litescript</a>：CentOS也有apt-get ？
+		<a href="/action/tweet/go?obj=269075536&type=18&user=164206">查看&raquo;</a>
+	</li>
+		<li>
+		<a href="http://my.oschina.net/zhangdapeng89">@张大鹏</a>：引用来自“lycvip”的评论 乱码是因为，ssh客户端...
+		<a href="/action/tweet/go?obj=268765107&type=18&user=216139">查看&raquo;</a>
+	</li>
+	  </ul>
+  </div><div class='Mod' id='Stat'>
+<strong>访客统计</strong>
+<ul>
+	<li><label>今日访问：</label>165</li>
+    <li><label>昨日访问：</label>151</li>
+    <li><label>本周访问：</label>165</li>
+    <li><label>本月访问：</label>4718</li>
+    <li><label>所有访问：</label>31193</li>
+</ul>
+</div></div>
+
+
+<div class='SpaceList'>
+	<div class='TopBar'>
+    	<div class='NavPath'>		
+    		<a href='http://my.oschina.net/zhangdapeng89/home'>空间</a> &raquo; <a href='http://my.oschina.net/zhangdapeng89/blog'>博客</a>			
+			&raquo; <a href="http://my.oschina.net/zhangdapeng89/blog?catalog=143323">IDE分类</a>
+			&raquo; 博客正文
+    	</div>
+	</div>
+	
+    	<div class='BlogEntity'>		
+      <div class='BlogTitle'>
+        <h1><img src='/img/space/b4.gif' align='absmiddle'/> IDE---vim---vim 设置备份</h1>
+        <div class='BlogStat'>
+    		    		    	    <span class='admin'>
+								<style>
+#favor_form{width:200px;}
+#favor_form p {color:#666;}
+#favor_form form{height:60px;width:200px;}
+#favor_form form ._favor_input{display:block;margin:2px 0;width:199px;}
+#favor_form form ._favor_button{float:left;padding:2px 5px;}
+.favor_ok {text-align:center;font-size:10.5pt;width:199px;height:60px;margin-top:10px;}
+#TagsSwitcher{cursor:pointer;float:right;margin-top:10px;}
+#MyTags{display:none;width:199px;}
+#MyTags a.tag {float:left; background-color: #E0EAF1;border-bottom: 1px solid #3E6D8E;border-right: 1px solid #7F9FB6;color: #3E6D8E;font-size: 8pt;line-height: 16px;margin: 2px 2px 2px 0;padding: 2px 4px;text-decoration: none;white-space: nowrap;}
+</style>
+<script type='text/javascript'>
+var favor_add = "<a href='javascript:add_to_favor(40699,3)' id='favor_trigger'>我要收藏</a>";
+var favor_del = "<a href='javascript:delete_favor(40699,3)' id='favor_trigger' style='color:#a00;'>取消收藏</a>";
+var favor_ok = "<p class='favor_ok'>已成功添加到收藏夹<br/><br/> <a href='http://my.oschina.net/u/615345/favorites?type=3'>我的收藏夹</a> | <a href='javascript:close_favor()'>关闭</a></p>";
+function delete_favor(obi_id, obj_type){
+	$('#attention_it').html(favor_add);
+	$("#p_attention_count").load("/action/favorite/cancel?type="+obj_type+"&id="+obi_id);
+}
+function add_to_favor(obj_id, obj_type){
+    var dlg_favor = "<div id='favor_form'><p>多个标签使用逗号(,)隔开，最多三个</p><form action='/action/favorite/add' height='60px' width='200px'>";
+	dlg_favor += "<input type='hidden' name='id' value='"+obj_id+"'/>";
+	dlg_favor += "<input type='hidden' name='type' value='"+obj_type+"'/>";
+	dlg_favor += "<input type='text' name='tags' size='25' class='_favor_input' id='_favor_tags'/>";
+	dlg_favor += "<input type='submit' value='收藏' class='_favor_button'/><input type='button' value='取消' onclick='close_favor();' class='_favor_button'/><a id='TagsSwitcher' state='off'>选取标签↓</a></form>";
+	dlg_favor += "<div id='MyTags' ></div></div>";
+    $('#favor_trigger').poshytip('destroy');
+    $('#favor_trigger').poshytip({
+    	className: 'tip-yellowsimple',
+    	content: dlg_favor,
+    	showOn: 'none',
+    	alignTo: 'target',	
+		alignX: 'inner-right',
+		alignY: 'bottom',
+		offsetX: 0,
+		offsetY: 5
+    });
+    $('#favor_trigger').poshytip('show');
+	$('#_favor_tags').focus();
+	$('#favor_form form').bind('form-pre-serialize', function(event,form,options,veto){
+    	var tags= $('#_favor_tags')
+		var tagValue= tags.val();
+		//处理tags前后包含的空格
+		var finalTags = new Array();
+		var tagIdx = 0;
+		var arr = tagValue.split(',');
+		for(var i=0;i<arr.length;i++){
+			var tag = arr[i];
+			tag = trim(tag);
+			if(tag.length>0){
+				finalTags[finalTags.length]=tag;
+			}
+		}
+		var d = "";
+		for(var idx=0;idx<finalTags.length;idx++){
+			d+=finalTags[idx];
+			if(idx<finalTags.length-1)
+				d+=",";
+		}
+		tags.val(d);
+	});
+
+	$('#favor_form form').ajaxForm({
+		success: function(html) {
+			$('#favor_trigger').html('取消收藏');
+			$('#favor_trigger').attr('href','javascript:delete_favor(40699,3)');
+			$('#p_attention_count').html(html);
+			$('#favor_form').html(favor_ok);
+			setTimeout("close_favor()",3000);
+		}
+	});
+	$("#TagsSwitcher").one("click",function(){
+		//加载标签数据
+		$("#MyTags").load('/action/ajax/get_my_tags');
+       	$("#MyTags").toggle();
+		$(this).html("收起标签↑");
+        $(this).attr("state",'on');
+        $(this).click(function(){
+        	$("#MyTags").toggle();
+        	var state = $(this).attr("state");
+        	if(state=='off'){
+        		$(this).html("收起标签↑");
+        		$(this).attr("state",'on');
+        	}else{
+        		$(this).html("选取标签↓");
+        		$(this).attr("state",'off');
+        	}
+        });
+	});
+
+}
+function close_favor(elem_id){
+    $('#favor_trigger').poshytip('destroy');
+}
+function setTag(tv){
+	var t = $("._favor_input");
+	var value = t.val();
+	if(value!="")
+		t.val(value+","+tv);
+	else
+		t.val(tv)
+}
+function ltrim(str){
+    var whitespace = new String(" \t\n\r");
+    var s = new String(str);
+    if (whitespace.indexOf(s.charAt(0)) != -1){
+        var j=0, i = s.length;
+        while (j < i && whitespace.indexOf(s.charAt(j)) != -1){
+            j++;
+        }
+        s = s.substring(j, i);
+    }
+    return s;
+}
+
+function rtrim(str){
+    var whitespace = new String(" \t\n\r");
+    var s = new String(str);
+    if (whitespace.indexOf(s.charAt(s.length-1)) != -1){
+        var i = s.length - 1;
+        while (i >= 0 && whitespace.indexOf(s.charAt(i)) != -1){
+            i--;
+        }
+        s = s.substring(0, i+1);
+    }
+    return s;
+}
+ 
+function trim(str){
+    return rtrim(ltrim(str));
+}
+</script>
+<em id='p_attention_count'>0</em>人收藏此文章,
+<span id='attention_it'>
+	<script type='text/javascript'>document.write(favor_add);</script>
+</span>			</span>
+    		    		发表于7个月前(2012-02-15 00:48) , 
+    		已有<strong>451</strong>次阅读  
+    		共<strong><a href="#comments">0</a></strong>个评论
+    	</div> 
+      </div>
+	  <div class='BlogContent'><p>&quot;F1~F12快捷键映射<br /> &quot;&quot;{{{<br /> map &lt;F2&gt; :BufExplorer&lt;CR&gt;<br /> nnoremap &lt;silent&gt; &lt;F3&gt; :Grep&lt;CR&gt;<br /> map &lt;F4&gt; :TlistToggle&lt;CR&gt;<br /> &quot;map &lt;F5&gt; : LookupFile&lt;CR&gt; &quot;插件中已映射<br /> noremap&nbsp; &lt;F6&gt; :make&lt;CR&gt;<br /> nnoremap &lt;silent&gt; &lt;F7&gt; :A&lt;CR&gt;<br /> map &lt;F8&gt; :NERDTreeToggle&lt;CR&gt;.<br /> &quot;nmap &lt;F8&gt; :SrcExplToggle&lt;CR&gt;<br /> &quot;nnoremap &lt;silent&gt; &lt;F9&gt; :ConqueTerm bash&lt;CR&gt;<br /> map &lt;C-F12&gt; :!ctags -R --c++-kinds=+p --fields=+ialS --extra=+q .&lt;CR&gt;<br /> nmap &lt;S-F12&gt; ::%s//s/+$//g&lt;CR&gt;</p> 
+<p>&quot;&quot;}}}<br /> &quot;F1~F12快捷键映射</p> 
+<p>&quot;非F1~F12快捷键<br /> &quot;&quot;{{{<br /> let mapleader=&quot;,&quot;<br /> let g:mapleader=&quot;,&quot;<br /> map &lt;leader&gt;svi : source ~/.vimrc &lt;CR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; fast reloading of the .vimrc<br /> map &lt;leader&gt;evi : e! ~/.vimrc &lt;CR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; fast editing of .vimrc<br /> map &lt;leader&gt;ms&nbsp; : marks &lt;CR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;显示所有标记的marks<br /> map &lt;leader&gt;dms : delm! &lt;CR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;删除所有标记的marks<br /> noremap&nbsp;&nbsp; /a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :A&lt;CR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;a.vim 插件&nbsp;<br /> &quot;map &lt;leader&gt;sb&nbsp; : set scrollbind &lt;CR&gt;<br /> &quot;map &lt;leader&gt;nsb&nbsp; : set noscrollbind &lt;CR&gt;<br /> &quot;map &lt;leader&gt;ls&nbsp; : set laststatus=2 &lt;CR&gt;<br /> &quot;map &lt;leader&gt;nls&nbsp; : set laststatus=1 &lt;CR&gt;<br /> &quot;map &lt;leader&gt;sy&nbsp; : set syntax=on &lt;CR&gt;<br /> &quot;map &lt;leader&gt;nsy&nbsp; : set syntax=off &lt;CR&gt;<br /> &quot;map &lt;leader&gt;dsm : DoShowMarks &lt;CR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;插件showmarks.vim支持, 显示当前buff中的所有marks<br /> &quot;map &lt;leader&gt;nsm : NoShowMarks &lt;CR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;插件showmarks.vim支持, 隐藏当前buff中的所有marks<br /> &quot;nnoremap &lt;Leader&gt;c : set cursorline! cursorcolumn! &lt;CR&gt;<br /> &quot;&quot;}}}<br /> &quot;非F1~F12快捷键</p> 
+<p>&quot;简单配置<br /> &quot;{{{</p> 
+<p>&quot;打开语法色彩<br /> syntax enable<br /> &quot;打开语法色彩</p> 
+<p>&quot;打开关键字色<br /> syntax on<br /> &quot;打开关键字色</p> 
+<p>&quot;侦测文件类型<br /> filetype on<br /> &quot;侦测文件类型</p> 
+<p>&quot;载入文件类型插件<br /> filetype plugin on<br /> &quot;载入文件类型插件</p> 
+<p>&quot;为特定文件类型载入相关缩进文件<br /> filetype indent on<br /> &quot;为特定文件类型载入相关缩进文件</p> 
+<p>&quot;设置VIM颜色主题<br /> &quot;term&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 黑白终端的属性<br /> &quot;cterm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 彩色终端的属性<br /> &quot;ctermfg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 彩色终端的前景色<br /> &quot;ctermbg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 彩色终端的背景色<br /> &quot;gui&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GUI 版本属性<br /> &quot;guifg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GUI 版本的前景色<br /> &quot;guibg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GUI 版本的背景色<br /> colorscheme elflord<br /> &quot;colorscheme morning<br /> &quot;colorscheme evening<br /> &quot;colorscheme desert<br /> &quot;设置VIM颜色主题</p> 
+<p>&quot;预览窗口,eg. ctr+w { 时的窗口大小<br /> set previewheight=10<br /> &quot;预览窗口,eg. ctr+w { 时的窗口大小</p> 
+<p>&quot;设置弹出菜单的高度<br /> set pumheight=15<br /> &quot;设置弹出菜单的高度</p> 
+<p>&quot;使用鼠标<br /> set mouse=a<br /> &quot;使用鼠标</p> 
+<p>&quot;autocmd<br /> if has(&quot;autocmd&quot;)<br /> &nbsp; autocmd BufEnter * :lchdir %:p:h<br /> endif<br /> &quot;autocmd</p> 
+<p>&quot;映射快捷键开始命令,缺省为'/'(已经移到上面)<br /> &quot;let mapleader=&quot;,&quot;<br /> &quot;let g:mapleader=&quot;,&quot;<br /> &quot;映射快捷键开始命令,缺省为'/'(已经移到上面)</p> 
+<p>&quot;解决consle输出乱码<br /> language messages zh_CN.utf-8<br /> &quot;解决consle输出乱码</p> 
+<p>&quot;在Linux下设置字体的命令是：<br /> :set guifont=Monospace:12<br /> &quot;在Linux下设置字体的命令是：</p> 
+<p>&quot;可用来改动补全时采用的方式<br /> :set wildmode=list:full<br /> &quot;可用来改动补全时采用的方式</p> 
+<p>&quot;可用来取得菜单式的匹配列表<br /> :set wildmenu<br /> &quot;可用来取得菜单式的匹配列表</p> 
+<p>&quot;修改一个文件后，自动进行备份，备份的文件名为原文件名加“~“后缀<br /> &quot;if has(&quot;vms&quot;)<br /> &quot;&nbsp;&nbsp;&nbsp; set nobackup<br /> &quot;else<br /> &quot;&nbsp;&nbsp;&nbsp; set backup&nbsp; &quot;vim main.c&nbsp; 多出 main.c~文件用来保存打开前的原文件, 最后可用vimdiff main.c main.c~比较<br /> &quot;endif<br /> &quot;修改一个文件后，自动进行备份，备份的文件名为原文件名加“~“后缀</p> 
+<p>&quot;写备份但关闭vim后自动删除<br /> set writebackup<br /> &quot;set nowritebackup<br /> &quot;写备份但关闭vim后自动删除</p> 
+<p>&quot;vi兼容开关<br /> set nocp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;当使用omni自动补全时,要设置<br /> &quot;vi兼容开关</p> 
+<p>&quot;不使用swap文件<br /> &quot;set noswapfile<br /> set swapfile<br /> &quot;不使用swap文件</p> 
+<p>&quot;显示匹配的括号([{和}])<br /> set showmatch<br /> &quot;显示匹配的括号([{和}])</p> 
+<p>&quot;显示日期的缩写<br /> iab xdate &lt;c-r&gt;=strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)&lt;cr&gt;<br /> &quot;显示日期的缩写</p> 
+<p>&quot;关闭遇到错误时的声音提示<br /> set noerrorbells<br /> &quot;关闭遇到错误时的声音提示</p> 
+<p>&quot;不要闪烁<br /> set novisualbell<br /> &quot;不要闪烁</p> 
+<p>&quot;使用空格来替换tab<br /> set expandtab<br /> &quot;set et<br /> &quot;使用空格来替换tab</p> 
+<p>&quot;在vim编辑器下方显示命令<br /> set showcmd<br /> set cmdheight=1<br /> &quot;在vim编辑器下方显示命令</p> 
+<p>&quot;当光标达到上端或下端时 翻滚的行数<br /> set scrolljump =5<br /> &quot;当光标达到上端或下端时 翻滚的行数</p> 
+<p>&quot;当光标达到水平极端时 移动的列数<br /> set sidescroll =5<br /> &quot;当光标达到水平极端时 移动的列数</p> 
+<p>&quot;当光标距离极端(上,下,左,右)多少时发生窗口滚动<br /> set scrolloff =0<br /> &quot;当光标距离极端(上,下,左,右)多少时发生窗口滚动</p> 
+<p>&quot;当使用vimdiff比较文件,相比较的比较文件同步滚动,但是splite分割窗口, 两个窗口也同步, 有时候挺有用的．<br /> &quot;set scrollbind<br /> &quot;set noscrollbind<br /> &quot;当使用vimdiff比较文件,相比较的比较文件同步滚动,但是splite分割窗口, 两个窗口也同步, 有时候挺有用的．</p> 
+<p>&quot;将当前编辑文件的路径设置为当前路径<br /> set autochdir<br /> &quot;将当前编辑文件的路径设置为当前路径</p> 
+<p>&quot;自动读写相关<br /> set autoread&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; read open files again when changed outside Vim ( 同步 )<br /> set autowrite&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; write a modified buffer on each :next , ... ( 跳到另一个文件时,自动保存上个文件 )<br /> &quot;自动读写相关</p> 
+<p>&quot;设置VIM行号<br /> set nu<br /> &quot;set nonu<br /> &quot;设置VIM行号</p> 
+<p>&quot;Tab 宽度<br /> set ts=4<br /> &quot;Tab 宽度</p> 
+<p>&quot;自动缩进的时候, 缩进尺寸<br /> set sw=4<br /> &quot;自动缩进的时候, 缩进尺寸</p> 
+<p>&quot;打开 VIM 的状态栏标尺<br /> set ru<br /> &quot;打开 VIM 的状态栏标尺</p> 
+<p>&quot;显示括号配对情况<br /> set sm&nbsp; &quot;smartmatch<br /> &quot;显示括号配对情况</p> 
+<p>&quot; 开启新行时使用智能自动缩进<br /> set smartindent<br /> &quot; 开启新行时使用智能自动缩进</p> 
+<p>&quot; 搜索时忽略大小写，但在有一个或以上大写字母时仍保持对大小写敏感<br /> set ignorecase smartcase<br /> &quot; 搜索时忽略大小写，但在有一个或以上大写字母时仍保持对大小写敏感</p> 
+<p>&quot; 输入搜索内容时就显示搜索结果<br /> set incsearch<br /> &quot; 输入搜索内容时就显示搜索结果</p> 
+<p>&quot; 搜索时高亮显示被找到的文本<br /> set hlsearch<br /> &quot; 搜索时高亮显示被找到的文本</p> 
+<p>&quot;打开 C/C++ 风格的自动缩进 ( =a{ , gg=G 代码美化 )<br /> set cin<br /> &quot;打开 C/C++ 风格的自动缩进 ( =a{ , gg=G 代码美化 )</p> 
+<p>&quot;允许backspace和光标键跨越行边界 ( 不习惯 )<br /> &quot;set whichwrap+=&lt;,&gt;,h,l<br /> &quot;允许backspace和光标键跨越行边界 ( 不习惯 )</p> 
+<p>&quot;内容多时,换行显示<br /> &quot;set wrap<br /> set nowrap<br /> &quot;内容多时,换行显示</p> 
+<p>&quot;启动的时候不显示那个援助乌干达儿童的提示<br /> set shortmess=atI<br /> &quot;启动的时候不显示那个援助乌干达儿童的提示</p> 
+<p>&quot;通过使用: commands命令，告诉我们文件的哪一行被改变过 ( 不习惯 )<br /> &quot;set report=0<br /> &quot;通过使用: commands命令，告诉我们文件的哪一行被改变过 ( 不习惯 )</p> 
+<p>&quot;在被分割的窗口间显示空白，便于阅读 (没看到效果)<br /> set fillchars=vert:/ ,stl:/ ,stlnc:/<br /> &quot;在被分割的窗口间显示空白，便于阅读 (没看到效果)</p> 
+<p>&quot;带有如下符号的单词不要被换行分割<br /> set iskeyword+=_,$,@,%,#,-<br /> &quot;带有如下符号的单词不要被换行分割</p> 
+<p>&quot; 中文帮助<br /> set helplang=cn<br /> &quot; 中文帮助</p> 
+<p>&quot; 设定doc文档目录<br /> let helptags=$VIMFILES.'/doc'<br /> &quot; 设定doc文档目录</p> 
+<p>&quot; 保留历史记录<br /> set history=500<br /> &quot; 保留历史记录</p> 
+<p>&quot; 英文单词在换行时不被截断<br /> set linebreak<br /> &quot; 英文单词在换行时不被截断</p> 
+<p>&quot; 设置每行多少个字符自动换行，加上换行符<br /> &quot;set textwidth=80 &quot;有时不爽<br /> set textwidth=0&nbsp; &quot;总不还行<br /> &quot; 设置每行多少个字符自动换行，加上换行符</p> 
+<p>&quot; 光标可以定位在没有实际字符的地方<br /> &quot;set ve=block<br /> &quot; 光标可以定位在没有实际字符的地方</p> 
+<p>&quot; 短暂跳转到匹配括号的时<br /> &quot; set matchtime=2<br /> &quot; 短暂跳转到匹配括号的时</p> 
+<p>&quot;多少个键被敲下后执行一次交换文件刷新<br /> set updatecount=400&nbsp; &quot;设置敲入400个字符后执行<br /> &quot;多少个键被敲下后执行一次交换文件刷新</p> 
+<p>&quot;交换文件刷新后的超时时间<br /> set updatetime=50000&nbsp; &quot;50秒后刷新<br /> &quot;:preserve &quot;若设置的时间过长,该命令会手工的存入交换文件中.<br /> &quot;交换文件刷新后的超时时间</p> 
+<p>&quot; 隐藏工具栏<br /> &quot;set guioptions-=T<br /> &quot; 隐藏工具栏</p> 
+<p>&quot; 隐藏菜单栏<br /> &quot;set guioptions-=m<br /> &quot; 隐藏菜单栏</p> 
+<p>&quot; Shift+F12 删除所有行未尾空格<br /> &quot;nmap &lt;S-F12&gt; :%s,/s/+$,,g&lt;CR&gt;<br /> &quot; Shift+F12 删除所有行未尾空格</p> 
+<p>&quot;}}}<br /> &quot;简单配置</p> 
+<p>&quot;改变注释代码的颜色<br /> &quot;{{{<br /> hi Comment ctermfg=6<br /> &quot;改.c文件的c风格/* ... */注释为会灰白色<br /> hi cComment ctermfg=DarkMagenta&nbsp;&nbsp;&nbsp; &quot;DarkGray&nbsp; 灰白色&nbsp; &quot; guifg=Grey<br /> &quot;改.c文件的c++风格// ... 注释为彩色终端下为暗蓝灰色、GUI下为浅蓝色<br /> hi cCommentL ctermfg=LightBlue&nbsp; &quot; guifg=LightBlue<br /> &quot;以上可参看/usr/share/vim/vim72/syntax/c.vim中对cComment和cCommentL的定义<br /> &quot;}}}<br /> &quot;改变注释代码的颜色</p> 
+<p>&quot;字符编码(多字节)<br /> &quot;{{{<br /> if has(&quot;multi_byte&quot;)<br /> &nbsp;set encoding=utf-8<br /> &nbsp;&nbsp;&nbsp; set fileencodings=ucs-bom,utf-8,chinese,big5,latin1,cp936<br /> endif<br /> &quot;}}}<br /> &quot;字符编码(多字节)</p> 
+<p>&quot;设置C/C++语言的具体缩进方式 eg. switch case 缩进<br /> &quot;&quot;{{{<br /> set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,&gt;1s,=1s,:1s<br /> &quot;set cino=:4g2t0(sus<br /> &quot;set cino=:0g0t0(sus<br /> &quot; :0&nbsp; -- switch 语句之下的 case 语句缩进 0 个空格<br /> &quot; g0&nbsp; -- class,struct,等权限控制语句(public,protected,private)相对class,struct等所在的块缩进 0 个空格<br /> &quot; t0&nbsp; -- 如果函数返回值与函数名不在同一行，则返回值缩进 0 个空格<br /> &quot; (sus - 当一对括号跨越多行时，其后的行缩进前面 sw 指定的距离<br /> &quot;&quot;}}}<br /> &quot;设置C/C++语言的具体缩进方式 eg. switch case 缩进</p> 
+<p>&quot;C的编译和运行 &quot; 不好用,推荐用cvim.zip插件, /rr(运行), /ra(带参数运行), /ro(输出到(buff, xterm, vim))<br /> &quot;{{{<br /> &quot;func! CompileRunGcc()<br /> &quot;&nbsp;&nbsp;&nbsp; exec &quot;w&quot;<br /> &quot;&nbsp;&nbsp;&nbsp; exec &quot;!gcc % -o %&lt;&quot;<br /> &quot;&nbsp;&nbsp;&nbsp; exec &quot;! ./%&lt;&quot;<br /> &quot;endfunc<br /> &quot;}}}<br /> &quot;C的编译和运行 &quot; 不好用,推荐用cvim.zip插件, /rr(运行), /ra(带参数运行), /ro(输出到(buff, xterm, vim))</p> 
+<p>&quot;search 搜索 (visual mode)<br /> &quot;&quot;{{{<br /> &quot;set hls&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; hlsearch :highlight search<br /> &quot;set is&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; incsearch :increase search<br /> &quot;set ic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; ignorecase :ignore case when searching<br /> &quot;set scs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; smartcase :if has upper case, ignore 'ignorecase' option<br /> &quot;&quot;map &lt;leader&gt;h *N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; &lt;leader&gt;h to highlight all word the same to which under cursor (可以使用vim自带shift + *)<br /> &quot;&quot;<br /> &quot;&quot;basically you press * or # to search for the current selection !! Really useful<br /> vnoremap &lt;silent&gt; * :call VisualSearch('f')&lt;CR&gt;<br /> vnoremap &lt;silent&gt; # :call VisualSearch('b')&lt;CR&gt;<br /> function! VisualSearch(direction) range<br /> &nbsp;&nbsp;&nbsp; let l:saved_reg = @&quot;<br /> &nbsp;&nbsp;&nbsp; execute &quot;normal! vgvy&quot;<br /> &nbsp;&nbsp;&nbsp; let l:pattern = escape(@&quot;, '///.*$^~[]')<br /> &nbsp;&nbsp;&nbsp; let l:pattern = substitute(l:pattern, &quot;/n$&quot;, &quot;&quot;, &quot;&quot;)<br /> &nbsp;&nbsp;&nbsp; if a:direction == 'b'<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; execute &quot;normal ?&quot; . l:pattern . &quot;^M&quot;<br /> &nbsp;&nbsp;&nbsp; else<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; execute &quot;normal /&quot; . l:pattern . &quot;^M&quot;<br /> &nbsp;&nbsp;&nbsp; endif<br /> &nbsp;&nbsp;&nbsp; let @/ = l:pattern<br /> &nbsp;&nbsp;&nbsp; let @&quot; = l:saved_reg<br /> endfunction<br /> &quot;map &lt;space&gt; :nohl&lt;CR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; :press &lt;space&gt; to clear hightlight&nbsp; search highlight<br /> &quot;&quot;}}}<br /> &quot;search 搜索 (visual mode)</p> 
+<p>&quot;状态栏显示当前文件, 字符编码, 时间等<br /> &quot;{{{<br /> &quot;显示状态栏<br /> set ruler<br /> set laststatus=2<br /> highlight statusline cterm=bold ctermfg=black ctermbg=white<br /> &quot;显示状态栏<br /> &quot;<br /> function! CurDir()<br /> &nbsp;&nbsp;&nbsp; let curdir = substitute(getcwd(), $HOME, &quot;~&quot;, &quot;g&quot;)<br /> &nbsp;&nbsp;&nbsp; return curdir<br /> endfunction</p> 
+<p>function! CurTime()<br /> &nbsp;&nbsp;&nbsp; let curtime = strftime(&quot;%m-%d %H:%M:%S&quot;)<br /> &nbsp;&nbsp;&nbsp; return curtime<br /> endfunction<br /> &quot;set statusline=[%n]/ %f%m%r%h/ /|/ / pwd:/ %{CurDir()}/ / /|%=/|/ %l,%c/ %p%%/ /|/ ascii=%b,hex=%b%{((&amp;fenc==/&quot;/&quot;)?/&quot;/&quot;:/&quot;/ /|/ /&quot;.&amp;fenc)}/ /|/ %{$USER}/ @/ %{hostname()}/<br /> &quot;set statusline=[%n]/ %F%m%r%h/ /|/ / pwd:/ %{CurDir()}/ / /|%=/|/ %l,%c/ %p%%/ /|/ ascii=%b,hex=%B%{((&amp;fenc==/&quot;/&quot;)?/&quot;/&quot;:/&quot;/ /|/ /&quot;.&amp;fenc)}/ /|<br /> &quot;使用%F就不需要使用自定义函数CurDir()<br /> &quot;set statusline=[%n]/ /|/ %F%m%r%h/ /|%=/|/ %l,%c/ %p%%/ /|/ ascii=%b,hex=%B%{((&amp;fenc==/&quot;/&quot;)?/&quot;/&quot;:/&quot;/ /|/ /&quot;.&amp;fenc)}/ /|/ / %{CurTime()}/ /|<br /> set statusline=[%n]/ /|/ %f%m%r%h/ /|%=/|/ %c/ /|/ ascii=%b,hex=%B%{((&amp;fenc==/&quot;/&quot;)?/&quot;/&quot;:/&quot;/ /|/ /&quot;.&amp;fenc)}/ /|/ %{CurTime()}/ /|<br /> &quot;状态行显示内容<br /> &quot; %f 只显示名字不显示路径<br /> &quot; %F 当前文件名<br /> &quot; %m 当前文件修改状态<br /> &quot; %r 当前文件是否只读<br /> &quot; %Y 当前文件类型<br /> &quot; %{&amp;fileformat} 当前文件编码<br /> &quot; %b 当前光标处字符的 ASCII 码值<br /> &quot; %B 当前光标处字符的十六进制值<br /> &quot; %l 当前光标行号<br /> &quot; %c 当前光标列号<br /> &quot; %V 当前光标虚拟列号 (根据字符所占字节数计算)<br /> &quot; %p 当前行占总行数的百分比<br /> &quot; %% 百分号<br /> &quot; %L 当前文件总行数<br /> &quot;}}}<br /> &quot;状态栏显示当前文件, 字符编码, 时间等</p> 
+<p>&quot;当前行(列)高亮显示<br /> &quot;{{{<br /> set cursorline<br /> set cursorcolumn<br /> &quot; ctermfg : red(1) yellow(2) blue green grey brown cyan magenta 数字<br /> &quot;hi CursorLine&nbsp; term=reverse cterm=reverse ctermbg=darkred ctermfg=black guibg=blue guifg=white<br /> &quot;hi CursorLine&nbsp; term=none cterm=reverse ctermbg=Magenta ctermfg=DarkGray&nbsp;&nbsp;&nbsp;&nbsp; &quot;guibg=blue guifg=white<br /> &quot;hi CursorLine&nbsp; term=none cterm=reverse ctermbg=Cyan ctermfg=DarkGray&nbsp;&nbsp;&nbsp;&nbsp; &quot;guibg=blue guifg=white<br /> hi CursorLine&nbsp; term=none cterm=underline ctermbg=8 ctermfg=none&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;guibg=blue guifg=white<br /> hi CursorColumn term=none cterm=bold ctermbg=none ctermfg=Cyan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;guibg=darkgrey guifg=white<br /> &quot;nnoremap &lt;Leader&gt;c : set cursorline! cursorcolumn! &lt;CR&gt;<br /> &quot;set cursorline<br /> &quot;au! Cursorhold * exe 'match CurrentLine //%' . line('.') . 'l.*/'<br /> &quot;set ut=100<br /> &quot;}}}<br /> &quot;当前行(列)高亮显示</p> 
+<p>&quot;单行或多行注释 &quot;也可以使用cvim.zip插件来完成注释(*.c文件) /cc ---&gt; //&nbsp;&nbsp; /c* ---&gt; /* */&nbsp; /co ---&gt; 取消<br /> &quot;{{{<br /> &quot;&nbsp;&nbsp;&nbsp; nmap &lt;C-C&gt; &lt;Esc&gt;:Setcomment&lt;CR&gt;<br /> &quot;&nbsp;&nbsp;&nbsp; &quot;normal 模式下ctrl + C 快捷键<br /> &quot;&nbsp;&nbsp;&nbsp; imap &lt;C-C&gt; &lt;Esc&gt;:Setcomment&lt;CR&gt;<br /> &quot;&nbsp;&nbsp;&nbsp; &quot;insert 模式下ctrl + C 快捷键<br /> &quot;&nbsp;&nbsp;&nbsp; vmap &lt;C-C&gt; &lt;Esc&gt;:SetcommentV&lt;CR&gt;<br /> &quot;&nbsp;&nbsp;&nbsp; &quot;visual 模式下ctrl + C 快捷键<br /> &quot;&nbsp;&nbsp;&nbsp; command! -nargs=0 Setcomment call s:SET_COMMENT()<br /> &quot;&nbsp;&nbsp;&nbsp; command! -nargs=0 SetcommentV call s:SET_COMMENTV()<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp; &quot;非视图模式下所调用的函数<br /> &quot;&nbsp;&nbsp;&nbsp; function! s:SET_COMMENT()<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let lindex=line(&quot;.&quot;)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let str=getline(lindex)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;查看当前是否为注释行<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let CommentMsg=s:IsComment(str)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call s:SET_COMMENTV_LINE(lindex,CommentMsg[1],CommentMsg[0])<br /> &quot;&nbsp;&nbsp;&nbsp; endfunction<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp; &quot;视图模式下所调用的函数<br /> &quot;&nbsp;&nbsp;&nbsp; function! s:SET_COMMENTV()<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let lbeginindex=line(&quot;'&lt;&quot;) &quot;得到视图中的第一行的行数<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let lendindex=line(&quot;'&gt;&quot;) &quot;得到视图中的最后一行的行数<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let str=getline(lbeginindex)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;查看当前是否为注释行<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let CommentMsg=s:IsComment(str)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;为各行设置<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let i=lbeginindex<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while i&lt;=lendindex<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call s:SET_COMMENTV_LINE(i,CommentMsg[1],CommentMsg[0])<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let i=i+1<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; endwhile<br /> &quot;&nbsp;&nbsp;&nbsp; endfunction<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp; &quot;设置注释<br /> &quot;&nbsp;&nbsp;&nbsp; &quot;index:在第几行<br /> &quot;&nbsp;&nbsp;&nbsp; &quot;pos:在第几列<br /> &quot;&nbsp;&nbsp;&nbsp; &quot;comment_flag: 0:添加注释符 1:删除注释符<br /> &quot;&nbsp;&nbsp;&nbsp; function! s:SET_COMMENTV_LINE( index,pos, comment_flag )<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let poscur = [0, 0,0, 0]<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let poscur[1]=a:index<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let poscur[2]=a:pos+1<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call setpos(&quot;.&quot;,poscur) &quot;设置光标的位置<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if a:comment_flag==0<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;插入//<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exec &quot;normal! i//&quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;删除//<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exec &quot;normal! xx&quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; endif<br /> &quot;&nbsp;&nbsp;&nbsp; endfunction<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp; &quot;查看当前是否为注释行并返回相关信息<br /> &quot;&nbsp;&nbsp;&nbsp; &quot;str:一行代码<br /> &quot;&nbsp;&nbsp;&nbsp; function! s:IsComment(str)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let ret= [0, 0] &quot;第一项为是否为注释行（0,1）,第二项为要处理的列，<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let i=0<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let strlen=len(a:str)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while i&lt;strlen<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;空格和tab允许为&quot;//&quot;的前缀<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if !(a:str[i]==' ' ||&nbsp;&nbsp;&nbsp; a:str[i] == '&nbsp; ' )<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let ret[1]=i<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if a:str[i]=='/' &amp;&amp; a:str[i+1]=='/'<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let ret[0]=1<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let ret[0]=0<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; endif<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return ret<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; endif<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let i=i+1<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; endwhile<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return [0,0]&nbsp; &quot;空串处理<br /> &quot;&nbsp;&nbsp;&nbsp; endfunction<br /> &quot;}}}<br /> &quot;单行或多行注释 &quot;也可以使用cvim.zip插件来完成注释(*.c文件) /cc ---&gt; //&nbsp;&nbsp; /c* ---&gt; /* */&nbsp; /co ---&gt; 取消</p> 
+<p>&quot;vim折叠功能<br /> &quot;&quot;{{{<br /> &quot;折叠方式,可用选项 ‘foldmethod’ 来设定折叠方式：set fdm=***<br /> &quot;有 6 种方法来选定折叠：<br /> &quot;manual&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 手工定义折叠<br /> &quot;indent&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 更多的缩进表示更高级别的折叠<br /> &quot;expr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 用表达式来定义折叠<br /> &quot;syntax&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 用语法高亮来定义折叠<br /> &quot;diff&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 对没有更改的文本进行折叠<br /> &quot;marker&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 对文中的标志折叠<br /> &quot;常用的折叠快捷键<br /> &quot;zf&nbsp; 创建折叠 (marker 有效)<br /> &quot;zo&nbsp; 打开折叠<br /> &quot;zO&nbsp; 对所在范围内所有嵌套的折叠点展开<br /> &quot;zc&nbsp; 关闭当前折叠<br /> &quot;zC&nbsp; 对所在范围内所有嵌套的折叠点进行折叠<br /> &quot;[z&nbsp; 到当前打开的折叠的开始处。<br /> &quot;]z&nbsp; 到当前打开的折叠的末尾处。<br /> &quot;zM&nbsp; 关闭所有折叠 (我喜欢)<br /> &quot;zr&nbsp; 打开所有折叠<br /> &quot;zR&nbsp; 循环地打开所有折叠 (我喜欢)<br /> &quot;zE&nbsp; 删除所有折叠<br /> &quot;zd&nbsp; 删除当前折叠<br /> &quot;zD&nbsp; 循环删除 (Delete) 光标下的折叠，即嵌套删除折叠<br /> &quot;za&nbsp; 若当前打开则关闭，若当前关闭则打开&nbsp; ( 这个就足够了)<br /> &quot;zA&nbsp; 循环地打开/关闭当前折叠<br /> &quot;zj&nbsp; 到下一折叠的开始处 ( 我喜欢 )<br /> &quot;zk&nbsp; 到上一折叠的末尾&nbsp;&nbsp; ( 我喜欢 )<br /> &quot;set fdm=marker<br /> &quot;set foldmethod=indent<br /> &quot;要想在{&nbsp; } 代码块中折叠，按空格键<br /> &quot;syntax 与 c.vim 中的 /cc 注释功能冲突<br /> set fdm=marker<br /> &quot;nnoremap &lt;space&gt; @=((foldclosed(line('.')) &lt; 0) ? 'zc' : 'zo')&lt;CR&gt;&nbsp;&nbsp; &quot;使用空格打开或关闭折叠<br /> &quot;}}}<br /> &quot;vim折叠功能</p> 
+<p>&quot;文件比较<br /> &quot;&quot;{{{<br /> &quot;:vertical diffsplit FILE_RIGHT&nbsp;&nbsp; &quot;与已打开的文件进行比较<br /> &quot;设置不同之处显示上下三行<br /> set diffopt=context:3<br /> &quot;命令模式（ESC键进入）：<br /> &quot;dp&nbsp; 左边文件差异复制到右边文件(直接在键盘上行按下dp)<br /> &quot;do&nbsp; 右边文件差异复制到左边文件(直接在键盘上行按下do)<br /> &quot;zo&nbsp; 隐藏相同行<br /> &quot;zc&nbsp; 展开向同行<br /> &quot;u 撤销<br /> &quot;Ctrl+w&nbsp; 文件切换<br /> &quot;<br /> &quot;:qa! 退出不保存<br /> &quot;:wa&nbsp; 保存<br /> &quot;:wqa 保存退出<br /> &quot;:diffupdate 重新比较<br /> &quot;&quot;}}}<br /> &quot;文件比较</p> 
+<p>&quot;单词列表匹配<br /> &quot;{{{<br /> &quot;ctrl+x ctrl+k<br /> &quot;apt-get install wordlist<br /> set dictionary+=~/.vim/dict/wordlist.txt<br /> set cpt=.,b,t,k<br /> &quot;&nbsp;&nbsp;&nbsp; .&nbsp;scan the current buffer ('wrapscan' is ignored)<br /> &quot;&nbsp;&nbsp;&nbsp; w&nbsp;scan buffers from other windows<br /> &quot;&nbsp;&nbsp;&nbsp; b&nbsp;scan other loaded buffers that are in the buffer list<br /> &quot;&nbsp;&nbsp;&nbsp; u&nbsp;scan the unloaded buffers that are in the buffer list<br /> &quot;&nbsp;&nbsp;&nbsp; U&nbsp;scan the buffers that are not in the buffer list<br /> &quot;&nbsp;&nbsp;&nbsp; k&nbsp;scan the files given with the 'dictionary' option<br /> &quot;&nbsp;&nbsp;&nbsp; kspell&nbsp; use the currently active spell checking |spell|<br /> &quot;&nbsp;&nbsp;&nbsp; k{dict}&nbsp;scan the file {dict}.&nbsp; Several &quot;k&quot; flags can be given,<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; patterns are valid too.&nbsp; For example: &gt;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :set cpt=k/usr/dict/*,k~/spanish<br /> &quot;&nbsp;&nbsp;&nbsp; s&nbsp;scan the files given with the 'thesaurus' option<br /> &quot;&nbsp;&nbsp;&nbsp; s{tsr}&nbsp;scan the file {tsr}.&nbsp; Several &quot;s&quot; flags can be given, patterns<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; are valid too.<br /> &quot;&nbsp;&nbsp;&nbsp; i&nbsp;scan current and included files<br /> &quot;&nbsp;&nbsp;&nbsp; d&nbsp;scan current and included files for defined name or macro<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |i_CTRL-X_CTRL-D|<br /> &quot;&nbsp;&nbsp;&nbsp; ]&nbsp;tag completion<br /> &quot;&nbsp;&nbsp;&nbsp; t&nbsp;same as &quot;]&quot;<br /> &quot;}}}<br /> &quot;单词列表匹配</p> 
+<p>&quot;括号智能匹配 autoclose.vim<br /> &quot;{{{<br /> &quot;let g:AutoClosePairs={'(': ')', '{': '}', '[': ']', '&quot;': '&quot;', &quot;'&quot;: &quot;'&quot;}<br /> let g:AutoClosePairs={'{': '}'}&nbsp;&nbsp; &quot;间接不使用,不习惯<br /> &quot;}}}<br /> &quot;括号智能匹配 autoclose.vim</p> 
+<p>&quot;简单tab智能完成 使用实际的tab 需要shift+tab&nbsp; 可以使用插件SuperTab<br /> &quot;{{{<br /> &quot;ctrl + c 可以中断正在查找<br /> &quot;function! Smart_TabComplete()<br /> &quot;&nbsp;&nbsp;&nbsp; let line = getline('.')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; curline<br /> &quot;&nbsp;&nbsp;&nbsp; let substr = strpart(line, -1, col('.')+1) &quot; from start to cursor<br /> &quot;&nbsp;&nbsp;&nbsp; let substr = matchstr(substr, &quot;[^ /t]*$&quot;)&nbsp; &quot; word till cursor<br /> &quot;&nbsp;&nbsp;&nbsp; if (strlen(substr)==0)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; nothing to match on empty string<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return &quot;/&lt;tab&gt;&quot;<br /> &quot;&nbsp;&nbsp;&nbsp; endif<br /> &quot;&nbsp;&nbsp;&nbsp; let has_period = match(substr, '/.') != -1 &quot; position of period, if any<br /> &quot;&nbsp;&nbsp;&nbsp; let has_slash = match(substr, '//') != -1&nbsp; &quot; position of slash, if any<br /> &quot;&nbsp;&nbsp;&nbsp; if (!has_period &amp;&amp; !has_slash)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return &quot;/&lt;C-X&gt;/&lt;C-P&gt;&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; existing text matching<br /> &quot;&nbsp;&nbsp;&nbsp; elseif ( has_slash )<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return &quot;/&lt;C-X&gt;/&lt;C-F&gt;&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; file matching<br /> &quot;&nbsp;&nbsp;&nbsp; else<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return &quot;/&lt;C-X&gt;/&lt;C-O&gt;&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; plugin matching<br /> &quot;&nbsp;&nbsp;&nbsp; endif<br /> &quot;endfunction<br /> &quot;inoremap &lt;tab&gt; &lt;c-r&gt;=Smart_TabComplete()&lt;CR&gt;<br /> &quot;}}}<br /> &quot;简单tab智能完成 使用实际的tab 需要shift+tab 可以使用插件SuperTab</p> 
+<p>&quot;gf 命令 go file 到该文件去<br /> &quot;{{{<br /> &quot;set path+=/home/linux/u-boot-1.3.1/include/<br /> &quot;set path+=/usr/src/linux-headers-2.6.27-7/include/<br /> &quot;set path+=/usr/src/linux/include/<br /> &quot;}}}<br /> &quot;gf 命令 go file 到该文件去</p> 
+<p>&quot;completeopt 弹出菜单 输入字母实现即时的过滤和匹配 ( 参考 neocomplcache&nbsp; )<br /> &quot;&quot;{{{<br /> &quot;&quot;关掉智能补全时的预览窗口 (Scratch)<br /> &quot;&quot; menu&nbsp;&nbsp;&nbsp;&nbsp; 使用弹出菜单来显示可能的补全<br /> &quot;&quot; longest&nbsp; 只插入匹配的最长公共文本<br /> &quot;&quot;set completeopt=menuone,menu,longest,preview<br /> &quot;filetype plugin indent on<br /> set ofu=syntaxcomplete#Complete<br /> set completeopt=menu,longest<br /> &quot;&quot;}}}<br /> &quot;completeopt 弹出菜单 输入字母实现即时的过滤和匹配 ( 参考 neocomplcache&nbsp; )</p> 
+<p><br /> &quot;----------------------<br /> &quot;利用 插件 丰富 功能<br /> &quot;----------------------<br /> &quot;{{{<br /> &quot;WinManager 插件&nbsp; ( 不好用 )<br /> &quot;&quot;{{{<br /> &quot;let g:defaultExplorer=1<br /> &quot;let g:winManagerWindowLayout='FileExplorer|BufExplorer|TagList'<br /> &quot;let g:persistentBehaviour=0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;只剩一个窗口时, 退出vim.<br /> &quot;let g:winManagerWidth=80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;设置winmanager的宽度，默认为25<br /> &quot;nmap &lt;silent&gt; &lt;leader&gt;fir :FirstExplorerWindow&lt;cr&gt;<br /> &quot;nmap &lt;silent&gt; &lt;leader&gt;bot :BottomExplorerWindow&lt;cr&gt;<br /> &quot;nmap &lt;silent&gt; &lt;leader&gt;wm :WMToggle&lt;cr<br /> &quot;nmap &lt;silent&gt; &lt;F8&gt; :WMToggle&lt;cr&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;定义打开关闭winmanager按键<br /> &quot;&quot;}}}<br /> &quot;WinManager 插件&nbsp; ( 不好用 )</p> 
+<p>&quot;NERD_commenter.vim : 1218&nbsp;&nbsp;&nbsp; &quot;可以使用cvim.zip, 但是这个觉到习惯一些<br /> &quot;&quot;{{{<br /> let NERDSpaceDelims=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; 让注释符与语句之间留一个空格<br /> let NERDCompactSexyComs=1&nbsp;&nbsp; &quot; 多行注释时样子更好看<br /> let NERD_c_alt_style=1<br /> &quot;Default mapping:<br /> &quot;[count],cc&nbsp;&nbsp; &quot; 以行为单位进行注释.<br /> &quot; ,c&lt;space&gt;&nbsp;&nbsp;&nbsp;&nbsp; &quot; comment , &lt;--&gt; , uncomment.&nbsp;&nbsp; ( 常用 )<br /> &quot; ,cm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; 一段为单位进行注释. ( 常用 )<br /> &quot; ,cs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; 简洁美观式注释.&nbsp; ( 常用 , 可以嵌套注释,用,cu取消注释 )<br /> &quot; ,cy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; Same as ,cc except that the commented line(s) are yanked first.<br /> &quot; ,c$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; 注释当前光标到行末的内容.<br /> &quot; ,cA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; 在行末进行手动输入注释内容.<br /> &quot; ,ca&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; 切换注释方式(/**/ &lt;--&gt; //).&nbsp;&nbsp; ( 常用 )<br /> &quot; ,cl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; Same cc, 左对齐.<br /> &quot; ,cb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; Same cc, 两端对其.<br /> &quot; ,cu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; Uncomments the selected line(s).&nbsp; ( 常用 )<br /> &quot;}}}<br /> &quot;NERD_commenter.vim : 1218&nbsp;&nbsp;&nbsp; &quot;可以使用cvim.zip, 但是这个觉到习惯一些</p> 
+<p>&quot;F8单独切换打开NERD_tree ( F8 )<br /> &quot;{{{<br /> &quot;-----------------------------------------------------------------<br /> &quot; plugin - NERD_tree.vim 以树状方式浏览系统中的文件和目录<br /> &quot; :ERDtree 打开NERD_tree&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :NERDtreeClose&nbsp;&nbsp;&nbsp; 关闭NERD_tree<br /> &quot; o 打开关闭文件或者目录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t 在标签页中打开<br /> &quot; T 在后台标签页中打开&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ! 执行此文件<br /> &quot; p 到上层目录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P 到根目录<br /> &quot; K 到第一个节点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; J 到最后一个节点<br /> &quot; u 打开上层目录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m 显示文件系统菜单（添加、删除、移动操作）<br /> &quot; r 递归刷新当前目录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R 递归刷新当前根目录<br /> &quot;-----------------------------------------------------------------<br /> let g:NERDChristmasTree = 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;色彩显示<br /> let g:NERDTreNERDShowHidden = 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;显示隐藏文件<br /> let g:NERDTreeWinPos = 'left'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;窗口显示位置<br /> let g:NERDTreeHighlightCursorline = 0&nbsp;&nbsp;&nbsp; &quot;高亮当前行<br /> let g:NERDTreeWinSize = 40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;设置显示宽度<br /> &quot;nmap &lt;F2&gt; :NERDTreeToggle&lt;CR&gt;.<br /> &quot;<br /> &quot; o.......打开所选文件或目录&nbsp;&nbsp;&nbsp; ( 常用 )<br /> &quot; enter..............相当于o<br /> &quot; go......类似o, 但光标仍然停留在NERD_tree&nbsp; ( 常用 )<br /> &quot; t.......在新标签中打开所选文件<br /> &quot; T.......类似t, 但光标仍然停留在NERD_tree<br /> &quot; i.......在一个水平分割窗口中打开文件<br /> &quot; gi......类似i, 但光标仍然停留在NERD_tree<br /> &quot; s.......在一个垂直分割窗口中打开文件.......................|NERDTree-s|<br /> &quot; gs......类似s, 但光标仍然停留在NERD_tree<br /> &quot; O.......递归打开所选目录<br /> &quot; 鼠标双击.......相当于o, 没错支持鼠标的~!<br /> &quot;&quot;}}}<br /> &quot;F8单独切换打开NERD_tree ( F8 )</p> 
+<p>&quot;bufexplorer插件 ( F2 )<br /> &quot;{{{<br /> &quot;map &lt;F2&gt; :BufExplorer&lt;CR&gt;<br /> &quot;,be 打开选择窗口 ','是前面mapleader设置的 ( F2 )<br /> &quot;r可以进行反向排序.<br /> &quot;d/D可以用来关闭文件.<br /> &quot;p可以用来显示/关闭绝对路径模式<br /> &quot;}}}<br /> &quot;bufexplorer插件 ( F2 )</p> 
+<p>&quot;echofunc.vim 在命令行中显示函数信息 ( 不错 )<br /> &quot;&quot;{{{<br /> &quot;直接下载解压即可( tags 插件已包含相似功能, 没必要装此插件 )<br /> &quot;这个插件的功能需要 tags 文件的支持, 并且在创建 tags 文件的时候要加选项&quot;--fields=+lS&quot; : ctags -R --fields=+lS<br /> let g:EchoFuncKeyPrev='&lt;C-p&gt;'<br /> let g:EchoFuncKeyNext='&lt;C-n&gt;'<br /> let g:EchoFuncLangsUsed = [&quot;c&quot;,&quot;java&quot;,&quot;cpp&quot;]<br /> &quot;&quot;}}}<br /> &quot;echofunc.vim 在命令行中显示函数信息 ( 不错 )</p> 
+<p>&quot;code_complete.vim 函数参数提示 ctags -R --c-kinds=+p --fields=+S<br /> &quot;&quot;{{{<br /> &quot; 若已经有echofunc.vim 和 cvim.zip插件那此插件不需要.<br /> &quot; (1) 下载后放到plugin目录中<br /> &quot; (2) ctags -R --c-kinds=+p --fields=+S<br /> &quot; (3) 提示: 默认触发键tab 导致supertab插件可能不正常,从而影响neocomplcache自动补全(如果设置的话).<br /> &quot;let g:completekey = &quot;&lt;tab&gt;&quot;&nbsp;&nbsp; &quot;默认hotkey<br /> &quot;( 插件越多 冲突越多 功能重复 一切从简 )<br /> &quot;&quot;}}}<br /> &quot;code_complete.vim 函数参数提示 ctags -R --c-kinds=+p --fields=+S</p> 
+<p>&quot;DoxygenToolkit.vim 代码说明文档自动生成<br /> &quot;&quot;{{{<br /> &quot; (1) :DoxLic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 生成license&nbsp; (不常使用)<br /> &quot; (2) :DoxAuthor&nbsp;&nbsp;&nbsp;&nbsp; 生成文件描述 (C程序等常使用,@file有用)<br /> &quot; (3) :Dox&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 生成函数注释 (很有用)<br /> map &lt;leader&gt;da :DoxAuthor&lt;CR&gt;<br /> map &lt;leader&gt;df :Dox&lt;CR&gt;<br /> map &lt;leader&gt;db :DoxBlock&lt;CR&gt;</p> 
+<p>&quot; 对class struct enum union等结构类的成员变量的注释为 /**&lt; 解释变量 */<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 文档化一个C++类<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @struct&nbsp;&nbsp;&nbsp;&nbsp; 文档化一个 C 结构&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @union&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 文档化一个联合&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @enum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 文档化一个枚举&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @fn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 文档化一个函数&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @var&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 文档化一个变量，类型转换，枚举值其中之一&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @def&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 文档化一个#define&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @typedef&nbsp;&nbsp;&nbsp; 文档化一个类型转换&nbsp;<br /> &quot;<br /> &quot; Shell 命令<br /> &quot; (x) doxygen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 生成文档(这个命令需要安装 apt-get install doxgen )<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp; (1) doxygen -g&nbsp;&nbsp; &quot;默认生成doxygen的配置文件Doxyfile, 你也可以指定 doxygen -g myfile<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp; (2) 编辑生成的配置文件 (配置文件采用 &lt;TAGNAME&gt; = &lt;VALUE&gt; 这样的结构)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * OUTPUT_DIRECTORY :&nbsp; 为生成的文档指定存放位置<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * INPUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; 指定源文件目录位置, 如有多个以空格分开<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * FILE_PATTERNS&nbsp;&nbsp;&nbsp; :&nbsp; 指定源文件扩展名 (eg .c,.cc,.cpp,.h )<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * RECURSIVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; 源代码层次结构嵌套设置, ( yes or no )<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * EXTRACT_ALL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; 函数没有注释文档也要提取信息(即yes)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * EXTRACT_PRIVATE&nbsp; :&nbsp; 设置为yes才会将私有信息提取<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * EXTRACT_STATIC&nbsp;&nbsp; :&nbsp; 设置为yes才会提取静态成员<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 其他需要自己看<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp; (3) doxygen Doxyfile &quot;运行<br /> &quot; Shell 命令</p> 
+<p>let g:DoxygenToolkit_authorName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;Michael&quot;<br /> let g:DoxygenToolkit_briefTag_funcName&nbsp; =&nbsp;&nbsp; &quot;yes&quot;<br /> let g:doxygen_enhanced_color&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; 1</p> 
+<p>&quot;let g:DoxygenToolkit_blockHeader&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;--------------------------------------------------------------------------&quot;<br /> &quot;let g:DoxygenToolkit_authorName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;Michael&quot;<br /> <a href="mailto:%22let%20g:DoxygenToolkit_authorTag%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20=%C2%A0%C2%A0%20%22@Author" rel="nofollow">&quot;let g:DoxygenToolkit_authorTag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;@Author</a>&nbsp;&quot;<br /> <a href="mailto:%22let%20g:DoxygenToolkit_dateTag%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20=%C2%A0%C2%A0%20%22@Date" rel="nofollow">&quot;let g:DoxygenToolkit_dateTag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;@Date</a>&nbsp;&quot;<br /> <a href="mailto:%22let%20g:DoxygenToolkit_versionTag%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20=%C2%A0%C2%A0%20%22@Version" rel="nofollow">&quot;let g:DoxygenToolkit_versionTag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;@Version</a>&nbsp;&quot;<br /> <a href="mailto:%22let%20g:DoxygenToolkit_fileTag%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20=%C2%A0%C2%A0%20%22@File" rel="nofollow">&quot;let g:DoxygenToolkit_fileTag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;@File</a>&nbsp;&quot;<br /> <a href="mailto:%22let%20g:DoxygenToolkit_briefTag_pre%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20=%C2%A0%C2%A0%20%22@Description" rel="nofollow">&quot;let g:DoxygenToolkit_briefTag_pre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;@Description</a>&nbsp;&quot;<br /> <a href="mailto:%22let%20g:DoxygenToolkit_paramTag_pre%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20=%C2%A0%C2%A0%20%22@Param" rel="nofollow">&quot;let g:DoxygenToolkit_paramTag_pre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;@Param</a>&nbsp;&quot;<br /> &quot;let g:DoxygenToolkit_paramTag_post&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;:&quot;<br /> <a href="mailto:%22let%20g:DoxygenToolkit_returnTag%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20=%C2%A0%C2%A0%20%22@Return" rel="nofollow">&quot;let g:DoxygenToolkit_returnTag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;@Return</a>&nbsp;&quot;<br /> <a href="mailto:%22let%20g:DoxygenToolkit_throwTag_pre%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20=%C2%A0%C2%A0%20%22@Exception" rel="nofollow">&quot;let g:DoxygenToolkit_throwTag_pre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;@Exception</a>&nbsp;&quot;<br /> &quot;let g:DoxygenToolkit_briefTag_funcName&nbsp; =&nbsp;&nbsp; &quot;yes&quot;<br /> &quot;let g:doxygen_enhanced_color&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; 1<br /> &quot;let g:DoxygenToolkit_blockFooter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &quot;--------------------------------------------------------------------------&quot;<br /> &quot;&quot;}}}<br /> &quot;DoxygenToolkit.vim 代码说明文档自动生成</p> 
+<p>&quot;&lt;F9&gt; :ConqueTerm bash<br /> &quot;&quot;{{{<br /> &quot; vim 中使用终端 : 可用于终端调试<br /> &quot;&quot;}}}<br /> &quot;&lt;F9&gt; :ConqueTerm bash</p> 
+<p>&quot;fencview.vim 对你打开的文件的编码自动识别<br /> &quot;&quot;{{{<br /> &quot;直接下载解压即可<br /> let g:fencview_autodetect = 1<br /> &quot;&quot;}}}<br /> &quot;fencview.vim 对你打开的文件的编码自动识别</p> 
+<p>&quot;F3 Grep.vim 查找字符插件<br /> &quot;&quot;{{{<br /> &quot; 将光标位置放到所要搜索的字符串上, 按F3, 默认搜索所有(*)类型文件<br /> &quot; nnoremap &lt;silent&gt; &lt;F3&gt; :Grep&lt;CR&gt;<br /> &quot; 直接放到plugin中.<br /> &quot;&quot;}}}<br /> &quot;F3 Grep.vim 查找字符插件</p> 
+<p>&quot;&lt;F5&gt; lookupfile插件默认会使用ctags产生的tag来查找，效率很低,使用下面脚本生成filenametags<br /> &quot;&quot;{{{<br /> &quot;当使用了acp.vim ( autocomplpop.vim)时, 该插件好像有点问题. 不过还是可以使用<br /> &quot;echo &quot;!_TAG_FILE_SORTED&nbsp;2&nbsp;/2=foldcase/&quot;; find . -not -iregex '.*/./(jar/|gif/|jpg/|class/|exe/|dll/|pdd/|sw[op]/|xls/|doc/|pdf/|zip/|tar/|ico/|ear/|war/|dat/).*' -type f -printf &quot;%f/t%p/t1/n&quot; |&nbsp; sort -f &gt; ./filenametags<br /> let g:LookupFile_MinPatLength = 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;最少输入3个字符才开始查找<br /> let g:LookupFile_PreserveLastPattern = 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;不保存上次查找的字符串<br /> let g:LookupFile_PreservePatternHistory = 1&nbsp;&nbsp;&nbsp;&nbsp; &quot;保存查找历史<br /> let g:LookupFile_AlwaysAcceptFirst = 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;回车打开第一个匹配项目<br /> let g:LookupFile_AllowNewFiles = 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;不允许创建不存在的文件<br /> let g:LookupFile_SortMethod = &quot;&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;关闭对搜索结果的字母排序<br /> let g:LookupFile_UpdateTime = 200<br /> let g:LookupFile_AlwaysAcceptFirst = 1<br /> let g:LookupFile_DefaultCmd = ':LUTags'<br /> &quot; Don't display binary files<br /> let g:LookupFile_FileFilter = '/.class$/|/.o$/|/.obj$/|/.exe$/|/.jar$/|/.zip$/|/.war$/|/.ear$'<br /> let g:LookupFile_TagExpr = string('/home/tags/filenametags')</p> 
+<p>&quot;if filereadable(&quot;/home/tags/filenametags&quot;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;设置tag文件的名字<br /> &quot;&nbsp;&nbsp;&nbsp; let g:LookupFile_TagExpr ='&quot;/home/tags/filenametags&quot;'<br /> &quot;endif</p> 
+<p>&quot;映射LookupFile为,lk<br /> nmap &lt;silent&gt; &lt;leader&gt;lk :LUTags&lt;cr&gt;<br /> &quot;映射LUBufs为,ll<br /> nmap &lt;silent&gt; &lt;leader&gt;ll :LUBufs&lt;cr&gt;<br /> &quot;映射LUWalk为,lw<br /> nmap &lt;silent&gt; &lt;leader&gt;lw :LUWalk&lt;cr&gt;</p> 
+<p>&quot; lookup file with ignore case<br /> function! LookupFile_IgnoreCaseFunc(pattern)<br /> &nbsp;&nbsp;&nbsp; let _tags = &amp;tags<br /> &nbsp;&nbsp;&nbsp; try<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let &amp;tags = eval(g:LookupFile_TagExpr)<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let newpattern = '/c' . a:pattern<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let tags = taglist(newpattern)<br /> &nbsp;&nbsp;&nbsp; catch<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echohl ErrorMsg | echo &quot;Exception: &quot; . v:exception | echohl NONE<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return &quot;&quot;<br /> &nbsp;&nbsp;&nbsp; finally<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let &amp;tags = _tags<br /> &nbsp;&nbsp;&nbsp; endtry</p> 
+<p>&nbsp;&nbsp;&nbsp; &quot; Show the matches for what is typed so far.<br /> &nbsp;&nbsp;&nbsp; let files = map(tags, 'v:val[&quot;filename&quot;]')<br /> &nbsp;&nbsp;&nbsp; return files<br /> endfunction<br /> let g:LookupFile_LookupFunc = 'LookupFile_IgnoreCaseFunc'<br /> &quot;&quot;}}}<br /> &quot;&lt;F5&gt; lookupfile插件默认会使用ctags产生的tag来查找，效率很低,使用下面脚本生成filenametags</p> 
+<p>&quot;neocomplcache.vba 插件替代autocomplpop(acp.vim) omnicppcomplete.vim , 在使用acp.vim,OmniCppComplete.vim 你就被out.<br /> &quot;&quot;{{{<br /> &quot;-----------------------------------------------------------------<br /> &quot; plugin - NeoComplCache.vim&nbsp;&nbsp;&nbsp; 自动补全插件<br /> &quot; 1、使用缓存，自动补全时效率高；<br /> &quot; 2、生成的关键词列表准确；<br /> &quot; 3、支持下划线分割的关键词，如apple_boy_cat，就可以只输入a_b_c，然后补全；<br /> &quot; 4、支持驼峰格式匹配关键词，如AppleBoyCat，就可以只输入ABC，然后补全；<br /> &quot; 5、既可以像AutoComplPop那样在Vim中输入的同时自动弹出补全列表，又可以自定义快捷键手动触发；<br /> &quot; 6、支持从文件名和目录名中匹配补全条件；<br /> &quot; 7、对于程序源文件，支持从语言API中匹配补全条件；<br /> &quot;-----------------------------------------------------------------</p> 
+<p>&quot; Disable AutoComplPop.<br /> &quot;set completeopt=menu,longest<br /> let g:acp_enableAtStartup = 0<br /> &quot; Use neocomplcache.<br /> let g:neocomplcache_enable_at_startup = 1<br /> &quot; Use smartcase.<br /> let g:neocomplcache_enable_smart_case = 1<br /> &quot; Use camel case completion.<br /> let g:neocomplcache_enable_camel_case_completion = 1&nbsp; &quot;支持驼峰格式匹配关键词<br /> &quot; Use underbar completion.<br /> let g:neocomplcache_enable_underbar_completion = 1&nbsp; &quot;支持下划线分割的关键词<br /> &quot; Set minimum syntax keyword length.<br /> let g:neocomplcache_min_syntax_length = 3<br /> let g:neocomplcache_lock_buffer_name_pattern = '/*ku/*'<br /> let g:neocomplcache_enable_auto_delimiter = 1<br /> let g:neocomplcache_disable_auto_complete = 1 &quot;设置NeoComplCache不自动弹出补全列表<br /> &quot;let g:neocomplcache_enable_wildcard = 1<br /> &quot; Define dictionary.<br /> let g:neocomplcache_dictionary_filetype_lists = {<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 'default' : '',<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 'vimshell' : $HOME.'/.vimshell_hist',<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 'scheme' : $HOME.'/.gosh_completions',<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / }</p> 
+<p>&quot; Define keyword.<br /> if !exists('g:neocomplcache_keyword_patterns')<br /> &nbsp;&nbsp;&nbsp; let g:neocomplcache_keyword_patterns = {}<br /> endif<br /> let g:neocomplcache_keyword_patterns['default'] = '/h/w*'</p> 
+<p>let g:neocomplcache_enable_auto_select = 1<br /> &quot;let g:neocomplcache_enable_caching_message=1 &quot;显示启动进度</p> 
+<p><br /> &quot; Enable omni completion.<br /> autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS<br /> autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags<br /> autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS<br /> autocmd FileType python setlocal omnifunc=pythoncomplete#Complete<br /> autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags<br /> autocmd filetype cpp set omnifunc=omni#cpp#complete#main</p> 
+<p>&quot;Enable heavy omni completion.<br /> if !exists('g:neocomplcache_omni_patterns')<br /> &nbsp; let g:neocomplcache_omni_patterns = {}<br /> endif<br /> let g:neocomplcache_omni_patterns.ruby = '[^. */t]/./w*/|/h/w*::'<br /> autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete<br /> let g:neocomplcache_omni_patterns.php = '[^. /t]-&gt;/h/w*/|/h/w*::'<br /> let g:neocomplcache_omni_patterns.c = '/%(/./|-&gt;/)/h/w*'<br /> let g:neocomplcache_omni_patterns.cpp = '/h/w*/%(/./|-&gt;/)/h/w*/|/h/w*::'</p> 
+<p>&quot;<br /> &quot;映射:<br /> &quot;inoremap &lt;expr&gt;&lt;C-x&gt;&lt;C-f&gt;&nbsp; neocomplcache#manual_filename_complete()<br /> &quot;inoremap &lt;expr&gt;&lt;C-j&gt;&nbsp; neocomplcache#manual_filename_complete()<br /> &quot;inoremap &lt;expr&gt;&lt;C-n&gt;&nbsp; pumvisible() ? &quot;/&lt;C-n&gt;&quot; : neocomplcache#manual_keyword_complete()<br /> &quot;inoremap &lt;expr&gt;&lt;C-y&gt;&nbsp; neocomplcache#close_popup()<br /> &quot;inoremap &lt;expr&gt;&lt;C-e&gt;&nbsp; neocomplcache#cancel_popup()<br /> &quot;inoremap &lt;expr&gt;&lt;C-g&gt;&nbsp;&nbsp;&nbsp;&nbsp; neocomplcache#undo_completion()<br /> &quot;inoremap &lt;expr&gt;&lt;C-l&gt;&nbsp;&nbsp;&nbsp;&nbsp; neocomplcache#complete_common_string()<br /> &quot;<br /> &quot;&quot;}}}<br /> &quot;neocomplcache.vba 插件替代autocomplpop(acp.vim) omnicppcomplete.vim , 在使用acp.vim,OmniCppComplete.vim 你就被out.</p> 
+<p>&quot;omnicppcomplete : c/c++ omni-completion with ctags database<br /> &quot;&quot;{{{<br /> &quot;<br /> &quot;推荐使用&lt;c-x&gt;... &quot;尽可能缩小范围,比如 1.补全函数&lt;c-x&gt;&lt;c-]&gt;&nbsp; 2.补全单词&lt;c-x&gt;&lt;c-k&gt; 3.补全路径&lt;c-x&gt;&lt;c-f&gt; 等<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-n&gt;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Keywords in 'complete' searching down.<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-p&gt;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Keywords in 'complete' searching up (SuperTab default).<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-x&gt;&lt;c-l&gt;| - Whole lines.<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-x&gt;&lt;c-n&gt;| - Keywords in current file.<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-x&gt;&lt;c-k&gt;| - Keywords in 'dictionary'.<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-x&gt;&lt;c-t&gt;| - Keywords in 'thesaurus', thesaurus-style.<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-x&gt;&lt;c-i&gt;| - Keywords in the current and included files.<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-x&gt;&lt;c-]&gt;| - Tags.&nbsp;&nbsp;&nbsp; ---&gt; 有用<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-x&gt;&lt;c-f&gt;| - File names.<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-x&gt;&lt;c-d&gt;| - Definitions or macros.<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-x&gt;&lt;c-v&gt;| - Vim command-line.<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-x&gt;&lt;c-u&gt;| - User defined completion.<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-x&gt;&lt;c-o&gt;| - Omni completion.<br /> &quot;&nbsp;&nbsp;&nbsp; |&lt;c-x&gt;s|&nbsp;&nbsp;&nbsp;&nbsp; - Spelling suggestions.<br /> &quot; Ctrl+P 向前切换成员<br /> &quot; Ctrl+N 向后切换成员<br /> &quot; Ctrl+E 表示退出下拉窗口, 并退回到原来录入的文字<br /> &quot; Ctrl+Y 表示退出下拉窗口, 并接受当前选项<br /> &quot; Ctrl+X Ctrl+L&nbsp; 整行补全<br /> &quot; Ctrl+X Ctrl+N&nbsp; 根据当前文件里关键字补全<br /> &quot; Ctrl+X Ctrl+K&nbsp; 根据字典补全<br /> &quot; Ctrl+X Ctrl+T&nbsp; 根据同义词字典补全<br /> &quot; Ctrl+X Ctrl+I&nbsp; 根据头文件内关键字补全<br /> &quot; Ctrl+X Ctrl+]&nbsp; 根据标签补全<br /> &quot; Ctrl+X Ctrl+F&nbsp; 补全文件名<br /> &quot; Ctrl+X Ctrl+D&nbsp; 补全宏定义<br /> &quot; Ctrl+X Ctrl+V&nbsp; 补全vim命令<br /> &quot; Ctrl+X Ctrl+U&nbsp; 用户自定义补全方式<br /> &quot; Ctrl+X Ctrl+S&nbsp; 拼写建议<br /> &quot;<br /> &quot;set nocp &quot;要关闭兼容 (上面已处理)<br /> let omnicpp_namespacesearch = 1<br /> let omnicpp_globalscopesearch = 1<br /> let omnicpp_showaccess = 1<br /> let omnicpp_showprototypeinabbr = 1&nbsp;&nbsp;&nbsp;&nbsp; &quot; show function parameters<br /> let omnicpp_maycompletedot = 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; autocomplete after .<br /> let omnicpp_maycompletearrow = 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; autocomplete after -&gt;<br /> let omnicpp_maycompletescope = 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; autocomplete after ::<br /> let omnicpp_defaultnamespaces = [&quot;std&quot;, &quot;_glibcxx_std&quot;]<br /> &quot;&quot;automatically open and close the popup menu / preview window<br /> &quot;au cursormovedi,insertleave * if pumvisible() == 0|silent! pclose|endif<br /> &quot;&quot;set completeopt=menuone,menu,longest,preview<br /> &quot;&quot;自定义快捷键 ( 若使用neocomplcache插件: 已定义了下面很多映射 )<br /> &quot;inoremap &lt;expr&gt; &lt;cr&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pumvisible()?&quot;/&lt;c-y&gt;&quot;:&quot;/&lt;cr&gt;&quot;<br /> &quot;inoremap &lt;expr&gt; &lt;c-j&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pumvisible()?&quot;/&lt;pagedown&gt;/&lt;c-n&gt;/&lt;c-p&gt;&quot;:&quot;/&lt;c-x&gt;&lt;c-o&gt;&quot; &quot;注意cvim.zip另有映射,而且很强大<br /> inoremap &lt;expr&gt; &lt;c-k&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pumvisible()?&quot;/&lt;pageup&gt;/&lt;c-p&gt;/&lt;c-n&gt;&quot;:&quot;/&lt;c-k&gt;&quot;<br /> inoremap &lt;expr&gt; &lt;c-u&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pumvisible()?&quot;/&lt;c-e&gt;&quot;:&quot;/&lt;c-u&gt;&quot;<br /> &quot;inoremap &lt;expr&gt; &lt;c-p&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pumvisible()?&quot;/&lt;up&gt;&quot;:&quot;/&lt;c-p&gt;&quot;<br /> &quot;inoremap &lt;expr&gt; &lt;c-n&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pumvisible()?&quot;/&lt;down&gt;&quot;:&quot;/&lt;c-n&gt;&quot;<br /> &quot;&quot;上面的映射都是在插入模式下的映射，解释如下<br /> &quot;&quot;如果下拉菜单弹出，回车映射为接受当前所选项目，否则，仍映射为回车<br /> &quot;&quot;如果下拉菜单弹出，ctrl-j映射为在下拉菜单中向下翻页。否则映射为ctrl-x ctrl-o<br /> &quot;&quot;如果下拉菜单弹出，ctrl-k映射为在下拉菜单中向上翻页，否则仍映射为ctrl-k<br /> &quot;&quot;如果下拉菜单弹出，ctrl-u映射为ctrl-e，即停止补全，否则，仍映射为ctrl-u<br /> &quot;&quot;如果下拉菜单弹出，ctrl-p映射为在下拉菜单中表示上一项。<br /> &quot;&quot;如果下拉菜单弹出，ctrl-n映射为在下拉菜单中表示下一项。<br /> &quot;&quot;:set omnifunc ? 查看设置的补全插件<br /> &quot;&quot;}}}<br /> &quot;omnicppcomplete : c/c++ omni-completion with ctags database</p> 
+<p>&quot;加速你的补全 -- 插件: SuperTab&nbsp; 使用上面的，可以关闭这个<br /> &quot;{{{<br /> &quot;设置按下&lt;Tab&gt;后默认的补全方式, 默认是&lt;C-P&gt;,<br /> &quot;还有其他的补全方式, 你可以看看下面的一些帮助:<br /> &quot;:help ins-completion<br /> &quot;:help compl-omni<br /> &quot; 0 - 不记录上次的补全方式<br /> &quot; 1 - 记住上次的补全方式,直到用其他的补全命令改变它<br /> &quot; 2 - 记住上次的补全方式,直到按 ESC 退出插入模式为止<br /> &quot;let g:SuperTabDefaultCompletionType=&quot;context&quot;<br /> &quot;let g:SuperTabDefaultCompletionType=&quot;&lt;C-X&gt;&lt;C-O&gt;&quot;<br /> let g:SuperTabDefaultCompletionType = &quot;&lt;c-x&gt;&lt;c-u&gt;&quot;<br /> let g:SuperTabRetainCompletionType=2</p> 
+<p>&quot;}}}<br /> &quot;加速你的补全 -- 插件: SuperTab&nbsp; 使用上面的，可以关闭这个</p> 
+<p>&quot;教你高效地浏览源码 -- 插件: TagList<br /> &quot;&quot;{{{<br /> set tags+=/home/tags/tags<br /> &quot;在taglist窗口中，可以使用下面的快捷键：<br /> &quot;&lt;CR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 跳到光标下tag所定义的位置，用鼠标双击此tag功能也一样<br /> &quot;o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在一个新打开的窗口中显示光标下tag<br /> &quot;&lt;Space&gt;&nbsp;&nbsp; 显示光标下tag的原型定义<br /> &quot;u&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 更新taglist窗口中的tag<br /> &quot;s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 更改排序方式，在按名字排序和按出现顺序排序间切换<br /> &quot;x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; taglist窗口放大和缩小，方便查看较长的tag<br /> &quot;+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 打开一个折叠，同zo<br /> &quot;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 将tag折叠起来，同zc<br /> &quot;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 打开所有的折叠，同zR<br /> &quot;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 将所有tag折叠起来，同zM<br /> &quot;[[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 跳到前一个文件<br /> &quot;]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 跳到后一个文件<br /> &quot;q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 关闭taglist窗口<br /> &quot;&lt;F1&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 显示帮助<br /> &quot;使用 :Tlist<br /> &quot;:help taglist.txt&nbsp; ( ~/.vim/doc/taglist.txt )<br /> &quot;<br /> &quot;快捷键<br /> &quot;map &lt;F4&gt; :TlistToggle&lt;CR&gt;<br /> &quot;noremap &lt;F7&gt; :Tlist&lt;CR&gt;<br /> &quot;noremap &lt;S-F7&gt; :TlistSync&lt;CR&gt;<br /> &quot;快捷键<br /> &quot;<br /> highlight Pmenu ctermbg=Green &quot;guibg=LightGray<br /> highlight PmenuSel ctermbg=Red &quot;guibg=DarkGray guifg=White<br /> highlight PmenuSbar ctermbg=Blue &quot;guibg=DarkBlue<br /> highlight PmenuThumb ctermbg=Yellow &quot;guibg=Black<br /> &quot;设定Linux系统中ctags程序的位置<br /> let Tlist_Ctags_Cmd = '/usr/bin/ctags'<br /> &quot;设定Linux系统中ctags程序的位置<br /> &quot;<br /> &quot;不同时显示多个文件的tag，只显示当前文件的<br /> &quot;let Tlist_Show_One_File=1<br /> &quot;不同时显示多个文件的tag，只显示当前文件的<br /> &quot;<br /> &quot;如果taglist窗口是最后一个窗口，则退出vim<br /> let Tlist_Exit_OnlyWindow=1<br /> &quot;如果taglist窗口是最后一个窗口，则退出vim<br /> &quot;<br /> &quot;在右侧窗口中显示taglist窗口<br /> let Tlist_Use_Right_Window = 1<br /> &quot;在右侧窗口中显示taglist窗口<br /> &quot;<br /> &quot;在左侧窗口中显示taglist窗口<br /> &quot;let Tlist_Use_Left_Window = 1<br /> &quot;在左右侧窗口中显示taglist窗口<br /> &quot;<br /> &quot; 缺省情况下，在双击一个tag时，才会跳到该tag定义的位置<br /> let Tlist_Use_SingleClick= 1<br /> &quot; 缺省情况下，在双击一个tag时，才会跳到该tag定义的位置<br /> &quot;<br /> &quot;Taglist窗口宽度<br /> let Tlist_WinWidth = 45<br /> &quot;Taglist窗口宽度<br /> &quot;<br /> &quot;在启动VIM后，自动打开taglist窗口<br /> &quot;let Tlist_Auto_Open=1<br /> &quot;在启动VIM后，自动打开taglist窗口<br /> &quot;<br /> &quot;taglist始终解析文件中的tag，不管taglist窗口有没有打开<br /> &quot;let Tlist_Process_File_Always=1<br /> &quot;taglist始终解析文件中的tag，不管taglist窗口有没有打开<br /> &quot;<br /> &quot;set 1 同时显示多个文件中的tag时，可使taglist只显示当前文件tag，其它文件的tag都被折叠起来<br /> let Tlist_File_Fold_Auto_Close=1<br /> &quot;set 1 同时显示多个文件中的tag时，可使taglist只显示当前文件tag，其它文件的tag都被折叠起来<br /> &quot;&quot;}}}<br /> &quot;教你高效地浏览源码 -- 插件: TagList</p> 
+<p>&quot;当查看源码是使用 -- 插件 : Cscope_map.vim<br /> &quot;&quot;{{{<br /> &quot;是否使用 quickfix 窗口来显示 cscope 结果<br /> set cscopequickfix=s-,c-,d-,i-,t-,e-<br /> &quot;echo &quot;export CSCOPE_DB=/home/tags/cscope.out&quot; &gt;&gt; ~/.bashrc<br /> &quot;------- 下面是对cscope_map.vim文件的部分翻译<br /> &quot;&quot;0 或 s&nbsp; 查找本 C 符号(可以跳过注释)<br /> &quot;&quot;1 或 g&nbsp; 查找本定义<br /> &quot;&quot;2 或 d&nbsp; 查找本函数调用的函数 --可以到函数的定义处<br /> &quot;&quot;3 或 c&nbsp; 查找调用本函数的函数 --该函数被谁调用<br /> &quot;&quot;4 或 t&nbsp; 查找本字符串<br /> &quot;&quot;6 或 e&nbsp; 查找本 egrep 模式<br /> &quot;&quot;7 或 f&nbsp; 查找本文件<br /> &quot;&quot;8 或 i&nbsp; 查找包含本文件的文件<br /> &quot;&quot;ctrl + o 可以返回<br /> &quot;nmap &lt;C-/&gt;s :cs find s &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;C-/&gt;g :cs find g &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;C-/&gt;c :cs find c &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;C-/&gt;t :cs find t &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;C-/&gt;e :cs find e &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;C-/&gt;f :cs find f &lt;C-R&gt;=expand(&quot;&lt;cfile&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;C-/&gt;i :cs find i ^&lt;C-R&gt;=expand(&quot;&lt;cfile&gt;&quot;)&lt;CR&gt;$&lt;CR&gt;<br /> &quot;nmap &lt;C-/&gt;d :cs find d &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;<br /> &quot;&quot;window split horizontally<br /> &quot;nmap &lt;<a href="mailto:C-@%3Es" rel="nofollow">C-@&gt;s</a>&nbsp;:scs find s &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3Eg" rel="nofollow">C-@&gt;g</a>&nbsp;:scs find g &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3Ec" rel="nofollow">C-@&gt;c</a>&nbsp;:scs find c &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3Et" rel="nofollow">C-@&gt;t</a>&nbsp;:scs find t &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3Ee" rel="nofollow">C-@&gt;e</a>&nbsp;:scs find e &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3Ef" rel="nofollow">C-@&gt;f</a>&nbsp;:scs find f &lt;C-R&gt;=expand(&quot;&lt;cfile&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3Ei" rel="nofollow">C-@&gt;i</a>&nbsp;:scs find i ^&lt;C-R&gt;=expand(&quot;&lt;cfile&gt;&quot;)&lt;CR&gt;$&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3Ed" rel="nofollow">C-@&gt;d</a>&nbsp;:scs find d &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;<br /> &quot;&quot;window split vertically<br /> &quot;nmap &lt;<a href="mailto:C-@%3E%3CC-@%3Es" rel="nofollow">C-@&gt;&lt;C-@&gt;s</a>&nbsp;:vert scs find s &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3E%3CC-@%3Eg" rel="nofollow">C-@&gt;&lt;C-@&gt;g</a>&nbsp;:vert scs find g &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3E%3CC-@%3Ec" rel="nofollow">C-@&gt;&lt;C-@&gt;c</a>&nbsp;:vert scs find c &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3E%3CC-@%3Et" rel="nofollow">C-@&gt;&lt;C-@&gt;t</a>&nbsp;:vert scs find t &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3E%3CC-@%3Ee" rel="nofollow">C-@&gt;&lt;C-@&gt;e</a>&nbsp;:vert scs find e &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3E%3CC-@%3Ef" rel="nofollow">C-@&gt;&lt;C-@&gt;f</a>&nbsp;:vert scs find f &lt;C-R&gt;=expand(&quot;&lt;cfile&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3E%3CC-@%3Ei" rel="nofollow">C-@&gt;&lt;C-@&gt;i</a>&nbsp;:vert scs find i ^&lt;C-R&gt;=expand(&quot;&lt;cfile&gt;&quot;)&lt;CR&gt;$&lt;CR&gt;<br /> &quot;nmap &lt;<a href="mailto:C-@%3E%3CC-@%3Ed" rel="nofollow">C-@&gt;&lt;C-@&gt;d</a>&nbsp;:vert scs find d &lt;C-R&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;&lt;CR&gt;<br /> &quot;<br /> &quot;&quot;使用方法<br /> &quot;&quot;生成一个 cscope 的数据库<br /> &quot;&quot;1.cd /usr/src/linux/<br /> &quot;&quot;2.cscope -Rbq<br /> &quot;&quot;cs add /usr/src/linux/cscope.out /usr/src/linux/<br /> &quot;&quot;reset : 重新初始化所有连接. 用法&nbsp; : cs reset<br /> &quot;&quot;<br /> &quot;&quot;1.下載cscope包&nbsp;<a href="http://cscope.sourceforge.net/" rel="nofollow">http://cscope.sourceforge.net/</a><br /> &quot;&quot;2.安裝cscope A../configure B.make C.make install<br /> &quot;&quot;3.修改set csprg 位置 ：/usr/local/bin/cscope<br /> &quot;&quot;4.F3<br /> &quot;&quot;5.测试（1）cscope find g 函数名 （2） cscope find c 函数名<br /> &quot;&quot;6. :cw 显示多个结果<br /> &quot;&quot;<br /> &quot;&quot;下面是shell脚本，放到源码目录下运行<br /> &quot;&quot;#!/bin/sh<br /> &quot;&quot;find . -name &quot;*.h&quot; -o -name &quot;*.c&quot; -o -name &quot;*.cc&quot; &gt; cscope.files<br /> &quot;&quot;cscope -bkq -i cscope.files<br /> &quot;&quot;ctags -R<br /> &quot;&quot;上面是shell脚本，放到源码目录下运行<br /> &quot;&quot;<br /> &quot;&quot;下面是对cscope -Rbkq 的解释<br /> &quot;&quot;-R: 在生成索引文件时，搜索子目录树中的代码<br /> &quot;&quot;-b: 只生成索引文件，不进入cscope的界面<br /> &quot;&quot;-k: 在生成索引文件时，不搜索/usr/include目录<br /> &quot;&quot;-q: 生成cscope.in.out和cscope.po.out文件，加快cscope的索引速度<br /> &quot;&quot;下面是对cscope -Rbkq 的解释<br /> &quot;&quot;<br /> &quot;&quot;-------------当前使用 快键----------<br /> &quot;&quot;noremap &lt;F3&gt; :!./vitags.sh&lt;CR&gt;:cs reset&lt;CR&gt;<br /> &quot;&quot;noremap &lt;F3&gt; :! cscope -Rbq&lt;CR&gt;:cs reset&lt;CR&gt;<br /> &quot;&quot;<br /> &quot;&quot;cscope和ctags的兼容问题<br /> &quot;if has(&quot;cscope&quot;)<br /> &quot;&nbsp;set csprg=/usr/bin/cscope<br /> &quot;&nbsp;set csto=0<br /> &quot;&nbsp;set cst&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;具有Ctags快捷键功能eg. ctrl+] , ctrl + t<br /> &quot;&nbsp;set nocsverb<br /> &quot;&nbsp;&quot; add any database in current directory<br /> &quot;&nbsp;if filereadable(&quot;cscope.out&quot;)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp; cs add cscope.out<br /> &quot;&nbsp;&quot; else add database pointed to by environment<br /> &quot;&nbsp;elseif $CSCOPE_DB !=&quot; &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp; cs add $CSCOPE_DB&nbsp;&nbsp;&nbsp;&nbsp; &quot;这是一个很好的方法<br /> &quot;&nbsp;endif<br /> &quot;&nbsp;set csverb<br /> &quot;&nbsp;set cscopetag<br /> &quot;endif<br /> &quot;&quot;cscope和ctags的兼容问题<br /> &quot;:help if_cscop.txt<br /> &quot;:cs show<br /> &quot;}}}<br /> &quot;当查看源码是使用 -- 插件 : Cscope_map.vim</p> 
+<p>&quot;利用cvim.zip插件实现,下载后解压到~/.vim中<br /> &quot;&quot;{{{<br /> &quot;下载地址:&nbsp;<a href="http://www.vim.org/scripts/script.php?script_id=213" rel="nofollow">http://www.vim.org/scripts/script.php?script_id=213</a><br /> &quot;<br /> &quot;let g:C_MapLeader&nbsp; = ','&nbsp;&nbsp; &quot;默认的是'/'<br /> &quot;Ctrl+j 的使用:eg. 当你使用/if添加一个函数时,会多出一些类似&lt;+xxx+&gt;的东西(需要重新填写), ctrl+j可以帮你忙,试一下很强.<br /> &quot;<br /> &quot;1.添加文件头注释（自动完成）<br /> &quot;2.添加c函数（标准模式执行/if, 再输入函数名）<br /> &quot;3.添加main函数（标准模式执行/im）<br /> &quot;4.添加函数注释 （标准模式执行/cfu）<br /> &quot;5.添加注释框架 （标准模式执行/cfr）<br /> &quot;6.添加头文件 （标准模式执行/p&lt;包含头文件 或 /p&quot;包含头文件）<br /> &quot;7.添加宏定义 （标准模式执行/pd)<br /> &quot;8.添加代码片段<br /> &quot;（标准模式执行/nr,需在~/.vim/c-support/codesnippets/中加入存放代码的文件)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Help ---------------------------------------------------------------<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /hm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; show manual for word under the cursor (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /hp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; show plugin help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Comments -----------------------------------------------------------<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end-of-line comment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cj&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adjust end-of-line comment(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i) ---&gt; V模式下可以对注释调整对齐<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set end-of-line comment column&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n)&nbsp;&nbsp;&nbsp;&nbsp; ---&gt; 设置行尾注释,起始位置(列)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /c*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; code -&gt; comment /* */&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; code -&gt; comment //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /co&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; comment -&gt; code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v)&nbsp;&nbsp; ---&gt; V模式下取消注释&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cfr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frame comment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cfu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function comment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cme&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; method description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ccl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cfdi&nbsp;&nbsp;&nbsp;&nbsp; file description (implementation)&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cfdh&nbsp;&nbsp;&nbsp;&nbsp; file description (header)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ccs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C/C++-file section&nbsp; (tab. compl.)&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /chs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; H-file section&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (tab. compl.)&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ckc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; keyword comment&nbsp;&nbsp;&nbsp;&nbsp; (tab. compl.)&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /csc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; special comment&nbsp;&nbsp;&nbsp;&nbsp; (tab. compl.)&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; date /&amp; time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Statements ---------------------------------------------------------<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do { } while&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sfo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for { }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sif&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if { }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if else&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sife&nbsp;&nbsp;&nbsp;&nbsp; if { } else { }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /se&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else { }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sw&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /swh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while { }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ss&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /s{ /sb&nbsp;&nbsp; { }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Preprocessor -------------------------------------------------------<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ps&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; choose a standard library include&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /pc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; choose a C99 include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /p&lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /p&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &quot;&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /pd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #define&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /pu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #undef&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /pie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #if&nbsp; #else #endif&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /pid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #ifdef #else #endif&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /pin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #ifndef #else #endif&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /pind&nbsp;&nbsp;&nbsp;&nbsp; #ifndef #def #endif&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /pi0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #if 0 #endif&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /pr0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; remove #if 0 #endif&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /pe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /pl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #line&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /pp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #pragma&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Idioms -------------------------------------------------------------<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /if&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /isf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /im&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; main()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /i0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( x=0; x&lt;n; x+=1 )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( x=n-1; x&gt;=0; x-=1 )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; enum&nbsp;&nbsp; + typedef&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /is&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct + typedef&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /iu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; union&nbsp; + typedef&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /isc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scanf()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ica&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p=calloc()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ima&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p=malloc()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /isi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sizeof()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ias&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assert()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ii&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; open input file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /io&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; open output file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Snippets -----------------------------------------------------------<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /nr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; read code snippet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /nw&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; write code snippet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edit code snippet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /np&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pick up prototype&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ni&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; insert prototype(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /nc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clear&nbsp; prototype(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; show&nbsp;&nbsp; prototype(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ntl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edit local templates&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ntg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edit global templates&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ntr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rebuild templates&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- C++ ----------------------------------------------------------------<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+co&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout&nbsp; &lt;&lt;&nbsp; &lt;&lt; endl;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt; &quot;&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+ps&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;...&gt; STL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+pc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;c..&gt; C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+cn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class (using new)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+ci&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class implementation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+cni&nbsp;&nbsp;&nbsp;&nbsp; class (using new) implementation&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+mi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; method implementation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+ai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; accessor implementation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+tc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; template class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+tcn&nbsp;&nbsp;&nbsp;&nbsp; template class (using new)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+tci&nbsp;&nbsp;&nbsp;&nbsp; template class implementation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+tcni&nbsp;&nbsp;&nbsp; template class (using new) impl.&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+tmi&nbsp;&nbsp;&nbsp;&nbsp; template method implementation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+tai&nbsp;&nbsp;&nbsp;&nbsp; template accessor implementation&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+tf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; template function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+ec&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; error class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+tr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try ... catch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+ca&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /+c.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch(...)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Run ----------------------------------------------------------------<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; save and compile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; link&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; run&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set comand line arguments&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; run make&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rmc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; run 'make clean'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rme&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; executable to run&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rma&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmd. line arg. for make&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; run splint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rpa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmd. line arg. for splint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; run CodeCheck (TM)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rka&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmd. line arg. for CodeCheck (TM)&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; run indent&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hardcopy buffer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,v,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; show plugin settings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /rx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set xterm size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n, only Linux/UNIX &amp; GUI)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; change output destination&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (n,i)<br /> &quot;filetype plugin on<br /> &quot;}}}<br /> &quot;利用cvim.zip插件实现,下载后解压到~/.vim中</p> 
+<p>&quot;a.vim实现源文件与头文件切换<br /> &quot;{{{<br /> let alternateSearchPath = 'sfr:.,sfr:./include,sfr:../include'&nbsp; &quot;设置include(.h)文件存在何处.<br /> let alternateNoDefaultAlternate = 1&nbsp; &quot;当没有找到相应的.h文件时,不自动创建<br /> &quot;:A 切换当前文件的头文件,在当前窗口打开(或者反过来)&nbsp; &quot;先打开.h .c 文件存于buff中<br /> &quot;:AS 功能同:A,但是切换到水平分割窗口的打开<br /> &quot;:AV 功能同:A,但是切换到竖直分割的窗口打开<br /> &quot;:AT 功能同:A,但是切换到标签页打开<br /> &nbsp;&quot;}}}<br /> &quot;a.vim实现源文件与头文件切换</p> 
+<p>&quot;vim 自带Marks的使用, 如果不习惯可以使用插件ShowMarks(下面有介绍), 使能showmarks_enable = 1<br /> &quot;{{{<br /> &quot;这个功能是VIM自带的功能, 习惯就好, 一切从简．可以查看帮助文档, 下面是简单介绍.<br /> &quot;(1) 设置标记 --&gt; norm模式下, m + [a-z]. ( m - mark, [a-z] 也可以是[A-Z], 推荐只使用小写字母. )<br /> &quot;(2) 删除标记 --&gt; 多种方法如下:<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. 删除标记所在的行．<br /> &quot; &nbsp;&nbsp;&nbsp; 2. 在其他行作相同的标记(eg. ma ).<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. 命令模式下&nbsp;&nbsp; :delmarks a&nbsp; ( 简写 :delm a )<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. 命令模式下&nbsp;&nbsp; :delmarks! ( 删除所有小写字母标记 )<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. 删除多个标记 :delmarks abcd (a,b,c,d都被删除, 也可以 :delmarks a-d)<br /> &quot;(3) 使用标记 --&gt;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. 定位到标记位置(以a为例) --&gt;&nbsp; `a or 'a&nbsp; ( 区别在于 `a到目标行的最左端,'a到目标行的第一个非空字符之前)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 对当前行到标记位置的操作--&gt;&nbsp; d`a , y`a , c`a 分别表示对该区域的删除, 复制, 更改<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. 显示设置的标记信息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --&gt;&nbsp; :marks (显示所有) :marks a (只显示a标记的信息)<br /> &quot;(4) 有用特殊标记(系统设置好的)<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. '' 或者 `` 从当前行跳回到最近一次跳到改行的位置去.<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. `. 从当前行跳回到最后一次修改的行的位置去.<br /> &quot;}}}<br /> &quot;vim 自带Marks的使用, 如果不习惯可以使用插件ShowMarks(下面有介绍), 使能showmarks_enable = 1</p> 
+<p>&quot;ShowMarks高亮功能显示出标记的位置( 先使用vim提供的sign功能进行标记位置 )<br /> &quot;{{{<br /> &quot; ================= (第一个)&nbsp;<a href="http://www.vim.org/scripts/script.php?script_id=152" rel="nofollow">http://www.vim.org/scripts/script.php?script_id=152</a>&nbsp; 对vim7.x是有一小点问题的. =============<br /> &quot;let showmarks_enable = 1&nbsp;&nbsp; &quot;使能showmarks插件<br /> let showmarks_enable = 0<br /> &quot;Show which marks:全部的大写标记和小写 ( 推荐只使用小写, 大写可能有bug )<br /> let showmarks_include = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;<br /> &quot; Ignore help, quickfix, non-modifiable buffers:对文件类型为help, quickfix, 和不可修改的缓冲区，不显示标记的位置<br /> let showmarks_ignore_type = &quot;hqm&quot;<br /> &quot; Hilight lower &amp; upper marks<br /> let showmarks_hlline_lower = 1<br /> let showmarks_hlline_upper = 1<br /> hi ShowMarksHLl ctermbg=Black&nbsp;&nbsp; ctermfg=White&nbsp; &quot;guibg=#FFDB72&nbsp;&nbsp;&nbsp; guifg=Black &quot;Magenta<br /> hi ShowMarksHLu ctermbg=Yellow&nbsp; ctermfg=Black&nbsp; &quot;guibg=#FFB3FF&nbsp;&nbsp;&nbsp; guifg=Black<br /> &quot;ShowMarks插件中已经定义了一些快捷键：<br /> &quot;,mt&nbsp;&nbsp; - 打开/关闭ShowMarks插件 ( 常用 )<br /> &quot;,mo&nbsp;&nbsp; - 强制打开ShowMarks插件<br /> &quot;,mh&nbsp;&nbsp; - 清除当前行的标记&nbsp;&nbsp;&nbsp; ( 常用 )<br /> &quot;,ma&nbsp;&nbsp; - 清除当前缓冲区中所有的标记 ( 常用 )<br /> &quot;,mm&nbsp;&nbsp; - 在当前行打一个标记，使用下一个可用的标记名&nbsp; ( 常用 )</p> 
+<p>&quot; ================= (第二个)&nbsp;<a href="http://www.vim.org/scripts/script.php?script_id=2142" rel="nofollow">http://www.vim.org/scripts/script.php?script_id=2142</a>&nbsp; =============<br /> &quot;解压到vim家目录即可, 使用默认.<br /> &quot;设置可用来作标记的字母<br /> &quot;let g:showmarks_marks = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;&nbsp; &quot;使用默认<br /> &quot;}}}<br /> &quot;ShowMarks高亮功能显示出标记的位置( 先使用vim提供的sign功能进行标记位置 )</p> 
+<p>&quot;mark.vim 当你在文件中想多个不同的关键词,且用不同的颜色显示, 那么该插件可你帮助你<br /> &quot;{{{<br /> &quot;下载地址:&nbsp;<a href="http://www.vim.org/scripts/script.php?script_id=1238" rel="nofollow">http://www.vim.org/scripts/script.php?script_id=1238</a><br /> &quot;1. map keys 触发键 默认是'/', 可以设置为',' let g:mapleader=&quot;,&quot;. 本vimrc已设置为','<br /> &quot;2. ,m : &quot;高亮&quot;显示光标下的单词或取消当前光标下的单词高亮显示<br /> &quot;3. ,r : 手工输入需要高亮显示的单词<br /> &quot;4. ,n : 当光标下有&quot;高亮&quot;显示的单词时,则取消. 如光标下没有&quot;高亮&quot;的单词时,则取消所有&quot;高亮&quot;的单词.<br /> &quot;5. *&nbsp; : 下一个与光标下颜色相同的高亮单词.<br /> &quot;6. #&nbsp; : 上一个与光标下颜色相同的高亮单词.<br /> &quot;7. ,/ : 下一个高亮单词(不一定是相同颜色).<br /> &quot;8. ,? : 上一个高亮单词(不一定是相同颜色).<br /> &quot;9. 重新定义需要高亮单词的颜色:<br /> hi MarkWord1&nbsp; ctermbg=Yellow&nbsp;&nbsp; ctermfg=White&nbsp; guibg=#FFDB72&nbsp;&nbsp;&nbsp; guifg=Black<br /> hi MarkWord2&nbsp; ctermbg=Blue&nbsp;&nbsp;&nbsp;&nbsp; ctermfg=White&nbsp; guibg=#9999FF&nbsp;&nbsp;&nbsp; guifg=Black<br /> hi MarkWord3&nbsp; ctermbg=Cyan&nbsp;&nbsp;&nbsp;&nbsp; ctermfg=White&nbsp; guibg=#8CCBEA&nbsp;&nbsp;&nbsp; guifg=Black<br /> hi MarkWord4&nbsp; ctermbg=Red&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctermfg=White&nbsp; guibg=#FF7272&nbsp;&nbsp;&nbsp; guifg=Black<br /> hi MarkWord5&nbsp; ctermbg=Brown&nbsp;&nbsp;&nbsp; ctermfg=White&nbsp; guibg=#FF7272&nbsp;&nbsp;&nbsp; guifg=Black<br /> hi MarkWord6&nbsp; ctermbg=Magenta&nbsp; ctermfg=White&nbsp; guibg=#FFB3FF&nbsp;&nbsp;&nbsp; guifg=Black<br /> hi MarkWord7&nbsp; ctermbg=Green&nbsp;&nbsp;&nbsp; ctermfg=White&nbsp; guibg=#A4E57E&nbsp;&nbsp;&nbsp; guifg=Black<br /> &quot;}}}<br /> &quot;mark.vim 当你在文件中想多个不同的关键词,且用不同的颜色显示, 那么该插件可你帮助你</p> 
+<p>&quot;自动更新tags文件autotags.vim插件<br /> &quot;&quot;{{{<br /> &quot;要到autotags.vim中修改tags文件大小 __maxTagsFileSize = 1024 * 1024 * 5<br /> &quot;let g:autotagDisabled = 1&nbsp;&nbsp; &quot;还是关掉好.太低效<br /> &quot;let g:autotagTagsFile = '/home/tags/tags'<br /> &quot;&quot;}}}<br /> &quot;自动更新tags文件autotags.vim插件</p> 
+<p>&quot;工程管理值tags更新 -- indexer.vim<br /> &quot;&quot;{{{<br /> &quot;let g:indexer_indexerListFilename=&quot;/home/tags/indexer_file&quot;<br /> &quot;let g:indexer_ctagsCommandLineOptions = '--c++-kinds=+p+l --fields=+ialS --extra=+q'<br /> &quot;&quot;}}}<br /> &quot;工程管理值tags更新 -- indexer.vim</p> 
+<p>&quot;srcexpl.vim&nbsp; just like source insight<br /> &quot;&quot;{{{<br /> &quot;let loaded_srcexpl = 0<br /> &quot; // The switch of the Source Explorer<br /> &quot;nmap &lt;F8&gt; :SrcExplToggle&lt;CR&gt;</p> 
+<p>&quot; // Set the height of Source Explorer window<br /> &quot;let g:SrcExpl_winHeight = 8</p> 
+<p>&quot; // Set 100 ms for refreshing the Source Explorer<br /> &quot;let g:SrcExpl_refreshTime = 100</p> 
+<p>&quot; // Set &quot;Enter&quot; key to jump into the exact definition context<br /> &quot; let g:SrcExpl_jumpKey = &quot;&lt;ENTER&gt;&quot;</p> 
+<p>&quot; // Set &quot;Space&quot; key for back from the definition context<br /> &quot;let g:SrcExpl_gobackKey = &quot;&lt;SPACE&gt;&quot;</p> 
+<p>&quot; // In order to Avoid conflicts, the Source Explorer should know what plugins<br /> &quot; // are using buffers. And you need add their bufname into the list below<br /> &quot; // according to the command &quot;:buffers!&quot;<br /> &quot;let g:SrcExpl_pluginList = [<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / &quot;__Tag_List__&quot;,<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / &quot;_NERD_tree_&quot;,<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / &quot;Source_Explorer&quot;<br /> &nbsp;&nbsp;&nbsp; / ]</p> 
+<p>&quot; // Enable/Disable the local definition searching, and note that this is not<br /> &quot; // guaranteed to work, the Source Explorer doesn't check the syntax for now.<br /> &quot; // It only searches for a match with the keyword according to command 'gd'<br /> &quot;let g:SrcExpl_searchLocalDef = 1</p> 
+<p>&quot; // Do not let the Source Explorer update the tags file when opening<br /> &quot;let g:SrcExpl_isUpdateTags = 0</p> 
+<p>&quot; // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to<br /> &quot; //&nbsp; create/update a tags file<br /> &quot;let g:SrcExpl_updateTagsCmd = &quot;ctags --sort=foldcase -R .&quot;</p> 
+<p>&quot; // Set &quot;&lt;F12&gt;&quot; key for updating the tags file artificially<br /> &quot;let g:SrcExpl_updateTagsKey = &quot;&lt;F12&gt;&quot;<br /> &quot;}}}<br /> &quot;srcexpl.vim&nbsp; just like source insight</p> 
+<p><br /> &quot;----------------------<br /> &quot;利用 插件 丰富 功能<br /> &quot;----------------------<br /> &quot;}}}</p> 
+<p>&nbsp;</p> 
+<p>&nbsp;</p> 
+<p>&nbsp;</p> 
+<p>&quot;==================================以下是个人喜爱使用的vim(or 插件)其他强大功能,尚未完成===========================<br /> &quot;<br /> &quot;vim master<br /> &quot;&quot;{{{<br /> &quot;<br /> &quot;Verdancy --- New Commer<br /> &quot;&quot;{{{<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f --- find; practic : (before)&quot;aabbbccdd&quot; --&gt; ex: dfc --&gt;&nbsp; (after)&quot;cdd&quot;<br /> &quot;<br /> &quot;寄存器<br /> &quot;&quot;{{{<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; q[a-z] --- 记录命令, 已q结束, @[a-z]引用 --- 很强大,需要习惯使用<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;[a-z]p --- 可以将寄存器[a-z]中的命令以文本的方式输出,并进行修改<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;[a-z]y$&nbsp; --- 将寄存器修改后的内容存回到对应寄存器<br /> &quot;&quot;}}}<br /> &quot;寄存器<br /> &quot;<br /> &quot;&quot;}}}<br /> &quot;Verdancy --- New Commer<br /> &quot;<br /> &quot;Visual 选中模式<br /> &quot;&quot;{{{<br /> &quot;&nbsp;&nbsp;&nbsp; shift + v : 配合jk,上下键,整行选择<br /> &quot;&nbsp;&nbsp;&nbsp; ctrl + v&nbsp; : 配合hjkl,上下左右键,灵活选择区域<br /> &quot;&nbsp;&nbsp;&nbsp; o&nbsp;&nbsp; : 在选中的区域中对角线移动<br /> &quot;&nbsp;&nbsp;&nbsp; O&nbsp;&nbsp; : 在选中的区域中行左右移动<br /> &quot;&nbsp;&nbsp;&nbsp; gv&nbsp; : 重新选中原来的选中的区域<br /> &quot;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; : 在选中区域后,shift+:到命令模式, : eg. '&lt;,'&gt;s/pattern/newstring/g -- 在选中的区域中查找patte &amp;&amp; replace<br /> &quot;&nbsp;&nbsp;&nbsp; ctrl + v 选中一列后, 按I插入字符,Esc退出&nbsp; : 每一行都添加这个字符,很好的一个注释方法<br /> &quot;&quot;}}}<br /> &quot;Visual 选中模式<br /> &quot;<br /> &quot;Command Mode<br /> &quot;&quot;{{{<br /> &quot; :g/pattern/d&nbsp; --- delete line contained of string &quot;pattern&quot;<br /> &quot;&quot;}}}<br /> &quot;Command Mode<br /> &quot;<br /> &quot;窗口<br /> &quot;&quot;{{{<br /> &quot;ctrl + 0 : 恢复窗口大小<br /> &quot;ctrl + = : 窗口等大<br /> &quot;ctrl + w + _ :&nbsp; 窗口最大化<br /> &quot;nctrl + w + _ : 改变窗口的大小<br /> &quot;ctrl + w + ctrl + c : 关闭窗口<br /> &quot;ctrl + w + ctrl + ] : 以函数所在文件分割窗口<br /> &quot;ctrl + w + shift + [hjkl] : 窗口位置放置<br /> &quot;<br /> &quot;shift + z + z : close vim edit. You need set auto write.<br /> &quot;<br /> &quot;vim t1.c t2.c t3.c -o2 : open thress files using two windows. if -o(no number), using three windows here.<br /> &quot;&quot;}}}<br /> &quot;窗口<br /> &quot;<br /> &quot;杂项<br /> &quot;&quot;{{{<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; !!date&nbsp; --- 插入日期<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; read !date -R&nbsp; --- 插入日期 ( -R 显示日期的格式而已 man date )<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctr + w ctrl + c&nbsp; --- 关闭当前窗口<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %s//s/+$// --- 删除多余的空格<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl + K&nbsp; --- 插入特殊字符<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; digraph --- 显示特殊字符,字符组合<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set ic&nbsp; --- 忽略大小写<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . --- 重复前次操作<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl + a&nbsp; --- repeat record.<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl + r&nbsp; --- 反撤消, 当u撤消后,又想恢复,可以使用<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; daw &amp;&amp; caw &amp;&amp; cis&nbsp; --- delete a word &amp;&amp; change a word &amp;&amp; 修改一个句子<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cc &amp;&amp; dd&nbsp; --- change one line reserving indent&nbsp; &amp;&amp; delete one line<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CTRL+U&nbsp; ----&nbsp; CTRL+D&nbsp;&nbsp; ---&gt; half page move<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CTRL+E&nbsp; ----&nbsp; CTRL+Y&nbsp;&nbsp; ---&gt; one line move<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CTRL+F&nbsp; ----&nbsp; CTRL+B&nbsp;&nbsp; ---&gt; one page move<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CTRL + O&nbsp; --- 返回刚才&frac12;置,每按一次都会退回到之前的位置<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CTRL + I&nbsp; --- 与CTRL+O相反,每按一次退回来<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [i&nbsp; --- (将光标移到变量上)显示第一个局部变量定义处<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [I&nbsp; --- (将光标移到变量上)显示所有该变量的定义处<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ''&nbsp; --- 回到刚才停留处<br /> &quot;<br /> &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //&lt;patter/&gt;&nbsp; ---- 精确查找<br /> &quot;<br /> &quot;<br /> &quot;&quot;}}}<br /> &quot;杂项<br /> &quot;<br /> &quot;&quot;}}}<br /> &quot;vim master<br /> &quot;<br /> &quot;Shell<br /> &quot;&quot;{{{<br /> &quot;巧妙去除Linux下代码行中的^M符号和windows下代码编辑引起的警告错<br /> &quot;:%s /^M//g ，其中^M的写法是按住ctrl不放，再按v，然后按M，再放ctrl<br /> &quot;&quot;{{{<br /> &quot;&nbsp;&nbsp;&nbsp; #wash_error.sh<br /> &quot;&nbsp;&nbsp;&nbsp; #!/bin/sh<br /> &quot;&nbsp;&nbsp;&nbsp; ls *.h *.c | awk '{print $1}' &gt; dealfile<br /> &quot;&nbsp;&nbsp;&nbsp; cat dealfile | while read file<br /> &quot;&nbsp;&nbsp;&nbsp; do<br /> &quot;&nbsp;&nbsp;&nbsp; echo &quot; &quot; &gt;&gt; $file<br /> &quot;&nbsp;&nbsp;&nbsp; done<br /> &quot;&nbsp;&nbsp;&nbsp; #dos2unix *.c *.h<br /> &quot;&quot;}}}<br /> &quot;巧妙去除Linux下代码行中的^M符号和windows下代码编辑引起的警告错<br /> &quot;&quot;}}}<br /> &quot;Shell<br /> &quot;<br /> &quot;==================================以上是个人喜爱使用的vim(or 插件)其他强大功能,尚未完成===========================</p> 
+<p>&quot;Doxygen 例子<br /> &quot;{{{<br /> &quot;/**<br /> &quot; * @file t.c<br /> &quot; * @brief Test for test<br /> &quot; * @author Michael<br /> &quot; * @version 1.0<br /> &quot; * @date 2011-04-10<br /> &quot; */<br /> &quot;<br /> &quot;/**<br /> &quot; * @struct STU_INFO<br /> &quot; * @brief&nbsp; This is a struct about student's infomation.<br /> &quot; */<br /> &quot;struct STU_INFO<br /> &quot;{<br /> &quot;&nbsp;&nbsp;&nbsp; unsigned int stu_no;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /**&lt; stu_no : ID of the Student */<br /> &quot;&nbsp;&nbsp;&nbsp; unsigned int stu_age;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /**&lt; stu_age : Age of the Student */<br /> &quot;&nbsp;&nbsp;&nbsp; char stu_name[100];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /**&lt; stu_name: Name of the Student */<br /> &quot;&nbsp;&nbsp;&nbsp; unsigned short int stu_level;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /**&lt; stu_level: level of the Student */<br /> &quot;&nbsp;&nbsp;&nbsp; struct STU_INFO *next;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /**&lt; next : Pointer to next Student */<br /> &quot;};<br /> &quot;<br /> &quot;/**<br /> &quot; * @enum STU_LEVEL<br /> &quot; * @brief This is a enum about student's level.<br /> &quot; */<br /> &quot;enum STU_LEVEL<br /> &quot;{<br /> &quot;&nbsp;&nbsp;&nbsp; NUMBER_ONE,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /**&lt; student's level : 1 or A */<br /> &quot;&nbsp;&nbsp;&nbsp; NUMBER_TWO,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /**&lt; student's level : 2 or B */<br /> &quot;&nbsp;&nbsp;&nbsp; NUMBER_THREE,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /**&lt; student's level : 3 or C */<br /> &quot;&nbsp;&nbsp;&nbsp; NUMBER_FOUR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /**&lt; student's level : 4 or D */<br /> &quot;};<br /> &quot;<br /> &quot;/**<br /> &quot; * @brief This is a function about getting the student's infomation by id.<br /> &quot; *&nbsp; - student who get A can own:<br /> &quot; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -# A intellectual computer.<br /> &quot; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -# A kiss of Michael.<br /> &quot; *&nbsp; - student who get B can own:<br /> &quot; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -# A intellectual phone.<br /> &quot; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -# A kiss of Jone.<br /> &quot; *<br /> &quot; * @param id a unsigned integer param.<br /> &quot; * @param stu a pointer that return the student info.<br /> &quot; *<br /> &quot; * @return student's level&nbsp;<br /> &quot; */<br /> &quot;int get_student_info( unsigned int id, struct STU_INFO *stu )<br /> &quot;{<br /> &quot;&nbsp;&nbsp;&nbsp; return level.<br /> &quot;}<br /> &quot;}}}<br /> &quot;Doxygen 例子</p></div>	  
+      	  
+            <div style='margin:10px 0 0 0;'>
+		<script type="text/javascript" src="/js/ad/blog.js"></script>
+      </div>
+	  	
+	  	  
+      <div class='BlogCopyright'>		
+	  		原文地址：<a href="http://blog.csdn.net/qrsforever/article/details/6315383" target="_blank">http://blog.csdn.net/qrsforever/article/details/6315383</a>
+	  	  </div>
+
+      <div class='BlogLinks'>
+    	<ul>
+                <li class='prev'><a href="http://my.oschina.net/zhangdapeng89/blog/40698" title="上一篇：笨笨的我---终于完成了vim下php IDE的配置">&laquo; 笨笨的我---终于完成了vim下php IDE的配置</a></li>        <li class='next'><a href="http://my.oschina.net/zhangdapeng89/blog/40740" title="下一篇：IDE---zend studio 9">IDE---zend studio 9 &raquo;</a></li>    	</ul>
+				<p style='margin:10px 0 0 0;font-weight:bold;color:#A00;text-decoration:none;'>开源中国-程序员在线工具：<a href="http://www.osctools.net/apidocs" style="text-decoration:none;">API文档大全(120+)</a> <a href="http://www.osctools.net/jsbin" style="text-decoration:none;" target='_blank'>JS在线编辑演示</a> <a href="http://www.osctools.net/qr" style="text-decoration:none;" target='_blank'>二维码</a>  <a href="http://www.osctools.net" style="text-decoration:none;" target='_blank'>更多>></a>
+		      </div>
+	</div>
+
+	<div class='BlogShare'>
+	<!-- JiaThis Button BEGIN -->
+    <div id="jiathis_style_32x32">
+    <a class="jiathis_button_tsina"></a>
+    <a class="jiathis_button_tqq"></a>
+    <a class="jiathis_button_kaixin001"></a>
+    <a class="jiathis_button_renren"></a>
+    <a class="jiathis_button_douban"></a>
+    <a href="http://www.jiathis.com/share?uid=1567353" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+    <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" >
+    var jiathis_config={
+    	data_track_clickback:true,
+    	summary:"",
+    	hideMore:false
+    }
+    </script>
+    <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1567353" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+	<span id='BlogVote'>
+    <a href="javascript:vote(40699)">顶</a><span>已有 <em id='vote_count'>0</em>人顶</span>
+	</span>
+	</div>
+		
+</div>
+<div class='SpaceList' style='margin-top:20px;'>
+<div class='BlogComments'>
+    <h2><a name="comments"></a>共有 0 条网友评论</h2>
+			<p class='NoData'>尚无网友评论</p>
+		<ul id="BlogComments">
+		</ul>
+</div>
+	</div>
+
+<div id='inline_reply_editor' style='display:none;'>
+<div class="BlogCommentForm">
+	<form id="form_inline_comment" action="/action/blog/add_comment?blog=40699" method="POST">
+	  <input type='hidden' id='inline_reply_id' name='reply_id' value=''/>          
+      <textarea name="content" style="width:550px;height:60px;" onkeydown="if(event.ctrlKey&&event.keyCode==13){$('#form_inline_comment').submit();}"></textarea><br/>
+	  <input type="submit" value="回复" id="btn_comment" class="SUBMIT"/> 
+	  <input type="button" value="关闭" class="SUBMIT" id='btn_close_inline_reply'/> 文明上网，理性发言
+    </form>
+</div>
+</div>
+
+<div class='SpaceList' style='margin-top:20px;'>
+  <a name="comments" id="postform"></a>
+    <div class="BlogCommentForm">
+    <form id="form_comment" action="/action/blog/add_comment?blog=40699" method="POST">          
+      <textarea id='ta_post_content' name="content" style="width:550px;height:100px;" onkeydown="if(event.ctrlKey&&event.keyCode==13){$('#form_comment').submit();}"></textarea><br/>
+	  <input type="submit" value="发表评论" id="btn_comment" class="SUBMIT" /> 
+	  <img id="submiting" style="display:none" src="/img/loading.gif" align="absmiddle"/>
+	  <span id='cmt_tip'>文明上网，理性发言</span>
+    </form>
+	<a href="#" class="more">回到页首</a>&nbsp;|&nbsp;<a href="#comments" class="more">回到评论列表</a>
+  </div>
+  </div>
+	
+<div id="RelativeBlogs">
+	<strong><a id='btn_close'>关闭</a>相关文章阅读</strong>
+	<ul>
+			<li>
+		<span class='date'>2011/10/28</span>
+		<a href="http://my.oschina.net/luffyke/blog/34076" title="手把手教你把Vim改装成一个IDE编程环境(图文)[转]">手把手教你把Vim改装成一个IDE编程环...</a>
+	</li>
+				<li>
+		<span class='date'>2012/08/08</span>
+		<a href="http://my.oschina.net/aiguozhe/blog/71593" title="【转】 把vim打造成IDE">【转】 把vim打造成IDE</a>
+	</li>
+				<li>
+		<span class='date'>2011/09/09</span>
+		<a href="http://my.oschina.net/xngiser/blog/32020" title="无所不能的vim-vim到底能做什么">无所不能的vim-vim到底能做什么</a>
+	</li>
+				<li>
+		<span class='date'>2012/02/16</span>
+		<a href="http://my.oschina.net/zhangdapeng89/blog/40886" title="IDE---Gvim之ubuntu下配置php的ide开发工具">IDE---Gvim之ubuntu下配置php的ide...</a>
+	</li>
+				<li>
+		<span class='date'>2012/05/08</span>
+		<a href="http://my.oschina.net/zhangdapeng89/blog/56599" title="VIM as a PHP IDE">VIM as a PHP IDE</a>
+	</li>
+			</ul>
+</div>
+<script type="text/javascript" src="/action/visit/blog?id=40699" defer="defer"></script>
+<script type="text/javascript" src="/js/syntax-highlighter-2.1.382/scripts/brush.js"></script>
+<link type="text/css" rel="stylesheet" href="/js/syntax-highlighter-2.1.382/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="/js/syntax-highlighter-2.1.382/styles/shThemeDefault.css"/>
+<script type='text/javascript'><!--
+$(document).ready(function(){
+	SyntaxHighlighter.config.clipboardSwf = '/js/syntax-highlighter-2.1.382/scripts/clipboard.swf';
+	SyntaxHighlighter.all();
+});
+//-->
+</script>
+<!--[if lt IE 7]>
+<script type="text/javascript" src="/js/minmax.js"></script>
+<![endif]-->
+<script type='text/javascript'>
+<!--
+var posting = false;
+var upprev_closed = false;
+var upprev_hidden = true;
+
+$(document).ready(function(){
+    $('.BlogContent img').css('cursor','pointer');
+    jQuery.each($('.BlogContent img'),function(idx,v){
+    	$(v).wrap("<a href='"+$(this).attr('src')+"' target='_blank'></a>");
+    });
+	$('#form_comment').ajaxForm({
+		dataType: 'json',
+		bforeSubmit: function(){
+			posting = true;
+		},
+		success: function(json) {
+        	if(json.msg){
+				///alert(json.msg);
+				$('#cmt_tip').html("<span style='color:#C00;'>"+json.msg+"</span>");
+				$('#ta_post_content').focus();				
+			}else{
+				var url = "http://my.oschina.net/zhangdapeng89/blog_post?_cmt_blog="+json.blog+"&_cmt_user="+json.user+"&_cmt_id="+json.id;				
+        		jQuery.get(url, function(data){
+    				$('.BlogComments .NoData').hide();
+        			$('ul#BlogComments').append(data);
+        			$('#form_comment').resetForm();
+        		}); 
+			}
+		}
+	});	
+	$("#submiting").ajaxStart(function(){
+	   if(posting){
+    	   $('#btn_submit').attr("disabled","disabled");
+           $(this).show();
+	   }
+    });
+	$("#submiting").ajaxComplete(function(event,request, settings){
+	   if(posting){
+           $(this).hide();
+    	   $('#btn_submit').attr("disabled","");
+	   }
+	   posting = false;
+    }); 
+	
+    $(window).scroll(function() {
+        var lastScreen;
+        if ($("#postform").length > 0)
+            lastScreen = getScrollY() + $(window).height() < $("#postform").offset().top * 1 ? false : true;
+        else
+            lastScreen = getScrollY() + $(window).height() < $(document).height() * 1 ? false : true;
+        if (lastScreen && !upprev_closed) {
+            $("#RelativeBlogs").stop().animate({right:"0px"});
+            upprev_hidden = false;
+        }
+        else if (upprev_closed && getScrollY() == 0) {
+            upprev_closed = false;
+        }
+        else if (!upprev_hidden) {
+            upprev_hidden = true;
+            $("#RelativeBlogs").stop().animate({right:"-400px"});
+        }
+    });
+    $("#RelativeBlogs #btn_close").click(function() {
+        $("#RelativeBlogs").stop().animate({right:"-400px"});
+        upprev_closed = true;
+        upprev_hidden = true;
+    });
+});
+function delete_c(nid,uid,cid){
+  if(confirm("您确认要删除此篇评论？")){
+    var args = "cmt="+cid+"#"+uid+"#"+nid;
+    ajax_post("/action/blog/delete_blog_comments?space=216139",args,function(){$("#cmt_"+nid+"_"+uid+"_"+cid).fadeOut();});
+  }
+}
+function ReplyInline(blog,user,reply){
+	$('.inline_reply').empty();
+	var div_id = '#inline_reply_of_'+blog+'_'+user+'_'+reply;
+	$('#inline_reply_id').val(user+'_'+reply);
+	$(div_id).html($('#inline_reply_editor').html());
+	$('#txt_focus').focus();
+	$('#btn_close_inline_reply').click(function(){
+		$(div_id).empty();
+	});
+	$('#form_inline_comment').ajaxForm({
+		dataType: 'json',
+    	success: function(json) {
+        	if(json.msg){
+        		alert(json.msg);
+        	}
+        	else if(json.id){
+    			location.reload();
+        	}
+    	}
+	});
+}
+function edit_catalogs(qid){
+	popup("/set-catalogs?parent=1&type=3&id="+qid);
+}
+function vote(blogid){
+		ajax_post("/action/blog/vote","id="+blogid,function(result){
+		var json = eval('('+result+')');
+		if(json.vote)
+			$('#vote_count').html(json.vote);
+		else if(json.error == 1)
+			alert(json.msg);
+		else
+			alert(json.msg);
+	});
+	}
+function toggle_recomm(blogid){
+	ajax_post("/action/blog/toggle_recomm","id="+blogid,function(html){
+		if(html == '-1')
+			alert("文章不存在");
+		else if(html == 0){
+			$('#lnk_recomm_'+blogid).removeClass('recommend');
+			$('#lnk_recomm_'+blogid).text("未推荐");
+		}
+		else if(html == 1){
+			$('#lnk_recomm_'+blogid).addClass('recommend');
+			$('#lnk_recomm_'+blogid).text("已推荐");
+		}
+	});
+}
+//-->
+</script>    </div>
+	<div class='clear'></div>
+	<div id="OSC_Footer">&copy; 开源中国社区(OsChina.NET) | <a href="http://www.oschina.net/home/about">关于我们</a> | <a href="mailto:oschina.net@gmail.com">广告联系</a> | <a href="http://weibo.com/oschina2010" target="_blank">@新浪微博</a> | <a href="http://m.oschina.net/">开源中国手机版</a> | 粤ICP备12009483号-3
+<script type='text/javascript'>
+<!--
+if (top.location != self.location)top.location=self.location;
+//-->
+</script></div>
+</div>
+</body>
+
+<script type="text/javascript" src="/action/visit/space?id=216139"></script>
+<script type='text/javascript'>
+<!--
+$(document).ready(function() {
+
+	SelectStyle("#search-item",".search_list");
+	$('.Tweet .photo img').click(function(){
+		var T=$(this);
+		var t=this;
+		var bigImg = T.attr('bi');
+		var smallImg = T.attr('si');
+		var src = T.attr('src');
+		var newsrc = (bigImg == src)?smallImg:bigImg;
+		var imgId = T.attr('id');
+		if(newsrc == bigImg){
+    		var loading=$('<img alt="loading" src="/img/loading.gif"/>');
+			var top = T.position().top+T.height()/2-8;
+			var left = T.position().left+T.width()/2-8;
+			loading.css({
+				'position':'absolute',
+				'z-index':999,
+				'top':top,
+				'left':left
+			});
+    		T.before(loading);
+			var tImg=new Image();
+			tImg.src=newsrc;
+			tImg.onload=function(){afterImgLoad(T,loading,imgId,newsrc,bigImg);};
+		}
+		else{
+			T.attr("src",newsrc);
+			$('#img_menu_'+imgId).remove();
+		}
+		return false;
+	});
+	
+	function afterImgLoad(T,loading,imgId,url,bigImg){
+		var lnks = "<div id='img_menu_"+imgId+"' class='ImgMenu'>";
+		lnks += "<a href='#' onclick='$(\"#"+imgId+"\").click();return false;'>收起</a>";
+		lnks += "<a href='"+bigImg+"' target='_blank'>查看原图</a></div>";			
+		loading.remove();
+		T.attr("src",url);
+		T.before(lnks);
+	}
+});
+
+function set_fellow_memo(fid,fname){
+	popup("/action/ajax/set_fellow_memo","friend="+fid+"&name="+fname);
+}
+
+function deleteMsgs(uid, fid, fname){
+	if(!confirm("你确认要清除与‘"+fname+"’的所有留言信息吗？"))
+		return ;
+	var args = "user="+uid+"&friend="+fid;
+	ajax_post("/action/msg/delete_user",args,function(html){
+		if(html.length > 0)
+			alert(html);
+		else{
+			$('#Msg_'+fid).fadeOut();
+		}
+	});
+}
+
+function follow_user(uid, uname){
+	just_follow(uid, uname); //oschina.js
+}
+
+function unfollow_user(uid, uname){
+	if(confirm("确定不再关注" + uname + "了吗？"))
+	just_unfollow(uid,function(){
+		alert('已取消对 ' + uname + ' 的关注');
+	});
+}
+
+function tweet_reply(logid){
+	var r = $('#LogReply_'+logid);
+	if(!r.is(":hidden")){
+		close_tweet_reply(logid);
+		return ;
+	}
+	r.html("<div class='TweetRplsWrapper'><span class='loading'>正在加载评论，请稍候...</span></div>")
+	r.show();
+	r.load("http://my.oschina.net/zhangdapeng89/tweet-rpls?log="+logid,function(){
+		$('#edt_tweet_post_'+logid).focus();
+        $('#TweetReplyForm_'+logid).ajaxForm({
+        	dataType: 'json',
+			beforeSubmit: function(arr, form, options){
+				$('#BTN_TweetReply_'+logid).attr('disabled','disabled');
+			},
+            success: function(json) {
+            	if(json.msg){
+        			alert(json.msg);
+            	}else if(json.log){
+					$('#log_reply_count_'+logid).text(json.reply_count);
+        			//插入新评论					
+					ajax_get("/action/ajax/get_tweet_reply?id=" + json.log,true,function(html){
+						$('#LogReply_'+logid+' ul').prepend(html);
+					});
+					$('#edt_tweet_post_'+logid).val('');
+            	}
+				$('#BTN_TweetReply_'+logid).removeAttr('disabled');
+            }
+        });
+	});
+}
+function close_tweet_reply(logid){
+	$('#LogReply_'+logid).empty();
+	$('#LogReply_'+logid).hide();
+	$('#Logs .userlogs li').removeClass('hover');
+}
+function reply_rtweet(logid, rid, toname){
+	var edtPost = $('#edt_tweet_post_' + logid);
+	var old_v = edtPost.val();
+	if(old_v.length > 0)
+		edtPost.val(old_v + ',@'+toname+' ');
+	else
+		edtPost.val('回复 @'+toname+' : ');
+	edtPost.focus();
+}
+function delete_tweet(logid){
+	if(confirm("确认要删除这条信息吗？"))
+	ajax_post("/action/tweet/delete?log="+logid,"",function(html){
+		if(html.length==0){
+			var elem = $('#LI_'+logid);
+			if(elem.length > 0)
+				$('#LI_'+logid).fadeOut();
+			else
+				location.reload();
+		}
+	});
+}
+function delete_tweet_reply(logid){
+	if(confirm("确认要删除这条评论吗？"))
+	ajax_post("/action/tweet/delete_reply?id="+logid,"",function(html){
+		if(html.length==0)
+			$('#TweetReply_'+logid).fadeOut();
+	});
+}
+
+function delete_blog(blog_id){
+    if(!confirm("文章删除后无法恢复，请确认是否删除此篇文章？")) return;
+    ajax_post("/action/blog/delete?id="+blog_id,"",function(html){
+    	location.href="http://my.oschina.net/zhangdapeng89/blog";
+    });
+}
+
+function SelectStyle(on,option){
+	var currentSort = $(on).attr('id');
+	var currentText = $(option+" li."+currentSort+" a").html();
+	$(on + " .text").html(currentText);
+	$(on + " .text").hover(function(){
+		$(this).addClass("hover")
+	},function(){
+		$(this).removeClass("hover")
+	});
+	$(option+" li a").each(function(index){
+		$(this).click(function(){
+			thishtml = $(this).html();
+			$(on + " .text").removeClass("on").html(thishtml);		
+			$(".selectbox select ").find("option").removeAttr('selected').eq(index).attr("selected","selected");	
+			$(option).hide()
+			return false;
+		});
+		
+	});		
+	
+	$(".selectbox").click(function(){		
+		$(option).toggle();
+		$(on + " .text").toggleClass("on");		
+		return false;
+	});
+	$(document).click(function(){
+		$(option).hide();	
+		$(on + " .text").removeClass("on");
+	});
+	$(document).trigger('click');
+
+}
+
+//-->
+</script>
+</html>
+<!-- Generated by OsChina.NET (Mon Sep 24 19:04:04 CST 2012) 92ms -->

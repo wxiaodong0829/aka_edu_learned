@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AA	bit.c	15;"	d	file:
+B	bit.c	6;"	d	file:
+BB	bit.c	16;"	d	file:
+CC	bit.c	17;"	d	file:
+CRYPT	doc/Makefile	/^CRYPT = -sOwnerPassword="`dd if=\/dev\/random bs=12 count=1 2>\/dev\/null | \\$/;"	m
+DD	bit.c	18;"	d	file:
+DISTFLAGS	doc/Makefile	/^DISTFLAGS = -q -dBATCH -dNOPAUSE -sDEVICE=pdfwrite \\$/;"	m
+E	bit.c	10;"	d	file:
+M	bit.c	20;"	d	file:
+N	bit.c	13;"	d	file:
+N	primes.c	2;"	d	file:
+S	bit.c	11;"	d	file:
+W	bit.c	12;"	d	file:
+X	bit.c	8;"	d	file:
+_	bit.c	7;"	d	file:
+bit	bit.c	/^void bit(int x)$/;"	f
+main	bit.c	/^int main()$/;"	f
+main	primes.c	/^int main()$/;"	f
+print_view	bit.c	/^void print_view(int max_step)$/;"	f

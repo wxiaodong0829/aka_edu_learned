@@ -1,0 +1,97 @@
+1, 散列：	
+		在链表找关键字，将其归类，组成小链表
+
+		通过索引的方式，将大的数据打散成小的数据集。这种做法叫 哈希 （HASH）
+
+		打散的目的：可缩小查找的范围。
+
+2, 面试：
+		在线性查找的基础上提高速度---> 将大数据打散成小数据。
+
+3,  排序二叉树： 详见 P365
+
+		查找：	
+				link search(link t, unsigned char key)
+				{
+					if (!t)
+						return NULL;
+					if (key < t->item)
+						return search(t->l, key);
+					if (t->item < key)
+						return search(t->r, key);
+
+					/* if (t->item == key) */
+					return t;
+				}
+
+
+
+		插入：			insert()	很好地运用了封装的思想。
+						
+
+
+				link insert(link t, unsigned char key)
+				{
+					if (!t)
+						return make_node(key);					/*到叶子节点时*/
+					if (key < t->item)
+						/* insert to left subtree */
+						t->l = insert(t->l, key);
+					else							
+		/* if (t->item <= key),  insert to right subtree */
+						t->r = insert(t->r, key);
+					return t;
+				}
+
+
+
+		删除：
+
+
+link delete(link t, unsigned char key)
+{
+	link p;
+	if (!t)
+		return NULL;
+	if (key < t->item)				/* delete from left subtree */
+		t->l = delete(t->l, key);
+	else if (t->item < key)			/* delete from right subtree */
+		t->r = delete(t->r, key);
+	else {							/* if (t->item == key)		*/
+		if (t->l == NULL && t->r == NULL) { /* if t is leaf(叶子) node*/
+			free_node(t);
+			t = NULL;				/*待返回*/
+		} else if (t->l) { /* if t has left subtree (巧妙之处：将删除根节点转移为删叶子节点，使更快,效率更高)*/
+			/* replace t with the rightmost node in left subtree */
+			for (p = t->l; p->r; p = p->r) /* find the rightmost node in left subtree(找左子树中最右边即左子树中最大的节点)*/
+				;							/* 找根节点的继任者 */
+			t->item = p->item;				/* 为继任者加冕，占据根的位置 */
+			t-l = delete(t->l, t->item);	/* 递归删除继任者原来在的叶子节点*/
+		} else {
+			for (p = t->r; p->l; p = p->l)
+				;
+			t->item = p->item;
+			t->r = delete(t->r, t->item);
+		}
+	}
+	
+	return t;
+}
+
+4,   AVL 平衡
+
+	排序二叉树的插入顺序：若为 1，2，3，4，5，6，7
+	则：排序二叉树 退化为链表。使查找时间 O（n）,再加上递归，就更慢...
+
+					引出
+					 |
+					 v
+		        AVL 平衡树
+	AVL平衡，插入时，按排序二叉树的插入顺序正常插入，insert，插入完成后，再配上 AVL 算法 --> 让树的左右高差不超过 1 。
+
+	缺点：插入时，要配上 AVL平衡算法，（使得插入时更慢）    
+	优点：但是，可以使查找更快.
+	(即：插入和查找时个矛盾的集合，很难找到平衡点)
+
+
+5, 实际工程中，为更高地提高		查找  速度，引出        散列 + 平衡排序二叉树 的方法存储组织数据。如(hash(哈希)法使数据散列开)

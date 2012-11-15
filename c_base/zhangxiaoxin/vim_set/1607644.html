@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>vim+linux+ctags+taglist+winmanager+grep+cscope+supertab+visualmark--supertab - 曹振华 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="http://common.cnblogs.com/blog/css/common.css?id=20120912"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="http://common.cnblogs.com/Skins/summerGarden/style.css?id=20120912"/>
+<link type="text/css" rel="stylesheet" href="http://common.cnblogs.com/blog/css/common2.css"/>
+<link type="text/css" rel="stylesheet" href="http://common.cnblogs.com/css/shStyle.css"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/czh-liyu/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/czh-liyu/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/czh-liyu/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">
+var currentBlogApp = 'czh-liyu';
+</script>
+<script src="http://common.cnblogs.com/blog/script/common.js?id=20120912" type="text/javascript"></script> 
+<script src="http://common.cnblogs.com/script/json2.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://common.cnblogs.com/script/syntaxHighlighter.js"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/czh-liyu/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/czh-liyu/">曹振华</a></h1>
+<h2><script> 
+    //滚动子标题 
+    var marqueeContent=new Array();   
+    marqueeContent[0]='<br><a style="color:#ffffff" href=# target =_blank>&nbsp;&nbsp;&nbsp;是金子总会发光，</a><br>'; 
+    marqueeContent[1]='<a style="color:#ffffff" href=# target=_blank>&nbsp;&nbsp;&nbsp;是镜子总会反光！</a><br>'; 
+    
+    //定义一些常用而且要经常用到的变量 
+    var marqueeInterval=new Array();  
+    var marqueeId=0; 
+    var marqueeDelay=2000; 
+    var marqueeHeight=17.3; 
+    
+   //副标题
+
+    
+
+
+    //接下来的是定义一些要使用到的函数 
+    function initMarquee() 
+    { 
+        var str=marqueeContent[0]; 
+        document.write('<div id=marqueeBox style="overflow:hidden;height:'+marqueeHeight+'px" onmouseover="clearInterval(marqueeInterval[0])" onmouseout="marqueeInterval[0]=setInterval(\'startMarquee()\',marqueeDelay)"><div>'+str+'</div></div>'); 
+        marqueeId++; 
+        marqueeInterval[0]=setInterval("startMarquee()",marqueeDelay); 
+    }
+function startMarquee() 
+    { 
+        var str=marqueeContent[marqueeId]; 
+        marqueeId++; 
+        if(marqueeId>=marqueeContent.length) marqueeId=0; 
+        if(marqueeBox.childNodes.length==1) 
+        { 
+            var nextLine=document.createElement('DIV'); 
+            nextLine.innerHTML=str; 
+            marqueeBox.appendChild(nextLine); 
+        } 
+        else 
+        { 
+            marqueeBox.childNodes[0].innerHTML=str; 
+            marqueeBox.appendChild(marqueeBox.childNodes[0]); 
+            marqueeBox.scrollTop=0; 
+        } 
+        clearInterval(marqueeInterval[1]); 
+        marqueeInterval[1]=setInterval("scrollMarquee()",20); 
+    } 
+    function scrollMarquee() 
+    { 
+        marqueeBox.scrollTop++; 
+        if(marqueeBox.scrollTop%marqueeHeight==(marqueeHeight-1))
+        { 
+            clearInterval(marqueeInterval[1]); 
+        } 
+    } 
+    initMarquee(); 
+</script></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+	<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+	<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/czh-liyu/">首页</a></li>
+	<li><a href="http://news.cnblogs.com/">新闻</a></li>
+	<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://www.cnblogs.com/czh-liyu/admin/EditPosts.aspx?opt=1">新随笔</a></li>
+	<li><a id="MyLinks1_ContactLink" accesskey="9" class="menu" rel="nofollow" href="http://space.cnblogs.com/msg/send/%e6%9b%b9%e6%8c%af%e5%8d%8e">联系</a></li>
+	<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://www.cnblogs.com/czh-liyu/admin/EditPosts.aspx">管理</a></li>
+	<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/czh-liyu/rss">订阅</a>
+	<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/czh-liyu/rss"><img src="/Skins/Custom/images/rss.gif" alt="订阅" /></a></li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔- 369&nbsp;
+文章- 0&nbsp;
+评论- 72&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+	
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/czh-liyu/archive/2009/11/21/1607644.html">vim+linux+ctags+taglist+winmanager+grep+cscope+supertab+visualmark--supertab</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p>1 下载：<a href="http://www.vim.org/scripts/script.php?script_id=1643" target="_blank">http://www.vim.org/scripts/script.php?script_id=1643</a><br />2 解压：把supertab.vim 文件丢到 /usr/share/vim/vim70/plugin&nbsp; 文件夹就好了<br />3 帮助：supertab.vim 文件头部, 和命令 ":SuperTabHelp"<br />4 使用：<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在上面一节中你应该学会了自动补全代码的功能, 按下"Ctrl+X Ctrl+O"就搞定了, 如果你够懒的话肯定会说"这么麻烦啊,<br />&nbsp;居然要按四个键", 不必为此自责, 因为Gergely Kontra 和 Eric Van Dewoestine也跟你差不多, 只不过人家开发了supertab.vim这个插件, 可以永远懒下去了, 下面我来教你偷懒吧.</p>
+<p>&nbsp;在你的~/.vimrc文件中加上这两句:<br />&nbsp;let g:SuperTabRetainCompletionType=2<br />&nbsp;let g:SuperTabDefaultCompletionType="&lt;C-X&gt;&lt;C-O&gt;"<br />&nbsp; <br />&nbsp;以后当你准备按"Ctrl+X Ctrl+O"的时候直接按&lt;Tab&gt;就好了, 够爽吧 ....</p>
+<p>&nbsp;我稍微再介绍一下上面那两句配置信息:<br />&nbsp;let g:SuperTabDefaultCompletionType="&lt;C-X&gt;&lt;C-O&gt;"<br />&nbsp;" 设置按下&lt;Tab&gt;后默认的补全方式, 默认是&lt;C-P&gt;, <br />&nbsp;" 现在改为&lt;C-X&gt;&lt;C-O&gt;. 关于&lt;C-P&gt;的补全方式, <br />&nbsp;" 还有其他的补全方式, 你可以看看下面的一些帮助:<br />&nbsp;" :help ins-completion<br />&nbsp;" :help compl-omni<br />&nbsp; </p>
+<p>&nbsp;let g:SuperTabRetainCompletionType=2<br />&nbsp;" 0 - 不记录上次的补全方式<br />&nbsp;" 1 - 记住上次的补全方式,直到用其他的补全命令改变它<br />&nbsp;" 2 - 记住上次的补全方式,直到按ESC退出插入模式为止</p></div><div id="MySignature"></div>
+<script type="text/javascript">
+var isLogined = false;
+var cb_blogId = 31141;
+var cb_entryId = 1607644;
+var cb_blogApp = currentBlogApp;
+var cb_blogUserGuid = "aa853d0b-63cf-dd11-9e4d-001cf0cd104b";
+var cb_entryCreatedDate = '2009/11/21 16:17:00';
+var enableGoogleAd = true;
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+</script>
+<div id="blog_post_info_block">
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+<script type="text/javascript">
+    //SyntaxHighlighter.config.strings.expandSource = '<span><img src="http://static.cnblogs.com/images/expand-code.gif" alt="" class="expand-code-icon"/>View Code</span>';
+    $(function () {             
+        fixPostBodyFormat();
+        loadAdUnderPost();
+        loadBlogSignature();
+        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);        
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);        
+    });
+</script>
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2009-11-21 16:17</span> <a href='http://www.cnblogs.com/czh-liyu/'>曹振华</a> 阅读(770) 评论(<span id="post-comment-count">0</span>)  <a href ="http://www.cnblogs.com/czh-liyu/admin/EditPosts.aspx?postid=1607644" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(1607644);return false;">收藏</a></div>
+	</div>
+	<img src ="http://www.cnblogs.com/czh-liyu/aggbug/1607644.html?type=1&amp;webview=1" width="1" height="1" alt=""/>
+	
+</div><!--end: topics 文章、评论容器-->
+<div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.loadComments();</script>
+<div id="comment_form" class="commentform">
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+
+<script type="text/javascript">
+    if (typeof commentManager === 'undefined') {
+        commentManager = new blogCommentManager();
+    }
+    commentManager.loadCommentForm();   
+</script>
+
+<div class="ad_text_commentbox"><a href="http://q.cnblogs.com/" target="_blank">程序员问答社区，解决您的技术难题</a></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="程序员的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="ad_under_post_holder"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+</div>
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="displya:none"></div></div>
+			
+			<DIV id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+			</DIV>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2012 曹振华
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+<script type="text/javascript" src="http://common.cnblogs.com/script/google-analytics.js"></script>
+</body>
+</html>

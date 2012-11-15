@@ -1,0 +1,111 @@
+插播一段 vimrc的存放位置： 
+系统 vimrc 文件: "$VIM/vimrc" 
+用户 vimrc 文件: "$HOME/.vimrc" 
+用户 exrc 文件: "$HOME/.exrc" 
+系统 gvimrc 文件: "$VIM/gvimrc" 
+用户 gvimrc 文件: "$HOME/.gvimrc" 
+系统菜单文件: "$VIMRUNTIME/menu.vim" (我的在/usr/share/vim/vim72/menu.vim)
+$VIM 预设值: "/usr/share/vim" 
+
+
+1,Tlist      :Tlist   
+2,折叠快捷键:
+
+下面的命令用来打开和关闭折叠：
+
+    zo – 打开光标下的折叠
+    zO – 循环打开光标下的折叠，也就是说，如果存在多级折叠，每一级都会被打开
+    zc – 关闭光标下的折叠
+    zC – 循环关闭光标下的折叠 
+更多的命令，请参阅手册(:help folding)。
+
+vim提供了一些命令在折叠间快速移动：
+
+    [z – 到当前打开折叠的开始
+    ]z – 到当前打开折叠的结束
+    zj – 向下移动到下一个折叠的开始处
+    zk – 向上移动到上一个折叠的结束处 
+
+3,Tlist 中   “ ” 空格键可先查看而不跳转
+ 如果还不想让源码跳转, 但是想看看tag在源码中完整的表达, 可以将光标移到你想要看的tag上, 如图中上边黄色的方框, 然后按下空格键, 在下面的命令栏中, 如图下边黄色的方框, 会显示该tag在源码中完整的写法, 而不会跳转到源码处.
+
+
+4，文件浏览  netrw.vim   $vim main7.c   在命令模式下:e  .../main7.c
+
+5，winManager
+
+使用：   $vi main7.c 
+       wm  (在命令模式下输入wm，window manager)
+
+6,cscope 的使用
+
+跟Ctags一样, 要使用其功能必须先为你的代码生成一个cscope的数据库, 在项目的根目录运行下面的命令:
+$ cd /home/wooin/vim71/
+$ cscope -Rbq
+# 此后会生成三个文件
+$ ll cscope.*
+-rw-rw-r-- 1 wooin wooin 1.1M 2007-09-30 10:56 cscope.in.out
+-rw-rw-r-- 1 wooin wooin 6.7M 2007-09-30 10:56 cscope.out
+-rw-rw-r-- 1 wooin wooin 5.1M 2007-09-30 10:56 cscope.po.out
+# 打开文件, 开始Coding
+$ cd src
+$ vi main.c
+进入vim后第一件事是要把刚才生成的cscope文件导入到vim中来, 用下面的命令:
+:cs add /home/wooin/vim71/cscope.out /home/wooin/vim71
+上面这条命令很重要, 必须写全, 不能只写前半句:
+:cs add /home/wooin/vim71/cscope.out
+因为源码是多级目录的, 如果这样写, cscope是无法在子目录中的源码中工作的, 当然, 如果你的源码都在同一级目录中就无所谓了. 如果你要经常用cscope的话, 可以把上面那句加到~/.vimrc中去.
+
+下面我们来操练一下, 查找函数vim_strsave()的定义, 用命令:
+:cs find g vim_strsave
+
+按下回车后会自动跳转到vim_strsave()的定义处. 此时你肯定会说Ctags也可以做到这个呀, 那么下面说的这个Ctags就无法做到了, 我想查找vim_strsave()到底在那些地方被调用过了, 用命令:
+:cs find c vim_strsave
+按下回车后vim会自动跳转到第一个符合要求的地方, 并且在命令栏显示有多少符合要求的结果,
+如果自动跳转的位置你不满意, 想看其他的结果, 可以用下面的命令打开QuickFix窗口:
+:cw
+
+
+cscope的主要功能是通过同的子命令"find"来实现的
+"cscope find"的用法:
+cs find c|d|e|f|g|i|s|t name
+0 或 s 	查找本 C 符号(可以跳过注释)
+1 或 g 	查找本定义
+2 或 d 	查找本函数调用的函数
+3 或 c 	查找调用本函数的函数
+4 或 t 	查找本字符串
+6 或 e 	查找本 egrep 模式
+7 或 f 	查找本文件
+8 或 i 	查找包含本文件的文件
+
+如果每次查找都要输入一长串命令的话还真是件讨人厌的事情, Cscope的帮助手册中推荐了一些快捷键的用法, 下面是其中一组, 也是我用的, 将下面的内容添加到~/.vimrc中, 并重启vim:
+nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+当光标停在某个你要查找的词上时, 按下<C-_>g, 就是查找该对象的定义, 其他的同理.
+按这种组合键有一点技巧,按了<C-_>后要马上按下一个键,否则屏幕一闪就回到nomal状态了
+<C-_>g的按法是先按"Ctrl+Shift+-", 然后很快再按"g"
+
+很奇怪, 其中的这句:
+nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+在我的vim中无法工作, 但是我改成:
+nmap <C-_>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
+就可以正常工作了, 不知道是什么原因? 有哪位朋友知道请告诉我.
+
+cscope的其他功能你可以通过帮助手册自己慢慢学习
+
+reset : 重新初始化所有连接。
+用法  : cs reset
+
+
+
+
+7， Quickix 窗口
+:cw    显示出缓冲区中的内容
+
+

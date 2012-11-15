@@ -1,0 +1,24 @@
+
+add.o:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+00000000 <add>:
+int global;
+
+int add(int a, int b)
+{
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+    global = 2000;
+   3:	c7 05 00 00 00 00 d0 	movl   $0x7d0,0x0
+   a:	07 00 00 
+
+    return a + b;
+   d:	8b 45 0c             	mov    0xc(%ebp),%eax
+  10:	8b 55 08             	mov    0x8(%ebp),%edx
+  13:	8d 04 02             	lea    (%edx,%eax,1),%eax
+}
+  16:	5d                   	pop    %ebp
+  17:	c3                   	ret    

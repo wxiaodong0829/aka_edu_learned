@@ -1,0 +1,48 @@
+2. ctags
+ 13 (1). 帮助手册查看
+ 14     :help usr_29
+ 15 
+ 16 (2). 功能
+ 17     ctags的功能, 只要在unix/linux环境编程过的人都知道它的历害! 我在这也作个小
+ 18     小介绍吧ndow=0: 对浏览代码非常的方便, 可以在函数, 变量之间跳来跳去等等.(注
+ 19             意: 我这里说到的仅是小小的一部分!).
+ 20 
+ 21 (3). 安装
+ 22     首先, 下载ctags安装包, 然后解压并安装, 命令如下:
+ 23     $ tar -xzvf ctags-5.6.tar.gz
+ 24     $ cd ctags-5.6
+ 25     $ make
+ 26     # make install   // 需要root权限
+ 27         或:
+ 28         $ tar -xzvf ctags-5.7.tar.gz
+ 29         $ cd ctags-5.7
+ 30         $ ./configure
+ 31         # make
+ 32         # make install
+ 33 
+ 34 
+ 35 (4). 使用方法
+ 36     然后去你的源码目录, 如果你的源码是多层的目录, 就去最上层的目录, 在该目录下
+ 37     运行命令: ctags -R
+ 38     我现在以 vim71 的源码目录做演示
+ 39     $ cd /home/nuoerll/vim71
+ 40     $ ctags -R
+ 41     
+ 42     此时在/home/nuoerll/vim71目录下会生成一个 tags 文件, 现在用vim打开
+ 43     /home/nuoerll/vim71/src/main.c
+ 44     $ vim /home/nuoerll/vim71/src/main.c
+ 45     
+ 46     再在vim中运行命令:
+ 47     :set tags=/home/nuoerll/vim71/tags
+ 48     该命令将tags文件加入到vim中来, 你也可以将这句话放到~/.vimrc中去, 如果你经
+ 49     常在这个工程编程的话.
+ 50     对于经常在不同工程间编程, 可以在.vimrc中设置:
+ 51         set tags=tags;    // ; 不能没有
+ 52         set autochdir
+ 53 
+ 54 (5). 使用例子
+ 55     把光标定位到某一函数名上, 按下 Ctar + ], vim就可以自动切换到该函数定义处!
+ 56     要返回只需要按下Ctrl + t .
+ 57     更多用法, 在vim命令模式输入 :help usr_29 查看即可.
+ 58 
+ 59 
