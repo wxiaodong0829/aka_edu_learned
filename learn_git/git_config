@@ -1,0 +1,10 @@
+开启git命令补齐功能
+cp /usr/local/src/git-1.7.12.3/contrib/completion/git-completion.bash /etc/bash_completion.d/git-completion.bash
+. /etc/bash_completion.d/git-completion.bash
+#运行此命令后即可在服务器上使用git的命令补齐功能。为了能够在终端开启时自动加载bash_completion脚本，需要在系统配置文件/etc/profile及本地配置文件~/.bashrc 中添加下面的内容。
+#--------------------------------------------------------------------------------------------------
+if [ -f /etc/bash_completion.d/git-completion.bash]; then 
+. /etc/bash_completion.d/git
+fi
+#--------------------------------------------------------------------------------------------------
+ 

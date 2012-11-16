@@ -10,6 +10,9 @@ git add/ rm/ mv
 					文件所在的区域：
 						未跟踪	未修改  已修改  已暂存
 
+git rm -r --cache [filename | dir_name] //--cache 要移除跟踪但不删除文件
+										// -r 是rm的递归选项
+
 git stage/add  // 将修改的文件放入暂存区
 
 git commit -v  -a		// -a 跳过暂存区 -v 提示更多信息

@@ -1,5 +1,0 @@
-#include "common.h"
-(u32)fs + blksz * blkno
-(u32)fs + BLKSZ_1K
-
-(u32 *)(40 + ISZ + (u32)fs + blksz * (*((u32 *)(u32)fs + blksz * (*(u32 *)((u32)fs + BLKSZ_1K + 20) + 1) + 8)))

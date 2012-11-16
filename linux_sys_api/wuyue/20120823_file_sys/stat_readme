@@ -1,2 +1,0 @@
- dev_t     st_rdev;    /* device ID (if special file) */
-
