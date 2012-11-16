@@ -1,0 +1,20 @@
+1, 用异步非阻塞方式 监视文件 可读，可读则读，不可读，等待一个指定的 超时时间
+
+
+2, epoll 改写客户端并发:
+
+	epoll_ctl(): 其中的隐藏特性
+		1: 对一个文件添加多个 事件 必须用下面的
+			ep.events = EPOLLIN | EPOLLOUT, ep.data.fd = cfd;
+			epoll_ctl(efd, EPOLL_CTL_ADD, cfd, &ep);
+		2: 对 含有多个事件的文件中，去除一个事件，去除后，还要将其余事件重新添加才能生效。
+		  ep.events = EPOLLOUT, ep.data.fd = cfd;
+		  epoll_ctl(efd, EPOLL_CTL_DEL, cfd, &ep);/*2.6.9之后&ep处可写NULL*/
+		  ep.events = EPOLLIN, ep.data.fd = cfd;
+		  epoll_ctl(efd, EPOLL_CTL_ADD, cfd, &ep);
+		  
+
+
+
+		
+		

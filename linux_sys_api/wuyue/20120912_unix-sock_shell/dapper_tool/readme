@@ -1,0 +1,9 @@
+modify_prefix.sh   		 批量修改当前目录下 文件的  前缀 （增  删）
+
+wc_line_not_contain_block.sh     统计非空行数
+
+rm_non_block_line.sh		 删除非空行 
+
+
+等待 去 注释 
+			egrep     P85
