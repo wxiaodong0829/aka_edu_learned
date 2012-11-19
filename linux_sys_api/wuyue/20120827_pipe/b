@@ -1,0 +1,7 @@
+.:
+总用量 20
+-rw-r--r-- 1 dong dong    5 2012-08-27 12:44 a
+-rwxr-xr-x 1 dong dong 7358 2012-08-27 11:17 a.out
+-rw-r--r-- 1 dong dong    0 2012-08-27 12:46 b
+-rw-r--r-- 1 dong dong 1132 2012-08-27 11:40 ls_wc.c
+-rw-r--r-- 1 dong dong  647 2012-08-27 10:32 pipe.c

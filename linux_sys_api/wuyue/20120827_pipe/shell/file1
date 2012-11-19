@@ -1,0 +1,11 @@
+.:
+总用量 52
+-rwxr-xr-x 1 dong dong 16359 2012-08-27 19:58 a.out
+-rw-r--r-- 1 dong dong   954 2012-08-16 09:04 debug.h
+-rw-r--r-- 1 dong dong   477 2012-08-23 11:50 err.c
+-rw-r--r-- 1 dong dong   502 2012-08-25 18:46 err.h
+-rw-r--r-- 1 dong dong     2 2012-08-27 19:14 file
+-rw-r--r-- 1 dong dong     0 2012-08-27 19:58 file1
+-rw-r--r-- 1 dong dong    39 2012-08-27 19:22 Makefile
+-rw-r--r-- 1 dong dong  4472 2012-08-27 19:58 shell_1.c
+-rw-r--r-- 1 dong dong  4427 2012-08-27 19:21 shell.c
