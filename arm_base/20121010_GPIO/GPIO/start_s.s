@@ -1,0 +1,11 @@
+	AREA GPIO,CODE,READONLY
+	CODE32
+	ENTRY
+	
+	IMPORT c_entry
+START
+	
+	BL c_entry
+	
+	B START
+	END

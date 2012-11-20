@@ -1,0 +1,5 @@
+
+1, sudo fdisk -l 
+		查看存储设备 盘号
+2, u-boot官网 源码:w
+

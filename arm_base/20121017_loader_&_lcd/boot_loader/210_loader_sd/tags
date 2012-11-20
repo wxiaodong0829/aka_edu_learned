@@ -1,0 +1,170 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+APB_DMC_0_BASE	mem_setup.S	/^#define APB_DMC_0_BASE			0xF0000000$/;"	d
+APB_DMC_1_BASE	mem_setup.S	/^#define APB_DMC_1_BASE			0xF1400000$/;"	d
+APLL_CON	clock.c	2;"	d	file:
+AS	Makefile	/^AS=arm-linux-as$/;"	m
+ASYNC_MSYS_DMC0_BASE	mem_setup.S	/^#define ASYNC_MSYS_DMC0_BASE		0xF1E00000$/;"	d
+BYTE	DataType.h	/^typedef	unsigned char	BYTE;$/;"	t
+CC	Makefile	/^CC=arm-linux-gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-nostdlib$/;"	m
+CLK_DIV0	clock.c	4;"	d	file:
+CLK_SRC0	clock.c	3;"	d	file:
+DMC0_MEMCONFIG_0	mem_setup.S	/^#define DMC0_MEMCONFIG_0	0x20E00323	\/\/ MemConfig0	256MB config, 8 banks,Mapping Method[12:15]0:linear, 1:linterleaved, 2:Mixed$/;"	d
+DMC0_MEMCONFIG_1	mem_setup.S	/^#define DMC0_MEMCONFIG_1	0x00E00323	\/\/ MemConfig1$/;"	d
+DMC0_MEMCONTROL	mem_setup.S	/^#define DMC0_MEMCONTROL		0x00202400	\/\/ MemControl	BL=4, 1Chip, DDR2 Type, dynamic self refresh, force precharge, dynamic power down off$/;"	d
+DMC0_TIMINGA_REF	mem_setup.S	/^#define DMC0_TIMINGA_REF        0x00000618      \/\/ TimingAref   7.8us*133MHz=1038(0x40E), 100MHz=780(0x30C), 20MHz=156(0x9C), 10MHz=78(0x4E)$/;"	d
+DMC0_TIMING_DATA	mem_setup.S	/^#define DMC0_TIMING_DATA        0x24240000      \/\/ TimingData   CL=3$/;"	d
+DMC0_TIMING_PWR	mem_setup.S	/^#define DMC0_TIMING_PWR         0x0BDC0343      \/\/ TimingPower$/;"	d
+DMC0_TIMING_ROW	mem_setup.S	/^#define DMC0_TIMING_ROW         0x2B34438A      \/\/ TimingRow    for @200MHz$/;"	d
+DMC1_MEMCONFIG_0	mem_setup.S	/^#define DMC1_MEMCONFIG_0	0x40F00313	\/\/ MemConfig0	512MB config, 8 banks,Mapping Method[12:15]0:linear, 1:linterleaved, 2:Mixed$/;"	d
+DMC1_MEMCONFIG_1	mem_setup.S	/^#define DMC1_MEMCONFIG_1	0x00F00313	\/\/ MemConfig1$/;"	d
+DMC1_MEMCONTROL	mem_setup.S	/^#define	DMC1_MEMCONTROL		0x00202400	\/\/ MemControl	BL=4, 2 chip, DDR2 type, dynamic self refresh, force precharge, dynamic power down off$/;"	d
+DMC1_TIMINGA_REF	mem_setup.S	/^#define DMC1_TIMINGA_REF        0x00000618      \/\/ TimingAref   7.8us*133MHz=1038(0x40E), 100MHz=780(0x30C), 20MHz=156(0x9C), 10MHz=78(0x4E)$/;"	d
+DMC1_TIMING_DATA	mem_setup.S	/^#define DMC1_TIMING_DATA        0x24240000      \/\/ TimingData   CL=3$/;"	d
+DMC1_TIMING_PWR	mem_setup.S	/^#define DMC1_TIMING_PWR         0x0BDC0343      \/\/ TimingPower$/;"	d
+DMC1_TIMING_ROW	mem_setup.S	/^#define DMC1_TIMING_ROW         0x2B34438A      \/\/ TimingRow    for @200MHz$/;"	d
+DMC_AREFSTATUS	mem_setup.S	/^#define DMC_AREFSTATUS 			0x50$/;"	d
+DMC_CHIP0STATUS	mem_setup.S	/^#define DMC_CHIP0STATUS 		0x48$/;"	d
+DMC_CHIP1STATUS	mem_setup.S	/^#define DMC_CHIP1STATUS 		0x4C$/;"	d
+DMC_CONCONTROL	mem_setup.S	/^#define DMC_CONCONTROL 			0x00$/;"	d
+DMC_DIRECTCMD	mem_setup.S	/^#define DMC_DIRECTCMD 			0x10$/;"	d
+DMC_MEMCONFIG0	mem_setup.S	/^#define DMC_MEMCONFIG0 			0x08$/;"	d
+DMC_MEMCONFIG1	mem_setup.S	/^#define DMC_MEMCONFIG1 			0x0C$/;"	d
+DMC_MEMCONTROL	mem_setup.S	/^#define DMC_MEMCONTROL 			0x04$/;"	d
+DMC_MRSTATUS	mem_setup.S	/^#define DMC_MRSTATUS 			0x54$/;"	d
+DMC_PHYCONTROL0	mem_setup.S	/^#define DMC_PHYCONTROL0 		0x18$/;"	d
+DMC_PHYCONTROL1	mem_setup.S	/^#define DMC_PHYCONTROL1 		0x1C$/;"	d
+DMC_PHYSTATUS	mem_setup.S	/^#define DMC_PHYSTATUS 			0x40$/;"	d
+DMC_PHYTEST0	mem_setup.S	/^#define DMC_PHYTEST0 			0x58$/;"	d
+DMC_PHYTEST1	mem_setup.S	/^#define DMC_PHYTEST1 			0x5C$/;"	d
+DMC_PRECHCONFIG	mem_setup.S	/^#define DMC_PRECHCONFIG 		0x14$/;"	d
+DMC_PWRDNCONFIG	mem_setup.S	/^#define DMC_PWRDNCONFIG 		0x28$/;"	d
+DMC_QOSCONFIG0	mem_setup.S	/^#define DMC_QOSCONFIG0 			0x64$/;"	d
+DMC_QOSCONFIG1	mem_setup.S	/^#define DMC_QOSCONFIG1 			0x6C$/;"	d
+DMC_QOSCONFIG10	mem_setup.S	/^#define DMC_QOSCONFIG10 		0xB4$/;"	d
+DMC_QOSCONFIG11	mem_setup.S	/^#define DMC_QOSCONFIG11 		0xBC$/;"	d
+DMC_QOSCONFIG12	mem_setup.S	/^#define DMC_QOSCONFIG12 		0xC4$/;"	d
+DMC_QOSCONFIG13	mem_setup.S	/^#define DMC_QOSCONFIG13 		0xCC$/;"	d
+DMC_QOSCONFIG14	mem_setup.S	/^#define DMC_QOSCONFIG14 		0xD4$/;"	d
+DMC_QOSCONFIG15	mem_setup.S	/^#define DMC_QOSCONFIG15 		0xDC$/;"	d
+DMC_QOSCONFIG2	mem_setup.S	/^#define DMC_QOSCONFIG2 			0x74$/;"	d
+DMC_QOSCONFIG3	mem_setup.S	/^#define DMC_QOSCONFIG3 			0x7C$/;"	d
+DMC_QOSCONFIG4	mem_setup.S	/^#define DMC_QOSCONFIG4 			0x84$/;"	d
+DMC_QOSCONFIG5	mem_setup.S	/^#define DMC_QOSCONFIG5 			0x8C$/;"	d
+DMC_QOSCONFIG6	mem_setup.S	/^#define DMC_QOSCONFIG6 			0x94$/;"	d
+DMC_QOSCONFIG7	mem_setup.S	/^#define DMC_QOSCONFIG7 			0x9C$/;"	d
+DMC_QOSCONFIG8	mem_setup.S	/^#define DMC_QOSCONFIG8 			0xA4$/;"	d
+DMC_QOSCONFIG9	mem_setup.S	/^#define DMC_QOSCONFIG9 			0xAC$/;"	d
+DMC_QOSCONTROL0	mem_setup.S	/^#define DMC_QOSCONTROL0 		0x60$/;"	d
+DMC_QOSCONTROL1	mem_setup.S	/^#define DMC_QOSCONTROL1 		0x68$/;"	d
+DMC_QOSCONTROL10	mem_setup.S	/^#define DMC_QOSCONTROL10 		0xB0$/;"	d
+DMC_QOSCONTROL11	mem_setup.S	/^#define DMC_QOSCONTROL11 		0xB8$/;"	d
+DMC_QOSCONTROL12	mem_setup.S	/^#define DMC_QOSCONTROL12 		0xC0$/;"	d
+DMC_QOSCONTROL13	mem_setup.S	/^#define DMC_QOSCONTROL13 		0xC8$/;"	d
+DMC_QOSCONTROL14	mem_setup.S	/^#define DMC_QOSCONTROL14 		0xD0$/;"	d
+DMC_QOSCONTROL15	mem_setup.S	/^#define DMC_QOSCONTROL15 		0xD8$/;"	d
+DMC_QOSCONTROL2	mem_setup.S	/^#define DMC_QOSCONTROL2 		0x70$/;"	d
+DMC_QOSCONTROL3	mem_setup.S	/^#define DMC_QOSCONTROL3 		0x78$/;"	d
+DMC_QOSCONTROL4	mem_setup.S	/^#define DMC_QOSCONTROL4 		0x80$/;"	d
+DMC_QOSCONTROL5	mem_setup.S	/^#define DMC_QOSCONTROL5 		0x88$/;"	d
+DMC_QOSCONTROL6	mem_setup.S	/^#define DMC_QOSCONTROL6 		0x90$/;"	d
+DMC_QOSCONTROL7	mem_setup.S	/^#define DMC_QOSCONTROL7 		0x98$/;"	d
+DMC_QOSCONTROL8	mem_setup.S	/^#define DMC_QOSCONTROL8 		0xA0$/;"	d
+DMC_QOSCONTROL9	mem_setup.S	/^#define DMC_QOSCONTROL9 		0xA8$/;"	d
+DMC_RESERVED	mem_setup.S	/^#define DMC_RESERVED 			0x20$/;"	d
+DMC_TIMINGAREF	mem_setup.S	/^#define DMC_TIMINGAREF 			0x30$/;"	d
+DMC_TIMINGDATA	mem_setup.S	/^#define DMC_TIMINGDATA 			0x38$/;"	d
+DMC_TIMINGPOWER	mem_setup.S	/^#define DMC_TIMINGPOWER 		0x3C$/;"	d
+DMC_TIMINGROW	mem_setup.S	/^#define DMC_TIMINGROW 			0x34$/;"	d
+DWORD	DataType.h	/^typedef unsigned int	DWORD;$/;"	t
+ELFIN_GPIO_BASE	mem_setup.S	/^#define ELFIN_GPIO_BASE			0xE0200000$/;"	d
+GPD0CON	gpio.c	5;"	d	file:
+GPD0DAT	gpio.c	6;"	d	file:
+GPH2CON	gpio.c	8;"	d	file:
+GPH2DAT	gpio.c	9;"	d	file:
+GPJ2CON	gpio.c	2;"	d	file:
+GPJ2DAT	gpio.c	3;"	d	file:
+LD	Makefile	/^LD=arm-linux-ld$/;"	m
+MP0_3CON	nand.c	9;"	d	file:
+MP1_0DRV_SR_OFFSET	mem_setup.S	/^#define MP1_0DRV_SR_OFFSET 		0x3CC$/;"	d
+MP1_1DRV_SR_OFFSET	mem_setup.S	/^#define MP1_1DRV_SR_OFFSET 		0x3EC$/;"	d
+MP1_2DRV_SR_OFFSET	mem_setup.S	/^#define MP1_2DRV_SR_OFFSET 		0x40C$/;"	d
+MP1_3DRV_SR_OFFSET	mem_setup.S	/^#define MP1_3DRV_SR_OFFSET 		0x42C$/;"	d
+MP1_4DRV_SR_OFFSET	mem_setup.S	/^#define MP1_4DRV_SR_OFFSET 		0x44C$/;"	d
+MP1_5DRV_SR_OFFSET	mem_setup.S	/^#define MP1_5DRV_SR_OFFSET 		0x46C$/;"	d
+MP1_6DRV_SR_OFFSET	mem_setup.S	/^#define MP1_6DRV_SR_OFFSET 		0x48C$/;"	d
+MP1_7DRV_SR_OFFSET	mem_setup.S	/^#define MP1_7DRV_SR_OFFSET 		0x4AC$/;"	d
+MP1_8DRV_SR_OFFSET	mem_setup.S	/^#define MP1_8DRV_SR_OFFSET 		0x4CC$/;"	d
+MP2_0DRV_SR_OFFSET	mem_setup.S	/^#define MP2_0DRV_SR_OFFSET 		0x4EC$/;"	d
+MP2_1DRV_SR_OFFSET	mem_setup.S	/^#define MP2_1DRV_SR_OFFSET 		0x50C$/;"	d
+MP2_2DRV_SR_OFFSET	mem_setup.S	/^#define MP2_2DRV_SR_OFFSET 		0x52C$/;"	d
+MP2_3DRV_SR_OFFSET	mem_setup.S	/^#define MP2_3DRV_SR_OFFSET 		0x54C$/;"	d
+MP2_4DRV_SR_OFFSET	mem_setup.S	/^#define MP2_4DRV_SR_OFFSET 		0x56C$/;"	d
+MP2_5DRV_SR_OFFSET	mem_setup.S	/^#define MP2_5DRV_SR_OFFSET 		0x58C$/;"	d
+MP2_6DRV_SR_OFFSET	mem_setup.S	/^#define MP2_6DRV_SR_OFFSET 		0x5AC$/;"	d
+MP2_7DRV_SR_OFFSET	mem_setup.S	/^#define MP2_7DRV_SR_OFFSET 		0x5CC$/;"	d
+MP2_8DRV_SR_OFFSET	mem_setup.S	/^#define MP2_8DRV_SR_OFFSET 		0x5EC$/;"	d
+MPLL_CON	clock.c	5;"	d	file:
+NAND_BLOCK_MASK	nand.c	109;"	d	file:
+NFADDR	nand.c	5;"	d	file:
+NFCMMD	nand.c	4;"	d	file:
+NFCONF	nand.c	2;"	d	file:
+NFCONT	nand.c	3;"	d	file:
+NFDATA	nand.c	6;"	d	file:
+NFSTAT	nand.c	7;"	d	file:
+OBJCFLAGS	Makefile	/^OBJCFLAGS=--gap-fill=0xff$/;"	m
+OBJCOPY	Makefile	/^OBJCOPY=arm-linux-objcopy$/;"	m
+OBJDUMP	Makefile	/^OBJDUMP=arm-linux-objdump$/;"	m
+PAGE_SIZE	nand.c	11;"	d	file:
+PrPrVoid	DataType.h	/^typedef	PrVoid (*PrPrVoid)(void);$/;"	t
+PrVoid	DataType.h	/^typedef	void (* PrVoid)(void);$/;"	t
+S16	DataType.h	/^typedef signed short	S16;$/;"	t
+S32	DataType.h	/^typedef signed int		S32;$/;"	t
+S8	DataType.h	/^typedef	signed char		S8;$/;"	t
+STATUS_ERR	DataType.h	5;"	d
+STATUS_OK	DataType.h	6;"	d
+TIME_STRUC	DataType.h	/^} TIME_STRUC;$/;"	t	typeref:struct:__anon1
+U16	DataType.h	/^typedef unsigned short	U16;$/;"	t
+U32	DataType.h	/^typedef unsigned int	U32;$/;"	t
+U8	DataType.h	/^typedef	unsigned char	U8;$/;"	t
+WORD	DataType.h	/^typedef unsigned short	WORD;$/;"	t
+_DATATYPE_H	DataType.h	2;"	d
+__GPIO_H_	gpio.h	2;"	d
+_start	start.s	/^_start:$/;"	l
+beep_init	gpio.c	/^void beep_init(void)$/;"	f
+beep_off	gpio.c	/^void beep_off(void)$/;"	f
+beep_on	gpio.c	/^void beep_on(void)$/;"	f
+button_init	gpio.c	/^void button_init(void)$/;"	f
+button_is_down	gpio.c	/^int button_is_down(void)$/;"	f
+c_entry	gpio.c	/^int c_entry(void)$/;"	f
+clock_init	clock.c	/^void clock_init(void)$/;"	f
+copy_myself	copymyself.c	/^void copy_myself()$/;"	f
+day	DataType.h	/^	U8 day;$/;"	m	struct:__anon1
+delay	gpio.c	/^void delay(int sec)$/;"	f
+find_lock_val	mem_setup.S	/^find_lock_val:$/;"	l
+find_lock_val1	mem_setup.S	/^find_lock_val1:$/;"	l
+hour	DataType.h	/^	U8 hour;$/;"	m	struct:__anon1
+led_init	gpio.c	/^void led_init(void)$/;"	f
+led_off	gpio.c	/^void led_off(int num)$/;"	f
+led_on	gpio.c	/^void led_on(int num)$/;"	f
+mem_ctrl_asm_init	mem_setup.S	/^mem_ctrl_asm_init:$/;"	l
+min	DataType.h	/^	U8 min;$/;"	m	struct:__anon1
+month	DataType.h	/^	U8 month;$/;"	m	struct:__anon1
+nand_init	nand.c	/^void nand_init(void)$/;"	f
+nand_read	nand.c	/^int nand_read(int nand_addr, char * sdram_addr, int size)$/;"	f
+nand_read_id	nand.c	/^void nand_read_id(char id[])$/;"	f
+nand_read_page	nand.c	/^void nand_read_page(int addr, char buf[])$/;"	f
+obj_c	Makefile	/^obj_c = $(patsubst %.c, %.o, $(src_c))$/;"	m
+obj_s	Makefile	/^obj_s = $(patsubst %.s, %.o, $(src_s))$/;"	m
+sd	Makefile	/^sd = sd$/;"	m
+sec	DataType.h	/^	U8 sec;$/;"	m	struct:__anon1
+src_c	Makefile	/^src_c = $(wildcard *.c)$/;"	m
+src_s	Makefile	/^src_s = $(wildcard *.s)$/;"	m
+target	Makefile	/^target = app$/;"	m
+weekday	DataType.h	/^	U8 weekday;$/;"	m	struct:__anon1
+year	DataType.h	/^	U16 year;$/;"	m	struct:__anon1

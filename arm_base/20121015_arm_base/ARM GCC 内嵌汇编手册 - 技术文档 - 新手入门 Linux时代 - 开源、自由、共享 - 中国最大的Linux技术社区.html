@@ -1,0 +1,802 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<title>ARM GCC 内嵌汇编手册 - 技术文档 - 新手入门 Linux时代 - 开源、自由、共享 - 中国最大的Linux技术社区</title>
+<meta name="keywords" content="ARM GCC 内嵌汇编手册 - 技术文档 - 新手入门 Linux时代 - 开源、自由、共享 - 中国最大的Linux技术社区">
+<meta name="description" content="ARM GCC 内嵌汇编手册 - 技术文档 - 新手入门  新手入门 Linux 技术文档">
+
+<link href="/css/all.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+<!--
+
+.STYLE1 {color: #FF0000}
+
+.STYLE2 {font-size: 14px}
+
+-->
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
+
+  <tr>
+
+    <td height="27">	<table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" width="100%">
+	<tr><FORM name="login" action="http://linux.chinaunix.net/bbs/logging.php?action=login"  method=post>
+	<td><script language="javascript" src="http://linux.chinaunix.net/bbs/loginbox.php"></script></td>
+	</form>
+	<td align="right">
+	·<a href="http://www.chinaunix.net" class="list1">ChinaUnix首页</a>
+
+	·<a href="http://bbs.chinaunix.net" class="list1">论坛</a>
+	·<a href="http://blog.chinaunix.net" class="list1">博客</a>&nbsp;
+	</td>
+	</tr>
+	</table></td>
+
+  </tr>
+
+  <tr>
+
+    <td height="1" bgcolor="#CCCCCC"></td>
+
+  </tr>
+
+  <tr>
+
+    <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+      <tr>
+
+        <td height="84"><img src="/images/logo.jpg" /></td>
+
+        <td align="right" ><IFRAME SRC="http://count.chinaunix.net/iframe.php?id=54" width="750" height="80" frameborder="0"  scrolling="no"></IFRAME>
+</td>
+
+      </tr>
+
+    </table></td>
+
+  </tr>
+
+  <tr>
+
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td width="3"><img src="/images/bgtop1.jpg" width="3" height="26" /></td>
+
+        <td width="944" background="/images/bgtop2.gif" class="whitetop">
+<a href="http://linux.chinaunix.net/" target="_blank">Linux首页</a> |
+<a href="http://linux.chinaunix.net/news/">Linux新闻</a> |
+<a target="_blank" href="http://linux.chinaunix.net/bbs" style=color:red><b>Linux论坛</b></a> |
+<a href="http://linux.chinaunix.net/techdoc/">Linux文档</a> |
+<a target="_blank" href="http://download.chinaunix.net/disc/linux/">Linux下载</a> |
+<a target="_blank" href="http://blog.chinaunix.net/techart.php?frmid=6">Linux博客</a> |
+<a target="_blank" href="http://search.chinaunix.net/">Linux搜索</a> |
+<a target="_blank" href="http://linux.chinaunix.net/bbs/index.php?gid=68">开源项目孵化平台</a>
+ |
+<a target="_blank" href="http://linux.chinaunix.net/ebook/"  style=color:red>《开源时代》</a></td>
+
+        <td width="3" align="right"><img src="/images/bgtop3.jpg" width="3" height="26" /></td>
+
+      </tr>
+
+    </table></td>
+
+  </tr>
+
+</table>
+
+<table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
+
+<tr>
+
+    <td valign="bottom" class="BlkLightblue">
+<a target="_blank" href="http://linux.chinaunix.net/techdoc/beginner/">
+		新手入门</a> | <span lang="zh-cn">
+		<a target="_blank" href="http://linux.chinaunix.net/techdoc/install/">
+		安装启动</a> | </span>
+		<a target="_blank" href="http://linux.chinaunix.net/techdoc/system/">
+		管理员指南</a> | <a target="_blank" href="http://man.chinaunix.net/">开发手册</a> 
+		| <a target="_blank" href="http://linux.chinaunix.net/techdoc/desktop/">
+		桌面应用</a> |
+		<a target="_blank" href="http://linux.chinaunix.net/techdoc/develop/">
+		程序开发</a> |
+		<a target="_blank" href="http://linux.chinaunix.net/techdoc/database/">
+		数据库</a> | <span lang="zh-cn">
+		<a target="_blank" href="http://linux.chinaunix.net/techdoc/net/">网络技术</a>|
+<a target="_blank" href="http://linux.chinaunix.net/topics/2007-01-25/15/index.shtml">
+CentOS</a></span> |
+<a target="_blank" href="http://linux.chinaunix.net/search2.php?key=fedora&id=0">
+Fedora</a> <span lang="zh-cn">| </span>
+<a target="_blank" href="http://linux.chinaunix.net/search2.php?key=mysql&id=0">
+MySQL</a>
+
+<span lang="zh-cn">| </span>
+<a target="_blank" href="http://linux.chinaunix.net/search2.php?key=apache&id=0">
+Apache</a>
+
+<span lang="zh-cn">| </span>
+<a target="_blank" href="http://linux.chinaunix.net/search2.php?key=ubuntu&id=0">
+<font color="#FF0000">Ubuntu</font></a>
+
+<span lang="zh-cn">| </span>
+<a target="_blank" href="http://linux.chinaunix.net/topics/2008-07-10/18/index.shtml">
+<font color="#FF0000">Gentoo</font></a>| </span>
+<b>
+<a target="_blank" href="http://linux.chinaunix.net/topics/2008-07-30/19/index.shtml">
+<font color="#FF0000">OSCON08</font></a></b>
+</td>
+
+</tr>
+<tr><td>
+
+</td></tr>
+  <tr>
+
+    <td height="30" valign="bottom">&nbsp;&nbsp;<a href="http://linux.chinaunix.net">Linux时代</a> &gt;&gt;  <a href="http://linux.chinaunix.net/techdoc/" class='list1'>技术文档</a> >> <a href="http://linux.chinaunix.net/techdoc/beginner/" class='list1'>新手入门</a></td>
+
+  </tr>
+
+  <tr>
+
+    <td height="1" bgcolor="#CCCCCC"></td>
+
+  </tr>
+
+  <tr>
+
+    <td height="8"></td>
+
+  </tr>
+
+</table><table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
+
+  <tr>
+
+    <td valign="top" class="BLKtext"><table width="660" border="0" align="center" cellpadding="0" cellspacing="0">
+
+      <tr>
+
+        <td height="8">&nbsp;</td>
+
+      </tr>
+
+      <tr>
+
+        <td height="30" class="Ftext1">ARM GCC 内嵌汇编手册</td>
+
+      </tr>
+
+      <tr>
+
+        <td><table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+          <tr>
+
+            <td height="1" bgcolor="#CCCCCC"></td>
+
+          </tr>
+
+        </table></td>
+
+      </tr>
+
+      <tr>
+
+        <td height="40" align="center">来源: 
+ ChinaUnix博客 　日期：
+2009.05.08 21:46　(共有<span class="STYLE1" id ="postcount"></span>条评论)  <a href="http://linux.chinaunix.net/bbs/thread-1111332-1-1.html" target="_blank">我要评论</a></td>
+
+      </tr>
+
+      <tr>
+
+        <td>&nbsp;</td>
+
+      </tr>
+
+      <tr>
+
+        <td class="F14">
+<br />
+ARM GCC 内嵌（inline）汇编手册<br />
+关于这篇文档<br />
+对于基于ARM的RISC处理器，GNU C编译器提供了在C代码中内嵌汇编的功能。这种非常酷的特性提供了C代码没有的功能，比如手动优化软件关键部分的代码、使用相关的处理器指令。<br />
+这里设想了读者是熟练编写ARM汇编程序读者，因为该片文档不是ARM汇编手册。同样也不是C语言手册。<br />
+这篇文档假设使用的是GCC 4 的版本，但是对于早期的版本也有效。<br />
+GCC asm 声明<br />
+让我们以一个简单的例子开始。就像C中的声明一样，下面的声明代码可能出现在你的代码中。<br />
+ <br />
+/* NOP 例子 */<br />
+asm(&quot;mov r0,r0&quot;);<br />
+该语句的作用是将r0移动到r0中。换句话讲他并不干任何事。典型的就是NOP指令，作用就是短时的延时。<br />
+请接着阅读和学习这篇文档，因为该声明并不像你想象的和其他的C语句一样。内嵌汇编使用汇编指令就像在纯汇编程序中使用的方法一样。可以在一个asm声明中写多个汇编指令。但是为了增加程序的可读性，最好将每一个汇编指令单独放一行。<br />
+ <br />
+asm(<br />
+&quot;mov r0, r0\n\t&quot;<br />
+&quot;mov r0, r0\n\t&quot;<br />
+&quot;mov r0, r0\n\t&quot;<br />
+&quot;mov r0, r0&quot;<br />
+);<br />
+换行符和制表符的使用可以使得指令列表看起来变得美观。你第一次看起来可能有点怪异，但是当C编译器编译C语句的是候，它就是按照上面（换行和制表）生成汇编的。到目前为止，汇编指令和你写的纯汇编程序中的代码没什么区别。但是对比其它的C声明，asm的常量和寄存器的处理是不一样的。通用的内嵌汇编模版是这样的。<br />
+asm(code : output operand list : input operand list : clobber list);<br />
+汇编和C语句这间的联系是通过上面asm声明中可选的output operand list和input operand list。Clobber list后面再讲。<br />
+下面是将C语言的一个整型变量传递给汇编，逻辑左移一位后在传递给C语言的另外一个整型变量。<br />
+/* Rotating bits example */<br />
+asm(&quot;mov %[result], %[value], ror #1&quot; : [result] &quot;=r&quot; (y) : [value] &quot;r&quot; (x));<br />
+每一个asm语句被冒号（:）分成了四个部分。<br />
+l&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;汇编指令放在第一部分中的“”中间。<br />
+ <br />
+&quot;mov %[result], %[value], ror #1&quot;<br />
+l&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;接下来是冒号后的可选择的output operand list，每一个条目是由一对[]（方括号）和被他包括的符号名组成，它后面跟着限制性字符串，再后面是圆括号和它括着的C变量。这个例子中只有一个条目。<br />
+ <br />
+[result] &quot;=r&quot; (y)<br />
+l&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;接着冒号后面是输入操作符列表，它的语法和输入操作列表一样<br />
+ <br />
+[value] &quot;r&quot; (x)<br />
+l&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;破坏符列表，在本例中没有使用<br />
+就像上面的NOP例子，asm声明的4个部分中，只要最尾部没有使用的部分都可以省略。但是有有一点要注意的是，上面的4个部分中只要后面的还要使用，前面的部分没有使用也不能省略，必须空但是保留冒号。下面的一个例子就是设置ARM Soc的CPSR寄存器，它有input但是没有output operand。 <br />
+asm(&quot;msr cpsr,%[ps]&quot; : : [ps]&quot;r&quot;(status))<br />
+即使汇编代码没有使用，代码部分也要保留空字符串。下面的例子使用了一个特别的破坏符，目的就是告诉编译器内存被修改过了。这里的破坏符在下面的优化部分在讲解。 <br />
+asm(&quot;&quot;:::&quot;memory&quot;);<br />
+为了增加代码的可读性，你可以使用换行，空格，还有C风格的注释。<br />
+asm(&quot;mov %[result], %[value], ror #1&quot;<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;: [result]&quot;=r&quot; (y) /* Rotation result. */<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;: [value]&quot;r&quot; (x) /* Rotated value. */<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;: /* No clobbers */<br />
+);<br />
+在代码部分%后面跟着的是后面两个部分方括号中的符号，它指的是相同符号操作列表中的一个条目。<br />
+%[result]表示第二部分的C变量y，%[value]表示三部分的C变量x；<br />
+符号操作符的名字使用了独立的命名空间。这就意味着它使用的是其他的符号表。简单一点就是说你不必关心使用的符号名在C代码中已经使用了。在早期的C代码中，循环移位的例子必须要这么写：<br />
+asm(&quot;mov %0, %1, ror #1&quot; : &quot;=r&quot; (result) : &quot;r&quot; (value))<br />
+在汇编代码中操作数的引用使用的是%后面跟一个数字，%1代表第一个操作数，%2代码第二个操作数，往后的类推。这个方法目前最新的编译器还是支持的。但是它不便于维护代码。试想一下，你写了大量的汇编指令的代码，要是你想插入一个操作数，那么你就不得不从新修改操作数编号。<br />
+优化C代码<br />
+有两种情况决定了你必须使用汇编。1st，C限制了你更加贴近底层操作硬件，比如，C中没有直接修改程序状态寄存器（PSR）的声明。2nd就是要写出更加优化的代码。毫无疑问GNU C代码优化器做的很好，但是他的结果和我们手工写的汇编代码相差很远。<br />
+这一部分有一点很重要，也是被别人忽视最多的就是：我们在C代码中通过内嵌汇编指令添加的汇编代码，也是要被C编译器的优化器处理的。让我们下面做个试验来看看吧。<br />
+下面是代码实例。<br />
+<img src="http://blogimg.chinaunix.net/blog/upfile2/090510100846.jpg" border="0" onload="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" onclick="if(!this.resized) {return true;} else {window.open('http://blogimg.chinaunix.net/blog/upfile2/090510100846.jpg');}" onmousewheel="return imgzoom(this);" alt="" /><br />
+bigtree@just:~/embedded/basic-C$ arm-linux-gcc -c test.c<br />
+bigtree@just:~/embedded/basic-C$ arm-linux-objdump -D test.o<br />
+<img src="http://blogimg.chinaunix.net/blog/upfile2/090510101832.jpg" border="0" onload="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" onclick="if(!this.resized) {return true;} else {window.open('http://blogimg.chinaunix.net/blog/upfile2/090510101832.jpg');}" onmousewheel="return imgzoom(this);" alt="" /><br />
+编译器选择r3作为循环移位使用。它也完全可以选择为每一个C变量分配寄存器。Load或者store一个值并不显式的进行。下面是其它编译器的编译结果。<br />
+E420A0E1 mov r2, r4, ror #1 @ y, x<br />
+编译器为每一个操作数选择一个相应的寄存器，将操作过的值cache到r4中，然后传递该值到r2中。这个过程你能理解不？<br />
+有的时候这个过程变得更加糟糕。有时候编译器甚至完全抛弃你嵌入的汇编代码。C编译器的这种行为，取决于代码优化器的策略和嵌入汇编所处的上下文。如果在内嵌汇编语句中不使用任何输出部分，那么C代码优化器很有可能将该内嵌语句完全删除。比如NOP例子，我们可以使用它作为延时操作，但是对于编译器认为这影响了程序的执行速速，认为它是没有任何意义的。<br />
+上面的解决方法还是有的。那就是使用volatile关键字。它的作用就是禁止优化器优化。将NOP例子修改过后如下：<br />
+/* NOP example, revised */<br />
+asm volatile(&quot;mov r0, r0&quot;);<br />
+下面还有更多的烦恼等着我们。一个设计精细的优化器可能重新排列代码。看下面的代码：<br />
+i++;<br />
+if (j == 1)<br />
+x += 3;<br />
+i++;<br />
+优化器肯定是要从新组织代码的，两个i++并没有对if的条件产生影响。更进一步的来讲，i的值增加2，仅仅使用一条ARM汇编指令。因而代码要重新组织如下：<br />
+ <br />
+if (j == 1)<br />
+&nbsp; &nbsp; x += 3;<br />
+i += 2;<br />
+这样节省了一条ARM指令。结果是：这些操作并没有得到许可。<br />
+这些将对你的代码产生很到的影响，这将在下面介绍。下面的代码是c乘b，其中c和b中的一个或者两个可能会被中断处理程序修改。进入该代码前先禁止中断，执行完该代码后再开启中断。<br />
+ <br />
+asm volatile(&quot;mrs r12, cpsr\n\t&quot;<br />
+&nbsp; &nbsp; &quot;orr r12, r12, #0xC0\n\t&quot;<br />
+&nbsp; &nbsp; &quot;msr cpsr_c, r12\n\t&quot; ::: &quot;r12&quot;, &quot;cc&quot;);<br />
+c *= b; /* This may fail. */<br />
+asm volatile(&quot;mrs r12, cpsr\n&quot;<br />
+&nbsp; &nbsp; &quot;bic r12, r12, #0xC0\n&quot;<br />
+&nbsp; &nbsp; &quot;msr cpsr_c, r12&quot; ::: &quot;r12&quot;, &quot;cc&quot;);<br />
+但是不幸的是针对上面的代码，优化器决定先执行乘法然后执行两个内嵌汇编，或相反。这样将会使得我们的代码变得毫无意义。<br />
+我们可以使用clobber list帮忙。上面例子中的clobber list如下：<br />
+&quot;r12&quot;, &quot;cc&quot;<br />
+上面的clobber list将会将向编译器传达如下信息，修改了r12和程序状态寄存器的标志位。Btw，直接指明使用的寄存器，将有可能阻止了最好的优化结果。通常你只要传递一个变量，然后让编译器自己选择适合的寄存器。另外寄存器名</i>，cc</i>（condition registor 状态寄存器标志位），memory</i>都是在clobber list上有效的关键字。它用来向编译器指明，内嵌汇编指令改变了内存中的值。这将强迫编译器在执行汇编代码前存储所有缓存的值，然后在执行完汇编代码后重新加载该值。这将保留程序的执行顺序，因为在使用了带有memory </i>clobber的asm声明后，所有变量的内容都是不可预测的。<br />
+asm volatile(&quot;mrs r12, cpsr\n\t&quot;<br />
+&nbsp; &nbsp; &quot;orr r12, r12, #0xC0\n\t&quot;<br />
+&nbsp; &nbsp; &quot;msr cpsr_c, r12\n\t&quot; :: : &quot;r12&quot;, &quot;cc&quot;, &quot;memory&quot;);<br />
+c *= b; /* This is safe. */<br />
+asm volatile(&quot;mrs r12, cpsr\n&quot;<br />
+&nbsp; &nbsp; &quot;bic r12, r12, #0xC0\n&quot;<br />
+&nbsp; &nbsp; &quot;msr cpsr_c, r12&quot; ::: &quot;r12&quot;, &quot;cc&quot;, &quot;memory&quot;);<br />
+使所有的缓存的值都无效，只是局部最优（suboptimal）。你可以有选择性的添加dummy operand 来人工添加依赖。<br />
+asm volatile(&quot;mrs r12, cpsr\n\t&quot;<br />
+&nbsp; &nbsp; &quot;orr r12, r12, #0xC0\n\t&quot;<br />
+&nbsp; &nbsp; &quot;msr cpsr_c, r12\n\t&quot; : &quot;=X&quot; (b) :: &quot;r12&quot;, &quot;cc&quot;);<br />
+c *= b; /* This is safe. */<br />
+asm volatile(&quot;mrs r12 <br />
+上面的第一个asm试图修改变量先b，第二个asm试图修改c。这将保留三个语句的执行顺序，而不要使缓存的变量无效。<br />
+理解优化器对内嵌汇编的影响很重要。如果你读到这里还是云里雾里，最好是在看下个主题之前再把这段文章读几遍^_^。<br />
+Input and output operands<br />
+前面我们学到，每一个input和output operand，由被方括号[]中的符号名，限制字符串，圆括号中的C表达式构成。<br />
+这些限制性字符串有哪些，为什么我们需要他们？你应该知道每一条汇编指令只接受特定类型的操作数。例如：跳转指令期望的跳转目标地址。不是所有的内存地址都是有效的。因为最后的opcode只接受24位偏移。但矛盾的是跳转指令和数据交换指令都希望寄存器中存储的是32位的目标地址。在所有的例子中，C传给operand的可能是函数指针。所以面对传给内嵌汇编的常量、指针、变量，编译器必须要知道怎样组织到汇编代码中。<br />
+对于ARM核的处理器，GCC 4 提供了一下的限制。<br />
+<b>Constraint</b><br />
+<b>Usage in ARM state</b><br />
+<b>Usage in Thumb state</b><br />
+f<br />
+Floating point registers f0 .. f7<br />
+Not available<br />
+h<br />
+Not available<br />
+Registers r8..r15<br />
+G<br />
+Immediate floating point constant<br />
+Not available<br />
+H<br />
+Same a G, but negated<br />
+Not available<br />
+I<br />
+Immediate value in data processing instructions<br />
+e.g. ORR R0, R0, #operand <br />
+Constant in the range 0 .. 255<br />
+e.g. SWI operand <br />
+J<br />
+Indexing constants -4095 .. 4095<br />
+e.g. LDR R1, [PC, #operand] <br />
+Constant in the range -255 .. -1<br />
+e.g. SUB R0, R0, #operand <br />
+K<br />
+Same as I, but inverted<br />
+Same as I, but shifted<br />
+L<br />
+Same as I, but negated<br />
+Constant in the range -7 .. 7<br />
+e.g. SUB R0, R1, #operand <br />
+l<br />
+Same as r<br />
+Registers r0..r7<br />
+e.g. PUSH operand <br />
+M<br />
+Constant in the range of 0 .. 32 or a power of 2<br />
+e.g. MOV R2, R1, ROR #operand <br />
+Constant that is a multiple of 4 in the range of 0 .. 1020<br />
+e.g. ADD R0, SP, #operand <br />
+m<br />
+Any valid memory address<br />
+N<br />
+Not available<br />
+Constant in the range of 0 .. 31<br />
+e.g. LSL R0, R1, #operand <br />
+O<br />
+Not available<br />
+Constant that is a multiple of 4 in the range of -508 .. 508<br />
+e.g. ADD SP, #operand <br />
+r<br />
+General register r0 .. r15<br />
+e.g. SUB operand1, operand2, operand3 <br />
+Not available<br />
+w<br />
+Vector floating point registers s0 .. s31<br />
+Not available<br />
+X<br />
+Any operand<br />
+限制字符可能要单个modifier指示。要是没有modifier指示的默认为read-only operand。<br />
+<b>Modifier</b> <br />
+<b>Specifies</b> <br />
+= <br />
+Write-only operand, usually used for all output operands <br />
++ <br />
+Read-write operand, must be listed as an output operand <br />
+&amp; <br />
+A register that should be used for output only <br />
+Output operands必须为write-only，相应C表达式的值必须是左值。Input operands必须为read-only。C编译器是没有能力做这个检查。<br />
+比较严格的规则是：不要试图向input operand写。但是如果你想要使用相同的operand作为input和output。限制性modifier（+）可以达到效果。例子如下：<br />
+asm(&quot;mov %[value], %[value], ror #1&quot; : [value] &quot;+r&quot; (y))<br />
+和上面例子不一样的是，最后的结果存储在input variable中。<br />
+可能modifier + 不支持早期的编译器版本。庆幸的是这里提供了其他解决办法，该方法在最新的编译器中依然有效。对于input operators有可能使用单一的数字n在限制字符串中。使用数字n可以告诉编译器使用的第n个operand，operand都是以0开始计数。下面是例子：<br />
+asm(&quot;mov %0, %0, ror #1&quot; : &quot;=r&quot; (value) : &quot;0&quot; (value))<br />
+限制性字符串“0”告诉编译器，使用和第一个output operand使用同样input register。<br />
+请注意，在相反的情况下不会自动实现。如果我没告诉编译器那样做，编译器也有可能为input和output选择相同的寄存器。第一个例子中就为input和output选择了r3。<br />
+在多数情况下这没有什么，但是如果在input使用前output已经被修改过了，这将是致命的。在input和output使用不同寄存器的情况下，你必须使用&amp;modifier来限制output operand。下面是代码示例：<br />
+asm volatile(&quot;ldr %0, [%1]&quot; &quot;\n\t&quot;<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &quot;str %2, [%1, #4]&quot; &quot;\n\t&quot; <br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; : &quot;=&amp;r&quot; (rdv) <br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; : &quot;r&quot; (&amp;table), &quot;r&quot; (wdv)<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; : &quot;memory&quot;);<br />
+在以张表中读取一个值然后在写到该表的另一个位置。<br />
+ <br />
+其他<br />
+内嵌汇编作为预处理宏<br />
+要是经常使用使用部分汇编，最好的方法是将它以宏的形式定义在头文件中。使用该头文件在严格的ANSI模式下会出现警告。为了避免该类问题，可以使用__asm__代替asm，__volatile__代替volatile。这可以等同于别名。下面就是个例程：<br />
+#define BYTESWAP(val) \ <br />
+&nbsp; &nbsp; __asm__ __volatile__ ( \<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&quot;eor r3, %1, %1, ror #16\n\t&quot; \<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&quot;bic r3, r3, #0x00FF0000\n\t&quot; \<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&quot;mov %0, %1, ror #8\n\t&quot; \<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&quot;eor %0, %0, r3, lsr #8&quot; \<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;: &quot;=r&quot; (val) \<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;: &quot;0&quot;(val) \<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;: &quot;r3&quot;, &quot;cc&quot; \<br />
+&nbsp; &nbsp; );<br />
+C 桩函数<br />
+宏定义包含的是相同的代码。这在大型routine中是不可以接受的。这种情况下最好定义个桩函数。<br />
+unsigned long ByteSwap(unsigned long val)<br />
+{<br />
+asm volatile (<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&quot;eor r3, %1, %1, ror #16\n\t&quot;<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&quot;bic r3, r3, #0x00FF0000\n\t&quot;<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&quot;mov %0, %1, ror #8\n\t&quot;<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&quot;eor %0, %0, r3, lsr #8&quot;<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;: &quot;=r&quot; (val)<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;: &quot;0&quot;(val)<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;: &quot;r3&quot; <br />
+);<br />
+return val;<br />
+}<br />
+替换C变量的符号名<br />
+默认的情况下，GCC使用同函数或者变量相同的符号名。你可以使用asm声明，为汇编代码指定一个不同的符号名<br />
+unsigned long value asm(&quot;clock&quot;) = 3686400<br />
+这个声明告诉编译器使用了符号名clock代替了具体的值。<br />
+替换C函数的符号名<br />
+为了改变函数名，你需要一个原型声明，因为编译器不接受在函数定义中出现asm关键字。<br />
+extern long Calc(void) asm (&quot;CALCULATE&quot;)<br />
+调用函数calc()</i>将会创建调用函数CALCULATE</i>的汇编指令。<br />
+强制使用特定的寄存器<br />
+局部变量可能存储在一个寄存器中。你可以利用内嵌汇编为该变量指定一个特定的寄存器。<br />
+void Count(void) {<br />
+register unsigned char counter asm(&quot;r3&quot;);<br />
+... some code...<br />
+asm volatile(&quot;eor r3, r3, r3&quot;);<br />
+... more code...<br />
+}<br />
+汇编指令“eor r3, r3, r3”，会将r3清零。Waring：该例子在到多数情况下是有问题的，因为这将和优化器相冲突。因为GCC不会预留其它寄存器。要是优化器认为该变量在以后一段时间没有使用，那么该寄存器将会被再次使用。但是编译器并没有能力去检查是否和编译器预先定义的寄存器有冲突。如果你用这种方式指定了太多的寄存器，编译器将会在代码生成的时候耗尽寄存器的。<br />
+临时使用寄存器<br />
+如果你使用了寄存器，而你没有在input或output operand传递，那么你就必须向编译器指明这些。下面的例子中使用r3作为scratch 寄存器，通过在clobber list中写r3，来让编译器得知使用该寄存器。由于ands指令跟新了状态寄存器的标志位，使用cc在clobber list中指明。<br />
+asm volatile(<br />
+&nbsp; &nbsp; &quot;ands r3, %1, #3&quot; &quot;\n\t&quot;<br />
+&nbsp; &nbsp; &quot;eor %0, %0, r3&quot; &quot;\n\t&quot;<br />
+&nbsp; &nbsp; &quot;addne %0, #4&quot; <br />
+&nbsp; &nbsp; : &quot;=r&quot; (len) <br />
+&nbsp; &nbsp; : &quot;0&quot; (len) <br />
+&nbsp; &nbsp; : &quot;cc&quot;, &quot;r3&quot;<br />
+&nbsp;&nbsp;);<br />
+最好的方法是使用桩函数并且使用局部临时变量。<br />
+ <br />
+ <br />
+ <br />
+寄存器的用途<br />
+比较好的方法是分析编译后的汇编列表，并且学习C 编译器生成的代码。下面的列表是编译器将ARM核寄存器的典型用途，知道这些将有助于理解代码。<br />
+<b>Register</b><br />
+<b>Alt. Name</b><br />
+<b>Usage</b><br />
+r0<br />
+a1<br />
+First function argument<br />
+Integer function result<br />
+Scratch register <br />
+r1<br />
+a2<br />
+Second function argument<br />
+Scratch register <br />
+r2<br />
+a3<br />
+Third function argument<br />
+Scratch register <br />
+r3<br />
+a4<br />
+Fourth function argument<br />
+Scratch register <br />
+r4<br />
+v1<br />
+Register variable<br />
+r5<br />
+v2<br />
+Register variable<br />
+r6<br />
+v3<br />
+Register variable<br />
+r7<br />
+v4<br />
+Register variable<br />
+r8<br />
+v5<br />
+Register variable<br />
+r9<br />
+v6<br />
+rfp <br />
+Register variable<br />
+Real frame pointer <br />
+r10<br />
+sl <br />
+Stack limit <br />
+r11<br />
+fp<br />
+Argument pointer<br />
+r12<br />
+ip<br />
+Temporary workspace <br />
+r13<br />
+sp<br />
+Stack pointer<br />
+r14<br />
+lr<br />
+Link register<br />
+Workspace <br />
+r15<br />
+pc<br />
+Program counter<br />
+ <br />
+<br />
+<br />
+<b>本文来自ChinaUnix博客，如果查看原文请点：</b><a href="http://blog.chinaunix.net/u2/69404/showart_1922655.html" target="_blank">http://blog.chinaunix.net/u2/69404/showart_1922655.html</a> 
+</td>
+
+      </tr>
+
+
+      <tr>
+
+        <td height="20" align="right"> 　 <a href="http://linux.chinaunix.net/bbs/thread-1111332-1-1.html"  target="_blank">发表评论</a>
+
+  <a href="http://linux.chinaunix.net/bbs/thread-1111332-1-1.html"  target="_blank">查看评论</a>(共有<span class="STYLE1" id ="postcount2"></span>条评论)
+
+</td>
+
+      </tr>
+      <tr>
+
+        <td>&nbsp;</td>
+
+      </tr>
+
+      
+
+    </table>
+
+
+</td>
+
+    <td width="8">&nbsp;</td>
+
+    <td width="245" valign="top" bgcolor="#FFF9EB">
+<center><br>
+<form action="/search2.php" method="GET">
+<input type="text" name="key" size="15"><input type=hidden name="id" value=0 ><input type="submit" value="搜索">
+</form>
+<br>
+</center>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td height="27" background="/images/bg245.jpg" class="F13"><table width="100%"><tr><td class="F13">最新资讯</td><td align="right"><a href="/news" target="_blank">更多>></a>&nbsp;</td></tr></table></td>
+
+      </tr>
+
+      <tr>
+
+        <td valign="top" bgcolor="#FFFFFF" class="BLKtext" ><table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+          <tr>
+
+            <td height="5"></td>
+
+          </tr>
+
+          <tr>
+
+            <td>· <a href='/news/2010/12/10/1175491.shtml' title='谷歌劝说诺基亚采用Android操作系统' target='_blank'>谷歌劝说诺基亚采用Android操作..</a><br />
+· <a href='/news/2010/12/10/1175493.shtml' title='Apache 基金会确认退出 JCP 执行委员会' target='_blank'>Apache 基金会确认退出 JCP 执..</a><br />
+· <a href='/news/2010/12/07/1175306.shtml' title='Chrome 10 新功能探秘：新增GPU混合加速功能' target='_blank'>Chrome 10 新功能探秘：新增GP..</a><br />
+· <a href='/news/2010/12/07/1175307.shtml' title='金山宣布开源其安全软件' target='_blank'>金山宣布开源其安全软件</a><br />
+· <a href='/news/2010/12/07/1175309.shtml' title='女黑客在开源会议上抱受骚扰' target='_blank'>女黑客在开源会议上抱受骚扰</a><br />
+· <a href='/news/2010/12/07/1175310.shtml' title='21款值得关注的Linux游戏' target='_blank'>21款值得关注的Linux游戏</a><br />
+· <a href='/news/2010/12/07/1175311.shtml' title='马化腾：腾讯半年后彻底转型，开放和分享' target='_blank'>马化腾：腾讯半年后彻底转型，..</a><br />
+· <a href='/news/2010/12/07/1175305.shtml' title='[多图] Chrome OS 预发布版本多图赏析' target='_blank'>[多图] Chrome OS 预发布版本多..</a><br />
+· <a href='/news/2010/12/01/1175001.shtml' title='Lubuntu 11.04 默认应用抢先一览' target='_blank'>Lubuntu 11.04 默认应用抢先一览</a><br />
+· <a href='/news/2010/12/01/1175002.shtml' title='Red Hat宣布收购云计算软件提供商Makara' target='_blank'>Red Hat宣布收购云计算软件提供..</a><br />
+</td>
+
+          </tr>
+
+          <tr>
+
+            <td height="5"></td>
+
+          </tr>
+
+        </table></td>
+
+      </tr>
+
+      <tr>
+
+        <td height="10" bgcolor="#FFFFFF"></td>
+
+      </tr>
+
+      <tr></table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td height="27" background="/images/bg245.jpg" class="F13"><table width="100%"><tr><td class="F13">论坛热点</td><td align="right"><a href="/bbs" target="_blank">更多>></a>&nbsp;</td></tr></table></td>
+
+      </tr>
+
+      <tr>
+
+        <td valign="top" bgcolor="#FFFFFF" class="BLKtext" ><table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+          <tr>
+
+            <td height="5"></td>
+
+          </tr>
+
+          <tr>
+
+            <td>· <a href='http://bbs.chinaunix.net/thread-3687970-1-1.html' title='do_execve时候用户栈中参数的位置问题' target='_blank'>do_execve时候用户栈中参数的..</a><br />
+· <a href='http://bbs.chinaunix.net/thread-3687969-1-1.html' title='swapinfo -atm 问题' target='_blank'>swapinfo -atm 问题</a><br />
+· <a href='http://bbs.chinaunix.net/thread-3687968-1-1.html' title='Linux 的优点简述' target='_blank'>Linux 的优点简述</a><br />
+· <a href='http://bbs.chinaunix.net/thread-3687967-1-1.html' title='VM虚拟机上得Red Hat Linux上搭建的ftp服务器，windows登陆不进去，但一个局域网其他' target='_blank'>VM虚拟机上得Red Hat Linux上..</a><br />
+· <a href='http://bbs.chinaunix.net/thread-3687965-1-1.html' title='我看成了上海男人喜欢女人毛多还是毛少' target='_blank'>我看成了上海男人喜欢女人毛..</a><br />
+· <a href='http://bbs.chinaunix.net/thread-3687964-1-1.html' title='校车展览，看了你就知道' target='_blank'>校车展览，看了你就知道</a><br />
+· <a href='http://bbs.chinaunix.net/thread-3687963-1-1.html' title='在遇到他之前，唯一需要做的，就是让自己足够优秀。在遇到他之前，请把最好的年华留给' target='_blank'>在遇到他之前，唯一需要做的..</a><br />
+· <a href='http://bbs.chinaunix.net/thread-3687962-1-1.html' title='GRUB的疑问' target='_blank'>GRUB的疑问</a><br />
+· <a href='http://bbs.chinaunix.net/thread-3687961-1-1.html' title='从来没有人真正付足书价——所付的只是印刷费' target='_blank'>从来没有人真正付足书价——..</a><br />
+· <a href='http://bbs.chinaunix.net/thread-3687960-1-1.html' title='云存储 vs 网盘' target='_blank'>云存储 vs 网盘</a><br />
+</td>
+
+          </tr>
+
+          <tr>
+
+            <td height="5"></td>
+
+          </tr>
+
+        </table></td>
+
+      </tr>
+
+      <tr>
+
+        <td height="10" bgcolor="#FFFFFF"></td>
+
+      </tr>
+
+      <tr></table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td height="27" background="/images/bg245.jpg" class="F13"><table width="100%"><tr><td class="F13">文档更新</td><td align="right"><a href="/techdoc" target="_blank">更多>></a>&nbsp;</td></tr></table></td>
+
+      </tr>
+
+      <tr>
+
+        <td valign="top" bgcolor="#FFFFFF" class="BLKtext" ><table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+          <tr>
+
+            <td height="5"></td>
+
+          </tr>
+
+          <tr>
+
+            <td>· <a href='/techdoc/develop/2012/03/16/3686893.shtml' title='orcale queue' target='_blank'>orcale queue</a><br />
+· <a href='/techdoc/develop/2012/03/16/3686868.shtml' title='谁可以推荐几本经典的操作系统的书（英文版）' target='_blank'>谁可以推荐几本经典的操作系统的..</a><br />
+· <a href='/techdoc/develop/2012/03/16/3686867.shtml' title='【北京】某物联网公司招云计算应用高级开发工程师' target='_blank'>【北京】某物联网公司招云计算应..</a><br />
+· <a href='/techdoc/develop/2012/03/16/3686866.shtml' title='【北京】某物联网公司招云计算应用高级开发工程师' target='_blank'>【北京】某物联网公司招云计算应..</a><br />
+· <a href='/techdoc/develop/2012/03/16/3686865.shtml' title='谁能推荐几本关于操作系统的书' target='_blank'>谁能推荐几本关于操作系统的书</a><br />
+· <a href='/techdoc/develop/2012/03/16/3686864.shtml' title='如何添加网络接口eth1' target='_blank'>如何添加网络接口eth1</a><br />
+· <a href='/techdoc/develop/2012/03/16/3686863.shtml' title='葡萄牙语入门教材的选取与经验分享' target='_blank'>葡萄牙语入门教材的选取与经验分享</a><br />
+· <a href='/techdoc/develop/2012/03/16/3686862.shtml' title='葡萄牙语就业前景分析' target='_blank'>葡萄牙语就业前景分析</a><br />
+· <a href='/techdoc/develop/2012/03/16/3686861.shtml' title='葡萄牙语学习经验交流' target='_blank'>葡萄牙语学习经验交流</a><br />
+· <a href='/techdoc/develop/2012/03/16/3686860.shtml' title='Щ' target='_blank'>Щ</a><br />
+</td>
+
+          </tr>
+
+   
+        </table></td>
+
+      </tr>
+
+
+      <tr></table>
+</td>
+
+  </tr>
+
+</table>
+<script src="/js/threadcount.php?tid=1111332"></script>
+<table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
+
+  <tr>
+
+    <td>&nbsp;</td>
+
+  </tr>
+
+</table>
+
+<table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
+
+  <tr>
+
+    <td height="2" bgcolor="#308CF6"></td>
+
+  </tr>
+
+  <tr>
+
+    <td height="30" align="center"><a href="http://www.chinaunix.net/about/index.shtml" target="_blank">关于我们</a> | <a href="http://www.chinaunix.net/about/connect.html" target="_blank">联系方式</a> | <a href="http://www.chinaunix.net/about/service.html" target="_blank">广告合作</a> | <a href="http://www.wintalent.cn:8031/wt5/sequelmedia/web/index" target="_blank">诚聘英才</a> | <a href="http://www.chinaunix.net/about/channel.html" target="_blank">网站地图</a> | <a href="http://www.chinaunix.net/about/friend.html" target="_blank">友情链接</a> | <a href="http://linux.chinaunix.net/bbs/register.php" target="_blank">免费注册</a></td>
+
+  </tr>
+
+  <tr>
+
+    <td height="2" bgcolor="#308CF6"></td>
+
+  </tr>
+
+  <tr>
+
+    <td align="center"><p>Copyright &copy; 2001-2009 ChinaUnix.net All Rights Reserved</p>
+
+        <p>感谢所有关心和支持过ChinaUnix的朋友们<br />
+	<p>
+ <a href="http://www.it168.com/images/icp.jpg" target="_blank">京ICP证:060528号</a></p></td>
+
+  </tr>
+
+</table>
+
+<!-- 统计 START -->
+<script src="http://stat.it168.com/pv.js" type="text/javascript"></script>
+<script>
+function sendPV(){
+    var pvTrack = new PvTrack();
+    pvTrack.type = 10; // 频道类别ID
+    pvTrack.channel = 22; // 频道ID
+   
+    pvTrack.pageType = 0;
+    pvTrack.track();
+}
+window.setTimeout("sendPV()", 0);
+</script>
+<script language="javascript" src="http://bbs.chinaunix.net/googlepv/pv.js" type="text/javascript"></script>
+<!-- 统计 .END -->
+<div style='display:none'>
+<script type="text/javascript"> 
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0ee5e8cdc4d43389b3d1bfd76e83216b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11982772-4");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+<script type='text/javascript' src='http://168.it168.com/js/601.js'></script>
+
+
+
+</body>
+
+</html>

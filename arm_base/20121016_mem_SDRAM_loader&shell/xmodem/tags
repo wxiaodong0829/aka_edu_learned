@@ -1,0 +1,49 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+ACK	myxmodem.h	11;"	d
+BLOCK_SIZE	myxmodem.h	6;"	d
+BYTE	DataType.h	/^typedef	unsigned char	BYTE;$/;"	t
+CAN	myxmodem.h	13;"	d
+DWORD	DataType.h	/^typedef unsigned int	DWORD;$/;"	t
+EOT	myxmodem.h	14;"	d
+GET_BYTE_TIMEOUT	myxmodem.h	16;"	d
+NAK	myxmodem.h	12;"	d
+PrPrVoid	DataType.h	/^typedef	PrVoid (*PrPrVoid)(void);$/;"	t
+PrVoid	DataType.h	/^typedef	void (* PrVoid)(void);$/;"	t
+RETRIES	myxmodem.h	7;"	d
+S16	DataType.h	/^typedef signed short	S16;$/;"	t
+S32	DataType.h	/^typedef signed int		S32;$/;"	t
+S8	DataType.h	/^typedef	signed char		S8;$/;"	t
+SAC_PAST_START_NAK	myxmodem.c	/^	SAC_PAST_START_NAK = 2$/;"	e	enum:__anon1	file:
+SAC_SEND_NAK	myxmodem.c	/^	SAC_SEND_NAK = 0,$/;"	e	enum:__anon1	file:
+SAC_SENT_NAK	myxmodem.c	/^	SAC_SENT_NAK = 1,$/;"	e	enum:__anon1	file:
+SOH	myxmodem.h	10;"	d
+STATUS_ERR	DataType.h	5;"	d
+STATUS_OK	DataType.h	6;"	d
+TIME_STRUC	DataType.h	/^} TIME_STRUC;$/;"	t	typeref:struct:__anon2
+U16	DataType.h	/^typedef unsigned short	U16;$/;"	t
+U32	DataType.h	/^typedef unsigned int	U32;$/;"	t
+U8	DataType.h	/^typedef	unsigned char	U8;$/;"	t
+WORD	DataType.h	/^typedef unsigned short	WORD;$/;"	t
+_DATATYPE_H	DataType.h	2;"	d
+_XMODEM_H	myxmodem.h	2;"	d
+day	DataType.h	/^	U8 day;$/;"	m	struct:__anon2
+db_idx	myxmodem.c	/^int db_idx = 0;$/;"	v
+debugbuf	myxmodem.c	/^char debugbuf[4096];$/;"	v
+delay	myxmodem.c	/^static void delay()$/;"	f	file:
+get_byte_err	myxmodem.c	/^int get_byte_err = 0;$/;"	v
+get_record	myxmodem.c	/^int get_record(void)$/;"	f
+hour	DataType.h	/^	U8 hour;$/;"	m	struct:__anon2
+loadx	myxmodem.c	/^ int loadx(int argc, char *argv[])$/;"	f
+min	DataType.h	/^	U8 min;$/;"	m	struct:__anon2
+month	DataType.h	/^	U8 month;$/;"	m	struct:__anon2
+receive_buffer	myxmodem.c	/^U8 volatile receive_buffer[BLOCK_SIZE];$/;"	v
+sec	DataType.h	/^	U8 sec;$/;"	m	struct:__anon2
+seen_a_char	myxmodem.c	/^static volatile int seen_a_char = SAC_SEND_NAK;$/;"	v	file:
+weekday	DataType.h	/^	U8 weekday;$/;"	m	struct:__anon2
+xmodem_errtxt	myxmodem.c	/^char *xmodem_errtxt = NULL;$/;"	v
+year	DataType.h	/^	U16 year;$/;"	m	struct:__anon2

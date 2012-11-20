@@ -1,0 +1,233 @@
+
+========================================================================
+
+** ELF Header Information
+
+    File Name: 2-lcd-api.axf
+
+    Machine class: ELFCLASS32 (32-bit)
+    Data encoding: ELFDATA2LSB (Little endian)
+    Header version: EV_CURRENT (Current version)
+    File Type: ET_EXEC (Executable) (2)
+    Machine: EM_ARM (ARM)
+
+    Image Entry point: 0x21000000
+    Flags: EF_ARM_HASENTRY + EF_ARM_SYMSARESORTED + EF_ARM_MAPSYMSFIRST (0x02000016)
+
+    EABI conformance : ARM EABI Version 2.
+
+    Built with
+    ARM C Compiler, ADS1.2 [Build 805]
+    ARM/Thumb Macro Assembler vsn ADS1.2 [Build 805]
+    ARM Linker, ADS1.2 [Build 805] 
+
+    Header size: 52 bytes (0x34)
+    Program header entry size: 32 bytes (0x20)
+    Section header entry size: 40 bytes (0x28)
+
+    Program header entries: 1
+    Section header entries: 8
+
+    Program header offset: 1732 (0x000006c4)
+    Section header offset: 1764 (0x000006e4)
+
+    Section header string table index: 7
+
+========================================================================
+
+** Program header #0 (PT_LOAD) [PF_X + PF_R + PF_ARM_ENTRY]
+    Size : 576 bytes
+    Virtual address: 0x21000000
+
+
+========================================================================
+
+** Section #1 'ER_RO' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 576 bytes (alignment 4)
+    Address: 0x21000000
+
+    $a
+    lcdinit
+        0x21000000:    e3a0d588    ....    MOV      r13,#0x22000000
+        0x21000004:    eaffffff    ....    B        mymain  ; 0x21000008
+    mymain
+    .text
+        0x21000008:    e92d4008    .@-.    STMFD    r13!,{r3,r14}
+        0x2100000c:    eb00001d    ....    BL       lcd_init  ; 0x21000088
+        0x21000010:    e3a00000    ....    MOV      r0,#0
+        0x21000014:    eb000055    U...    BL       lcd_clear_screen  ; 0x21000170
+        0x21000018:    e3e034ff    .4..    MVN      r3,#0xff000000
+        0x2100001c:    e3a02f5f    _/..    MOV      r2,#0x17c
+        0x21000020:    e3a01064    d...    MOV      r1,#0x64
+        0x21000024:    e3a00088    ....    MOV      r0,#0x88
+        0x21000028:    eb00005d    ]...    BL       lcd_draw_hline  ; 0x210001a4
+        0x2100002c:    e3e034ff    .4..    MVN      r3,#0xff000000
+        0x21000030:    e3a020de    . ..    MOV      r2,#0xde
+        0x21000034:    e3a01032    2...    MOV      r1,#0x32
+        0x21000038:    e3a000f0    ....    MOV      r0,#0xf0
+        0x2100003c:    eb000060    `...    BL       lcd_draw_vline  ; 0x210001c4
+        0x21000040:    e3a02014    . ..    MOV      r2,#0x14
+        0x21000044:    e3a01032    2...    MOV      r1,#0x32
+        0x21000048:    e3a00032    2...    MOV      r0,#0x32
+        0x2100004c:    eb000065    e...    BL       lcd_draw_cross  ; 0x210001e8
+        0x21000050:    e3a02014    . ..    MOV      r2,#0x14
+        0x21000054:    e59f1028    (...    LDR      r1,0x21000084
+        0x21000058:    e3a00032    2...    MOV      r0,#0x32
+        0x2100005c:    eb000061    a...    BL       lcd_draw_cross  ; 0x210001e8
+        0x21000060:    e3a02014    . ..    MOV      r2,#0x14
+        0x21000064:    e3a01032    2...    MOV      r1,#0x32
+        0x21000068:    e3a000de    ....    MOV      r0,#0xde
+        0x2100006c:    eb00005d    ]...    BL       lcd_draw_cross  ; 0x210001e8
+        0x21000070:    e3a02014    . ..    MOV      r2,#0x14
+        0x21000074:    e59f1008    ....    LDR      r1,0x21000084
+        0x21000078:    e3a000de    ....    MOV      r0,#0xde
+        0x2100007c:    eb000059    Y...    BL       lcd_draw_cross  ; 0x210001e8
+        0x21000080:    eafffffe    ....    B        0x21000080
+    $d
+        0x21000084:    000001ae    ....    DCD    430
+    lcd_init
+    $a
+    .text
+        0x21000088:    e59f0194    ....    LDR      r0,0x21000224
+        0x2100008c:    e59f1194    ....    LDR      r1,0x21000228
+        0x21000090:    e5810120     ...    STR      r0,[r1,#0x120]
+        0x21000094:    e5810140    @...    STR      r0,[r1,#0x140]
+        0x21000098:    e5810160    `...    STR      r0,[r1,#0x160]
+        0x2100009c:    e5810180    ....    STR      r0,[r1,#0x180]
+        0x210000a0:    e3a00002    ....    MOV      r0,#2
+        0x210000a4:    e2411af9    ..A.    SUB      r1,r1,#0xf9000
+        0x210000a8:    e5810008    ....    STR      r0,[r1,#8]
+        0x210000ac:    e3a004f8    ....    MOV      r0,#0xf8000000
+        0x210000b0:    e5901000    ....    LDR      r1,[r0,#0]
+        0x210000b4:    e3811003    ....    ORR      r1,r1,#3
+        0x210000b8:    e5801000    ....    STR      r1,[r0,#0]
+        0x210000bc:    e5901000    ....    LDR      r1,[r0,#0]
+        0x210000c0:    e3811010    ....    ORR      r1,r1,#0x10
+        0x210000c4:    e5801000    ....    STR      r1,[r0,#0]
+        0x210000c8:    e5901000    ....    LDR      r1,[r0,#0]
+        0x210000cc:    e3811fe0    ....    ORR      r1,r1,#0x380
+        0x210000d0:    e5801000    ....    STR      r1,[r0,#0]
+        0x210000d4:    e5901004    ....    LDR      r1,[r0,#4]
+        0x210000d8:    e3811060    `...    ORR      r1,r1,#0x60
+        0x210000dc:    e5801004    ....    STR      r1,[r0,#4]
+        0x210000e0:    e59f1144    D...    LDR      r1,0x2100022c
+        0x210000e4:    e5801018    ....    STR      r1,[r0,#0x18]
+        0x210000e8:    e5901020     ...    LDR      r1,[r0,#0x20]
+        0x210000ec:    e3811001    ....    ORR      r1,r1,#1
+        0x210000f0:    e5801020     ...    STR      r1,[r0,#0x20]
+        0x210000f4:    e5901020     ...    LDR      r1,[r0,#0x20]
+        0x210000f8:    e381102c    ,...    ORR      r1,r1,#0x2c
+        0x210000fc:    e5801020     ...    STR      r1,[r0,#0x20]
+        0x21000100:    e5901040    @...    LDR      r1,[r0,#0x40]
+        0x21000104:    e5801040    @...    STR      r1,[r0,#0x40]
+        0x21000108:    e5901040    @...    LDR      r1,[r0,#0x40]
+        0x2100010c:    e5801040    @...    STR      r1,[r0,#0x40]
+        0x21000110:    e5901044    D...    LDR      r1,[r0,#0x44]
+        0x21000114:    e3811ac0    ....    ORR      r1,r1,#0xc0000
+        0x21000118:    e3811bbe    ....    ORR      r1,r1,#0x2f800
+        0x2100011c:    e5801044    D...    STR      r1,[r0,#0x44]
+        0x21000120:    e5901044    D...    LDR      r1,[r0,#0x44]
+        0x21000124:    e3811f40    @...    ORR      r1,r1,#0x100
+        0x21000128:    e381100f    ....    ORR      r1,r1,#0xf
+        0x2100012c:    e5801044    D...    STR      r1,[r0,#0x44]
+        0x21000130:    e59f10f8    ....    LDR      r1,0x21000230
+        0x21000134:    e58010a0    ....    STR      r1,[r0,#0xa0]
+        0x21000138:    e59f10f4    ....    LDR      r1,0x21000234
+        0x2100013c:    e58010d0    ....    STR      r1,[r0,#0xd0]
+        0x21000140:    e59f10f0    ....    LDR      r1,0x21000238
+        0x21000144:    e5801010    ....    STR      r1,[r0,#0x10]
+        0x21000148:    e59f10ec    ....    LDR      r1,0x2100023c
+        0x2100014c:    e5801014    ....    STR      r1,[r0,#0x14]
+        0x21000150:    e3a01001    ....    MOV      r1,#1
+        0x21000154:    e5801034    4...    STR      r1,[r0,#0x34]
+        0x21000158:    e1a0f00e    ....    MOV      pc,r14
+    lcd_draw_pixel
+        0x2100015c:    e59f30cc    .0..    LDR      r3,0x21000230
+        0x21000160:    e0600200    ..`.    RSB      r0,r0,r0,LSL #4
+        0x21000164:    e0830380    ....    ADD      r0,r3,r0,LSL #7
+        0x21000168:    e7802101    .!..    STR      r2,[r0,r1,LSL #2]
+        0x2100016c:    e1a0f00e    ....    MOV      pc,r14
+    lcd_clear_screen
+        0x21000170:    e59fc0b8    ....    LDR      r12,0x21000230
+        0x21000174:    e3a02000    . ..    MOV      r2,#0
+        0x21000178:    e0623202    .2b.    RSB      r3,r2,r2,LSL #4
+        0x2100017c:    e08c3383    .3..    ADD      r3,r12,r3,LSL #7
+        0x21000180:    e3a01000    ....    MOV      r1,#0
+        0x21000184:    e7830101    ....    STR      r0,[r3,r1,LSL #2]
+        0x21000188:    e2811001    ....    ADD      r1,r1,#1
+        0x2100018c:    e3510f78    x.Q.    CMP      r1,#0x1e0
+        0x21000190:    bafffffb    ....    BLT      0x21000184
+        0x21000194:    e2822001    . ..    ADD      r2,r2,#1
+        0x21000198:    e3520f44    D.R.    CMP      r2,#0x110
+        0x2100019c:    bafffff5    ....    BLT      0x21000178
+        0x210001a0:    e1a0f00e    ....    MOV      pc,r14
+    lcd_draw_hline
+        0x210001a4:    e060c200    ..`.    RSB      r12,r0,r0,LSL #4
+        0x210001a8:    e59f0080    ....    LDR      r0,0x21000230
+        0x210001ac:    e080038c    ....    ADD      r0,r0,r12,LSL #7
+        0x210001b0:    e1510002    ..Q.    CMP      r1,r2
+        0x210001b4:    d7803101    .1..    STRLE    r3,[r0,r1,LSL #2]
+        0x210001b8:    d2811001    ....    ADDLE    r1,r1,#1
+        0x210001bc:    dafffffb    ....    BLE      0x210001b0
+        0x210001c0:    e1a0f00e    ....    MOV      pc,r14
+    lcd_draw_vline
+        0x210001c4:    e59fc064    d...    LDR      r12,0x21000230
+        0x210001c8:    e52de004    ..-.    STR      r14,[r13,#-4]!
+        0x210001cc:    e1510002    ..Q.    CMP      r1,r2
+        0x210001d0:    d061e201    ..a.    RSBLE    r14,r1,r1,LSL #4
+        0x210001d4:    d08ce38e    ....    ADDLE    r14,r12,r14,LSL #7
+        0x210001d8:    d78e3100    .1..    STRLE    r3,[r14,r0,LSL #2]
+        0x210001dc:    d2811001    ....    ADDLE    r1,r1,#1
+        0x210001e0:    dafffff9    ....    BLE      0x210001cc
+        0x210001e4:    e49df004    ....    LDR      pc,[r13],#4
+    lcd_draw_cross
+        0x210001e8:    e92d40f0    .@-.    STMFD    r13!,{r4-r7,r14}
+        0x210001ec:    e1a04002    .@..    MOV      r4,r2
+        0x210001f0:    e0812002    . ..    ADD      r2,r1,r2
+        0x210001f4:    e3a078ff    .x..    MOV      r7,#0xff0000
+        0x210001f8:    e1a05001    .P..    MOV      r5,r1
+        0x210001fc:    e0411004    ..A.    SUB      r1,r1,r4
+        0x21000200:    e1a03007    .0..    MOV      r3,r7
+        0x21000204:    e1a06000    .`..    MOV      r6,r0
+        0x21000208:    ebffffe5    ....    BL       lcd_draw_hline  ; 0x210001a4
+        0x2100020c:    e0862004    . ..    ADD      r2,r6,r4
+        0x21000210:    e0461004    ..F.    SUB      r1,r6,r4
+        0x21000214:    e1a03007    .0..    MOV      r3,r7
+        0x21000218:    e1a00005    ....    MOV      r0,r5
+        0x2100021c:    e8bd40f0    .@..    LDMFD    r13!,{r4-r7,r14}
+        0x21000220:    eaffffe7    ....    B        lcd_draw_vline  ; 0x210001c4
+    $d
+        0x21000224:    22222222    """"    DCD    572662306
+        0x21000228:    e0200000    .. .    DCD    3760193536
+        0x2100022c:    000879df    .y..    DCD    555487
+        0x21000230:    22faf000    ..."    DCD    586870784
+        0x21000234:    2302e800    ...#    DCD    587393024
+        0x21000238:    00070107    ....    DCD    459015
+        0x2100023c:    00040127    '...    DCD    262439
+
+** Section #2 '.debug_frame' (SHT_PROGBITS)
+    Size   : 244 bytes
+
+
+** Section #3 '.symtab' (SHT_SYMTAB)
+    Size   : 320 bytes (alignment 4)
+    String table '.strtab'
+    Last local symbol no. 11
+
+
+** Section #4 '.strtab' (SHT_STRTAB)
+    Size   : 224 bytes
+
+
+** Section #5 '.note' (SHT_NOTE)
+    Size   : 20 bytes (alignment 4)
+
+
+** Section #6 '.comment' (SHT_PROGBITS)
+    Size   : 212 bytes
+
+
+** Section #7 '.shstrtab' (SHT_STRTAB)
+    Size   : 84 bytes
+
+

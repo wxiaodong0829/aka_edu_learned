@@ -1,0 +1,154 @@
+1， gcc 版本 与 linux版本匹配
+
+1, 编写： vim
+2, 工程构建：Makefile link.lds
+Makefile 如下:
+##################################  Makefile  ###########
+CC=arm-linux-gcc
+AS=arm-linux-as
+LD=arm-linux-ld
+OBJCOPY=arm-linux-objcopy
+OBJCFLAGS=--gap-fill=0xff
+CFLAGS=-nostdlib #不链接标准库
+src_c = $(wildcard *.c) #当前目录找所有.c
+src_s = $(wildcard *.s)
+obj_c = $(patsubst %.c, %.o, $(src_c)) # 
+obj_s = $(patsubst %.s, %.o, $(src_s))
+target = app
+
+$(target).bin:$(target)
+	$(OBJCOPY) $(OBJCFLAGS) -O binary  $< $@
+
+$(target):$(obj_s) $(obj_c)
+	$(LD)  -Tlink.lds  $^ -o $@
+%.o:%.c
+	$(CC) -o $@ $(CFLAGS) -c $<
+%.o:%.s
+	$(AS) -o $@ $<
+
+clean:
+	-rm -f $(target)
+	-rm -f $(target).bin
+	-rm -f $(obj_s)
+	-rm -f $(obj_c)
+	-rm -f *~
+
+.PHONY: clean
+###################################   Makefile  #############
+
+link.lds 如下：
+################################  link.lds  ###############
+# 如果编不过，将注释去掉
+OUTPUT_FORMAT("elf32-littlearm", "elf32-littlearm", "elf32-littlearm")
+OUTPUT_ARCH(arm)
+ENTRY(_start)    #####  程序入口点 自己写的  _start
+SECTIONS
+{
+	. = 0x21000000;		#程序的 起始地址（物理内存地址）
+
+	. = ALIGN(4);           # 四字节对齐
+	.text :			＃代码段
+	{
+		start.o	(.text) ＃放在最开始的代码，含程序入口地址的.o文件
+		*(.text)	＃其余.o的位置不关心
+	}
+
+	. = ALIGN(4);
+	.rodata : { *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.rodata*))) }
+
+	. = ALIGN(4);
+	.data : {
+		*(.data)
+	}
+
+	. = ALIGN(4);
+
+	.rel.dyn : {
+		__rel_dyn_start = .;
+		*(.rel*)
+		__rel_dyn_end = .;
+	}
+
+	.dynsym : {
+		__dynsym_start = .;
+		*(.dynsym)
+	}
+
+	_end = .;
+
+	.bss __rel_dyn_start (OVERLAY) : {
+		__bss_start = .;
+		*(.bss)
+		 . = ALIGN(4);
+		__bss_end__ = .;
+	}
+}
+
+################################  link.lds  ###############
+
+
+
+3, 编译，链接 工具： arm-linux-gcc-4.5.1
+	$ mkdir ~/soft_dong/cross_tool/
+	$ tar xzvf arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz
+	$ vi ~/.bashrc   或者    vi /etc/profile
+	export PATH=$PAH:/home/akaedu/soft_dong/cross_tool/opt/FriendlyARM/toolschain/4.5.1/bin
+	$ source ~/.bashrc
+4, 超级终端：ckermit(推荐), minicom
+	$ source apt-get install ckermit
+	$ # vi /etc/kermit/kermrc
+    	下面是使用U-Boot和Linux时推荐配置:
+    	set line          /dev/ttyUSB0
+    	set speed         115200
+    	set carrier-watch off
+    	set handshake     none
+    	set flow-control none
+    	robust
+    	set file type     bin
+    	set file name     lit
+    	set rec pack      1000
+    	set send pack     1000
+    	set window        5
+    	# 将上面的设置添加到“/etc/kermit/kermrc”中
+    	# /dev/ttyUSB0表示使用usb转串口的连接线接开发板，如果是只用用串口线连接主机的话，需要	设置为/dev/ttyS0
+
+启动
+--------------------------------------
+    启动kermit，连接串口:
+    # kermit
+    C-Kermit>connect
+    # 现在就已经成功连接到串口了。
+
+切换
+--------------------------------------
+    按下 Ctrl + \, 再按c 可以跳回kermit
+    C-Kermit>   
+    此时输入c,即connect即可连接到串口
+
+发送文件
+--------------------------------------
+    kermit中输入connect后,转入了u-boot串口界面。
+    输入loadb 0x00300000,启动开发板上的kermit协议。
+    按下 Ctrl + \, 再按c, 切换到kermit。
+    C-Kermit> send /home/share/uImage.pkg
+    kermit开始传送，并且显示一个传送界面，并动态显示传送进度。
+    传送完毕后，输入c，即connect命令，回到u-boot的串口界面。
+    使用u-boot命令，启动内核。
+    等下载完毕后再关闭这个终端窗口，重新开一个终端，然后kermit -c这时候在用cp.b dest src len拷贝程序到flash中。
+
+速度比较：Linux下的kermit快很多
+
+
+
+linux 下 汇编程序 格式
+;------------------------------   linux 汇编格式   --------------------
+.globl _start
+_start:
+	BL c_entry
+	B .
+;------------------------------   linux 汇编格式   --------------------
+
+
+
+
+linux    C插入汇编   C调用汇编      汇编调用C    ???

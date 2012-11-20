@@ -1,0 +1,21 @@
+
+nand 开发的流程
+
+1，在nand中找到一片全是1的首地址
+	nand read 0x21000000 0xfff0000 0x1000 //因为没有发现直接显示nand中内容的命令，
+										//先将其中的内容读到内存中，再用下面的命令显示
+	md 0x21000000
+
+2, 将my_printf 下载到 nand 中
+	loadb 
+	ctrl \ & c
+	send my_printf.bin ->0x21000000
+	nand write 0x21000000 0xfff0000 0x1000
+
+3, 下载自己写的 read_nand 程序
+	loadb
+	ctrl \ & c
+	send read_nand.bin
+	go 0x21000000
+
+	看是否能执行到 my_printf.bin

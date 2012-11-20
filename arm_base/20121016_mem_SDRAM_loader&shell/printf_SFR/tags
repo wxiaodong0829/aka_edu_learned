@@ -1,0 +1,48 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+AS	Makefile	/^AS=arm-linux-as$/;"	m
+CC	Makefile	/^CC=arm-linux-gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-nostdlib #ä¸é“¾æ¥æ ‡å‡†åº“$/;"	m
+GPA0CON	uart.h	4;"	d
+ITOA	stdio.h	24;"	d
+ITOX	stdio.h	25;"	d
+LD	Makefile	/^LD=arm-linux-ld$/;"	m
+OBJCFLAGS	Makefile	/^OBJCFLAGS=--gap-fill=0xff$/;"	m
+OBJCOPY	Makefile	/^OBJCOPY=arm-linux-objcopy$/;"	m
+UBRDIV0	uart.h	15;"	d
+UCON0	uart.h	8;"	d
+UDIVSLOT0	uart.h	16;"	d
+ULCON0	uart.h	6;"	d
+URXH0	uart.h	13;"	d
+UTRSTAT0	uart.h	10;"	d
+UTXH0	uart.h	12;"	d
+_Bnd	stdio.h	22;"	d
+__STDIO__H__	stdio.h	2;"	d
+__UART__H__	uart.h	2;"	d
+_start	start.s	/^_start:$/;"	l
+c_entry	main.c	/^void c_entry(void)$/;"	f
+itoa	stdio.c	/^char *itoa(unsigned n, char *p)$/;"	f
+itox	stdio.c	/^char *itox(unsigned n, char *p)$/;"	f
+my_getchar	stdio.c	/^int my_getchar(void)$/;"	f
+my_gets	stdio.c	/^char * my_gets(char * s)  \/\/µ±ÎŞÍË¸ñÊ±£¬ÓÃ´Ë¸ü¿ì$/;"	f
+my_gets_cont_back	stdio.c	/^char * my_gets_cont_back(char * s) \/\/µ±ÓĞÍË¸ñÊ±£¬ÓÃ´Ë¸ü¿ì$/;"	f
+my_printf	stdio.c	/^int my_printf(const char *fmt, ...)$/;"	f
+my_putchar	stdio.c	/^void my_putchar(int ch)$/;"	f
+my_puts	stdio.c	/^int my_puts(const char * s)$/;"	f
+obj_c	Makefile	/^obj_c = $(patsubst %.c, %.o, $(src_c)) # $/;"	m
+obj_s	Makefile	/^obj_s = $(patsubst %.s, %.o, $(src_s))$/;"	m
+reverse	stdio.c	/^void reverse(char *buf, int l, int r)$/;"	f
+src_c	Makefile	/^src_c = $(wildcard *.c) #å½“å‰ç›®å½•æ‰¾æ‰€æœ‰.c$/;"	m
+src_s	Makefile	/^src_s = $(wildcard *.s)$/;"	m
+target	Makefile	/^target = app$/;"	m
+uart_getchar	uart.c	/^int uart_getchar(void)$/;"	f
+uart_init	uart.c	/^void uart_init(void)$/;"	f
+uart_putchar	uart.c	/^void uart_putchar(int ch)$/;"	f
+va_arg	stdio.h	17;"	d
+va_end	stdio.h	19;"	d
+va_list	stdio.h	/^typedef char *va_list;$/;"	t
+va_start	stdio.h	20;"	d

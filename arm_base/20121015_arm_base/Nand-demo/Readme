@@ -1,0 +1,5 @@
+sudo dd iflag=dsync oflag=dsync if=tiny210-uboot.bin of=/dev/sdb seek=1
+
+nand read/write  dram_addr nand_addr size
+nand read 0x21000000 0x0 0x1000
+nand write 0x21000000 0x100000 0x1000

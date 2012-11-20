@@ -1,0 +1,55 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+AS	Makefile	/^AS=arm-linux-as$/;"	m
+CC	Makefile	/^CC=arm-linux-gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-nostdlib$/;"	m
+LD	Makefile	/^LD=arm-linux-ld$/;"	m
+MP0_3CON	nand.c	9;"	d	file:
+NFADDR	nand.c	5;"	d	file:
+NFCMMD	nand.c	4;"	d	file:
+NFCONF	nand.c	2;"	d	file:
+NFCONT	nand.c	3;"	d	file:
+NFDATA	nand.c	6;"	d	file:
+NFSTAT	nand.c	7;"	d	file:
+OBJCFLAGS	Makefile	/^OBJCFLAGS=--gap-fill=0xff$/;"	m
+OBJCOPY	Makefile	/^OBJCOPY=arm-linux-objcopy$/;"	m
+PAGE_SIZE	nand.c	11;"	d	file:
+UBRDIV0	uart.c	6;"	d	file:
+UCON0	uart.c	2;"	d	file:
+UDIVSLOT0	uart.c	7;"	d	file:
+ULCON0	uart.c	1;"	d	file:
+URXH0	uart.c	5;"	d	file:
+UTRSTAT0	uart.c	3;"	d	file:
+UTXH0	uart.c	4;"	d	file:
+_start	start.s	/^_start:$/;"	l
+c_entry	main.c	/^int c_entry(void)$/;"	f
+itoa	lib.c	/^char * itoa(int n, char * s)$/;"	f
+myprintf	printf.c	/^int myprintf(const char * format, ...)$/;"	f
+nand_init	nand.c	/^void nand_init(void)$/;"	f
+nand_read	nand.c	/^void nand_read(int nand_addr, char * sdram_addr, int size)$/;"	f
+nand_read_id	nand.c	/^void nand_read_id(char id[])$/;"	f
+nand_read_page	nand.c	/^void nand_read_page(int addr, char buf[])$/;"	f
+obj_c	Makefile	/^obj_c = $(patsubst %.c, %.o, $(src_c))$/;"	m
+obj_s	Makefile	/^obj_s = $(patsubst %.s, %.o, $(src_s))$/;"	m
+putchar	lib.c	/^void putchar(char c)$/;"	f
+putchar_hex	lib.c	/^void putchar_hex(char c)$/;"	f
+putint_hex	lib.c	/^void putint_hex(int n)$/;"	f
+puts	lib.c	/^int puts(const char * s)$/;"	f
+reverse	lib.c	/^char * reverse(char * s)$/;"	f
+reverse0	lib.c	/^char * reverse0(char * s)$/;"	f
+reverse_r	lib.c	/^char * reverse_r(char * s)$/;"	f
+src_c	Makefile	/^src_c = $(wildcard *.c)$/;"	m
+src_s	Makefile	/^src_s = $(wildcard *.s)$/;"	m
+strlen	lib.c	/^int strlen(const char * s)$/;"	f
+target	Makefile	/^target = app$/;"	m
+uart_getchar	uart.c	/^char uart_getchar(void)$/;"	f
+uart_init	uart.c	/^void uart_init(void)$/;"	f
+uart_putchar	uart.c	/^void uart_putchar(char c)$/;"	f
+va_arg	printf.c	7;"	d	file:
+va_end	printf.c	8;"	d	file:
+va_list	printf.c	/^typedef  int *		va_list;$/;"	t	file:
+va_start	printf.c	6;"	d	file:
