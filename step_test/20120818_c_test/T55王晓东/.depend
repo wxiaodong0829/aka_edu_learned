@@ -1,0 +1,3 @@
+# auto generated file, don't edit
+1_loop_move.o: 1_loop_move.c
+2_sort.o: 2_sort.c

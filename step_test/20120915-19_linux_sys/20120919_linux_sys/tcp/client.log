@@ -1,0 +1,21 @@
+up client.c link ok?: OK
+..........................up client.c is end
+down client2.c link ok?: OK
+here
+fail to down link ...
+up server.c link ok?: OK
+..........................up server.c is end
+down Makefile2 link ok?: OK
+here
+down Makefile2 is ready, is doing...
+......................down Makefile2 end
+down server2.c link ok?: OK
+here
+down server2.c is ready, is doing...
+......................down server2.c end
+down 2.rmvb link ok?: OK
+here
+down  is ready, is doing...
+......................down  end
+up 1.rmvb link ok?: OK
+..........................up 1.rmvb is end

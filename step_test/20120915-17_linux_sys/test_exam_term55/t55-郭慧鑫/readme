@@ -1,0 +1,6 @@
+运行格式如下：
+下载文件：./myscp 127.0.0.1:/home/ghx/pub/text.txt .
+上传文件：./myscp ./dir/file.txt 127.0.0.1:.
+          ./myscp ./dir/file.txt 127.0.0.1:/home/ghx/pub
+没有实现的功能:
+            没有用正则表达式来判断IP地址是否正确。

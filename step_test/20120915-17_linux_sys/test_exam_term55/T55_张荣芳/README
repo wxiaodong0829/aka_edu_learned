@@ -1,0 +1,14 @@
+./myscp 127.0.0.1:/home/pub/file1 .
+/* 把服务器IP上的文件/home/pub/file1传送到本地当前目录*/
+
+./myscp ./dir1/file2 127.0.0.1:. 
+/*把本地当前目录下的子目录dir1中的文件file2传送到服务器ip的当前目录下*/
+
+./myscp dir1/file2 127.0.0.1:/home/pub/ 
+/*把本地当前目录下的子目录dir1中的文件file2复制到服务器ip的/home/pub目录下*/
+
+ip固定的设为127.0.0.1
+端口号为8000
+
+服务器程序为./server
+客户端程序为./myscp ...

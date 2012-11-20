@@ -1,0 +1,10 @@
+程序执行
+ 终端1 ：执行服务器  ./server
+ 终端2 : 执行客户端 
+               功能1： ./myscp 127.0.0.1:+路径+文件名 .
+                       (如：./myscp 127.0.0.1:/home/pc/aa/test/艾景平/pub/file1 .)
+
+               功能2： ./myscp ./dir1/file2 127.0.0.1:+路径
+                       (如：./myscp ./dir1/file2 127.0.0.1:/home/pc/aa/test/艾景平/pub)
+
+               功能3： ./myscp ./dir1/file2 127.0.0.1:.

@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <netinet/in.h>
+
+#define N 1024
+#define SERV_IP "127.0.0.1"
+#define SERV_PORT 8000
+
+void err_sys(const char *str)
+{
+	perror(str);
+	exit(1);
+}
+void err_usr(const char *str)
+{
+	perror(str);
+	exit(2);
+}
+int main(int argc, char *argv[])
+{
+	struct sockaddr_in servaddr;
+	int sockfd, n;
+	char buf[N];
+	socklen_t servaddr_len;
+	struct stat stbuf1, stbuf2;
+
+	if (argc != 3) {
+		printf("./myscp [192.168.0.10:/home/pub/file1] .");
+		err_usr("wrong command");
+	}
+
+	sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+
+	memset(&servaddr, 0, sizeof(servaddr));
+	servaddr.sin_family = AF_INET;
+	servaddr.sin_port = htons(SERV_PORT);
+	inet_pton(AF_INET, SERV_IP, &servaddr.sin_addr.s_addr);
+	
+	stat(argv[1], &stbuf1);
+	stat(argv[2], &stbuf2);
+	if (S_ISREG(stbuf1.st_mode) && S_ISDIR(stbuf2.st_mode))
+		printf("argv[1] regular file argv[2] dir file\n");
+	else {
+		printf("2");
+	}
+		err_usr("argv[1] isn't regular file or argv[2] isn't directory file\n");
+	sprintf(buf, "%s %s", argv[1], argv[2]);
+	printf("1");
+//	n = sendto(sockfd, buf, strlen(buf), 0, (struct sockaddr *)&servaddr, sizeof(servaddr));
+//	n = recvfrom(sockfd, buf, N, 0, NULL, NULL);
+//	buf[n] = '\0';
+	if (strcmp(buf, "OK")) {
+		printf("fail to login...\n");
+		return 0;
+	}
+	return 0;
+	while (1) {
+
+	}
+
+	return 0;
+
+}
